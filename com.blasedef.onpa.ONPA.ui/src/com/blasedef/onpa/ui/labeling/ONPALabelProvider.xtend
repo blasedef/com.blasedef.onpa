@@ -4,6 +4,13 @@
 package com.blasedef.onpa.ui.labeling
 
 import com.google.inject.Inject
+import com.blasedef.onpa.oNPA.Rate
+import com.blasedef.onpa.oNPA.Expression
+import com.blasedef.onpa.oNPA.Sub
+import com.blasedef.onpa.oNPA.Plu
+import com.blasedef.onpa.oNPA.Mul
+import com.blasedef.onpa.oNPA.Div
+import com.blasedef.onpa.oNPA.Constant
 
 /**
  * Provides labels for a EObjects.
@@ -26,4 +33,42 @@ class ONPALabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabelPr
 //	def image(Greeting ele) {
 //		'Greeting.gif'
 //	}
+
+	def text(Plu plu){
+		plu.left.compile  + " + " + plu.right.compile
+	}
+	
+	def text(Sub sub){
+		sub.left.compile  + " - " + sub.right.compile
+	}
+	
+	def text(Mul mul){
+		mul.left.compile  + " * " + mul.right.compile
+	}
+	
+	def text(Div div){
+		div.left.compile  + " / " + div.right.compile
+	}
+
+	def text(Rate rate){
+		if(rate.name != null){
+			val Expression e = rate.value
+			rate.name + 
+			switch (e) {
+				Constant: ''' = «e.value»'''
+				default: " = "
+			}
+		} 
+	}
+	
+	def CharSequence compile(Expression e){
+		switch (e) {
+			Sub: '''(«e.left.compile» - «e.right.compile»)'''
+			Plu: '''(«e.left.compile» + «e.right.compile»)'''
+			Mul: '''(«e.left.compile» * «e.right.compile»)'''
+			Div: '''(«e.left.compile» / «e.right.compile»)'''
+			Rate: '''«e.rate.name»'''
+			Constant: '''«e.value»'''
+		}
+	}
 }
