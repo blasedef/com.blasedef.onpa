@@ -11,6 +11,25 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional,
  org.eclipse.emf.codegen.ecore;resolution:=optional,
  org.eclipse.emf.mwe.utils;resolution:=optional,
- org.eclipse.emf.mwe2.launch;resolution:=optional
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types,
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: com.blasedef.onpa,
+ com.blasedef.onpa.services,
+ com.blasedef.onpa.oNPA,
+ com.blasedef.onpa.oNPA.impl,
+ com.blasedef.onpa.oNPA.util,
+ com.blasedef.onpa.serializer,
+ com.blasedef.onpa.parser.antlr,
+ com.blasedef.onpa.parser.antlr.internal,
+ com.blasedef.onpa.validation,
+ com.blasedef.onpa.scoping,
+ com.blasedef.onpa.generator,
+ com.blasedef.onpa.formatting

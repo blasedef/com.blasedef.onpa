@@ -2,8 +2,36 @@ grammar com.blasedef.onpa.ONPA with org.eclipse.xtext.common.Terminals
 
 generate oNPA "http://www.blasedef.com/onpa/ONPA"
 
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
 Model:
-	greetings+=Greeting*;
+	rates+=Rate+
+;
+
+Rate:
+	name=LOWER "=" value=Expression ";"
+;
+
+Expression:
+	Subtraction;
 	
-Greeting:
-	'Hello' name=ID '!';
+Subtraction returns Expression:
+	Addition ({Sub.left=current} '-' right=Addition)*;
+	
+Addition returns Expression:
+	Multiplication ({Plu.left=current} '+' right=Multiplication)*;
+
+Multiplication returns Expression:
+	Division ({Mul.left=current} '*' right=Division)*;
+	
+Division returns Expression:
+	PrimaryExpression ({Div.left=current} '/' right=PrimaryExpression)*;
+
+PrimaryExpression returns Expression:
+	'(' Expression ')' | {Constant} value=Double | {Rate} rate=[Rate|LOWER];
+
+Double returns ecore::EDouble:
+	 INT ('.' INT ('e'|'E' '-'? INT)?)?
+;
+	
+terminal LOWER: ('a'..'z')+ (ID)?;
