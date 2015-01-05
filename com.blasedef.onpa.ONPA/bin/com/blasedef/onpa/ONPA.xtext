@@ -1,0 +1,9 @@
+grammar com.blasedef.onpa.ONPA with org.eclipse.xtext.common.Terminals
+
+generate oNPA "http://www.blasedef.com/onpa/ONPA"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
