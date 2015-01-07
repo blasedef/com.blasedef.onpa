@@ -3,54 +3,48 @@
 package com.blasedef.onpa.oNPA.impl;
 
 import com.blasedef.onpa.oNPA.ONPAPackage;
+import com.blasedef.onpa.oNPA.Store;
 import com.blasedef.onpa.oNPA.ValueExpression;
-import com.blasedef.onpa.oNPA.Values;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Values</b></em>'.
+ * An implementation of the model object '<em><b>Value Expression</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.blasedef.onpa.oNPA.impl.ValuesImpl#getValues <em>Values</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.impl.ValueExpressionImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ValuesImpl extends MinimalEObjectImpl.Container implements Values
+public class ValueExpressionImpl extends MinimalEObjectImpl.Container implements ValueExpression
 {
   /**
-   * The cached value of the '{@link #getValues() <em>Values</em>}' containment reference list.
+   * The cached value of the '{@link #getName() <em>Name</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValues()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected EList<ValueExpression> values;
+  protected Store name;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ValuesImpl()
+  protected ValueExpressionImpl()
   {
     super();
   }
@@ -63,7 +57,7 @@ public class ValuesImpl extends MinimalEObjectImpl.Container implements Values
   @Override
   protected EClass eStaticClass()
   {
-    return ONPAPackage.Literals.VALUES;
+    return ONPAPackage.Literals.VALUE_EXPRESSION;
   }
 
   /**
@@ -71,13 +65,19 @@ public class ValuesImpl extends MinimalEObjectImpl.Container implements Values
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ValueExpression> getValues()
+  public Store getName()
   {
-    if (values == null)
+    if (name != null && name.eIsProxy())
     {
-      values = new EObjectContainmentEList<ValueExpression>(ValueExpression.class, this, ONPAPackage.VALUES__VALUES);
+      InternalEObject oldName = (InternalEObject)name;
+      name = (Store)eResolveProxy(oldName);
+      if (name != oldName)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ONPAPackage.VALUE_EXPRESSION__NAME, oldName, name));
+      }
     }
-    return values;
+    return name;
   }
 
   /**
@@ -85,15 +85,22 @@ public class ValuesImpl extends MinimalEObjectImpl.Container implements Values
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  public Store basicGetName()
   {
-    switch (featureID)
-    {
-      case ONPAPackage.VALUES__VALUES:
-        return ((InternalEList<?>)getValues()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(Store newName)
+  {
+    Store oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.VALUE_EXPRESSION__NAME, oldName, name));
   }
 
   /**
@@ -106,8 +113,9 @@ public class ValuesImpl extends MinimalEObjectImpl.Container implements Values
   {
     switch (featureID)
     {
-      case ONPAPackage.VALUES__VALUES:
-        return getValues();
+      case ONPAPackage.VALUE_EXPRESSION__NAME:
+        if (resolve) return getName();
+        return basicGetName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,15 +125,13 @@ public class ValuesImpl extends MinimalEObjectImpl.Container implements Values
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case ONPAPackage.VALUES__VALUES:
-        getValues().clear();
-        getValues().addAll((Collection<? extends ValueExpression>)newValue);
+      case ONPAPackage.VALUE_EXPRESSION__NAME:
+        setName((Store)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +147,8 @@ public class ValuesImpl extends MinimalEObjectImpl.Container implements Values
   {
     switch (featureID)
     {
-      case ONPAPackage.VALUES__VALUES:
-        getValues().clear();
+      case ONPAPackage.VALUE_EXPRESSION__NAME:
+        setName((Store)null);
         return;
     }
     super.eUnset(featureID);
@@ -158,10 +164,10 @@ public class ValuesImpl extends MinimalEObjectImpl.Container implements Values
   {
     switch (featureID)
     {
-      case ONPAPackage.VALUES__VALUES:
-        return values != null && !values.isEmpty();
+      case ONPAPackage.VALUE_EXPRESSION__NAME:
+        return name != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //ValuesImpl
+} //ValueExpressionImpl

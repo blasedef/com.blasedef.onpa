@@ -104,13 +104,13 @@ public interface ONPAFactory extends EFactory
   Values createValues();
 
   /**
-   * Returns a new object of class '<em>Value Primary</em>'.
+   * Returns a new object of class '<em>Value Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Value Primary</em>'.
+   * @return a new object of class '<em>Value Expression</em>'.
    * @generated
    */
-  ValuePrimary createValuePrimary();
+  ValueExpression createValueExpression();
 
   /**
    * Returns a new object of class '<em>Evaluations</em>'.
@@ -129,6 +129,15 @@ public interface ONPAFactory extends EFactory
    * @generated
    */
   Evaluation createEvaluation();
+
+  /**
+   * Returns a new object of class '<em>Predicates</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Predicates</em>'.
+   * @generated
+   */
+  Predicates createPredicates();
 
   /**
    * Returns a new object of class '<em>Store</em>'.

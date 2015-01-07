@@ -139,10 +139,10 @@ public class ONPASwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ONPAPackage.VALUE_PRIMARY:
+      case ONPAPackage.VALUE_EXPRESSION:
       {
-        ValuePrimary valuePrimary = (ValuePrimary)theEObject;
-        T result = caseValuePrimary(valuePrimary);
+        ValueExpression valueExpression = (ValueExpression)theEObject;
+        T result = caseValueExpression(valueExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -157,6 +157,13 @@ public class ONPASwitch<T> extends Switch<T>
       {
         Evaluation evaluation = (Evaluation)theEObject;
         T result = caseEvaluation(evaluation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ONPAPackage.PREDICATES:
+      {
+        Predicates predicates = (Predicates)theEObject;
+        T result = casePredicates(predicates);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -427,17 +434,17 @@ public class ONPASwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Value Primary</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Value Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Value Primary</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Value Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseValuePrimary(ValuePrimary object)
+  public T caseValueExpression(ValueExpression object)
   {
     return null;
   }
@@ -470,6 +477,22 @@ public class ONPASwitch<T> extends Switch<T>
    * @generated
    */
   public T caseEvaluation(Evaluation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Predicates</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Predicates</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePredicates(Predicates object)
   {
     return null;
   }

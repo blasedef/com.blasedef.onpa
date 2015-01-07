@@ -7,30 +7,27 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 Model:
 	stores+=Store*
 	actions+=Action*
+	//predicates+=Predicates*
 ;
 
 Action:
-	(BroadcastOut | BroadcastIn | UnicastOut | UnicastIn) ";"
+	(BroadcastOut  | UnicastOut | BroadcastIn | UnicastIn) ";"
 ;
 
 BroadcastOut:
-	name=LOWER "*" predicate=Predicate evaluation=Evaluations update=Updates
+	name=LOWER "*"  predicate=Predicates evaluation=Evaluations update=Updates
 ;
 
 BroadcastIn:
-	name=LOWER "*" predicate=Predicate values=Values update=Updates
+	name=LOWER "*"  values=Values update=Updates
 ;
 
 UnicastOut:
-	name=LOWER predicate=Predicate evaluation=Evaluations update=Updates
+	name=LOWER  predicate=Predicates evaluation=Evaluations update=Updates
 ;
 
 UnicastIn:
-	name=LOWER predicate=Predicate values=Values update=Updates
-;
-
-Predicate:
-	"["  "]"
+	name=LOWER  values=Values update=Updates
 ;
 
 Updates:
@@ -38,14 +35,14 @@ Updates:
 ;
 
 UpdateExpression returns UpdateExpression:
-	name=[Store|LOWER] "=" expression=Expression ";"
+	name=[Store|LOWER] "=" value=Expression ";"
 ;
 
 Values:
-	{Values} "(" (values+=ValuePrimary)? ")" //What is the point of this? (Knowing what local stores belong to who? - if so, shouldn't this be automatic?) - CDW 07.01.15
+	{Values} "(" (values+=ValueExpression)? ")" //What is the point of this? (Knowing what local stores belong to who? - if so, shouldn't this be automatic?) - CDW 07.01.15
 ;
 
-ValuePrimary:
+ValueExpression:
 	name=[Store|LOWER] ";"
 ;
 
@@ -55,6 +52,10 @@ Evaluations:
 
 Evaluation:
 	name=[Store|LOWER] "=" value=Expression
+;
+
+Predicates:
+	 {Predicates} "[" value=Expression "]"
 ;
 
 Store:
@@ -128,7 +129,11 @@ Atomic returns Expression:
 	{DoubleConstant} value=Double |
 	{BoolConstant} value=('true'|'false') |
 	{ReferencedRate} value=[AttributeValue|LOWER] |
-	{ReferencedRate} "this."value=[AttributeValue|LOWER]
+	{ReferencedRate} "this."value=[AttributeValue|LOWER] 
+;
+
+LowerCase returns ecore::EString:
+	LOWER
 ;
 
 Double returns ecore::EDouble:

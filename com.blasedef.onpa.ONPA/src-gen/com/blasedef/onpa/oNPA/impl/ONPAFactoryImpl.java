@@ -73,9 +73,10 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
       case ONPAPackage.UPDATES: return createUpdates();
       case ONPAPackage.UPDATE_EXPRESSION: return createUpdateExpression();
       case ONPAPackage.VALUES: return createValues();
-      case ONPAPackage.VALUE_PRIMARY: return createValuePrimary();
+      case ONPAPackage.VALUE_EXPRESSION: return createValueExpression();
       case ONPAPackage.EVALUATIONS: return createEvaluations();
       case ONPAPackage.EVALUATION: return createEvaluation();
+      case ONPAPackage.PREDICATES: return createPredicates();
       case ONPAPackage.STORE: return createStore();
       case ONPAPackage.ATTRIBUTE_VALUE: return createAttributeValue();
       case ONPAPackage.EXPRESSION: return createExpression();
@@ -200,10 +201,10 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ValuePrimary createValuePrimary()
+  public ValueExpression createValueExpression()
   {
-    ValuePrimaryImpl valuePrimary = new ValuePrimaryImpl();
-    return valuePrimary;
+    ValueExpressionImpl valueExpression = new ValueExpressionImpl();
+    return valueExpression;
   }
 
   /**
@@ -226,6 +227,17 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
   {
     EvaluationImpl evaluation = new EvaluationImpl();
     return evaluation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Predicates createPredicates()
+  {
+    PredicatesImpl predicates = new PredicatesImpl();
+    return predicates;
   }
 
   /**

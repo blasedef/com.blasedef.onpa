@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.blasedef.onpa.oNPA.UpdateExpression#getName <em>Name</em>}</li>
- *   <li>{@link com.blasedef.onpa.oNPA.UpdateExpression#getExpression <em>Expression</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.UpdateExpression#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,29 +50,29 @@ public interface UpdateExpression extends EObject
   void setName(Store value);
 
   /**
-   * Returns the value of the '<em><b>Expression</b></em>' containment reference.
+   * Returns the value of the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Expression</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Value</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Expression</em>' containment reference.
-   * @see #setExpression(Expression)
-   * @see com.blasedef.onpa.oNPA.ONPAPackage#getUpdateExpression_Expression()
+   * @return the value of the '<em>Value</em>' containment reference.
+   * @see #setValue(Expression)
+   * @see com.blasedef.onpa.oNPA.ONPAPackage#getUpdateExpression_Value()
    * @model containment="true"
    * @generated
    */
-  Expression getExpression();
+  Expression getValue();
 
   /**
-   * Sets the value of the '{@link com.blasedef.onpa.oNPA.UpdateExpression#getExpression <em>Expression</em>}' containment reference.
+   * Sets the value of the '{@link com.blasedef.onpa.oNPA.UpdateExpression#getValue <em>Value</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Expression</em>' containment reference.
-   * @see #getExpression()
+   * @param value the new value of the '<em>Value</em>' containment reference.
+   * @see #getValue()
    * @generated
    */
-  void setExpression(Expression value);
+  void setValue(Expression value);
 
 } // UpdateExpression

@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.blasedef.onpa.oNPA.impl.ActionImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.blasedef.onpa.oNPA.impl.ActionImpl#getPredicate <em>Predicate</em>}</li>
  *   <li>{@link com.blasedef.onpa.oNPA.impl.ActionImpl#getUpdate <em>Update</em>}</li>
  * </ul>
  * </p>
@@ -51,26 +50,6 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getPredicate() <em>Predicate</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPredicate()
-   * @generated
-   * @ordered
-   */
-  protected static final String PREDICATE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getPredicate() <em>Predicate</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPredicate()
-   * @generated
-   * @ordered
-   */
-  protected String predicate = PREDICATE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getUpdate() <em>Update</em>}' containment reference.
@@ -124,29 +103,6 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
     name = newName;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.ACTION__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getPredicate()
-  {
-    return predicate;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setPredicate(String newPredicate)
-  {
-    String oldPredicate = predicate;
-    predicate = newPredicate;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.ACTION__PREDICATE, oldPredicate, predicate));
   }
 
   /**
@@ -225,8 +181,6 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
     {
       case ONPAPackage.ACTION__NAME:
         return getName();
-      case ONPAPackage.ACTION__PREDICATE:
-        return getPredicate();
       case ONPAPackage.ACTION__UPDATE:
         return getUpdate();
     }
@@ -245,9 +199,6 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
     {
       case ONPAPackage.ACTION__NAME:
         setName((String)newValue);
-        return;
-      case ONPAPackage.ACTION__PREDICATE:
-        setPredicate((String)newValue);
         return;
       case ONPAPackage.ACTION__UPDATE:
         setUpdate((Updates)newValue);
@@ -269,9 +220,6 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
       case ONPAPackage.ACTION__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case ONPAPackage.ACTION__PREDICATE:
-        setPredicate(PREDICATE_EDEFAULT);
-        return;
       case ONPAPackage.ACTION__UPDATE:
         setUpdate((Updates)null);
         return;
@@ -291,8 +239,6 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
     {
       case ONPAPackage.ACTION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case ONPAPackage.ACTION__PREDICATE:
-        return PREDICATE_EDEFAULT == null ? predicate != null : !PREDICATE_EDEFAULT.equals(predicate);
       case ONPAPackage.ACTION__UPDATE:
         return update != null;
     }
@@ -312,8 +258,6 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", predicate: ");
-    result.append(predicate);
     result.append(')');
     return result.toString();
   }

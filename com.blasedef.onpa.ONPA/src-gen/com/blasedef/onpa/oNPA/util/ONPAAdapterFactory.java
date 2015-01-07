@@ -120,9 +120,9 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
         return createValuesAdapter();
       }
       @Override
-      public Adapter caseValuePrimary(ValuePrimary object)
+      public Adapter caseValueExpression(ValueExpression object)
       {
-        return createValuePrimaryAdapter();
+        return createValueExpressionAdapter();
       }
       @Override
       public Adapter caseEvaluations(Evaluations object)
@@ -133,6 +133,11 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
       public Adapter caseEvaluation(Evaluation object)
       {
         return createEvaluationAdapter();
+      }
+      @Override
+      public Adapter casePredicates(Predicates object)
+      {
+        return createPredicatesAdapter();
       }
       @Override
       public Adapter caseStore(Store object)
@@ -367,16 +372,16 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.ValuePrimary <em>Value Primary</em>}'.
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.ValueExpression <em>Value Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.blasedef.onpa.oNPA.ValuePrimary
+   * @see com.blasedef.onpa.oNPA.ValueExpression
    * @generated
    */
-  public Adapter createValuePrimaryAdapter()
+  public Adapter createValueExpressionAdapter()
   {
     return null;
   }
@@ -407,6 +412,21 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createEvaluationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.Predicates <em>Predicates</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.Predicates
+   * @generated
+   */
+  public Adapter createPredicatesAdapter()
   {
     return null;
   }
