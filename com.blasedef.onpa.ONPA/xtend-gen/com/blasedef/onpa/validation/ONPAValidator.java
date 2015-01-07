@@ -3,16 +3,21 @@
  */
 package com.blasedef.onpa.validation;
 
-import com.blasedef.onpa.oNPA.Constant;
+import com.blasedef.onpa.oNPA.And;
+import com.blasedef.onpa.oNPA.AttributeValue;
+import com.blasedef.onpa.oNPA.Comparison;
 import com.blasedef.onpa.oNPA.Div;
+import com.blasedef.onpa.oNPA.Equality;
 import com.blasedef.onpa.oNPA.Expression;
 import com.blasedef.onpa.oNPA.Mul;
+import com.blasedef.onpa.oNPA.Not;
 import com.blasedef.onpa.oNPA.ONPAPackage;
+import com.blasedef.onpa.oNPA.Or;
 import com.blasedef.onpa.oNPA.Plu;
-import com.blasedef.onpa.oNPA.Rate;
+import com.blasedef.onpa.oNPA.ReferencedRate;
+import com.blasedef.onpa.oNPA.Store;
 import com.blasedef.onpa.oNPA.Sub;
 import com.blasedef.onpa.validation.AbstractONPAValidator;
-import com.google.common.base.Objects;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
@@ -29,74 +34,113 @@ public class ONPAValidator extends AbstractONPAValidator {
   public final static String SELF_REFERENCING_RATE = "selfReferencingRate";
   
   @Check
-  public void checkNotSelfReferencing(final Rate rate) {
-    boolean _equals = Objects.equal(rate, Constant.class);
-    if (_equals) {
-      return;
-    }
+  public void checkNotSelfReferencing(final Store store) {
     ArrayList<String> strings = new ArrayList<String>();
-    String _name = rate.getName();
+    String _name = ((AttributeValue) store).getName();
     strings.add(_name);
-    Expression _value = rate.getValue();
-    this.findRateNames(_value, strings);
+    Expression _value = ((AttributeValue) store).getValue();
+    this.findReferencedRates(_value, strings);
     Set<String> setOfString = new HashSet<String>(strings);
     int _size = setOfString.size();
     int _size_1 = strings.size();
-    boolean _equals_1 = (_size == _size_1);
-    if (_equals_1) {
+    boolean _equals = (_size == _size_1);
+    if (_equals) {
       return;
     } else {
-      String _name_1 = rate.getName();
+      String _name_1 = ((AttributeValue) store).getName();
       String _plus = ("Cannot have self referencing rates. \'" + _name_1);
       String _plus_1 = (_plus + "\' is seen in the expression");
-      EReference _rate_Value = ONPAPackage.eINSTANCE.getRate_Value();
-      this.error(_plus_1, _rate_Value, 
+      EReference _attributeValue_Value = ONPAPackage.eINSTANCE.getAttributeValue_Value();
+      this.error(_plus_1, _attributeValue_Value, 
         ONPAValidator.SELF_REFERENCING_RATE);
     }
   }
   
-  public void findRateNames(final Expression e, final ArrayList<String> strings) {
+  public void findReferencedRates(final Expression e, final ArrayList<String> strings) {
     boolean _matched = false;
+    if (!_matched) {
+      if (e instanceof Or) {
+        _matched=true;
+        Expression _left = ((Or)e).getLeft();
+        this.findReferencedRates(_left, strings);
+        Expression _right = ((Or)e).getRight();
+        this.findReferencedRates(_right, strings);
+      }
+    }
+    if (!_matched) {
+      if (e instanceof And) {
+        _matched=true;
+        Expression _left = ((And)e).getLeft();
+        this.findReferencedRates(_left, strings);
+        Expression _right = ((And)e).getRight();
+        this.findReferencedRates(_right, strings);
+      }
+    }
+    if (!_matched) {
+      if (e instanceof Equality) {
+        _matched=true;
+        Expression _left = ((Equality)e).getLeft();
+        this.findReferencedRates(_left, strings);
+        Expression _right = ((Equality)e).getRight();
+        this.findReferencedRates(_right, strings);
+      }
+    }
+    if (!_matched) {
+      if (e instanceof Comparison) {
+        _matched=true;
+        Expression _left = ((Comparison)e).getLeft();
+        this.findReferencedRates(_left, strings);
+        Expression _right = ((Comparison)e).getRight();
+        this.findReferencedRates(_right, strings);
+      }
+    }
     if (!_matched) {
       if (e instanceof Sub) {
         _matched=true;
         Expression _left = ((Sub)e).getLeft();
-        this.findRateNames(_left, strings);
+        this.findReferencedRates(_left, strings);
         Expression _right = ((Sub)e).getRight();
-        this.findRateNames(_right, strings);
+        this.findReferencedRates(_right, strings);
       }
     }
     if (!_matched) {
       if (e instanceof Plu) {
         _matched=true;
         Expression _left = ((Plu)e).getLeft();
-        this.findRateNames(_left, strings);
+        this.findReferencedRates(_left, strings);
         Expression _right = ((Plu)e).getRight();
-        this.findRateNames(_right, strings);
+        this.findReferencedRates(_right, strings);
       }
     }
     if (!_matched) {
       if (e instanceof Mul) {
         _matched=true;
         Expression _left = ((Mul)e).getLeft();
-        this.findRateNames(_left, strings);
+        this.findReferencedRates(_left, strings);
         Expression _right = ((Mul)e).getRight();
-        this.findRateNames(_right, strings);
+        this.findReferencedRates(_right, strings);
       }
     }
     if (!_matched) {
       if (e instanceof Div) {
         _matched=true;
         Expression _left = ((Div)e).getLeft();
-        this.findRateNames(_left, strings);
+        this.findReferencedRates(_left, strings);
         Expression _right = ((Div)e).getRight();
-        this.findRateNames(_right, strings);
+        this.findReferencedRates(_right, strings);
       }
     }
     if (!_matched) {
-      if (e instanceof Rate) {
+      if (e instanceof Not) {
         _matched=true;
-        Rate _rate = ((Rate)e).getRate();
+        Expression _expression = ((Not)e).getExpression();
+        this.findReferencedRates(_expression, strings);
+      }
+    }
+    if (!_matched) {
+      if (e instanceof ReferencedRate) {
+        _matched=true;
+        AttributeValue _rate = ((ReferencedRate)e).getRate();
         String _name = _rate.getName();
         strings.add(_name);
       }

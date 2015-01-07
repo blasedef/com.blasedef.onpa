@@ -65,13 +65,28 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
     switch (eClass.getClassifierID())
     {
       case ONPAPackage.MODEL: return createModel();
-      case ONPAPackage.RATE: return createRate();
+      case ONPAPackage.ACTION: return createAction();
+      case ONPAPackage.BROADCAST_OUT: return createBroadcastOut();
+      case ONPAPackage.BROADCAST_IN: return createBroadcastIn();
+      case ONPAPackage.UNICAST_OUT: return createUnicastOut();
+      case ONPAPackage.UNICAST_IN: return createUnicastIn();
+      case ONPAPackage.UPDATE: return createUpdate();
+      case ONPAPackage.UPDATE_EXPRESSION: return createUpdateExpression();
+      case ONPAPackage.STORE: return createStore();
+      case ONPAPackage.ATTRIBUTE_VALUE: return createAttributeValue();
       case ONPAPackage.EXPRESSION: return createExpression();
+      case ONPAPackage.OR: return createOr();
+      case ONPAPackage.AND: return createAnd();
+      case ONPAPackage.EQUALITY: return createEquality();
+      case ONPAPackage.COMPARISON: return createComparison();
       case ONPAPackage.SUB: return createSub();
       case ONPAPackage.PLU: return createPlu();
       case ONPAPackage.MUL: return createMul();
       case ONPAPackage.DIV: return createDiv();
-      case ONPAPackage.CONSTANT: return createConstant();
+      case ONPAPackage.NOT: return createNot();
+      case ONPAPackage.DOUBLE_CONSTANT: return createDoubleConstant();
+      case ONPAPackage.BOOL_CONSTANT: return createBoolConstant();
+      case ONPAPackage.REFERENCED_RATE: return createReferencedRate();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -93,10 +108,98 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Rate createRate()
+  public Action createAction()
   {
-    RateImpl rate = new RateImpl();
-    return rate;
+    ActionImpl action = new ActionImpl();
+    return action;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BroadcastOut createBroadcastOut()
+  {
+    BroadcastOutImpl broadcastOut = new BroadcastOutImpl();
+    return broadcastOut;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BroadcastIn createBroadcastIn()
+  {
+    BroadcastInImpl broadcastIn = new BroadcastInImpl();
+    return broadcastIn;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public UnicastOut createUnicastOut()
+  {
+    UnicastOutImpl unicastOut = new UnicastOutImpl();
+    return unicastOut;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public UnicastIn createUnicastIn()
+  {
+    UnicastInImpl unicastIn = new UnicastInImpl();
+    return unicastIn;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Update createUpdate()
+  {
+    UpdateImpl update = new UpdateImpl();
+    return update;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public UpdateExpression createUpdateExpression()
+  {
+    UpdateExpressionImpl updateExpression = new UpdateExpressionImpl();
+    return updateExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Store createStore()
+  {
+    StoreImpl store = new StoreImpl();
+    return store;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AttributeValue createAttributeValue()
+  {
+    AttributeValueImpl attributeValue = new AttributeValueImpl();
+    return attributeValue;
   }
 
   /**
@@ -108,6 +211,50 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
   {
     ExpressionImpl expression = new ExpressionImpl();
     return expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Or createOr()
+  {
+    OrImpl or = new OrImpl();
+    return or;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public And createAnd()
+  {
+    AndImpl and = new AndImpl();
+    return and;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Equality createEquality()
+  {
+    EqualityImpl equality = new EqualityImpl();
+    return equality;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Comparison createComparison()
+  {
+    ComparisonImpl comparison = new ComparisonImpl();
+    return comparison;
   }
 
   /**
@@ -159,10 +306,43 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Constant createConstant()
+  public Not createNot()
   {
-    ConstantImpl constant = new ConstantImpl();
-    return constant;
+    NotImpl not = new NotImpl();
+    return not;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DoubleConstant createDoubleConstant()
+  {
+    DoubleConstantImpl doubleConstant = new DoubleConstantImpl();
+    return doubleConstant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BoolConstant createBoolConstant()
+  {
+    BoolConstantImpl boolConstant = new BoolConstantImpl();
+    return boolConstant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ReferencedRate createReferencedRate()
+  {
+    ReferencedRateImpl referencedRate = new ReferencedRateImpl();
+    return referencedRate;
   }
 
   /**

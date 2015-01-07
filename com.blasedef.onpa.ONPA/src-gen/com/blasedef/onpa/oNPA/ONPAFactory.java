@@ -32,13 +32,85 @@ public interface ONPAFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Rate</em>'.
+   * Returns a new object of class '<em>Action</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Rate</em>'.
+   * @return a new object of class '<em>Action</em>'.
    * @generated
    */
-  Rate createRate();
+  Action createAction();
+
+  /**
+   * Returns a new object of class '<em>Broadcast Out</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Broadcast Out</em>'.
+   * @generated
+   */
+  BroadcastOut createBroadcastOut();
+
+  /**
+   * Returns a new object of class '<em>Broadcast In</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Broadcast In</em>'.
+   * @generated
+   */
+  BroadcastIn createBroadcastIn();
+
+  /**
+   * Returns a new object of class '<em>Unicast Out</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Unicast Out</em>'.
+   * @generated
+   */
+  UnicastOut createUnicastOut();
+
+  /**
+   * Returns a new object of class '<em>Unicast In</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Unicast In</em>'.
+   * @generated
+   */
+  UnicastIn createUnicastIn();
+
+  /**
+   * Returns a new object of class '<em>Update</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Update</em>'.
+   * @generated
+   */
+  Update createUpdate();
+
+  /**
+   * Returns a new object of class '<em>Update Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Update Expression</em>'.
+   * @generated
+   */
+  UpdateExpression createUpdateExpression();
+
+  /**
+   * Returns a new object of class '<em>Store</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Store</em>'.
+   * @generated
+   */
+  Store createStore();
+
+  /**
+   * Returns a new object of class '<em>Attribute Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Attribute Value</em>'.
+   * @generated
+   */
+  AttributeValue createAttributeValue();
 
   /**
    * Returns a new object of class '<em>Expression</em>'.
@@ -48,6 +120,42 @@ public interface ONPAFactory extends EFactory
    * @generated
    */
   Expression createExpression();
+
+  /**
+   * Returns a new object of class '<em>Or</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Or</em>'.
+   * @generated
+   */
+  Or createOr();
+
+  /**
+   * Returns a new object of class '<em>And</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>And</em>'.
+   * @generated
+   */
+  And createAnd();
+
+  /**
+   * Returns a new object of class '<em>Equality</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Equality</em>'.
+   * @generated
+   */
+  Equality createEquality();
+
+  /**
+   * Returns a new object of class '<em>Comparison</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Comparison</em>'.
+   * @generated
+   */
+  Comparison createComparison();
 
   /**
    * Returns a new object of class '<em>Sub</em>'.
@@ -86,13 +194,40 @@ public interface ONPAFactory extends EFactory
   Div createDiv();
 
   /**
-   * Returns a new object of class '<em>Constant</em>'.
+   * Returns a new object of class '<em>Not</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Constant</em>'.
+   * @return a new object of class '<em>Not</em>'.
    * @generated
    */
-  Constant createConstant();
+  Not createNot();
+
+  /**
+   * Returns a new object of class '<em>Double Constant</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Double Constant</em>'.
+   * @generated
+   */
+  DoubleConstant createDoubleConstant();
+
+  /**
+   * Returns a new object of class '<em>Bool Constant</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Bool Constant</em>'.
+   * @generated
+   */
+  BoolConstant createBoolConstant();
+
+  /**
+   * Returns a new object of class '<em>Referenced Rate</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Referenced Rate</em>'.
+   * @generated
+   */
+  ReferencedRate createReferencedRate();
 
   /**
    * Returns the package supported by this factory.

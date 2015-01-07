@@ -80,14 +80,74 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseRate(Rate object)
+      public Adapter caseAction(Action object)
       {
-        return createRateAdapter();
+        return createActionAdapter();
+      }
+      @Override
+      public Adapter caseBroadcastOut(BroadcastOut object)
+      {
+        return createBroadcastOutAdapter();
+      }
+      @Override
+      public Adapter caseBroadcastIn(BroadcastIn object)
+      {
+        return createBroadcastInAdapter();
+      }
+      @Override
+      public Adapter caseUnicastOut(UnicastOut object)
+      {
+        return createUnicastOutAdapter();
+      }
+      @Override
+      public Adapter caseUnicastIn(UnicastIn object)
+      {
+        return createUnicastInAdapter();
+      }
+      @Override
+      public Adapter caseUpdate(Update object)
+      {
+        return createUpdateAdapter();
+      }
+      @Override
+      public Adapter caseUpdateExpression(UpdateExpression object)
+      {
+        return createUpdateExpressionAdapter();
+      }
+      @Override
+      public Adapter caseStore(Store object)
+      {
+        return createStoreAdapter();
+      }
+      @Override
+      public Adapter caseAttributeValue(AttributeValue object)
+      {
+        return createAttributeValueAdapter();
       }
       @Override
       public Adapter caseExpression(Expression object)
       {
         return createExpressionAdapter();
+      }
+      @Override
+      public Adapter caseOr(Or object)
+      {
+        return createOrAdapter();
+      }
+      @Override
+      public Adapter caseAnd(And object)
+      {
+        return createAndAdapter();
+      }
+      @Override
+      public Adapter caseEquality(Equality object)
+      {
+        return createEqualityAdapter();
+      }
+      @Override
+      public Adapter caseComparison(Comparison object)
+      {
+        return createComparisonAdapter();
       }
       @Override
       public Adapter caseSub(Sub object)
@@ -110,9 +170,24 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
         return createDivAdapter();
       }
       @Override
-      public Adapter caseConstant(Constant object)
+      public Adapter caseNot(Not object)
       {
-        return createConstantAdapter();
+        return createNotAdapter();
+      }
+      @Override
+      public Adapter caseDoubleConstant(DoubleConstant object)
+      {
+        return createDoubleConstantAdapter();
+      }
+      @Override
+      public Adapter caseBoolConstant(BoolConstant object)
+      {
+        return createBoolConstantAdapter();
+      }
+      @Override
+      public Adapter caseReferencedRate(ReferencedRate object)
+      {
+        return createReferencedRateAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -152,16 +227,136 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.Rate <em>Rate</em>}'.
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.Action <em>Action</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.blasedef.onpa.oNPA.Rate
+   * @see com.blasedef.onpa.oNPA.Action
    * @generated
    */
-  public Adapter createRateAdapter()
+  public Adapter createActionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.BroadcastOut <em>Broadcast Out</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.BroadcastOut
+   * @generated
+   */
+  public Adapter createBroadcastOutAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.BroadcastIn <em>Broadcast In</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.BroadcastIn
+   * @generated
+   */
+  public Adapter createBroadcastInAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.UnicastOut <em>Unicast Out</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.UnicastOut
+   * @generated
+   */
+  public Adapter createUnicastOutAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.UnicastIn <em>Unicast In</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.UnicastIn
+   * @generated
+   */
+  public Adapter createUnicastInAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.Update <em>Update</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.Update
+   * @generated
+   */
+  public Adapter createUpdateAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.UpdateExpression <em>Update Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.UpdateExpression
+   * @generated
+   */
+  public Adapter createUpdateExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.Store <em>Store</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.Store
+   * @generated
+   */
+  public Adapter createStoreAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.AttributeValue <em>Attribute Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.AttributeValue
+   * @generated
+   */
+  public Adapter createAttributeValueAdapter()
   {
     return null;
   }
@@ -177,6 +372,66 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.Or <em>Or</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.Or
+   * @generated
+   */
+  public Adapter createOrAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.And <em>And</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.And
+   * @generated
+   */
+  public Adapter createAndAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.Equality <em>Equality</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.Equality
+   * @generated
+   */
+  public Adapter createEqualityAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.Comparison <em>Comparison</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.Comparison
+   * @generated
+   */
+  public Adapter createComparisonAdapter()
   {
     return null;
   }
@@ -242,16 +497,61 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.Constant <em>Constant</em>}'.
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.Not <em>Not</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.blasedef.onpa.oNPA.Constant
+   * @see com.blasedef.onpa.oNPA.Not
    * @generated
    */
-  public Adapter createConstantAdapter()
+  public Adapter createNotAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.DoubleConstant <em>Double Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.DoubleConstant
+   * @generated
+   */
+  public Adapter createDoubleConstantAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.BoolConstant <em>Bool Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.BoolConstant
+   * @generated
+   */
+  public Adapter createBoolConstantAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.ReferencedRate <em>Referenced Rate</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.ReferencedRate
+   * @generated
+   */
+  public Adapter createReferencedRateAdapter()
   {
     return null;
   }

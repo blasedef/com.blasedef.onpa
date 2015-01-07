@@ -23,7 +23,7 @@ class ValidationTest {
 	def void testCheckNotSelfReferencing(){
 		'''
 		a = 0.1 + a;
-		'''.parse.assertError(ONPAPackage::eINSTANCE.rate,
+		'''.parse.assertError(ONPAPackage::eINSTANCE.store,
 			ONPAValidator::SELF_REFERENCING_RATE,
 			"Cannot have self referencing rates. 'a' is seen in the expression"
 		)

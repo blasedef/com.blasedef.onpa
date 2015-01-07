@@ -1,13 +1,21 @@
 package com.blasedef.onpa.ONPA.tests;
 
 import com.blasedef.onpa.ONPAInjectorProvider;
-import com.blasedef.onpa.oNPA.Constant;
+import com.blasedef.onpa.oNPA.And;
+import com.blasedef.onpa.oNPA.AttributeValue;
+import com.blasedef.onpa.oNPA.BoolConstant;
+import com.blasedef.onpa.oNPA.Comparison;
 import com.blasedef.onpa.oNPA.Div;
+import com.blasedef.onpa.oNPA.DoubleConstant;
+import com.blasedef.onpa.oNPA.Equality;
 import com.blasedef.onpa.oNPA.Expression;
 import com.blasedef.onpa.oNPA.Model;
 import com.blasedef.onpa.oNPA.Mul;
+import com.blasedef.onpa.oNPA.Not;
+import com.blasedef.onpa.oNPA.Or;
 import com.blasedef.onpa.oNPA.Plu;
-import com.blasedef.onpa.oNPA.Rate;
+import com.blasedef.onpa.oNPA.ReferencedRate;
+import com.blasedef.onpa.oNPA.Store;
 import com.blasedef.onpa.oNPA.Sub;
 import com.google.inject.Inject;
 import org.eclipse.emf.common.util.EList;
@@ -37,7 +45,7 @@ public class ModelParserTest {
   
   private CharSequence output;
   
-  private Rate intermediateRate;
+  private AttributeValue intermediateStore;
   
   private Model intermediateModel;
   
@@ -126,6 +134,138 @@ public class ModelParserTest {
   }
   
   @Test
+  public void testVariableExpressionOr1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = true || false;");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testVariableExpressionAnd1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = true && false;");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testVariableExpressionEqu1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = true != false;");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testVariableExpressionEqu2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = true == true;");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testVariableExpressionCom1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = 2.0 >= 2.0;");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testVariableExpressionCom2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = 2.0 > 1.0;");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testVariableExpressionCom3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = 1.0 < 2.0;");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testVariableExpressionCom4() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = 2.0 >= 2.0;");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testVariableExpressionNot1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = !true;");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testVariableExpressionBoolConstant1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = true;");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testVariableExpressionBoolConstant2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = false;");
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
   public void testVariableExpressionRat1() {
     try {
       StringConcatenation _builder = new StringConcatenation();
@@ -174,6 +314,73 @@ public class ModelParserTest {
   }
   
   @Test
+  public void testSimpleAction1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("broadcastOut * [ ] < >  ;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleAction2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("broadcastIn * [ ] ( )  ;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleAction3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("unicastOut [ ] < >  ;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleAction4() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("unicastIn [ ] ( )  ;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testUpdateAction1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a = 0.1;");
+      _builder.newLine();
+      _builder.append("broadcastOut * [ ] < > { } ;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
   public void testSimple() {
     this.assertRepr("i = 10.0;", "10.0");
   }
@@ -181,6 +388,66 @@ public class ModelParserTest {
   @Test
   public void testSimple1() {
     this.assertRepr("i = (10.0);", "10.0");
+  }
+  
+  @Test
+  public void testSimple2() {
+    this.assertRepr("i = true;", "true");
+  }
+  
+  @Test
+  public void testSimple3() {
+    this.assertRepr("i = false;", "false");
+  }
+  
+  @Test
+  public void testSimple4() {
+    this.assertRepr("i = !false;", "! false");
+  }
+  
+  @Test
+  public void testSimple5() {
+    this.assertRepr("i = !true;", "! true");
+  }
+  
+  @Test
+  public void testSimpleOr() {
+    this.assertRepr("i = true || false);", "(true || false)");
+  }
+  
+  @Test
+  public void testSimpleAnd() {
+    this.assertRepr("i = true && false);", "(true && false)");
+  }
+  
+  @Test
+  public void testSimpleEquality1() {
+    this.assertRepr("i = true == true);", "(true == true)");
+  }
+  
+  @Test
+  public void testSimpleEquality2() {
+    this.assertRepr("i = true != false);", "(true != false)");
+  }
+  
+  @Test
+  public void testSimpleComparison1() {
+    this.assertRepr("i = 0.1 < 0.2);", "(0.1 < 0.2)");
+  }
+  
+  @Test
+  public void testSimpleComparison2() {
+    this.assertRepr("i = 0.2 <= 0.2);", "(0.2 <= 0.2)");
+  }
+  
+  @Test
+  public void testSimpleComparison3() {
+    this.assertRepr("i = 0.2 > 0.1);", "(0.2 > 0.1)");
+  }
+  
+  @Test
+  public void testSimpleComparison4() {
+    this.assertRepr("i = 0.2 >= 0.2);", "(0.2 >= 0.2)");
   }
   
   @Test
@@ -207,10 +474,10 @@ public class ModelParserTest {
     try {
       Model _parse = this._parseHelper.parse(input);
       this.intermediateModel = _parse;
-      EList<Rate> _rates = this.intermediateModel.getRates();
-      Rate _last = IterableExtensions.<Rate>last(_rates);
-      this.intermediateRate = _last;
-      Expression _value = this.intermediateRate.getValue();
+      EList<Store> _stores = this.intermediateModel.getStores();
+      Store _last = IterableExtensions.<Store>last(_stores);
+      this.intermediateStore = ((AttributeValue) _last);
+      Expression _value = this.intermediateStore.getValue();
       CharSequence _stringRepr = this.stringRepr(_value);
       this.output = _stringRepr;
       Assert.assertEquals(this.output, expectation);
@@ -222,6 +489,76 @@ public class ModelParserTest {
   public CharSequence stringRepr(final Expression e) {
     String _switchResult = null;
     boolean _matched = false;
+    if (!_matched) {
+      if (e instanceof Or) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("(");
+        Expression _left = ((Or)e).getLeft();
+        CharSequence _stringRepr = this.stringRepr(_left);
+        _builder.append(_stringRepr, "");
+        _builder.append(" || ");
+        Expression _right = ((Or)e).getRight();
+        CharSequence _stringRepr_1 = this.stringRepr(_right);
+        _builder.append(_stringRepr_1, "");
+        _builder.append(")");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (e instanceof And) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("(");
+        Expression _left = ((And)e).getLeft();
+        CharSequence _stringRepr = this.stringRepr(_left);
+        _builder.append(_stringRepr, "");
+        _builder.append(" && ");
+        Expression _right = ((And)e).getRight();
+        CharSequence _stringRepr_1 = this.stringRepr(_right);
+        _builder.append(_stringRepr_1, "");
+        _builder.append(")");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (e instanceof Equality) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("(");
+        Expression _left = ((Equality)e).getLeft();
+        CharSequence _stringRepr = this.stringRepr(_left);
+        _builder.append(_stringRepr, "");
+        _builder.append(" ");
+        String _op = ((Equality)e).getOp();
+        _builder.append(_op, "");
+        _builder.append(" ");
+        Expression _right = ((Equality)e).getRight();
+        CharSequence _stringRepr_1 = this.stringRepr(_right);
+        _builder.append(_stringRepr_1, "");
+        _builder.append(")");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (e instanceof Comparison) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("(");
+        Expression _left = ((Comparison)e).getLeft();
+        CharSequence _stringRepr = this.stringRepr(_left);
+        _builder.append(_stringRepr, "");
+        _builder.append(" ");
+        String _op = ((Comparison)e).getOp();
+        _builder.append(_op, "");
+        _builder.append(" ");
+        Expression _right = ((Comparison)e).getRight();
+        CharSequence _stringRepr_1 = this.stringRepr(_right);
+        _builder.append(_stringRepr_1, "");
+        _builder.append(")");
+        _switchResult = _builder.toString();
+      }
+    }
     if (!_matched) {
       if (e instanceof Sub) {
         _matched=true;
@@ -287,11 +624,22 @@ public class ModelParserTest {
       }
     }
     if (!_matched) {
-      if (e instanceof Rate) {
+      if (e instanceof Not) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("! ");
+        Expression _expression = ((Not)e).getExpression();
+        CharSequence _stringRepr = this.stringRepr(_expression);
+        _builder.append(_stringRepr, "");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (e instanceof ReferencedRate) {
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("(");
-        Rate _rate = ((Rate)e).getRate();
+        AttributeValue _rate = ((ReferencedRate)e).getRate();
         String _name = _rate.getName();
         _builder.append(_name, "");
         _builder.append(")");
@@ -299,10 +647,19 @@ public class ModelParserTest {
       }
     }
     if (!_matched) {
-      if (e instanceof Constant) {
+      if (e instanceof DoubleConstant) {
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
-        double _value = ((Constant)e).getValue();
+        double _value = ((DoubleConstant)e).getValue();
+        _builder.append(_value, "");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (e instanceof BoolConstant) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        String _value = ((BoolConstant)e).getValue();
         _builder.append(_value, "");
         _switchResult = _builder.toString();
       }

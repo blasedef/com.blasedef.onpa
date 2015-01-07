@@ -35,8 +35,8 @@ public class ValidationTest {
       _builder.append("a = 0.1 + a;");
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
-      EClass _rate = ONPAPackage.eINSTANCE.getRate();
-      this._validationTestHelper.assertError(_parse, _rate, 
+      EClass _store = ONPAPackage.eINSTANCE.getStore();
+      this._validationTestHelper.assertError(_parse, _store, 
         ONPAValidator.SELF_REFERENCING_RATE, 
         "Cannot have self referencing rates. \'a\' is seen in the expression");
     } catch (Throwable _e) {

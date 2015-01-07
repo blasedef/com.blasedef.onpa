@@ -2,9 +2,10 @@
  */
 package com.blasedef.onpa.oNPA.impl;
 
+import com.blasedef.onpa.oNPA.Action;
 import com.blasedef.onpa.oNPA.Model;
 import com.blasedef.onpa.oNPA.ONPAPackage;
-import com.blasedef.onpa.oNPA.Rate;
+import com.blasedef.onpa.oNPA.Store;
 
 import java.util.Collection;
 
@@ -27,7 +28,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.blasedef.onpa.oNPA.impl.ModelImpl#getRates <em>Rates</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.impl.ModelImpl#getStores <em>Stores</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.impl.ModelImpl#getActions <em>Actions</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,14 +38,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getRates() <em>Rates</em>}' containment reference list.
+   * The cached value of the '{@link #getStores() <em>Stores</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRates()
+   * @see #getStores()
    * @generated
    * @ordered
    */
-  protected EList<Rate> rates;
+  protected EList<Store> stores;
+
+  /**
+   * The cached value of the '{@link #getActions() <em>Actions</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getActions()
+   * @generated
+   * @ordered
+   */
+  protected EList<Action> actions;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,13 +83,27 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Rate> getRates()
+  public EList<Store> getStores()
   {
-    if (rates == null)
+    if (stores == null)
     {
-      rates = new EObjectContainmentEList<Rate>(Rate.class, this, ONPAPackage.MODEL__RATES);
+      stores = new EObjectContainmentEList<Store>(Store.class, this, ONPAPackage.MODEL__STORES);
     }
-    return rates;
+    return stores;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Action> getActions()
+  {
+    if (actions == null)
+    {
+      actions = new EObjectContainmentEList<Action>(Action.class, this, ONPAPackage.MODEL__ACTIONS);
+    }
+    return actions;
   }
 
   /**
@@ -90,8 +116,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ONPAPackage.MODEL__RATES:
-        return ((InternalEList<?>)getRates()).basicRemove(otherEnd, msgs);
+      case ONPAPackage.MODEL__STORES:
+        return ((InternalEList<?>)getStores()).basicRemove(otherEnd, msgs);
+      case ONPAPackage.MODEL__ACTIONS:
+        return ((InternalEList<?>)getActions()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -106,8 +134,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ONPAPackage.MODEL__RATES:
-        return getRates();
+      case ONPAPackage.MODEL__STORES:
+        return getStores();
+      case ONPAPackage.MODEL__ACTIONS:
+        return getActions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -123,9 +153,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ONPAPackage.MODEL__RATES:
-        getRates().clear();
-        getRates().addAll((Collection<? extends Rate>)newValue);
+      case ONPAPackage.MODEL__STORES:
+        getStores().clear();
+        getStores().addAll((Collection<? extends Store>)newValue);
+        return;
+      case ONPAPackage.MODEL__ACTIONS:
+        getActions().clear();
+        getActions().addAll((Collection<? extends Action>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +175,11 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ONPAPackage.MODEL__RATES:
-        getRates().clear();
+      case ONPAPackage.MODEL__STORES:
+        getStores().clear();
+        return;
+      case ONPAPackage.MODEL__ACTIONS:
+        getActions().clear();
         return;
     }
     super.eUnset(featureID);
@@ -158,8 +195,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ONPAPackage.MODEL__RATES:
-        return rates != null && !rates.isEmpty();
+      case ONPAPackage.MODEL__STORES:
+        return stores != null && !stores.isEmpty();
+      case ONPAPackage.MODEL__ACTIONS:
+        return actions != null && !actions.isEmpty();
     }
     return super.eIsSet(featureID);
   }

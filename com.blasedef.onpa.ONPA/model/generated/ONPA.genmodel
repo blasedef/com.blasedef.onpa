@@ -8,14 +8,57 @@
   <genPackages prefix="ONPA" basePackage="com.blasedef.onpa" disposableProviderFactory="true"
       fileExtensions="onpa" ecorePackage="ONPA.ecore#/">
     <genClasses ecoreClass="ONPA.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Model/rates"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Model/stores"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Model/actions"/>
     </genClasses>
-    <genClasses ecoreClass="ONPA.ecore#//Rate">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ONPA.ecore#//Rate/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Rate/value"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ONPA.ecore#//Rate/rate"/>
+    <genClasses ecoreClass="ONPA.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ONPA.ecore#//Action/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ONPA.ecore#//Action/predicate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Action/update"/>
+    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//BroadcastOut">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ONPA.ecore#//BroadcastOut/evaluation"/>
+    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//BroadcastIn">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ONPA.ecore#//BroadcastIn/values"/>
+    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//UnicastOut">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ONPA.ecore#//UnicastOut/evaluation"/>
+    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//UnicastIn">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ONPA.ecore#//UnicastIn/values"/>
+    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//Update">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Update/updateExpressions"/>
+    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//UpdateExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ONPA.ecore#//UpdateExpression/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//UpdateExpression/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//Store"/>
+    <genClasses ecoreClass="ONPA.ecore#//AttributeValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ONPA.ecore#//AttributeValue/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//AttributeValue/value"/>
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//Expression"/>
+    <genClasses ecoreClass="ONPA.ecore#//Or">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Or/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Or/right"/>
+    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//And">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//And/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//And/right"/>
+    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//Equality">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Equality/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ONPA.ecore#//Equality/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Equality/right"/>
+    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//Comparison">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Comparison/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ONPA.ecore#//Comparison/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Comparison/right"/>
+    </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//Sub">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Sub/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Sub/right"/>
@@ -32,8 +75,17 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Div/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Div/right"/>
     </genClasses>
-    <genClasses ecoreClass="ONPA.ecore#//Constant">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ONPA.ecore#//Constant/value"/>
+    <genClasses ecoreClass="ONPA.ecore#//Not">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Not/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//DoubleConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ONPA.ecore#//DoubleConstant/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//BoolConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ONPA.ecore#//BoolConstant/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//ReferencedRate">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ONPA.ecore#//ReferencedRate/rate"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

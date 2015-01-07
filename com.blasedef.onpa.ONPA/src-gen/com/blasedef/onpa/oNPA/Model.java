@@ -14,7 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.blasedef.onpa.oNPA.Model#getRates <em>Rates</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.Model#getStores <em>Stores</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.Model#getActions <em>Actions</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,19 +26,35 @@ import org.eclipse.emf.ecore.EObject;
 public interface Model extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Rates</b></em>' containment reference list.
-   * The list contents are of type {@link com.blasedef.onpa.oNPA.Rate}.
+   * Returns the value of the '<em><b>Stores</b></em>' containment reference list.
+   * The list contents are of type {@link com.blasedef.onpa.oNPA.Store}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Rates</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Stores</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Rates</em>' containment reference list.
-   * @see com.blasedef.onpa.oNPA.ONPAPackage#getModel_Rates()
+   * @return the value of the '<em>Stores</em>' containment reference list.
+   * @see com.blasedef.onpa.oNPA.ONPAPackage#getModel_Stores()
    * @model containment="true"
    * @generated
    */
-  EList<Rate> getRates();
+  EList<Store> getStores();
+
+  /**
+   * Returns the value of the '<em><b>Actions</b></em>' containment reference list.
+   * The list contents are of type {@link com.blasedef.onpa.oNPA.Action}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Actions</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Actions</em>' containment reference list.
+   * @see com.blasedef.onpa.oNPA.ONPAPackage#getModel_Actions()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Action> getActions();
 
 } // Model

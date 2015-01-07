@@ -17,14 +17,14 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class ONPASyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected ONPAGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_PrimaryExpression_LeftParenthesisKeyword_0_0_a;
-	protected AbstractElementAlias match_PrimaryExpression_LeftParenthesisKeyword_0_0_p;
+	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_0_0_a;
+	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_0_0_p;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (ONPAGrammarAccess) access;
-		match_PrimaryExpression_LeftParenthesisKeyword_0_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryExpressionAccess().getLeftParenthesisKeyword_0_0());
-		match_PrimaryExpression_LeftParenthesisKeyword_0_0_p = new TokenAlias(true, false, grammarAccess.getPrimaryExpressionAccess().getLeftParenthesisKeyword_0_0());
+		match_Primary_LeftParenthesisKeyword_0_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_0_0());
+		match_Primary_LeftParenthesisKeyword_0_0_p = new TokenAlias(true, false, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_0_0());
 	}
 	
 	@Override
@@ -39,10 +39,10 @@ public class ONPASyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_PrimaryExpression_LeftParenthesisKeyword_0_0_a.equals(syntax))
-				emit_PrimaryExpression_LeftParenthesisKeyword_0_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_PrimaryExpression_LeftParenthesisKeyword_0_0_p.equals(syntax))
-				emit_PrimaryExpression_LeftParenthesisKeyword_0_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			if(match_Primary_LeftParenthesisKeyword_0_0_a.equals(syntax))
+				emit_Primary_LeftParenthesisKeyword_0_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Primary_LeftParenthesisKeyword_0_0_p.equals(syntax))
+				emit_Primary_LeftParenthesisKeyword_0_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -51,7 +51,7 @@ public class ONPASyntacticSequencer extends AbstractSyntacticSequencer {
 	 * Syntax:
 	 *     '('*
 	 */
-	protected void emit_PrimaryExpression_LeftParenthesisKeyword_0_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Primary_LeftParenthesisKeyword_0_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -59,7 +59,7 @@ public class ONPASyntacticSequencer extends AbstractSyntacticSequencer {
 	 * Syntax:
 	 *     '('+
 	 */
-	protected void emit_PrimaryExpression_LeftParenthesisKeyword_0_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Primary_LeftParenthesisKeyword_0_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
