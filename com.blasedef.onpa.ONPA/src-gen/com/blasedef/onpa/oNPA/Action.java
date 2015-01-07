@@ -85,12 +85,12 @@ public interface Action extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Update</em>' containment reference.
-   * @see #setUpdate(Update)
+   * @see #setUpdate(Updates)
    * @see com.blasedef.onpa.oNPA.ONPAPackage#getAction_Update()
    * @model containment="true"
    * @generated
    */
-  Update getUpdate();
+  Updates getUpdate();
 
   /**
    * Sets the value of the '{@link com.blasedef.onpa.oNPA.Action#getUpdate <em>Update</em>}' containment reference.
@@ -100,6 +100,6 @@ public interface Action extends EObject
    * @see #getUpdate()
    * @generated
    */
-  void setUpdate(Update value);
+  void setUpdate(Updates value);
 
 } // Action

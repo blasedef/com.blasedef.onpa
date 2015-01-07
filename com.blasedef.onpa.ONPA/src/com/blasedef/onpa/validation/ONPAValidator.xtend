@@ -67,7 +67,7 @@ class ONPAValidator extends AbstractONPAValidator {
 			Mul:			{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
 			Div: 			{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
 			Not: 			e.expression.findReferencedRates(strings)
-			ReferencedRate: {strings.add(e.rate.name)}
+			ReferencedRate: {strings.add(e.value.name)}
 			}
 	}
 

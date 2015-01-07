@@ -2,9 +2,9 @@
  */
 package com.blasedef.onpa.oNPA.impl;
 
-import com.blasedef.onpa.oNPA.AttributeValue;
 import com.blasedef.onpa.oNPA.ONPAPackage;
-import com.blasedef.onpa.oNPA.ReferencedRate;
+import com.blasedef.onpa.oNPA.Store;
+import com.blasedef.onpa.oNPA.ValuePrimary;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -12,38 +12,39 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Referenced Rate</b></em>'.
+ * An implementation of the model object '<em><b>Value Primary</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.blasedef.onpa.oNPA.impl.ReferencedRateImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.impl.ValuePrimaryImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ReferencedRateImpl extends ExpressionImpl implements ReferencedRate
+public class ValuePrimaryImpl extends MinimalEObjectImpl.Container implements ValuePrimary
 {
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' reference.
+   * The cached value of the '{@link #getName() <em>Name</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected AttributeValue value;
+  protected Store name;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ReferencedRateImpl()
+  protected ValuePrimaryImpl()
   {
     super();
   }
@@ -56,7 +57,7 @@ public class ReferencedRateImpl extends ExpressionImpl implements ReferencedRate
   @Override
   protected EClass eStaticClass()
   {
-    return ONPAPackage.Literals.REFERENCED_RATE;
+    return ONPAPackage.Literals.VALUE_PRIMARY;
   }
 
   /**
@@ -64,19 +65,19 @@ public class ReferencedRateImpl extends ExpressionImpl implements ReferencedRate
    * <!-- end-user-doc -->
    * @generated
    */
-  public AttributeValue getValue()
+  public Store getName()
   {
-    if (value != null && value.eIsProxy())
+    if (name != null && name.eIsProxy())
     {
-      InternalEObject oldValue = (InternalEObject)value;
-      value = (AttributeValue)eResolveProxy(oldValue);
-      if (value != oldValue)
+      InternalEObject oldName = (InternalEObject)name;
+      name = (Store)eResolveProxy(oldName);
+      if (name != oldName)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ONPAPackage.REFERENCED_RATE__VALUE, oldValue, value));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ONPAPackage.VALUE_PRIMARY__NAME, oldName, name));
       }
     }
-    return value;
+    return name;
   }
 
   /**
@@ -84,9 +85,9 @@ public class ReferencedRateImpl extends ExpressionImpl implements ReferencedRate
    * <!-- end-user-doc -->
    * @generated
    */
-  public AttributeValue basicGetValue()
+  public Store basicGetName()
   {
-    return value;
+    return name;
   }
 
   /**
@@ -94,12 +95,12 @@ public class ReferencedRateImpl extends ExpressionImpl implements ReferencedRate
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(AttributeValue newValue)
+  public void setName(Store newName)
   {
-    AttributeValue oldValue = value;
-    value = newValue;
+    Store oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.REFERENCED_RATE__VALUE, oldValue, value));
+      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.VALUE_PRIMARY__NAME, oldName, name));
   }
 
   /**
@@ -112,9 +113,9 @@ public class ReferencedRateImpl extends ExpressionImpl implements ReferencedRate
   {
     switch (featureID)
     {
-      case ONPAPackage.REFERENCED_RATE__VALUE:
-        if (resolve) return getValue();
-        return basicGetValue();
+      case ONPAPackage.VALUE_PRIMARY__NAME:
+        if (resolve) return getName();
+        return basicGetName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -129,8 +130,8 @@ public class ReferencedRateImpl extends ExpressionImpl implements ReferencedRate
   {
     switch (featureID)
     {
-      case ONPAPackage.REFERENCED_RATE__VALUE:
-        setValue((AttributeValue)newValue);
+      case ONPAPackage.VALUE_PRIMARY__NAME:
+        setName((Store)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -146,8 +147,8 @@ public class ReferencedRateImpl extends ExpressionImpl implements ReferencedRate
   {
     switch (featureID)
     {
-      case ONPAPackage.REFERENCED_RATE__VALUE:
-        setValue((AttributeValue)null);
+      case ONPAPackage.VALUE_PRIMARY__NAME:
+        setName((Store)null);
         return;
     }
     super.eUnset(featureID);
@@ -163,10 +164,10 @@ public class ReferencedRateImpl extends ExpressionImpl implements ReferencedRate
   {
     switch (featureID)
     {
-      case ONPAPackage.REFERENCED_RATE__VALUE:
-        return value != null;
+      case ONPAPackage.VALUE_PRIMARY__NAME:
+        return name != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //ReferencedRateImpl
+} //ValuePrimaryImpl

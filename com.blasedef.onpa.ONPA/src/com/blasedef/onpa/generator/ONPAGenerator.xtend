@@ -69,7 +69,7 @@ class ONPAGenerator implements IGenerator {
 			Mul:			'''(«e.left.compile» * «e.right.compile»)'''
 			Div: 			'''(«e.left.compile» / «e.right.compile»)'''
 			Not: 			'''! «e.expression.compile»'''
-			ReferencedRate: '''get«e.rate.name.toFirstUpper»()'''
+			ReferencedRate: '''get«e.value.name.toFirstUpper»()'''
 			DoubleConstant: '''«e.value»'''
 			BoolConstant: 	'''«e.value»'''
 			}.toString

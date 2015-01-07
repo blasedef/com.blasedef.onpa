@@ -118,10 +118,10 @@ public class ONPASwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ONPAPackage.UPDATE:
+      case ONPAPackage.UPDATES:
       {
-        Update update = (Update)theEObject;
-        T result = caseUpdate(update);
+        Updates updates = (Updates)theEObject;
+        T result = caseUpdates(updates);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -129,6 +129,34 @@ public class ONPASwitch<T> extends Switch<T>
       {
         UpdateExpression updateExpression = (UpdateExpression)theEObject;
         T result = caseUpdateExpression(updateExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ONPAPackage.VALUES:
+      {
+        Values values = (Values)theEObject;
+        T result = caseValues(values);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ONPAPackage.VALUE_PRIMARY:
+      {
+        ValuePrimary valuePrimary = (ValuePrimary)theEObject;
+        T result = caseValuePrimary(valuePrimary);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ONPAPackage.EVALUATIONS:
+      {
+        Evaluations evaluations = (Evaluations)theEObject;
+        T result = caseEvaluations(evaluations);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ONPAPackage.EVALUATION:
+      {
+        Evaluation evaluation = (Evaluation)theEObject;
+        T result = caseEvaluation(evaluation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -351,17 +379,17 @@ public class ONPASwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Update</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Updates</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Update</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Updates</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseUpdate(Update object)
+  public T caseUpdates(Updates object)
   {
     return null;
   }
@@ -378,6 +406,70 @@ public class ONPASwitch<T> extends Switch<T>
    * @generated
    */
   public T caseUpdateExpression(UpdateExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Values</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Values</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseValues(Values object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Value Primary</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Value Primary</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseValuePrimary(ValuePrimary object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Evaluations</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Evaluations</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEvaluations(Evaluations object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Evaluation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Evaluation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEvaluation(Evaluation object)
   {
     return null;
   }

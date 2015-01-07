@@ -4,7 +4,7 @@ package com.blasedef.onpa.oNPA.impl;
 
 import com.blasedef.onpa.oNPA.Action;
 import com.blasedef.onpa.oNPA.ONPAPackage;
-import com.blasedef.onpa.oNPA.Update;
+import com.blasedef.onpa.oNPA.Updates;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -80,7 +80,7 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * @generated
    * @ordered
    */
-  protected Update update;
+  protected Updates update;
 
   /**
    * <!-- begin-user-doc -->
@@ -154,7 +154,7 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * <!-- end-user-doc -->
    * @generated
    */
-  public Update getUpdate()
+  public Updates getUpdate()
   {
     return update;
   }
@@ -164,9 +164,9 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetUpdate(Update newUpdate, NotificationChain msgs)
+  public NotificationChain basicSetUpdate(Updates newUpdate, NotificationChain msgs)
   {
-    Update oldUpdate = update;
+    Updates oldUpdate = update;
     update = newUpdate;
     if (eNotificationRequired())
     {
@@ -181,7 +181,7 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setUpdate(Update newUpdate)
+  public void setUpdate(Updates newUpdate)
   {
     if (newUpdate != update)
     {
@@ -250,7 +250,7 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
         setPredicate((String)newValue);
         return;
       case ONPAPackage.ACTION__UPDATE:
-        setUpdate((Update)newValue);
+        setUpdate((Updates)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -273,7 +273,7 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
         setPredicate(PREDICATE_EDEFAULT);
         return;
       case ONPAPackage.ACTION__UPDATE:
-        setUpdate((Update)null);
+        setUpdate((Updates)null);
         return;
     }
     super.eUnset(featureID);

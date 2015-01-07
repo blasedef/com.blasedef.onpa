@@ -2,12 +2,15 @@
  */
 package com.blasedef.onpa.oNPA.impl;
 
+import com.blasedef.onpa.oNPA.Evaluations;
 import com.blasedef.onpa.oNPA.ONPAPackage;
 import com.blasedef.onpa.oNPA.UnicastOut;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -27,24 +30,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class UnicastOutImpl extends ActionImpl implements UnicastOut
 {
   /**
-   * The default value of the '{@link #getEvaluation() <em>Evaluation</em>}' attribute.
+   * The cached value of the '{@link #getEvaluation() <em>Evaluation</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getEvaluation()
    * @generated
    * @ordered
    */
-  protected static final String EVALUATION_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getEvaluation() <em>Evaluation</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEvaluation()
-   * @generated
-   * @ordered
-   */
-  protected String evaluation = EVALUATION_EDEFAULT;
+  protected Evaluations evaluation;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,7 +65,7 @@ public class UnicastOutImpl extends ActionImpl implements UnicastOut
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getEvaluation()
+  public Evaluations getEvaluation()
   {
     return evaluation;
   }
@@ -82,12 +75,53 @@ public class UnicastOutImpl extends ActionImpl implements UnicastOut
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEvaluation(String newEvaluation)
+  public NotificationChain basicSetEvaluation(Evaluations newEvaluation, NotificationChain msgs)
   {
-    String oldEvaluation = evaluation;
+    Evaluations oldEvaluation = evaluation;
     evaluation = newEvaluation;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.UNICAST_OUT__EVALUATION, oldEvaluation, evaluation));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ONPAPackage.UNICAST_OUT__EVALUATION, oldEvaluation, newEvaluation);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setEvaluation(Evaluations newEvaluation)
+  {
+    if (newEvaluation != evaluation)
+    {
+      NotificationChain msgs = null;
+      if (evaluation != null)
+        msgs = ((InternalEObject)evaluation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.UNICAST_OUT__EVALUATION, null, msgs);
+      if (newEvaluation != null)
+        msgs = ((InternalEObject)newEvaluation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.UNICAST_OUT__EVALUATION, null, msgs);
+      msgs = basicSetEvaluation(newEvaluation, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.UNICAST_OUT__EVALUATION, newEvaluation, newEvaluation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case ONPAPackage.UNICAST_OUT__EVALUATION:
+        return basicSetEvaluation(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -117,7 +151,7 @@ public class UnicastOutImpl extends ActionImpl implements UnicastOut
     switch (featureID)
     {
       case ONPAPackage.UNICAST_OUT__EVALUATION:
-        setEvaluation((String)newValue);
+        setEvaluation((Evaluations)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,7 +168,7 @@ public class UnicastOutImpl extends ActionImpl implements UnicastOut
     switch (featureID)
     {
       case ONPAPackage.UNICAST_OUT__EVALUATION:
-        setEvaluation(EVALUATION_EDEFAULT);
+        setEvaluation((Evaluations)null);
         return;
     }
     super.eUnset(featureID);
@@ -151,26 +185,9 @@ public class UnicastOutImpl extends ActionImpl implements UnicastOut
     switch (featureID)
     {
       case ONPAPackage.UNICAST_OUT__EVALUATION:
-        return EVALUATION_EDEFAULT == null ? evaluation != null : !EVALUATION_EDEFAULT.equals(evaluation);
+        return evaluation != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (evaluation: ");
-    result.append(evaluation);
-    result.append(')');
-    return result.toString();
   }
 
 } //UnicastOutImpl

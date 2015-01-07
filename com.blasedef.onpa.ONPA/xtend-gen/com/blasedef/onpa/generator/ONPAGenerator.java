@@ -242,8 +242,8 @@ public class ONPAGenerator implements IGenerator {
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("get");
-        AttributeValue _rate = ((ReferencedRate)e).getRate();
-        String _name = _rate.getName();
+        AttributeValue _value = ((ReferencedRate)e).getValue();
+        String _name = _value.getName();
         String _firstUpper = StringExtensions.toFirstUpper(_name);
         _builder.append(_firstUpper, "");
         _builder.append("()");

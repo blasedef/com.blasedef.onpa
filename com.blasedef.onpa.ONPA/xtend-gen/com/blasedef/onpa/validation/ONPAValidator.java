@@ -140,8 +140,8 @@ public class ONPAValidator extends AbstractONPAValidator {
     if (!_matched) {
       if (e instanceof ReferencedRate) {
         _matched=true;
-        AttributeValue _rate = ((ReferencedRate)e).getRate();
-        String _name = _rate.getName();
+        AttributeValue _value = ((ReferencedRate)e).getValue();
+        String _name = _value.getName();
         strings.add(_name);
       }
     }

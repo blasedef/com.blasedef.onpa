@@ -9,6 +9,8 @@ import com.blasedef.onpa.oNPA.Comparison;
 import com.blasedef.onpa.oNPA.Div;
 import com.blasedef.onpa.oNPA.DoubleConstant;
 import com.blasedef.onpa.oNPA.Equality;
+import com.blasedef.onpa.oNPA.Evaluation;
+import com.blasedef.onpa.oNPA.Evaluations;
 import com.blasedef.onpa.oNPA.Model;
 import com.blasedef.onpa.oNPA.Mul;
 import com.blasedef.onpa.oNPA.Not;
@@ -19,8 +21,10 @@ import com.blasedef.onpa.oNPA.ReferencedRate;
 import com.blasedef.onpa.oNPA.Sub;
 import com.blasedef.onpa.oNPA.UnicastIn;
 import com.blasedef.onpa.oNPA.UnicastOut;
-import com.blasedef.onpa.oNPA.Update;
 import com.blasedef.onpa.oNPA.UpdateExpression;
+import com.blasedef.onpa.oNPA.Updates;
+import com.blasedef.onpa.oNPA.ValuePrimary;
+import com.blasedef.onpa.oNPA.Values;
 import com.blasedef.onpa.services.ONPAGrammarAccess;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
@@ -205,6 +209,18 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
+			case ONPAPackage.EVALUATION:
+				if(context == grammarAccess.getEvaluationRule()) {
+					sequence_Evaluation(context, (Evaluation) semanticObject); 
+					return; 
+				}
+				else break;
+			case ONPAPackage.EVALUATIONS:
+				if(context == grammarAccess.getEvaluationsRule()) {
+					sequence_Evaluations(context, (Evaluations) semanticObject); 
+					return; 
+				}
+				else break;
 			case ONPAPackage.MODEL:
 				if(context == grammarAccess.getModelRule()) {
 					sequence_Model(context, (Model) semanticObject); 
@@ -364,15 +380,27 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
-			case ONPAPackage.UPDATE:
-				if(context == grammarAccess.getUpdateRule()) {
-					sequence_Update(context, (Update) semanticObject); 
-					return; 
-				}
-				else break;
 			case ONPAPackage.UPDATE_EXPRESSION:
 				if(context == grammarAccess.getUpdateExpressionRule()) {
 					sequence_UpdateExpression(context, (UpdateExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case ONPAPackage.UPDATES:
+				if(context == grammarAccess.getUpdatesRule()) {
+					sequence_Updates(context, (Updates) semanticObject); 
+					return; 
+				}
+				else break;
+			case ONPAPackage.VALUE_PRIMARY:
+				if(context == grammarAccess.getValuePrimaryRule()) {
+					sequence_ValuePrimary(context, (ValuePrimary) semanticObject); 
+					return; 
+				}
+				else break;
+			case ONPAPackage.VALUES:
+				if(context == grammarAccess.getValuesRule()) {
+					sequence_Values(context, (Values) semanticObject); 
 					return; 
 				}
 				else break;
@@ -445,17 +473,10 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     rate=[AttributeValue|LOWER]
+	 *     (value=[AttributeValue|LOWER] | value=[AttributeValue|LOWER])
 	 */
 	protected void sequence_Atomic(EObject context, ReferencedRate semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.REFERENCED_RATE__RATE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.REFERENCED_RATE__RATE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getAtomicAccess().getRateAttributeValueLOWERTerminalRuleCall_2_1_0_1(), semanticObject.getRate());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -480,19 +501,51 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=LOWER predicate=Predicate values=Values update=Update?)
+	 *     (name=LOWER predicate=Predicate values=Values update=Updates)
 	 */
 	protected void sequence_BroadcastIn(EObject context, BroadcastIn semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION__NAME));
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION__PREDICATE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION__PREDICATE));
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION__UPDATE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION__UPDATE));
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.BROADCAST_IN__VALUES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.BROADCAST_IN__VALUES));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getBroadcastInAccess().getNameLOWERTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getBroadcastInAccess().getPredicatePredicateParserRuleCall_2_0(), semanticObject.getPredicate());
+		feeder.accept(grammarAccess.getBroadcastInAccess().getValuesValuesParserRuleCall_3_0(), semanticObject.getValues());
+		feeder.accept(grammarAccess.getBroadcastInAccess().getUpdateUpdatesParserRuleCall_4_0(), semanticObject.getUpdate());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=LOWER predicate=Predicate evaluation=Evaluation update=Update?)
+	 *     (name=LOWER predicate=Predicate evaluation=Evaluations update=Updates)
 	 */
 	protected void sequence_BroadcastOut(EObject context, BroadcastOut semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION__NAME));
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION__PREDICATE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION__PREDICATE));
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION__UPDATE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION__UPDATE));
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.BROADCAST_OUT__EVALUATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.BROADCAST_OUT__EVALUATION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getBroadcastOutAccess().getNameLOWERTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getBroadcastOutAccess().getPredicatePredicateParserRuleCall_2_0(), semanticObject.getPredicate());
+		feeder.accept(grammarAccess.getBroadcastOutAccess().getEvaluationEvaluationsParserRuleCall_3_0(), semanticObject.getEvaluation());
+		feeder.accept(grammarAccess.getBroadcastOutAccess().getUpdateUpdatesParserRuleCall_4_0(), semanticObject.getUpdate());
+		feeder.finish();
 	}
 	
 	
@@ -529,6 +582,34 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (left=Equality_Equality_1_0 (op='==' | op='!=') right=Comparison)
 	 */
 	protected void sequence_Equality(EObject context, Equality semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=[Store|LOWER] value=Expression)
+	 */
+	protected void sequence_Evaluation(EObject context, Evaluation semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.EVALUATION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.EVALUATION__NAME));
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.EVALUATION__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.EVALUATION__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getEvaluationAccess().getNameStoreLOWERTerminalRuleCall_0_0_1(), semanticObject.getName());
+		feeder.accept(grammarAccess.getEvaluationAccess().getValueExpressionParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (evaluations+=Evaluation?)
+	 */
+	protected void sequence_Evaluations(EObject context, Evaluations semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -617,19 +698,51 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=LOWER predicate=Predicate values=Values update=Update?)
+	 *     (name=LOWER predicate=Predicate values=Values update=Updates)
 	 */
 	protected void sequence_UnicastIn(EObject context, UnicastIn semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION__NAME));
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION__PREDICATE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION__PREDICATE));
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION__UPDATE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION__UPDATE));
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.UNICAST_IN__VALUES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.UNICAST_IN__VALUES));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getUnicastInAccess().getNameLOWERTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getUnicastInAccess().getPredicatePredicateParserRuleCall_1_0(), semanticObject.getPredicate());
+		feeder.accept(grammarAccess.getUnicastInAccess().getValuesValuesParserRuleCall_2_0(), semanticObject.getValues());
+		feeder.accept(grammarAccess.getUnicastInAccess().getUpdateUpdatesParserRuleCall_3_0(), semanticObject.getUpdate());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=LOWER predicate=Predicate evaluation=Evaluation update=Update?)
+	 *     (name=LOWER predicate=Predicate evaluation=Evaluations update=Updates)
 	 */
 	protected void sequence_UnicastOut(EObject context, UnicastOut semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION__NAME));
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION__PREDICATE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION__PREDICATE));
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION__UPDATE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION__UPDATE));
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.UNICAST_OUT__EVALUATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.UNICAST_OUT__EVALUATION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getUnicastOutAccess().getNameLOWERTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getUnicastOutAccess().getPredicatePredicateParserRuleCall_1_0(), semanticObject.getPredicate());
+		feeder.accept(grammarAccess.getUnicastOutAccess().getEvaluationEvaluationsParserRuleCall_2_0(), semanticObject.getEvaluation());
+		feeder.accept(grammarAccess.getUnicastOutAccess().getUpdateUpdatesParserRuleCall_3_0(), semanticObject.getUpdate());
+		feeder.finish();
 	}
 	
 	
@@ -654,9 +767,34 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     updateExpressions+=UpdateExpression+
+	 *     (updateExpressions+=UpdateExpression?)
 	 */
-	protected void sequence_Update(EObject context, Update semanticObject) {
+	protected void sequence_Updates(EObject context, Updates semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     name=[Store|LOWER]
+	 */
+	protected void sequence_ValuePrimary(EObject context, ValuePrimary semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.VALUE_PRIMARY__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.VALUE_PRIMARY__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getValuePrimaryAccess().getNameStoreLOWERTerminalRuleCall_0_0_1(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (values+=ValuePrimary?)
+	 */
+	protected void sequence_Values(EObject context, Values semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 }

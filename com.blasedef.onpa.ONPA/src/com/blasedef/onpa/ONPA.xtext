@@ -14,39 +14,47 @@ Action:
 ;
 
 BroadcastOut:
-	name=LOWER "*" predicate=Predicate evaluation=Evaluation (update=Update)?
+	name=LOWER "*" predicate=Predicate evaluation=Evaluations update=Updates
 ;
 
 BroadcastIn:
-	name=LOWER "*" predicate=Predicate values=Values (update=Update)?
+	name=LOWER "*" predicate=Predicate values=Values update=Updates
 ;
 
 UnicastOut:
-	name=LOWER predicate=Predicate evaluation=Evaluation (update=Update)?
+	name=LOWER predicate=Predicate evaluation=Evaluations update=Updates
 ;
 
 UnicastIn:
-	name=LOWER predicate=Predicate values=Values (update=Update)?
+	name=LOWER predicate=Predicate values=Values update=Updates
 ;
 
 Predicate:
 	"["  "]"
 ;
 
-Update:
-	"{" updateExpressions+=UpdateExpression+  "}"
+Updates:
+	{Updates} "{" (updateExpressions+=UpdateExpression+)?  "}"
 ;
 
 UpdateExpression returns UpdateExpression:
-	name=[Store|LOWER] "=" expression=Expression
+	name=[Store|LOWER] "=" expression=Expression ";"
 ;
 
 Values:
-	"("  ")"
+	{Values} "(" (values+=ValuePrimary)? ")" //What is the point of this? (Knowing what local stores belong to who? - if so, shouldn't this be automatic?) - CDW 07.01.15
+;
+
+ValuePrimary:
+	name=[Store|LOWER] ";"
+;
+
+Evaluations:
+	{Evaluations} "<" (evaluations+=Evaluation)? ">"
 ;
 
 Evaluation:
-	"<"  ">"
+	name=[Store|LOWER] "=" value=Expression
 ;
 
 Store:
@@ -119,7 +127,8 @@ Primary returns Expression:
 Atomic returns Expression:
 	{DoubleConstant} value=Double |
 	{BoolConstant} value=('true'|'false') |
-	{ReferencedRate} rate=[AttributeValue|LOWER] 
+	{ReferencedRate} value=[AttributeValue|LOWER] |
+	{ReferencedRate} "this."value=[AttributeValue|LOWER]
 ;
 
 Double returns ecore::EDouble:

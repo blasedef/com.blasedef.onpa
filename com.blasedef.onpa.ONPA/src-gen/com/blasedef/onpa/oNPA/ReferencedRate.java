@@ -11,7 +11,7 @@ package com.blasedef.onpa.oNPA;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.blasedef.onpa.oNPA.ReferencedRate#getRate <em>Rate</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.ReferencedRate#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -22,29 +22,29 @@ package com.blasedef.onpa.oNPA;
 public interface ReferencedRate extends Expression
 {
   /**
-   * Returns the value of the '<em><b>Rate</b></em>' reference.
+   * Returns the value of the '<em><b>Value</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Rate</em>' reference isn't clear,
+   * If the meaning of the '<em>Value</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Rate</em>' reference.
-   * @see #setRate(AttributeValue)
-   * @see com.blasedef.onpa.oNPA.ONPAPackage#getReferencedRate_Rate()
+   * @return the value of the '<em>Value</em>' reference.
+   * @see #setValue(AttributeValue)
+   * @see com.blasedef.onpa.oNPA.ONPAPackage#getReferencedRate_Value()
    * @model
    * @generated
    */
-  AttributeValue getRate();
+  AttributeValue getValue();
 
   /**
-   * Sets the value of the '{@link com.blasedef.onpa.oNPA.ReferencedRate#getRate <em>Rate</em>}' reference.
+   * Sets the value of the '{@link com.blasedef.onpa.oNPA.ReferencedRate#getValue <em>Value</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Rate</em>' reference.
-   * @see #getRate()
+   * @param value the new value of the '<em>Value</em>' reference.
+   * @see #getValue()
    * @generated
    */
-  void setRate(AttributeValue value);
+  void setValue(AttributeValue value);
 
 } // ReferencedRate

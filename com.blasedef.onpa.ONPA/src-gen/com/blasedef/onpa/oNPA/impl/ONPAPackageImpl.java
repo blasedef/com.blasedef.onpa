@@ -12,6 +12,8 @@ import com.blasedef.onpa.oNPA.Comparison;
 import com.blasedef.onpa.oNPA.Div;
 import com.blasedef.onpa.oNPA.DoubleConstant;
 import com.blasedef.onpa.oNPA.Equality;
+import com.blasedef.onpa.oNPA.Evaluation;
+import com.blasedef.onpa.oNPA.Evaluations;
 import com.blasedef.onpa.oNPA.Expression;
 import com.blasedef.onpa.oNPA.Model;
 import com.blasedef.onpa.oNPA.Mul;
@@ -25,8 +27,10 @@ import com.blasedef.onpa.oNPA.Store;
 import com.blasedef.onpa.oNPA.Sub;
 import com.blasedef.onpa.oNPA.UnicastIn;
 import com.blasedef.onpa.oNPA.UnicastOut;
-import com.blasedef.onpa.oNPA.Update;
 import com.blasedef.onpa.oNPA.UpdateExpression;
+import com.blasedef.onpa.oNPA.Updates;
+import com.blasedef.onpa.oNPA.ValuePrimary;
+import com.blasedef.onpa.oNPA.Values;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -90,7 +94,7 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass updateEClass = null;
+  private EClass updatesEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -98,6 +102,34 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * @generated
    */
   private EClass updateExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass valuesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass valuePrimaryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass evaluationsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass evaluationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -352,9 +384,9 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getBroadcastOut_Evaluation()
+  public EReference getBroadcastOut_Evaluation()
   {
-    return (EAttribute)broadcastOutEClass.getEStructuralFeatures().get(0);
+    return (EReference)broadcastOutEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -372,9 +404,9 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getBroadcastIn_Values()
+  public EReference getBroadcastIn_Values()
   {
-    return (EAttribute)broadcastInEClass.getEStructuralFeatures().get(0);
+    return (EReference)broadcastInEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -392,9 +424,9 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getUnicastOut_Evaluation()
+  public EReference getUnicastOut_Evaluation()
   {
-    return (EAttribute)unicastOutEClass.getEStructuralFeatures().get(0);
+    return (EReference)unicastOutEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -412,9 +444,9 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getUnicastIn_Values()
+  public EReference getUnicastIn_Values()
   {
-    return (EAttribute)unicastInEClass.getEStructuralFeatures().get(0);
+    return (EReference)unicastInEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -422,9 +454,9 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getUpdate()
+  public EClass getUpdates()
   {
-    return updateEClass;
+    return updatesEClass;
   }
 
   /**
@@ -432,9 +464,9 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getUpdate_UpdateExpressions()
+  public EReference getUpdates_UpdateExpressions()
   {
-    return (EReference)updateEClass.getEStructuralFeatures().get(0);
+    return (EReference)updatesEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -465,6 +497,96 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
   public EReference getUpdateExpression_Expression()
   {
     return (EReference)updateExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getValues()
+  {
+    return valuesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getValues_Values()
+  {
+    return (EReference)valuesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getValuePrimary()
+  {
+    return valuePrimaryEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getValuePrimary_Name()
+  {
+    return (EReference)valuePrimaryEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEvaluations()
+  {
+    return evaluationsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEvaluations_Evaluations()
+  {
+    return (EReference)evaluationsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEvaluation()
+  {
+    return evaluationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEvaluation_Name()
+  {
+    return (EReference)evaluationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEvaluation_Value()
+  {
+    return (EReference)evaluationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -852,7 +974,7 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getReferencedRate_Rate()
+  public EReference getReferencedRate_Value()
   {
     return (EReference)referencedRateEClass.getEStructuralFeatures().get(0);
   }
@@ -897,23 +1019,36 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
     createEReference(actionEClass, ACTION__UPDATE);
 
     broadcastOutEClass = createEClass(BROADCAST_OUT);
-    createEAttribute(broadcastOutEClass, BROADCAST_OUT__EVALUATION);
+    createEReference(broadcastOutEClass, BROADCAST_OUT__EVALUATION);
 
     broadcastInEClass = createEClass(BROADCAST_IN);
-    createEAttribute(broadcastInEClass, BROADCAST_IN__VALUES);
+    createEReference(broadcastInEClass, BROADCAST_IN__VALUES);
 
     unicastOutEClass = createEClass(UNICAST_OUT);
-    createEAttribute(unicastOutEClass, UNICAST_OUT__EVALUATION);
+    createEReference(unicastOutEClass, UNICAST_OUT__EVALUATION);
 
     unicastInEClass = createEClass(UNICAST_IN);
-    createEAttribute(unicastInEClass, UNICAST_IN__VALUES);
+    createEReference(unicastInEClass, UNICAST_IN__VALUES);
 
-    updateEClass = createEClass(UPDATE);
-    createEReference(updateEClass, UPDATE__UPDATE_EXPRESSIONS);
+    updatesEClass = createEClass(UPDATES);
+    createEReference(updatesEClass, UPDATES__UPDATE_EXPRESSIONS);
 
     updateExpressionEClass = createEClass(UPDATE_EXPRESSION);
     createEReference(updateExpressionEClass, UPDATE_EXPRESSION__NAME);
     createEReference(updateExpressionEClass, UPDATE_EXPRESSION__EXPRESSION);
+
+    valuesEClass = createEClass(VALUES);
+    createEReference(valuesEClass, VALUES__VALUES);
+
+    valuePrimaryEClass = createEClass(VALUE_PRIMARY);
+    createEReference(valuePrimaryEClass, VALUE_PRIMARY__NAME);
+
+    evaluationsEClass = createEClass(EVALUATIONS);
+    createEReference(evaluationsEClass, EVALUATIONS__EVALUATIONS);
+
+    evaluationEClass = createEClass(EVALUATION);
+    createEReference(evaluationEClass, EVALUATION__NAME);
+    createEReference(evaluationEClass, EVALUATION__VALUE);
 
     storeEClass = createEClass(STORE);
 
@@ -967,7 +1102,7 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
     createEAttribute(boolConstantEClass, BOOL_CONSTANT__VALUE);
 
     referencedRateEClass = createEClass(REFERENCED_RATE);
-    createEReference(referencedRateEClass, REFERENCED_RATE__RATE);
+    createEReference(referencedRateEClass, REFERENCED_RATE__VALUE);
   }
 
   /**
@@ -1025,26 +1160,39 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
     initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAction_Predicate(), ecorePackage.getEString(), "predicate", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAction_Update(), this.getUpdate(), null, "update", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAction_Update(), this.getUpdates(), null, "update", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(broadcastOutEClass, BroadcastOut.class, "BroadcastOut", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBroadcastOut_Evaluation(), ecorePackage.getEString(), "evaluation", null, 0, 1, BroadcastOut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBroadcastOut_Evaluation(), this.getEvaluations(), null, "evaluation", null, 0, 1, BroadcastOut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(broadcastInEClass, BroadcastIn.class, "BroadcastIn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBroadcastIn_Values(), ecorePackage.getEString(), "values", null, 0, 1, BroadcastIn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBroadcastIn_Values(), this.getValues(), null, "values", null, 0, 1, BroadcastIn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(unicastOutEClass, UnicastOut.class, "UnicastOut", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getUnicastOut_Evaluation(), ecorePackage.getEString(), "evaluation", null, 0, 1, UnicastOut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUnicastOut_Evaluation(), this.getEvaluations(), null, "evaluation", null, 0, 1, UnicastOut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(unicastInEClass, UnicastIn.class, "UnicastIn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getUnicastIn_Values(), ecorePackage.getEString(), "values", null, 0, 1, UnicastIn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUnicastIn_Values(), this.getValues(), null, "values", null, 0, 1, UnicastIn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(updateEClass, Update.class, "Update", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getUpdate_UpdateExpressions(), this.getUpdateExpression(), null, "updateExpressions", null, 0, -1, Update.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(updatesEClass, Updates.class, "Updates", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getUpdates_UpdateExpressions(), this.getUpdateExpression(), null, "updateExpressions", null, 0, -1, Updates.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(updateExpressionEClass, UpdateExpression.class, "UpdateExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getUpdateExpression_Name(), this.getStore(), null, "name", null, 0, 1, UpdateExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUpdateExpression_Expression(), this.getExpression(), null, "expression", null, 0, 1, UpdateExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(valuesEClass, Values.class, "Values", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getValues_Values(), this.getValuePrimary(), null, "values", null, 0, -1, Values.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(valuePrimaryEClass, ValuePrimary.class, "ValuePrimary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getValuePrimary_Name(), this.getStore(), null, "name", null, 0, 1, ValuePrimary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(evaluationsEClass, Evaluations.class, "Evaluations", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEvaluations_Evaluations(), this.getEvaluation(), null, "evaluations", null, 0, -1, Evaluations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(evaluationEClass, Evaluation.class, "Evaluation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEvaluation_Name(), this.getStore(), null, "name", null, 0, 1, Evaluation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEvaluation_Value(), this.getExpression(), null, "value", null, 0, 1, Evaluation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(storeEClass, Store.class, "Store", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1098,7 +1246,7 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
     initEAttribute(getBoolConstant_Value(), ecorePackage.getEString(), "value", null, 0, 1, BoolConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(referencedRateEClass, ReferencedRate.class, "ReferencedRate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getReferencedRate_Rate(), this.getAttributeValue(), null, "rate", null, 0, 1, ReferencedRate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReferencedRate_Value(), this.getAttributeValue(), null, "value", null, 0, 1, ReferencedRate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

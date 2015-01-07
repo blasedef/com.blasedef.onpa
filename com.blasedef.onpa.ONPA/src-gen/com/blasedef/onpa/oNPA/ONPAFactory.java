@@ -77,13 +77,13 @@ public interface ONPAFactory extends EFactory
   UnicastIn createUnicastIn();
 
   /**
-   * Returns a new object of class '<em>Update</em>'.
+   * Returns a new object of class '<em>Updates</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Update</em>'.
+   * @return a new object of class '<em>Updates</em>'.
    * @generated
    */
-  Update createUpdate();
+  Updates createUpdates();
 
   /**
    * Returns a new object of class '<em>Update Expression</em>'.
@@ -93,6 +93,42 @@ public interface ONPAFactory extends EFactory
    * @generated
    */
   UpdateExpression createUpdateExpression();
+
+  /**
+   * Returns a new object of class '<em>Values</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Values</em>'.
+   * @generated
+   */
+  Values createValues();
+
+  /**
+   * Returns a new object of class '<em>Value Primary</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Value Primary</em>'.
+   * @generated
+   */
+  ValuePrimary createValuePrimary();
+
+  /**
+   * Returns a new object of class '<em>Evaluations</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Evaluations</em>'.
+   * @generated
+   */
+  Evaluations createEvaluations();
+
+  /**
+   * Returns a new object of class '<em>Evaluation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Evaluation</em>'.
+   * @generated
+   */
+  Evaluation createEvaluation();
 
   /**
    * Returns a new object of class '<em>Store</em>'.

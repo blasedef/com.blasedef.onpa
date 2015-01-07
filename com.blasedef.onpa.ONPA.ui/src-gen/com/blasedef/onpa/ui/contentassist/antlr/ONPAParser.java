@@ -51,9 +51,11 @@ public class ONPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUnicastOutAccess().getGroup(), "rule__UnicastOut__Group__0");
 					put(grammarAccess.getUnicastInAccess().getGroup(), "rule__UnicastIn__Group__0");
 					put(grammarAccess.getPredicateAccess().getGroup(), "rule__Predicate__Group__0");
-					put(grammarAccess.getUpdateAccess().getGroup(), "rule__Update__Group__0");
+					put(grammarAccess.getUpdatesAccess().getGroup(), "rule__Updates__Group__0");
 					put(grammarAccess.getUpdateExpressionAccess().getGroup(), "rule__UpdateExpression__Group__0");
 					put(grammarAccess.getValuesAccess().getGroup(), "rule__Values__Group__0");
+					put(grammarAccess.getValuePrimaryAccess().getGroup(), "rule__ValuePrimary__Group__0");
+					put(grammarAccess.getEvaluationsAccess().getGroup(), "rule__Evaluations__Group__0");
 					put(grammarAccess.getEvaluationAccess().getGroup(), "rule__Evaluation__Group__0");
 					put(grammarAccess.getStoreAccess().getGroup(), "rule__Store__Group__0");
 					put(grammarAccess.getAttributeValueAccess().getGroup(), "rule__AttributeValue__Group__0");
@@ -78,6 +80,7 @@ public class ONPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAtomicAccess().getGroup_0(), "rule__Atomic__Group_0__0");
 					put(grammarAccess.getAtomicAccess().getGroup_1(), "rule__Atomic__Group_1__0");
 					put(grammarAccess.getAtomicAccess().getGroup_2(), "rule__Atomic__Group_2__0");
+					put(grammarAccess.getAtomicAccess().getGroup_3(), "rule__Atomic__Group_3__0");
 					put(grammarAccess.getDoubleAccess().getGroup(), "rule__Double__Group__0");
 					put(grammarAccess.getDoubleAccess().getGroup_1(), "rule__Double__Group_1__0");
 					put(grammarAccess.getDoubleAccess().getGroup_1_2_1(), "rule__Double__Group_1_2_1__0");
@@ -99,9 +102,14 @@ public class ONPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUnicastInAccess().getPredicateAssignment_1(), "rule__UnicastIn__PredicateAssignment_1");
 					put(grammarAccess.getUnicastInAccess().getValuesAssignment_2(), "rule__UnicastIn__ValuesAssignment_2");
 					put(grammarAccess.getUnicastInAccess().getUpdateAssignment_3(), "rule__UnicastIn__UpdateAssignment_3");
-					put(grammarAccess.getUpdateAccess().getUpdateExpressionsAssignment_1(), "rule__Update__UpdateExpressionsAssignment_1");
+					put(grammarAccess.getUpdatesAccess().getUpdateExpressionsAssignment_2(), "rule__Updates__UpdateExpressionsAssignment_2");
 					put(grammarAccess.getUpdateExpressionAccess().getNameAssignment_0(), "rule__UpdateExpression__NameAssignment_0");
 					put(grammarAccess.getUpdateExpressionAccess().getExpressionAssignment_2(), "rule__UpdateExpression__ExpressionAssignment_2");
+					put(grammarAccess.getValuesAccess().getValuesAssignment_2(), "rule__Values__ValuesAssignment_2");
+					put(grammarAccess.getValuePrimaryAccess().getNameAssignment_0(), "rule__ValuePrimary__NameAssignment_0");
+					put(grammarAccess.getEvaluationsAccess().getEvaluationsAssignment_2(), "rule__Evaluations__EvaluationsAssignment_2");
+					put(grammarAccess.getEvaluationAccess().getNameAssignment_0(), "rule__Evaluation__NameAssignment_0");
+					put(grammarAccess.getEvaluationAccess().getValueAssignment_2(), "rule__Evaluation__ValueAssignment_2");
 					put(grammarAccess.getAttributeValueAccess().getNameAssignment_0(), "rule__AttributeValue__NameAssignment_0");
 					put(grammarAccess.getAttributeValueAccess().getValueAssignment_2(), "rule__AttributeValue__ValueAssignment_2");
 					put(grammarAccess.getOrAccess().getRightAssignment_1_2(), "rule__Or__RightAssignment_1_2");
@@ -117,7 +125,8 @@ public class ONPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPrimaryAccess().getExpressionAssignment_1_2(), "rule__Primary__ExpressionAssignment_1_2");
 					put(grammarAccess.getAtomicAccess().getValueAssignment_0_1(), "rule__Atomic__ValueAssignment_0_1");
 					put(grammarAccess.getAtomicAccess().getValueAssignment_1_1(), "rule__Atomic__ValueAssignment_1_1");
-					put(grammarAccess.getAtomicAccess().getRateAssignment_2_1(), "rule__Atomic__RateAssignment_2_1");
+					put(grammarAccess.getAtomicAccess().getValueAssignment_2_1(), "rule__Atomic__ValueAssignment_2_1");
+					put(grammarAccess.getAtomicAccess().getValueAssignment_3_2(), "rule__Atomic__ValueAssignment_3_2");
 				}
 			};
 		}

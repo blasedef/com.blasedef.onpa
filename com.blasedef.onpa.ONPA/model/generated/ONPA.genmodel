@@ -17,23 +17,36 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Action/update"/>
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//BroadcastOut">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ONPA.ecore#//BroadcastOut/evaluation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//BroadcastOut/evaluation"/>
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//BroadcastIn">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ONPA.ecore#//BroadcastIn/values"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//BroadcastIn/values"/>
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//UnicastOut">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ONPA.ecore#//UnicastOut/evaluation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//UnicastOut/evaluation"/>
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//UnicastIn">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ONPA.ecore#//UnicastIn/values"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//UnicastIn/values"/>
     </genClasses>
-    <genClasses ecoreClass="ONPA.ecore#//Update">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Update/updateExpressions"/>
+    <genClasses ecoreClass="ONPA.ecore#//Updates">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Updates/updateExpressions"/>
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//UpdateExpression">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ONPA.ecore#//UpdateExpression/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//UpdateExpression/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//Values">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Values/values"/>
+    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//ValuePrimary">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ONPA.ecore#//ValuePrimary/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//Evaluations">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Evaluations/evaluations"/>
+    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//Evaluation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ONPA.ecore#//Evaluation/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Evaluation/value"/>
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//Store"/>
     <genClasses ecoreClass="ONPA.ecore#//AttributeValue">
@@ -85,7 +98,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ONPA.ecore#//BoolConstant/value"/>
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//ReferencedRate">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ONPA.ecore#//ReferencedRate/rate"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ONPA.ecore#//ReferencedRate/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

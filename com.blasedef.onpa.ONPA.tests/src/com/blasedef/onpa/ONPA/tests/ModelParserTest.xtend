@@ -150,36 +150,36 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleAction1(){
 		'''
-		broadcastOut * [ ] < >  ;
+		a = 0.1;
+		b = 0.1;
+		broadcastOut * [ ] < > {a = 0.1;} ;
 		'''.parse.assertNoErrors
 	}
 	
 	@Test
 	def void testSimpleAction2(){
 		'''
-		broadcastIn * [ ] ( )  ;
+		a = 0.1;
+		b = 0.1;
+		broadcastIn * [ ] (b;) {a = 0.1;} ;
 		'''.parse.assertNoErrors
 	}
 	
 	@Test
 	def void testSimpleAction3(){
 		'''
-		unicastOut [ ] < >  ;
+		a = 0.1;
+		b = 0.1;
+		unicastOut [ ] < > {a = 0.1;} ;
 		'''.parse.assertNoErrors
 	}
 	
 	@Test
 	def void testSimpleAction4(){
 		'''
-		unicastIn [ ] ( )  ;
-		'''.parse.assertNoErrors
-	}
-	
-	@Test
-	def void testUpdateAction1(){
-		'''
 		a = 0.1;
-		broadcastOut * [ ] < > { } ;
+		b = 0.1;
+		unicastIn [ ] (b;) {a = 0.1;} ;
 		'''.parse.assertNoErrors
 	}
 	
@@ -295,7 +295,7 @@ public class ModelParserTest {
 			Mul:			'''(«e.left.stringRepr» * «e.right.stringRepr»)'''
 			Div: 			'''(«e.left.stringRepr» / «e.right.stringRepr»)'''
 			Not: 			'''! «e.expression.stringRepr»'''
-			ReferencedRate: '''(«e.rate.name»)'''
+			ReferencedRate: '''(«e.value.name»)'''
 			DoubleConstant: '''«e.value»'''
 			BoolConstant: 	'''«e.value»'''
 			}.toString

@@ -4,10 +4,13 @@ package com.blasedef.onpa.oNPA.impl;
 
 import com.blasedef.onpa.oNPA.ONPAPackage;
 import com.blasedef.onpa.oNPA.UnicastIn;
+import com.blasedef.onpa.oNPA.Values;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -27,24 +30,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class UnicastInImpl extends ActionImpl implements UnicastIn
 {
   /**
-   * The default value of the '{@link #getValues() <em>Values</em>}' attribute.
+   * The cached value of the '{@link #getValues() <em>Values</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getValues()
    * @generated
    * @ordered
    */
-  protected static final String VALUES_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getValues() <em>Values</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getValues()
-   * @generated
-   * @ordered
-   */
-  protected String values = VALUES_EDEFAULT;
+  protected Values values;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,7 +65,7 @@ public class UnicastInImpl extends ActionImpl implements UnicastIn
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getValues()
+  public Values getValues()
   {
     return values;
   }
@@ -82,12 +75,53 @@ public class UnicastInImpl extends ActionImpl implements UnicastIn
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValues(String newValues)
+  public NotificationChain basicSetValues(Values newValues, NotificationChain msgs)
   {
-    String oldValues = values;
+    Values oldValues = values;
     values = newValues;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.UNICAST_IN__VALUES, oldValues, values));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ONPAPackage.UNICAST_IN__VALUES, oldValues, newValues);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setValues(Values newValues)
+  {
+    if (newValues != values)
+    {
+      NotificationChain msgs = null;
+      if (values != null)
+        msgs = ((InternalEObject)values).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.UNICAST_IN__VALUES, null, msgs);
+      if (newValues != null)
+        msgs = ((InternalEObject)newValues).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.UNICAST_IN__VALUES, null, msgs);
+      msgs = basicSetValues(newValues, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.UNICAST_IN__VALUES, newValues, newValues));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case ONPAPackage.UNICAST_IN__VALUES:
+        return basicSetValues(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -117,7 +151,7 @@ public class UnicastInImpl extends ActionImpl implements UnicastIn
     switch (featureID)
     {
       case ONPAPackage.UNICAST_IN__VALUES:
-        setValues((String)newValue);
+        setValues((Values)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,7 +168,7 @@ public class UnicastInImpl extends ActionImpl implements UnicastIn
     switch (featureID)
     {
       case ONPAPackage.UNICAST_IN__VALUES:
-        setValues(VALUES_EDEFAULT);
+        setValues((Values)null);
         return;
     }
     super.eUnset(featureID);
@@ -151,26 +185,9 @@ public class UnicastInImpl extends ActionImpl implements UnicastIn
     switch (featureID)
     {
       case ONPAPackage.UNICAST_IN__VALUES:
-        return VALUES_EDEFAULT == null ? values != null : !VALUES_EDEFAULT.equals(values);
+        return values != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (values: ");
-    result.append(values);
-    result.append(')');
-    return result.toString();
   }
 
 } //UnicastInImpl

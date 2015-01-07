@@ -105,14 +105,34 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
         return createUnicastInAdapter();
       }
       @Override
-      public Adapter caseUpdate(Update object)
+      public Adapter caseUpdates(Updates object)
       {
-        return createUpdateAdapter();
+        return createUpdatesAdapter();
       }
       @Override
       public Adapter caseUpdateExpression(UpdateExpression object)
       {
         return createUpdateExpressionAdapter();
+      }
+      @Override
+      public Adapter caseValues(Values object)
+      {
+        return createValuesAdapter();
+      }
+      @Override
+      public Adapter caseValuePrimary(ValuePrimary object)
+      {
+        return createValuePrimaryAdapter();
+      }
+      @Override
+      public Adapter caseEvaluations(Evaluations object)
+      {
+        return createEvaluationsAdapter();
+      }
+      @Override
+      public Adapter caseEvaluation(Evaluation object)
+      {
+        return createEvaluationAdapter();
       }
       @Override
       public Adapter caseStore(Store object)
@@ -302,16 +322,16 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.Update <em>Update</em>}'.
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.Updates <em>Updates</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.blasedef.onpa.oNPA.Update
+   * @see com.blasedef.onpa.oNPA.Updates
    * @generated
    */
-  public Adapter createUpdateAdapter()
+  public Adapter createUpdatesAdapter()
   {
     return null;
   }
@@ -327,6 +347,66 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createUpdateExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.Values <em>Values</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.Values
+   * @generated
+   */
+  public Adapter createValuesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.ValuePrimary <em>Value Primary</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.ValuePrimary
+   * @generated
+   */
+  public Adapter createValuePrimaryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.Evaluations <em>Evaluations</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.Evaluations
+   * @generated
+   */
+  public Adapter createEvaluationsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.Evaluation <em>Evaluation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.Evaluation
+   * @generated
+   */
+  public Adapter createEvaluationAdapter()
   {
     return null;
   }

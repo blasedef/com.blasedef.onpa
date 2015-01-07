@@ -317,7 +317,11 @@ public class ModelParserTest {
   public void testSimpleAction1() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("broadcastOut * [ ] < >  ;");
+      _builder.append("a = 0.1;");
+      _builder.newLine();
+      _builder.append("b = 0.1;");
+      _builder.newLine();
+      _builder.append("broadcastOut * [ ] < > {a = 0.1;} ;");
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
@@ -330,7 +334,11 @@ public class ModelParserTest {
   public void testSimpleAction2() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("broadcastIn * [ ] ( )  ;");
+      _builder.append("a = 0.1;");
+      _builder.newLine();
+      _builder.append("b = 0.1;");
+      _builder.newLine();
+      _builder.append("broadcastIn * [ ] (b;) {a = 0.1;} ;");
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
@@ -343,7 +351,11 @@ public class ModelParserTest {
   public void testSimpleAction3() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("unicastOut [ ] < >  ;");
+      _builder.append("a = 0.1;");
+      _builder.newLine();
+      _builder.append("b = 0.1;");
+      _builder.newLine();
+      _builder.append("unicastOut [ ] < > {a = 0.1;} ;");
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
@@ -356,22 +368,11 @@ public class ModelParserTest {
   public void testSimpleAction4() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("unicastIn [ ] ( )  ;");
-      _builder.newLine();
-      Model _parse = this._parseHelper.parse(_builder);
-      this._validationTestHelper.assertNoErrors(_parse);
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
-  }
-  
-  @Test
-  public void testUpdateAction1() {
-    try {
-      StringConcatenation _builder = new StringConcatenation();
       _builder.append("a = 0.1;");
       _builder.newLine();
-      _builder.append("broadcastOut * [ ] < > { } ;");
+      _builder.append("b = 0.1;");
+      _builder.newLine();
+      _builder.append("unicastIn [ ] (b;) {a = 0.1;} ;");
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
@@ -639,8 +640,8 @@ public class ModelParserTest {
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("(");
-        AttributeValue _rate = ((ReferencedRate)e).getRate();
-        String _name = _rate.getName();
+        AttributeValue _value = ((ReferencedRate)e).getValue();
+        String _name = _value.getName();
         _builder.append(_name, "");
         _builder.append(")");
         _switchResult = _builder.toString();

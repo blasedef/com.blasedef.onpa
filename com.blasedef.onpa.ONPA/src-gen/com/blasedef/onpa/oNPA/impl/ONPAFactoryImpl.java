@@ -70,8 +70,12 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
       case ONPAPackage.BROADCAST_IN: return createBroadcastIn();
       case ONPAPackage.UNICAST_OUT: return createUnicastOut();
       case ONPAPackage.UNICAST_IN: return createUnicastIn();
-      case ONPAPackage.UPDATE: return createUpdate();
+      case ONPAPackage.UPDATES: return createUpdates();
       case ONPAPackage.UPDATE_EXPRESSION: return createUpdateExpression();
+      case ONPAPackage.VALUES: return createValues();
+      case ONPAPackage.VALUE_PRIMARY: return createValuePrimary();
+      case ONPAPackage.EVALUATIONS: return createEvaluations();
+      case ONPAPackage.EVALUATION: return createEvaluation();
       case ONPAPackage.STORE: return createStore();
       case ONPAPackage.ATTRIBUTE_VALUE: return createAttributeValue();
       case ONPAPackage.EXPRESSION: return createExpression();
@@ -163,10 +167,10 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Update createUpdate()
+  public Updates createUpdates()
   {
-    UpdateImpl update = new UpdateImpl();
-    return update;
+    UpdatesImpl updates = new UpdatesImpl();
+    return updates;
   }
 
   /**
@@ -178,6 +182,50 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
   {
     UpdateExpressionImpl updateExpression = new UpdateExpressionImpl();
     return updateExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Values createValues()
+  {
+    ValuesImpl values = new ValuesImpl();
+    return values;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ValuePrimary createValuePrimary()
+  {
+    ValuePrimaryImpl valuePrimary = new ValuePrimaryImpl();
+    return valuePrimary;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Evaluations createEvaluations()
+  {
+    EvaluationsImpl evaluations = new EvaluationsImpl();
+    return evaluations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Evaluation createEvaluation()
+  {
+    EvaluationImpl evaluation = new EvaluationImpl();
+    return evaluation;
   }
 
   /**
