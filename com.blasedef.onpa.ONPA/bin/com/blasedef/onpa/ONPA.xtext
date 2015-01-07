@@ -37,19 +37,32 @@ Comparison returns Expression:
 ;
 	
 Subtraction returns Expression:
-	Addition ({Sub.left=current} '-' right=Addition)*;
+	Addition ({Sub.left=current} '-' right=Addition)*
+;
 	
 Addition returns Expression:
-	Multiplication ({Plu.left=current} '+' right=Multiplication)*;
+	Multiplication ({Plu.left=current} '+' right=Multiplication)*
+;
 
 Multiplication returns Expression:
-	Division ({Mul.left=current} '*' right=Division)*;
+	Division ({Mul.left=current} '*' right=Division)*
+;
 	
 Division returns Expression:
-	PrimaryExpression ({Div.left=current} '/' right=PrimaryExpression)*;
+	Primary ({Div.left=current} '/' right=Primary)*
+;
 
-PrimaryExpression returns Expression:
-	'(' Expression ')' | {DoubleConstant} value=Double | {Rate} rate=[Rate|LOWER] | {BoolConstant} value=('true'|'false');
+Primary returns Expression:
+	'(' Expression ')' | 
+	{Not} "!" expression=Primary |
+	Atomic
+;
+	
+Atomic returns Expression:
+	{DoubleConstant} value=Double |
+	{BoolConstant} value=('true'|'false') |
+	{Rate} rate=[Rate|LOWER] 
+;
 
 Double returns ecore::EDouble:
 	 INT ('.' INT ('e'|'E' '-'? INT)?)?
