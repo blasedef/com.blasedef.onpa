@@ -13,7 +13,28 @@ Rate:
 ;
 
 Expression:
-	Subtraction;
+	Or
+;
+	
+Or returns Expression:
+	And ({Or.left=current} "||" right=And)*
+;
+
+And returns Expression:
+	Equality ({And.left=current} "&&" right=Equality)*
+;
+
+Equality returns Expression:
+	Comparison (
+		{Equality.left=current} op=("=="|"!=")
+		right=Comparison
+	)*
+;
+
+Comparison returns Expression:
+	Subtraction ({Comparison.left=current} op=(">="|"<="|">"|"<")
+	right=Comparison)*
+;
 	
 Subtraction returns Expression:
 	Addition ({Sub.left=current} '-' right=Addition)*;
@@ -28,7 +49,7 @@ Division returns Expression:
 	PrimaryExpression ({Div.left=current} '/' right=PrimaryExpression)*;
 
 PrimaryExpression returns Expression:
-	'(' Expression ')' | {Constant} value=Double | {Rate} rate=[Rate|LOWER];
+	'(' Expression ')' | {DoubleConstant} value=Double | {Rate} rate=[Rate|LOWER] | {BoolConstant} value=('true'|'false');
 
 Double returns ecore::EDouble:
 	 INT ('.' INT ('e'|'E' '-'? INT)?)?
