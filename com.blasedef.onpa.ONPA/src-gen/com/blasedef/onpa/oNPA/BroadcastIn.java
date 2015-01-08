@@ -11,7 +11,7 @@ package com.blasedef.onpa.oNPA;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.blasedef.onpa.oNPA.BroadcastIn#getEvaluation <em>Evaluation</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.BroadcastIn#getValues <em>Values</em>}</li>
  * </ul>
  * </p>
  *
@@ -22,29 +22,29 @@ package com.blasedef.onpa.oNPA;
 public interface BroadcastIn extends Action
 {
   /**
-   * Returns the value of the '<em><b>Evaluation</b></em>' containment reference.
+   * Returns the value of the '<em><b>Values</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Evaluation</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Values</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Evaluation</em>' containment reference.
-   * @see #setEvaluation(Evaluations)
-   * @see com.blasedef.onpa.oNPA.ONPAPackage#getBroadcastIn_Evaluation()
+   * @return the value of the '<em>Values</em>' containment reference.
+   * @see #setValues(Values)
+   * @see com.blasedef.onpa.oNPA.ONPAPackage#getBroadcastIn_Values()
    * @model containment="true"
    * @generated
    */
-  Evaluations getEvaluation();
+  Values getValues();
 
   /**
-   * Sets the value of the '{@link com.blasedef.onpa.oNPA.BroadcastIn#getEvaluation <em>Evaluation</em>}' containment reference.
+   * Sets the value of the '{@link com.blasedef.onpa.oNPA.BroadcastIn#getValues <em>Values</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Evaluation</em>' containment reference.
-   * @see #getEvaluation()
+   * @param value the new value of the '<em>Values</em>' containment reference.
+   * @see #getValues()
    * @generated
    */
-  void setEvaluation(Evaluations value);
+  void setValues(Values value);
 
 } // BroadcastIn

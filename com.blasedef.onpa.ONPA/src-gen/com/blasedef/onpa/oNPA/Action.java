@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.blasedef.onpa.oNPA.Action#getName <em>Name</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.Action#getPredicate <em>Predicate</em>}</li>
  *   <li>{@link com.blasedef.onpa.oNPA.Action#getUpdate <em>Update</em>}</li>
  * </ul>
  * </p>
@@ -48,6 +49,32 @@ public interface Action extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Predicate</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Predicate</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Predicate</em>' containment reference.
+   * @see #setPredicate(Predicates)
+   * @see com.blasedef.onpa.oNPA.ONPAPackage#getAction_Predicate()
+   * @model containment="true"
+   * @generated
+   */
+  Predicates getPredicate();
+
+  /**
+   * Sets the value of the '{@link com.blasedef.onpa.oNPA.Action#getPredicate <em>Predicate</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Predicate</em>' containment reference.
+   * @see #getPredicate()
+   * @generated
+   */
+  void setPredicate(Predicates value);
 
   /**
    * Returns the value of the '<em><b>Update</b></em>' containment reference.

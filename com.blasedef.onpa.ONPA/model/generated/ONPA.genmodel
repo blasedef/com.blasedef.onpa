@@ -13,17 +13,16 @@
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//Action">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ONPA.ecore#//Action/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Action/predicate"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Action/update"/>
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//BroadcastOut">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//BroadcastOut/predicate"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//BroadcastOut/evaluation"/>
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//BroadcastIn">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//BroadcastIn/evaluation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//BroadcastIn/values"/>
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//UnicastOut">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//UnicastOut/predicate"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//UnicastOut/evaluation"/>
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//UnicastIn">
@@ -50,7 +49,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Evaluation/value"/>
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//Predicates">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Predicates/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Predicates/expressions"/>
+    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//PredicateExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//PredicateExpression/value"/>
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//Store"/>
     <genClasses ecoreClass="ONPA.ecore#//AttributeValue">

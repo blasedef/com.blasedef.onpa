@@ -3,8 +3,8 @@
 package com.blasedef.onpa.oNPA.impl;
 
 import com.blasedef.onpa.oNPA.BroadcastIn;
-import com.blasedef.onpa.oNPA.Evaluations;
 import com.blasedef.onpa.oNPA.ONPAPackage;
+import com.blasedef.onpa.oNPA.Values;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.blasedef.onpa.oNPA.impl.BroadcastInImpl#getEvaluation <em>Evaluation</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.impl.BroadcastInImpl#getValues <em>Values</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,14 +30,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class BroadcastInImpl extends ActionImpl implements BroadcastIn
 {
   /**
-   * The cached value of the '{@link #getEvaluation() <em>Evaluation</em>}' containment reference.
+   * The cached value of the '{@link #getValues() <em>Values</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEvaluation()
+   * @see #getValues()
    * @generated
    * @ordered
    */
-  protected Evaluations evaluation;
+  protected Values values;
 
   /**
    * <!-- begin-user-doc -->
@@ -65,9 +65,9 @@ public class BroadcastInImpl extends ActionImpl implements BroadcastIn
    * <!-- end-user-doc -->
    * @generated
    */
-  public Evaluations getEvaluation()
+  public Values getValues()
   {
-    return evaluation;
+    return values;
   }
 
   /**
@@ -75,13 +75,13 @@ public class BroadcastInImpl extends ActionImpl implements BroadcastIn
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetEvaluation(Evaluations newEvaluation, NotificationChain msgs)
+  public NotificationChain basicSetValues(Values newValues, NotificationChain msgs)
   {
-    Evaluations oldEvaluation = evaluation;
-    evaluation = newEvaluation;
+    Values oldValues = values;
+    values = newValues;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ONPAPackage.BROADCAST_IN__EVALUATION, oldEvaluation, newEvaluation);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ONPAPackage.BROADCAST_IN__VALUES, oldValues, newValues);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -92,20 +92,20 @@ public class BroadcastInImpl extends ActionImpl implements BroadcastIn
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEvaluation(Evaluations newEvaluation)
+  public void setValues(Values newValues)
   {
-    if (newEvaluation != evaluation)
+    if (newValues != values)
     {
       NotificationChain msgs = null;
-      if (evaluation != null)
-        msgs = ((InternalEObject)evaluation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.BROADCAST_IN__EVALUATION, null, msgs);
-      if (newEvaluation != null)
-        msgs = ((InternalEObject)newEvaluation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.BROADCAST_IN__EVALUATION, null, msgs);
-      msgs = basicSetEvaluation(newEvaluation, msgs);
+      if (values != null)
+        msgs = ((InternalEObject)values).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.BROADCAST_IN__VALUES, null, msgs);
+      if (newValues != null)
+        msgs = ((InternalEObject)newValues).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.BROADCAST_IN__VALUES, null, msgs);
+      msgs = basicSetValues(newValues, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.BROADCAST_IN__EVALUATION, newEvaluation, newEvaluation));
+      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.BROADCAST_IN__VALUES, newValues, newValues));
   }
 
   /**
@@ -118,8 +118,8 @@ public class BroadcastInImpl extends ActionImpl implements BroadcastIn
   {
     switch (featureID)
     {
-      case ONPAPackage.BROADCAST_IN__EVALUATION:
-        return basicSetEvaluation(null, msgs);
+      case ONPAPackage.BROADCAST_IN__VALUES:
+        return basicSetValues(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -134,8 +134,8 @@ public class BroadcastInImpl extends ActionImpl implements BroadcastIn
   {
     switch (featureID)
     {
-      case ONPAPackage.BROADCAST_IN__EVALUATION:
-        return getEvaluation();
+      case ONPAPackage.BROADCAST_IN__VALUES:
+        return getValues();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -150,8 +150,8 @@ public class BroadcastInImpl extends ActionImpl implements BroadcastIn
   {
     switch (featureID)
     {
-      case ONPAPackage.BROADCAST_IN__EVALUATION:
-        setEvaluation((Evaluations)newValue);
+      case ONPAPackage.BROADCAST_IN__VALUES:
+        setValues((Values)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -167,8 +167,8 @@ public class BroadcastInImpl extends ActionImpl implements BroadcastIn
   {
     switch (featureID)
     {
-      case ONPAPackage.BROADCAST_IN__EVALUATION:
-        setEvaluation((Evaluations)null);
+      case ONPAPackage.BROADCAST_IN__VALUES:
+        setValues((Values)null);
         return;
     }
     super.eUnset(featureID);
@@ -184,8 +184,8 @@ public class BroadcastInImpl extends ActionImpl implements BroadcastIn
   {
     switch (featureID)
     {
-      case ONPAPackage.BROADCAST_IN__EVALUATION:
-        return evaluation != null;
+      case ONPAPackage.BROADCAST_IN__VALUES:
+        return values != null;
     }
     return super.eIsSet(featureID);
   }

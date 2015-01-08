@@ -167,6 +167,13 @@ public class ONPASwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ONPAPackage.PREDICATE_EXPRESSION:
+      {
+        PredicateExpression predicateExpression = (PredicateExpression)theEObject;
+        T result = casePredicateExpression(predicateExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ONPAPackage.STORE:
       {
         Store store = (Store)theEObject;
@@ -493,6 +500,22 @@ public class ONPASwitch<T> extends Switch<T>
    * @generated
    */
   public T casePredicates(Predicates object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Predicate Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Predicate Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePredicateExpression(PredicateExpression object)
   {
     return null;
   }

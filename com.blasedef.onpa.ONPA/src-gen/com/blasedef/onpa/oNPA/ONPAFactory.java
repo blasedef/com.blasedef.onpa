@@ -140,6 +140,15 @@ public interface ONPAFactory extends EFactory
   Predicates createPredicates();
 
   /**
+   * Returns a new object of class '<em>Predicate Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Predicate Expression</em>'.
+   * @generated
+   */
+  PredicateExpression createPredicateExpression();
+
+  /**
    * Returns a new object of class '<em>Store</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

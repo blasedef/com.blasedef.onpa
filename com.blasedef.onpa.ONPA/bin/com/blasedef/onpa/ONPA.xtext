@@ -19,7 +19,7 @@ BroadcastOut:
 ;
 
 BroadcastIn:
-	name=LOWER "*"  values=Values update=Updates
+	name=LOWER "*"  values=Values update=Updates predicate=Predicates 
 ;
 
 UnicastOut:
@@ -27,7 +27,7 @@ UnicastOut:
 ;
 
 UnicastIn:
-	name=LOWER  values=Values update=Updates
+	name=LOWER values=Values update=Updates predicate=Predicates
 ;
 
 Updates:
@@ -55,7 +55,11 @@ Evaluation:
 ;
 
 Predicates:
-	 {Predicates} "[" value=Expression "]"
+	 {Predicates} "[" expressions+=PredicateExpression "]"
+;
+
+PredicateExpression:
+	value=Expression
 ;
 
 Store:

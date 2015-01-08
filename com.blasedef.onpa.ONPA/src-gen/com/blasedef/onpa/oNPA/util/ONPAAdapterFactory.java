@@ -140,6 +140,11 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
         return createPredicatesAdapter();
       }
       @Override
+      public Adapter casePredicateExpression(PredicateExpression object)
+      {
+        return createPredicateExpressionAdapter();
+      }
+      @Override
       public Adapter caseStore(Store object)
       {
         return createStoreAdapter();
@@ -427,6 +432,21 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createPredicatesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.PredicateExpression <em>Predicate Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.PredicateExpression
+   * @generated
+   */
+  public Adapter createPredicateExpressionAdapter()
   {
     return null;
   }

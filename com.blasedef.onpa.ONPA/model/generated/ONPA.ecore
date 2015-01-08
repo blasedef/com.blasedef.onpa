@@ -9,22 +9,20 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="predicate" eType="#//Predicates"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="update" eType="#//Updates"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BroadcastOut" eSuperTypes="#//Action">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="predicate" eType="#//Predicates"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="evaluation" eType="#//Evaluations"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BroadcastIn" eSuperTypes="#//Action">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="evaluation" eType="#//Evaluations"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="values" eType="#//Values"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnicastOut" eSuperTypes="#//Action">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="predicate" eType="#//Predicates"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="evaluation" eType="#//Evaluations"
         containment="true"/>
   </eClassifiers>
@@ -58,6 +56,10 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Predicates">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expressions" upperBound="-1"
+        eType="#//PredicateExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PredicateExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Expression"
         containment="true"/>
   </eClassifiers>

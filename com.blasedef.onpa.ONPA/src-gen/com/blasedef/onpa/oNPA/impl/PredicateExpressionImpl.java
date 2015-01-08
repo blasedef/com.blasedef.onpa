@@ -2,9 +2,9 @@
  */
 package com.blasedef.onpa.oNPA.impl;
 
-import com.blasedef.onpa.oNPA.Evaluations;
+import com.blasedef.onpa.oNPA.Expression;
 import com.blasedef.onpa.oNPA.ONPAPackage;
-import com.blasedef.onpa.oNPA.UnicastOut;
+import com.blasedef.onpa.oNPA.PredicateExpression;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -13,38 +13,39 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Unicast Out</b></em>'.
+ * An implementation of the model object '<em><b>Predicate Expression</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.blasedef.onpa.oNPA.impl.UnicastOutImpl#getEvaluation <em>Evaluation</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.impl.PredicateExpressionImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class UnicastOutImpl extends ActionImpl implements UnicastOut
+public class PredicateExpressionImpl extends MinimalEObjectImpl.Container implements PredicateExpression
 {
   /**
-   * The cached value of the '{@link #getEvaluation() <em>Evaluation</em>}' containment reference.
+   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEvaluation()
+   * @see #getValue()
    * @generated
    * @ordered
    */
-  protected Evaluations evaluation;
+  protected Expression value;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected UnicastOutImpl()
+  protected PredicateExpressionImpl()
   {
     super();
   }
@@ -57,7 +58,7 @@ public class UnicastOutImpl extends ActionImpl implements UnicastOut
   @Override
   protected EClass eStaticClass()
   {
-    return ONPAPackage.Literals.UNICAST_OUT;
+    return ONPAPackage.Literals.PREDICATE_EXPRESSION;
   }
 
   /**
@@ -65,9 +66,9 @@ public class UnicastOutImpl extends ActionImpl implements UnicastOut
    * <!-- end-user-doc -->
    * @generated
    */
-  public Evaluations getEvaluation()
+  public Expression getValue()
   {
-    return evaluation;
+    return value;
   }
 
   /**
@@ -75,13 +76,13 @@ public class UnicastOutImpl extends ActionImpl implements UnicastOut
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetEvaluation(Evaluations newEvaluation, NotificationChain msgs)
+  public NotificationChain basicSetValue(Expression newValue, NotificationChain msgs)
   {
-    Evaluations oldEvaluation = evaluation;
-    evaluation = newEvaluation;
+    Expression oldValue = value;
+    value = newValue;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ONPAPackage.UNICAST_OUT__EVALUATION, oldEvaluation, newEvaluation);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ONPAPackage.PREDICATE_EXPRESSION__VALUE, oldValue, newValue);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -92,20 +93,20 @@ public class UnicastOutImpl extends ActionImpl implements UnicastOut
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEvaluation(Evaluations newEvaluation)
+  public void setValue(Expression newValue)
   {
-    if (newEvaluation != evaluation)
+    if (newValue != value)
     {
       NotificationChain msgs = null;
-      if (evaluation != null)
-        msgs = ((InternalEObject)evaluation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.UNICAST_OUT__EVALUATION, null, msgs);
-      if (newEvaluation != null)
-        msgs = ((InternalEObject)newEvaluation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.UNICAST_OUT__EVALUATION, null, msgs);
-      msgs = basicSetEvaluation(newEvaluation, msgs);
+      if (value != null)
+        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.PREDICATE_EXPRESSION__VALUE, null, msgs);
+      if (newValue != null)
+        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.PREDICATE_EXPRESSION__VALUE, null, msgs);
+      msgs = basicSetValue(newValue, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.UNICAST_OUT__EVALUATION, newEvaluation, newEvaluation));
+      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.PREDICATE_EXPRESSION__VALUE, newValue, newValue));
   }
 
   /**
@@ -118,8 +119,8 @@ public class UnicastOutImpl extends ActionImpl implements UnicastOut
   {
     switch (featureID)
     {
-      case ONPAPackage.UNICAST_OUT__EVALUATION:
-        return basicSetEvaluation(null, msgs);
+      case ONPAPackage.PREDICATE_EXPRESSION__VALUE:
+        return basicSetValue(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -134,8 +135,8 @@ public class UnicastOutImpl extends ActionImpl implements UnicastOut
   {
     switch (featureID)
     {
-      case ONPAPackage.UNICAST_OUT__EVALUATION:
-        return getEvaluation();
+      case ONPAPackage.PREDICATE_EXPRESSION__VALUE:
+        return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -150,8 +151,8 @@ public class UnicastOutImpl extends ActionImpl implements UnicastOut
   {
     switch (featureID)
     {
-      case ONPAPackage.UNICAST_OUT__EVALUATION:
-        setEvaluation((Evaluations)newValue);
+      case ONPAPackage.PREDICATE_EXPRESSION__VALUE:
+        setValue((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -167,8 +168,8 @@ public class UnicastOutImpl extends ActionImpl implements UnicastOut
   {
     switch (featureID)
     {
-      case ONPAPackage.UNICAST_OUT__EVALUATION:
-        setEvaluation((Evaluations)null);
+      case ONPAPackage.PREDICATE_EXPRESSION__VALUE:
+        setValue((Expression)null);
         return;
     }
     super.eUnset(featureID);
@@ -184,10 +185,10 @@ public class UnicastOutImpl extends ActionImpl implements UnicastOut
   {
     switch (featureID)
     {
-      case ONPAPackage.UNICAST_OUT__EVALUATION:
-        return evaluation != null;
+      case ONPAPackage.PREDICATE_EXPRESSION__VALUE:
+        return value != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //UnicastOutImpl
+} //PredicateExpressionImpl

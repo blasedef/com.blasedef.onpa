@@ -113,13 +113,22 @@ public interface ONPAPackage extends EPackage
   int ACTION__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Predicate</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION__PREDICATE = 1;
+
+  /**
    * The feature id for the '<em><b>Update</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTION__UPDATE = 1;
+  int ACTION__UPDATE = 2;
 
   /**
    * The number of structural features of the '<em>Action</em>' class.
@@ -128,7 +137,7 @@ public interface ONPAPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_FEATURE_COUNT = 2;
+  int ACTION_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.BroadcastOutImpl <em>Broadcast Out</em>}' class.
@@ -150,6 +159,15 @@ public interface ONPAPackage extends EPackage
   int BROADCAST_OUT__NAME = ACTION__NAME;
 
   /**
+   * The feature id for the '<em><b>Predicate</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BROADCAST_OUT__PREDICATE = ACTION__PREDICATE;
+
+  /**
    * The feature id for the '<em><b>Update</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -159,22 +177,13 @@ public interface ONPAPackage extends EPackage
   int BROADCAST_OUT__UPDATE = ACTION__UPDATE;
 
   /**
-   * The feature id for the '<em><b>Predicate</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BROADCAST_OUT__PREDICATE = ACTION_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Evaluation</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BROADCAST_OUT__EVALUATION = ACTION_FEATURE_COUNT + 1;
+  int BROADCAST_OUT__EVALUATION = ACTION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Broadcast Out</em>' class.
@@ -183,7 +192,7 @@ public interface ONPAPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BROADCAST_OUT_FEATURE_COUNT = ACTION_FEATURE_COUNT + 2;
+  int BROADCAST_OUT_FEATURE_COUNT = ACTION_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.BroadcastInImpl <em>Broadcast In</em>}' class.
@@ -205,6 +214,15 @@ public interface ONPAPackage extends EPackage
   int BROADCAST_IN__NAME = ACTION__NAME;
 
   /**
+   * The feature id for the '<em><b>Predicate</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BROADCAST_IN__PREDICATE = ACTION__PREDICATE;
+
+  /**
    * The feature id for the '<em><b>Update</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -214,13 +232,13 @@ public interface ONPAPackage extends EPackage
   int BROADCAST_IN__UPDATE = ACTION__UPDATE;
 
   /**
-   * The feature id for the '<em><b>Evaluation</b></em>' containment reference.
+   * The feature id for the '<em><b>Values</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BROADCAST_IN__EVALUATION = ACTION_FEATURE_COUNT + 0;
+  int BROADCAST_IN__VALUES = ACTION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Broadcast In</em>' class.
@@ -251,6 +269,15 @@ public interface ONPAPackage extends EPackage
   int UNICAST_OUT__NAME = ACTION__NAME;
 
   /**
+   * The feature id for the '<em><b>Predicate</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNICAST_OUT__PREDICATE = ACTION__PREDICATE;
+
+  /**
    * The feature id for the '<em><b>Update</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -260,22 +287,13 @@ public interface ONPAPackage extends EPackage
   int UNICAST_OUT__UPDATE = ACTION__UPDATE;
 
   /**
-   * The feature id for the '<em><b>Predicate</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNICAST_OUT__PREDICATE = ACTION_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Evaluation</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UNICAST_OUT__EVALUATION = ACTION_FEATURE_COUNT + 1;
+  int UNICAST_OUT__EVALUATION = ACTION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Unicast Out</em>' class.
@@ -284,7 +302,7 @@ public interface ONPAPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UNICAST_OUT_FEATURE_COUNT = ACTION_FEATURE_COUNT + 2;
+  int UNICAST_OUT_FEATURE_COUNT = ACTION_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.UnicastInImpl <em>Unicast In</em>}' class.
@@ -304,6 +322,15 @@ public interface ONPAPackage extends EPackage
    * @ordered
    */
   int UNICAST_IN__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Predicate</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNICAST_IN__PREDICATE = ACTION__PREDICATE;
 
   /**
    * The feature id for the '<em><b>Update</b></em>' containment reference.
@@ -529,13 +556,13 @@ public interface ONPAPackage extends EPackage
   int PREDICATES = 12;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PREDICATES__VALUE = 0;
+  int PREDICATES__EXPRESSIONS = 0;
 
   /**
    * The number of structural features of the '<em>Predicates</em>' class.
@@ -547,6 +574,34 @@ public interface ONPAPackage extends EPackage
   int PREDICATES_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.PredicateExpressionImpl <em>Predicate Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.blasedef.onpa.oNPA.impl.PredicateExpressionImpl
+   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getPredicateExpression()
+   * @generated
+   */
+  int PREDICATE_EXPRESSION = 13;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_EXPRESSION__VALUE = 0;
+
+  /**
+   * The number of structural features of the '<em>Predicate Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_EXPRESSION_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.StoreImpl <em>Store</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -554,7 +609,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getStore()
    * @generated
    */
-  int STORE = 13;
+  int STORE = 14;
 
   /**
    * The number of structural features of the '<em>Store</em>' class.
@@ -573,7 +628,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getAttributeValue()
    * @generated
    */
-  int ATTRIBUTE_VALUE = 14;
+  int ATTRIBUTE_VALUE = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -610,7 +665,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 15;
+  int EXPRESSION = 16;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -629,7 +684,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getOr()
    * @generated
    */
-  int OR = 16;
+  int OR = 17;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -666,7 +721,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getAnd()
    * @generated
    */
-  int AND = 17;
+  int AND = 18;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -703,7 +758,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getEquality()
    * @generated
    */
-  int EQUALITY = 18;
+  int EQUALITY = 19;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -749,7 +804,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getComparison()
    * @generated
    */
-  int COMPARISON = 19;
+  int COMPARISON = 20;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -795,7 +850,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getSub()
    * @generated
    */
-  int SUB = 20;
+  int SUB = 21;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -832,7 +887,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getPlu()
    * @generated
    */
-  int PLU = 21;
+  int PLU = 22;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -869,7 +924,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getMul()
    * @generated
    */
-  int MUL = 22;
+  int MUL = 23;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -906,7 +961,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getDiv()
    * @generated
    */
-  int DIV = 23;
+  int DIV = 24;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -943,7 +998,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getNot()
    * @generated
    */
-  int NOT = 24;
+  int NOT = 25;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -971,7 +1026,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getDoubleConstant()
    * @generated
    */
-  int DOUBLE_CONSTANT = 25;
+  int DOUBLE_CONSTANT = 26;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -999,7 +1054,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getBoolConstant()
    * @generated
    */
-  int BOOL_CONSTANT = 26;
+  int BOOL_CONSTANT = 27;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1027,7 +1082,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getReferencedRate()
    * @generated
    */
-  int REFERENCED_RATE = 27;
+  int REFERENCED_RATE = 28;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' reference.
@@ -1102,6 +1157,17 @@ public interface ONPAPackage extends EPackage
   EAttribute getAction_Name();
 
   /**
+   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.Action#getPredicate <em>Predicate</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Predicate</em>'.
+   * @see com.blasedef.onpa.oNPA.Action#getPredicate()
+   * @see #getAction()
+   * @generated
+   */
+  EReference getAction_Predicate();
+
+  /**
    * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.Action#getUpdate <em>Update</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1121,17 +1187,6 @@ public interface ONPAPackage extends EPackage
    * @generated
    */
   EClass getBroadcastOut();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.BroadcastOut#getPredicate <em>Predicate</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Predicate</em>'.
-   * @see com.blasedef.onpa.oNPA.BroadcastOut#getPredicate()
-   * @see #getBroadcastOut()
-   * @generated
-   */
-  EReference getBroadcastOut_Predicate();
 
   /**
    * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.BroadcastOut#getEvaluation <em>Evaluation</em>}'.
@@ -1155,15 +1210,15 @@ public interface ONPAPackage extends EPackage
   EClass getBroadcastIn();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.BroadcastIn#getEvaluation <em>Evaluation</em>}'.
+   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.BroadcastIn#getValues <em>Values</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Evaluation</em>'.
-   * @see com.blasedef.onpa.oNPA.BroadcastIn#getEvaluation()
+   * @return the meta object for the containment reference '<em>Values</em>'.
+   * @see com.blasedef.onpa.oNPA.BroadcastIn#getValues()
    * @see #getBroadcastIn()
    * @generated
    */
-  EReference getBroadcastIn_Evaluation();
+  EReference getBroadcastIn_Values();
 
   /**
    * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.UnicastOut <em>Unicast Out</em>}'.
@@ -1174,17 +1229,6 @@ public interface ONPAPackage extends EPackage
    * @generated
    */
   EClass getUnicastOut();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.UnicastOut#getPredicate <em>Predicate</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Predicate</em>'.
-   * @see com.blasedef.onpa.oNPA.UnicastOut#getPredicate()
-   * @see #getUnicastOut()
-   * @generated
-   */
-  EReference getUnicastOut_Predicate();
 
   /**
    * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.UnicastOut#getEvaluation <em>Evaluation</em>}'.
@@ -1377,15 +1421,36 @@ public interface ONPAPackage extends EPackage
   EClass getPredicates();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.Predicates#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.blasedef.onpa.oNPA.Predicates#getExpressions <em>Expressions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Value</em>'.
-   * @see com.blasedef.onpa.oNPA.Predicates#getValue()
+   * @return the meta object for the containment reference list '<em>Expressions</em>'.
+   * @see com.blasedef.onpa.oNPA.Predicates#getExpressions()
    * @see #getPredicates()
    * @generated
    */
-  EReference getPredicates_Value();
+  EReference getPredicates_Expressions();
+
+  /**
+   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.PredicateExpression <em>Predicate Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Predicate Expression</em>'.
+   * @see com.blasedef.onpa.oNPA.PredicateExpression
+   * @generated
+   */
+  EClass getPredicateExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.PredicateExpression#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see com.blasedef.onpa.oNPA.PredicateExpression#getValue()
+   * @see #getPredicateExpression()
+   * @generated
+   */
+  EReference getPredicateExpression_Value();
 
   /**
    * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.Store <em>Store</em>}'.
@@ -1869,6 +1934,14 @@ public interface ONPAPackage extends EPackage
     EAttribute ACTION__NAME = eINSTANCE.getAction_Name();
 
     /**
+     * The meta object literal for the '<em><b>Predicate</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION__PREDICATE = eINSTANCE.getAction_Predicate();
+
+    /**
      * The meta object literal for the '<em><b>Update</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1885,14 +1958,6 @@ public interface ONPAPackage extends EPackage
      * @generated
      */
     EClass BROADCAST_OUT = eINSTANCE.getBroadcastOut();
-
-    /**
-     * The meta object literal for the '<em><b>Predicate</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference BROADCAST_OUT__PREDICATE = eINSTANCE.getBroadcastOut_Predicate();
 
     /**
      * The meta object literal for the '<em><b>Evaluation</b></em>' containment reference feature.
@@ -1913,12 +1978,12 @@ public interface ONPAPackage extends EPackage
     EClass BROADCAST_IN = eINSTANCE.getBroadcastIn();
 
     /**
-     * The meta object literal for the '<em><b>Evaluation</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Values</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BROADCAST_IN__EVALUATION = eINSTANCE.getBroadcastIn_Evaluation();
+    EReference BROADCAST_IN__VALUES = eINSTANCE.getBroadcastIn_Values();
 
     /**
      * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.UnicastOutImpl <em>Unicast Out</em>}' class.
@@ -1929,14 +1994,6 @@ public interface ONPAPackage extends EPackage
      * @generated
      */
     EClass UNICAST_OUT = eINSTANCE.getUnicastOut();
-
-    /**
-     * The meta object literal for the '<em><b>Predicate</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference UNICAST_OUT__PREDICATE = eINSTANCE.getUnicastOut_Predicate();
 
     /**
      * The meta object literal for the '<em><b>Evaluation</b></em>' containment reference feature.
@@ -2099,12 +2156,30 @@ public interface ONPAPackage extends EPackage
     EClass PREDICATES = eINSTANCE.getPredicates();
 
     /**
+     * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PREDICATES__EXPRESSIONS = eINSTANCE.getPredicates_Expressions();
+
+    /**
+     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.PredicateExpressionImpl <em>Predicate Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.blasedef.onpa.oNPA.impl.PredicateExpressionImpl
+     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getPredicateExpression()
+     * @generated
+     */
+    EClass PREDICATE_EXPRESSION = eINSTANCE.getPredicateExpression();
+
+    /**
      * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PREDICATES__VALUE = eINSTANCE.getPredicates_Value();
+    EReference PREDICATE_EXPRESSION__VALUE = eINSTANCE.getPredicateExpression_Value();
 
     /**
      * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.StoreImpl <em>Store</em>}' class.

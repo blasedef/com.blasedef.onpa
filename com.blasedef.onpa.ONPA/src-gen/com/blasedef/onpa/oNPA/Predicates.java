@@ -2,6 +2,8 @@
  */
 package com.blasedef.onpa.oNPA;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -12,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.blasedef.onpa.oNPA.Predicates#getValue <em>Value</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.Predicates#getExpressions <em>Expressions</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,29 +25,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface Predicates extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Value</b></em>' containment reference.
+   * Returns the value of the '<em><b>Expressions</b></em>' containment reference list.
+   * The list contents are of type {@link com.blasedef.onpa.oNPA.PredicateExpression}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Value</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Expressions</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Value</em>' containment reference.
-   * @see #setValue(Expression)
-   * @see com.blasedef.onpa.oNPA.ONPAPackage#getPredicates_Value()
+   * @return the value of the '<em>Expressions</em>' containment reference list.
+   * @see com.blasedef.onpa.oNPA.ONPAPackage#getPredicates_Expressions()
    * @model containment="true"
    * @generated
    */
-  Expression getValue();
-
-  /**
-   * Sets the value of the '{@link com.blasedef.onpa.oNPA.Predicates#getValue <em>Value</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Value</em>' containment reference.
-   * @see #getValue()
-   * @generated
-   */
-  void setValue(Expression value);
+  EList<PredicateExpression> getExpressions();
 
 } // Predicates

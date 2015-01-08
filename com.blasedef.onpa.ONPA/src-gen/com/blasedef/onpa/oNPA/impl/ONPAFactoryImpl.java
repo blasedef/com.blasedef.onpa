@@ -77,6 +77,7 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
       case ONPAPackage.EVALUATIONS: return createEvaluations();
       case ONPAPackage.EVALUATION: return createEvaluation();
       case ONPAPackage.PREDICATES: return createPredicates();
+      case ONPAPackage.PREDICATE_EXPRESSION: return createPredicateExpression();
       case ONPAPackage.STORE: return createStore();
       case ONPAPackage.ATTRIBUTE_VALUE: return createAttributeValue();
       case ONPAPackage.EXPRESSION: return createExpression();
@@ -238,6 +239,17 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
   {
     PredicatesImpl predicates = new PredicatesImpl();
     return predicates;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PredicateExpression createPredicateExpression()
+  {
+    PredicateExpressionImpl predicateExpression = new PredicateExpressionImpl();
+    return predicateExpression;
   }
 
   /**

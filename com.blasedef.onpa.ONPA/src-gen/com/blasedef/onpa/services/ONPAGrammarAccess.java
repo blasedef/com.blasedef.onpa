@@ -137,16 +137,18 @@ public class ONPAGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameLOWERTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Keyword cAsteriskKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cEvaluationAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cEvaluationEvaluationsParserRuleCall_2_0 = (RuleCall)cEvaluationAssignment_2.eContents().get(0);
+		private final Assignment cValuesAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValuesValuesParserRuleCall_2_0 = (RuleCall)cValuesAssignment_2.eContents().get(0);
 		private final Assignment cUpdateAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cUpdateUpdatesParserRuleCall_3_0 = (RuleCall)cUpdateAssignment_3.eContents().get(0);
+		private final Assignment cPredicateAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cPredicatePredicatesParserRuleCall_4_0 = (RuleCall)cPredicateAssignment_4.eContents().get(0);
 		
 		//BroadcastIn:
-		//	name=LOWER "*" evaluation=Evaluations update=Updates;
+		//	name=LOWER "*" values=Values update=Updates predicate=Predicates;
 		public ParserRule getRule() { return rule; }
 
-		//name=LOWER "*" evaluation=Evaluations update=Updates
+		//name=LOWER "*" values=Values update=Updates predicate=Predicates
 		public Group getGroup() { return cGroup; }
 
 		//name=LOWER
@@ -158,17 +160,23 @@ public class ONPAGrammarAccess extends AbstractGrammarElementFinder {
 		//"*"
 		public Keyword getAsteriskKeyword_1() { return cAsteriskKeyword_1; }
 
-		//evaluation=Evaluations
-		public Assignment getEvaluationAssignment_2() { return cEvaluationAssignment_2; }
+		//values=Values
+		public Assignment getValuesAssignment_2() { return cValuesAssignment_2; }
 
-		//Evaluations
-		public RuleCall getEvaluationEvaluationsParserRuleCall_2_0() { return cEvaluationEvaluationsParserRuleCall_2_0; }
+		//Values
+		public RuleCall getValuesValuesParserRuleCall_2_0() { return cValuesValuesParserRuleCall_2_0; }
 
 		//update=Updates
 		public Assignment getUpdateAssignment_3() { return cUpdateAssignment_3; }
 
 		//Updates
 		public RuleCall getUpdateUpdatesParserRuleCall_3_0() { return cUpdateUpdatesParserRuleCall_3_0; }
+
+		//predicate=Predicates
+		public Assignment getPredicateAssignment_4() { return cPredicateAssignment_4; }
+
+		//Predicates
+		public RuleCall getPredicatePredicatesParserRuleCall_4_0() { return cPredicatePredicatesParserRuleCall_4_0; }
 	}
 
 	public class UnicastOutElements extends AbstractParserRuleElementFinder {
@@ -224,12 +232,14 @@ public class ONPAGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValuesValuesParserRuleCall_1_0 = (RuleCall)cValuesAssignment_1.eContents().get(0);
 		private final Assignment cUpdateAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cUpdateUpdatesParserRuleCall_2_0 = (RuleCall)cUpdateAssignment_2.eContents().get(0);
+		private final Assignment cPredicateAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cPredicatePredicatesParserRuleCall_3_0 = (RuleCall)cPredicateAssignment_3.eContents().get(0);
 		
 		//UnicastIn:
-		//	name=LOWER values=Values update=Updates;
+		//	name=LOWER values=Values update=Updates predicate=Predicates;
 		public ParserRule getRule() { return rule; }
 
-		//name=LOWER values=Values update=Updates
+		//name=LOWER values=Values update=Updates predicate=Predicates
 		public Group getGroup() { return cGroup; }
 
 		//name=LOWER
@@ -249,6 +259,12 @@ public class ONPAGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Updates
 		public RuleCall getUpdateUpdatesParserRuleCall_2_0() { return cUpdateUpdatesParserRuleCall_2_0; }
+
+		//predicate=Predicates
+		public Assignment getPredicateAssignment_3() { return cPredicateAssignment_3; }
+
+		//Predicates
+		public RuleCall getPredicatePredicatesParserRuleCall_3_0() { return cPredicatePredicatesParserRuleCall_3_0; }
 	}
 
 	public class UpdatesElements extends AbstractParserRuleElementFinder {
@@ -459,15 +475,15 @@ public class ONPAGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cPredicatesAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueExpressionParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		private final Assignment cExpressionsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cExpressionsPredicateExpressionParserRuleCall_2_0 = (RuleCall)cExpressionsAssignment_2.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Predicates:
-		//	{Predicates} "[" value=Expression "]";
+		//	{Predicates} "[" expressions+=PredicateExpression "]";
 		public ParserRule getRule() { return rule; }
 
-		//{Predicates} "[" value=Expression "]"
+		//{Predicates} "[" expressions+=PredicateExpression "]"
 		public Group getGroup() { return cGroup; }
 
 		//{Predicates}
@@ -476,14 +492,30 @@ public class ONPAGrammarAccess extends AbstractGrammarElementFinder {
 		//"["
 		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
 
-		//value=Expression
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		//expressions+=PredicateExpression
+		public Assignment getExpressionsAssignment_2() { return cExpressionsAssignment_2; }
 
-		//Expression
-		public RuleCall getValueExpressionParserRuleCall_2_0() { return cValueExpressionParserRuleCall_2_0; }
+		//PredicateExpression
+		public RuleCall getExpressionsPredicateExpressionParserRuleCall_2_0() { return cExpressionsPredicateExpressionParserRuleCall_2_0; }
 
 		//"]"
 		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
+	}
+
+	public class PredicateExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PredicateExpression");
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cValueExpressionParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		
+		//PredicateExpression:
+		//	value=Expression;
+		public ParserRule getRule() { return rule; }
+
+		//value=Expression
+		public Assignment getValueAssignment() { return cValueAssignment; }
+
+		//Expression
+		public RuleCall getValueExpressionParserRuleCall_0() { return cValueExpressionParserRuleCall_0; }
 	}
 
 	public class StoreElements extends AbstractParserRuleElementFinder {
@@ -1098,6 +1130,7 @@ public class ONPAGrammarAccess extends AbstractGrammarElementFinder {
 	private final EvaluationsElements pEvaluations;
 	private final EvaluationElements pEvaluation;
 	private final PredicatesElements pPredicates;
+	private final PredicateExpressionElements pPredicateExpression;
 	private final StoreElements pStore;
 	private final AttributeValueElements pAttributeValue;
 	private final ExpressionElements pExpression;
@@ -1139,6 +1172,7 @@ public class ONPAGrammarAccess extends AbstractGrammarElementFinder {
 		this.pEvaluations = new EvaluationsElements();
 		this.pEvaluation = new EvaluationElements();
 		this.pPredicates = new PredicatesElements();
+		this.pPredicateExpression = new PredicateExpressionElements();
 		this.pStore = new StoreElements();
 		this.pAttributeValue = new AttributeValueElements();
 		this.pExpression = new ExpressionElements();
@@ -1218,7 +1252,7 @@ public class ONPAGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//BroadcastIn:
-	//	name=LOWER "*" evaluation=Evaluations update=Updates;
+	//	name=LOWER "*" values=Values update=Updates predicate=Predicates;
 	public BroadcastInElements getBroadcastInAccess() {
 		return pBroadcastIn;
 	}
@@ -1238,7 +1272,7 @@ public class ONPAGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//UnicastIn:
-	//	name=LOWER values=Values update=Updates;
+	//	name=LOWER values=Values update=Updates predicate=Predicates;
 	public UnicastInElements getUnicastInAccess() {
 		return pUnicastIn;
 	}
@@ -1309,13 +1343,23 @@ public class ONPAGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Predicates:
-	//	{Predicates} "[" value=Expression "]";
+	//	{Predicates} "[" expressions+=PredicateExpression "]";
 	public PredicatesElements getPredicatesAccess() {
 		return pPredicates;
 	}
 	
 	public ParserRule getPredicatesRule() {
 		return getPredicatesAccess().getRule();
+	}
+
+	//PredicateExpression:
+	//	value=Expression;
+	public PredicateExpressionElements getPredicateExpressionAccess() {
+		return pPredicateExpression;
+	}
+	
+	public ParserRule getPredicateExpressionRule() {
+		return getPredicateExpressionAccess().getRule();
 	}
 
 	//Store:

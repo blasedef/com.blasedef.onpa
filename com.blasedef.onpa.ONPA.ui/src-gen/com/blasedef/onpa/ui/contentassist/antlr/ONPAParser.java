@@ -91,8 +91,9 @@ public class ONPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBroadcastOutAccess().getEvaluationAssignment_3(), "rule__BroadcastOut__EvaluationAssignment_3");
 					put(grammarAccess.getBroadcastOutAccess().getUpdateAssignment_4(), "rule__BroadcastOut__UpdateAssignment_4");
 					put(grammarAccess.getBroadcastInAccess().getNameAssignment_0(), "rule__BroadcastIn__NameAssignment_0");
-					put(grammarAccess.getBroadcastInAccess().getEvaluationAssignment_2(), "rule__BroadcastIn__EvaluationAssignment_2");
+					put(grammarAccess.getBroadcastInAccess().getValuesAssignment_2(), "rule__BroadcastIn__ValuesAssignment_2");
 					put(grammarAccess.getBroadcastInAccess().getUpdateAssignment_3(), "rule__BroadcastIn__UpdateAssignment_3");
+					put(grammarAccess.getBroadcastInAccess().getPredicateAssignment_4(), "rule__BroadcastIn__PredicateAssignment_4");
 					put(grammarAccess.getUnicastOutAccess().getNameAssignment_0(), "rule__UnicastOut__NameAssignment_0");
 					put(grammarAccess.getUnicastOutAccess().getPredicateAssignment_1(), "rule__UnicastOut__PredicateAssignment_1");
 					put(grammarAccess.getUnicastOutAccess().getEvaluationAssignment_2(), "rule__UnicastOut__EvaluationAssignment_2");
@@ -100,6 +101,7 @@ public class ONPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUnicastInAccess().getNameAssignment_0(), "rule__UnicastIn__NameAssignment_0");
 					put(grammarAccess.getUnicastInAccess().getValuesAssignment_1(), "rule__UnicastIn__ValuesAssignment_1");
 					put(grammarAccess.getUnicastInAccess().getUpdateAssignment_2(), "rule__UnicastIn__UpdateAssignment_2");
+					put(grammarAccess.getUnicastInAccess().getPredicateAssignment_3(), "rule__UnicastIn__PredicateAssignment_3");
 					put(grammarAccess.getUpdatesAccess().getUpdateExpressionsAssignment_2(), "rule__Updates__UpdateExpressionsAssignment_2");
 					put(grammarAccess.getUpdateExpressionAccess().getNameAssignment_0(), "rule__UpdateExpression__NameAssignment_0");
 					put(grammarAccess.getUpdateExpressionAccess().getValueAssignment_2(), "rule__UpdateExpression__ValueAssignment_2");
@@ -108,7 +110,8 @@ public class ONPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEvaluationsAccess().getEvaluationsAssignment_2(), "rule__Evaluations__EvaluationsAssignment_2");
 					put(grammarAccess.getEvaluationAccess().getNameAssignment_0(), "rule__Evaluation__NameAssignment_0");
 					put(grammarAccess.getEvaluationAccess().getValueAssignment_2(), "rule__Evaluation__ValueAssignment_2");
-					put(grammarAccess.getPredicatesAccess().getValueAssignment_2(), "rule__Predicates__ValueAssignment_2");
+					put(grammarAccess.getPredicatesAccess().getExpressionsAssignment_2(), "rule__Predicates__ExpressionsAssignment_2");
+					put(grammarAccess.getPredicateExpressionAccess().getValueAssignment(), "rule__PredicateExpression__ValueAssignment");
 					put(grammarAccess.getAttributeValueAccess().getNameAssignment_0(), "rule__AttributeValue__NameAssignment_0");
 					put(grammarAccess.getAttributeValueAccess().getValueAssignment_2(), "rule__AttributeValue__ValueAssignment_2");
 					put(grammarAccess.getOrAccess().getRightAssignment_1_2(), "rule__Or__RightAssignment_1_2");
