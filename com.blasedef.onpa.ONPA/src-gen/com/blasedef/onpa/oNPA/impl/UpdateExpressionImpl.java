@@ -4,7 +4,6 @@ package com.blasedef.onpa.oNPA.impl;
 
 import com.blasedef.onpa.oNPA.Expression;
 import com.blasedef.onpa.oNPA.ONPAPackage;
-import com.blasedef.onpa.oNPA.Store;
 import com.blasedef.onpa.oNPA.UpdateExpression;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -23,8 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.blasedef.onpa.oNPA.impl.UpdateExpressionImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.blasedef.onpa.oNPA.impl.UpdateExpressionImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.impl.UpdateExpressionImpl#getExpression <em>Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,24 +31,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class UpdateExpressionImpl extends MinimalEObjectImpl.Container implements UpdateExpression
 {
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' reference.
+   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getExpression()
    * @generated
    * @ordered
    */
-  protected Store name;
-
-  /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getValue()
-   * @generated
-   * @ordered
-   */
-  protected Expression value;
+  protected Expression expression;
 
   /**
    * <!-- begin-user-doc -->
@@ -78,19 +66,9 @@ public class UpdateExpressionImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public Store getName()
+  public Expression getExpression()
   {
-    if (name != null && name.eIsProxy())
-    {
-      InternalEObject oldName = (InternalEObject)name;
-      name = (Store)eResolveProxy(oldName);
-      if (name != oldName)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ONPAPackage.UPDATE_EXPRESSION__NAME, oldName, name));
-      }
-    }
-    return name;
+    return expression;
   }
 
   /**
@@ -98,46 +76,13 @@ public class UpdateExpressionImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public Store basicGetName()
+  public NotificationChain basicSetExpression(Expression newExpression, NotificationChain msgs)
   {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(Store newName)
-  {
-    Store oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.UPDATE_EXPRESSION__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Expression getValue()
-  {
-    return value;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetValue(Expression newValue, NotificationChain msgs)
-  {
-    Expression oldValue = value;
-    value = newValue;
+    Expression oldExpression = expression;
+    expression = newExpression;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ONPAPackage.UPDATE_EXPRESSION__VALUE, oldValue, newValue);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ONPAPackage.UPDATE_EXPRESSION__EXPRESSION, oldExpression, newExpression);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -148,20 +93,20 @@ public class UpdateExpressionImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(Expression newValue)
+  public void setExpression(Expression newExpression)
   {
-    if (newValue != value)
+    if (newExpression != expression)
     {
       NotificationChain msgs = null;
-      if (value != null)
-        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.UPDATE_EXPRESSION__VALUE, null, msgs);
-      if (newValue != null)
-        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.UPDATE_EXPRESSION__VALUE, null, msgs);
-      msgs = basicSetValue(newValue, msgs);
+      if (expression != null)
+        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.UPDATE_EXPRESSION__EXPRESSION, null, msgs);
+      if (newExpression != null)
+        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.UPDATE_EXPRESSION__EXPRESSION, null, msgs);
+      msgs = basicSetExpression(newExpression, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.UPDATE_EXPRESSION__VALUE, newValue, newValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.UPDATE_EXPRESSION__EXPRESSION, newExpression, newExpression));
   }
 
   /**
@@ -174,8 +119,8 @@ public class UpdateExpressionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case ONPAPackage.UPDATE_EXPRESSION__VALUE:
-        return basicSetValue(null, msgs);
+      case ONPAPackage.UPDATE_EXPRESSION__EXPRESSION:
+        return basicSetExpression(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -190,11 +135,8 @@ public class UpdateExpressionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case ONPAPackage.UPDATE_EXPRESSION__NAME:
-        if (resolve) return getName();
-        return basicGetName();
-      case ONPAPackage.UPDATE_EXPRESSION__VALUE:
-        return getValue();
+      case ONPAPackage.UPDATE_EXPRESSION__EXPRESSION:
+        return getExpression();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -209,11 +151,8 @@ public class UpdateExpressionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case ONPAPackage.UPDATE_EXPRESSION__NAME:
-        setName((Store)newValue);
-        return;
-      case ONPAPackage.UPDATE_EXPRESSION__VALUE:
-        setValue((Expression)newValue);
+      case ONPAPackage.UPDATE_EXPRESSION__EXPRESSION:
+        setExpression((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -229,11 +168,8 @@ public class UpdateExpressionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case ONPAPackage.UPDATE_EXPRESSION__NAME:
-        setName((Store)null);
-        return;
-      case ONPAPackage.UPDATE_EXPRESSION__VALUE:
-        setValue((Expression)null);
+      case ONPAPackage.UPDATE_EXPRESSION__EXPRESSION:
+        setExpression((Expression)null);
         return;
     }
     super.eUnset(featureID);
@@ -249,10 +185,8 @@ public class UpdateExpressionImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case ONPAPackage.UPDATE_EXPRESSION__NAME:
-        return name != null;
-      case ONPAPackage.UPDATE_EXPRESSION__VALUE:
-        return value != null;
+      case ONPAPackage.UPDATE_EXPRESSION__EXPRESSION:
+        return expression != null;
     }
     return super.eIsSet(featureID);
   }

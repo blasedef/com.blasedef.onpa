@@ -22,8 +22,9 @@ import com.blasedef.onpa.oNPA.Or
 import com.blasedef.onpa.oNPA.And
 import com.blasedef.onpa.oNPA.Equality
 import com.blasedef.onpa.oNPA.Comparison
-import com.blasedef.onpa.oNPA.ReferencedRate
-import com.blasedef.onpa.oNPA.AttributeValue
+import com.blasedef.onpa.oNPA.ReferencedStore
+import com.blasedef.onpa.oNPA.Store
+import com.blasedef.onpa.oNPA.FreeVariable
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(ONPAInjectorProvider))
@@ -34,117 +35,221 @@ public class ModelParserTest {
 	
 	CharSequence output
 	
-	AttributeValue intermediateStore
+	Store intermediateStore
 	
 	Model intermediateModel
 	
 	@Test 
 	def void testVariableExpression1() {
-		'''i = 10;'''.parse.assertNoErrors
+		'''
+		i = 10;
+		P = P;
+		(P,{i});
+		'''.parse.assertNoErrors
 	}
 	
 	@Test 
 	def void testVariableExpression2() {
-		'''i = 10.0;'''.parse.assertNoErrors
+		'''
+		i = 10.0;
+		P = P;
+		(P,{i});
+		'''.parse.assertNoErrors
 	}
 	
 	@Test 
 	def void testVariableExpression3() {
-		'''i = 0.1;'''.parse.assertNoErrors
+		'''
+		i = 0.1;
+		P = P;
+		(P,{i});
+		'''.parse.assertNoErrors
+	}
+	
+	@Test 
+	def void testVariableExpression4() {
+		'''
+		i = 0.1;
+		P = Q;
+		Q = P;
+		(P,{i});
+		'''.parse.assertNoErrors
+	}
+	
+	@Test 
+	def void testVariableExpression5() {
+		'''
+		i = 0.1;
+		P = Q;
+		Q = P;
+		(Q,{i});
+		'''.parse.assertNoErrors
 	}
 
 	@Test 
 	def void testVariableExpressionSub1() {
-		'''i = 0.2 - 0.1;'''.parse.assertNoErrors
+		'''
+		i = 0.2 - 0.1;
+		P = P;
+		(P,{i});
+		'''.parse.assertNoErrors
 	}
 	
 	@Test 
 	def void testVariableExpressionPlu1() {
-		'''i = 0.2 + 0.1;'''.parse.assertNoErrors
+		'''
+		i = 0.2 + 0.1;
+		P = P;
+		(P,{i});
+		'''.parse.assertNoErrors
 	}
 	
 	@Test 
 	def void testVariableExpressionMul1() {
-		'''i = 0.2 * 0.1;'''.parse.assertNoErrors
+		'''
+		i = 0.2 * 0.1;
+		P = P;
+		(P,{i});
+		'''.parse.assertNoErrors
 	}
 	
 	@Test 
 	def void testVariableExpressionDiv1() {
-		'''i = 0.2 / 0.1;'''.parse.assertNoErrors
+		'''
+		i = 0.2 / 0.1;
+		P = P;
+		(P,{i});
+		'''.parse.assertNoErrors
 	}
 	
 	@Test 
 	def void testVariableExpressionOr1() {
-		'''i = true || false;'''.parse.assertNoErrors
+		'''
+		i = true || false;
+		P = P;
+		(P,{i});
+		'''.parse.assertNoErrors
 	}
 	
 	@Test 
 	def void testVariableExpressionAnd1() {
-		'''i = true && false;'''.parse.assertNoErrors
+		'''
+		i = true && false;
+		P = P;
+		(P,{i});
+		'''.parse.assertNoErrors
 	}
 	
 	@Test 
 	def void testVariableExpressionEqu1() {
-		'''i = true != false;'''.parse.assertNoErrors
+		'''
+		i = true != false;
+		P = P;
+		(P,{i});
+		'''.parse.assertNoErrors
 	}
 	
 	@Test 
 	def void testVariableExpressionEqu2() {
-		'''i = true == true;'''.parse.assertNoErrors
+		'''
+		i = true == true;
+		P = P;
+		(P,{i});
+		'''.parse.assertNoErrors
 	}
 	
 	@Test 
 	def void testVariableExpressionCom1() {
-		'''i = 2.0 >= 2.0;'''.parse.assertNoErrors
+		'''
+		i = 2.0 >= 2.0;
+		P = P;
+		(P,{i});
+		'''.parse.assertNoErrors
 	}
 	
 	@Test 
 	def void testVariableExpressionCom2() {
-		'''i = 2.0 > 1.0;'''.parse.assertNoErrors
+		'''
+		i = 2.0 > 1.0;
+		P = P;
+		(P,{i});
+		'''.parse.assertNoErrors
 	}
 	
 	@Test 
 	def void testVariableExpressionCom3() {
-		'''i = 1.0 < 2.0;'''.parse.assertNoErrors
+		'''
+		i = 1.0 < 2.0;
+		P = P;
+		(P,{i});
+		'''.parse.assertNoErrors
 	}
 	
 	@Test 
 	def void testVariableExpressionCom4() {
-		'''i = 2.0 >= 2.0;'''.parse.assertNoErrors
+		'''
+		i = 2.0 >= 2.0;
+		P = P;
+		(P,{i});
+		'''.parse.assertNoErrors
 	}
 	
 	@Test 
 	def void testVariableExpressionNot1() {
-		'''i = !true;'''.parse.assertNoErrors
+		'''
+		i = !true;
+		P = P;
+		(P,{i});
+		'''.parse.assertNoErrors
 	}
 	
 	@Test 
 	def void testVariableExpressionBoolConstant1() {
-		'''i = true;'''.parse.assertNoErrors
+		'''
+		i = true;
+		P = P;
+		(P,{i});
+		'''.parse.assertNoErrors
 	}
 	
 	@Test 
 	def void testVariableExpressionBoolConstant2() {
-		'''i = false;'''.parse.assertNoErrors
+		'''
+		i = false;
+		P = P;
+		(P,{i});
+		'''.parse.assertNoErrors
 	}
 	
 	@Test 
 	def void testVariableExpressionRat1() {
-		'''i = 0.2 / 0.1;
-	   j = 0.2;
-	   k = i + j;'''.parse.assertNoErrors
+		'''
+		i = 0.2 / 0.1;
+		j = 0.2;
+		k = i + j;
+		P = P;
+		(P,{i});
+	   '''.parse.assertNoErrors
 	}
 	
 	@Test 
 	def void testVariableExpressionExp1() {
-		'''i = (0.2 / 0.1) + 0.4;'''.parse.assertNoErrors
+		'''
+		i = (0.2 / 0.1) + 0.4;
+		P = P;
+		(P,{i});
+		'''.parse.assertNoErrors
 	}
 	
 	@Test 
 	def void testVariableExpressionExp2() {
-		'''i = 0.2 / 0.1;
-	   j = 0.2;
-	   k = (0.1 + i) + j;'''.parse.assertNoErrors
+		'''
+		i = 0.2 / 0.1;
+		j = 0.2;
+		k = (0.1 + i) + j;
+		P = P;
+		(P,{i});
+		'''.parse.assertNoErrors
 	}
 	
 	@Test
@@ -152,7 +257,8 @@ public class ModelParserTest {
 		'''
 		a = 0.1;
 		b = 0.1;
-		broadcastOut * [ ] < > {a = 0.1;} ;
+		P = c*[$x;]<$y;>{$z;}.P;
+		(P,{a});
 		'''.parse.assertNoErrors
 	}
 	
@@ -161,7 +267,8 @@ public class ModelParserTest {
 		'''
 		a = 0.1;
 		b = 0.1;
-		broadcastIn * [ ] (b;) {a = 0.1;} ;
+		P = c*[$x;]($y;){$z;}.P;
+		(P,{a});
 		'''.parse.assertNoErrors
 	}
 	
@@ -170,7 +277,8 @@ public class ModelParserTest {
 		'''
 		a = 0.1;
 		b = 0.1;
-		unicastOut [ ] < > {a = 0.1;} ;
+		P = c[$x;]<$y;>{$z;}.P;
+		(P,{a});
 		'''.parse.assertNoErrors
 	}
 	
@@ -179,7 +287,8 @@ public class ModelParserTest {
 		'''
 		a = 0.1;
 		b = 0.1;
-		unicastIn [ ] (b;) {a = 0.1;} ;
+		P = c[$x;]($y;){$z;}.P;
+		(P,{a});
 		'''.parse.assertNoErrors
 	}
 	
@@ -276,7 +385,7 @@ public class ModelParserTest {
 	def assertRepr(CharSequence input, CharSequence expectation) {
 		
 		intermediateModel = input.parse
-		intermediateStore = (intermediateModel.stores).last as AttributeValue
+		intermediateStore = intermediateModel.stores.last
 		output = intermediateStore.value.stringRepr
 		//println(output)
 		//println(expectation)
@@ -295,11 +404,11 @@ public class ModelParserTest {
 			Mul:			'''(«e.left.stringRepr» * «e.right.stringRepr»)'''
 			Div: 			'''(«e.left.stringRepr» / «e.right.stringRepr»)'''
 			Not: 			'''! «e.expression.stringRepr»'''
-			ReferencedRate: '''(«e.value.name»)'''
+			ReferencedStore: '''(«e.value.name»)'''
 			DoubleConstant: '''«e.value»'''
 			BoolConstant: 	'''«e.value»'''
+			FreeVariable:	'''«e.value»'''
 			}.toString
 	}
 
-	
 }

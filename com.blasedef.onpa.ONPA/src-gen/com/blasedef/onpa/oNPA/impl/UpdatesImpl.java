@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.blasedef.onpa.oNPA.impl.UpdatesImpl#getUpdateExpressions <em>Update Expressions</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.impl.UpdatesImpl#getUpdates <em>Updates</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,14 +36,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class UpdatesImpl extends MinimalEObjectImpl.Container implements Updates
 {
   /**
-   * The cached value of the '{@link #getUpdateExpressions() <em>Update Expressions</em>}' containment reference list.
+   * The cached value of the '{@link #getUpdates() <em>Updates</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUpdateExpressions()
+   * @see #getUpdates()
    * @generated
    * @ordered
    */
-  protected EList<UpdateExpression> updateExpressions;
+  protected EList<UpdateExpression> updates;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,13 +71,13 @@ public class UpdatesImpl extends MinimalEObjectImpl.Container implements Updates
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<UpdateExpression> getUpdateExpressions()
+  public EList<UpdateExpression> getUpdates()
   {
-    if (updateExpressions == null)
+    if (updates == null)
     {
-      updateExpressions = new EObjectContainmentEList<UpdateExpression>(UpdateExpression.class, this, ONPAPackage.UPDATES__UPDATE_EXPRESSIONS);
+      updates = new EObjectContainmentEList<UpdateExpression>(UpdateExpression.class, this, ONPAPackage.UPDATES__UPDATES);
     }
-    return updateExpressions;
+    return updates;
   }
 
   /**
@@ -90,8 +90,8 @@ public class UpdatesImpl extends MinimalEObjectImpl.Container implements Updates
   {
     switch (featureID)
     {
-      case ONPAPackage.UPDATES__UPDATE_EXPRESSIONS:
-        return ((InternalEList<?>)getUpdateExpressions()).basicRemove(otherEnd, msgs);
+      case ONPAPackage.UPDATES__UPDATES:
+        return ((InternalEList<?>)getUpdates()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -106,8 +106,8 @@ public class UpdatesImpl extends MinimalEObjectImpl.Container implements Updates
   {
     switch (featureID)
     {
-      case ONPAPackage.UPDATES__UPDATE_EXPRESSIONS:
-        return getUpdateExpressions();
+      case ONPAPackage.UPDATES__UPDATES:
+        return getUpdates();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -123,9 +123,9 @@ public class UpdatesImpl extends MinimalEObjectImpl.Container implements Updates
   {
     switch (featureID)
     {
-      case ONPAPackage.UPDATES__UPDATE_EXPRESSIONS:
-        getUpdateExpressions().clear();
-        getUpdateExpressions().addAll((Collection<? extends UpdateExpression>)newValue);
+      case ONPAPackage.UPDATES__UPDATES:
+        getUpdates().clear();
+        getUpdates().addAll((Collection<? extends UpdateExpression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +141,8 @@ public class UpdatesImpl extends MinimalEObjectImpl.Container implements Updates
   {
     switch (featureID)
     {
-      case ONPAPackage.UPDATES__UPDATE_EXPRESSIONS:
-        getUpdateExpressions().clear();
+      case ONPAPackage.UPDATES__UPDATES:
+        getUpdates().clear();
         return;
     }
     super.eUnset(featureID);
@@ -158,8 +158,8 @@ public class UpdatesImpl extends MinimalEObjectImpl.Container implements Updates
   {
     switch (featureID)
     {
-      case ONPAPackage.UPDATES__UPDATE_EXPRESSIONS:
-        return updateExpressions != null && !updateExpressions.isEmpty();
+      case ONPAPackage.UPDATES__UPDATES:
+        return updates != null && !updates.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -19,11 +19,15 @@ import com.blasedef.onpa.oNPA.And
 import com.blasedef.onpa.oNPA.Equality
 import com.blasedef.onpa.oNPA.Comparison
 import com.blasedef.onpa.oNPA.Not
-import com.blasedef.onpa.oNPA.ReferencedRate
+import com.blasedef.onpa.oNPA.ReferencedStore
 import com.blasedef.onpa.oNPA.DoubleConstant
 import com.blasedef.onpa.oNPA.BoolConstant
 import com.blasedef.onpa.oNPA.Store
-import com.blasedef.onpa.oNPA.AttributeValue
+import com.blasedef.onpa.oNPA.FreeVariable
+import com.blasedef.onpa.oNPA.Model
+import com.blasedef.onpa.oNPA.ProcessExpression
+import com.blasedef.onpa.oNPA.Process
+import static extension org.eclipse.xtext.EcoreUtil2.*
 
 /**
  * Custom validation rules. 
@@ -40,17 +44,17 @@ class ONPAValidator extends AbstractONPAValidator {
 			
 		var ArrayList<String> strings = new ArrayList<String>();
 		
-		strings.add((store as AttributeValue).name)
+		strings.add(store.name)
 		
-		findReferencedRates((store as AttributeValue).value,strings)
+		findReferencedRates(store.value,strings)
 		
 		var Set<String> setOfString = new HashSet<String>(strings);
 		
 		if(setOfString.size == strings.size)
 			return //because there can't be any duplicates
 		else
-			error("Cannot have self referencing rates. '" + (store as AttributeValue).name + "' is seen in the expression",
-				ONPAPackage::eINSTANCE.attributeValue_Value,
+			error("Cannot have self referencing stores. '" + store.name + "' is seen in the expression",
+				ONPAPackage::eINSTANCE.store_Value,
 				SELF_REFERENCING_RATE
 			)
 		
@@ -58,16 +62,65 @@ class ONPAValidator extends AbstractONPAValidator {
 	
 	def void findReferencedRates(Expression e, ArrayList<String> strings) {
 		switch (e) {
-			Or: 			{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
-			And: 			{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
-			Equality:   	{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
-			Comparison: 	{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
-			Sub: 			{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
-			Plu: 			{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
-			Mul:			{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
-			Div: 			{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
-			Not: 			e.expression.findReferencedRates(strings)
-			ReferencedRate: {strings.add(e.value.name)}
+			Or: 				{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
+			And: 				{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
+			Equality:   		{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
+			Comparison: 		{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
+			Sub: 				{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
+			Plu: 				{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
+			Mul:				{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
+			Div: 				{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
+			Not: 				e.expression.findReferencedRates(strings)
+			ReferencedStore: 	{strings.add(e.value.name)}
+			FreeVariable:		{strings.add(e.value.substring(1))}
+			}
+	}
+	
+	public static val UNIQUE_VARIABLE_NAMES_STORES = 'uniqueVariableNamesStores'
+	
+	@Check
+	def checkUniqueVariableNamesStores(Store store){
+		
+		var stores = getContainerOfType(store, typeof(Model)).stores
+		
+		var count = 0
+		
+		for(st : stores)
+			if(st.name.contains(store.name))
+				count = count + 1
+				
+		if(count == 1)
+			return
+		else 
+			error("Must have unique store names. '" + store.name + "' is repeated",
+				ONPAPackage::eINSTANCE.store_Name,
+				UNIQUE_VARIABLE_NAMES_STORES
+			)
+			
+	}
+	
+	public static val ENSURE_PROCESS_CYCLES = 'ensureProcessCycles'
+	
+	@Check
+	def checkensureProcessCycles(Process process){
+		
+		var processes = getContainerOfType(process, typeof(Model)).processes
+			
+	}
+	
+	def void findReferencedProcesses(ProcessExpression e, ArrayList<String> strings) {
+		switch (e) {
+			Or: 				{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
+			And: 				{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
+			Equality:   		{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
+			Comparison: 		{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
+			Sub: 				{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
+			Plu: 				{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
+			Mul:				{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
+			Div: 				{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
+			Not: 				e.expression.findReferencedRates(strings)
+			ReferencedStore: 	{strings.add(e.value.name)}
+			FreeVariable:		{strings.add(e.value.substring(1))}
 			}
 	}
 

@@ -3,8 +3,9 @@
 package com.blasedef.onpa.oNPA.impl;
 
 import com.blasedef.onpa.oNPA.Action;
+import com.blasedef.onpa.oNPA.Evaluations;
 import com.blasedef.onpa.oNPA.ONPAPackage;
-import com.blasedef.onpa.oNPA.Predicates;
+import com.blasedef.onpa.oNPA.Predicate;
 import com.blasedef.onpa.oNPA.Updates;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -24,8 +25,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.blasedef.onpa.oNPA.impl.ActionImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.blasedef.onpa.oNPA.impl.ActionImpl#getPredicate <em>Predicate</em>}</li>
- *   <li>{@link com.blasedef.onpa.oNPA.impl.ActionImpl#getUpdate <em>Update</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.impl.ActionImpl#getPredicates <em>Predicates</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.impl.ActionImpl#getEvaluations <em>Evaluations</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.impl.ActionImpl#getUpdates <em>Updates</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,24 +56,34 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getPredicate() <em>Predicate</em>}' containment reference.
+   * The cached value of the '{@link #getPredicates() <em>Predicates</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPredicate()
+   * @see #getPredicates()
    * @generated
    * @ordered
    */
-  protected Predicates predicate;
+  protected Predicate predicates;
 
   /**
-   * The cached value of the '{@link #getUpdate() <em>Update</em>}' containment reference.
+   * The cached value of the '{@link #getEvaluations() <em>Evaluations</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUpdate()
+   * @see #getEvaluations()
    * @generated
    * @ordered
    */
-  protected Updates update;
+  protected Evaluations evaluations;
+
+  /**
+   * The cached value of the '{@link #getUpdates() <em>Updates</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUpdates()
+   * @generated
+   * @ordered
+   */
+  protected Updates updates;
 
   /**
    * <!-- begin-user-doc -->
@@ -122,9 +134,9 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * <!-- end-user-doc -->
    * @generated
    */
-  public Predicates getPredicate()
+  public Predicate getPredicates()
   {
-    return predicate;
+    return predicates;
   }
 
   /**
@@ -132,13 +144,13 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetPredicate(Predicates newPredicate, NotificationChain msgs)
+  public NotificationChain basicSetPredicates(Predicate newPredicates, NotificationChain msgs)
   {
-    Predicates oldPredicate = predicate;
-    predicate = newPredicate;
+    Predicate oldPredicates = predicates;
+    predicates = newPredicates;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ONPAPackage.ACTION__PREDICATE, oldPredicate, newPredicate);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ONPAPackage.ACTION__PREDICATES, oldPredicates, newPredicates);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -149,20 +161,20 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPredicate(Predicates newPredicate)
+  public void setPredicates(Predicate newPredicates)
   {
-    if (newPredicate != predicate)
+    if (newPredicates != predicates)
     {
       NotificationChain msgs = null;
-      if (predicate != null)
-        msgs = ((InternalEObject)predicate).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.ACTION__PREDICATE, null, msgs);
-      if (newPredicate != null)
-        msgs = ((InternalEObject)newPredicate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.ACTION__PREDICATE, null, msgs);
-      msgs = basicSetPredicate(newPredicate, msgs);
+      if (predicates != null)
+        msgs = ((InternalEObject)predicates).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.ACTION__PREDICATES, null, msgs);
+      if (newPredicates != null)
+        msgs = ((InternalEObject)newPredicates).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.ACTION__PREDICATES, null, msgs);
+      msgs = basicSetPredicates(newPredicates, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.ACTION__PREDICATE, newPredicate, newPredicate));
+      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.ACTION__PREDICATES, newPredicates, newPredicates));
   }
 
   /**
@@ -170,9 +182,9 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * <!-- end-user-doc -->
    * @generated
    */
-  public Updates getUpdate()
+  public Evaluations getEvaluations()
   {
-    return update;
+    return evaluations;
   }
 
   /**
@@ -180,13 +192,13 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetUpdate(Updates newUpdate, NotificationChain msgs)
+  public NotificationChain basicSetEvaluations(Evaluations newEvaluations, NotificationChain msgs)
   {
-    Updates oldUpdate = update;
-    update = newUpdate;
+    Evaluations oldEvaluations = evaluations;
+    evaluations = newEvaluations;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ONPAPackage.ACTION__UPDATE, oldUpdate, newUpdate);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ONPAPackage.ACTION__EVALUATIONS, oldEvaluations, newEvaluations);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -197,20 +209,68 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setUpdate(Updates newUpdate)
+  public void setEvaluations(Evaluations newEvaluations)
   {
-    if (newUpdate != update)
+    if (newEvaluations != evaluations)
     {
       NotificationChain msgs = null;
-      if (update != null)
-        msgs = ((InternalEObject)update).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.ACTION__UPDATE, null, msgs);
-      if (newUpdate != null)
-        msgs = ((InternalEObject)newUpdate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.ACTION__UPDATE, null, msgs);
-      msgs = basicSetUpdate(newUpdate, msgs);
+      if (evaluations != null)
+        msgs = ((InternalEObject)evaluations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.ACTION__EVALUATIONS, null, msgs);
+      if (newEvaluations != null)
+        msgs = ((InternalEObject)newEvaluations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.ACTION__EVALUATIONS, null, msgs);
+      msgs = basicSetEvaluations(newEvaluations, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.ACTION__UPDATE, newUpdate, newUpdate));
+      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.ACTION__EVALUATIONS, newEvaluations, newEvaluations));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Updates getUpdates()
+  {
+    return updates;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetUpdates(Updates newUpdates, NotificationChain msgs)
+  {
+    Updates oldUpdates = updates;
+    updates = newUpdates;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ONPAPackage.ACTION__UPDATES, oldUpdates, newUpdates);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setUpdates(Updates newUpdates)
+  {
+    if (newUpdates != updates)
+    {
+      NotificationChain msgs = null;
+      if (updates != null)
+        msgs = ((InternalEObject)updates).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.ACTION__UPDATES, null, msgs);
+      if (newUpdates != null)
+        msgs = ((InternalEObject)newUpdates).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.ACTION__UPDATES, null, msgs);
+      msgs = basicSetUpdates(newUpdates, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.ACTION__UPDATES, newUpdates, newUpdates));
   }
 
   /**
@@ -223,10 +283,12 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
   {
     switch (featureID)
     {
-      case ONPAPackage.ACTION__PREDICATE:
-        return basicSetPredicate(null, msgs);
-      case ONPAPackage.ACTION__UPDATE:
-        return basicSetUpdate(null, msgs);
+      case ONPAPackage.ACTION__PREDICATES:
+        return basicSetPredicates(null, msgs);
+      case ONPAPackage.ACTION__EVALUATIONS:
+        return basicSetEvaluations(null, msgs);
+      case ONPAPackage.ACTION__UPDATES:
+        return basicSetUpdates(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -243,10 +305,12 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
     {
       case ONPAPackage.ACTION__NAME:
         return getName();
-      case ONPAPackage.ACTION__PREDICATE:
-        return getPredicate();
-      case ONPAPackage.ACTION__UPDATE:
-        return getUpdate();
+      case ONPAPackage.ACTION__PREDICATES:
+        return getPredicates();
+      case ONPAPackage.ACTION__EVALUATIONS:
+        return getEvaluations();
+      case ONPAPackage.ACTION__UPDATES:
+        return getUpdates();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -264,11 +328,14 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
       case ONPAPackage.ACTION__NAME:
         setName((String)newValue);
         return;
-      case ONPAPackage.ACTION__PREDICATE:
-        setPredicate((Predicates)newValue);
+      case ONPAPackage.ACTION__PREDICATES:
+        setPredicates((Predicate)newValue);
         return;
-      case ONPAPackage.ACTION__UPDATE:
-        setUpdate((Updates)newValue);
+      case ONPAPackage.ACTION__EVALUATIONS:
+        setEvaluations((Evaluations)newValue);
+        return;
+      case ONPAPackage.ACTION__UPDATES:
+        setUpdates((Updates)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -287,11 +354,14 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
       case ONPAPackage.ACTION__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case ONPAPackage.ACTION__PREDICATE:
-        setPredicate((Predicates)null);
+      case ONPAPackage.ACTION__PREDICATES:
+        setPredicates((Predicate)null);
         return;
-      case ONPAPackage.ACTION__UPDATE:
-        setUpdate((Updates)null);
+      case ONPAPackage.ACTION__EVALUATIONS:
+        setEvaluations((Evaluations)null);
+        return;
+      case ONPAPackage.ACTION__UPDATES:
+        setUpdates((Updates)null);
         return;
     }
     super.eUnset(featureID);
@@ -309,10 +379,12 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
     {
       case ONPAPackage.ACTION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case ONPAPackage.ACTION__PREDICATE:
-        return predicate != null;
-      case ONPAPackage.ACTION__UPDATE:
-        return update != null;
+      case ONPAPackage.ACTION__PREDICATES:
+        return predicates != null;
+      case ONPAPackage.ACTION__EVALUATIONS:
+        return evaluations != null;
+      case ONPAPackage.ACTION__UPDATES:
+        return updates != null;
     }
     return super.eIsSet(featureID);
   }

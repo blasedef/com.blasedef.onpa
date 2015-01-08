@@ -13,8 +13,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.blasedef.onpa.oNPA.Action#getName <em>Name</em>}</li>
- *   <li>{@link com.blasedef.onpa.oNPA.Action#getPredicate <em>Predicate</em>}</li>
- *   <li>{@link com.blasedef.onpa.oNPA.Action#getUpdate <em>Update</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.Action#getPredicates <em>Predicates</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.Action#getEvaluations <em>Evaluations</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.Action#getUpdates <em>Updates</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,55 +52,81 @@ public interface Action extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Predicate</b></em>' containment reference.
+   * Returns the value of the '<em><b>Predicates</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Predicate</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Predicates</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Predicate</em>' containment reference.
-   * @see #setPredicate(Predicates)
-   * @see com.blasedef.onpa.oNPA.ONPAPackage#getAction_Predicate()
+   * @return the value of the '<em>Predicates</em>' containment reference.
+   * @see #setPredicates(Predicate)
+   * @see com.blasedef.onpa.oNPA.ONPAPackage#getAction_Predicates()
    * @model containment="true"
    * @generated
    */
-  Predicates getPredicate();
+  Predicate getPredicates();
 
   /**
-   * Sets the value of the '{@link com.blasedef.onpa.oNPA.Action#getPredicate <em>Predicate</em>}' containment reference.
+   * Sets the value of the '{@link com.blasedef.onpa.oNPA.Action#getPredicates <em>Predicates</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Predicate</em>' containment reference.
-   * @see #getPredicate()
+   * @param value the new value of the '<em>Predicates</em>' containment reference.
+   * @see #getPredicates()
    * @generated
    */
-  void setPredicate(Predicates value);
+  void setPredicates(Predicate value);
 
   /**
-   * Returns the value of the '<em><b>Update</b></em>' containment reference.
+   * Returns the value of the '<em><b>Evaluations</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Update</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Evaluations</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Update</em>' containment reference.
-   * @see #setUpdate(Updates)
-   * @see com.blasedef.onpa.oNPA.ONPAPackage#getAction_Update()
+   * @return the value of the '<em>Evaluations</em>' containment reference.
+   * @see #setEvaluations(Evaluations)
+   * @see com.blasedef.onpa.oNPA.ONPAPackage#getAction_Evaluations()
    * @model containment="true"
    * @generated
    */
-  Updates getUpdate();
+  Evaluations getEvaluations();
 
   /**
-   * Sets the value of the '{@link com.blasedef.onpa.oNPA.Action#getUpdate <em>Update</em>}' containment reference.
+   * Sets the value of the '{@link com.blasedef.onpa.oNPA.Action#getEvaluations <em>Evaluations</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Update</em>' containment reference.
-   * @see #getUpdate()
+   * @param value the new value of the '<em>Evaluations</em>' containment reference.
+   * @see #getEvaluations()
    * @generated
    */
-  void setUpdate(Updates value);
+  void setEvaluations(Evaluations value);
+
+  /**
+   * Returns the value of the '<em><b>Updates</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Updates</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Updates</em>' containment reference.
+   * @see #setUpdates(Updates)
+   * @see com.blasedef.onpa.oNPA.ONPAPackage#getAction_Updates()
+   * @model containment="true"
+   * @generated
+   */
+  Updates getUpdates();
+
+  /**
+   * Sets the value of the '{@link com.blasedef.onpa.oNPA.Action#getUpdates <em>Updates</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Updates</em>' containment reference.
+   * @see #getUpdates()
+   * @generated
+   */
+  void setUpdates(Updates value);
 
 } // Action

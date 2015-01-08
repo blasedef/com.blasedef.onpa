@@ -32,13 +32,39 @@ public class ValidationTest {
   public void testCheckNotSelfReferencing() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("a = 0.1 + a;");
+      _builder.append("i = 10 + i;");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       EClass _store = ONPAPackage.eINSTANCE.getStore();
       this._validationTestHelper.assertError(_parse, _store, 
         ONPAValidator.SELF_REFERENCING_RATE, 
-        "Cannot have self referencing rates. \'a\' is seen in the expression");
+        "Cannot have self referencing stores. \'i\' is seen in the expression");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testCheckUniqueVariableNamesStores() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = 10;");
+      _builder.newLine();
+      _builder.append("i = 0.1;");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _store = ONPAPackage.eINSTANCE.getStore();
+      this._validationTestHelper.assertError(_parse, _store, 
+        ONPAValidator.UNIQUE_VARIABLE_NAMES_STORES, 
+        "Must have unique store names. \'i\' is repeated");
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

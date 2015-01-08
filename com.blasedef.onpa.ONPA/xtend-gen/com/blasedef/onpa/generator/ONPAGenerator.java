@@ -4,7 +4,6 @@
 package com.blasedef.onpa.generator;
 
 import com.blasedef.onpa.oNPA.And;
-import com.blasedef.onpa.oNPA.AttributeValue;
 import com.blasedef.onpa.oNPA.BoolConstant;
 import com.blasedef.onpa.oNPA.Comparison;
 import com.blasedef.onpa.oNPA.Div;
@@ -16,7 +15,7 @@ import com.blasedef.onpa.oNPA.Mul;
 import com.blasedef.onpa.oNPA.Not;
 import com.blasedef.onpa.oNPA.Or;
 import com.blasedef.onpa.oNPA.Plu;
-import com.blasedef.onpa.oNPA.ReferencedRate;
+import com.blasedef.onpa.oNPA.ReferencedStore;
 import com.blasedef.onpa.oNPA.Store;
 import com.blasedef.onpa.oNPA.Sub;
 import com.google.common.collect.Iterables;
@@ -58,7 +57,7 @@ public class ONPAGenerator implements IGenerator {
       EList<Store> _stores = model.getStores();
       for(final Store store : _stores) {
         _builder.append("\t");
-        CharSequence _compile = this.compile(((AttributeValue) store));
+        CharSequence _compile = this.compile(store);
         _builder.append(_compile, "\t");
         _builder.newLineIfNotEmpty();
       }
@@ -69,7 +68,7 @@ public class ONPAGenerator implements IGenerator {
     return _builder;
   }
   
-  public CharSequence compile(final AttributeValue store) {
+  public CharSequence compile(final Store store) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("public double get");
     String _name = store.getName();
@@ -238,11 +237,11 @@ public class ONPAGenerator implements IGenerator {
       }
     }
     if (!_matched) {
-      if (e instanceof ReferencedRate) {
+      if (e instanceof ReferencedStore) {
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("get");
-        AttributeValue _value = ((ReferencedRate)e).getValue();
+        Store _value = ((ReferencedStore)e).getValue();
         String _name = _value.getName();
         String _firstUpper = StringExtensions.toFirstUpper(_name);
         _builder.append(_firstUpper, "");

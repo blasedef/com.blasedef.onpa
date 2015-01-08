@@ -22,10 +22,25 @@ class ValidationTest {
 	@Test
 	def void testCheckNotSelfReferencing(){
 		'''
-		a = 0.1 + a;
+		i = 10 + i;
+		P = P;
+		(P,{i});
 		'''.parse.assertError(ONPAPackage::eINSTANCE.store,
 			ONPAValidator::SELF_REFERENCING_RATE,
-			"Cannot have self referencing rates. 'a' is seen in the expression"
+			"Cannot have self referencing stores. 'i' is seen in the expression"
+		)
+	}
+	
+	@Test
+	def void testCheckUniqueVariableNamesStores(){
+		'''
+		i = 10;
+		i = 0.1;
+		P = P;
+		(P,{i});
+		'''.parse.assertError(ONPAPackage::eINSTANCE.store,
+			ONPAValidator::UNIQUE_VARIABLE_NAMES_STORES,
+			"Must have unique store names. 'i' is repeated"
 		)
 	}
 	

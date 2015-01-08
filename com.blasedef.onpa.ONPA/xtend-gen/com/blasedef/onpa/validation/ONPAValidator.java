@@ -4,24 +4,29 @@
 package com.blasedef.onpa.validation;
 
 import com.blasedef.onpa.oNPA.And;
-import com.blasedef.onpa.oNPA.AttributeValue;
 import com.blasedef.onpa.oNPA.Comparison;
 import com.blasedef.onpa.oNPA.Div;
 import com.blasedef.onpa.oNPA.Equality;
 import com.blasedef.onpa.oNPA.Expression;
+import com.blasedef.onpa.oNPA.FreeVariable;
+import com.blasedef.onpa.oNPA.Model;
 import com.blasedef.onpa.oNPA.Mul;
 import com.blasedef.onpa.oNPA.Not;
 import com.blasedef.onpa.oNPA.ONPAPackage;
 import com.blasedef.onpa.oNPA.Or;
 import com.blasedef.onpa.oNPA.Plu;
-import com.blasedef.onpa.oNPA.ReferencedRate;
+import com.blasedef.onpa.oNPA.ProcessExpression;
+import com.blasedef.onpa.oNPA.ReferencedStore;
 import com.blasedef.onpa.oNPA.Store;
 import com.blasedef.onpa.oNPA.Sub;
 import com.blasedef.onpa.validation.AbstractONPAValidator;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.validation.Check;
 
 /**
@@ -36,9 +41,9 @@ public class ONPAValidator extends AbstractONPAValidator {
   @Check
   public void checkNotSelfReferencing(final Store store) {
     ArrayList<String> strings = new ArrayList<String>();
-    String _name = ((AttributeValue) store).getName();
+    String _name = store.getName();
     strings.add(_name);
-    Expression _value = ((AttributeValue) store).getValue();
+    Expression _value = store.getValue();
     this.findReferencedRates(_value, strings);
     Set<String> setOfString = new HashSet<String>(strings);
     int _size = setOfString.size();
@@ -47,11 +52,11 @@ public class ONPAValidator extends AbstractONPAValidator {
     if (_equals) {
       return;
     } else {
-      String _name_1 = ((AttributeValue) store).getName();
-      String _plus = ("Cannot have self referencing rates. \'" + _name_1);
+      String _name_1 = store.getName();
+      String _plus = ("Cannot have self referencing stores. \'" + _name_1);
       String _plus_1 = (_plus + "\' is seen in the expression");
-      EReference _attributeValue_Value = ONPAPackage.eINSTANCE.getAttributeValue_Value();
-      this.error(_plus_1, _attributeValue_Value, 
+      EReference _store_Value = ONPAPackage.eINSTANCE.getStore_Value();
+      this.error(_plus_1, _store_Value, 
         ONPAValidator.SELF_REFERENCING_RATE);
     }
   }
@@ -138,11 +143,153 @@ public class ONPAValidator extends AbstractONPAValidator {
       }
     }
     if (!_matched) {
-      if (e instanceof ReferencedRate) {
+      if (e instanceof ReferencedStore) {
         _matched=true;
-        AttributeValue _value = ((ReferencedRate)e).getValue();
+        Store _value = ((ReferencedStore)e).getValue();
         String _name = _value.getName();
         strings.add(_name);
+      }
+    }
+    if (!_matched) {
+      if (e instanceof FreeVariable) {
+        _matched=true;
+        String _value = ((FreeVariable)e).getValue();
+        String _substring = _value.substring(1);
+        strings.add(_substring);
+      }
+    }
+  }
+  
+  public final static String UNIQUE_VARIABLE_NAMES_STORES = "uniqueVariableNamesStores";
+  
+  @Check
+  public void checkUniqueVariableNamesStores(final Store store) {
+    Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(store, Model.class);
+    EList<Store> stores = _containerOfType.getStores();
+    int count = 0;
+    for (final Store st : stores) {
+      String _name = st.getName();
+      String _name_1 = store.getName();
+      boolean _contains = _name.contains(_name_1);
+      if (_contains) {
+        count = (count + 1);
+      }
+    }
+    if ((count == 1)) {
+      return;
+    } else {
+      String _name_2 = store.getName();
+      String _plus = ("Must have unique store names. \'" + _name_2);
+      String _plus_1 = (_plus + "\' is repeated");
+      EAttribute _store_Name = ONPAPackage.eINSTANCE.getStore_Name();
+      this.error(_plus_1, _store_Name, 
+        ONPAValidator.UNIQUE_VARIABLE_NAMES_STORES);
+    }
+  }
+  
+  public final static String ENSURE_PROCESS_CYCLES = "ensureProcessCycles";
+  
+  @Check
+  public void checkensureProcessCycles(final com.blasedef.onpa.oNPA.Process process) {
+    Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(process, Model.class);
+    EList<com.blasedef.onpa.oNPA.Process> processes = _containerOfType.getProcesses();
+  }
+  
+  public void findReferencedProcesses(final ProcessExpression e, final ArrayList<String> strings) {
+    boolean _matched = false;
+    if (!_matched) {
+      if (e instanceof Or) {
+        _matched=true;
+        Expression _left = ((Or)e).getLeft();
+        this.findReferencedRates(_left, strings);
+        Expression _right = ((Or)e).getRight();
+        this.findReferencedRates(_right, strings);
+      }
+    }
+    if (!_matched) {
+      if (e instanceof And) {
+        _matched=true;
+        Expression _left = ((And)e).getLeft();
+        this.findReferencedRates(_left, strings);
+        Expression _right = ((And)e).getRight();
+        this.findReferencedRates(_right, strings);
+      }
+    }
+    if (!_matched) {
+      if (e instanceof Equality) {
+        _matched=true;
+        Expression _left = ((Equality)e).getLeft();
+        this.findReferencedRates(_left, strings);
+        Expression _right = ((Equality)e).getRight();
+        this.findReferencedRates(_right, strings);
+      }
+    }
+    if (!_matched) {
+      if (e instanceof Comparison) {
+        _matched=true;
+        Expression _left = ((Comparison)e).getLeft();
+        this.findReferencedRates(_left, strings);
+        Expression _right = ((Comparison)e).getRight();
+        this.findReferencedRates(_right, strings);
+      }
+    }
+    if (!_matched) {
+      if (e instanceof Sub) {
+        _matched=true;
+        Expression _left = ((Sub)e).getLeft();
+        this.findReferencedRates(_left, strings);
+        Expression _right = ((Sub)e).getRight();
+        this.findReferencedRates(_right, strings);
+      }
+    }
+    if (!_matched) {
+      if (e instanceof Plu) {
+        _matched=true;
+        Expression _left = ((Plu)e).getLeft();
+        this.findReferencedRates(_left, strings);
+        Expression _right = ((Plu)e).getRight();
+        this.findReferencedRates(_right, strings);
+      }
+    }
+    if (!_matched) {
+      if (e instanceof Mul) {
+        _matched=true;
+        Expression _left = ((Mul)e).getLeft();
+        this.findReferencedRates(_left, strings);
+        Expression _right = ((Mul)e).getRight();
+        this.findReferencedRates(_right, strings);
+      }
+    }
+    if (!_matched) {
+      if (e instanceof Div) {
+        _matched=true;
+        Expression _left = ((Div)e).getLeft();
+        this.findReferencedRates(_left, strings);
+        Expression _right = ((Div)e).getRight();
+        this.findReferencedRates(_right, strings);
+      }
+    }
+    if (!_matched) {
+      if (e instanceof Not) {
+        _matched=true;
+        Expression _expression = ((Not)e).getExpression();
+        this.findReferencedRates(_expression, strings);
+      }
+    }
+    if (!_matched) {
+      if (e instanceof ReferencedStore) {
+        _matched=true;
+        Store _value = ((ReferencedStore)e).getValue();
+        String _name = _value.getName();
+        strings.add(_name);
+      }
+    }
+    if (!_matched) {
+      if (e instanceof FreeVariable) {
+        _matched=true;
+        String _value = ((FreeVariable)e).getValue();
+        String _substring = _value.substring(1);
+        strings.add(_substring);
       }
     }
   }

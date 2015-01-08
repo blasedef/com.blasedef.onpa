@@ -32,6 +32,51 @@ public interface ONPAFactory extends EFactory
   Model createModel();
 
   /**
+   * Returns a new object of class '<em>Term</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Term</em>'.
+   * @generated
+   */
+  Term createTerm();
+
+  /**
+   * Returns a new object of class '<em>Process</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Process</em>'.
+   * @generated
+   */
+  Process createProcess();
+
+  /**
+   * Returns a new object of class '<em>Process Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Process Expression</em>'.
+   * @generated
+   */
+  ProcessExpression createProcessExpression();
+
+  /**
+   * Returns a new object of class '<em>Predicate Process</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Predicate Process</em>'.
+   * @generated
+   */
+  PredicateProcess createPredicateProcess();
+
+  /**
+   * Returns a new object of class '<em>Action Process</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Process</em>'.
+   * @generated
+   */
+  ActionProcess createActionProcess();
+
+  /**
    * Returns a new object of class '<em>Action</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -41,76 +86,13 @@ public interface ONPAFactory extends EFactory
   Action createAction();
 
   /**
-   * Returns a new object of class '<em>Broadcast Out</em>'.
+   * Returns a new object of class '<em>Predicate</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Broadcast Out</em>'.
+   * @return a new object of class '<em>Predicate</em>'.
    * @generated
    */
-  BroadcastOut createBroadcastOut();
-
-  /**
-   * Returns a new object of class '<em>Broadcast In</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Broadcast In</em>'.
-   * @generated
-   */
-  BroadcastIn createBroadcastIn();
-
-  /**
-   * Returns a new object of class '<em>Unicast Out</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Unicast Out</em>'.
-   * @generated
-   */
-  UnicastOut createUnicastOut();
-
-  /**
-   * Returns a new object of class '<em>Unicast In</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Unicast In</em>'.
-   * @generated
-   */
-  UnicastIn createUnicastIn();
-
-  /**
-   * Returns a new object of class '<em>Updates</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Updates</em>'.
-   * @generated
-   */
-  Updates createUpdates();
-
-  /**
-   * Returns a new object of class '<em>Update Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Update Expression</em>'.
-   * @generated
-   */
-  UpdateExpression createUpdateExpression();
-
-  /**
-   * Returns a new object of class '<em>Values</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Values</em>'.
-   * @generated
-   */
-  Values createValues();
-
-  /**
-   * Returns a new object of class '<em>Value Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Value Expression</em>'.
-   * @generated
-   */
-  ValueExpression createValueExpression();
+  Predicate createPredicate();
 
   /**
    * Returns a new object of class '<em>Evaluations</em>'.
@@ -122,22 +104,13 @@ public interface ONPAFactory extends EFactory
   Evaluations createEvaluations();
 
   /**
-   * Returns a new object of class '<em>Evaluation</em>'.
+   * Returns a new object of class '<em>Updates</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Evaluation</em>'.
+   * @return a new object of class '<em>Updates</em>'.
    * @generated
    */
-  Evaluation createEvaluation();
-
-  /**
-   * Returns a new object of class '<em>Predicates</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Predicates</em>'.
-   * @generated
-   */
-  Predicates createPredicates();
+  Updates createUpdates();
 
   /**
    * Returns a new object of class '<em>Predicate Expression</em>'.
@@ -149,6 +122,24 @@ public interface ONPAFactory extends EFactory
   PredicateExpression createPredicateExpression();
 
   /**
+   * Returns a new object of class '<em>Evaluation Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Evaluation Expression</em>'.
+   * @generated
+   */
+  EvaluationExpression createEvaluationExpression();
+
+  /**
+   * Returns a new object of class '<em>Update Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Update Expression</em>'.
+   * @generated
+   */
+  UpdateExpression createUpdateExpression();
+
+  /**
    * Returns a new object of class '<em>Store</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -158,15 +149,6 @@ public interface ONPAFactory extends EFactory
   Store createStore();
 
   /**
-   * Returns a new object of class '<em>Attribute Value</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Attribute Value</em>'.
-   * @generated
-   */
-  AttributeValue createAttributeValue();
-
-  /**
    * Returns a new object of class '<em>Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -174,6 +156,60 @@ public interface ONPAFactory extends EFactory
    * @generated
    */
   Expression createExpression();
+
+  /**
+   * Returns a new object of class '<em>Parallel</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Parallel</em>'.
+   * @generated
+   */
+  Parallel createParallel();
+
+  /**
+   * Returns a new object of class '<em>Choice</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Choice</em>'.
+   * @generated
+   */
+  Choice createChoice();
+
+  /**
+   * Returns a new object of class '<em>Leaf</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Leaf</em>'.
+   * @generated
+   */
+  Leaf createLeaf();
+
+  /**
+   * Returns a new object of class '<em>Process Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Process Reference</em>'.
+   * @generated
+   */
+  ProcessReference createProcessReference();
+
+  /**
+   * Returns a new object of class '<em>In</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>In</em>'.
+   * @generated
+   */
+  In createIn();
+
+  /**
+   * Returns a new object of class '<em>Out</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Out</em>'.
+   * @generated
+   */
+  Out createOut();
 
   /**
    * Returns a new object of class '<em>Or</em>'.
@@ -266,6 +302,15 @@ public interface ONPAFactory extends EFactory
   DoubleConstant createDoubleConstant();
 
   /**
+   * Returns a new object of class '<em>Free Variable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Free Variable</em>'.
+   * @generated
+   */
+  FreeVariable createFreeVariable();
+
+  /**
    * Returns a new object of class '<em>Bool Constant</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -275,13 +320,13 @@ public interface ONPAFactory extends EFactory
   BoolConstant createBoolConstant();
 
   /**
-   * Returns a new object of class '<em>Referenced Rate</em>'.
+   * Returns a new object of class '<em>Referenced Store</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Referenced Rate</em>'.
+   * @return a new object of class '<em>Referenced Store</em>'.
    * @generated
    */
-  ReferencedRate createReferencedRate();
+  ReferencedStore createReferencedStore();
 
   /**
    * Returns the package supported by this factory.

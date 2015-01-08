@@ -4,146 +4,162 @@ generate oNPA "http://www.blasedef.com/onpa/ONPA"
 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
-Model:
-	stores+=Store*
-	actions+=Action*
-	//predicates+=Predicates*
+Model hidden(ML_COMMENT,SL_COMMENT,WS):
+	stores+=Store+ 
+	processes+=Process+ 
+	terms+=Term+ 
 ;
 
-Action:
-	(BroadcastOut  | UnicastOut | BroadcastIn | UnicastIn) ";"
+//TERMS
+Term hidden(ML_COMMENT,SL_COMMENT,WS):
+	"(" name=[Process|UPPER] ",""{" stores+=[Store|LOWER] "}" ")"";"
 ;
 
-BroadcastOut:
-	name=LOWER "*"  predicate=Predicates evaluation=Evaluations update=Updates
+
+//PROCESSES
+Process hidden(ML_COMMENT,SL_COMMENT,WS):
+	name=UPPER "=" value=ProcessExpression ";"
 ;
 
-BroadcastIn:
-	name=LOWER "*"  values=Values update=Updates predicate=Predicates 
+ProcessExpression returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	Parallel
 ;
 
-UnicastOut:
-	name=LOWER  predicate=Predicates evaluation=Evaluations update=Updates
+Parallel returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	Choice ({Parallel.left=current}  "|" right=Choice)*
 ;
 
-UnicastIn:
-	name=LOWER values=Values update=Updates predicate=Predicates
+Choice returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	PrimaryProcess ({Choice.left=current}  "+" right=PrimaryProcess)*
 ;
 
-Updates:
-	{Updates} "{" (updateExpressions+=UpdateExpression+)?  "}"
+PrimaryProcess returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	{Leaf} value="nil" |
+	{Leaf} value="kill"|
+	PredicateProcess |
+	ActionProcess |
+	{ProcessReference} value=[Process|UPPER]
 ;
 
-UpdateExpression returns UpdateExpression:
-	name=[Store|LOWER] "=" value=Expression ";"
+PredicateProcess hidden(ML_COMMENT,SL_COMMENT,WS):
+	predicate=Predicate value=[Process|UPPER]
 ;
 
-Values:
-	{Values} "(" (values+=ValueExpression)? ")" //What is the point of this? (Knowing what local stores belong to who? - if so, shouldn't this be automatic?) - CDW 07.01.15
+ActionProcess hidden(ML_COMMENT,SL_COMMENT,WS):
+	action=Action value=[Process|UPPER]
 ;
 
-ValueExpression:
-	name=[Store|LOWER] ";"
+
+//ACTIONS
+Action returns Action hidden(ML_COMMENT,SL_COMMENT,WS):
+	{Action} name=LOWER ("*")? predicates=Predicate evaluations=Evaluations updates=Updates "."
 ;
 
-Evaluations:
-	{Evaluations} "<" (evaluations+=Evaluation)? ">"
+Predicate hidden(ML_COMMENT,SL_COMMENT,WS):
+	{Predicate} "[" predicates=PredicateExpression "]"
 ;
 
-Evaluation:
-	name=[Store|LOWER] "=" value=Expression
+Evaluations hidden(ML_COMMENT,SL_COMMENT,WS):
+	 ("(" {In} expressions+=EvaluationExpression+ ")"| "<" {Out} expressions+=EvaluationExpression+ ">")
 ;
 
-Predicates:
-	 {Predicates} "[" expressions+=PredicateExpression "]"
+Updates hidden(ML_COMMENT,SL_COMMENT,WS):
+	{Updates} "{" updates+=UpdateExpression+ "}"
 ;
 
-PredicateExpression:
-	value=Expression
+PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	expression=Expression ";"
 ;
 
-Store:
-	AttributeValue ";"
+EvaluationExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	Expression ";"
 ;
 
-AttributeValue:
-	name=LOWER "=" value=Expression 
+UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	expression=Expression ";"
 ;
 
-Expression:
+
+//STORES
+Store hidden(ML_COMMENT,SL_COMMENT,WS):
+	name=LOWER "=" value=Expression ";"
+;
+
+Expression hidden(ML_COMMENT,SL_COMMENT,WS):
 	Or
 ;
 	
-Or returns Expression:
+Or returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
 	And ({Or.left=current} "||" 
 		right=And
 	)*
 ;
 
-And returns Expression:
+And returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
 	Equality ({And.left=current} "&&" 
 		right=Equality
 	)*
 ;
 
-Equality returns Expression:
+Equality returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
 	Comparison (
 		{Equality.left=current} op=("=="|"!=")
 		right=Comparison
 	)*
 ;
 
-Comparison returns Expression:
+Comparison returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
 	Subtraction ({Comparison.left=current} op=(">="|"<="|">"|"<") 
 		right=Subtraction
 	)*
 ;
 	
-Subtraction returns Expression:
+Subtraction returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
 	Addition ({Sub.left=current} '-' 
 		right=Addition
 	)*
 ;
 	
-Addition returns Expression:
+Addition returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
 	Multiplication ({Plu.left=current} '+' 
 		right=Multiplication
 	)*
 ;
 
-Multiplication returns Expression:
+Multiplication returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
 	Division ({Mul.left=current} '*' 
 		right=Division
 	)*
 ;
 	
-Division returns Expression:
+Division returns Expression hidden(ML_COMMENT,SL_COMMENT,WS): 
 	Primary ({Div.left=current} '/' 
 		right=Primary
 	)*
 ;
 
-Primary returns Expression:
+Primary returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
 	'(' Expression ')' | 
 	{Not} "!" expression=Primary |
 	Atomic
 ;
-	
-Atomic returns Expression:
-	{DoubleConstant} value=Double |
-	{BoolConstant} value=('true'|'false') |
-	{ReferencedRate} value=[AttributeValue|LOWER] |
-	{ReferencedRate} "this."value=[AttributeValue|LOWER] 
-;
 
-LowerCase returns ecore::EString:
-	LOWER
+Atomic returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
+	{DoubleConstant} 	value=Double |
+	{FreeVariable} 		value=FreeVariable |
+	{BoolConstant} 		value=('true'|'false') |
+	{ReferencedStore} 	value=[Store|LOWER] |
+	{ReferencedStore}   "this."value=[Store|LOWER]
 ;
 
 Double returns ecore::EDouble:
 	 INT ('.' INT ('e'|'E' '-'? INT)?)?
 ;
-	
-terminal LOWER: ('a'..'z')+ (ID)?;
-terminal UPPER: ('A'..'Z')+ (ID)?;
-terminal INACTIVECOMPONENT: "InactiveComponent";
+
+FreeVariable returns ecore::EString:
+	"$"LOWER
+;
+
+terminal LOWER: ("a".."z") ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+terminal UPPER: ("A".."Z") ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+

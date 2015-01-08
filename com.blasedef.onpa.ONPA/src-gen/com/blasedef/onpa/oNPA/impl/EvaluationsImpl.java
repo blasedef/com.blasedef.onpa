@@ -2,7 +2,7 @@
  */
 package com.blasedef.onpa.oNPA.impl;
 
-import com.blasedef.onpa.oNPA.Evaluation;
+import com.blasedef.onpa.oNPA.EvaluationExpression;
 import com.blasedef.onpa.oNPA.Evaluations;
 import com.blasedef.onpa.oNPA.ONPAPackage;
 
@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.blasedef.onpa.oNPA.impl.EvaluationsImpl#getEvaluations <em>Evaluations</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.impl.EvaluationsImpl#getExpressions <em>Expressions</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,14 +36,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class EvaluationsImpl extends MinimalEObjectImpl.Container implements Evaluations
 {
   /**
-   * The cached value of the '{@link #getEvaluations() <em>Evaluations</em>}' containment reference list.
+   * The cached value of the '{@link #getExpressions() <em>Expressions</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEvaluations()
+   * @see #getExpressions()
    * @generated
    * @ordered
    */
-  protected EList<Evaluation> evaluations;
+  protected EList<EvaluationExpression> expressions;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,13 +71,13 @@ public class EvaluationsImpl extends MinimalEObjectImpl.Container implements Eva
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Evaluation> getEvaluations()
+  public EList<EvaluationExpression> getExpressions()
   {
-    if (evaluations == null)
+    if (expressions == null)
     {
-      evaluations = new EObjectContainmentEList<Evaluation>(Evaluation.class, this, ONPAPackage.EVALUATIONS__EVALUATIONS);
+      expressions = new EObjectContainmentEList<EvaluationExpression>(EvaluationExpression.class, this, ONPAPackage.EVALUATIONS__EXPRESSIONS);
     }
-    return evaluations;
+    return expressions;
   }
 
   /**
@@ -90,8 +90,8 @@ public class EvaluationsImpl extends MinimalEObjectImpl.Container implements Eva
   {
     switch (featureID)
     {
-      case ONPAPackage.EVALUATIONS__EVALUATIONS:
-        return ((InternalEList<?>)getEvaluations()).basicRemove(otherEnd, msgs);
+      case ONPAPackage.EVALUATIONS__EXPRESSIONS:
+        return ((InternalEList<?>)getExpressions()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -106,8 +106,8 @@ public class EvaluationsImpl extends MinimalEObjectImpl.Container implements Eva
   {
     switch (featureID)
     {
-      case ONPAPackage.EVALUATIONS__EVALUATIONS:
-        return getEvaluations();
+      case ONPAPackage.EVALUATIONS__EXPRESSIONS:
+        return getExpressions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -123,9 +123,9 @@ public class EvaluationsImpl extends MinimalEObjectImpl.Container implements Eva
   {
     switch (featureID)
     {
-      case ONPAPackage.EVALUATIONS__EVALUATIONS:
-        getEvaluations().clear();
-        getEvaluations().addAll((Collection<? extends Evaluation>)newValue);
+      case ONPAPackage.EVALUATIONS__EXPRESSIONS:
+        getExpressions().clear();
+        getExpressions().addAll((Collection<? extends EvaluationExpression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +141,8 @@ public class EvaluationsImpl extends MinimalEObjectImpl.Container implements Eva
   {
     switch (featureID)
     {
-      case ONPAPackage.EVALUATIONS__EVALUATIONS:
-        getEvaluations().clear();
+      case ONPAPackage.EVALUATIONS__EXPRESSIONS:
+        getExpressions().clear();
         return;
     }
     super.eUnset(featureID);
@@ -158,8 +158,8 @@ public class EvaluationsImpl extends MinimalEObjectImpl.Container implements Eva
   {
     switch (featureID)
     {
-      case ONPAPackage.EVALUATIONS__EVALUATIONS:
-        return evaluations != null && !evaluations.isEmpty();
+      case ONPAPackage.EVALUATIONS__EXPRESSIONS:
+        return expressions != null && !expressions.isEmpty();
     }
     return super.eIsSet(featureID);
   }

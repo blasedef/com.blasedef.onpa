@@ -14,8 +14,9 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link com.blasedef.onpa.oNPA.Model#getProcesses <em>Processes</em>}</li>
  *   <li>{@link com.blasedef.onpa.oNPA.Model#getStores <em>Stores</em>}</li>
- *   <li>{@link com.blasedef.onpa.oNPA.Model#getActions <em>Actions</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.Model#getTerms <em>Terms</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,6 +26,22 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Model extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Processes</b></em>' containment reference list.
+   * The list contents are of type {@link com.blasedef.onpa.oNPA.Process}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Processes</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Processes</em>' containment reference list.
+   * @see com.blasedef.onpa.oNPA.ONPAPackage#getModel_Processes()
+   * @model containment="true"
+   * @generated
+   */
+  EList<com.blasedef.onpa.oNPA.Process> getProcesses();
+
   /**
    * Returns the value of the '<em><b>Stores</b></em>' containment reference list.
    * The list contents are of type {@link com.blasedef.onpa.oNPA.Store}.
@@ -42,19 +59,19 @@ public interface Model extends EObject
   EList<Store> getStores();
 
   /**
-   * Returns the value of the '<em><b>Actions</b></em>' containment reference list.
-   * The list contents are of type {@link com.blasedef.onpa.oNPA.Action}.
+   * Returns the value of the '<em><b>Terms</b></em>' containment reference list.
+   * The list contents are of type {@link com.blasedef.onpa.oNPA.Term}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Actions</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Terms</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Actions</em>' containment reference list.
-   * @see com.blasedef.onpa.oNPA.ONPAPackage#getModel_Actions()
+   * @return the value of the '<em>Terms</em>' containment reference list.
+   * @see com.blasedef.onpa.oNPA.ONPAPackage#getModel_Terms()
    * @model containment="true"
    * @generated
    */
-  EList<Action> getActions();
+  EList<Term> getTerms();
 
 } // Model

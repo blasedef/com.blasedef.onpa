@@ -2,19 +2,19 @@ package com.blasedef.onpa.ONPA.tests;
 
 import com.blasedef.onpa.ONPAInjectorProvider;
 import com.blasedef.onpa.oNPA.And;
-import com.blasedef.onpa.oNPA.AttributeValue;
 import com.blasedef.onpa.oNPA.BoolConstant;
 import com.blasedef.onpa.oNPA.Comparison;
 import com.blasedef.onpa.oNPA.Div;
 import com.blasedef.onpa.oNPA.DoubleConstant;
 import com.blasedef.onpa.oNPA.Equality;
 import com.blasedef.onpa.oNPA.Expression;
+import com.blasedef.onpa.oNPA.FreeVariable;
 import com.blasedef.onpa.oNPA.Model;
 import com.blasedef.onpa.oNPA.Mul;
 import com.blasedef.onpa.oNPA.Not;
 import com.blasedef.onpa.oNPA.Or;
 import com.blasedef.onpa.oNPA.Plu;
-import com.blasedef.onpa.oNPA.ReferencedRate;
+import com.blasedef.onpa.oNPA.ReferencedStore;
 import com.blasedef.onpa.oNPA.Store;
 import com.blasedef.onpa.oNPA.Sub;
 import com.google.inject.Inject;
@@ -45,7 +45,7 @@ public class ModelParserTest {
   
   private CharSequence output;
   
-  private AttributeValue intermediateStore;
+  private Store intermediateStore;
   
   private Model intermediateModel;
   
@@ -54,6 +54,11 @@ public class ModelParserTest {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("i = 10;");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
@@ -66,6 +71,11 @@ public class ModelParserTest {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("i = 10.0;");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
@@ -78,6 +88,49 @@ public class ModelParserTest {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("i = 0.1;");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testVariableExpression4() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = 0.1;");
+      _builder.newLine();
+      _builder.append("P = Q;");
+      _builder.newLine();
+      _builder.append("Q = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testVariableExpression5() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = 0.1;");
+      _builder.newLine();
+      _builder.append("P = Q;");
+      _builder.newLine();
+      _builder.append("Q = P;");
+      _builder.newLine();
+      _builder.append("(Q,{i});");
+      _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
@@ -90,6 +143,11 @@ public class ModelParserTest {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("i = 0.2 - 0.1;");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
@@ -102,6 +160,11 @@ public class ModelParserTest {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("i = 0.2 + 0.1;");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
@@ -114,6 +177,11 @@ public class ModelParserTest {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("i = 0.2 * 0.1;");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
@@ -126,6 +194,11 @@ public class ModelParserTest {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("i = 0.2 / 0.1;");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
@@ -138,6 +211,11 @@ public class ModelParserTest {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("i = true || false;");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
@@ -150,6 +228,11 @@ public class ModelParserTest {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("i = true && false;");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
@@ -162,6 +245,11 @@ public class ModelParserTest {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("i = true != false;");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
@@ -174,6 +262,11 @@ public class ModelParserTest {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("i = true == true;");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
@@ -186,6 +279,11 @@ public class ModelParserTest {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("i = 2.0 >= 2.0;");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
@@ -198,6 +296,11 @@ public class ModelParserTest {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("i = 2.0 > 1.0;");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
@@ -210,6 +313,11 @@ public class ModelParserTest {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("i = 1.0 < 2.0;");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
@@ -222,6 +330,11 @@ public class ModelParserTest {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("i = 2.0 >= 2.0;");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
@@ -234,6 +347,11 @@ public class ModelParserTest {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("i = !true;");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
@@ -246,6 +364,11 @@ public class ModelParserTest {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("i = true;");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
@@ -258,6 +381,11 @@ public class ModelParserTest {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("i = false;");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
@@ -271,11 +399,14 @@ public class ModelParserTest {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("i = 0.2 / 0.1;");
       _builder.newLine();
-      _builder.append("\t   ");
       _builder.append("j = 0.2;");
       _builder.newLine();
-      _builder.append("\t   ");
       _builder.append("k = i + j;");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
@@ -288,6 +419,11 @@ public class ModelParserTest {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("i = (0.2 / 0.1) + 0.4;");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
@@ -301,11 +437,14 @@ public class ModelParserTest {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("i = 0.2 / 0.1;");
       _builder.newLine();
-      _builder.append("\t   ");
       _builder.append("j = 0.2;");
       _builder.newLine();
-      _builder.append("\t   ");
       _builder.append("k = (0.1 + i) + j;");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
@@ -321,7 +460,9 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append("b = 0.1;");
       _builder.newLine();
-      _builder.append("broadcastOut * [ ] < > {a = 0.1;} ;");
+      _builder.append("P = c*[$x;]<$y;>{$z;}.P;");
+      _builder.newLine();
+      _builder.append("(P,{a});");
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
@@ -338,7 +479,9 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append("b = 0.1;");
       _builder.newLine();
-      _builder.append("broadcastIn * [ ] (b;) {a = 0.1;} ;");
+      _builder.append("P = c*[$x;]($y;){$z;}.P;");
+      _builder.newLine();
+      _builder.append("(P,{a});");
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
@@ -355,7 +498,9 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append("b = 0.1;");
       _builder.newLine();
-      _builder.append("unicastOut [ ] < > {a = 0.1;} ;");
+      _builder.append("P = c[$x;]<$y;>{$z;}.P;");
+      _builder.newLine();
+      _builder.append("(P,{a});");
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
@@ -372,7 +517,9 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append("b = 0.1;");
       _builder.newLine();
-      _builder.append("unicastIn [ ] (b;) {a = 0.1;} ;");
+      _builder.append("P = c[$x;]($y;){$z;}.P;");
+      _builder.newLine();
+      _builder.append("(P,{a});");
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
@@ -477,7 +624,7 @@ public class ModelParserTest {
       this.intermediateModel = _parse;
       EList<Store> _stores = this.intermediateModel.getStores();
       Store _last = IterableExtensions.<Store>last(_stores);
-      this.intermediateStore = ((AttributeValue) _last);
+      this.intermediateStore = _last;
       Expression _value = this.intermediateStore.getValue();
       CharSequence _stringRepr = this.stringRepr(_value);
       this.output = _stringRepr;
@@ -636,11 +783,11 @@ public class ModelParserTest {
       }
     }
     if (!_matched) {
-      if (e instanceof ReferencedRate) {
+      if (e instanceof ReferencedStore) {
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("(");
-        AttributeValue _value = ((ReferencedRate)e).getValue();
+        Store _value = ((ReferencedStore)e).getValue();
         String _name = _value.getName();
         _builder.append(_name, "");
         _builder.append(")");
@@ -661,6 +808,15 @@ public class ModelParserTest {
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
         String _value = ((BoolConstant)e).getValue();
+        _builder.append(_value, "");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (e instanceof FreeVariable) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        String _value = ((FreeVariable)e).getValue();
         _builder.append(_value, "");
         _switchResult = _builder.toString();
       }

@@ -2,7 +2,41 @@
  */
 package com.blasedef.onpa.oNPA.impl;
 
-import com.blasedef.onpa.oNPA.*;
+import com.blasedef.onpa.oNPA.Action;
+import com.blasedef.onpa.oNPA.ActionProcess;
+import com.blasedef.onpa.oNPA.And;
+import com.blasedef.onpa.oNPA.BoolConstant;
+import com.blasedef.onpa.oNPA.Choice;
+import com.blasedef.onpa.oNPA.Comparison;
+import com.blasedef.onpa.oNPA.Div;
+import com.blasedef.onpa.oNPA.DoubleConstant;
+import com.blasedef.onpa.oNPA.Equality;
+import com.blasedef.onpa.oNPA.EvaluationExpression;
+import com.blasedef.onpa.oNPA.Evaluations;
+import com.blasedef.onpa.oNPA.Expression;
+import com.blasedef.onpa.oNPA.FreeVariable;
+import com.blasedef.onpa.oNPA.In;
+import com.blasedef.onpa.oNPA.Leaf;
+import com.blasedef.onpa.oNPA.Model;
+import com.blasedef.onpa.oNPA.Mul;
+import com.blasedef.onpa.oNPA.Not;
+import com.blasedef.onpa.oNPA.ONPAFactory;
+import com.blasedef.onpa.oNPA.ONPAPackage;
+import com.blasedef.onpa.oNPA.Or;
+import com.blasedef.onpa.oNPA.Out;
+import com.blasedef.onpa.oNPA.Parallel;
+import com.blasedef.onpa.oNPA.Plu;
+import com.blasedef.onpa.oNPA.Predicate;
+import com.blasedef.onpa.oNPA.PredicateExpression;
+import com.blasedef.onpa.oNPA.PredicateProcess;
+import com.blasedef.onpa.oNPA.ProcessExpression;
+import com.blasedef.onpa.oNPA.ProcessReference;
+import com.blasedef.onpa.oNPA.ReferencedStore;
+import com.blasedef.onpa.oNPA.Store;
+import com.blasedef.onpa.oNPA.Sub;
+import com.blasedef.onpa.oNPA.Term;
+import com.blasedef.onpa.oNPA.UpdateExpression;
+import com.blasedef.onpa.oNPA.Updates;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -65,22 +99,26 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
     switch (eClass.getClassifierID())
     {
       case ONPAPackage.MODEL: return createModel();
+      case ONPAPackage.TERM: return createTerm();
+      case ONPAPackage.PROCESS: return createProcess();
+      case ONPAPackage.PROCESS_EXPRESSION: return createProcessExpression();
+      case ONPAPackage.PREDICATE_PROCESS: return createPredicateProcess();
+      case ONPAPackage.ACTION_PROCESS: return createActionProcess();
       case ONPAPackage.ACTION: return createAction();
-      case ONPAPackage.BROADCAST_OUT: return createBroadcastOut();
-      case ONPAPackage.BROADCAST_IN: return createBroadcastIn();
-      case ONPAPackage.UNICAST_OUT: return createUnicastOut();
-      case ONPAPackage.UNICAST_IN: return createUnicastIn();
-      case ONPAPackage.UPDATES: return createUpdates();
-      case ONPAPackage.UPDATE_EXPRESSION: return createUpdateExpression();
-      case ONPAPackage.VALUES: return createValues();
-      case ONPAPackage.VALUE_EXPRESSION: return createValueExpression();
+      case ONPAPackage.PREDICATE: return createPredicate();
       case ONPAPackage.EVALUATIONS: return createEvaluations();
-      case ONPAPackage.EVALUATION: return createEvaluation();
-      case ONPAPackage.PREDICATES: return createPredicates();
+      case ONPAPackage.UPDATES: return createUpdates();
       case ONPAPackage.PREDICATE_EXPRESSION: return createPredicateExpression();
+      case ONPAPackage.EVALUATION_EXPRESSION: return createEvaluationExpression();
+      case ONPAPackage.UPDATE_EXPRESSION: return createUpdateExpression();
       case ONPAPackage.STORE: return createStore();
-      case ONPAPackage.ATTRIBUTE_VALUE: return createAttributeValue();
       case ONPAPackage.EXPRESSION: return createExpression();
+      case ONPAPackage.PARALLEL: return createParallel();
+      case ONPAPackage.CHOICE: return createChoice();
+      case ONPAPackage.LEAF: return createLeaf();
+      case ONPAPackage.PROCESS_REFERENCE: return createProcessReference();
+      case ONPAPackage.IN: return createIn();
+      case ONPAPackage.OUT: return createOut();
       case ONPAPackage.OR: return createOr();
       case ONPAPackage.AND: return createAnd();
       case ONPAPackage.EQUALITY: return createEquality();
@@ -91,8 +129,9 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
       case ONPAPackage.DIV: return createDiv();
       case ONPAPackage.NOT: return createNot();
       case ONPAPackage.DOUBLE_CONSTANT: return createDoubleConstant();
+      case ONPAPackage.FREE_VARIABLE: return createFreeVariable();
       case ONPAPackage.BOOL_CONSTANT: return createBoolConstant();
-      case ONPAPackage.REFERENCED_RATE: return createReferencedRate();
+      case ONPAPackage.REFERENCED_STORE: return createReferencedStore();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -114,6 +153,61 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public Term createTerm()
+  {
+    TermImpl term = new TermImpl();
+    return term;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public com.blasedef.onpa.oNPA.Process createProcess()
+  {
+    ProcessImpl process = new ProcessImpl();
+    return process;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ProcessExpression createProcessExpression()
+  {
+    ProcessExpressionImpl processExpression = new ProcessExpressionImpl();
+    return processExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PredicateProcess createPredicateProcess()
+  {
+    PredicateProcessImpl predicateProcess = new PredicateProcessImpl();
+    return predicateProcess;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ActionProcess createActionProcess()
+  {
+    ActionProcessImpl actionProcess = new ActionProcessImpl();
+    return actionProcess;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Action createAction()
   {
     ActionImpl action = new ActionImpl();
@@ -125,87 +219,10 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public BroadcastOut createBroadcastOut()
+  public Predicate createPredicate()
   {
-    BroadcastOutImpl broadcastOut = new BroadcastOutImpl();
-    return broadcastOut;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public BroadcastIn createBroadcastIn()
-  {
-    BroadcastInImpl broadcastIn = new BroadcastInImpl();
-    return broadcastIn;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public UnicastOut createUnicastOut()
-  {
-    UnicastOutImpl unicastOut = new UnicastOutImpl();
-    return unicastOut;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public UnicastIn createUnicastIn()
-  {
-    UnicastInImpl unicastIn = new UnicastInImpl();
-    return unicastIn;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Updates createUpdates()
-  {
-    UpdatesImpl updates = new UpdatesImpl();
-    return updates;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public UpdateExpression createUpdateExpression()
-  {
-    UpdateExpressionImpl updateExpression = new UpdateExpressionImpl();
-    return updateExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Values createValues()
-  {
-    ValuesImpl values = new ValuesImpl();
-    return values;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ValueExpression createValueExpression()
-  {
-    ValueExpressionImpl valueExpression = new ValueExpressionImpl();
-    return valueExpression;
+    PredicateImpl predicate = new PredicateImpl();
+    return predicate;
   }
 
   /**
@@ -224,21 +241,10 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Evaluation createEvaluation()
+  public Updates createUpdates()
   {
-    EvaluationImpl evaluation = new EvaluationImpl();
-    return evaluation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Predicates createPredicates()
-  {
-    PredicatesImpl predicates = new PredicatesImpl();
-    return predicates;
+    UpdatesImpl updates = new UpdatesImpl();
+    return updates;
   }
 
   /**
@@ -257,6 +263,28 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public EvaluationExpression createEvaluationExpression()
+  {
+    EvaluationExpressionImpl evaluationExpression = new EvaluationExpressionImpl();
+    return evaluationExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public UpdateExpression createUpdateExpression()
+  {
+    UpdateExpressionImpl updateExpression = new UpdateExpressionImpl();
+    return updateExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Store createStore()
   {
     StoreImpl store = new StoreImpl();
@@ -268,10 +296,10 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public AttributeValue createAttributeValue()
+  public Expression createExpression()
   {
-    AttributeValueImpl attributeValue = new AttributeValueImpl();
-    return attributeValue;
+    ExpressionImpl expression = new ExpressionImpl();
+    return expression;
   }
 
   /**
@@ -279,10 +307,65 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression createExpression()
+  public Parallel createParallel()
   {
-    ExpressionImpl expression = new ExpressionImpl();
-    return expression;
+    ParallelImpl parallel = new ParallelImpl();
+    return parallel;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Choice createChoice()
+  {
+    ChoiceImpl choice = new ChoiceImpl();
+    return choice;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Leaf createLeaf()
+  {
+    LeafImpl leaf = new LeafImpl();
+    return leaf;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ProcessReference createProcessReference()
+  {
+    ProcessReferenceImpl processReference = new ProcessReferenceImpl();
+    return processReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public In createIn()
+  {
+    InImpl in = new InImpl();
+    return in;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Out createOut()
+  {
+    OutImpl out = new OutImpl();
+    return out;
   }
 
   /**
@@ -400,6 +483,17 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public FreeVariable createFreeVariable()
+  {
+    FreeVariableImpl freeVariable = new FreeVariableImpl();
+    return freeVariable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public BoolConstant createBoolConstant()
   {
     BoolConstantImpl boolConstant = new BoolConstantImpl();
@@ -411,10 +505,10 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ReferencedRate createReferencedRate()
+  public ReferencedStore createReferencedStore()
   {
-    ReferencedRateImpl referencedRate = new ReferencedRateImpl();
-    return referencedRate;
+    ReferencedStoreImpl referencedStore = new ReferencedStoreImpl();
+    return referencedStore;
   }
 
   /**

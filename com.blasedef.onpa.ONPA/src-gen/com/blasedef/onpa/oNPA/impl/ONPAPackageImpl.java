@@ -3,36 +3,40 @@
 package com.blasedef.onpa.oNPA.impl;
 
 import com.blasedef.onpa.oNPA.Action;
+import com.blasedef.onpa.oNPA.ActionProcess;
 import com.blasedef.onpa.oNPA.And;
-import com.blasedef.onpa.oNPA.AttributeValue;
 import com.blasedef.onpa.oNPA.BoolConstant;
-import com.blasedef.onpa.oNPA.BroadcastIn;
-import com.blasedef.onpa.oNPA.BroadcastOut;
+import com.blasedef.onpa.oNPA.Choice;
 import com.blasedef.onpa.oNPA.Comparison;
 import com.blasedef.onpa.oNPA.Div;
 import com.blasedef.onpa.oNPA.DoubleConstant;
 import com.blasedef.onpa.oNPA.Equality;
-import com.blasedef.onpa.oNPA.Evaluation;
+import com.blasedef.onpa.oNPA.EvaluationExpression;
 import com.blasedef.onpa.oNPA.Evaluations;
 import com.blasedef.onpa.oNPA.Expression;
+import com.blasedef.onpa.oNPA.FreeVariable;
+import com.blasedef.onpa.oNPA.In;
+import com.blasedef.onpa.oNPA.Leaf;
 import com.blasedef.onpa.oNPA.Model;
 import com.blasedef.onpa.oNPA.Mul;
 import com.blasedef.onpa.oNPA.Not;
 import com.blasedef.onpa.oNPA.ONPAFactory;
 import com.blasedef.onpa.oNPA.ONPAPackage;
 import com.blasedef.onpa.oNPA.Or;
+import com.blasedef.onpa.oNPA.Out;
+import com.blasedef.onpa.oNPA.Parallel;
 import com.blasedef.onpa.oNPA.Plu;
+import com.blasedef.onpa.oNPA.Predicate;
 import com.blasedef.onpa.oNPA.PredicateExpression;
-import com.blasedef.onpa.oNPA.Predicates;
-import com.blasedef.onpa.oNPA.ReferencedRate;
+import com.blasedef.onpa.oNPA.PredicateProcess;
+import com.blasedef.onpa.oNPA.ProcessExpression;
+import com.blasedef.onpa.oNPA.ProcessReference;
+import com.blasedef.onpa.oNPA.ReferencedStore;
 import com.blasedef.onpa.oNPA.Store;
 import com.blasedef.onpa.oNPA.Sub;
-import com.blasedef.onpa.oNPA.UnicastIn;
-import com.blasedef.onpa.oNPA.UnicastOut;
+import com.blasedef.onpa.oNPA.Term;
 import com.blasedef.onpa.oNPA.UpdateExpression;
 import com.blasedef.onpa.oNPA.Updates;
-import com.blasedef.onpa.oNPA.ValueExpression;
-import com.blasedef.onpa.oNPA.Values;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -61,6 +65,41 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass termEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass processEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass processExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass predicateProcessEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass actionProcessEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass actionEClass = null;
 
   /**
@@ -68,56 +107,7 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass broadcastOutEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass broadcastInEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass unicastOutEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass unicastInEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass updatesEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass updateExpressionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass valuesEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass valueExpressionEClass = null;
+  private EClass predicateEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -131,14 +121,7 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass evaluationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass predicatesEClass = null;
+  private EClass updatesEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -152,6 +135,20 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass evaluationExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass updateExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass storeEClass = null;
 
   /**
@@ -159,14 +156,49 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass attributeValueEClass = null;
+  private EClass expressionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass expressionEClass = null;
+  private EClass parallelEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass choiceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass leafEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass processReferenceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass inEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass outEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -243,6 +275,13 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass freeVariableEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass boolConstantEClass = null;
 
   /**
@@ -250,7 +289,7 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass referencedRateEClass = null;
+  private EClass referencedStoreEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -330,7 +369,7 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Stores()
+  public EReference getModel_Processes()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
@@ -340,9 +379,149 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Actions()
+  public EReference getModel_Stores()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getModel_Terms()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTerm()
+  {
+    return termEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTerm_Name()
+  {
+    return (EReference)termEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTerm_Stores()
+  {
+    return (EReference)termEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getProcess()
+  {
+    return processEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getProcess_Name()
+  {
+    return (EAttribute)processEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getProcess_Value()
+  {
+    return (EReference)processEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getProcessExpression()
+  {
+    return processExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPredicateProcess()
+  {
+    return predicateProcessEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPredicateProcess_Predicate()
+  {
+    return (EReference)predicateProcessEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPredicateProcess_Value()
+  {
+    return (EReference)predicateProcessEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getActionProcess()
+  {
+    return actionProcessEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getActionProcess_Action()
+  {
+    return (EReference)actionProcessEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getActionProcess_Value()
+  {
+    return (EReference)actionProcessEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -370,7 +549,7 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAction_Predicate()
+  public EReference getAction_Predicates()
   {
     return (EReference)actionEClass.getEStructuralFeatures().get(1);
   }
@@ -380,7 +559,7 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAction_Update()
+  public EReference getAction_Evaluations()
   {
     return (EReference)actionEClass.getEStructuralFeatures().get(2);
   }
@@ -390,9 +569,9 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBroadcastOut()
+  public EReference getAction_Updates()
   {
-    return broadcastOutEClass;
+    return (EReference)actionEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -400,9 +579,9 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBroadcastOut_Evaluation()
+  public EClass getPredicate()
   {
-    return (EReference)broadcastOutEClass.getEStructuralFeatures().get(0);
+    return predicateEClass;
   }
 
   /**
@@ -410,149 +589,9 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBroadcastIn()
+  public EReference getPredicate_Predicates()
   {
-    return broadcastInEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getBroadcastIn_Values()
-  {
-    return (EReference)broadcastInEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getUnicastOut()
-  {
-    return unicastOutEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getUnicastOut_Evaluation()
-  {
-    return (EReference)unicastOutEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getUnicastIn()
-  {
-    return unicastInEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getUnicastIn_Values()
-  {
-    return (EReference)unicastInEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getUpdates()
-  {
-    return updatesEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getUpdates_UpdateExpressions()
-  {
-    return (EReference)updatesEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getUpdateExpression()
-  {
-    return updateExpressionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getUpdateExpression_Name()
-  {
-    return (EReference)updateExpressionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getUpdateExpression_Value()
-  {
-    return (EReference)updateExpressionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getValues()
-  {
-    return valuesEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getValues_Values()
-  {
-    return (EReference)valuesEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getValueExpression()
-  {
-    return valueExpressionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getValueExpression_Name()
-  {
-    return (EReference)valueExpressionEClass.getEStructuralFeatures().get(0);
+    return (EReference)predicateEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -570,7 +609,7 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEvaluations_Evaluations()
+  public EReference getEvaluations_Expressions()
   {
     return (EReference)evaluationsEClass.getEStructuralFeatures().get(0);
   }
@@ -580,9 +619,9 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getEvaluation()
+  public EClass getUpdates()
   {
-    return evaluationEClass;
+    return updatesEClass;
   }
 
   /**
@@ -590,39 +629,9 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEvaluation_Name()
+  public EReference getUpdates_Updates()
   {
-    return (EReference)evaluationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getEvaluation_Value()
-  {
-    return (EReference)evaluationEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getPredicates()
-  {
-    return predicatesEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getPredicates_Expressions()
-  {
-    return (EReference)predicatesEClass.getEStructuralFeatures().get(0);
+    return (EReference)updatesEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -640,9 +649,39 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPredicateExpression_Value()
+  public EReference getPredicateExpression_Expression()
   {
     return (EReference)predicateExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEvaluationExpression()
+  {
+    return evaluationExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getUpdateExpression()
+  {
+    return updateExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getUpdateExpression_Expression()
+  {
+    return (EReference)updateExpressionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -660,9 +699,9 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAttributeValue()
+  public EAttribute getStore_Name()
   {
-    return attributeValueEClass;
+    return (EAttribute)storeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -670,19 +709,9 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAttributeValue_Name()
+  public EReference getStore_Value()
   {
-    return (EAttribute)attributeValueEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAttributeValue_Value()
-  {
-    return (EReference)attributeValueEClass.getEStructuralFeatures().get(1);
+    return (EReference)storeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -693,6 +722,126 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
   public EClass getExpression()
   {
     return expressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getParallel()
+  {
+    return parallelEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getParallel_Left()
+  {
+    return (EReference)parallelEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getParallel_Right()
+  {
+    return (EReference)parallelEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getChoice()
+  {
+    return choiceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getChoice_Left()
+  {
+    return (EReference)choiceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getChoice_Right()
+  {
+    return (EReference)choiceEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLeaf()
+  {
+    return leafEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLeaf_Value()
+  {
+    return (EAttribute)leafEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getProcessReference()
+  {
+    return processReferenceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getProcessReference_Value()
+  {
+    return (EReference)processReferenceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIn()
+  {
+    return inEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getOut()
+  {
+    return outEClass;
   }
 
   /**
@@ -1000,6 +1149,26 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getFreeVariable()
+  {
+    return freeVariableEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFreeVariable_Value()
+  {
+    return (EAttribute)freeVariableEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getBoolConstant()
   {
     return boolConstantEClass;
@@ -1020,9 +1189,9 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getReferencedRate()
+  public EClass getReferencedStore()
   {
-    return referencedRateEClass;
+    return referencedStoreEClass;
   }
 
   /**
@@ -1030,9 +1199,9 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getReferencedRate_Value()
+  public EReference getReferencedStore_Value()
   {
-    return (EReference)referencedRateEClass.getEStructuralFeatures().get(0);
+    return (EReference)referencedStoreEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1066,59 +1235,74 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
 
     // Create classes and their features
     modelEClass = createEClass(MODEL);
+    createEReference(modelEClass, MODEL__PROCESSES);
     createEReference(modelEClass, MODEL__STORES);
-    createEReference(modelEClass, MODEL__ACTIONS);
+    createEReference(modelEClass, MODEL__TERMS);
+
+    termEClass = createEClass(TERM);
+    createEReference(termEClass, TERM__NAME);
+    createEReference(termEClass, TERM__STORES);
+
+    processEClass = createEClass(PROCESS);
+    createEAttribute(processEClass, PROCESS__NAME);
+    createEReference(processEClass, PROCESS__VALUE);
+
+    processExpressionEClass = createEClass(PROCESS_EXPRESSION);
+
+    predicateProcessEClass = createEClass(PREDICATE_PROCESS);
+    createEReference(predicateProcessEClass, PREDICATE_PROCESS__PREDICATE);
+    createEReference(predicateProcessEClass, PREDICATE_PROCESS__VALUE);
+
+    actionProcessEClass = createEClass(ACTION_PROCESS);
+    createEReference(actionProcessEClass, ACTION_PROCESS__ACTION);
+    createEReference(actionProcessEClass, ACTION_PROCESS__VALUE);
 
     actionEClass = createEClass(ACTION);
     createEAttribute(actionEClass, ACTION__NAME);
-    createEReference(actionEClass, ACTION__PREDICATE);
-    createEReference(actionEClass, ACTION__UPDATE);
+    createEReference(actionEClass, ACTION__PREDICATES);
+    createEReference(actionEClass, ACTION__EVALUATIONS);
+    createEReference(actionEClass, ACTION__UPDATES);
 
-    broadcastOutEClass = createEClass(BROADCAST_OUT);
-    createEReference(broadcastOutEClass, BROADCAST_OUT__EVALUATION);
-
-    broadcastInEClass = createEClass(BROADCAST_IN);
-    createEReference(broadcastInEClass, BROADCAST_IN__VALUES);
-
-    unicastOutEClass = createEClass(UNICAST_OUT);
-    createEReference(unicastOutEClass, UNICAST_OUT__EVALUATION);
-
-    unicastInEClass = createEClass(UNICAST_IN);
-    createEReference(unicastInEClass, UNICAST_IN__VALUES);
-
-    updatesEClass = createEClass(UPDATES);
-    createEReference(updatesEClass, UPDATES__UPDATE_EXPRESSIONS);
-
-    updateExpressionEClass = createEClass(UPDATE_EXPRESSION);
-    createEReference(updateExpressionEClass, UPDATE_EXPRESSION__NAME);
-    createEReference(updateExpressionEClass, UPDATE_EXPRESSION__VALUE);
-
-    valuesEClass = createEClass(VALUES);
-    createEReference(valuesEClass, VALUES__VALUES);
-
-    valueExpressionEClass = createEClass(VALUE_EXPRESSION);
-    createEReference(valueExpressionEClass, VALUE_EXPRESSION__NAME);
+    predicateEClass = createEClass(PREDICATE);
+    createEReference(predicateEClass, PREDICATE__PREDICATES);
 
     evaluationsEClass = createEClass(EVALUATIONS);
-    createEReference(evaluationsEClass, EVALUATIONS__EVALUATIONS);
+    createEReference(evaluationsEClass, EVALUATIONS__EXPRESSIONS);
 
-    evaluationEClass = createEClass(EVALUATION);
-    createEReference(evaluationEClass, EVALUATION__NAME);
-    createEReference(evaluationEClass, EVALUATION__VALUE);
-
-    predicatesEClass = createEClass(PREDICATES);
-    createEReference(predicatesEClass, PREDICATES__EXPRESSIONS);
+    updatesEClass = createEClass(UPDATES);
+    createEReference(updatesEClass, UPDATES__UPDATES);
 
     predicateExpressionEClass = createEClass(PREDICATE_EXPRESSION);
-    createEReference(predicateExpressionEClass, PREDICATE_EXPRESSION__VALUE);
+    createEReference(predicateExpressionEClass, PREDICATE_EXPRESSION__EXPRESSION);
+
+    evaluationExpressionEClass = createEClass(EVALUATION_EXPRESSION);
+
+    updateExpressionEClass = createEClass(UPDATE_EXPRESSION);
+    createEReference(updateExpressionEClass, UPDATE_EXPRESSION__EXPRESSION);
 
     storeEClass = createEClass(STORE);
-
-    attributeValueEClass = createEClass(ATTRIBUTE_VALUE);
-    createEAttribute(attributeValueEClass, ATTRIBUTE_VALUE__NAME);
-    createEReference(attributeValueEClass, ATTRIBUTE_VALUE__VALUE);
+    createEAttribute(storeEClass, STORE__NAME);
+    createEReference(storeEClass, STORE__VALUE);
 
     expressionEClass = createEClass(EXPRESSION);
+
+    parallelEClass = createEClass(PARALLEL);
+    createEReference(parallelEClass, PARALLEL__LEFT);
+    createEReference(parallelEClass, PARALLEL__RIGHT);
+
+    choiceEClass = createEClass(CHOICE);
+    createEReference(choiceEClass, CHOICE__LEFT);
+    createEReference(choiceEClass, CHOICE__RIGHT);
+
+    leafEClass = createEClass(LEAF);
+    createEAttribute(leafEClass, LEAF__VALUE);
+
+    processReferenceEClass = createEClass(PROCESS_REFERENCE);
+    createEReference(processReferenceEClass, PROCESS_REFERENCE__VALUE);
+
+    inEClass = createEClass(IN);
+
+    outEClass = createEClass(OUT);
 
     orEClass = createEClass(OR);
     createEReference(orEClass, OR__LEFT);
@@ -1160,11 +1344,14 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
     doubleConstantEClass = createEClass(DOUBLE_CONSTANT);
     createEAttribute(doubleConstantEClass, DOUBLE_CONSTANT__VALUE);
 
+    freeVariableEClass = createEClass(FREE_VARIABLE);
+    createEAttribute(freeVariableEClass, FREE_VARIABLE__VALUE);
+
     boolConstantEClass = createEClass(BOOL_CONSTANT);
     createEAttribute(boolConstantEClass, BOOL_CONSTANT__VALUE);
 
-    referencedRateEClass = createEClass(REFERENCED_RATE);
-    createEReference(referencedRateEClass, REFERENCED_RATE__VALUE);
+    referencedStoreEClass = createEClass(REFERENCED_STORE);
+    createEReference(referencedStoreEClass, REFERENCED_STORE__VALUE);
   }
 
   /**
@@ -1196,11 +1383,15 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    broadcastOutEClass.getESuperTypes().add(this.getAction());
-    broadcastInEClass.getESuperTypes().add(this.getAction());
-    unicastOutEClass.getESuperTypes().add(this.getAction());
-    unicastInEClass.getESuperTypes().add(this.getAction());
-    attributeValueEClass.getESuperTypes().add(this.getStore());
+    predicateProcessEClass.getESuperTypes().add(this.getProcessExpression());
+    actionProcessEClass.getESuperTypes().add(this.getProcessExpression());
+    expressionEClass.getESuperTypes().add(this.getEvaluationExpression());
+    parallelEClass.getESuperTypes().add(this.getProcessExpression());
+    choiceEClass.getESuperTypes().add(this.getProcessExpression());
+    leafEClass.getESuperTypes().add(this.getProcessExpression());
+    processReferenceEClass.getESuperTypes().add(this.getProcessExpression());
+    inEClass.getESuperTypes().add(this.getEvaluations());
+    outEClass.getESuperTypes().add(this.getEvaluations());
     orEClass.getESuperTypes().add(this.getExpression());
     andEClass.getESuperTypes().add(this.getExpression());
     equalityEClass.getESuperTypes().add(this.getExpression());
@@ -1211,64 +1402,80 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
     divEClass.getESuperTypes().add(this.getExpression());
     notEClass.getESuperTypes().add(this.getExpression());
     doubleConstantEClass.getESuperTypes().add(this.getExpression());
+    freeVariableEClass.getESuperTypes().add(this.getExpression());
     boolConstantEClass.getESuperTypes().add(this.getExpression());
-    referencedRateEClass.getESuperTypes().add(this.getExpression());
+    referencedStoreEClass.getESuperTypes().add(this.getExpression());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getModel_Processes(), this.getProcess(), null, "processes", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Stores(), this.getStore(), null, "stores", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Actions(), this.getAction(), null, "actions", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Terms(), this.getTerm(), null, "terms", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(termEClass, Term.class, "Term", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTerm_Name(), this.getProcess(), null, "name", null, 0, 1, Term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTerm_Stores(), this.getStore(), null, "stores", null, 0, -1, Term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(processEClass, com.blasedef.onpa.oNPA.Process.class, "Process", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getProcess_Name(), ecorePackage.getEString(), "name", null, 0, 1, com.blasedef.onpa.oNPA.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProcess_Value(), this.getProcessExpression(), null, "value", null, 0, 1, com.blasedef.onpa.oNPA.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(processExpressionEClass, ProcessExpression.class, "ProcessExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(predicateProcessEClass, PredicateProcess.class, "PredicateProcess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPredicateProcess_Predicate(), this.getPredicate(), null, "predicate", null, 0, 1, PredicateProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPredicateProcess_Value(), this.getProcess(), null, "value", null, 0, 1, PredicateProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(actionProcessEClass, ActionProcess.class, "ActionProcess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getActionProcess_Action(), this.getAction(), null, "action", null, 0, 1, ActionProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getActionProcess_Value(), this.getProcess(), null, "value", null, 0, 1, ActionProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAction_Predicate(), this.getPredicates(), null, "predicate", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAction_Update(), this.getUpdates(), null, "update", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAction_Predicates(), this.getPredicate(), null, "predicates", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAction_Evaluations(), this.getEvaluations(), null, "evaluations", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAction_Updates(), this.getUpdates(), null, "updates", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(broadcastOutEClass, BroadcastOut.class, "BroadcastOut", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBroadcastOut_Evaluation(), this.getEvaluations(), null, "evaluation", null, 0, 1, BroadcastOut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(broadcastInEClass, BroadcastIn.class, "BroadcastIn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBroadcastIn_Values(), this.getValues(), null, "values", null, 0, 1, BroadcastIn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(unicastOutEClass, UnicastOut.class, "UnicastOut", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getUnicastOut_Evaluation(), this.getEvaluations(), null, "evaluation", null, 0, 1, UnicastOut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(unicastInEClass, UnicastIn.class, "UnicastIn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getUnicastIn_Values(), this.getValues(), null, "values", null, 0, 1, UnicastIn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(updatesEClass, Updates.class, "Updates", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getUpdates_UpdateExpressions(), this.getUpdateExpression(), null, "updateExpressions", null, 0, -1, Updates.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(updateExpressionEClass, UpdateExpression.class, "UpdateExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getUpdateExpression_Name(), this.getStore(), null, "name", null, 0, 1, UpdateExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getUpdateExpression_Value(), this.getExpression(), null, "value", null, 0, 1, UpdateExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(valuesEClass, Values.class, "Values", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getValues_Values(), this.getValueExpression(), null, "values", null, 0, -1, Values.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(valueExpressionEClass, ValueExpression.class, "ValueExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getValueExpression_Name(), this.getStore(), null, "name", null, 0, 1, ValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(predicateEClass, Predicate.class, "Predicate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPredicate_Predicates(), this.getPredicateExpression(), null, "predicates", null, 0, 1, Predicate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(evaluationsEClass, Evaluations.class, "Evaluations", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEvaluations_Evaluations(), this.getEvaluation(), null, "evaluations", null, 0, -1, Evaluations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEvaluations_Expressions(), this.getEvaluationExpression(), null, "expressions", null, 0, -1, Evaluations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(evaluationEClass, Evaluation.class, "Evaluation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEvaluation_Name(), this.getStore(), null, "name", null, 0, 1, Evaluation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEvaluation_Value(), this.getExpression(), null, "value", null, 0, 1, Evaluation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(predicatesEClass, Predicates.class, "Predicates", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPredicates_Expressions(), this.getPredicateExpression(), null, "expressions", null, 0, -1, Predicates.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(updatesEClass, Updates.class, "Updates", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getUpdates_Updates(), this.getUpdateExpression(), null, "updates", null, 0, -1, Updates.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(predicateExpressionEClass, PredicateExpression.class, "PredicateExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPredicateExpression_Value(), this.getExpression(), null, "value", null, 0, 1, PredicateExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPredicateExpression_Expression(), this.getExpression(), null, "expression", null, 0, 1, PredicateExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(evaluationExpressionEClass, EvaluationExpression.class, "EvaluationExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(updateExpressionEClass, UpdateExpression.class, "UpdateExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getUpdateExpression_Expression(), this.getExpression(), null, "expression", null, 0, 1, UpdateExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(storeEClass, Store.class, "Store", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(attributeValueEClass, AttributeValue.class, "AttributeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAttributeValue_Name(), ecorePackage.getEString(), "name", null, 0, 1, AttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAttributeValue_Value(), this.getExpression(), null, "value", null, 0, 1, AttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getStore_Name(), ecorePackage.getEString(), "name", null, 0, 1, Store.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStore_Value(), this.getExpression(), null, "value", null, 0, 1, Store.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(parallelEClass, Parallel.class, "Parallel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getParallel_Left(), this.getProcessExpression(), null, "left", null, 0, 1, Parallel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getParallel_Right(), this.getProcessExpression(), null, "right", null, 0, 1, Parallel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(choiceEClass, Choice.class, "Choice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getChoice_Left(), this.getProcessExpression(), null, "left", null, 0, 1, Choice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getChoice_Right(), this.getProcessExpression(), null, "right", null, 0, 1, Choice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(leafEClass, Leaf.class, "Leaf", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLeaf_Value(), ecorePackage.getEString(), "value", null, 0, 1, Leaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(processReferenceEClass, ProcessReference.class, "ProcessReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getProcessReference_Value(), this.getProcess(), null, "value", null, 0, 1, ProcessReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(inEClass, In.class, "In", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(outEClass, Out.class, "Out", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(orEClass, Or.class, "Or", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOr_Left(), this.getExpression(), null, "left", null, 0, 1, Or.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1310,11 +1517,14 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
     initEClass(doubleConstantEClass, DoubleConstant.class, "DoubleConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDoubleConstant_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, DoubleConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(freeVariableEClass, FreeVariable.class, "FreeVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFreeVariable_Value(), ecorePackage.getEString(), "value", null, 0, 1, FreeVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(boolConstantEClass, BoolConstant.class, "BoolConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getBoolConstant_Value(), ecorePackage.getEString(), "value", null, 0, 1, BoolConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(referencedRateEClass, ReferencedRate.class, "ReferencedRate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getReferencedRate_Value(), this.getAttributeValue(), null, "value", null, 0, 1, ReferencedRate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(referencedStoreEClass, ReferencedStore.class, "ReferencedStore", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getReferencedStore_Value(), this.getStore(), null, "value", null, 0, 1, ReferencedStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

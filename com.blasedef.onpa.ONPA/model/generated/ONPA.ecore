@@ -2,74 +2,90 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="oNPA" nsURI="http://www.blasedef.com/onpa/ONPA" nsPrefix="oNPA">
   <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processes" upperBound="-1"
+        eType="#//Process" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stores" upperBound="-1"
         eType="#//Store" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
-        eType="#//Action" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="terms" upperBound="-1"
+        eType="#//Term" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Term">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Process"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stores" unique="false"
+        upperBound="-1" eType="#//Store"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Process">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//ProcessExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PredicateProcess" eSuperTypes="#//ProcessExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="predicate" eType="#//Predicate"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Process"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionProcess" eSuperTypes="#//ProcessExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//Action"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Process"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="predicate" eType="#//Predicates"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="predicates" eType="#//Predicate"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="update" eType="#//Updates"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="evaluations" eType="#//Evaluations"
         containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BroadcastOut" eSuperTypes="#//Action">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="evaluation" eType="#//Evaluations"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="updates" eType="#//Updates"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BroadcastIn" eSuperTypes="#//Action">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="values" eType="#//Values"
+  <eClassifiers xsi:type="ecore:EClass" name="Predicate">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="predicates" eType="#//PredicateExpression"
         containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UnicastOut" eSuperTypes="#//Action">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="evaluation" eType="#//Evaluations"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UnicastIn" eSuperTypes="#//Action">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="values" eType="#//Values"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Updates">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="updateExpressions" upperBound="-1"
-        eType="#//UpdateExpression" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UpdateExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Store"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Expression"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Values">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
-        eType="#//ValueExpression" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ValueExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Store"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Evaluations">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="evaluations" upperBound="-1"
-        eType="#//Evaluation" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Evaluation">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Store"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Expression"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Predicates">
     <eStructuralFeatures xsi:type="ecore:EReference" name="expressions" upperBound="-1"
-        eType="#//PredicateExpression" containment="true"/>
+        eType="#//EvaluationExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Updates">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="updates" upperBound="-1"
+        eType="#//UpdateExpression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PredicateExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Expression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//Expression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Store"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AttributeValue" eSuperTypes="#//Store">
+  <eClassifiers xsi:type="ecore:EClass" name="EvaluationExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UpdateExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Store">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Expression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression" eSuperTypes="#//EvaluationExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Parallel" eSuperTypes="#//ProcessExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//ProcessExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//ProcessExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Choice" eSuperTypes="#//ProcessExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//ProcessExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//ProcessExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Leaf" eSuperTypes="#//ProcessExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessReference" eSuperTypes="#//ProcessExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Process"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="In" eSuperTypes="#//Evaluations"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Out" eSuperTypes="#//Evaluations"/>
   <eClassifiers xsi:type="ecore:EClass" name="Or" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expression"
         containment="true"/>
@@ -127,10 +143,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="DoubleConstant" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FreeVariable" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BoolConstant" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ReferencedRate" eSuperTypes="#//Expression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AttributeValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReferencedStore" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Store"/>
   </eClassifiers>
 </ecore:EPackage>

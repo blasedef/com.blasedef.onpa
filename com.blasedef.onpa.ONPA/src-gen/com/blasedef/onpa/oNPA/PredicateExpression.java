@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.blasedef.onpa.oNPA.PredicateExpression#getValue <em>Value</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.PredicateExpression#getExpression <em>Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,29 +23,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface PredicateExpression extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Value</b></em>' containment reference.
+   * Returns the value of the '<em><b>Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Value</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Expression</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Value</em>' containment reference.
-   * @see #setValue(Expression)
-   * @see com.blasedef.onpa.oNPA.ONPAPackage#getPredicateExpression_Value()
+   * @return the value of the '<em>Expression</em>' containment reference.
+   * @see #setExpression(Expression)
+   * @see com.blasedef.onpa.oNPA.ONPAPackage#getPredicateExpression_Expression()
    * @model containment="true"
    * @generated
    */
-  Expression getValue();
+  Expression getExpression();
 
   /**
-   * Sets the value of the '{@link com.blasedef.onpa.oNPA.PredicateExpression#getValue <em>Value</em>}' containment reference.
+   * Sets the value of the '{@link com.blasedef.onpa.oNPA.PredicateExpression#getExpression <em>Expression</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Value</em>' containment reference.
-   * @see #getValue()
+   * @param value the new value of the '<em>Expression</em>' containment reference.
+   * @see #getExpression()
    * @generated
    */
-  void setValue(Expression value);
+  void setExpression(Expression value);
 
 } // PredicateExpression

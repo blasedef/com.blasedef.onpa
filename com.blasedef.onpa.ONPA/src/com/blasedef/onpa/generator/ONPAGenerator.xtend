@@ -17,11 +17,10 @@ import com.blasedef.onpa.oNPA.And
 import com.blasedef.onpa.oNPA.Equality
 import com.blasedef.onpa.oNPA.Comparison
 import com.blasedef.onpa.oNPA.Not
-import com.blasedef.onpa.oNPA.ReferencedRate
+import com.blasedef.onpa.oNPA.ReferencedStore
 import com.blasedef.onpa.oNPA.DoubleConstant
 import com.blasedef.onpa.oNPA.BoolConstant
 import com.blasedef.onpa.oNPA.Store
-import com.blasedef.onpa.oNPA.AttributeValue
 
 /**
  * Generates code from your model files on save.
@@ -42,14 +41,14 @@ class ONPAGenerator implements IGenerator {
 		
 		public class simulator{
 			«FOR store : model.stores»
-					«(store as AttributeValue).compile»
+					«store.compile»
 			«ENDFOR»
 		}
 		
 		'''
 	}
 	
-	def CharSequence compile(AttributeValue store){
+	def CharSequence compile(Store store){
 		'''
 		public double get«store.name.toFirstUpper»(){
 			return «store.value.compile» ;
@@ -69,7 +68,7 @@ class ONPAGenerator implements IGenerator {
 			Mul:			'''(«e.left.compile» * «e.right.compile»)'''
 			Div: 			'''(«e.left.compile» / «e.right.compile»)'''
 			Not: 			'''! «e.expression.compile»'''
-			ReferencedRate: '''get«e.value.name.toFirstUpper»()'''
+			ReferencedStore: '''get«e.value.name.toFirstUpper»()'''
 			DoubleConstant: '''«e.value»'''
 			BoolConstant: 	'''«e.value»'''
 			}.toString

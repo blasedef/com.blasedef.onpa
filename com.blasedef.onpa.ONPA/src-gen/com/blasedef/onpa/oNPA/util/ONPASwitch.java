@@ -2,7 +2,40 @@
  */
 package com.blasedef.onpa.oNPA.util;
 
-import com.blasedef.onpa.oNPA.*;
+import com.blasedef.onpa.oNPA.Action;
+import com.blasedef.onpa.oNPA.ActionProcess;
+import com.blasedef.onpa.oNPA.And;
+import com.blasedef.onpa.oNPA.BoolConstant;
+import com.blasedef.onpa.oNPA.Choice;
+import com.blasedef.onpa.oNPA.Comparison;
+import com.blasedef.onpa.oNPA.Div;
+import com.blasedef.onpa.oNPA.DoubleConstant;
+import com.blasedef.onpa.oNPA.Equality;
+import com.blasedef.onpa.oNPA.EvaluationExpression;
+import com.blasedef.onpa.oNPA.Evaluations;
+import com.blasedef.onpa.oNPA.Expression;
+import com.blasedef.onpa.oNPA.FreeVariable;
+import com.blasedef.onpa.oNPA.In;
+import com.blasedef.onpa.oNPA.Leaf;
+import com.blasedef.onpa.oNPA.Model;
+import com.blasedef.onpa.oNPA.Mul;
+import com.blasedef.onpa.oNPA.Not;
+import com.blasedef.onpa.oNPA.ONPAPackage;
+import com.blasedef.onpa.oNPA.Or;
+import com.blasedef.onpa.oNPA.Out;
+import com.blasedef.onpa.oNPA.Parallel;
+import com.blasedef.onpa.oNPA.Plu;
+import com.blasedef.onpa.oNPA.Predicate;
+import com.blasedef.onpa.oNPA.PredicateExpression;
+import com.blasedef.onpa.oNPA.PredicateProcess;
+import com.blasedef.onpa.oNPA.ProcessExpression;
+import com.blasedef.onpa.oNPA.ProcessReference;
+import com.blasedef.onpa.oNPA.ReferencedStore;
+import com.blasedef.onpa.oNPA.Store;
+import com.blasedef.onpa.oNPA.Sub;
+import com.blasedef.onpa.oNPA.Term;
+import com.blasedef.onpa.oNPA.UpdateExpression;
+import com.blasedef.onpa.oNPA.Updates;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -79,6 +112,43 @@ public class ONPASwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ONPAPackage.TERM:
+      {
+        Term term = (Term)theEObject;
+        T result = caseTerm(term);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ONPAPackage.PROCESS:
+      {
+        com.blasedef.onpa.oNPA.Process process = (com.blasedef.onpa.oNPA.Process)theEObject;
+        T result = caseProcess(process);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ONPAPackage.PROCESS_EXPRESSION:
+      {
+        ProcessExpression processExpression = (ProcessExpression)theEObject;
+        T result = caseProcessExpression(processExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ONPAPackage.PREDICATE_PROCESS:
+      {
+        PredicateProcess predicateProcess = (PredicateProcess)theEObject;
+        T result = casePredicateProcess(predicateProcess);
+        if (result == null) result = caseProcessExpression(predicateProcess);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ONPAPackage.ACTION_PROCESS:
+      {
+        ActionProcess actionProcess = (ActionProcess)theEObject;
+        T result = caseActionProcess(actionProcess);
+        if (result == null) result = caseProcessExpression(actionProcess);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ONPAPackage.ACTION:
       {
         Action action = (Action)theEObject;
@@ -86,63 +156,10 @@ public class ONPASwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ONPAPackage.BROADCAST_OUT:
+      case ONPAPackage.PREDICATE:
       {
-        BroadcastOut broadcastOut = (BroadcastOut)theEObject;
-        T result = caseBroadcastOut(broadcastOut);
-        if (result == null) result = caseAction(broadcastOut);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ONPAPackage.BROADCAST_IN:
-      {
-        BroadcastIn broadcastIn = (BroadcastIn)theEObject;
-        T result = caseBroadcastIn(broadcastIn);
-        if (result == null) result = caseAction(broadcastIn);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ONPAPackage.UNICAST_OUT:
-      {
-        UnicastOut unicastOut = (UnicastOut)theEObject;
-        T result = caseUnicastOut(unicastOut);
-        if (result == null) result = caseAction(unicastOut);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ONPAPackage.UNICAST_IN:
-      {
-        UnicastIn unicastIn = (UnicastIn)theEObject;
-        T result = caseUnicastIn(unicastIn);
-        if (result == null) result = caseAction(unicastIn);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ONPAPackage.UPDATES:
-      {
-        Updates updates = (Updates)theEObject;
-        T result = caseUpdates(updates);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ONPAPackage.UPDATE_EXPRESSION:
-      {
-        UpdateExpression updateExpression = (UpdateExpression)theEObject;
-        T result = caseUpdateExpression(updateExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ONPAPackage.VALUES:
-      {
-        Values values = (Values)theEObject;
-        T result = caseValues(values);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ONPAPackage.VALUE_EXPRESSION:
-      {
-        ValueExpression valueExpression = (ValueExpression)theEObject;
-        T result = caseValueExpression(valueExpression);
+        Predicate predicate = (Predicate)theEObject;
+        T result = casePredicate(predicate);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -153,17 +170,10 @@ public class ONPASwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ONPAPackage.EVALUATION:
+      case ONPAPackage.UPDATES:
       {
-        Evaluation evaluation = (Evaluation)theEObject;
-        T result = caseEvaluation(evaluation);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ONPAPackage.PREDICATES:
-      {
-        Predicates predicates = (Predicates)theEObject;
-        T result = casePredicates(predicates);
+        Updates updates = (Updates)theEObject;
+        T result = caseUpdates(updates);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -174,6 +184,20 @@ public class ONPASwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ONPAPackage.EVALUATION_EXPRESSION:
+      {
+        EvaluationExpression evaluationExpression = (EvaluationExpression)theEObject;
+        T result = caseEvaluationExpression(evaluationExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ONPAPackage.UPDATE_EXPRESSION:
+      {
+        UpdateExpression updateExpression = (UpdateExpression)theEObject;
+        T result = caseUpdateExpression(updateExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ONPAPackage.STORE:
       {
         Store store = (Store)theEObject;
@@ -181,18 +205,59 @@ public class ONPASwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ONPAPackage.ATTRIBUTE_VALUE:
-      {
-        AttributeValue attributeValue = (AttributeValue)theEObject;
-        T result = caseAttributeValue(attributeValue);
-        if (result == null) result = caseStore(attributeValue);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case ONPAPackage.EXPRESSION:
       {
         Expression expression = (Expression)theEObject;
         T result = caseExpression(expression);
+        if (result == null) result = caseEvaluationExpression(expression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ONPAPackage.PARALLEL:
+      {
+        Parallel parallel = (Parallel)theEObject;
+        T result = caseParallel(parallel);
+        if (result == null) result = caseProcessExpression(parallel);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ONPAPackage.CHOICE:
+      {
+        Choice choice = (Choice)theEObject;
+        T result = caseChoice(choice);
+        if (result == null) result = caseProcessExpression(choice);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ONPAPackage.LEAF:
+      {
+        Leaf leaf = (Leaf)theEObject;
+        T result = caseLeaf(leaf);
+        if (result == null) result = caseProcessExpression(leaf);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ONPAPackage.PROCESS_REFERENCE:
+      {
+        ProcessReference processReference = (ProcessReference)theEObject;
+        T result = caseProcessReference(processReference);
+        if (result == null) result = caseProcessExpression(processReference);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ONPAPackage.IN:
+      {
+        In in = (In)theEObject;
+        T result = caseIn(in);
+        if (result == null) result = caseEvaluations(in);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ONPAPackage.OUT:
+      {
+        Out out = (Out)theEObject;
+        T result = caseOut(out);
+        if (result == null) result = caseEvaluations(out);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -201,6 +266,7 @@ public class ONPASwitch<T> extends Switch<T>
         Or or = (Or)theEObject;
         T result = caseOr(or);
         if (result == null) result = caseExpression(or);
+        if (result == null) result = caseEvaluationExpression(or);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -209,6 +275,7 @@ public class ONPASwitch<T> extends Switch<T>
         And and = (And)theEObject;
         T result = caseAnd(and);
         if (result == null) result = caseExpression(and);
+        if (result == null) result = caseEvaluationExpression(and);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -217,6 +284,7 @@ public class ONPASwitch<T> extends Switch<T>
         Equality equality = (Equality)theEObject;
         T result = caseEquality(equality);
         if (result == null) result = caseExpression(equality);
+        if (result == null) result = caseEvaluationExpression(equality);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -225,6 +293,7 @@ public class ONPASwitch<T> extends Switch<T>
         Comparison comparison = (Comparison)theEObject;
         T result = caseComparison(comparison);
         if (result == null) result = caseExpression(comparison);
+        if (result == null) result = caseEvaluationExpression(comparison);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -233,6 +302,7 @@ public class ONPASwitch<T> extends Switch<T>
         Sub sub = (Sub)theEObject;
         T result = caseSub(sub);
         if (result == null) result = caseExpression(sub);
+        if (result == null) result = caseEvaluationExpression(sub);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -241,6 +311,7 @@ public class ONPASwitch<T> extends Switch<T>
         Plu plu = (Plu)theEObject;
         T result = casePlu(plu);
         if (result == null) result = caseExpression(plu);
+        if (result == null) result = caseEvaluationExpression(plu);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -249,6 +320,7 @@ public class ONPASwitch<T> extends Switch<T>
         Mul mul = (Mul)theEObject;
         T result = caseMul(mul);
         if (result == null) result = caseExpression(mul);
+        if (result == null) result = caseEvaluationExpression(mul);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -257,6 +329,7 @@ public class ONPASwitch<T> extends Switch<T>
         Div div = (Div)theEObject;
         T result = caseDiv(div);
         if (result == null) result = caseExpression(div);
+        if (result == null) result = caseEvaluationExpression(div);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -265,6 +338,7 @@ public class ONPASwitch<T> extends Switch<T>
         Not not = (Not)theEObject;
         T result = caseNot(not);
         if (result == null) result = caseExpression(not);
+        if (result == null) result = caseEvaluationExpression(not);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -273,6 +347,16 @@ public class ONPASwitch<T> extends Switch<T>
         DoubleConstant doubleConstant = (DoubleConstant)theEObject;
         T result = caseDoubleConstant(doubleConstant);
         if (result == null) result = caseExpression(doubleConstant);
+        if (result == null) result = caseEvaluationExpression(doubleConstant);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ONPAPackage.FREE_VARIABLE:
+      {
+        FreeVariable freeVariable = (FreeVariable)theEObject;
+        T result = caseFreeVariable(freeVariable);
+        if (result == null) result = caseExpression(freeVariable);
+        if (result == null) result = caseEvaluationExpression(freeVariable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -281,14 +365,16 @@ public class ONPASwitch<T> extends Switch<T>
         BoolConstant boolConstant = (BoolConstant)theEObject;
         T result = caseBoolConstant(boolConstant);
         if (result == null) result = caseExpression(boolConstant);
+        if (result == null) result = caseEvaluationExpression(boolConstant);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ONPAPackage.REFERENCED_RATE:
+      case ONPAPackage.REFERENCED_STORE:
       {
-        ReferencedRate referencedRate = (ReferencedRate)theEObject;
-        T result = caseReferencedRate(referencedRate);
-        if (result == null) result = caseExpression(referencedRate);
+        ReferencedStore referencedStore = (ReferencedStore)theEObject;
+        T result = caseReferencedStore(referencedStore);
+        if (result == null) result = caseExpression(referencedStore);
+        if (result == null) result = caseEvaluationExpression(referencedStore);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -313,6 +399,86 @@ public class ONPASwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Term</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Term</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTerm(Term object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Process</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Process</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseProcess(com.blasedef.onpa.oNPA.Process object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Process Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Process Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseProcessExpression(ProcessExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Predicate Process</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Predicate Process</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePredicateProcess(PredicateProcess object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Action Process</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Action Process</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseActionProcess(ActionProcess object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Action</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -329,129 +495,17 @@ public class ONPASwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Broadcast Out</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Predicate</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Broadcast Out</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Predicate</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBroadcastOut(BroadcastOut object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Broadcast In</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Broadcast In</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseBroadcastIn(BroadcastIn object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Unicast Out</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Unicast Out</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseUnicastOut(UnicastOut object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Unicast In</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Unicast In</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseUnicastIn(UnicastIn object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Updates</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Updates</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseUpdates(Updates object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Update Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Update Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseUpdateExpression(UpdateExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Values</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Values</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseValues(Values object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Value Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Value Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseValueExpression(ValueExpression object)
+  public T casePredicate(Predicate object)
   {
     return null;
   }
@@ -473,33 +527,17 @@ public class ONPASwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Evaluation</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Updates</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Evaluation</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Updates</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseEvaluation(Evaluation object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Predicates</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Predicates</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePredicates(Predicates object)
+  public T caseUpdates(Updates object)
   {
     return null;
   }
@@ -521,6 +559,38 @@ public class ONPASwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Evaluation Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Evaluation Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEvaluationExpression(EvaluationExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Update Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Update Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUpdateExpression(UpdateExpression object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Store</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -537,22 +607,6 @@ public class ONPASwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Attribute Value</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Attribute Value</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAttributeValue(AttributeValue object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -564,6 +618,102 @@ public class ONPASwitch<T> extends Switch<T>
    * @generated
    */
   public T caseExpression(Expression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Parallel</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Parallel</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseParallel(Parallel object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Choice</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Choice</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseChoice(Choice object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Leaf</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Leaf</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLeaf(Leaf object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Process Reference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Process Reference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseProcessReference(ProcessReference object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>In</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>In</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIn(In object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Out</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Out</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOut(Out object)
   {
     return null;
   }
@@ -729,6 +879,22 @@ public class ONPASwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Free Variable</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Free Variable</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFreeVariable(FreeVariable object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Bool Constant</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -745,17 +911,17 @@ public class ONPASwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Referenced Rate</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Referenced Store</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Referenced Rate</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Referenced Store</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseReferencedRate(ReferencedRate object)
+  public T caseReferencedStore(ReferencedStore object)
   {
     return null;
   }
