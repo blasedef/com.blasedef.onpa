@@ -67,22 +67,22 @@ public interface ONPAPackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Processes</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__PROCESSES = 0;
-
-  /**
    * The feature id for the '<em><b>Stores</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__STORES = 1;
+  int MODEL__STORES = 0;
+
+  /**
+   * The feature id for the '<em><b>Processes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__PROCESSES = 1;
 
   /**
    * The feature id for the '<em><b>Terms</b></em>' containment reference list.
@@ -1191,17 +1191,6 @@ public interface ONPAPackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.blasedef.onpa.oNPA.Model#getProcesses <em>Processes</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Processes</em>'.
-   * @see com.blasedef.onpa.oNPA.Model#getProcesses()
-   * @see #getModel()
-   * @generated
-   */
-  EReference getModel_Processes();
-
-  /**
    * Returns the meta object for the containment reference list '{@link com.blasedef.onpa.oNPA.Model#getStores <em>Stores</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1211,6 +1200,17 @@ public interface ONPAPackage extends EPackage
    * @generated
    */
   EReference getModel_Stores();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.blasedef.onpa.oNPA.Model#getProcesses <em>Processes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Processes</em>'.
+   * @see com.blasedef.onpa.oNPA.Model#getProcesses()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_Processes();
 
   /**
    * Returns the meta object for the containment reference list '{@link com.blasedef.onpa.oNPA.Model#getTerms <em>Terms</em>}'.
@@ -2115,20 +2115,20 @@ public interface ONPAPackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
-     * The meta object literal for the '<em><b>Processes</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MODEL__PROCESSES = eINSTANCE.getModel_Processes();
-
-    /**
      * The meta object literal for the '<em><b>Stores</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference MODEL__STORES = eINSTANCE.getModel_Stores();
+
+    /**
+     * The meta object literal for the '<em><b>Processes</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__PROCESSES = eINSTANCE.getModel_Processes();
 
     /**
      * The meta object literal for the '<em><b>Terms</b></em>' containment reference list feature.

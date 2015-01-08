@@ -32,15 +32,28 @@ class ValidationTest {
 	}
 	
 	@Test
-	def void testCheckUniqueVariableNamesStores(){
+	def void testCheckStoresNamesUnique(){
 		'''
 		i = 10;
 		i = 0.1;
 		P = P;
 		(P,{i});
 		'''.parse.assertError(ONPAPackage::eINSTANCE.store,
-			ONPAValidator::UNIQUE_VARIABLE_NAMES_STORES,
+			ONPAValidator::STORE_NAMES_UNIQUE,
 			"Must have unique store names. 'i' is repeated"
+		)
+	}
+	
+	@Test
+	def void testCheckProcessNamesUnique(){
+		'''
+		i = 10;
+		P = P;
+		P = P;
+		(P,{i});
+		'''.parse.assertError(ONPAPackage::eINSTANCE.process,
+			ONPAValidator::PROCESS_NAMES_UNIQUE,
+			"Must have unique process names. 'P' is repeated"
 		)
 	}
 	

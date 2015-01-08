@@ -20,8 +20,6 @@ import com.blasedef.onpa.oNPA.Equality
 import com.blasedef.onpa.oNPA.Comparison
 import com.blasedef.onpa.oNPA.Not
 import com.blasedef.onpa.oNPA.ReferencedStore
-import com.blasedef.onpa.oNPA.DoubleConstant
-import com.blasedef.onpa.oNPA.BoolConstant
 import com.blasedef.onpa.oNPA.Store
 import com.blasedef.onpa.oNPA.FreeVariable
 import com.blasedef.onpa.oNPA.Model
@@ -76,10 +74,10 @@ class ONPAValidator extends AbstractONPAValidator {
 			}
 	}
 	
-	public static val UNIQUE_VARIABLE_NAMES_STORES = 'uniqueVariableNamesStores'
+	public static val STORE_NAMES_UNIQUE = 'storeNamesUnique'
 	
 	@Check
-	def checkUniqueVariableNamesStores(Store store){
+	def checkStoresNamesUnique(Store store){
 		
 		var stores = getContainerOfType(store, typeof(Model)).stores
 		
@@ -94,17 +92,31 @@ class ONPAValidator extends AbstractONPAValidator {
 		else 
 			error("Must have unique store names. '" + store.name + "' is repeated",
 				ONPAPackage::eINSTANCE.store_Name,
-				UNIQUE_VARIABLE_NAMES_STORES
+				STORE_NAMES_UNIQUE
 			)
 			
 	}
 	
-	public static val ENSURE_PROCESS_CYCLES = 'ensureProcessCycles'
+	public static val PROCESS_NAMES_UNIQUE = 'processNamesUnique'
 	
 	@Check
 	def checkensureProcessCycles(Process process){
 		
 		var processes = getContainerOfType(process, typeof(Model)).processes
+		
+		var count = 0
+		
+		for(proc : processes)
+			if(proc.name.contains(process.name))
+				count = count + 1
+				
+		if(count == 1)
+			return
+		else 
+			error("Must have unique process names. '" + process.name + "' is repeated",
+				ONPAPackage::eINSTANCE.process_Name,
+				PROCESS_NAMES_UNIQUE
+			)
 			
 	}
 	

@@ -516,8 +516,8 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getActionProcessAccess().getActionActionParserRuleCall_0_0(), semanticObject.getAction());
-		feeder.accept(grammarAccess.getActionProcessAccess().getValueProcessUPPERTerminalRuleCall_1_0_1(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getActionProcessAccess().getActionActionParserRuleCall_1_0(), semanticObject.getAction());
+		feeder.accept(grammarAccess.getActionProcessAccess().getValueProcessUPPERTerminalRuleCall_2_0_1(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -711,7 +711,7 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (processes+=Process+ stores+=Store+ terms+=Term+)
+	 *     (stores+=Store+ processes+=Process+ terms+=Term+)
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -804,8 +804,8 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getPredicateProcessAccess().getPredicatePredicateParserRuleCall_0_0(), semanticObject.getPredicate());
-		feeder.accept(grammarAccess.getPredicateProcessAccess().getValueProcessUPPERTerminalRuleCall_1_0_1(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getPredicateProcessAccess().getPredicatePredicateParserRuleCall_1_0(), semanticObject.getPredicate());
+		feeder.accept(grammarAccess.getPredicateProcessAccess().getValueProcessUPPERTerminalRuleCall_2_0_1(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

@@ -529,6 +529,133 @@ public class ModelParserTest {
   }
   
   @Test
+  public void testProcess1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = 0.1;");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testProcess2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = 0.1;");
+      _builder.newLine();
+      _builder.append("P = nil;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testProcess3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = 0.1;");
+      _builder.newLine();
+      _builder.append("P = kill;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testProcess4() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = 0.1;");
+      _builder.newLine();
+      _builder.append("P = P + Q;");
+      _builder.newLine();
+      _builder.append("Q = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testProcess5() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = 0.1;");
+      _builder.newLine();
+      _builder.append("P = P | Q;");
+      _builder.newLine();
+      _builder.append("Q = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testProcess6() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = 0.1;");
+      _builder.newLine();
+      _builder.append("P = [$x;]P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testProcess7() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = 0.1;");
+      _builder.newLine();
+      _builder.append("P = Q;");
+      _builder.newLine();
+      _builder.append("Q = P;");
+      _builder.newLine();
+      _builder.append("R = P + Q;");
+      _builder.newLine();
+      _builder.append("(R,{i});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
   public void testSimple() {
     this.assertRepr("i = 10.0;", "10.0");
   }

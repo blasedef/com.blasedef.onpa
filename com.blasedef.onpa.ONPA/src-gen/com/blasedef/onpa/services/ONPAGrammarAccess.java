@@ -21,31 +21,31 @@ public class ONPAGrammarAccess extends AbstractGrammarElementFinder {
 	public class ModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Model");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cProcessesAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cProcessesProcessParserRuleCall_0_0 = (RuleCall)cProcessesAssignment_0.eContents().get(0);
-		private final Assignment cStoresAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cStoresStoreParserRuleCall_1_0 = (RuleCall)cStoresAssignment_1.eContents().get(0);
+		private final Assignment cStoresAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cStoresStoreParserRuleCall_0_0 = (RuleCall)cStoresAssignment_0.eContents().get(0);
+		private final Assignment cProcessesAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cProcessesProcessParserRuleCall_1_0 = (RuleCall)cProcessesAssignment_1.eContents().get(0);
 		private final Assignment cTermsAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cTermsTermParserRuleCall_2_0 = (RuleCall)cTermsAssignment_2.eContents().get(0);
 		
 		//Model hidden(ML_COMMENT, SL_COMMENT, WS):
-		//	processes+=Process+ stores+=Store+ terms+=Term+;
+		//	stores+=Store+ processes+=Process+ terms+=Term+;
 		public ParserRule getRule() { return rule; }
 
-		//processes+=Process+ stores+=Store+ terms+=Term+
+		//stores+=Store+ processes+=Process+ terms+=Term+
 		public Group getGroup() { return cGroup; }
 
-		//processes+=Process+
-		public Assignment getProcessesAssignment_0() { return cProcessesAssignment_0; }
-
-		//Process
-		public RuleCall getProcessesProcessParserRuleCall_0_0() { return cProcessesProcessParserRuleCall_0_0; }
-
 		//stores+=Store+
-		public Assignment getStoresAssignment_1() { return cStoresAssignment_1; }
+		public Assignment getStoresAssignment_0() { return cStoresAssignment_0; }
 
 		//Store
-		public RuleCall getStoresStoreParserRuleCall_1_0() { return cStoresStoreParserRuleCall_1_0; }
+		public RuleCall getStoresStoreParserRuleCall_0_0() { return cStoresStoreParserRuleCall_0_0; }
+
+		//processes+=Process+
+		public Assignment getProcessesAssignment_1() { return cProcessesAssignment_1; }
+
+		//Process
+		public RuleCall getProcessesProcessParserRuleCall_1_0() { return cProcessesProcessParserRuleCall_1_0; }
 
 		//terms+=Term+
 		public Assignment getTermsAssignment_2() { return cTermsAssignment_2; }
@@ -312,65 +312,73 @@ public class ONPAGrammarAccess extends AbstractGrammarElementFinder {
 	public class PredicateProcessElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PredicateProcess");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cPredicateAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cPredicatePredicateParserRuleCall_0_0 = (RuleCall)cPredicateAssignment_0.eContents().get(0);
-		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cValueProcessCrossReference_1_0 = (CrossReference)cValueAssignment_1.eContents().get(0);
-		private final RuleCall cValueProcessUPPERTerminalRuleCall_1_0_1 = (RuleCall)cValueProcessCrossReference_1_0.eContents().get(1);
+		private final Action cPredicateProcessAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cPredicateAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cPredicatePredicateParserRuleCall_1_0 = (RuleCall)cPredicateAssignment_1.eContents().get(0);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cValueProcessCrossReference_2_0 = (CrossReference)cValueAssignment_2.eContents().get(0);
+		private final RuleCall cValueProcessUPPERTerminalRuleCall_2_0_1 = (RuleCall)cValueProcessCrossReference_2_0.eContents().get(1);
 		
 		//PredicateProcess hidden(ML_COMMENT, SL_COMMENT, WS):
-		//	predicate=Predicate value=[Process|UPPER];
+		//	{PredicateProcess} predicate=Predicate value=[Process|UPPER];
 		public ParserRule getRule() { return rule; }
 
-		//predicate=Predicate value=[Process|UPPER]
+		//{PredicateProcess} predicate=Predicate value=[Process|UPPER]
 		public Group getGroup() { return cGroup; }
 
+		//{PredicateProcess}
+		public Action getPredicateProcessAction_0() { return cPredicateProcessAction_0; }
+
 		//predicate=Predicate
-		public Assignment getPredicateAssignment_0() { return cPredicateAssignment_0; }
+		public Assignment getPredicateAssignment_1() { return cPredicateAssignment_1; }
 
 		//Predicate
-		public RuleCall getPredicatePredicateParserRuleCall_0_0() { return cPredicatePredicateParserRuleCall_0_0; }
+		public RuleCall getPredicatePredicateParserRuleCall_1_0() { return cPredicatePredicateParserRuleCall_1_0; }
 
 		//value=[Process|UPPER]
-		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
 
 		//[Process|UPPER]
-		public CrossReference getValueProcessCrossReference_1_0() { return cValueProcessCrossReference_1_0; }
+		public CrossReference getValueProcessCrossReference_2_0() { return cValueProcessCrossReference_2_0; }
 
 		//UPPER
-		public RuleCall getValueProcessUPPERTerminalRuleCall_1_0_1() { return cValueProcessUPPERTerminalRuleCall_1_0_1; }
+		public RuleCall getValueProcessUPPERTerminalRuleCall_2_0_1() { return cValueProcessUPPERTerminalRuleCall_2_0_1; }
 	}
 
 	public class ActionProcessElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ActionProcess");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cActionAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cActionActionParserRuleCall_0_0 = (RuleCall)cActionAssignment_0.eContents().get(0);
-		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cValueProcessCrossReference_1_0 = (CrossReference)cValueAssignment_1.eContents().get(0);
-		private final RuleCall cValueProcessUPPERTerminalRuleCall_1_0_1 = (RuleCall)cValueProcessCrossReference_1_0.eContents().get(1);
+		private final Action cActionProcessAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cActionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cActionActionParserRuleCall_1_0 = (RuleCall)cActionAssignment_1.eContents().get(0);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cValueProcessCrossReference_2_0 = (CrossReference)cValueAssignment_2.eContents().get(0);
+		private final RuleCall cValueProcessUPPERTerminalRuleCall_2_0_1 = (RuleCall)cValueProcessCrossReference_2_0.eContents().get(1);
 		
 		//ActionProcess hidden(ML_COMMENT, SL_COMMENT, WS):
-		//	action=Action value=[Process|UPPER];
+		//	{ActionProcess} action=Action value=[Process|UPPER];
 		public ParserRule getRule() { return rule; }
 
-		//action=Action value=[Process|UPPER]
+		//{ActionProcess} action=Action value=[Process|UPPER]
 		public Group getGroup() { return cGroup; }
 
+		//{ActionProcess}
+		public Action getActionProcessAction_0() { return cActionProcessAction_0; }
+
 		//action=Action
-		public Assignment getActionAssignment_0() { return cActionAssignment_0; }
+		public Assignment getActionAssignment_1() { return cActionAssignment_1; }
 
 		//Action
-		public RuleCall getActionActionParserRuleCall_0_0() { return cActionActionParserRuleCall_0_0; }
+		public RuleCall getActionActionParserRuleCall_1_0() { return cActionActionParserRuleCall_1_0; }
 
 		//value=[Process|UPPER]
-		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
 
 		//[Process|UPPER]
-		public CrossReference getValueProcessCrossReference_1_0() { return cValueProcessCrossReference_1_0; }
+		public CrossReference getValueProcessCrossReference_2_0() { return cValueProcessCrossReference_2_0; }
 
 		//UPPER
-		public RuleCall getValueProcessUPPERTerminalRuleCall_1_0_1() { return cValueProcessUPPERTerminalRuleCall_1_0_1; }
+		public RuleCall getValueProcessUPPERTerminalRuleCall_2_0_1() { return cValueProcessUPPERTerminalRuleCall_2_0_1; }
 	}
 
 	public class ActionElements extends AbstractParserRuleElementFinder {
@@ -1334,7 +1342,7 @@ public class ONPAGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Model hidden(ML_COMMENT, SL_COMMENT, WS):
-	//	processes+=Process+ stores+=Store+ terms+=Term+;
+	//	stores+=Store+ processes+=Process+ terms+=Term+;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -1407,7 +1415,7 @@ public class ONPAGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PredicateProcess hidden(ML_COMMENT, SL_COMMENT, WS):
-	//	predicate=Predicate value=[Process|UPPER];
+	//	{PredicateProcess} predicate=Predicate value=[Process|UPPER];
 	public PredicateProcessElements getPredicateProcessAccess() {
 		return pPredicateProcess;
 	}
@@ -1417,7 +1425,7 @@ public class ONPAGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ActionProcess hidden(ML_COMMENT, SL_COMMENT, WS):
-	//	action=Action value=[Process|UPPER];
+	//	{ActionProcess} action=Action value=[Process|UPPER];
 	public ActionProcessElements getActionProcessAccess() {
 		return pActionProcess;
 	}

@@ -49,7 +49,7 @@ public class ValidationTest {
   }
   
   @Test
-  public void testCheckUniqueVariableNamesStores() {
+  public void testCheckStoresNamesUnique() {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("i = 10;");
@@ -63,8 +63,30 @@ public class ValidationTest {
       Model _parse = this._parseHelper.parse(_builder);
       EClass _store = ONPAPackage.eINSTANCE.getStore();
       this._validationTestHelper.assertError(_parse, _store, 
-        ONPAValidator.UNIQUE_VARIABLE_NAMES_STORES, 
+        ONPAValidator.STORE_NAMES_UNIQUE, 
         "Must have unique store names. \'i\' is repeated");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testCheckProcessNamesUnique() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = 10;");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _process = ONPAPackage.eINSTANCE.getProcess();
+      this._validationTestHelper.assertError(_parse, _process, 
+        ONPAValidator.PROCESS_NAMES_UNIQUE, 
+        "Must have unique process names. \'P\' is repeated");
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

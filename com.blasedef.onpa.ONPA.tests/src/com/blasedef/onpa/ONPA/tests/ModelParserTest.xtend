@@ -292,6 +292,73 @@ public class ModelParserTest {
 		'''.parse.assertNoErrors
 	}
 	
+	@Test 
+	def void testProcess1() {
+		'''
+		i = 0.1;
+		P = P;
+		(P,{i});
+		'''.parse.assertNoErrors
+	}
+	
+	@Test 
+	def void testProcess2() {
+		'''
+		i = 0.1;
+		P = nil;
+		(P,{i});
+		'''.parse.assertNoErrors
+	}
+	
+	@Test 
+	def void testProcess3() {
+		'''
+		i = 0.1;
+		P = kill;
+		(P,{i});
+		'''.parse.assertNoErrors
+	}
+	
+	@Test 
+	def void testProcess4() {
+		'''
+		i = 0.1;
+		P = P + Q;
+		Q = P;
+		(P,{i});
+		'''.parse.assertNoErrors
+	}
+	
+	@Test 
+	def void testProcess5() {
+		'''
+		i = 0.1;
+		P = P | Q;
+		Q = P;
+		(P,{i});
+		'''.parse.assertNoErrors
+	}
+	
+	@Test 
+	def void testProcess6() {
+		'''
+		i = 0.1;
+		P = [$x;]P;
+		(P,{i});
+		'''.parse.assertNoErrors
+	}
+	
+	@Test 
+	def void testProcess7() {
+		'''
+		i = 0.1;
+		P = Q;
+		Q = P;
+		R = P + Q;
+		(R,{i});
+		'''.parse.assertNoErrors
+	}
+	
 	@Test
 	def void testSimple() {
 		assertRepr("i = 10.0;","10.0")

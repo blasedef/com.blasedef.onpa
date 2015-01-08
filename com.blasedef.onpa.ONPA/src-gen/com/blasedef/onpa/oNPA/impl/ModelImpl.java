@@ -28,8 +28,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.blasedef.onpa.oNPA.impl.ModelImpl#getProcesses <em>Processes</em>}</li>
  *   <li>{@link com.blasedef.onpa.oNPA.impl.ModelImpl#getStores <em>Stores</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.impl.ModelImpl#getProcesses <em>Processes</em>}</li>
  *   <li>{@link com.blasedef.onpa.oNPA.impl.ModelImpl#getTerms <em>Terms</em>}</li>
  * </ul>
  * </p>
@@ -39,16 +39,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getProcesses() <em>Processes</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getProcesses()
-   * @generated
-   * @ordered
-   */
-  protected EList<com.blasedef.onpa.oNPA.Process> processes;
-
-  /**
    * The cached value of the '{@link #getStores() <em>Stores</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -57,6 +47,16 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @ordered
    */
   protected EList<Store> stores;
+
+  /**
+   * The cached value of the '{@link #getProcesses() <em>Processes</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getProcesses()
+   * @generated
+   * @ordered
+   */
+  protected EList<com.blasedef.onpa.oNPA.Process> processes;
 
   /**
    * The cached value of the '{@link #getTerms() <em>Terms</em>}' containment reference list.
@@ -94,20 +94,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<com.blasedef.onpa.oNPA.Process> getProcesses()
-  {
-    if (processes == null)
-    {
-      processes = new EObjectContainmentEList<com.blasedef.onpa.oNPA.Process>(com.blasedef.onpa.oNPA.Process.class, this, ONPAPackage.MODEL__PROCESSES);
-    }
-    return processes;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<Store> getStores()
   {
     if (stores == null)
@@ -115,6 +101,20 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       stores = new EObjectContainmentEList<Store>(Store.class, this, ONPAPackage.MODEL__STORES);
     }
     return stores;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<com.blasedef.onpa.oNPA.Process> getProcesses()
+  {
+    if (processes == null)
+    {
+      processes = new EObjectContainmentEList<com.blasedef.onpa.oNPA.Process>(com.blasedef.onpa.oNPA.Process.class, this, ONPAPackage.MODEL__PROCESSES);
+    }
+    return processes;
   }
 
   /**
@@ -141,10 +141,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ONPAPackage.MODEL__PROCESSES:
-        return ((InternalEList<?>)getProcesses()).basicRemove(otherEnd, msgs);
       case ONPAPackage.MODEL__STORES:
         return ((InternalEList<?>)getStores()).basicRemove(otherEnd, msgs);
+      case ONPAPackage.MODEL__PROCESSES:
+        return ((InternalEList<?>)getProcesses()).basicRemove(otherEnd, msgs);
       case ONPAPackage.MODEL__TERMS:
         return ((InternalEList<?>)getTerms()).basicRemove(otherEnd, msgs);
     }
@@ -161,10 +161,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ONPAPackage.MODEL__PROCESSES:
-        return getProcesses();
       case ONPAPackage.MODEL__STORES:
         return getStores();
+      case ONPAPackage.MODEL__PROCESSES:
+        return getProcesses();
       case ONPAPackage.MODEL__TERMS:
         return getTerms();
     }
@@ -182,13 +182,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ONPAPackage.MODEL__PROCESSES:
-        getProcesses().clear();
-        getProcesses().addAll((Collection<? extends com.blasedef.onpa.oNPA.Process>)newValue);
-        return;
       case ONPAPackage.MODEL__STORES:
         getStores().clear();
         getStores().addAll((Collection<? extends Store>)newValue);
+        return;
+      case ONPAPackage.MODEL__PROCESSES:
+        getProcesses().clear();
+        getProcesses().addAll((Collection<? extends com.blasedef.onpa.oNPA.Process>)newValue);
         return;
       case ONPAPackage.MODEL__TERMS:
         getTerms().clear();
@@ -208,11 +208,11 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ONPAPackage.MODEL__PROCESSES:
-        getProcesses().clear();
-        return;
       case ONPAPackage.MODEL__STORES:
         getStores().clear();
+        return;
+      case ONPAPackage.MODEL__PROCESSES:
+        getProcesses().clear();
         return;
       case ONPAPackage.MODEL__TERMS:
         getTerms().clear();
@@ -231,10 +231,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ONPAPackage.MODEL__PROCESSES:
-        return processes != null && !processes.isEmpty();
       case ONPAPackage.MODEL__STORES:
         return stores != null && !stores.isEmpty();
+      case ONPAPackage.MODEL__PROCESSES:
+        return processes != null && !processes.isEmpty();
       case ONPAPackage.MODEL__TERMS:
         return terms != null && !terms.isEmpty();
     }

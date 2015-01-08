@@ -93,8 +93,8 @@ public class ONPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDoubleAccess().getGroup_1(), "rule__Double__Group_1__0");
 					put(grammarAccess.getDoubleAccess().getGroup_1_2_1(), "rule__Double__Group_1_2_1__0");
 					put(grammarAccess.getFreeVariableAccess().getGroup(), "rule__FreeVariable__Group__0");
-					put(grammarAccess.getModelAccess().getProcessesAssignment_0(), "rule__Model__ProcessesAssignment_0");
-					put(grammarAccess.getModelAccess().getStoresAssignment_1(), "rule__Model__StoresAssignment_1");
+					put(grammarAccess.getModelAccess().getStoresAssignment_0(), "rule__Model__StoresAssignment_0");
+					put(grammarAccess.getModelAccess().getProcessesAssignment_1(), "rule__Model__ProcessesAssignment_1");
 					put(grammarAccess.getModelAccess().getTermsAssignment_2(), "rule__Model__TermsAssignment_2");
 					put(grammarAccess.getTermAccess().getNameAssignment_1(), "rule__Term__NameAssignment_1");
 					put(grammarAccess.getTermAccess().getStoresAssignment_4(), "rule__Term__StoresAssignment_4");
@@ -105,10 +105,10 @@ public class ONPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPrimaryProcessAccess().getValueAssignment_0_1(), "rule__PrimaryProcess__ValueAssignment_0_1");
 					put(grammarAccess.getPrimaryProcessAccess().getValueAssignment_1_1(), "rule__PrimaryProcess__ValueAssignment_1_1");
 					put(grammarAccess.getPrimaryProcessAccess().getValueAssignment_4_1(), "rule__PrimaryProcess__ValueAssignment_4_1");
-					put(grammarAccess.getPredicateProcessAccess().getPredicateAssignment_0(), "rule__PredicateProcess__PredicateAssignment_0");
-					put(grammarAccess.getPredicateProcessAccess().getValueAssignment_1(), "rule__PredicateProcess__ValueAssignment_1");
-					put(grammarAccess.getActionProcessAccess().getActionAssignment_0(), "rule__ActionProcess__ActionAssignment_0");
-					put(grammarAccess.getActionProcessAccess().getValueAssignment_1(), "rule__ActionProcess__ValueAssignment_1");
+					put(grammarAccess.getPredicateProcessAccess().getPredicateAssignment_1(), "rule__PredicateProcess__PredicateAssignment_1");
+					put(grammarAccess.getPredicateProcessAccess().getValueAssignment_2(), "rule__PredicateProcess__ValueAssignment_2");
+					put(grammarAccess.getActionProcessAccess().getActionAssignment_1(), "rule__ActionProcess__ActionAssignment_1");
+					put(grammarAccess.getActionProcessAccess().getValueAssignment_2(), "rule__ActionProcess__ValueAssignment_2");
 					put(grammarAccess.getActionAccess().getNameAssignment_1(), "rule__Action__NameAssignment_1");
 					put(grammarAccess.getActionAccess().getPredicatesAssignment_3(), "rule__Action__PredicatesAssignment_3");
 					put(grammarAccess.getActionAccess().getEvaluationsAssignment_4(), "rule__Action__EvaluationsAssignment_4");

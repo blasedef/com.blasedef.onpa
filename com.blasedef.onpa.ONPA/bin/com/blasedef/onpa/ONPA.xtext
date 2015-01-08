@@ -42,11 +42,11 @@ PrimaryProcess returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 ;
 
 PredicateProcess hidden(ML_COMMENT,SL_COMMENT,WS):
-	predicate=Predicate value=[Process|UPPER]
+	{PredicateProcess} predicate=Predicate value=[Process|UPPER]
 ;
 
 ActionProcess hidden(ML_COMMENT,SL_COMMENT,WS):
-	action=Action value=[Process|UPPER]
+	{ActionProcess} action=Action value=[Process|UPPER]
 ;
 
 

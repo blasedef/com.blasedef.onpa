@@ -87,17 +87,17 @@ ruleModel returns [EObject current=null]
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getModelAccess().getProcessesProcessParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getModelAccess().getStoresStoreParserRuleCall_0_0()); 
 	    }
-		lv_processes_0_0=ruleProcess		{
+		lv_stores_0_0=ruleStore		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getModelRule());
 	        }
        		add(
        			$current, 
-       			"processes",
-        		lv_processes_0_0, 
-        		"Process");
+       			"stores",
+        		lv_stores_0_0, 
+        		"Store");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -105,17 +105,17 @@ ruleModel returns [EObject current=null]
 )+(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getModelAccess().getStoresStoreParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getModelAccess().getProcessesProcessParserRuleCall_1_0()); 
 	    }
-		lv_stores_1_0=ruleStore		{
+		lv_processes_1_0=ruleProcess		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getModelRule());
 	        }
        		add(
        			$current, 
-       			"stores",
-        		lv_stores_1_0, 
-        		"Store");
+       			"processes",
+        		lv_processes_1_0, 
+        		"Process");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -616,18 +616,24 @@ rulePredicateProcess returns [EObject current=null]
     }
     @after { leaveRule(); }:
 ((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getPredicateProcessAccess().getPredicateProcessAction_0(),
+            $current);
+    }
+)(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPredicateProcessAccess().getPredicatePredicateParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getPredicateProcessAccess().getPredicatePredicateParserRuleCall_1_0()); 
 	    }
-		lv_predicate_0_0=rulePredicate		{
+		lv_predicate_1_0=rulePredicate		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getPredicateProcessRule());
 	        }
        		set(
        			$current, 
        			"predicate",
-        		lv_predicate_0_0, 
+        		lv_predicate_1_0, 
         		"Predicate");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -640,9 +646,9 @@ rulePredicateProcess returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getPredicateProcessRule());
 	        }
         }
-	otherlv_1=RULE_UPPER
+	otherlv_2=RULE_UPPER
 	{
-		newLeafNode(otherlv_1, grammarAccess.getPredicateProcessAccess().getValueProcessCrossReference_1_0()); 
+		newLeafNode(otherlv_2, grammarAccess.getPredicateProcessAccess().getValueProcessCrossReference_2_0()); 
 	}
 
 )
@@ -678,18 +684,24 @@ ruleActionProcess returns [EObject current=null]
     }
     @after { leaveRule(); }:
 ((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getActionProcessAccess().getActionProcessAction_0(),
+            $current);
+    }
+)(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getActionProcessAccess().getActionActionParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getActionProcessAccess().getActionActionParserRuleCall_1_0()); 
 	    }
-		lv_action_0_0=ruleAction		{
+		lv_action_1_0=ruleAction		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getActionProcessRule());
 	        }
        		set(
        			$current, 
        			"action",
-        		lv_action_0_0, 
+        		lv_action_1_0, 
         		"Action");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -702,9 +714,9 @@ ruleActionProcess returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getActionProcessRule());
 	        }
         }
-	otherlv_1=RULE_UPPER
+	otherlv_2=RULE_UPPER
 	{
-		newLeafNode(otherlv_1, grammarAccess.getActionProcessAccess().getValueProcessCrossReference_1_0()); 
+		newLeafNode(otherlv_2, grammarAccess.getActionProcessAccess().getValueProcessCrossReference_2_0()); 
 	}
 
 )

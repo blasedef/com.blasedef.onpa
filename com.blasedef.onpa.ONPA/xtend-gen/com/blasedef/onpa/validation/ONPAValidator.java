@@ -160,10 +160,10 @@ public class ONPAValidator extends AbstractONPAValidator {
     }
   }
   
-  public final static String UNIQUE_VARIABLE_NAMES_STORES = "uniqueVariableNamesStores";
+  public final static String STORE_NAMES_UNIQUE = "storeNamesUnique";
   
   @Check
-  public void checkUniqueVariableNamesStores(final Store store) {
+  public void checkStoresNamesUnique(final Store store) {
     Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(store, Model.class);
     EList<Store> stores = _containerOfType.getStores();
     int count = 0;
@@ -183,16 +183,35 @@ public class ONPAValidator extends AbstractONPAValidator {
       String _plus_1 = (_plus + "\' is repeated");
       EAttribute _store_Name = ONPAPackage.eINSTANCE.getStore_Name();
       this.error(_plus_1, _store_Name, 
-        ONPAValidator.UNIQUE_VARIABLE_NAMES_STORES);
+        ONPAValidator.STORE_NAMES_UNIQUE);
     }
   }
   
-  public final static String ENSURE_PROCESS_CYCLES = "ensureProcessCycles";
+  public final static String PROCESS_NAMES_UNIQUE = "processNamesUnique";
   
   @Check
   public void checkensureProcessCycles(final com.blasedef.onpa.oNPA.Process process) {
     Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(process, Model.class);
     EList<com.blasedef.onpa.oNPA.Process> processes = _containerOfType.getProcesses();
+    int count = 0;
+    for (final com.blasedef.onpa.oNPA.Process proc : processes) {
+      String _name = proc.getName();
+      String _name_1 = process.getName();
+      boolean _contains = _name.contains(_name_1);
+      if (_contains) {
+        count = (count + 1);
+      }
+    }
+    if ((count == 1)) {
+      return;
+    } else {
+      String _name_2 = process.getName();
+      String _plus = ("Must have unique process names. \'" + _name_2);
+      String _plus_1 = (_plus + "\' is repeated");
+      EAttribute _process_Name = ONPAPackage.eINSTANCE.getProcess_Name();
+      this.error(_plus_1, _process_Name, 
+        ONPAValidator.PROCESS_NAMES_UNIQUE);
+    }
   }
   
   public void findReferencedProcesses(final ProcessExpression e, final ArrayList<String> strings) {
