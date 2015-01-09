@@ -194,6 +194,24 @@ public interface ONPAFactory extends EFactory
   ProcessReference createProcessReference();
 
   /**
+   * Returns a new object of class '<em>Broadcast</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Broadcast</em>'.
+   * @generated
+   */
+  Broadcast createBroadcast();
+
+  /**
+   * Returns a new object of class '<em>Unicast</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Unicast</em>'.
+   * @generated
+   */
+  Unicast createUnicast();
+
+  /**
    * Returns a new object of class '<em>In</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -210,6 +228,15 @@ public interface ONPAFactory extends EFactory
    * @generated
    */
   Out createOut();
+
+  /**
+   * Returns a new object of class '<em>Local Update Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Local Update Expression</em>'.
+   * @generated
+   */
+  LocalUpdateExpression createLocalUpdateExpression();
 
   /**
    * Returns a new object of class '<em>Or</em>'.
@@ -327,6 +354,15 @@ public interface ONPAFactory extends EFactory
    * @generated
    */
   ReferencedStore createReferencedStore();
+
+  /**
+   * Returns a new object of class '<em>Self Referenced Store</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Self Referenced Store</em>'.
+   * @generated
+   */
+  SelfReferencedStore createSelfReferencedStore();
 
   /**
    * Returns the package supported by this factory.

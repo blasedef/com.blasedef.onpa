@@ -15,7 +15,6 @@ import com.blasedef.onpa.oNPA.Not;
 import com.blasedef.onpa.oNPA.ONPAPackage;
 import com.blasedef.onpa.oNPA.Or;
 import com.blasedef.onpa.oNPA.Plu;
-import com.blasedef.onpa.oNPA.ProcessExpression;
 import com.blasedef.onpa.oNPA.ReferencedStore;
 import com.blasedef.onpa.oNPA.Store;
 import com.blasedef.onpa.oNPA.Sub;
@@ -36,7 +35,7 @@ import org.eclipse.xtext.validation.Check;
  */
 @SuppressWarnings("all")
 public class ONPAValidator extends AbstractONPAValidator {
-  public final static String SELF_REFERENCING_RATE = "selfReferencingRate";
+  public final static String SELF_REFERENCING_STORE = "selfReferencingStore";
   
   @Check
   public void checkNotSelfReferencing(final Store store) {
@@ -57,7 +56,7 @@ public class ONPAValidator extends AbstractONPAValidator {
       String _plus_1 = (_plus + "\' is seen in the expression");
       EReference _store_Value = ONPAPackage.eINSTANCE.getStore_Value();
       this.error(_plus_1, _store_Value, 
-        ONPAValidator.SELF_REFERENCING_RATE);
+        ONPAValidator.SELF_REFERENCING_STORE);
     }
   }
   
@@ -211,105 +210,6 @@ public class ONPAValidator extends AbstractONPAValidator {
       EAttribute _process_Name = ONPAPackage.eINSTANCE.getProcess_Name();
       this.error(_plus_1, _process_Name, 
         ONPAValidator.PROCESS_NAMES_UNIQUE);
-    }
-  }
-  
-  public void findReferencedProcesses(final ProcessExpression e, final ArrayList<String> strings) {
-    boolean _matched = false;
-    if (!_matched) {
-      if (e instanceof Or) {
-        _matched=true;
-        Expression _left = ((Or)e).getLeft();
-        this.findReferencedRates(_left, strings);
-        Expression _right = ((Or)e).getRight();
-        this.findReferencedRates(_right, strings);
-      }
-    }
-    if (!_matched) {
-      if (e instanceof And) {
-        _matched=true;
-        Expression _left = ((And)e).getLeft();
-        this.findReferencedRates(_left, strings);
-        Expression _right = ((And)e).getRight();
-        this.findReferencedRates(_right, strings);
-      }
-    }
-    if (!_matched) {
-      if (e instanceof Equality) {
-        _matched=true;
-        Expression _left = ((Equality)e).getLeft();
-        this.findReferencedRates(_left, strings);
-        Expression _right = ((Equality)e).getRight();
-        this.findReferencedRates(_right, strings);
-      }
-    }
-    if (!_matched) {
-      if (e instanceof Comparison) {
-        _matched=true;
-        Expression _left = ((Comparison)e).getLeft();
-        this.findReferencedRates(_left, strings);
-        Expression _right = ((Comparison)e).getRight();
-        this.findReferencedRates(_right, strings);
-      }
-    }
-    if (!_matched) {
-      if (e instanceof Sub) {
-        _matched=true;
-        Expression _left = ((Sub)e).getLeft();
-        this.findReferencedRates(_left, strings);
-        Expression _right = ((Sub)e).getRight();
-        this.findReferencedRates(_right, strings);
-      }
-    }
-    if (!_matched) {
-      if (e instanceof Plu) {
-        _matched=true;
-        Expression _left = ((Plu)e).getLeft();
-        this.findReferencedRates(_left, strings);
-        Expression _right = ((Plu)e).getRight();
-        this.findReferencedRates(_right, strings);
-      }
-    }
-    if (!_matched) {
-      if (e instanceof Mul) {
-        _matched=true;
-        Expression _left = ((Mul)e).getLeft();
-        this.findReferencedRates(_left, strings);
-        Expression _right = ((Mul)e).getRight();
-        this.findReferencedRates(_right, strings);
-      }
-    }
-    if (!_matched) {
-      if (e instanceof Div) {
-        _matched=true;
-        Expression _left = ((Div)e).getLeft();
-        this.findReferencedRates(_left, strings);
-        Expression _right = ((Div)e).getRight();
-        this.findReferencedRates(_right, strings);
-      }
-    }
-    if (!_matched) {
-      if (e instanceof Not) {
-        _matched=true;
-        Expression _expression = ((Not)e).getExpression();
-        this.findReferencedRates(_expression, strings);
-      }
-    }
-    if (!_matched) {
-      if (e instanceof ReferencedStore) {
-        _matched=true;
-        Store _value = ((ReferencedStore)e).getValue();
-        String _name = _value.getName();
-        strings.add(_name);
-      }
-    }
-    if (!_matched) {
-      if (e instanceof FreeVariable) {
-        _matched=true;
-        String _value = ((FreeVariable)e).getValue();
-        String _substring = _value.substring(1);
-        strings.add(_substring);
-      }
     }
   }
 }

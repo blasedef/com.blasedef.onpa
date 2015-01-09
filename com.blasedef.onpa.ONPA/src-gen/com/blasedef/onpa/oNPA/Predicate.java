@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.blasedef.onpa.oNPA.Predicate#getPredicates <em>Predicates</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.Predicate#getPredicate <em>Predicate</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,29 +23,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface Predicate extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Predicates</b></em>' containment reference.
+   * Returns the value of the '<em><b>Predicate</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Predicates</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Predicate</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Predicates</em>' containment reference.
-   * @see #setPredicates(PredicateExpression)
-   * @see com.blasedef.onpa.oNPA.ONPAPackage#getPredicate_Predicates()
+   * @return the value of the '<em>Predicate</em>' containment reference.
+   * @see #setPredicate(PredicateExpression)
+   * @see com.blasedef.onpa.oNPA.ONPAPackage#getPredicate_Predicate()
    * @model containment="true"
    * @generated
    */
-  PredicateExpression getPredicates();
+  PredicateExpression getPredicate();
 
   /**
-   * Sets the value of the '{@link com.blasedef.onpa.oNPA.Predicate#getPredicates <em>Predicates</em>}' containment reference.
+   * Sets the value of the '{@link com.blasedef.onpa.oNPA.Predicate#getPredicate <em>Predicate</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Predicates</em>' containment reference.
-   * @see #getPredicates()
+   * @param value the new value of the '<em>Predicate</em>' containment reference.
+   * @see #getPredicate()
    * @generated
    */
-  void setPredicates(PredicateExpression value);
+  void setPredicate(PredicateExpression value);
 
 } // Predicate

@@ -22,14 +22,15 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: com.blasedef.onpa,
- com.blasedef.onpa.services,
+ com.blasedef.onpa.formatting,
+ com.blasedef.onpa.generator,
  com.blasedef.onpa.oNPA,
  com.blasedef.onpa.oNPA.impl,
  com.blasedef.onpa.oNPA.util,
- com.blasedef.onpa.serializer,
  com.blasedef.onpa.parser.antlr,
  com.blasedef.onpa.parser.antlr.internal,
- com.blasedef.onpa.validation,
  com.blasedef.onpa.scoping,
- com.blasedef.onpa.generator,
- com.blasedef.onpa.formatting
+ com.blasedef.onpa.serializer,
+ com.blasedef.onpa.services,
+ com.blasedef.onpa.typing,
+ com.blasedef.onpa.validation

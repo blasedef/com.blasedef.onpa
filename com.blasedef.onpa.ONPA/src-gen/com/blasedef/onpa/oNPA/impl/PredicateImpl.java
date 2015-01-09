@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.blasedef.onpa.oNPA.impl.PredicateImpl#getPredicates <em>Predicates</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.impl.PredicateImpl#getPredicate <em>Predicate</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,14 +31,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class PredicateImpl extends MinimalEObjectImpl.Container implements Predicate
 {
   /**
-   * The cached value of the '{@link #getPredicates() <em>Predicates</em>}' containment reference.
+   * The cached value of the '{@link #getPredicate() <em>Predicate</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPredicates()
+   * @see #getPredicate()
    * @generated
    * @ordered
    */
-  protected PredicateExpression predicates;
+  protected PredicateExpression predicate;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,9 +66,9 @@ public class PredicateImpl extends MinimalEObjectImpl.Container implements Predi
    * <!-- end-user-doc -->
    * @generated
    */
-  public PredicateExpression getPredicates()
+  public PredicateExpression getPredicate()
   {
-    return predicates;
+    return predicate;
   }
 
   /**
@@ -76,13 +76,13 @@ public class PredicateImpl extends MinimalEObjectImpl.Container implements Predi
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetPredicates(PredicateExpression newPredicates, NotificationChain msgs)
+  public NotificationChain basicSetPredicate(PredicateExpression newPredicate, NotificationChain msgs)
   {
-    PredicateExpression oldPredicates = predicates;
-    predicates = newPredicates;
+    PredicateExpression oldPredicate = predicate;
+    predicate = newPredicate;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ONPAPackage.PREDICATE__PREDICATES, oldPredicates, newPredicates);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ONPAPackage.PREDICATE__PREDICATE, oldPredicate, newPredicate);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -93,20 +93,20 @@ public class PredicateImpl extends MinimalEObjectImpl.Container implements Predi
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPredicates(PredicateExpression newPredicates)
+  public void setPredicate(PredicateExpression newPredicate)
   {
-    if (newPredicates != predicates)
+    if (newPredicate != predicate)
     {
       NotificationChain msgs = null;
-      if (predicates != null)
-        msgs = ((InternalEObject)predicates).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.PREDICATE__PREDICATES, null, msgs);
-      if (newPredicates != null)
-        msgs = ((InternalEObject)newPredicates).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.PREDICATE__PREDICATES, null, msgs);
-      msgs = basicSetPredicates(newPredicates, msgs);
+      if (predicate != null)
+        msgs = ((InternalEObject)predicate).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.PREDICATE__PREDICATE, null, msgs);
+      if (newPredicate != null)
+        msgs = ((InternalEObject)newPredicate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.PREDICATE__PREDICATE, null, msgs);
+      msgs = basicSetPredicate(newPredicate, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.PREDICATE__PREDICATES, newPredicates, newPredicates));
+      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.PREDICATE__PREDICATE, newPredicate, newPredicate));
   }
 
   /**
@@ -119,8 +119,8 @@ public class PredicateImpl extends MinimalEObjectImpl.Container implements Predi
   {
     switch (featureID)
     {
-      case ONPAPackage.PREDICATE__PREDICATES:
-        return basicSetPredicates(null, msgs);
+      case ONPAPackage.PREDICATE__PREDICATE:
+        return basicSetPredicate(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -135,8 +135,8 @@ public class PredicateImpl extends MinimalEObjectImpl.Container implements Predi
   {
     switch (featureID)
     {
-      case ONPAPackage.PREDICATE__PREDICATES:
-        return getPredicates();
+      case ONPAPackage.PREDICATE__PREDICATE:
+        return getPredicate();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -151,8 +151,8 @@ public class PredicateImpl extends MinimalEObjectImpl.Container implements Predi
   {
     switch (featureID)
     {
-      case ONPAPackage.PREDICATE__PREDICATES:
-        setPredicates((PredicateExpression)newValue);
+      case ONPAPackage.PREDICATE__PREDICATE:
+        setPredicate((PredicateExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -168,8 +168,8 @@ public class PredicateImpl extends MinimalEObjectImpl.Container implements Predi
   {
     switch (featureID)
     {
-      case ONPAPackage.PREDICATE__PREDICATES:
-        setPredicates((PredicateExpression)null);
+      case ONPAPackage.PREDICATE__PREDICATE:
+        setPredicate((PredicateExpression)null);
         return;
     }
     super.eUnset(featureID);
@@ -185,8 +185,8 @@ public class PredicateImpl extends MinimalEObjectImpl.Container implements Predi
   {
     switch (featureID)
     {
-      case ONPAPackage.PREDICATE__PREDICATES:
-        return predicates != null;
+      case ONPAPackage.PREDICATE__PREDICATE:
+        return predicate != null;
     }
     return super.eIsSet(featureID);
   }

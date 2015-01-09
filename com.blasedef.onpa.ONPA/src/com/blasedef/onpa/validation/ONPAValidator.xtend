@@ -34,8 +34,9 @@ import static extension org.eclipse.xtext.EcoreUtil2.*
  */
 class ONPAValidator extends AbstractONPAValidator {
 	
+	//STORE
 	
-	public static val SELF_REFERENCING_RATE = 'selfReferencingRate'
+	public static val SELF_REFERENCING_STORE = 'selfReferencingStore'
 	
 	@Check
 	def checkNotSelfReferencing(Store store){
@@ -53,7 +54,7 @@ class ONPAValidator extends AbstractONPAValidator {
 		else
 			error("Cannot have self referencing stores. '" + store.name + "' is seen in the expression",
 				ONPAPackage::eINSTANCE.store_Value,
-				SELF_REFERENCING_RATE
+				com.blasedef.onpa.validation.ONPAValidator.SELF_REFERENCING_STORE
 			)
 		
 	}
@@ -97,6 +98,8 @@ class ONPAValidator extends AbstractONPAValidator {
 			
 	}
 	
+	//PROCESS
+	
 	public static val PROCESS_NAMES_UNIQUE = 'processNamesUnique'
 	
 	@Check
@@ -119,22 +122,7 @@ class ONPAValidator extends AbstractONPAValidator {
 			)
 			
 	}
-	
-	def void findReferencedProcesses(ProcessExpression e, ArrayList<String> strings) {
-		switch (e) {
-			Or: 				{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
-			And: 				{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
-			Equality:   		{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
-			Comparison: 		{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
-			Sub: 				{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
-			Plu: 				{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
-			Mul:				{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
-			Div: 				{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
-			Not: 				e.expression.findReferencedRates(strings)
-			ReferencedStore: 	{strings.add(e.value.name)}
-			FreeVariable:		{strings.add(e.value.substring(1))}
-			}
-	}
+
 
 //  public static val INVALID_NAME = 'invalidName'
 //

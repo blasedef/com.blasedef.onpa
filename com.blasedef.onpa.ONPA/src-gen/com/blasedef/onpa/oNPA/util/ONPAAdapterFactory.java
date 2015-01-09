@@ -6,6 +6,7 @@ import com.blasedef.onpa.oNPA.Action;
 import com.blasedef.onpa.oNPA.ActionProcess;
 import com.blasedef.onpa.oNPA.And;
 import com.blasedef.onpa.oNPA.BoolConstant;
+import com.blasedef.onpa.oNPA.Broadcast;
 import com.blasedef.onpa.oNPA.Choice;
 import com.blasedef.onpa.oNPA.Comparison;
 import com.blasedef.onpa.oNPA.Div;
@@ -17,6 +18,7 @@ import com.blasedef.onpa.oNPA.Expression;
 import com.blasedef.onpa.oNPA.FreeVariable;
 import com.blasedef.onpa.oNPA.In;
 import com.blasedef.onpa.oNPA.Leaf;
+import com.blasedef.onpa.oNPA.LocalUpdateExpression;
 import com.blasedef.onpa.oNPA.Model;
 import com.blasedef.onpa.oNPA.Mul;
 import com.blasedef.onpa.oNPA.Not;
@@ -31,9 +33,11 @@ import com.blasedef.onpa.oNPA.PredicateProcess;
 import com.blasedef.onpa.oNPA.ProcessExpression;
 import com.blasedef.onpa.oNPA.ProcessReference;
 import com.blasedef.onpa.oNPA.ReferencedStore;
+import com.blasedef.onpa.oNPA.SelfReferencedStore;
 import com.blasedef.onpa.oNPA.Store;
 import com.blasedef.onpa.oNPA.Sub;
 import com.blasedef.onpa.oNPA.Term;
+import com.blasedef.onpa.oNPA.Unicast;
 import com.blasedef.onpa.oNPA.UpdateExpression;
 import com.blasedef.onpa.oNPA.Updates;
 
@@ -203,6 +207,16 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
         return createProcessReferenceAdapter();
       }
       @Override
+      public Adapter caseBroadcast(Broadcast object)
+      {
+        return createBroadcastAdapter();
+      }
+      @Override
+      public Adapter caseUnicast(Unicast object)
+      {
+        return createUnicastAdapter();
+      }
+      @Override
       public Adapter caseIn(In object)
       {
         return createInAdapter();
@@ -211,6 +225,11 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
       public Adapter caseOut(Out object)
       {
         return createOutAdapter();
+      }
+      @Override
+      public Adapter caseLocalUpdateExpression(LocalUpdateExpression object)
+      {
+        return createLocalUpdateExpressionAdapter();
       }
       @Override
       public Adapter caseOr(Or object)
@@ -276,6 +295,11 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
       public Adapter caseReferencedStore(ReferencedStore object)
       {
         return createReferencedStoreAdapter();
+      }
+      @Override
+      public Adapter caseSelfReferencedStore(SelfReferencedStore object)
+      {
+        return createSelfReferencedStoreAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -585,6 +609,36 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.Broadcast <em>Broadcast</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.Broadcast
+   * @generated
+   */
+  public Adapter createBroadcastAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.Unicast <em>Unicast</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.Unicast
+   * @generated
+   */
+  public Adapter createUnicastAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.In <em>In</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -610,6 +664,21 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createOutAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.LocalUpdateExpression <em>Local Update Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.LocalUpdateExpression
+   * @generated
+   */
+  public Adapter createLocalUpdateExpressionAdapter()
   {
     return null;
   }
@@ -805,6 +874,21 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createReferencedStoreAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.SelfReferencedStore <em>Self Referenced Store</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.SelfReferencedStore
+   * @generated
+   */
+  public Adapter createSelfReferencedStoreAdapter()
   {
     return null;
   }

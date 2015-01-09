@@ -6,6 +6,7 @@ import com.blasedef.onpa.oNPA.Action;
 import com.blasedef.onpa.oNPA.ActionProcess;
 import com.blasedef.onpa.oNPA.And;
 import com.blasedef.onpa.oNPA.BoolConstant;
+import com.blasedef.onpa.oNPA.Broadcast;
 import com.blasedef.onpa.oNPA.Choice;
 import com.blasedef.onpa.oNPA.Comparison;
 import com.blasedef.onpa.oNPA.Div;
@@ -17,6 +18,7 @@ import com.blasedef.onpa.oNPA.Expression;
 import com.blasedef.onpa.oNPA.FreeVariable;
 import com.blasedef.onpa.oNPA.In;
 import com.blasedef.onpa.oNPA.Leaf;
+import com.blasedef.onpa.oNPA.LocalUpdateExpression;
 import com.blasedef.onpa.oNPA.Model;
 import com.blasedef.onpa.oNPA.Mul;
 import com.blasedef.onpa.oNPA.Not;
@@ -31,9 +33,11 @@ import com.blasedef.onpa.oNPA.PredicateProcess;
 import com.blasedef.onpa.oNPA.ProcessExpression;
 import com.blasedef.onpa.oNPA.ProcessReference;
 import com.blasedef.onpa.oNPA.ReferencedStore;
+import com.blasedef.onpa.oNPA.SelfReferencedStore;
 import com.blasedef.onpa.oNPA.Store;
 import com.blasedef.onpa.oNPA.Sub;
 import com.blasedef.onpa.oNPA.Term;
+import com.blasedef.onpa.oNPA.Unicast;
 import com.blasedef.onpa.oNPA.UpdateExpression;
 import com.blasedef.onpa.oNPA.Updates;
 
@@ -245,6 +249,22 @@ public class ONPASwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ONPAPackage.BROADCAST:
+      {
+        Broadcast broadcast = (Broadcast)theEObject;
+        T result = caseBroadcast(broadcast);
+        if (result == null) result = caseAction(broadcast);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ONPAPackage.UNICAST:
+      {
+        Unicast unicast = (Unicast)theEObject;
+        T result = caseUnicast(unicast);
+        if (result == null) result = caseAction(unicast);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ONPAPackage.IN:
       {
         In in = (In)theEObject;
@@ -258,6 +278,14 @@ public class ONPASwitch<T> extends Switch<T>
         Out out = (Out)theEObject;
         T result = caseOut(out);
         if (result == null) result = caseEvaluations(out);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ONPAPackage.LOCAL_UPDATE_EXPRESSION:
+      {
+        LocalUpdateExpression localUpdateExpression = (LocalUpdateExpression)theEObject;
+        T result = caseLocalUpdateExpression(localUpdateExpression);
+        if (result == null) result = caseUpdateExpression(localUpdateExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -375,6 +403,15 @@ public class ONPASwitch<T> extends Switch<T>
         T result = caseReferencedStore(referencedStore);
         if (result == null) result = caseExpression(referencedStore);
         if (result == null) result = caseEvaluationExpression(referencedStore);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ONPAPackage.SELF_REFERENCED_STORE:
+      {
+        SelfReferencedStore selfReferencedStore = (SelfReferencedStore)theEObject;
+        T result = caseSelfReferencedStore(selfReferencedStore);
+        if (result == null) result = caseExpression(selfReferencedStore);
+        if (result == null) result = caseEvaluationExpression(selfReferencedStore);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -687,6 +724,38 @@ public class ONPASwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Broadcast</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Broadcast</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBroadcast(Broadcast object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Unicast</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Unicast</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUnicast(Unicast object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>In</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -714,6 +783,22 @@ public class ONPASwitch<T> extends Switch<T>
    * @generated
    */
   public T caseOut(Out object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Local Update Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Local Update Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLocalUpdateExpression(LocalUpdateExpression object)
   {
     return null;
   }
@@ -922,6 +1007,22 @@ public class ONPASwitch<T> extends Switch<T>
    * @generated
    */
   public T caseReferencedStore(ReferencedStore object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Self Referenced Store</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Self Referenced Store</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSelfReferencedStore(SelfReferencedStore object)
   {
     return null;
   }

@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.blasedef.onpa.oNPA.Action#getName <em>Name</em>}</li>
- *   <li>{@link com.blasedef.onpa.oNPA.Action#getPredicates <em>Predicates</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.Action#getPredicate <em>Predicate</em>}</li>
  *   <li>{@link com.blasedef.onpa.oNPA.Action#getEvaluations <em>Evaluations</em>}</li>
  *   <li>{@link com.blasedef.onpa.oNPA.Action#getUpdates <em>Updates</em>}</li>
  * </ul>
@@ -52,30 +52,30 @@ public interface Action extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Predicates</b></em>' containment reference.
+   * Returns the value of the '<em><b>Predicate</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Predicates</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Predicate</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Predicates</em>' containment reference.
-   * @see #setPredicates(Predicate)
-   * @see com.blasedef.onpa.oNPA.ONPAPackage#getAction_Predicates()
+   * @return the value of the '<em>Predicate</em>' containment reference.
+   * @see #setPredicate(Predicate)
+   * @see com.blasedef.onpa.oNPA.ONPAPackage#getAction_Predicate()
    * @model containment="true"
    * @generated
    */
-  Predicate getPredicates();
+  Predicate getPredicate();
 
   /**
-   * Sets the value of the '{@link com.blasedef.onpa.oNPA.Action#getPredicates <em>Predicates</em>}' containment reference.
+   * Sets the value of the '{@link com.blasedef.onpa.oNPA.Action#getPredicate <em>Predicate</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Predicates</em>' containment reference.
-   * @see #getPredicates()
+   * @param value the new value of the '<em>Predicate</em>' containment reference.
+   * @see #getPredicate()
    * @generated
    */
-  void setPredicates(Predicate value);
+  void setPredicate(Predicate value);
 
   /**
    * Returns the value of the '<em><b>Evaluations</b></em>' containment reference.

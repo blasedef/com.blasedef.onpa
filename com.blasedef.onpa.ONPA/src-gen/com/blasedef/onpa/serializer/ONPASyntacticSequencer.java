@@ -17,14 +17,12 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class ONPASyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected ONPAGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Action_AsteriskKeyword_2_q;
 	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_0_0_a;
 	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_0_0_p;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (ONPAGrammarAccess) access;
-		match_Action_AsteriskKeyword_2_q = new TokenAlias(false, true, grammarAccess.getActionAccess().getAsteriskKeyword_2());
 		match_Primary_LeftParenthesisKeyword_0_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_0_0());
 		match_Primary_LeftParenthesisKeyword_0_0_p = new TokenAlias(true, false, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_0_0());
 	}
@@ -41,9 +39,7 @@ public class ONPASyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_Action_AsteriskKeyword_2_q.equals(syntax))
-				emit_Action_AsteriskKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Primary_LeftParenthesisKeyword_0_0_a.equals(syntax))
+			if(match_Primary_LeftParenthesisKeyword_0_0_a.equals(syntax))
 				emit_Primary_LeftParenthesisKeyword_0_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Primary_LeftParenthesisKeyword_0_0_p.equals(syntax))
 				emit_Primary_LeftParenthesisKeyword_0_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -51,14 +47,6 @@ public class ONPASyntacticSequencer extends AbstractSyntacticSequencer {
 		}
 	}
 
-	/**
-	 * Syntax:
-	 *     '*'?
-	 */
-	protected void emit_Action_AsteriskKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
 	/**
 	 * Syntax:
 	 *     '('*

@@ -6,6 +6,7 @@ import com.blasedef.onpa.oNPA.Action;
 import com.blasedef.onpa.oNPA.ActionProcess;
 import com.blasedef.onpa.oNPA.And;
 import com.blasedef.onpa.oNPA.BoolConstant;
+import com.blasedef.onpa.oNPA.Broadcast;
 import com.blasedef.onpa.oNPA.Choice;
 import com.blasedef.onpa.oNPA.Comparison;
 import com.blasedef.onpa.oNPA.Div;
@@ -17,6 +18,7 @@ import com.blasedef.onpa.oNPA.Expression;
 import com.blasedef.onpa.oNPA.FreeVariable;
 import com.blasedef.onpa.oNPA.In;
 import com.blasedef.onpa.oNPA.Leaf;
+import com.blasedef.onpa.oNPA.LocalUpdateExpression;
 import com.blasedef.onpa.oNPA.Model;
 import com.blasedef.onpa.oNPA.Mul;
 import com.blasedef.onpa.oNPA.Not;
@@ -32,9 +34,11 @@ import com.blasedef.onpa.oNPA.PredicateProcess;
 import com.blasedef.onpa.oNPA.ProcessExpression;
 import com.blasedef.onpa.oNPA.ProcessReference;
 import com.blasedef.onpa.oNPA.ReferencedStore;
+import com.blasedef.onpa.oNPA.SelfReferencedStore;
 import com.blasedef.onpa.oNPA.Store;
 import com.blasedef.onpa.oNPA.Sub;
 import com.blasedef.onpa.oNPA.Term;
+import com.blasedef.onpa.oNPA.Unicast;
 import com.blasedef.onpa.oNPA.UpdateExpression;
 import com.blasedef.onpa.oNPA.Updates;
 
@@ -117,8 +121,11 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
       case ONPAPackage.CHOICE: return createChoice();
       case ONPAPackage.LEAF: return createLeaf();
       case ONPAPackage.PROCESS_REFERENCE: return createProcessReference();
+      case ONPAPackage.BROADCAST: return createBroadcast();
+      case ONPAPackage.UNICAST: return createUnicast();
       case ONPAPackage.IN: return createIn();
       case ONPAPackage.OUT: return createOut();
+      case ONPAPackage.LOCAL_UPDATE_EXPRESSION: return createLocalUpdateExpression();
       case ONPAPackage.OR: return createOr();
       case ONPAPackage.AND: return createAnd();
       case ONPAPackage.EQUALITY: return createEquality();
@@ -132,6 +139,7 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
       case ONPAPackage.FREE_VARIABLE: return createFreeVariable();
       case ONPAPackage.BOOL_CONSTANT: return createBoolConstant();
       case ONPAPackage.REFERENCED_STORE: return createReferencedStore();
+      case ONPAPackage.SELF_REFERENCED_STORE: return createSelfReferencedStore();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -351,6 +359,28 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public Broadcast createBroadcast()
+  {
+    BroadcastImpl broadcast = new BroadcastImpl();
+    return broadcast;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Unicast createUnicast()
+  {
+    UnicastImpl unicast = new UnicastImpl();
+    return unicast;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public In createIn()
   {
     InImpl in = new InImpl();
@@ -366,6 +396,17 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
   {
     OutImpl out = new OutImpl();
     return out;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LocalUpdateExpression createLocalUpdateExpression()
+  {
+    LocalUpdateExpressionImpl localUpdateExpression = new LocalUpdateExpressionImpl();
+    return localUpdateExpression;
   }
 
   /**
@@ -509,6 +550,17 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
   {
     ReferencedStoreImpl referencedStore = new ReferencedStoreImpl();
     return referencedStore;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SelfReferencedStore createSelfReferencedStore()
+  {
+    SelfReferencedStoreImpl selfReferencedStore = new SelfReferencedStoreImpl();
+    return selfReferencedStore;
   }
 
   /**

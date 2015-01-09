@@ -41,7 +41,7 @@ public class ValidationTest {
       Model _parse = this._parseHelper.parse(_builder);
       EClass _store = ONPAPackage.eINSTANCE.getStore();
       this._validationTestHelper.assertError(_parse, _store, 
-        ONPAValidator.SELF_REFERENCING_RATE, 
+        ONPAValidator.SELF_REFERENCING_STORE, 
         "Cannot have self referencing stores. \'i\' is seen in the expression");
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);

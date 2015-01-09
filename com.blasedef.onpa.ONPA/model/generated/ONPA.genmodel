@@ -31,12 +31,12 @@
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//Action">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ONPA.ecore#//Action/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Action/predicates"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Action/predicate"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Action/evaluations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Action/updates"/>
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//Predicate">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Predicate/predicates"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Predicate/predicate"/>
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//Evaluations">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Evaluations/expressions"/>
@@ -49,6 +49,7 @@
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//EvaluationExpression"/>
     <genClasses ecoreClass="ONPA.ecore#//UpdateExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ONPA.ecore#//UpdateExpression/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//UpdateExpression/expression"/>
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//Store">
@@ -70,8 +71,11 @@
     <genClasses ecoreClass="ONPA.ecore#//ProcessReference">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ONPA.ecore#//ProcessReference/value"/>
     </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//Broadcast"/>
+    <genClasses ecoreClass="ONPA.ecore#//Unicast"/>
     <genClasses ecoreClass="ONPA.ecore#//In"/>
     <genClasses ecoreClass="ONPA.ecore#//Out"/>
+    <genClasses ecoreClass="ONPA.ecore#//LocalUpdateExpression"/>
     <genClasses ecoreClass="ONPA.ecore#//Or">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Or/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Or/right"/>
@@ -120,6 +124,9 @@
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//ReferencedStore">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ONPA.ecore#//ReferencedStore/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//SelfReferencedStore">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ONPA.ecore#//SelfReferencedStore/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
