@@ -577,15 +577,15 @@ public class ModelParserTest {
 	
 	def assertReprProcesses(CharSequence input, CharSequence expectation) {
 		
-		println("input:")
-		println(input)
+		//println("input:")
+		//println(input)
 		intermediateModel = input.parse
 		intermediateProcess = intermediateModel.processes.last
 		output = intermediateProcess.value.stringRepr
-		println("output:")
-		println(output)
-		println("expectation:")
-		println(expectation)
+		//println("output:")
+		//println(output)
+		//println("expectation:")
+		//println(expectation)
 		Assert::assertEquals(output,expectation)
 		
 	}

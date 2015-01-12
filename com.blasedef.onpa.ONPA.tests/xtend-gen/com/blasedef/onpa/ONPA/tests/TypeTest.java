@@ -31,13 +31,60 @@ public class TypeTest {
   private TypeProvider _typeProvider;
   
   @Test
-  public void DoubleConstant() {
-    this.assertDoubleConstantType("i = 10");
+  public void doubleConstant() {
+    this.assertDoubleConstantType("i = 10;");
+  }
+  
+  @Test
+  public void boolConstantType() {
+    this.assertBoolConstantType("i = true;");
+  }
+  
+  @Test
+  public void andType() {
+    this.assertBoolConstantType("i = true && false;");
+  }
+  
+  @Test
+  public void OrType() {
+    this.assertBoolConstantType("i = true || false;");
+  }
+  
+  @Test
+  public void EqType() {
+    this.assertBoolConstantType("i = true == false;");
+  }
+  
+  @Test
+  public void ComType() {
+    this.assertBoolConstantType("i = 10 <= 10;");
+  }
+  
+  @Test
+  public void ComType2() {
+    this.assertBoolConstantType("i = (10 + 1) <= (10 + 2);");
+  }
+  
+  @Test
+  public void NotType() {
+    this.assertBoolConstantType("i = !false;");
+  }
+  
+  @Test
+  public void ReferenceType() {
+    this.assertReferenceDoubleType("a = 10.0; b = a;");
   }
   
   public void assertDoubleConstantType(final CharSequence input) {
-    Assert.assertEquals(input, "i = 10");
     this.assertType(input, TypeProvider.doubleConstantType);
+  }
+  
+  public void assertBoolConstantType(final CharSequence input) {
+    this.assertType(input, TypeProvider.boolConstantType);
+  }
+  
+  public Object assertReferenceDoubleType(final CharSequence input) {
+    return null;
   }
   
   public void assertType(final CharSequence input, final ExpressionsType expectedType) {

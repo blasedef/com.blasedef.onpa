@@ -46,7 +46,6 @@ import org.eclipse.xtext.junit4.util.ParseHelper;
 import org.eclipse.xtext.junit4.validation.ValidationTestHelper;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.junit.Assert;
 import org.junit.Test;
@@ -899,8 +898,6 @@ public class ModelParserTest {
   
   public void assertReprProcesses(final CharSequence input, final CharSequence expectation) {
     try {
-      InputOutput.<String>println("input:");
-      InputOutput.<CharSequence>println(input);
       Model _parse = this._parseHelper.parse(input);
       this.intermediateModel = _parse;
       EList<com.blasedef.onpa.oNPA.Process> _processes = this.intermediateModel.getProcesses();
@@ -909,10 +906,6 @@ public class ModelParserTest {
       ProcessExpression _value = this.intermediateProcess.getValue();
       CharSequence _stringRepr = this.stringRepr(_value);
       this.output = _stringRepr;
-      InputOutput.<String>println("output:");
-      InputOutput.<CharSequence>println(this.output);
-      InputOutput.<String>println("expectation:");
-      InputOutput.<CharSequence>println(expectation);
       Assert.assertEquals(this.output, expectation);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);

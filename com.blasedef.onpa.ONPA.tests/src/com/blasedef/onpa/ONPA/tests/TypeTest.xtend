@@ -20,15 +20,39 @@ class TypeTest {
 		@Inject extension ParseHelper<Model>
 		@Inject extension TypeProvider
 		
-		@Test def void DoubleConstant() { assertDoubleConstantType("i = 10") }
+		@Test def void doubleConstant() { assertDoubleConstantType("i = 10;") }
+		
+		@Test def void boolConstantType() { assertBoolConstantType("i = true;") }
+		
+		@Test def void andType() { assertBoolConstantType("i = true && false;") }
+		
+		@Test def void OrType() { assertBoolConstantType("i = true || false;") }
+		
+		@Test def void EqType() { assertBoolConstantType("i = true == false;") }
+		
+		@Test def void ComType() { assertBoolConstantType("i = 10 <= 10;") }
+		
+		@Test def void ComType2() { assertBoolConstantType("i = (10 + 1) <= (10 + 2);") }
+		
+		@Test def void NotType() { assertBoolConstantType("i = !false;") }
+		
+		@Test def void ReferenceType() { assertReferenceDoubleType("a = 10.0; b = a;") }
 		
 		def assertDoubleConstantType(CharSequence input) {
-			input.assertEquals("i = 10")
 			input.assertType(TypeProvider::doubleConstantType)
+		}
+		
+		def assertBoolConstantType(CharSequence input) {
+			input.assertType(TypeProvider::boolConstantType)
+		}
+		
+		def assertReferenceDoubleType(CharSequence input) {
+			
 		}
 		
 		def assertType(CharSequence input, ExpressionsType expectedType) {
 			expectedType.assertSame(input.parse.stores.last.value.typeFor)
 		}
+		
 	
 }
