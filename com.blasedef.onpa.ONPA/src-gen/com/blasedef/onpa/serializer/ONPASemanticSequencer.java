@@ -1,6 +1,15 @@
 package com.blasedef.onpa.serializer;
 
+import com.blasedef.onpa.oNPA.ActionAnd;
+import com.blasedef.onpa.oNPA.ActionComparison;
+import com.blasedef.onpa.oNPA.ActionDiv;
+import com.blasedef.onpa.oNPA.ActionEquality;
+import com.blasedef.onpa.oNPA.ActionMul;
+import com.blasedef.onpa.oNPA.ActionNot;
+import com.blasedef.onpa.oNPA.ActionOr;
+import com.blasedef.onpa.oNPA.ActionPlu;
 import com.blasedef.onpa.oNPA.ActionProcess;
+import com.blasedef.onpa.oNPA.ActionSub;
 import com.blasedef.onpa.oNPA.And;
 import com.blasedef.onpa.oNPA.BoolConstant;
 import com.blasedef.onpa.oNPA.Broadcast;
@@ -56,6 +65,198 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == ONPAPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case ONPAPackage.ACTION_AND:
+				if(context == grammarAccess.getActionAdditionRule() ||
+				   context == grammarAccess.getActionAdditionAccess().getActionPluLeftAction_1_0() ||
+				   context == grammarAccess.getActionAndRule() ||
+				   context == grammarAccess.getActionAndAccess().getActionAndLeftAction_1_0() ||
+				   context == grammarAccess.getActionComparisonRule() ||
+				   context == grammarAccess.getActionComparisonAccess().getActionComparisonLeftAction_1_0() ||
+				   context == grammarAccess.getActionDivisionRule() ||
+				   context == grammarAccess.getActionDivisionAccess().getActionDivLeftAction_1_0() ||
+				   context == grammarAccess.getActionEqualityRule() ||
+				   context == grammarAccess.getActionEqualityAccess().getActionEqualityLeftAction_1_0() ||
+				   context == grammarAccess.getActionExpressionRule() ||
+				   context == grammarAccess.getActionMultiplicationRule() ||
+				   context == grammarAccess.getActionMultiplicationAccess().getActionMulLeftAction_1_0() ||
+				   context == grammarAccess.getActionOrRule() ||
+				   context == grammarAccess.getActionOrAccess().getActionOrLeftAction_1_0() ||
+				   context == grammarAccess.getActionPrimaryRule() ||
+				   context == grammarAccess.getActionSubtractionRule() ||
+				   context == grammarAccess.getActionSubtractionAccess().getActionSubLeftAction_1_0() ||
+				   context == grammarAccess.getEvaluationExpressionRule()) {
+					sequence_ActionAnd(context, (ActionAnd) semanticObject); 
+					return; 
+				}
+				else break;
+			case ONPAPackage.ACTION_COMPARISON:
+				if(context == grammarAccess.getActionAdditionRule() ||
+				   context == grammarAccess.getActionAdditionAccess().getActionPluLeftAction_1_0() ||
+				   context == grammarAccess.getActionAndRule() ||
+				   context == grammarAccess.getActionAndAccess().getActionAndLeftAction_1_0() ||
+				   context == grammarAccess.getActionComparisonRule() ||
+				   context == grammarAccess.getActionComparisonAccess().getActionComparisonLeftAction_1_0() ||
+				   context == grammarAccess.getActionDivisionRule() ||
+				   context == grammarAccess.getActionDivisionAccess().getActionDivLeftAction_1_0() ||
+				   context == grammarAccess.getActionEqualityRule() ||
+				   context == grammarAccess.getActionEqualityAccess().getActionEqualityLeftAction_1_0() ||
+				   context == grammarAccess.getActionExpressionRule() ||
+				   context == grammarAccess.getActionMultiplicationRule() ||
+				   context == grammarAccess.getActionMultiplicationAccess().getActionMulLeftAction_1_0() ||
+				   context == grammarAccess.getActionOrRule() ||
+				   context == grammarAccess.getActionOrAccess().getActionOrLeftAction_1_0() ||
+				   context == grammarAccess.getActionPrimaryRule() ||
+				   context == grammarAccess.getActionSubtractionRule() ||
+				   context == grammarAccess.getActionSubtractionAccess().getActionSubLeftAction_1_0() ||
+				   context == grammarAccess.getEvaluationExpressionRule()) {
+					sequence_ActionComparison(context, (ActionComparison) semanticObject); 
+					return; 
+				}
+				else break;
+			case ONPAPackage.ACTION_DIV:
+				if(context == grammarAccess.getActionAdditionRule() ||
+				   context == grammarAccess.getActionAdditionAccess().getActionPluLeftAction_1_0() ||
+				   context == grammarAccess.getActionAndRule() ||
+				   context == grammarAccess.getActionAndAccess().getActionAndLeftAction_1_0() ||
+				   context == grammarAccess.getActionComparisonRule() ||
+				   context == grammarAccess.getActionComparisonAccess().getActionComparisonLeftAction_1_0() ||
+				   context == grammarAccess.getActionDivisionRule() ||
+				   context == grammarAccess.getActionDivisionAccess().getActionDivLeftAction_1_0() ||
+				   context == grammarAccess.getActionEqualityRule() ||
+				   context == grammarAccess.getActionEqualityAccess().getActionEqualityLeftAction_1_0() ||
+				   context == grammarAccess.getActionExpressionRule() ||
+				   context == grammarAccess.getActionMultiplicationRule() ||
+				   context == grammarAccess.getActionMultiplicationAccess().getActionMulLeftAction_1_0() ||
+				   context == grammarAccess.getActionOrRule() ||
+				   context == grammarAccess.getActionOrAccess().getActionOrLeftAction_1_0() ||
+				   context == grammarAccess.getActionPrimaryRule() ||
+				   context == grammarAccess.getActionSubtractionRule() ||
+				   context == grammarAccess.getActionSubtractionAccess().getActionSubLeftAction_1_0() ||
+				   context == grammarAccess.getEvaluationExpressionRule()) {
+					sequence_ActionDivision(context, (ActionDiv) semanticObject); 
+					return; 
+				}
+				else break;
+			case ONPAPackage.ACTION_EQUALITY:
+				if(context == grammarAccess.getActionAdditionRule() ||
+				   context == grammarAccess.getActionAdditionAccess().getActionPluLeftAction_1_0() ||
+				   context == grammarAccess.getActionAndRule() ||
+				   context == grammarAccess.getActionAndAccess().getActionAndLeftAction_1_0() ||
+				   context == grammarAccess.getActionComparisonRule() ||
+				   context == grammarAccess.getActionComparisonAccess().getActionComparisonLeftAction_1_0() ||
+				   context == grammarAccess.getActionDivisionRule() ||
+				   context == grammarAccess.getActionDivisionAccess().getActionDivLeftAction_1_0() ||
+				   context == grammarAccess.getActionEqualityRule() ||
+				   context == grammarAccess.getActionEqualityAccess().getActionEqualityLeftAction_1_0() ||
+				   context == grammarAccess.getActionExpressionRule() ||
+				   context == grammarAccess.getActionMultiplicationRule() ||
+				   context == grammarAccess.getActionMultiplicationAccess().getActionMulLeftAction_1_0() ||
+				   context == grammarAccess.getActionOrRule() ||
+				   context == grammarAccess.getActionOrAccess().getActionOrLeftAction_1_0() ||
+				   context == grammarAccess.getActionPrimaryRule() ||
+				   context == grammarAccess.getActionSubtractionRule() ||
+				   context == grammarAccess.getActionSubtractionAccess().getActionSubLeftAction_1_0() ||
+				   context == grammarAccess.getEvaluationExpressionRule()) {
+					sequence_ActionEquality(context, (ActionEquality) semanticObject); 
+					return; 
+				}
+				else break;
+			case ONPAPackage.ACTION_MUL:
+				if(context == grammarAccess.getActionAdditionRule() ||
+				   context == grammarAccess.getActionAdditionAccess().getActionPluLeftAction_1_0() ||
+				   context == grammarAccess.getActionAndRule() ||
+				   context == grammarAccess.getActionAndAccess().getActionAndLeftAction_1_0() ||
+				   context == grammarAccess.getActionComparisonRule() ||
+				   context == grammarAccess.getActionComparisonAccess().getActionComparisonLeftAction_1_0() ||
+				   context == grammarAccess.getActionDivisionRule() ||
+				   context == grammarAccess.getActionDivisionAccess().getActionDivLeftAction_1_0() ||
+				   context == grammarAccess.getActionEqualityRule() ||
+				   context == grammarAccess.getActionEqualityAccess().getActionEqualityLeftAction_1_0() ||
+				   context == grammarAccess.getActionExpressionRule() ||
+				   context == grammarAccess.getActionMultiplicationRule() ||
+				   context == grammarAccess.getActionMultiplicationAccess().getActionMulLeftAction_1_0() ||
+				   context == grammarAccess.getActionOrRule() ||
+				   context == grammarAccess.getActionOrAccess().getActionOrLeftAction_1_0() ||
+				   context == grammarAccess.getActionPrimaryRule() ||
+				   context == grammarAccess.getActionSubtractionRule() ||
+				   context == grammarAccess.getActionSubtractionAccess().getActionSubLeftAction_1_0() ||
+				   context == grammarAccess.getEvaluationExpressionRule()) {
+					sequence_ActionMultiplication(context, (ActionMul) semanticObject); 
+					return; 
+				}
+				else break;
+			case ONPAPackage.ACTION_NOT:
+				if(context == grammarAccess.getActionAdditionRule() ||
+				   context == grammarAccess.getActionAdditionAccess().getActionPluLeftAction_1_0() ||
+				   context == grammarAccess.getActionAndRule() ||
+				   context == grammarAccess.getActionAndAccess().getActionAndLeftAction_1_0() ||
+				   context == grammarAccess.getActionComparisonRule() ||
+				   context == grammarAccess.getActionComparisonAccess().getActionComparisonLeftAction_1_0() ||
+				   context == grammarAccess.getActionDivisionRule() ||
+				   context == grammarAccess.getActionDivisionAccess().getActionDivLeftAction_1_0() ||
+				   context == grammarAccess.getActionEqualityRule() ||
+				   context == grammarAccess.getActionEqualityAccess().getActionEqualityLeftAction_1_0() ||
+				   context == grammarAccess.getActionExpressionRule() ||
+				   context == grammarAccess.getActionMultiplicationRule() ||
+				   context == grammarAccess.getActionMultiplicationAccess().getActionMulLeftAction_1_0() ||
+				   context == grammarAccess.getActionOrRule() ||
+				   context == grammarAccess.getActionOrAccess().getActionOrLeftAction_1_0() ||
+				   context == grammarAccess.getActionPrimaryRule() ||
+				   context == grammarAccess.getActionSubtractionRule() ||
+				   context == grammarAccess.getActionSubtractionAccess().getActionSubLeftAction_1_0() ||
+				   context == grammarAccess.getEvaluationExpressionRule()) {
+					sequence_ActionPrimary(context, (ActionNot) semanticObject); 
+					return; 
+				}
+				else break;
+			case ONPAPackage.ACTION_OR:
+				if(context == grammarAccess.getActionAdditionRule() ||
+				   context == grammarAccess.getActionAdditionAccess().getActionPluLeftAction_1_0() ||
+				   context == grammarAccess.getActionAndRule() ||
+				   context == grammarAccess.getActionAndAccess().getActionAndLeftAction_1_0() ||
+				   context == grammarAccess.getActionComparisonRule() ||
+				   context == grammarAccess.getActionComparisonAccess().getActionComparisonLeftAction_1_0() ||
+				   context == grammarAccess.getActionDivisionRule() ||
+				   context == grammarAccess.getActionDivisionAccess().getActionDivLeftAction_1_0() ||
+				   context == grammarAccess.getActionEqualityRule() ||
+				   context == grammarAccess.getActionEqualityAccess().getActionEqualityLeftAction_1_0() ||
+				   context == grammarAccess.getActionExpressionRule() ||
+				   context == grammarAccess.getActionMultiplicationRule() ||
+				   context == grammarAccess.getActionMultiplicationAccess().getActionMulLeftAction_1_0() ||
+				   context == grammarAccess.getActionOrRule() ||
+				   context == grammarAccess.getActionOrAccess().getActionOrLeftAction_1_0() ||
+				   context == grammarAccess.getActionPrimaryRule() ||
+				   context == grammarAccess.getActionSubtractionRule() ||
+				   context == grammarAccess.getActionSubtractionAccess().getActionSubLeftAction_1_0() ||
+				   context == grammarAccess.getEvaluationExpressionRule()) {
+					sequence_ActionOr(context, (ActionOr) semanticObject); 
+					return; 
+				}
+				else break;
+			case ONPAPackage.ACTION_PLU:
+				if(context == grammarAccess.getActionAdditionRule() ||
+				   context == grammarAccess.getActionAdditionAccess().getActionPluLeftAction_1_0() ||
+				   context == grammarAccess.getActionAndRule() ||
+				   context == grammarAccess.getActionAndAccess().getActionAndLeftAction_1_0() ||
+				   context == grammarAccess.getActionComparisonRule() ||
+				   context == grammarAccess.getActionComparisonAccess().getActionComparisonLeftAction_1_0() ||
+				   context == grammarAccess.getActionDivisionRule() ||
+				   context == grammarAccess.getActionDivisionAccess().getActionDivLeftAction_1_0() ||
+				   context == grammarAccess.getActionEqualityRule() ||
+				   context == grammarAccess.getActionEqualityAccess().getActionEqualityLeftAction_1_0() ||
+				   context == grammarAccess.getActionExpressionRule() ||
+				   context == grammarAccess.getActionMultiplicationRule() ||
+				   context == grammarAccess.getActionMultiplicationAccess().getActionMulLeftAction_1_0() ||
+				   context == grammarAccess.getActionOrRule() ||
+				   context == grammarAccess.getActionOrAccess().getActionOrLeftAction_1_0() ||
+				   context == grammarAccess.getActionPrimaryRule() ||
+				   context == grammarAccess.getActionSubtractionRule() ||
+				   context == grammarAccess.getActionSubtractionAccess().getActionSubLeftAction_1_0() ||
+				   context == grammarAccess.getEvaluationExpressionRule()) {
+					sequence_ActionAddition(context, (ActionPlu) semanticObject); 
+					return; 
+				}
+				else break;
 			case ONPAPackage.ACTION_PROCESS:
 				if(context == grammarAccess.getActionProcessRule() ||
 				   context == grammarAccess.getChoiceRule() ||
@@ -65,6 +266,30 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getPrimaryProcessRule() ||
 				   context == grammarAccess.getProcessExpressionRule()) {
 					sequence_ActionProcess(context, (ActionProcess) semanticObject); 
+					return; 
+				}
+				else break;
+			case ONPAPackage.ACTION_SUB:
+				if(context == grammarAccess.getActionAdditionRule() ||
+				   context == grammarAccess.getActionAdditionAccess().getActionPluLeftAction_1_0() ||
+				   context == grammarAccess.getActionAndRule() ||
+				   context == grammarAccess.getActionAndAccess().getActionAndLeftAction_1_0() ||
+				   context == grammarAccess.getActionComparisonRule() ||
+				   context == grammarAccess.getActionComparisonAccess().getActionComparisonLeftAction_1_0() ||
+				   context == grammarAccess.getActionDivisionRule() ||
+				   context == grammarAccess.getActionDivisionAccess().getActionDivLeftAction_1_0() ||
+				   context == grammarAccess.getActionEqualityRule() ||
+				   context == grammarAccess.getActionEqualityAccess().getActionEqualityLeftAction_1_0() ||
+				   context == grammarAccess.getActionExpressionRule() ||
+				   context == grammarAccess.getActionMultiplicationRule() ||
+				   context == grammarAccess.getActionMultiplicationAccess().getActionMulLeftAction_1_0() ||
+				   context == grammarAccess.getActionOrRule() ||
+				   context == grammarAccess.getActionOrAccess().getActionOrLeftAction_1_0() ||
+				   context == grammarAccess.getActionPrimaryRule() ||
+				   context == grammarAccess.getActionSubtractionRule() ||
+				   context == grammarAccess.getActionSubtractionAccess().getActionSubLeftAction_1_0() ||
+				   context == grammarAccess.getEvaluationExpressionRule()) {
+					sequence_ActionSubtraction(context, (ActionSub) semanticObject); 
 					return; 
 				}
 				else break;
@@ -79,7 +304,6 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getDivisionAccess().getDivLeftAction_1_0() ||
 				   context == grammarAccess.getEqualityRule() ||
 				   context == grammarAccess.getEqualityAccess().getEqualityLeftAction_1_0() ||
-				   context == grammarAccess.getEvaluationExpressionRule() ||
 				   context == grammarAccess.getExpressionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getMulLeftAction_1_0() ||
@@ -93,7 +317,30 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				}
 				else break;
 			case ONPAPackage.BOOL_CONSTANT:
-				if(context == grammarAccess.getAdditionRule() ||
+				if(context == grammarAccess.getActionAdditionRule() ||
+				   context == grammarAccess.getActionAdditionAccess().getActionPluLeftAction_1_0() ||
+				   context == grammarAccess.getActionAndRule() ||
+				   context == grammarAccess.getActionAndAccess().getActionAndLeftAction_1_0() ||
+				   context == grammarAccess.getActionAtomicRule() ||
+				   context == grammarAccess.getActionComparisonRule() ||
+				   context == grammarAccess.getActionComparisonAccess().getActionComparisonLeftAction_1_0() ||
+				   context == grammarAccess.getActionDivisionRule() ||
+				   context == grammarAccess.getActionDivisionAccess().getActionDivLeftAction_1_0() ||
+				   context == grammarAccess.getActionEqualityRule() ||
+				   context == grammarAccess.getActionEqualityAccess().getActionEqualityLeftAction_1_0() ||
+				   context == grammarAccess.getActionExpressionRule() ||
+				   context == grammarAccess.getActionMultiplicationRule() ||
+				   context == grammarAccess.getActionMultiplicationAccess().getActionMulLeftAction_1_0() ||
+				   context == grammarAccess.getActionOrRule() ||
+				   context == grammarAccess.getActionOrAccess().getActionOrLeftAction_1_0() ||
+				   context == grammarAccess.getActionPrimaryRule() ||
+				   context == grammarAccess.getActionSubtractionRule() ||
+				   context == grammarAccess.getActionSubtractionAccess().getActionSubLeftAction_1_0() ||
+				   context == grammarAccess.getEvaluationExpressionRule()) {
+					sequence_ActionAtomic(context, (BoolConstant) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getAdditionRule() ||
 				   context == grammarAccess.getAdditionAccess().getPluLeftAction_1_0() ||
 				   context == grammarAccess.getAndRule() ||
 				   context == grammarAccess.getAndAccess().getAndLeftAction_1_0() ||
@@ -104,7 +351,6 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getDivisionAccess().getDivLeftAction_1_0() ||
 				   context == grammarAccess.getEqualityRule() ||
 				   context == grammarAccess.getEqualityAccess().getEqualityLeftAction_1_0() ||
-				   context == grammarAccess.getEvaluationExpressionRule() ||
 				   context == grammarAccess.getExpressionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getMulLeftAction_1_0() ||
@@ -144,7 +390,6 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getDivisionAccess().getDivLeftAction_1_0() ||
 				   context == grammarAccess.getEqualityRule() ||
 				   context == grammarAccess.getEqualityAccess().getEqualityLeftAction_1_0() ||
-				   context == grammarAccess.getEvaluationExpressionRule() ||
 				   context == grammarAccess.getExpressionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getMulLeftAction_1_0() ||
@@ -168,7 +413,6 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getDivisionAccess().getDivLeftAction_1_0() ||
 				   context == grammarAccess.getEqualityRule() ||
 				   context == grammarAccess.getEqualityAccess().getEqualityLeftAction_1_0() ||
-				   context == grammarAccess.getEvaluationExpressionRule() ||
 				   context == grammarAccess.getExpressionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getMulLeftAction_1_0() ||
@@ -182,7 +426,30 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				}
 				else break;
 			case ONPAPackage.DOUBLE_CONSTANT:
-				if(context == grammarAccess.getAdditionRule() ||
+				if(context == grammarAccess.getActionAdditionRule() ||
+				   context == grammarAccess.getActionAdditionAccess().getActionPluLeftAction_1_0() ||
+				   context == grammarAccess.getActionAndRule() ||
+				   context == grammarAccess.getActionAndAccess().getActionAndLeftAction_1_0() ||
+				   context == grammarAccess.getActionAtomicRule() ||
+				   context == grammarAccess.getActionComparisonRule() ||
+				   context == grammarAccess.getActionComparisonAccess().getActionComparisonLeftAction_1_0() ||
+				   context == grammarAccess.getActionDivisionRule() ||
+				   context == grammarAccess.getActionDivisionAccess().getActionDivLeftAction_1_0() ||
+				   context == grammarAccess.getActionEqualityRule() ||
+				   context == grammarAccess.getActionEqualityAccess().getActionEqualityLeftAction_1_0() ||
+				   context == grammarAccess.getActionExpressionRule() ||
+				   context == grammarAccess.getActionMultiplicationRule() ||
+				   context == grammarAccess.getActionMultiplicationAccess().getActionMulLeftAction_1_0() ||
+				   context == grammarAccess.getActionOrRule() ||
+				   context == grammarAccess.getActionOrAccess().getActionOrLeftAction_1_0() ||
+				   context == grammarAccess.getActionPrimaryRule() ||
+				   context == grammarAccess.getActionSubtractionRule() ||
+				   context == grammarAccess.getActionSubtractionAccess().getActionSubLeftAction_1_0() ||
+				   context == grammarAccess.getEvaluationExpressionRule()) {
+					sequence_ActionAtomic(context, (DoubleConstant) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getAdditionRule() ||
 				   context == grammarAccess.getAdditionAccess().getPluLeftAction_1_0() ||
 				   context == grammarAccess.getAndRule() ||
 				   context == grammarAccess.getAndAccess().getAndLeftAction_1_0() ||
@@ -193,7 +460,6 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getDivisionAccess().getDivLeftAction_1_0() ||
 				   context == grammarAccess.getEqualityRule() ||
 				   context == grammarAccess.getEqualityAccess().getEqualityLeftAction_1_0() ||
-				   context == grammarAccess.getEvaluationExpressionRule() ||
 				   context == grammarAccess.getExpressionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getMulLeftAction_1_0() ||
@@ -217,7 +483,6 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getDivisionAccess().getDivLeftAction_1_0() ||
 				   context == grammarAccess.getEqualityRule() ||
 				   context == grammarAccess.getEqualityAccess().getEqualityLeftAction_1_0() ||
-				   context == grammarAccess.getEvaluationExpressionRule() ||
 				   context == grammarAccess.getExpressionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getMulLeftAction_1_0() ||
@@ -231,27 +496,27 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				}
 				else break;
 			case ONPAPackage.FREE_VARIABLE:
-				if(context == grammarAccess.getAdditionRule() ||
-				   context == grammarAccess.getAdditionAccess().getPluLeftAction_1_0() ||
-				   context == grammarAccess.getAndRule() ||
-				   context == grammarAccess.getAndAccess().getAndLeftAction_1_0() ||
-				   context == grammarAccess.getAtomicRule() ||
-				   context == grammarAccess.getComparisonRule() ||
-				   context == grammarAccess.getComparisonAccess().getComparisonLeftAction_1_0() ||
-				   context == grammarAccess.getDivisionRule() ||
-				   context == grammarAccess.getDivisionAccess().getDivLeftAction_1_0() ||
-				   context == grammarAccess.getEqualityRule() ||
-				   context == grammarAccess.getEqualityAccess().getEqualityLeftAction_1_0() ||
-				   context == grammarAccess.getEvaluationExpressionRule() ||
-				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getMultiplicationRule() ||
-				   context == grammarAccess.getMultiplicationAccess().getMulLeftAction_1_0() ||
-				   context == grammarAccess.getOrRule() ||
-				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0() ||
-				   context == grammarAccess.getPrimaryRule() ||
-				   context == grammarAccess.getSubtractionRule() ||
-				   context == grammarAccess.getSubtractionAccess().getSubLeftAction_1_0()) {
-					sequence_Atomic(context, (FreeVariable) semanticObject); 
+				if(context == grammarAccess.getActionAdditionRule() ||
+				   context == grammarAccess.getActionAdditionAccess().getActionPluLeftAction_1_0() ||
+				   context == grammarAccess.getActionAndRule() ||
+				   context == grammarAccess.getActionAndAccess().getActionAndLeftAction_1_0() ||
+				   context == grammarAccess.getActionAtomicRule() ||
+				   context == grammarAccess.getActionComparisonRule() ||
+				   context == grammarAccess.getActionComparisonAccess().getActionComparisonLeftAction_1_0() ||
+				   context == grammarAccess.getActionDivisionRule() ||
+				   context == grammarAccess.getActionDivisionAccess().getActionDivLeftAction_1_0() ||
+				   context == grammarAccess.getActionEqualityRule() ||
+				   context == grammarAccess.getActionEqualityAccess().getActionEqualityLeftAction_1_0() ||
+				   context == grammarAccess.getActionExpressionRule() ||
+				   context == grammarAccess.getActionMultiplicationRule() ||
+				   context == grammarAccess.getActionMultiplicationAccess().getActionMulLeftAction_1_0() ||
+				   context == grammarAccess.getActionOrRule() ||
+				   context == grammarAccess.getActionOrAccess().getActionOrLeftAction_1_0() ||
+				   context == grammarAccess.getActionPrimaryRule() ||
+				   context == grammarAccess.getActionSubtractionRule() ||
+				   context == grammarAccess.getActionSubtractionAccess().getActionSubLeftAction_1_0() ||
+				   context == grammarAccess.getEvaluationExpressionRule()) {
+					sequence_ActionAtomic(context, (FreeVariable) semanticObject); 
 					return; 
 				}
 				else break;
@@ -295,7 +560,6 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getDivisionAccess().getDivLeftAction_1_0() ||
 				   context == grammarAccess.getEqualityRule() ||
 				   context == grammarAccess.getEqualityAccess().getEqualityLeftAction_1_0() ||
-				   context == grammarAccess.getEvaluationExpressionRule() ||
 				   context == grammarAccess.getExpressionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getMulLeftAction_1_0() ||
@@ -319,7 +583,6 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getDivisionAccess().getDivLeftAction_1_0() ||
 				   context == grammarAccess.getEqualityRule() ||
 				   context == grammarAccess.getEqualityAccess().getEqualityLeftAction_1_0() ||
-				   context == grammarAccess.getEvaluationExpressionRule() ||
 				   context == grammarAccess.getExpressionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getMulLeftAction_1_0() ||
@@ -343,7 +606,6 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getDivisionAccess().getDivLeftAction_1_0() ||
 				   context == grammarAccess.getEqualityRule() ||
 				   context == grammarAccess.getEqualityAccess().getEqualityLeftAction_1_0() ||
-				   context == grammarAccess.getEvaluationExpressionRule() ||
 				   context == grammarAccess.getExpressionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getMulLeftAction_1_0() ||
@@ -381,7 +643,6 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getDivisionAccess().getDivLeftAction_1_0() ||
 				   context == grammarAccess.getEqualityRule() ||
 				   context == grammarAccess.getEqualityAccess().getEqualityLeftAction_1_0() ||
-				   context == grammarAccess.getEvaluationExpressionRule() ||
 				   context == grammarAccess.getExpressionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getMulLeftAction_1_0() ||
@@ -436,7 +697,30 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				}
 				else break;
 			case ONPAPackage.REFERENCED_STORE:
-				if(context == grammarAccess.getAdditionRule() ||
+				if(context == grammarAccess.getActionAdditionRule() ||
+				   context == grammarAccess.getActionAdditionAccess().getActionPluLeftAction_1_0() ||
+				   context == grammarAccess.getActionAndRule() ||
+				   context == grammarAccess.getActionAndAccess().getActionAndLeftAction_1_0() ||
+				   context == grammarAccess.getActionAtomicRule() ||
+				   context == grammarAccess.getActionComparisonRule() ||
+				   context == grammarAccess.getActionComparisonAccess().getActionComparisonLeftAction_1_0() ||
+				   context == grammarAccess.getActionDivisionRule() ||
+				   context == grammarAccess.getActionDivisionAccess().getActionDivLeftAction_1_0() ||
+				   context == grammarAccess.getActionEqualityRule() ||
+				   context == grammarAccess.getActionEqualityAccess().getActionEqualityLeftAction_1_0() ||
+				   context == grammarAccess.getActionExpressionRule() ||
+				   context == grammarAccess.getActionMultiplicationRule() ||
+				   context == grammarAccess.getActionMultiplicationAccess().getActionMulLeftAction_1_0() ||
+				   context == grammarAccess.getActionOrRule() ||
+				   context == grammarAccess.getActionOrAccess().getActionOrLeftAction_1_0() ||
+				   context == grammarAccess.getActionPrimaryRule() ||
+				   context == grammarAccess.getActionSubtractionRule() ||
+				   context == grammarAccess.getActionSubtractionAccess().getActionSubLeftAction_1_0() ||
+				   context == grammarAccess.getEvaluationExpressionRule()) {
+					sequence_ActionAtomic(context, (ReferencedStore) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getAdditionRule() ||
 				   context == grammarAccess.getAdditionAccess().getPluLeftAction_1_0() ||
 				   context == grammarAccess.getAndRule() ||
 				   context == grammarAccess.getAndAccess().getAndLeftAction_1_0() ||
@@ -447,7 +731,6 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getDivisionAccess().getDivLeftAction_1_0() ||
 				   context == grammarAccess.getEqualityRule() ||
 				   context == grammarAccess.getEqualityAccess().getEqualityLeftAction_1_0() ||
-				   context == grammarAccess.getEvaluationExpressionRule() ||
 				   context == grammarAccess.getExpressionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getMulLeftAction_1_0() ||
@@ -461,27 +744,27 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				}
 				else break;
 			case ONPAPackage.SELF_REFERENCED_STORE:
-				if(context == grammarAccess.getAdditionRule() ||
-				   context == grammarAccess.getAdditionAccess().getPluLeftAction_1_0() ||
-				   context == grammarAccess.getAndRule() ||
-				   context == grammarAccess.getAndAccess().getAndLeftAction_1_0() ||
-				   context == grammarAccess.getAtomicRule() ||
-				   context == grammarAccess.getComparisonRule() ||
-				   context == grammarAccess.getComparisonAccess().getComparisonLeftAction_1_0() ||
-				   context == grammarAccess.getDivisionRule() ||
-				   context == grammarAccess.getDivisionAccess().getDivLeftAction_1_0() ||
-				   context == grammarAccess.getEqualityRule() ||
-				   context == grammarAccess.getEqualityAccess().getEqualityLeftAction_1_0() ||
-				   context == grammarAccess.getEvaluationExpressionRule() ||
-				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getMultiplicationRule() ||
-				   context == grammarAccess.getMultiplicationAccess().getMulLeftAction_1_0() ||
-				   context == grammarAccess.getOrRule() ||
-				   context == grammarAccess.getOrAccess().getOrLeftAction_1_0() ||
-				   context == grammarAccess.getPrimaryRule() ||
-				   context == grammarAccess.getSubtractionRule() ||
-				   context == grammarAccess.getSubtractionAccess().getSubLeftAction_1_0()) {
-					sequence_Atomic(context, (SelfReferencedStore) semanticObject); 
+				if(context == grammarAccess.getActionAdditionRule() ||
+				   context == grammarAccess.getActionAdditionAccess().getActionPluLeftAction_1_0() ||
+				   context == grammarAccess.getActionAndRule() ||
+				   context == grammarAccess.getActionAndAccess().getActionAndLeftAction_1_0() ||
+				   context == grammarAccess.getActionAtomicRule() ||
+				   context == grammarAccess.getActionComparisonRule() ||
+				   context == grammarAccess.getActionComparisonAccess().getActionComparisonLeftAction_1_0() ||
+				   context == grammarAccess.getActionDivisionRule() ||
+				   context == grammarAccess.getActionDivisionAccess().getActionDivLeftAction_1_0() ||
+				   context == grammarAccess.getActionEqualityRule() ||
+				   context == grammarAccess.getActionEqualityAccess().getActionEqualityLeftAction_1_0() ||
+				   context == grammarAccess.getActionExpressionRule() ||
+				   context == grammarAccess.getActionMultiplicationRule() ||
+				   context == grammarAccess.getActionMultiplicationAccess().getActionMulLeftAction_1_0() ||
+				   context == grammarAccess.getActionOrRule() ||
+				   context == grammarAccess.getActionOrAccess().getActionOrLeftAction_1_0() ||
+				   context == grammarAccess.getActionPrimaryRule() ||
+				   context == grammarAccess.getActionSubtractionRule() ||
+				   context == grammarAccess.getActionSubtractionAccess().getActionSubLeftAction_1_0() ||
+				   context == grammarAccess.getEvaluationExpressionRule()) {
+					sequence_ActionAtomic(context, (SelfReferencedStore) semanticObject); 
 					return; 
 				}
 				else break;
@@ -502,7 +785,6 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				   context == grammarAccess.getDivisionAccess().getDivLeftAction_1_0() ||
 				   context == grammarAccess.getEqualityRule() ||
 				   context == grammarAccess.getEqualityAccess().getEqualityLeftAction_1_0() ||
-				   context == grammarAccess.getEvaluationExpressionRule() ||
 				   context == grammarAccess.getExpressionRule() ||
 				   context == grammarAccess.getMultiplicationRule() ||
 				   context == grammarAccess.getMultiplicationAccess().getMulLeftAction_1_0() ||
@@ -545,6 +827,208 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     (left=ActionAddition_ActionPlu_1_0 right=ActionMultiplication)
+	 */
+	protected void sequence_ActionAddition(EObject context, ActionPlu semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION_PLU__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION_PLU__LEFT));
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION_PLU__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION_PLU__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getActionAdditionAccess().getActionPluLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getActionAdditionAccess().getRightActionMultiplicationParserRuleCall_1_2_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (left=ActionAnd_ActionAnd_1_0 right=ActionEquality)
+	 */
+	protected void sequence_ActionAnd(EObject context, ActionAnd semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION_AND__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION_AND__LEFT));
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION_AND__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION_AND__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getActionAndAccess().getActionAndLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getActionAndAccess().getRightActionEqualityParserRuleCall_1_2_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (value='true' | value='false')
+	 */
+	protected void sequence_ActionAtomic(EObject context, BoolConstant semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     value=Double
+	 */
+	protected void sequence_ActionAtomic(EObject context, DoubleConstant semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.DOUBLE_CONSTANT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.DOUBLE_CONSTANT__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getActionAtomicAccess().getValueDoubleParserRuleCall_0_1_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     value=FreeVariable
+	 */
+	protected void sequence_ActionAtomic(EObject context, FreeVariable semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.FREE_VARIABLE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.FREE_VARIABLE__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getActionAtomicAccess().getValueFreeVariableParserRuleCall_1_1_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     value=[Store|LOWER]
+	 */
+	protected void sequence_ActionAtomic(EObject context, ReferencedStore semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.REFERENCED_STORE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.REFERENCED_STORE__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getActionAtomicAccess().getValueStoreLOWERTerminalRuleCall_3_1_0_1(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     value=[Store|LOWER]
+	 */
+	protected void sequence_ActionAtomic(EObject context, SelfReferencedStore semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.SELF_REFERENCED_STORE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.SELF_REFERENCED_STORE__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getActionAtomicAccess().getValueStoreLOWERTerminalRuleCall_4_2_0_1(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (left=ActionComparison_ActionComparison_1_0 (op='>=' | op='<=' | op='>' | op='<') right=ActionSubtraction)
+	 */
+	protected void sequence_ActionComparison(EObject context, ActionComparison semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (left=ActionDivision_ActionDiv_1_0 right=ActionPrimary)
+	 */
+	protected void sequence_ActionDivision(EObject context, ActionDiv semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION_DIV__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION_DIV__LEFT));
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION_DIV__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION_DIV__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getActionDivisionAccess().getActionDivLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getActionDivisionAccess().getRightActionPrimaryParserRuleCall_1_2_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (left=ActionEquality_ActionEquality_1_0 (op='==' | op='!=') right=ActionComparison)
+	 */
+	protected void sequence_ActionEquality(EObject context, ActionEquality semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (left=ActionMultiplication_ActionMul_1_0 right=ActionDivision)
+	 */
+	protected void sequence_ActionMultiplication(EObject context, ActionMul semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION_MUL__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION_MUL__LEFT));
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION_MUL__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION_MUL__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getActionMultiplicationAccess().getActionMulLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getActionMultiplicationAccess().getRightActionDivisionParserRuleCall_1_2_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (left=ActionOr_ActionOr_1_0 right=ActionAnd)
+	 */
+	protected void sequence_ActionOr(EObject context, ActionOr semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION_OR__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION_OR__LEFT));
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION_OR__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION_OR__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getActionOrAccess().getActionOrLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getActionOrAccess().getRightActionAndParserRuleCall_1_2_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     expression=ActionPrimary
+	 */
+	protected void sequence_ActionPrimary(EObject context, ActionNot semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION_NOT__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION_NOT__EXPRESSION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getActionPrimaryAccess().getExpressionActionPrimaryParserRuleCall_1_2_0(), semanticObject.getExpression());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (action=Action value=[Process|UPPER])
 	 */
 	protected void sequence_ActionProcess(EObject context, ActionProcess semanticObject) {
@@ -564,51 +1048,38 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=LOWER predicate=Predicate evaluations=Evaluations updates=Updates)
+	 *     (left=ActionSubtraction_ActionSub_1_0 right=ActionAddition)
 	 */
-	protected void sequence_Action(EObject context, Broadcast semanticObject) {
+	protected void sequence_ActionSubtraction(EObject context, ActionSub semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION__NAME));
-			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION__PREDICATE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION__PREDICATE));
-			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION__EVALUATIONS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION__EVALUATIONS));
-			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION__UPDATES) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION__UPDATES));
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION_SUB__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION_SUB__LEFT));
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION_SUB__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION_SUB__RIGHT));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getActionAccess().getNameLOWERTerminalRuleCall_0_0_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getActionAccess().getPredicatePredicateParserRuleCall_1_0(), semanticObject.getPredicate());
-		feeder.accept(grammarAccess.getActionAccess().getEvaluationsEvaluationsParserRuleCall_2_0(), semanticObject.getEvaluations());
-		feeder.accept(grammarAccess.getActionAccess().getUpdatesUpdatesParserRuleCall_3_0(), semanticObject.getUpdates());
+		feeder.accept(grammarAccess.getActionSubtractionAccess().getActionSubLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getActionSubtractionAccess().getRightActionAdditionParserRuleCall_1_2_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=LOWER predicate=Predicate evaluations=Evaluations updates=Updates)
+	 *     (name=LOWER predicate=Predicate? evaluations=Evaluations? updates=Updates?)
+	 */
+	protected void sequence_Action(EObject context, Broadcast semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=LOWER predicate=Predicate? evaluations=Evaluations? updates=Updates?)
 	 */
 	protected void sequence_Action(EObject context, Unicast semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION__NAME));
-			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION__PREDICATE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION__PREDICATE));
-			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION__EVALUATIONS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION__EVALUATIONS));
-			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.ACTION__UPDATES) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.ACTION__UPDATES));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getActionAccess().getNameLOWERTerminalRuleCall_0_1_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getActionAccess().getPredicatePredicateParserRuleCall_1_0(), semanticObject.getPredicate());
-		feeder.accept(grammarAccess.getActionAccess().getEvaluationsEvaluationsParserRuleCall_2_0(), semanticObject.getEvaluations());
-		feeder.accept(grammarAccess.getActionAccess().getUpdatesUpdatesParserRuleCall_3_0(), semanticObject.getUpdates());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -677,22 +1148,6 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     value=FreeVariable
-	 */
-	protected void sequence_Atomic(EObject context, FreeVariable semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.FREE_VARIABLE__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.FREE_VARIABLE__VALUE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getAtomicAccess().getValueFreeVariableParserRuleCall_1_1_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     value=[Store|LOWER]
 	 */
 	protected void sequence_Atomic(EObject context, ReferencedStore semanticObject) {
@@ -702,23 +1157,7 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getAtomicAccess().getValueStoreLOWERTerminalRuleCall_3_1_0_1(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     value=[Store|LOWER]
-	 */
-	protected void sequence_Atomic(EObject context, SelfReferencedStore semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.SELF_REFERENCED_STORE__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.SELF_REFERENCED_STORE__VALUE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getAtomicAccess().getValueStoreLOWERTerminalRuleCall_4_2_0_1(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getAtomicAccess().getValueStoreLOWERTerminalRuleCall_2_1_0_1(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -865,7 +1304,7 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     expression=Expression
+	 *     expression=ActionExpression
 	 */
 	protected void sequence_PredicateExpression(EObject context, PredicateExpression semanticObject) {
 		if(errorAcceptor != null) {
@@ -874,7 +1313,7 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getPredicateExpressionAccess().getExpressionExpressionParserRuleCall_0_0(), semanticObject.getExpression());
+		feeder.accept(grammarAccess.getPredicateExpressionAccess().getExpressionActionExpressionParserRuleCall_0_0(), semanticObject.getExpression());
 		feeder.finish();
 	}
 	
@@ -1023,7 +1462,7 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=[Store|LOWER] expression=Expression)
+	 *     (name=[Store|LOWER] expression=ActionExpression)
 	 */
 	protected void sequence_UpdateExpression(EObject context, LocalUpdateExpression semanticObject) {
 		if(errorAcceptor != null) {
@@ -1035,14 +1474,14 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getUpdateExpressionAccess().getNameStoreLOWERTerminalRuleCall_0_2_0_1(), semanticObject.getName());
-		feeder.accept(grammarAccess.getUpdateExpressionAccess().getExpressionExpressionParserRuleCall_0_4_0(), semanticObject.getExpression());
+		feeder.accept(grammarAccess.getUpdateExpressionAccess().getExpressionActionExpressionParserRuleCall_0_4_0(), semanticObject.getExpression());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=[Store|LOWER] expression=Expression)
+	 *     (name=[Store|LOWER] expression=ActionExpression)
 	 */
 	protected void sequence_UpdateExpression(EObject context, UpdateExpression semanticObject) {
 		if(errorAcceptor != null) {
@@ -1054,7 +1493,7 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getUpdateExpressionAccess().getNameStoreLOWERTerminalRuleCall_1_1_0_1(), semanticObject.getName());
-		feeder.accept(grammarAccess.getUpdateExpressionAccess().getExpressionExpressionParserRuleCall_1_3_0(), semanticObject.getExpression());
+		feeder.accept(grammarAccess.getUpdateExpressionAccess().getExpressionActionExpressionParserRuleCall_1_3_0(), semanticObject.getExpression());
 		feeder.finish();
 	}
 	

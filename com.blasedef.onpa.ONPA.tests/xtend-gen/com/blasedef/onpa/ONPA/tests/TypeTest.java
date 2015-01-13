@@ -70,21 +70,12 @@ public class TypeTest {
     this.assertBoolConstantType("i = !false;");
   }
   
-  @Test
-  public void ReferenceType() {
-    this.assertReferenceDoubleType("a = 10.0; b = a;");
-  }
-  
   public void assertDoubleConstantType(final CharSequence input) {
     this.assertType(input, TypeProvider.doubleConstantType);
   }
   
   public void assertBoolConstantType(final CharSequence input) {
     this.assertType(input, TypeProvider.boolConstantType);
-  }
-  
-  public Object assertReferenceDoubleType(final CharSequence input) {
-    return null;
   }
   
   public void assertType(final CharSequence input, final ExpressionsType expectedType) {

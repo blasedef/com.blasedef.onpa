@@ -2,7 +2,7 @@
  */
 package com.blasedef.onpa.oNPA.impl;
 
-import com.blasedef.onpa.oNPA.Expression;
+import com.blasedef.onpa.oNPA.ActionExpression;
 import com.blasedef.onpa.oNPA.ONPAPackage;
 import com.blasedef.onpa.oNPA.Store;
 import com.blasedef.onpa.oNPA.UpdateExpression;
@@ -50,7 +50,7 @@ public class UpdateExpressionImpl extends MinimalEObjectImpl.Container implement
    * @generated
    * @ordered
    */
-  protected Expression expression;
+  protected ActionExpression expression;
 
   /**
    * <!-- begin-user-doc -->
@@ -121,7 +121,7 @@ public class UpdateExpressionImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getExpression()
+  public ActionExpression getExpression()
   {
     return expression;
   }
@@ -131,9 +131,9 @@ public class UpdateExpressionImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpression(Expression newExpression, NotificationChain msgs)
+  public NotificationChain basicSetExpression(ActionExpression newExpression, NotificationChain msgs)
   {
-    Expression oldExpression = expression;
+    ActionExpression oldExpression = expression;
     expression = newExpression;
     if (eNotificationRequired())
     {
@@ -148,7 +148,7 @@ public class UpdateExpressionImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpression(Expression newExpression)
+  public void setExpression(ActionExpression newExpression)
   {
     if (newExpression != expression)
     {
@@ -213,7 +213,7 @@ public class UpdateExpressionImpl extends MinimalEObjectImpl.Container implement
         setName((Store)newValue);
         return;
       case ONPAPackage.UPDATE_EXPRESSION__EXPRESSION:
-        setExpression((Expression)newValue);
+        setExpression((ActionExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -233,7 +233,7 @@ public class UpdateExpressionImpl extends MinimalEObjectImpl.Container implement
         setName((Store)null);
         return;
       case ONPAPackage.UPDATE_EXPRESSION__EXPRESSION:
-        setExpression((Expression)null);
+        setExpression((ActionExpression)null);
         return;
     }
     super.eUnset(featureID);

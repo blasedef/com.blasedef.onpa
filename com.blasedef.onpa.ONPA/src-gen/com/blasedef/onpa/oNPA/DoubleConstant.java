@@ -19,7 +19,7 @@ package com.blasedef.onpa.oNPA;
  * @model
  * @generated
  */
-public interface DoubleConstant extends Expression
+public interface DoubleConstant extends ActionExpression, Expression
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.

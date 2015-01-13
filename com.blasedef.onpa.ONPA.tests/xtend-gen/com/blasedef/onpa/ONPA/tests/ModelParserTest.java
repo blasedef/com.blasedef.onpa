@@ -2,7 +2,17 @@ package com.blasedef.onpa.ONPA.tests;
 
 import com.blasedef.onpa.ONPAInjectorProvider;
 import com.blasedef.onpa.oNPA.Action;
+import com.blasedef.onpa.oNPA.ActionAnd;
+import com.blasedef.onpa.oNPA.ActionComparison;
+import com.blasedef.onpa.oNPA.ActionDiv;
+import com.blasedef.onpa.oNPA.ActionEquality;
+import com.blasedef.onpa.oNPA.ActionExpression;
+import com.blasedef.onpa.oNPA.ActionMul;
+import com.blasedef.onpa.oNPA.ActionNot;
+import com.blasedef.onpa.oNPA.ActionOr;
+import com.blasedef.onpa.oNPA.ActionPlu;
 import com.blasedef.onpa.oNPA.ActionProcess;
+import com.blasedef.onpa.oNPA.ActionSub;
 import com.blasedef.onpa.oNPA.And;
 import com.blasedef.onpa.oNPA.BoolConstant;
 import com.blasedef.onpa.oNPA.Broadcast;
@@ -249,7 +259,7 @@ public class ModelParserTest {
   public void testVariableExpressionAnd1() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("i = true && false;");
+      _builder.append("i = false && false;");
       _builder.newLine();
       _builder.append("P = P;");
       _builder.newLine();
@@ -882,6 +892,11 @@ public class ModelParserTest {
   }
   
   @Test
+  public void testAssertProcess12a() {
+    this.assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;]($y;){this.a := $z+1.0;}.P; (P,{a});", "c[$x;]($y;){this.a:=($z + 1.0);}.P");
+  }
+  
+  @Test
   public void testAssertProcess13() {
     this.assertReprProcesses("a = 0.1; b = 0.1; P = c[$x + 5 * 2.0 / 0.5 - 2;]($y;){this.a := $z;}.P; (P,{a});", "c[(($x + (5.0 * (2.0 / 0.5))) - 2.0);]($y;){this.a:=$z;}.P");
   }
@@ -1073,11 +1088,201 @@ public class ModelParserTest {
       }
     }
     if (!_matched) {
+      if (e instanceof DoubleConstant) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        double _value = ((DoubleConstant)e).getValue();
+        _builder.append(_value, "");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (e instanceof BoolConstant) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        String _value = ((BoolConstant)e).getValue();
+        _builder.append(_value, "");
+        _switchResult = _builder.toString();
+      }
+    }
+    return _switchResult.toString();
+  }
+  
+  public CharSequence stringRepr(final ActionExpression e) {
+    String _switchResult = null;
+    boolean _matched = false;
+    if (!_matched) {
+      if (e instanceof ActionOr) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("(");
+        ActionExpression _left = ((ActionOr)e).getLeft();
+        CharSequence _stringRepr = this.stringRepr(_left);
+        _builder.append(_stringRepr, "");
+        _builder.append(" || ");
+        ActionExpression _right = ((ActionOr)e).getRight();
+        CharSequence _stringRepr_1 = this.stringRepr(_right);
+        _builder.append(_stringRepr_1, "");
+        _builder.append(")");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (e instanceof ActionAnd) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("(");
+        ActionExpression _left = ((ActionAnd)e).getLeft();
+        CharSequence _stringRepr = this.stringRepr(_left);
+        _builder.append(_stringRepr, "");
+        _builder.append(" && ");
+        ActionExpression _right = ((ActionAnd)e).getRight();
+        CharSequence _stringRepr_1 = this.stringRepr(_right);
+        _builder.append(_stringRepr_1, "");
+        _builder.append(")");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (e instanceof ActionEquality) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("(");
+        ActionExpression _left = ((ActionEquality)e).getLeft();
+        CharSequence _stringRepr = this.stringRepr(_left);
+        _builder.append(_stringRepr, "");
+        _builder.append(" ");
+        String _op = ((ActionEquality)e).getOp();
+        _builder.append(_op, "");
+        _builder.append(" ");
+        ActionExpression _right = ((ActionEquality)e).getRight();
+        CharSequence _stringRepr_1 = this.stringRepr(_right);
+        _builder.append(_stringRepr_1, "");
+        _builder.append(")");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (e instanceof ActionComparison) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("(");
+        ActionExpression _left = ((ActionComparison)e).getLeft();
+        CharSequence _stringRepr = this.stringRepr(_left);
+        _builder.append(_stringRepr, "");
+        _builder.append(" ");
+        String _op = ((ActionComparison)e).getOp();
+        _builder.append(_op, "");
+        _builder.append(" ");
+        ActionExpression _right = ((ActionComparison)e).getRight();
+        CharSequence _stringRepr_1 = this.stringRepr(_right);
+        _builder.append(_stringRepr_1, "");
+        _builder.append(")");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (e instanceof ActionSub) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("(");
+        ActionExpression _left = ((ActionSub)e).getLeft();
+        CharSequence _stringRepr = this.stringRepr(_left);
+        _builder.append(_stringRepr, "");
+        _builder.append(" - ");
+        ActionExpression _right = ((ActionSub)e).getRight();
+        CharSequence _stringRepr_1 = this.stringRepr(_right);
+        _builder.append(_stringRepr_1, "");
+        _builder.append(")");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (e instanceof ActionPlu) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("(");
+        ActionExpression _left = ((ActionPlu)e).getLeft();
+        CharSequence _stringRepr = this.stringRepr(_left);
+        _builder.append(_stringRepr, "");
+        _builder.append(" + ");
+        ActionExpression _right = ((ActionPlu)e).getRight();
+        CharSequence _stringRepr_1 = this.stringRepr(_right);
+        _builder.append(_stringRepr_1, "");
+        _builder.append(")");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (e instanceof ActionMul) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("(");
+        ActionExpression _left = ((ActionMul)e).getLeft();
+        CharSequence _stringRepr = this.stringRepr(_left);
+        _builder.append(_stringRepr, "");
+        _builder.append(" * ");
+        ActionExpression _right = ((ActionMul)e).getRight();
+        CharSequence _stringRepr_1 = this.stringRepr(_right);
+        _builder.append(_stringRepr_1, "");
+        _builder.append(")");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (e instanceof ActionDiv) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("(");
+        ActionExpression _left = ((ActionDiv)e).getLeft();
+        CharSequence _stringRepr = this.stringRepr(_left);
+        _builder.append(_stringRepr, "");
+        _builder.append(" / ");
+        ActionExpression _right = ((ActionDiv)e).getRight();
+        CharSequence _stringRepr_1 = this.stringRepr(_right);
+        _builder.append(_stringRepr_1, "");
+        _builder.append(")");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (e instanceof ActionNot) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("! ");
+        ActionExpression _expression = ((ActionNot)e).getExpression();
+        CharSequence _stringRepr = this.stringRepr(_expression);
+        _builder.append(_stringRepr, "");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (e instanceof FreeVariable) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        String _value = ((FreeVariable)e).getValue();
+        _builder.append(_value, "");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
       if (e instanceof SelfReferencedStore) {
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("(this.");
         Store _value = ((SelfReferencedStore)e).getValue();
+        String _name = _value.getName();
+        _builder.append(_name, "");
+        _builder.append(")");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (e instanceof ReferencedStore) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("(");
+        Store _value = ((ReferencedStore)e).getValue();
         String _name = _value.getName();
         _builder.append(_name, "");
         _builder.append(")");
@@ -1098,15 +1303,6 @@ public class ModelParserTest {
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
         String _value = ((BoolConstant)e).getValue();
-        _builder.append(_value, "");
-        _switchResult = _builder.toString();
-      }
-    }
-    if (!_matched) {
-      if (e instanceof FreeVariable) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        String _value = ((FreeVariable)e).getValue();
         _builder.append(_value, "");
         _switchResult = _builder.toString();
       }
@@ -1245,8 +1441,8 @@ public class ModelParserTest {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("[");
     PredicateExpression _predicate = p.getPredicate();
-    Expression _expression = _predicate.getExpression();
-    CharSequence _stringRepr = this.stringRepr(((Expression) _expression));
+    ActionExpression _expression = _predicate.getExpression();
+    CharSequence _stringRepr = this.stringRepr(((ActionExpression) _expression));
     _builder.append(_stringRepr, "");
     _builder.append(";]");
     return _builder;
@@ -1263,7 +1459,7 @@ public class ModelParserTest {
         {
           EList<EvaluationExpression> _expressions = ((In)e).getExpressions();
           for(final EvaluationExpression evaluationExpression : _expressions) {
-            CharSequence _stringRepr = this.stringRepr(((Expression) evaluationExpression));
+            CharSequence _stringRepr = this.stringRepr(((ActionExpression) evaluationExpression));
             _builder.append(_stringRepr, "");
             _builder.append(";");
           }
@@ -1280,7 +1476,7 @@ public class ModelParserTest {
         {
           EList<EvaluationExpression> _expressions = ((Out)e).getExpressions();
           for(final EvaluationExpression evaluationExpression : _expressions) {
-            CharSequence _stringRepr = this.stringRepr(((Expression) evaluationExpression));
+            CharSequence _stringRepr = this.stringRepr(((ActionExpression) evaluationExpression));
             _builder.append(_stringRepr, "");
             _builder.append(";");
           }
@@ -1318,7 +1514,7 @@ public class ModelParserTest {
         String _name_1 = _name.getName();
         _builder.append(_name_1, "");
         _builder.append(":=");
-        Expression _expression = ((LocalUpdateExpression)u).getExpression();
+        ActionExpression _expression = ((LocalUpdateExpression)u).getExpression();
         CharSequence _stringRepr = this.stringRepr(_expression);
         _builder.append(_stringRepr, "");
         _builder.append(";");
@@ -1333,7 +1529,7 @@ public class ModelParserTest {
         String _name_1 = _name.getName();
         _builder.append(_name_1, "");
         _builder.append(":=");
-        Expression _expression = u.getExpression();
+        ActionExpression _expression = u.getExpression();
         CharSequence _stringRepr = this.stringRepr(_expression);
         _builder.append(_stringRepr, "");
         _builder.append(";");

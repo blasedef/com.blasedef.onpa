@@ -19,7 +19,7 @@ package com.blasedef.onpa.oNPA;
  * @model
  * @generated
  */
-public interface SelfReferencedStore extends Expression
+public interface SelfReferencedStore extends ActionExpression
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' reference.

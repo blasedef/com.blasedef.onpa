@@ -36,18 +36,12 @@ class TypeTest {
 		
 		@Test def void NotType() { assertBoolConstantType("i = !false;") }
 		
-		@Test def void ReferenceType() { assertReferenceDoubleType("a = 10.0; b = a;") }
-		
 		def assertDoubleConstantType(CharSequence input) {
 			input.assertType(TypeProvider::doubleConstantType)
 		}
 		
 		def assertBoolConstantType(CharSequence input) {
 			input.assertType(TypeProvider::boolConstantType)
-		}
-		
-		def assertReferenceDoubleType(CharSequence input) {
-			
 		}
 		
 		def assertType(CharSequence input, ExpressionsType expectedType) {

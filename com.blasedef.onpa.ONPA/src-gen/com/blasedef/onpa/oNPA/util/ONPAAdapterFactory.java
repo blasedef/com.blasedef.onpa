@@ -3,7 +3,17 @@
 package com.blasedef.onpa.oNPA.util;
 
 import com.blasedef.onpa.oNPA.Action;
+import com.blasedef.onpa.oNPA.ActionAnd;
+import com.blasedef.onpa.oNPA.ActionComparison;
+import com.blasedef.onpa.oNPA.ActionDiv;
+import com.blasedef.onpa.oNPA.ActionEquality;
+import com.blasedef.onpa.oNPA.ActionExpression;
+import com.blasedef.onpa.oNPA.ActionMul;
+import com.blasedef.onpa.oNPA.ActionNot;
+import com.blasedef.onpa.oNPA.ActionOr;
+import com.blasedef.onpa.oNPA.ActionPlu;
 import com.blasedef.onpa.oNPA.ActionProcess;
+import com.blasedef.onpa.oNPA.ActionSub;
 import com.blasedef.onpa.oNPA.And;
 import com.blasedef.onpa.oNPA.BoolConstant;
 import com.blasedef.onpa.oNPA.Broadcast;
@@ -177,6 +187,11 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
         return createUpdateExpressionAdapter();
       }
       @Override
+      public Adapter caseActionExpression(ActionExpression object)
+      {
+        return createActionExpressionAdapter();
+      }
+      @Override
       public Adapter caseStore(Store object)
       {
         return createStoreAdapter();
@@ -232,6 +247,76 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
         return createLocalUpdateExpressionAdapter();
       }
       @Override
+      public Adapter caseActionOr(ActionOr object)
+      {
+        return createActionOrAdapter();
+      }
+      @Override
+      public Adapter caseActionAnd(ActionAnd object)
+      {
+        return createActionAndAdapter();
+      }
+      @Override
+      public Adapter caseActionEquality(ActionEquality object)
+      {
+        return createActionEqualityAdapter();
+      }
+      @Override
+      public Adapter caseActionComparison(ActionComparison object)
+      {
+        return createActionComparisonAdapter();
+      }
+      @Override
+      public Adapter caseActionSub(ActionSub object)
+      {
+        return createActionSubAdapter();
+      }
+      @Override
+      public Adapter caseActionPlu(ActionPlu object)
+      {
+        return createActionPluAdapter();
+      }
+      @Override
+      public Adapter caseActionMul(ActionMul object)
+      {
+        return createActionMulAdapter();
+      }
+      @Override
+      public Adapter caseActionDiv(ActionDiv object)
+      {
+        return createActionDivAdapter();
+      }
+      @Override
+      public Adapter caseActionNot(ActionNot object)
+      {
+        return createActionNotAdapter();
+      }
+      @Override
+      public Adapter caseDoubleConstant(DoubleConstant object)
+      {
+        return createDoubleConstantAdapter();
+      }
+      @Override
+      public Adapter caseFreeVariable(FreeVariable object)
+      {
+        return createFreeVariableAdapter();
+      }
+      @Override
+      public Adapter caseBoolConstant(BoolConstant object)
+      {
+        return createBoolConstantAdapter();
+      }
+      @Override
+      public Adapter caseReferencedStore(ReferencedStore object)
+      {
+        return createReferencedStoreAdapter();
+      }
+      @Override
+      public Adapter caseSelfReferencedStore(SelfReferencedStore object)
+      {
+        return createSelfReferencedStoreAdapter();
+      }
+      @Override
       public Adapter caseOr(Or object)
       {
         return createOrAdapter();
@@ -275,31 +360,6 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
       public Adapter caseNot(Not object)
       {
         return createNotAdapter();
-      }
-      @Override
-      public Adapter caseDoubleConstant(DoubleConstant object)
-      {
-        return createDoubleConstantAdapter();
-      }
-      @Override
-      public Adapter caseFreeVariable(FreeVariable object)
-      {
-        return createFreeVariableAdapter();
-      }
-      @Override
-      public Adapter caseBoolConstant(BoolConstant object)
-      {
-        return createBoolConstantAdapter();
-      }
-      @Override
-      public Adapter caseReferencedStore(ReferencedStore object)
-      {
-        return createReferencedStoreAdapter();
-      }
-      @Override
-      public Adapter caseSelfReferencedStore(SelfReferencedStore object)
-      {
-        return createSelfReferencedStoreAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -519,6 +579,21 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.ActionExpression <em>Action Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.ActionExpression
+   * @generated
+   */
+  public Adapter createActionExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.Store <em>Store</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -684,6 +759,216 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.ActionOr <em>Action Or</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.ActionOr
+   * @generated
+   */
+  public Adapter createActionOrAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.ActionAnd <em>Action And</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.ActionAnd
+   * @generated
+   */
+  public Adapter createActionAndAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.ActionEquality <em>Action Equality</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.ActionEquality
+   * @generated
+   */
+  public Adapter createActionEqualityAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.ActionComparison <em>Action Comparison</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.ActionComparison
+   * @generated
+   */
+  public Adapter createActionComparisonAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.ActionSub <em>Action Sub</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.ActionSub
+   * @generated
+   */
+  public Adapter createActionSubAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.ActionPlu <em>Action Plu</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.ActionPlu
+   * @generated
+   */
+  public Adapter createActionPluAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.ActionMul <em>Action Mul</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.ActionMul
+   * @generated
+   */
+  public Adapter createActionMulAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.ActionDiv <em>Action Div</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.ActionDiv
+   * @generated
+   */
+  public Adapter createActionDivAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.ActionNot <em>Action Not</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.ActionNot
+   * @generated
+   */
+  public Adapter createActionNotAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.DoubleConstant <em>Double Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.DoubleConstant
+   * @generated
+   */
+  public Adapter createDoubleConstantAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.FreeVariable <em>Free Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.FreeVariable
+   * @generated
+   */
+  public Adapter createFreeVariableAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.BoolConstant <em>Bool Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.BoolConstant
+   * @generated
+   */
+  public Adapter createBoolConstantAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.ReferencedStore <em>Referenced Store</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.ReferencedStore
+   * @generated
+   */
+  public Adapter createReferencedStoreAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.SelfReferencedStore <em>Self Referenced Store</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.SelfReferencedStore
+   * @generated
+   */
+  public Adapter createSelfReferencedStoreAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.Or <em>Or</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -814,81 +1099,6 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createNotAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.DoubleConstant <em>Double Constant</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.blasedef.onpa.oNPA.DoubleConstant
-   * @generated
-   */
-  public Adapter createDoubleConstantAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.FreeVariable <em>Free Variable</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.blasedef.onpa.oNPA.FreeVariable
-   * @generated
-   */
-  public Adapter createFreeVariableAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.BoolConstant <em>Bool Constant</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.blasedef.onpa.oNPA.BoolConstant
-   * @generated
-   */
-  public Adapter createBoolConstantAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.ReferencedStore <em>Referenced Store</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.blasedef.onpa.oNPA.ReferencedStore
-   * @generated
-   */
-  public Adapter createReferencedStoreAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.SelfReferencedStore <em>Self Referenced Store</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.blasedef.onpa.oNPA.SelfReferencedStore
-   * @generated
-   */
-  public Adapter createSelfReferencedStoreAdapter()
   {
     return null;
   }

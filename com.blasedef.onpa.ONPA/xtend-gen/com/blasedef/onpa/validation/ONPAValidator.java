@@ -3,6 +3,12 @@
  */
 package com.blasedef.onpa.validation;
 
+import com.blasedef.onpa.oNPA.ActionAnd;
+import com.blasedef.onpa.oNPA.ActionComparison;
+import com.blasedef.onpa.oNPA.ActionEquality;
+import com.blasedef.onpa.oNPA.ActionExpression;
+import com.blasedef.onpa.oNPA.ActionNot;
+import com.blasedef.onpa.oNPA.ActionOr;
 import com.blasedef.onpa.oNPA.And;
 import com.blasedef.onpa.oNPA.Comparison;
 import com.blasedef.onpa.oNPA.Div;
@@ -18,7 +24,11 @@ import com.blasedef.onpa.oNPA.Plu;
 import com.blasedef.onpa.oNPA.ReferencedStore;
 import com.blasedef.onpa.oNPA.Store;
 import com.blasedef.onpa.oNPA.Sub;
+import com.blasedef.onpa.typing.ExpressionsType;
+import com.blasedef.onpa.typing.TypeProvider;
 import com.blasedef.onpa.validation.AbstractONPAValidator;
+import com.google.common.base.Objects;
+import com.google.inject.Inject;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
@@ -27,6 +37,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.Extension;
 
 /**
  * Custom validation rules.
@@ -35,7 +46,7 @@ import org.eclipse.xtext.validation.Check;
  */
 @SuppressWarnings("all")
 public class ONPAValidator extends AbstractONPAValidator {
-  public final static String SELF_REFERENCING_STORE = "selfReferencingStore";
+  public final static String SELF_REFERENCING_STORE = "com.blaedef.onpa.dice.selfReferencingStore";
   
   @Check
   public void checkNotSelfReferencing(final Store store) {
@@ -159,7 +170,7 @@ public class ONPAValidator extends AbstractONPAValidator {
     }
   }
   
-  public final static String STORE_NAMES_UNIQUE = "storeNamesUnique";
+  public final static String STORE_NAMES_UNIQUE = "com.blaedef.onpa.dice.storeNamesUnique";
   
   @Check
   public void checkStoresNamesUnique(final Store store) {
@@ -186,7 +197,7 @@ public class ONPAValidator extends AbstractONPAValidator {
     }
   }
   
-  public final static String PROCESS_NAMES_UNIQUE = "processNamesUnique";
+  public final static String PROCESS_NAMES_UNIQUE = "com.blaedef.onpa.dice.processNamesUnique";
   
   @Check
   public void checkensureProcessCycles(final com.blasedef.onpa.oNPA.Process process) {
@@ -211,5 +222,170 @@ public class ONPAValidator extends AbstractONPAValidator {
       this.error(_plus_1, _process_Name, 
         ONPAValidator.PROCESS_NAMES_UNIQUE);
     }
+  }
+  
+  @Inject
+  @Extension
+  private TypeProvider _typeProvider;
+  
+  public final static String WRONG_TYPE = "com.blasedef.onpa.dice.WrongType";
+  
+  @Check
+  public void checkType(final Not not) {
+    Expression _expression = not.getExpression();
+    this.checkExpectedBoolean(_expression, 
+      ONPAPackage.Literals.NOT__EXPRESSION);
+  }
+  
+  @Check
+  public void checkType(final ActionNot not) {
+    ActionExpression _expression = not.getExpression();
+    this.checkExpectedBoolean(_expression, 
+      ONPAPackage.Literals.ACTION_NOT__EXPRESSION);
+  }
+  
+  @Check
+  public void checkType(final Or or) {
+    Expression _left = or.getLeft();
+    this.checkExpectedBoolean(_left, 
+      ONPAPackage.Literals.OR__LEFT);
+    Expression _right = or.getRight();
+    this.checkExpectedBoolean(_right, 
+      ONPAPackage.Literals.OR__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final ActionOr or) {
+    ActionExpression _left = or.getLeft();
+    this.checkExpectedBoolean(_left, 
+      ONPAPackage.Literals.ACTION_OR__LEFT);
+    ActionExpression _right = or.getRight();
+    this.checkExpectedBoolean(_right, 
+      ONPAPackage.Literals.ACTION_OR__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final And and) {
+    Expression _left = and.getLeft();
+    this.checkExpectedBoolean(_left, 
+      ONPAPackage.Literals.AND__LEFT);
+    Expression _right = and.getRight();
+    this.checkExpectedBoolean(_right, 
+      ONPAPackage.Literals.AND__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final ActionAnd and) {
+    ActionExpression _left = and.getLeft();
+    this.checkExpectedBoolean(_left, 
+      ONPAPackage.Literals.ACTION_AND__LEFT);
+    ActionExpression _right = and.getRight();
+    this.checkExpectedBoolean(_right, 
+      ONPAPackage.Literals.ACTION_AND__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final Equality eq) {
+    Expression _left = eq.getLeft();
+    this.checkExpectedBoolean(_left, 
+      ONPAPackage.Literals.EQUALITY__LEFT);
+    Expression _right = eq.getRight();
+    this.checkExpectedBoolean(_right, 
+      ONPAPackage.Literals.EQUALITY__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final ActionEquality eq) {
+    ActionExpression _left = eq.getLeft();
+    this.checkExpectedBoolean(_left, 
+      ONPAPackage.Literals.ACTION_EQUALITY__LEFT);
+    ActionExpression _right = eq.getRight();
+    this.checkExpectedBoolean(_right, 
+      ONPAPackage.Literals.ACTION_EQUALITY__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final Comparison com) {
+    Expression _left = com.getLeft();
+    this.checkExpectedDouble(_left, 
+      ONPAPackage.Literals.COMPARISON__LEFT);
+    Expression _right = com.getRight();
+    this.checkExpectedBoolean(_right, 
+      ONPAPackage.Literals.COMPARISON__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final ActionComparison com) {
+    ActionExpression _left = com.getLeft();
+    this.checkExpectedDouble(_left, 
+      ONPAPackage.Literals.ACTION_COMPARISON__LEFT);
+    ActionExpression _right = com.getRight();
+    this.checkExpectedDouble(_right, 
+      ONPAPackage.Literals.ACTION_COMPARISON__RIGHT);
+  }
+  
+  private void checkExpectedBoolean(final Expression exp, final EReference reference) {
+    this.checkExpectedType(exp, TypeProvider.boolConstantType, reference);
+  }
+  
+  private void checkExpectedBoolean(final ActionExpression exp, final EReference reference) {
+    this.checkExpectedType(exp, TypeProvider.boolConstantType, reference);
+  }
+  
+  private void checkExpectedDouble(final Expression exp, final EReference reference) {
+    this.checkExpectedType(exp, TypeProvider.doubleConstantType, reference);
+  }
+  
+  private void checkExpectedDouble(final ActionExpression exp, final EReference reference) {
+    this.checkExpectedType(exp, TypeProvider.doubleConstantType, reference);
+  }
+  
+  private void checkExpectedType(final ActionExpression exp, final ExpressionsType expectedType, final EReference reference) {
+    final ExpressionsType actualType = this.getTypeAndCheckNotNull(exp, reference);
+    boolean _or = false;
+    boolean _notEquals = (!Objects.equal(actualType, expectedType));
+    if (_notEquals) {
+      _or = true;
+    } else {
+      boolean _notEquals_1 = (!Objects.equal(actualType, TypeProvider.freeVariableType));
+      _or = _notEquals_1;
+    }
+    if (_or) {
+      this.error(((("Expected " + expectedType) + " type, but was ") + actualType), reference, ONPAValidator.WRONG_TYPE);
+    }
+  }
+  
+  private void checkExpectedType(final Expression exp, final ExpressionsType expectedType, final EReference reference) {
+    final ExpressionsType actualType = this.getTypeAndCheckNotNull(exp, reference);
+    boolean _notEquals = (!Objects.equal(actualType, expectedType));
+    if (_notEquals) {
+      this.error(((("Expected " + expectedType) + " type, but was ") + actualType), reference, ONPAValidator.WRONG_TYPE);
+    }
+  }
+  
+  private ExpressionsType getTypeAndCheckNotNull(final ActionExpression exp, final EReference reference) {
+    ExpressionsType _typeFor = null;
+    if (exp!=null) {
+      _typeFor=this._typeProvider.typeFor(exp);
+    }
+    ExpressionsType type = _typeFor;
+    boolean _equals = Objects.equal(type, null);
+    if (_equals) {
+      this.error("null type", reference, ONPAValidator.WRONG_TYPE);
+    }
+    return type;
+  }
+  
+  private ExpressionsType getTypeAndCheckNotNull(final Expression exp, final EReference reference) {
+    ExpressionsType _typeFor = null;
+    if (exp!=null) {
+      _typeFor=this._typeProvider.typeFor(exp);
+    }
+    ExpressionsType type = _typeFor;
+    boolean _equals = Objects.equal(type, null);
+    if (_equals) {
+      this.error("null type", reference, ONPAValidator.WRONG_TYPE);
+    }
+    return type;
   }
 }

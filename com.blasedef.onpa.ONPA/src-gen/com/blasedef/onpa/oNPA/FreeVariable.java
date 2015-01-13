@@ -19,7 +19,7 @@ package com.blasedef.onpa.oNPA;
  * @model
  * @generated
  */
-public interface FreeVariable extends Expression
+public interface FreeVariable extends ActionExpression
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.

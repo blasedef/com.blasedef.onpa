@@ -91,4 +91,265 @@ public class ValidationTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
+  
+  @Test
+  public void testReferencing() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a = 1.0;");
+      _builder.newLine();
+      _builder.append("b = !a;");
+      _builder.newLine();
+      _builder.append("P = nil;");
+      _builder.newLine();
+      _builder.append("(P,{b});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _not = ONPAPackage.eINSTANCE.getNot();
+      this._validationTestHelper.assertError(_parse, _not, 
+        ONPAValidator.WRONG_TYPE, 
+        "Expected boolean type, but was double");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testActionReference() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a = 1.0;");
+      _builder.newLine();
+      _builder.append("b = 3.0;");
+      _builder.newLine();
+      _builder.append("P = c[$x;]($y;){this.b := !a;}.P;");
+      _builder.newLine();
+      _builder.append("(P,{b});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _actionNot = ONPAPackage.eINSTANCE.getActionNot();
+      this._validationTestHelper.assertError(_parse, _actionNot, 
+        ONPAValidator.WRONG_TYPE, 
+        "Expected boolean type, but was double");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testOr() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a = 1.0;");
+      _builder.newLine();
+      _builder.append("b = true || a;");
+      _builder.newLine();
+      _builder.append("P = nil;");
+      _builder.newLine();
+      _builder.append("(P,{b});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _or = ONPAPackage.eINSTANCE.getOr();
+      this._validationTestHelper.assertError(_parse, _or, 
+        ONPAValidator.WRONG_TYPE, 
+        "Expected boolean type, but was double");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testActionOr() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a = 1.0;");
+      _builder.newLine();
+      _builder.append("b = true;");
+      _builder.newLine();
+      _builder.append("P = c[$x == (a || b);]($y;).P;");
+      _builder.newLine();
+      _builder.append("(P,{b});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _actionOr = ONPAPackage.eINSTANCE.getActionOr();
+      this._validationTestHelper.assertError(_parse, _actionOr, 
+        ONPAValidator.WRONG_TYPE, 
+        "Expected boolean type, but was double");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testAnd() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a = 1.0;");
+      _builder.newLine();
+      _builder.append("b = true && a;");
+      _builder.newLine();
+      _builder.append("P = nil;");
+      _builder.newLine();
+      _builder.append("(P,{b});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _and = ONPAPackage.eINSTANCE.getAnd();
+      this._validationTestHelper.assertError(_parse, _and, 
+        ONPAValidator.WRONG_TYPE, 
+        "Expected boolean type, but was double");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testActionAnd() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a = 1.0;");
+      _builder.newLine();
+      _builder.append("b = true;");
+      _builder.newLine();
+      _builder.append("P = c[(a && b);]($y;).P;");
+      _builder.newLine();
+      _builder.append("(P,{b});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _actionAnd = ONPAPackage.eINSTANCE.getActionAnd();
+      this._validationTestHelper.assertError(_parse, _actionAnd, 
+        ONPAValidator.WRONG_TYPE, 
+        "Expected boolean type, but was double");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  public void testEq() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a = 1.0;");
+      _builder.newLine();
+      _builder.append("b = true == a;");
+      _builder.newLine();
+      _builder.append("P = nil;");
+      _builder.newLine();
+      _builder.append("(P,{b});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _equality = ONPAPackage.eINSTANCE.getEquality();
+      this._validationTestHelper.assertError(_parse, _equality, 
+        ONPAValidator.WRONG_TYPE, 
+        "Expected boolean type, but was double");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testActionEq() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a = 1.0;");
+      _builder.newLine();
+      _builder.append("b = true;");
+      _builder.newLine();
+      _builder.append("P = c[$x == a;]($y;).P;");
+      _builder.newLine();
+      _builder.append("(P,{b});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _actionEquality = ONPAPackage.eINSTANCE.getActionEquality();
+      this._validationTestHelper.assertError(_parse, _actionEquality, 
+        ONPAValidator.WRONG_TYPE, 
+        "Expected boolean type, but was double");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  public void testEq1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a = 1.0;");
+      _builder.newLine();
+      _builder.append("b = true != a;");
+      _builder.newLine();
+      _builder.append("P = nil;");
+      _builder.newLine();
+      _builder.append("(P,{b});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _equality = ONPAPackage.eINSTANCE.getEquality();
+      this._validationTestHelper.assertError(_parse, _equality, 
+        ONPAValidator.WRONG_TYPE, 
+        "Expected boolean type, but was double");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testActionEq1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a = 1.0;");
+      _builder.newLine();
+      _builder.append("b = true;");
+      _builder.newLine();
+      _builder.append("P = c[$x != a;]($y;).P;");
+      _builder.newLine();
+      _builder.append("(P,{b});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _actionEquality = ONPAPackage.eINSTANCE.getActionEquality();
+      this._validationTestHelper.assertError(_parse, _actionEquality, 
+        ONPAValidator.WRONG_TYPE, 
+        "Expected boolean type, but was double");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  public void testCom1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a = 1.0;");
+      _builder.newLine();
+      _builder.append("b = true < a;");
+      _builder.newLine();
+      _builder.append("P = nil;");
+      _builder.newLine();
+      _builder.append("(P,{b});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _comparison = ONPAPackage.eINSTANCE.getComparison();
+      this._validationTestHelper.assertError(_parse, _comparison, 
+        ONPAValidator.WRONG_TYPE, 
+        "Expected double type, but was boolean");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testActionCom1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a = 1.0;");
+      _builder.newLine();
+      _builder.append("b = true;");
+      _builder.newLine();
+      _builder.append("P = c[$x < a;]($y;).P;");
+      _builder.newLine();
+      _builder.append("(P,{b});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _actionComparison = ONPAPackage.eINSTANCE.getActionComparison();
+      this._validationTestHelper.assertError(_parse, _actionComparison, 
+        ONPAValidator.WRONG_TYPE, 
+        "Expected double type, but was boolean");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
 }

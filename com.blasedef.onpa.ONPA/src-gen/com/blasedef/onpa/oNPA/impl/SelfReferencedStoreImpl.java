@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class SelfReferencedStoreImpl extends ExpressionImpl implements SelfReferencedStore
+public class SelfReferencedStoreImpl extends ActionExpressionImpl implements SelfReferencedStore
 {
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' reference.

@@ -52,7 +52,7 @@ ActionProcess hidden(ML_COMMENT,SL_COMMENT,WS):
 
 //ACTIONS
 Action hidden(ML_COMMENT,SL_COMMENT,WS):
-	({Broadcast} name=LOWER "*" | {Unicast} name=LOWER) predicate=Predicate evaluations=Evaluations updates=Updates "." 
+	({Broadcast} name=LOWER "*" | {Unicast} name=LOWER) (predicate=Predicate)? (evaluations=Evaluations)? (updates=Updates)? "." 
 	
 ;
 
@@ -69,17 +69,84 @@ Updates hidden(ML_COMMENT,SL_COMMENT,WS):
 ;
 
 PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	expression=Expression ";"
+	expression=ActionExpression ";"
 ;
 
 EvaluationExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	Expression ";"
+	ActionExpression ";"
 ;
 
 UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	({LocalUpdateExpression} "this."name=[Store|LOWER] ":=" expression=Expression ";" | 
-		{UpdateExpression} name=[Store|LOWER] ":=" expression=Expression ";"
+	({LocalUpdateExpression} "this."name=[Store|LOWER] ":=" expression=ActionExpression ";" | 
+		{UpdateExpression} name=[Store|LOWER] ":=" expression=ActionExpression ";"
 	)
+;
+
+ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	ActionOr
+;
+	
+ActionOr returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	ActionAnd ({ActionOr.left=current} "||" 
+		right=ActionAnd
+	)*
+;
+
+ActionAnd returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	ActionEquality ({ActionAnd.left=current} "&&" 
+		right=ActionEquality
+	)*
+;
+
+ActionEquality returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	ActionComparison (
+		{ActionEquality.left=current} op=("=="|"!=")
+		right=ActionComparison
+	)*
+;
+
+ActionComparison returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	ActionSubtraction ({ActionComparison.left=current} op=(">="|"<="|">"|"<") 
+		right=ActionSubtraction
+	)*
+;
+	
+ActionSubtraction returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	ActionAddition ({ActionSub.left=current} '-' 
+		right=ActionAddition
+	)*
+;
+	
+ActionAddition returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	ActionMultiplication ({ActionPlu.left=current} '+' 
+		right=ActionMultiplication
+	)*
+;
+
+ActionMultiplication returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	ActionDivision ({ActionMul.left=current} '*' 
+		right=ActionDivision
+	)*
+;
+	
+ActionDivision returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS): 
+	ActionPrimary ({ActionDiv.left=current} '/' 
+		right=ActionPrimary
+	)*
+;
+
+ActionPrimary returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	'(' ActionExpression ')' | 
+	{ActionNot} "!" expression=ActionPrimary |
+	ActionAtomic
+;
+
+ActionAtomic returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	{DoubleConstant} 	value=Double |
+	{FreeVariable} 		value=FreeVariable |
+	{BoolConstant} 		value=('true'|'false') |
+	{ReferencedStore} 	value=[Store|LOWER] |
+	{SelfReferencedStore}   "this."value=[Store|LOWER]
 ;
 
 
@@ -149,10 +216,8 @@ Primary returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
 
 Atomic returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
 	{DoubleConstant} 	value=Double |
-	{FreeVariable} 		value=FreeVariable |
 	{BoolConstant} 		value=('true'|'false') |
-	{ReferencedStore} 	value=[Store|LOWER] |
-	{SelfReferencedStore}   "this."value=[Store|LOWER]
+	{ReferencedStore} 	value=[Store|LOWER]
 ;
 
 Double returns ecore::EDouble:

@@ -140,6 +140,15 @@ public interface ONPAFactory extends EFactory
   UpdateExpression createUpdateExpression();
 
   /**
+   * Returns a new object of class '<em>Action Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Expression</em>'.
+   * @generated
+   */
+  ActionExpression createActionExpression();
+
+  /**
    * Returns a new object of class '<em>Store</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -239,6 +248,132 @@ public interface ONPAFactory extends EFactory
   LocalUpdateExpression createLocalUpdateExpression();
 
   /**
+   * Returns a new object of class '<em>Action Or</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Or</em>'.
+   * @generated
+   */
+  ActionOr createActionOr();
+
+  /**
+   * Returns a new object of class '<em>Action And</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action And</em>'.
+   * @generated
+   */
+  ActionAnd createActionAnd();
+
+  /**
+   * Returns a new object of class '<em>Action Equality</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Equality</em>'.
+   * @generated
+   */
+  ActionEquality createActionEquality();
+
+  /**
+   * Returns a new object of class '<em>Action Comparison</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Comparison</em>'.
+   * @generated
+   */
+  ActionComparison createActionComparison();
+
+  /**
+   * Returns a new object of class '<em>Action Sub</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Sub</em>'.
+   * @generated
+   */
+  ActionSub createActionSub();
+
+  /**
+   * Returns a new object of class '<em>Action Plu</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Plu</em>'.
+   * @generated
+   */
+  ActionPlu createActionPlu();
+
+  /**
+   * Returns a new object of class '<em>Action Mul</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Mul</em>'.
+   * @generated
+   */
+  ActionMul createActionMul();
+
+  /**
+   * Returns a new object of class '<em>Action Div</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Div</em>'.
+   * @generated
+   */
+  ActionDiv createActionDiv();
+
+  /**
+   * Returns a new object of class '<em>Action Not</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Not</em>'.
+   * @generated
+   */
+  ActionNot createActionNot();
+
+  /**
+   * Returns a new object of class '<em>Double Constant</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Double Constant</em>'.
+   * @generated
+   */
+  DoubleConstant createDoubleConstant();
+
+  /**
+   * Returns a new object of class '<em>Free Variable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Free Variable</em>'.
+   * @generated
+   */
+  FreeVariable createFreeVariable();
+
+  /**
+   * Returns a new object of class '<em>Bool Constant</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Bool Constant</em>'.
+   * @generated
+   */
+  BoolConstant createBoolConstant();
+
+  /**
+   * Returns a new object of class '<em>Referenced Store</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Referenced Store</em>'.
+   * @generated
+   */
+  ReferencedStore createReferencedStore();
+
+  /**
+   * Returns a new object of class '<em>Self Referenced Store</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Self Referenced Store</em>'.
+   * @generated
+   */
+  SelfReferencedStore createSelfReferencedStore();
+
+  /**
    * Returns a new object of class '<em>Or</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -318,51 +453,6 @@ public interface ONPAFactory extends EFactory
    * @generated
    */
   Not createNot();
-
-  /**
-   * Returns a new object of class '<em>Double Constant</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Double Constant</em>'.
-   * @generated
-   */
-  DoubleConstant createDoubleConstant();
-
-  /**
-   * Returns a new object of class '<em>Free Variable</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Free Variable</em>'.
-   * @generated
-   */
-  FreeVariable createFreeVariable();
-
-  /**
-   * Returns a new object of class '<em>Bool Constant</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Bool Constant</em>'.
-   * @generated
-   */
-  BoolConstant createBoolConstant();
-
-  /**
-   * Returns a new object of class '<em>Referenced Store</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Referenced Store</em>'.
-   * @generated
-   */
-  ReferencedStore createReferencedStore();
-
-  /**
-   * Returns a new object of class '<em>Self Referenced Store</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Self Referenced Store</em>'.
-   * @generated
-   */
-  SelfReferencedStore createSelfReferencedStore();
 
   /**
    * Returns the package supported by this factory.

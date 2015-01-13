@@ -23,8 +23,8 @@ public class ModelUtil {
       };
       final Store containingElement = IterableExtensions.<Store>findFirst(allElements, _function);
       int _indexOf = allElements.indexOf(containingElement);
-      List<Store> _subList = allElements.subList(0, _indexOf);
-      _xblockexpression = EcoreUtil2.<Store>typeSelect(_subList, Store.class);
+      int _plus = (_indexOf + 1);
+      _xblockexpression = allElements.subList(0, _plus);
     }
     return _xblockexpression;
   }

@@ -2,7 +2,7 @@
  */
 package com.blasedef.onpa.oNPA.impl;
 
-import com.blasedef.onpa.oNPA.Expression;
+import com.blasedef.onpa.oNPA.ActionExpression;
 import com.blasedef.onpa.oNPA.ONPAPackage;
 import com.blasedef.onpa.oNPA.PredicateExpression;
 
@@ -38,7 +38,7 @@ public class PredicateExpressionImpl extends MinimalEObjectImpl.Container implem
    * @generated
    * @ordered
    */
-  protected Expression expression;
+  protected ActionExpression expression;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,7 +66,7 @@ public class PredicateExpressionImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getExpression()
+  public ActionExpression getExpression()
   {
     return expression;
   }
@@ -76,9 +76,9 @@ public class PredicateExpressionImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpression(Expression newExpression, NotificationChain msgs)
+  public NotificationChain basicSetExpression(ActionExpression newExpression, NotificationChain msgs)
   {
-    Expression oldExpression = expression;
+    ActionExpression oldExpression = expression;
     expression = newExpression;
     if (eNotificationRequired())
     {
@@ -93,7 +93,7 @@ public class PredicateExpressionImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpression(Expression newExpression)
+  public void setExpression(ActionExpression newExpression)
   {
     if (newExpression != expression)
     {
@@ -152,7 +152,7 @@ public class PredicateExpressionImpl extends MinimalEObjectImpl.Container implem
     switch (featureID)
     {
       case ONPAPackage.PREDICATE_EXPRESSION__EXPRESSION:
-        setExpression((Expression)newValue);
+        setExpression((ActionExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,7 +169,7 @@ public class PredicateExpressionImpl extends MinimalEObjectImpl.Container implem
     switch (featureID)
     {
       case ONPAPackage.PREDICATE_EXPRESSION__EXPRESSION:
-        setExpression((Expression)null);
+        setExpression((ActionExpression)null);
         return;
     }
     super.eUnset(featureID);

@@ -1,5 +1,15 @@
 package com.blasedef.onpa.typing;
 
+import com.blasedef.onpa.oNPA.ActionAnd;
+import com.blasedef.onpa.oNPA.ActionComparison;
+import com.blasedef.onpa.oNPA.ActionDiv;
+import com.blasedef.onpa.oNPA.ActionEquality;
+import com.blasedef.onpa.oNPA.ActionExpression;
+import com.blasedef.onpa.oNPA.ActionMul;
+import com.blasedef.onpa.oNPA.ActionNot;
+import com.blasedef.onpa.oNPA.ActionOr;
+import com.blasedef.onpa.oNPA.ActionPlu;
+import com.blasedef.onpa.oNPA.ActionSub;
 import com.blasedef.onpa.oNPA.And;
 import com.blasedef.onpa.oNPA.BoolConstant;
 import com.blasedef.onpa.oNPA.Comparison;
@@ -7,11 +17,13 @@ import com.blasedef.onpa.oNPA.Div;
 import com.blasedef.onpa.oNPA.DoubleConstant;
 import com.blasedef.onpa.oNPA.Equality;
 import com.blasedef.onpa.oNPA.Expression;
+import com.blasedef.onpa.oNPA.FreeVariable;
 import com.blasedef.onpa.oNPA.Mul;
 import com.blasedef.onpa.oNPA.Not;
 import com.blasedef.onpa.oNPA.Or;
 import com.blasedef.onpa.oNPA.Plu;
 import com.blasedef.onpa.oNPA.ReferencedStore;
+import com.blasedef.onpa.oNPA.SelfReferencedStore;
 import com.blasedef.onpa.oNPA.Store;
 import com.blasedef.onpa.oNPA.Sub;
 import com.blasedef.onpa.typing.BoolConstantType;
@@ -20,23 +32,21 @@ import com.blasedef.onpa.typing.ExpressionsType;
 import com.blasedef.onpa.typing.FreeVariableType;
 import com.blasedef.onpa.typing.ModelUtil;
 import com.blasedef.onpa.typing.ReferencedStoreType;
-import com.blasedef.onpa.typing.SelfReferencedStoreType;
 import com.google.common.base.Objects;
 import java.util.Arrays;
 import java.util.List;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 
 @SuppressWarnings("all")
 public class TypeProvider {
   public final static DoubleConstantType doubleConstantType = new DoubleConstantType();
   
-  public final static FreeVariableType FreeVariableType = new FreeVariableType();
+  public final static FreeVariableType freeVariableType = new FreeVariableType();
   
   public final static BoolConstantType boolConstantType = new BoolConstantType();
   
   public final static ReferencedStoreType referencedStoreType = new ReferencedStoreType();
-  
-  public final static SelfReferencedStoreType selfReferencedStoreType = new SelfReferencedStoreType();
   
   protected ExpressionsType _typeFor(final Expression e) {
     ExpressionsType _switchResult = null;
@@ -70,12 +80,68 @@ public class TypeProvider {
     }
     final ExpressionsType rightType = _typeFor_1;
     boolean _and = false;
+    boolean _or = false;
     boolean _equals = Objects.equal(leftType, TypeProvider.boolConstantType);
-    if (!_equals) {
+    if (_equals) {
+      _or = true;
+    } else {
+      boolean _equals_1 = Objects.equal(leftType, TypeProvider.freeVariableType);
+      _or = _equals_1;
+    }
+    if (!_or) {
       _and = false;
     } else {
-      boolean _equals_1 = Objects.equal(rightType, TypeProvider.boolConstantType);
-      _and = _equals_1;
+      boolean _or_1 = false;
+      boolean _equals_2 = Objects.equal(rightType, TypeProvider.freeVariableType);
+      if (_equals_2) {
+        _or_1 = true;
+      } else {
+        boolean _equals_3 = Objects.equal(rightType, TypeProvider.boolConstantType);
+        _or_1 = _equals_3;
+      }
+      _and = _or_1;
+    }
+    if (_and) {
+      return TypeProvider.boolConstantType;
+    } else {
+      return null;
+    }
+  }
+  
+  protected ExpressionsType _typeFor(final ActionOr e) {
+    ActionExpression _left = e.getLeft();
+    ExpressionsType _typeFor = null;
+    if (_left!=null) {
+      _typeFor=this.typeFor(_left);
+    }
+    final ExpressionsType leftType = _typeFor;
+    ActionExpression _right = e.getRight();
+    ExpressionsType _typeFor_1 = null;
+    if (_right!=null) {
+      _typeFor_1=this.typeFor(_right);
+    }
+    final ExpressionsType rightType = _typeFor_1;
+    boolean _and = false;
+    boolean _or = false;
+    boolean _equals = Objects.equal(leftType, TypeProvider.boolConstantType);
+    if (_equals) {
+      _or = true;
+    } else {
+      boolean _equals_1 = Objects.equal(leftType, TypeProvider.freeVariableType);
+      _or = _equals_1;
+    }
+    if (!_or) {
+      _and = false;
+    } else {
+      boolean _or_1 = false;
+      boolean _equals_2 = Objects.equal(rightType, TypeProvider.freeVariableType);
+      if (_equals_2) {
+        _or_1 = true;
+      } else {
+        boolean _equals_3 = Objects.equal(rightType, TypeProvider.boolConstantType);
+        _or_1 = _equals_3;
+      }
+      _and = _or_1;
     }
     if (_and) {
       return TypeProvider.boolConstantType;
@@ -98,12 +164,68 @@ public class TypeProvider {
     }
     final ExpressionsType rightType = _typeFor_1;
     boolean _and = false;
+    boolean _or = false;
     boolean _equals = Objects.equal(leftType, TypeProvider.boolConstantType);
-    if (!_equals) {
+    if (_equals) {
+      _or = true;
+    } else {
+      boolean _equals_1 = Objects.equal(leftType, TypeProvider.freeVariableType);
+      _or = _equals_1;
+    }
+    if (!_or) {
       _and = false;
     } else {
-      boolean _equals_1 = Objects.equal(rightType, TypeProvider.boolConstantType);
-      _and = _equals_1;
+      boolean _or_1 = false;
+      boolean _equals_2 = Objects.equal(rightType, TypeProvider.freeVariableType);
+      if (_equals_2) {
+        _or_1 = true;
+      } else {
+        boolean _equals_3 = Objects.equal(rightType, TypeProvider.boolConstantType);
+        _or_1 = _equals_3;
+      }
+      _and = _or_1;
+    }
+    if (_and) {
+      return TypeProvider.boolConstantType;
+    } else {
+      return null;
+    }
+  }
+  
+  protected ExpressionsType _typeFor(final ActionAnd e) {
+    ActionExpression _left = e.getLeft();
+    ExpressionsType _typeFor = null;
+    if (_left!=null) {
+      _typeFor=this.typeFor(_left);
+    }
+    final ExpressionsType leftType = _typeFor;
+    ActionExpression _right = e.getRight();
+    ExpressionsType _typeFor_1 = null;
+    if (_right!=null) {
+      _typeFor_1=this.typeFor(_right);
+    }
+    final ExpressionsType rightType = _typeFor_1;
+    boolean _and = false;
+    boolean _or = false;
+    boolean _equals = Objects.equal(leftType, TypeProvider.boolConstantType);
+    if (_equals) {
+      _or = true;
+    } else {
+      boolean _equals_1 = Objects.equal(leftType, TypeProvider.freeVariableType);
+      _or = _equals_1;
+    }
+    if (!_or) {
+      _and = false;
+    } else {
+      boolean _or_1 = false;
+      boolean _equals_2 = Objects.equal(rightType, TypeProvider.freeVariableType);
+      if (_equals_2) {
+        _or_1 = true;
+      } else {
+        boolean _equals_3 = Objects.equal(rightType, TypeProvider.boolConstantType);
+        _or_1 = _equals_3;
+      }
+      _and = _or_1;
     }
     if (_and) {
       return TypeProvider.boolConstantType;
@@ -126,14 +248,71 @@ public class TypeProvider {
     }
     final ExpressionsType rightType = _typeFor_1;
     boolean _and = false;
+    boolean _or = false;
     boolean _equals = Objects.equal(leftType, TypeProvider.boolConstantType);
-    if (!_equals) {
+    if (_equals) {
+      _or = true;
+    } else {
+      boolean _equals_1 = Objects.equal(leftType, TypeProvider.freeVariableType);
+      _or = _equals_1;
+    }
+    if (!_or) {
       _and = false;
     } else {
-      boolean _equals_1 = Objects.equal(rightType, TypeProvider.boolConstantType);
-      _and = _equals_1;
+      boolean _or_1 = false;
+      boolean _equals_2 = Objects.equal(rightType, TypeProvider.freeVariableType);
+      if (_equals_2) {
+        _or_1 = true;
+      } else {
+        boolean _equals_3 = Objects.equal(rightType, TypeProvider.boolConstantType);
+        _or_1 = _equals_3;
+      }
+      _and = _or_1;
     }
     if (_and) {
+      return TypeProvider.boolConstantType;
+    } else {
+      return null;
+    }
+  }
+  
+  protected ExpressionsType _typeFor(final ActionEquality e) {
+    ActionExpression _left = e.getLeft();
+    ExpressionsType _typeFor = null;
+    if (_left!=null) {
+      _typeFor=this.typeFor(_left);
+    }
+    final ExpressionsType leftType = _typeFor;
+    ActionExpression _right = e.getRight();
+    ExpressionsType _typeFor_1 = null;
+    if (_right!=null) {
+      _typeFor_1=this.typeFor(_right);
+    }
+    final ExpressionsType rightType = _typeFor_1;
+    boolean _and = false;
+    boolean _or = false;
+    boolean _equals = Objects.equal(leftType, TypeProvider.boolConstantType);
+    if (_equals) {
+      _or = true;
+    } else {
+      boolean _equals_1 = Objects.equal(leftType, TypeProvider.freeVariableType);
+      _or = _equals_1;
+    }
+    if (!_or) {
+      _and = false;
+    } else {
+      boolean _or_1 = false;
+      boolean _equals_2 = Objects.equal(rightType, TypeProvider.freeVariableType);
+      if (_equals_2) {
+        _or_1 = true;
+      } else {
+        boolean _equals_3 = Objects.equal(rightType, TypeProvider.boolConstantType);
+        _or_1 = _equals_3;
+      }
+      _and = _or_1;
+    }
+    if (_and) {
+      InputOutput.<String>println("here");
       return TypeProvider.boolConstantType;
     } else {
       return null;
@@ -154,12 +333,68 @@ public class TypeProvider {
     }
     final ExpressionsType rightType = _typeFor_1;
     boolean _and = false;
+    boolean _or = false;
     boolean _equals = Objects.equal(leftType, TypeProvider.doubleConstantType);
-    if (!_equals) {
+    if (_equals) {
+      _or = true;
+    } else {
+      boolean _equals_1 = Objects.equal(leftType, TypeProvider.freeVariableType);
+      _or = _equals_1;
+    }
+    if (!_or) {
       _and = false;
     } else {
-      boolean _equals_1 = Objects.equal(rightType, TypeProvider.doubleConstantType);
-      _and = _equals_1;
+      boolean _or_1 = false;
+      boolean _equals_2 = Objects.equal(rightType, TypeProvider.freeVariableType);
+      if (_equals_2) {
+        _or_1 = true;
+      } else {
+        boolean _equals_3 = Objects.equal(rightType, TypeProvider.doubleConstantType);
+        _or_1 = _equals_3;
+      }
+      _and = _or_1;
+    }
+    if (_and) {
+      return TypeProvider.boolConstantType;
+    } else {
+      return null;
+    }
+  }
+  
+  protected ExpressionsType _typeFor(final ActionComparison e) {
+    ActionExpression _left = e.getLeft();
+    ExpressionsType _typeFor = null;
+    if (_left!=null) {
+      _typeFor=this.typeFor(_left);
+    }
+    final ExpressionsType leftType = _typeFor;
+    ActionExpression _right = e.getRight();
+    ExpressionsType _typeFor_1 = null;
+    if (_right!=null) {
+      _typeFor_1=this.typeFor(_right);
+    }
+    final ExpressionsType rightType = _typeFor_1;
+    boolean _and = false;
+    boolean _or = false;
+    boolean _equals = Objects.equal(leftType, TypeProvider.doubleConstantType);
+    if (_equals) {
+      _or = true;
+    } else {
+      boolean _equals_1 = Objects.equal(leftType, TypeProvider.freeVariableType);
+      _or = _equals_1;
+    }
+    if (!_or) {
+      _and = false;
+    } else {
+      boolean _or_1 = false;
+      boolean _equals_2 = Objects.equal(rightType, TypeProvider.freeVariableType);
+      if (_equals_2) {
+        _or_1 = true;
+      } else {
+        boolean _equals_3 = Objects.equal(rightType, TypeProvider.doubleConstantType);
+        _or_1 = _equals_3;
+      }
+      _and = _or_1;
     }
     if (_and) {
       return TypeProvider.boolConstantType;
@@ -182,12 +417,68 @@ public class TypeProvider {
     }
     final ExpressionsType rightType = _typeFor_1;
     boolean _and = false;
+    boolean _or = false;
     boolean _equals = Objects.equal(leftType, TypeProvider.doubleConstantType);
-    if (!_equals) {
+    if (_equals) {
+      _or = true;
+    } else {
+      boolean _equals_1 = Objects.equal(leftType, TypeProvider.freeVariableType);
+      _or = _equals_1;
+    }
+    if (!_or) {
       _and = false;
     } else {
-      boolean _equals_1 = Objects.equal(rightType, TypeProvider.doubleConstantType);
-      _and = _equals_1;
+      boolean _or_1 = false;
+      boolean _equals_2 = Objects.equal(rightType, TypeProvider.freeVariableType);
+      if (_equals_2) {
+        _or_1 = true;
+      } else {
+        boolean _equals_3 = Objects.equal(rightType, TypeProvider.doubleConstantType);
+        _or_1 = _equals_3;
+      }
+      _and = _or_1;
+    }
+    if (_and) {
+      return TypeProvider.doubleConstantType;
+    } else {
+      return null;
+    }
+  }
+  
+  protected ExpressionsType _typeFor(final ActionSub e) {
+    ActionExpression _left = e.getLeft();
+    ExpressionsType _typeFor = null;
+    if (_left!=null) {
+      _typeFor=this.typeFor(_left);
+    }
+    final ExpressionsType leftType = _typeFor;
+    ActionExpression _right = e.getRight();
+    ExpressionsType _typeFor_1 = null;
+    if (_right!=null) {
+      _typeFor_1=this.typeFor(_right);
+    }
+    final ExpressionsType rightType = _typeFor_1;
+    boolean _and = false;
+    boolean _or = false;
+    boolean _equals = Objects.equal(leftType, TypeProvider.doubleConstantType);
+    if (_equals) {
+      _or = true;
+    } else {
+      boolean _equals_1 = Objects.equal(leftType, TypeProvider.freeVariableType);
+      _or = _equals_1;
+    }
+    if (!_or) {
+      _and = false;
+    } else {
+      boolean _or_1 = false;
+      boolean _equals_2 = Objects.equal(rightType, TypeProvider.freeVariableType);
+      if (_equals_2) {
+        _or_1 = true;
+      } else {
+        boolean _equals_3 = Objects.equal(rightType, TypeProvider.doubleConstantType);
+        _or_1 = _equals_3;
+      }
+      _and = _or_1;
     }
     if (_and) {
       return TypeProvider.doubleConstantType;
@@ -210,12 +501,68 @@ public class TypeProvider {
     }
     final ExpressionsType rightType = _typeFor_1;
     boolean _and = false;
+    boolean _or = false;
     boolean _equals = Objects.equal(leftType, TypeProvider.doubleConstantType);
-    if (!_equals) {
+    if (_equals) {
+      _or = true;
+    } else {
+      boolean _equals_1 = Objects.equal(leftType, TypeProvider.freeVariableType);
+      _or = _equals_1;
+    }
+    if (!_or) {
       _and = false;
     } else {
-      boolean _equals_1 = Objects.equal(rightType, TypeProvider.doubleConstantType);
-      _and = _equals_1;
+      boolean _or_1 = false;
+      boolean _equals_2 = Objects.equal(rightType, TypeProvider.freeVariableType);
+      if (_equals_2) {
+        _or_1 = true;
+      } else {
+        boolean _equals_3 = Objects.equal(rightType, TypeProvider.doubleConstantType);
+        _or_1 = _equals_3;
+      }
+      _and = _or_1;
+    }
+    if (_and) {
+      return TypeProvider.doubleConstantType;
+    } else {
+      return null;
+    }
+  }
+  
+  protected ExpressionsType _typeFor(final ActionPlu e) {
+    ActionExpression _left = e.getLeft();
+    ExpressionsType _typeFor = null;
+    if (_left!=null) {
+      _typeFor=this.typeFor(_left);
+    }
+    final ExpressionsType leftType = _typeFor;
+    ActionExpression _right = e.getRight();
+    ExpressionsType _typeFor_1 = null;
+    if (_right!=null) {
+      _typeFor_1=this.typeFor(_right);
+    }
+    final ExpressionsType rightType = _typeFor_1;
+    boolean _and = false;
+    boolean _or = false;
+    boolean _equals = Objects.equal(leftType, TypeProvider.doubleConstantType);
+    if (_equals) {
+      _or = true;
+    } else {
+      boolean _equals_1 = Objects.equal(leftType, TypeProvider.freeVariableType);
+      _or = _equals_1;
+    }
+    if (!_or) {
+      _and = false;
+    } else {
+      boolean _or_1 = false;
+      boolean _equals_2 = Objects.equal(rightType, TypeProvider.freeVariableType);
+      if (_equals_2) {
+        _or_1 = true;
+      } else {
+        boolean _equals_3 = Objects.equal(rightType, TypeProvider.doubleConstantType);
+        _or_1 = _equals_3;
+      }
+      _and = _or_1;
     }
     if (_and) {
       return TypeProvider.doubleConstantType;
@@ -238,12 +585,68 @@ public class TypeProvider {
     }
     final ExpressionsType rightType = _typeFor_1;
     boolean _and = false;
+    boolean _or = false;
     boolean _equals = Objects.equal(leftType, TypeProvider.doubleConstantType);
-    if (!_equals) {
+    if (_equals) {
+      _or = true;
+    } else {
+      boolean _equals_1 = Objects.equal(leftType, TypeProvider.freeVariableType);
+      _or = _equals_1;
+    }
+    if (!_or) {
       _and = false;
     } else {
-      boolean _equals_1 = Objects.equal(rightType, TypeProvider.doubleConstantType);
-      _and = _equals_1;
+      boolean _or_1 = false;
+      boolean _equals_2 = Objects.equal(rightType, TypeProvider.freeVariableType);
+      if (_equals_2) {
+        _or_1 = true;
+      } else {
+        boolean _equals_3 = Objects.equal(rightType, TypeProvider.doubleConstantType);
+        _or_1 = _equals_3;
+      }
+      _and = _or_1;
+    }
+    if (_and) {
+      return TypeProvider.doubleConstantType;
+    } else {
+      return null;
+    }
+  }
+  
+  protected ExpressionsType _typeFor(final ActionMul e) {
+    ActionExpression _left = e.getLeft();
+    ExpressionsType _typeFor = null;
+    if (_left!=null) {
+      _typeFor=this.typeFor(_left);
+    }
+    final ExpressionsType leftType = _typeFor;
+    ActionExpression _right = e.getRight();
+    ExpressionsType _typeFor_1 = null;
+    if (_right!=null) {
+      _typeFor_1=this.typeFor(_right);
+    }
+    final ExpressionsType rightType = _typeFor_1;
+    boolean _and = false;
+    boolean _or = false;
+    boolean _equals = Objects.equal(leftType, TypeProvider.doubleConstantType);
+    if (_equals) {
+      _or = true;
+    } else {
+      boolean _equals_1 = Objects.equal(leftType, TypeProvider.freeVariableType);
+      _or = _equals_1;
+    }
+    if (!_or) {
+      _and = false;
+    } else {
+      boolean _or_1 = false;
+      boolean _equals_2 = Objects.equal(rightType, TypeProvider.freeVariableType);
+      if (_equals_2) {
+        _or_1 = true;
+      } else {
+        boolean _equals_3 = Objects.equal(rightType, TypeProvider.doubleConstantType);
+        _or_1 = _equals_3;
+      }
+      _and = _or_1;
     }
     if (_and) {
       return TypeProvider.doubleConstantType;
@@ -266,12 +669,68 @@ public class TypeProvider {
     }
     final ExpressionsType rightType = _typeFor_1;
     boolean _and = false;
+    boolean _or = false;
     boolean _equals = Objects.equal(leftType, TypeProvider.doubleConstantType);
-    if (!_equals) {
+    if (_equals) {
+      _or = true;
+    } else {
+      boolean _equals_1 = Objects.equal(leftType, TypeProvider.freeVariableType);
+      _or = _equals_1;
+    }
+    if (!_or) {
       _and = false;
     } else {
-      boolean _equals_1 = Objects.equal(rightType, TypeProvider.doubleConstantType);
-      _and = _equals_1;
+      boolean _or_1 = false;
+      boolean _equals_2 = Objects.equal(rightType, TypeProvider.freeVariableType);
+      if (_equals_2) {
+        _or_1 = true;
+      } else {
+        boolean _equals_3 = Objects.equal(rightType, TypeProvider.doubleConstantType);
+        _or_1 = _equals_3;
+      }
+      _and = _or_1;
+    }
+    if (_and) {
+      return TypeProvider.doubleConstantType;
+    } else {
+      return null;
+    }
+  }
+  
+  protected ExpressionsType _typeFor(final ActionDiv e) {
+    ActionExpression _left = e.getLeft();
+    ExpressionsType _typeFor = null;
+    if (_left!=null) {
+      _typeFor=this.typeFor(_left);
+    }
+    final ExpressionsType leftType = _typeFor;
+    ActionExpression _right = e.getRight();
+    ExpressionsType _typeFor_1 = null;
+    if (_right!=null) {
+      _typeFor_1=this.typeFor(_right);
+    }
+    final ExpressionsType rightType = _typeFor_1;
+    boolean _and = false;
+    boolean _or = false;
+    boolean _equals = Objects.equal(leftType, TypeProvider.doubleConstantType);
+    if (_equals) {
+      _or = true;
+    } else {
+      boolean _equals_1 = Objects.equal(leftType, TypeProvider.freeVariableType);
+      _or = _equals_1;
+    }
+    if (!_or) {
+      _and = false;
+    } else {
+      boolean _or_1 = false;
+      boolean _equals_2 = Objects.equal(rightType, TypeProvider.freeVariableType);
+      if (_equals_2) {
+        _or_1 = true;
+      } else {
+        boolean _equals_3 = Objects.equal(rightType, TypeProvider.doubleConstantType);
+        _or_1 = _equals_3;
+      }
+      _and = _or_1;
     }
     if (_and) {
       return TypeProvider.doubleConstantType;
@@ -281,6 +740,7 @@ public class TypeProvider {
   }
   
   protected ExpressionsType _typeFor(final Not e) {
+    boolean _or = false;
     Expression _expression = e.getExpression();
     ExpressionsType _typeFor = null;
     if (_expression!=null) {
@@ -288,6 +748,43 @@ public class TypeProvider {
     }
     boolean _equals = Objects.equal(_typeFor, TypeProvider.boolConstantType);
     if (_equals) {
+      _or = true;
+    } else {
+      Expression _expression_1 = e.getExpression();
+      ExpressionsType _typeFor_1 = null;
+      if (_expression_1!=null) {
+        _typeFor_1=this.typeFor(_expression_1);
+      }
+      boolean _equals_1 = Objects.equal(_typeFor_1, TypeProvider.freeVariableType);
+      _or = _equals_1;
+    }
+    if (_or) {
+      return TypeProvider.boolConstantType;
+    } else {
+      return null;
+    }
+  }
+  
+  protected ExpressionsType _typeFor(final ActionNot e) {
+    boolean _or = false;
+    ActionExpression _expression = e.getExpression();
+    ExpressionsType _typeFor = null;
+    if (_expression!=null) {
+      _typeFor=this.typeFor(_expression);
+    }
+    boolean _equals = Objects.equal(_typeFor, TypeProvider.boolConstantType);
+    if (_equals) {
+      _or = true;
+    } else {
+      ActionExpression _expression_1 = e.getExpression();
+      ExpressionsType _typeFor_1 = null;
+      if (_expression_1!=null) {
+        _typeFor_1=this.typeFor(_expression_1);
+      }
+      boolean _equals_1 = Objects.equal(_typeFor_1, TypeProvider.freeVariableType);
+      _or = _equals_1;
+    }
+    if (_or) {
       return TypeProvider.boolConstantType;
     } else {
       return null;
@@ -309,25 +806,75 @@ public class TypeProvider {
       _or = _not;
     }
     if (_or) {
-      Store _value_3 = e.getValue();
-      String _plus = ("null " + _value_3);
-      InputOutput.<String>println(_plus);
       return null;
     } else {
-      Store _value_4 = e.getValue();
-      InputOutput.<Store>println(_value_4);
-      Store _value_5 = e.getValue();
-      Expression _value_6 = _value_5.getValue();
+      Store _value_3 = e.getValue();
+      Expression _value_4 = _value_3.getValue();
       ExpressionsType _typeFor = null;
-      if (_value_6!=null) {
-        _typeFor=this.typeFor(_value_6);
+      if (_value_4!=null) {
+        _typeFor=this.typeFor(_value_4);
       }
       return _typeFor;
     }
   }
   
-  public ExpressionsType typeFor(final Expression e) {
-    if (e instanceof And) {
+  protected ExpressionsType _typeFor(final SelfReferencedStore e) {
+    boolean _or = false;
+    Store _value = e.getValue();
+    boolean _equals = Objects.equal(_value, null);
+    if (_equals) {
+      _or = true;
+    } else {
+      Store _value_1 = e.getValue();
+      List<Store> _variablesDefinedBefore = ModelUtil.variablesDefinedBefore(_value_1);
+      Store _value_2 = e.getValue();
+      boolean _contains = _variablesDefinedBefore.contains(_value_2);
+      boolean _not = (!_contains);
+      _or = _not;
+    }
+    if (_or) {
+      return null;
+    } else {
+      Store _value_3 = e.getValue();
+      Expression _value_4 = _value_3.getValue();
+      ExpressionsType _typeFor = null;
+      if (_value_4!=null) {
+        _typeFor=this.typeFor(_value_4);
+      }
+      return _typeFor;
+    }
+  }
+  
+  protected ExpressionsType _typeFor(final FreeVariable e) {
+    return TypeProvider.freeVariableType;
+  }
+  
+  public ExpressionsType typeFor(final EObject e) {
+    if (e instanceof ActionAnd) {
+      return _typeFor((ActionAnd)e);
+    } else if (e instanceof ActionComparison) {
+      return _typeFor((ActionComparison)e);
+    } else if (e instanceof ActionDiv) {
+      return _typeFor((ActionDiv)e);
+    } else if (e instanceof ActionEquality) {
+      return _typeFor((ActionEquality)e);
+    } else if (e instanceof ActionMul) {
+      return _typeFor((ActionMul)e);
+    } else if (e instanceof ActionNot) {
+      return _typeFor((ActionNot)e);
+    } else if (e instanceof ActionOr) {
+      return _typeFor((ActionOr)e);
+    } else if (e instanceof ActionPlu) {
+      return _typeFor((ActionPlu)e);
+    } else if (e instanceof ActionSub) {
+      return _typeFor((ActionSub)e);
+    } else if (e instanceof FreeVariable) {
+      return _typeFor((FreeVariable)e);
+    } else if (e instanceof ReferencedStore) {
+      return _typeFor((ReferencedStore)e);
+    } else if (e instanceof SelfReferencedStore) {
+      return _typeFor((SelfReferencedStore)e);
+    } else if (e instanceof And) {
       return _typeFor((And)e);
     } else if (e instanceof Comparison) {
       return _typeFor((Comparison)e);
@@ -343,12 +890,10 @@ public class TypeProvider {
       return _typeFor((Or)e);
     } else if (e instanceof Plu) {
       return _typeFor((Plu)e);
-    } else if (e instanceof ReferencedStore) {
-      return _typeFor((ReferencedStore)e);
     } else if (e instanceof Sub) {
       return _typeFor((Sub)e);
-    } else if (e != null) {
-      return _typeFor(e);
+    } else if (e instanceof Expression) {
+      return _typeFor((Expression)e);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         Arrays.<Object>asList(e).toString());

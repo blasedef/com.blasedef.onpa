@@ -58,12 +58,12 @@ public interface UpdateExpression extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Expression</em>' containment reference.
-   * @see #setExpression(Expression)
+   * @see #setExpression(ActionExpression)
    * @see com.blasedef.onpa.oNPA.ONPAPackage#getUpdateExpression_Expression()
    * @model containment="true"
    * @generated
    */
-  Expression getExpression();
+  ActionExpression getExpression();
 
   /**
    * Sets the value of the '{@link com.blasedef.onpa.oNPA.UpdateExpression#getExpression <em>Expression</em>}' containment reference.
@@ -73,6 +73,6 @@ public interface UpdateExpression extends EObject
    * @see #getExpression()
    * @generated
    */
-  void setExpression(Expression value);
+  void setExpression(ActionExpression value);
 
 } // UpdateExpression

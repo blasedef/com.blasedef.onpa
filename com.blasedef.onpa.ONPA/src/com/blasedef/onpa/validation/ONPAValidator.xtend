@@ -26,6 +26,16 @@ import com.blasedef.onpa.oNPA.Model
 import com.blasedef.onpa.oNPA.ProcessExpression
 import com.blasedef.onpa.oNPA.Process
 import static extension org.eclipse.xtext.EcoreUtil2.*
+import com.google.inject.Inject
+import com.blasedef.onpa.typing.TypeProvider
+import org.eclipse.emf.ecore.EReference
+import com.blasedef.onpa.typing.ExpressionsType
+import com.blasedef.onpa.oNPA.ActionNot
+import com.blasedef.onpa.oNPA.ActionExpression
+import com.blasedef.onpa.oNPA.ActionOr
+import com.blasedef.onpa.oNPA.ActionAnd
+import com.blasedef.onpa.oNPA.ActionEquality
+import com.blasedef.onpa.oNPA.ActionComparison
 
 /**
  * Custom validation rules. 
@@ -36,7 +46,7 @@ class ONPAValidator extends AbstractONPAValidator {
 	
 	//STORE
 	
-	public static val SELF_REFERENCING_STORE = 'selfReferencingStore'
+	public static val SELF_REFERENCING_STORE = 'com.blaedef.onpa.dice.selfReferencingStore'
 	
 	@Check
 	def checkNotSelfReferencing(Store store){
@@ -75,7 +85,7 @@ class ONPAValidator extends AbstractONPAValidator {
 			}
 	}
 	
-	public static val STORE_NAMES_UNIQUE = 'storeNamesUnique'
+	public static val STORE_NAMES_UNIQUE = 'com.blaedef.onpa.dice.storeNamesUnique'
 	
 	@Check
 	def checkStoresNamesUnique(Store store){
@@ -100,7 +110,7 @@ class ONPAValidator extends AbstractONPAValidator {
 	
 	//PROCESS
 	
-	public static val PROCESS_NAMES_UNIQUE = 'processNamesUnique'
+	public static val PROCESS_NAMES_UNIQUE = 'com.blaedef.onpa.dice.processNamesUnique'
 	
 	@Check
 	def checkensureProcessCycles(Process process){
@@ -122,8 +132,151 @@ class ONPAValidator extends AbstractONPAValidator {
 			)
 			
 	}
-
-
+	
+	@Inject extension TypeProvider
+	
+	public static val WRONG_TYPE = "com.blasedef.onpa.dice.WrongType";
+	
+	@Check
+	def checkType(Not not) {
+		checkExpectedBoolean(not.expression,
+				ONPAPackage$Literals::NOT__EXPRESSION)
+	}
+	
+	@Check
+	def checkType(ActionNot not) {
+		checkExpectedBoolean(not.expression,
+				ONPAPackage$Literals::ACTION_NOT__EXPRESSION)
+	}
+	
+	@Check
+	def checkType(Or or){
+		checkExpectedBoolean(or.left,
+			ONPAPackage$Literals::OR__LEFT
+		)
+		checkExpectedBoolean(or.right,
+			ONPAPackage$Literals::OR__RIGHT
+		)
+	}
+	
+	@Check
+	def checkType(ActionOr or){
+		checkExpectedBoolean(or.left,
+			ONPAPackage$Literals::ACTION_OR__LEFT
+		)
+		checkExpectedBoolean(or.right,
+			ONPAPackage$Literals::ACTION_OR__RIGHT
+		)
+	}
+	
+	@Check
+	def checkType(And and){
+		checkExpectedBoolean(and.left,
+			ONPAPackage$Literals::AND__LEFT
+		)
+		checkExpectedBoolean(and.right,
+			ONPAPackage$Literals::AND__RIGHT
+		)
+	}
+	
+	@Check
+	def checkType(ActionAnd and){
+		checkExpectedBoolean(and.left,
+			ONPAPackage$Literals::ACTION_AND__LEFT
+		)
+		checkExpectedBoolean(and.right,
+			ONPAPackage$Literals::ACTION_AND__RIGHT
+		)
+	}
+	
+	@Check
+	def checkType(Equality eq){
+		checkExpectedBoolean(eq.left,
+			ONPAPackage$Literals::EQUALITY__LEFT
+		)
+		checkExpectedBoolean(eq.right,
+			ONPAPackage$Literals::EQUALITY__RIGHT
+		)
+	}
+	
+	@Check
+	def checkType(ActionEquality eq){
+		checkExpectedBoolean(eq.left,
+			ONPAPackage$Literals::ACTION_EQUALITY__LEFT
+		)
+		checkExpectedBoolean(eq.right,
+			ONPAPackage$Literals::ACTION_EQUALITY__RIGHT
+		)
+	}
+	
+	@Check
+	def checkType(Comparison com){
+		checkExpectedDouble(com.left,
+			ONPAPackage$Literals::COMPARISON__LEFT
+		)
+		checkExpectedBoolean(com.right,
+			ONPAPackage$Literals::COMPARISON__RIGHT
+		)
+	}
+	
+	@Check
+	def checkType(ActionComparison com){
+		checkExpectedDouble(com.left,
+			ONPAPackage$Literals::ACTION_COMPARISON__LEFT
+		)
+		checkExpectedDouble(com.right,
+			ONPAPackage$Literals::ACTION_COMPARISON__RIGHT
+		)
+	}
+	
+	def private checkExpectedBoolean(Expression exp, EReference reference) {
+		checkExpectedType(exp, TypeProvider::boolConstantType, reference)
+	}
+	
+	def private checkExpectedBoolean(ActionExpression exp, EReference reference) {
+		checkExpectedType(exp, TypeProvider::boolConstantType, reference)
+	}
+	
+	def private checkExpectedDouble(Expression exp, EReference reference) {
+		checkExpectedType(exp, TypeProvider::doubleConstantType, reference)
+	}
+	
+	def private checkExpectedDouble(ActionExpression exp, EReference reference) {
+		checkExpectedType(exp, TypeProvider::doubleConstantType, reference)
+	}
+	
+	def private checkExpectedType(ActionExpression exp,
+			ExpressionsType expectedType, EReference reference) {
+		val actualType = getTypeAndCheckNotNull(exp, reference)
+		if (actualType != expectedType || actualType != TypeProvider::freeVariableType)
+			error("Expected " + expectedType + " type, but was " + actualType,
+					reference, WRONG_TYPE)
+	}
+	
+	def private checkExpectedType(Expression exp,
+			ExpressionsType expectedType, EReference reference) {
+		val actualType = getTypeAndCheckNotNull(exp, reference)
+		if (actualType != expectedType)
+			error("Expected " + expectedType + " type, but was " + actualType,
+					reference, WRONG_TYPE)
+	}
+	
+	def private ExpressionsType getTypeAndCheckNotNull(ActionExpression exp,
+			EReference reference) {
+		var type = exp?.typeFor
+		if (type == null)
+			error("null type", reference, WRONG_TYPE)
+		return type;
+	}
+	
+	def private ExpressionsType getTypeAndCheckNotNull(Expression exp,
+			EReference reference) {
+		var type = exp?.typeFor
+		if (type == null)
+			error("null type", reference, WRONG_TYPE)
+		return type;
+	}
+	
 //  public static val INVALID_NAME = 'invalidName'
 //
 //	@Check

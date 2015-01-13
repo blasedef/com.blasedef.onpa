@@ -11,7 +11,6 @@ class ModelUtil {
 		val allElements = 
 			e.getContainerOfType(typeof(Model)).stores
 		val containingElement = allElements.findFirst[isAncestor(it, e)]
-		allElements.subList(0, allElements.indexOf(containingElement)).
-			typeSelect(typeof(Store))
+		allElements.subList(0, allElements.indexOf(containingElement) + 1)
 	}
 }

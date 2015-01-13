@@ -493,6 +493,25 @@ public interface ONPAPackage extends EPackage
   int UPDATE_EXPRESSION_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.ActionExpressionImpl <em>Action Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.blasedef.onpa.oNPA.impl.ActionExpressionImpl
+   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionExpression()
+   * @generated
+   */
+  int ACTION_EXPRESSION = 13;
+
+  /**
+   * The number of structural features of the '<em>Action Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_EXPRESSION_FEATURE_COUNT = EVALUATION_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.StoreImpl <em>Store</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -500,7 +519,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getStore()
    * @generated
    */
-  int STORE = 13;
+  int STORE = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -537,7 +556,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 14;
+  int EXPRESSION = 15;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -546,7 +565,7 @@ public interface ONPAPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION_FEATURE_COUNT = EVALUATION_EXPRESSION_FEATURE_COUNT + 0;
+  int EXPRESSION_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.ParallelImpl <em>Parallel</em>}' class.
@@ -556,7 +575,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getParallel()
    * @generated
    */
-  int PARALLEL = 15;
+  int PARALLEL = 16;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -593,7 +612,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getChoice()
    * @generated
    */
-  int CHOICE = 16;
+  int CHOICE = 17;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -630,7 +649,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getLeaf()
    * @generated
    */
-  int LEAF = 17;
+  int LEAF = 18;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -658,7 +677,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getProcessReference()
    * @generated
    */
-  int PROCESS_REFERENCE = 18;
+  int PROCESS_REFERENCE = 19;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' reference.
@@ -686,7 +705,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getBroadcast()
    * @generated
    */
-  int BROADCAST = 19;
+  int BROADCAST = 20;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -741,7 +760,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getUnicast()
    * @generated
    */
-  int UNICAST = 20;
+  int UNICAST = 21;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -796,7 +815,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getIn()
    * @generated
    */
-  int IN = 21;
+  int IN = 22;
 
   /**
    * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
@@ -824,7 +843,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getOut()
    * @generated
    */
-  int OUT = 22;
+  int OUT = 23;
 
   /**
    * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
@@ -852,7 +871,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getLocalUpdateExpression()
    * @generated
    */
-  int LOCAL_UPDATE_EXPRESSION = 23;
+  int LOCAL_UPDATE_EXPRESSION = 24;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' reference.
@@ -882,6 +901,488 @@ public interface ONPAPackage extends EPackage
   int LOCAL_UPDATE_EXPRESSION_FEATURE_COUNT = UPDATE_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
+   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.ActionOrImpl <em>Action Or</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.blasedef.onpa.oNPA.impl.ActionOrImpl
+   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionOr()
+   * @generated
+   */
+  int ACTION_OR = 25;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_OR__LEFT = ACTION_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_OR__RIGHT = ACTION_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Action Or</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_OR_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.ActionAndImpl <em>Action And</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.blasedef.onpa.oNPA.impl.ActionAndImpl
+   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionAnd()
+   * @generated
+   */
+  int ACTION_AND = 26;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_AND__LEFT = ACTION_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_AND__RIGHT = ACTION_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Action And</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_AND_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.ActionEqualityImpl <em>Action Equality</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.blasedef.onpa.oNPA.impl.ActionEqualityImpl
+   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionEquality()
+   * @generated
+   */
+  int ACTION_EQUALITY = 27;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_EQUALITY__LEFT = ACTION_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_EQUALITY__OP = ACTION_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_EQUALITY__RIGHT = ACTION_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Action Equality</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_EQUALITY_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.ActionComparisonImpl <em>Action Comparison</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.blasedef.onpa.oNPA.impl.ActionComparisonImpl
+   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionComparison()
+   * @generated
+   */
+  int ACTION_COMPARISON = 28;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_COMPARISON__LEFT = ACTION_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_COMPARISON__OP = ACTION_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_COMPARISON__RIGHT = ACTION_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Action Comparison</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_COMPARISON_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.ActionSubImpl <em>Action Sub</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.blasedef.onpa.oNPA.impl.ActionSubImpl
+   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionSub()
+   * @generated
+   */
+  int ACTION_SUB = 29;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_SUB__LEFT = ACTION_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_SUB__RIGHT = ACTION_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Action Sub</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_SUB_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.ActionPluImpl <em>Action Plu</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.blasedef.onpa.oNPA.impl.ActionPluImpl
+   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionPlu()
+   * @generated
+   */
+  int ACTION_PLU = 30;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_PLU__LEFT = ACTION_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_PLU__RIGHT = ACTION_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Action Plu</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_PLU_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.ActionMulImpl <em>Action Mul</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.blasedef.onpa.oNPA.impl.ActionMulImpl
+   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionMul()
+   * @generated
+   */
+  int ACTION_MUL = 31;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_MUL__LEFT = ACTION_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_MUL__RIGHT = ACTION_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Action Mul</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_MUL_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.ActionDivImpl <em>Action Div</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.blasedef.onpa.oNPA.impl.ActionDivImpl
+   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionDiv()
+   * @generated
+   */
+  int ACTION_DIV = 32;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_DIV__LEFT = ACTION_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_DIV__RIGHT = ACTION_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Action Div</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_DIV_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.ActionNotImpl <em>Action Not</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.blasedef.onpa.oNPA.impl.ActionNotImpl
+   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionNot()
+   * @generated
+   */
+  int ACTION_NOT = 33;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_NOT__EXPRESSION = ACTION_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Action Not</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_NOT_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.DoubleConstantImpl <em>Double Constant</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.blasedef.onpa.oNPA.impl.DoubleConstantImpl
+   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getDoubleConstant()
+   * @generated
+   */
+  int DOUBLE_CONSTANT = 34;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOUBLE_CONSTANT__VALUE = ACTION_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Double Constant</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOUBLE_CONSTANT_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.FreeVariableImpl <em>Free Variable</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.blasedef.onpa.oNPA.impl.FreeVariableImpl
+   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getFreeVariable()
+   * @generated
+   */
+  int FREE_VARIABLE = 35;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FREE_VARIABLE__VALUE = ACTION_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Free Variable</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FREE_VARIABLE_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.BoolConstantImpl <em>Bool Constant</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.blasedef.onpa.oNPA.impl.BoolConstantImpl
+   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getBoolConstant()
+   * @generated
+   */
+  int BOOL_CONSTANT = 36;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOL_CONSTANT__VALUE = ACTION_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Bool Constant</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOL_CONSTANT_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.ReferencedStoreImpl <em>Referenced Store</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.blasedef.onpa.oNPA.impl.ReferencedStoreImpl
+   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getReferencedStore()
+   * @generated
+   */
+  int REFERENCED_STORE = 37;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REFERENCED_STORE__VALUE = ACTION_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Referenced Store</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REFERENCED_STORE_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.SelfReferencedStoreImpl <em>Self Referenced Store</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.blasedef.onpa.oNPA.impl.SelfReferencedStoreImpl
+   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getSelfReferencedStore()
+   * @generated
+   */
+  int SELF_REFERENCED_STORE = 38;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELF_REFERENCED_STORE__VALUE = ACTION_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Self Referenced Store</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELF_REFERENCED_STORE_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.OrImpl <em>Or</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -889,7 +1390,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getOr()
    * @generated
    */
-  int OR = 24;
+  int OR = 39;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -926,7 +1427,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getAnd()
    * @generated
    */
-  int AND = 25;
+  int AND = 40;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -963,7 +1464,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getEquality()
    * @generated
    */
-  int EQUALITY = 26;
+  int EQUALITY = 41;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1009,7 +1510,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getComparison()
    * @generated
    */
-  int COMPARISON = 27;
+  int COMPARISON = 42;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1055,7 +1556,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getSub()
    * @generated
    */
-  int SUB = 28;
+  int SUB = 43;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1092,7 +1593,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getPlu()
    * @generated
    */
-  int PLU = 29;
+  int PLU = 44;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1129,7 +1630,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getMul()
    * @generated
    */
-  int MUL = 30;
+  int MUL = 45;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1166,7 +1667,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getDiv()
    * @generated
    */
-  int DIV = 31;
+  int DIV = 46;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1203,7 +1704,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getNot()
    * @generated
    */
-  int NOT = 32;
+  int NOT = 47;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1222,146 +1723,6 @@ public interface ONPAPackage extends EPackage
    * @ordered
    */
   int NOT_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.DoubleConstantImpl <em>Double Constant</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.blasedef.onpa.oNPA.impl.DoubleConstantImpl
-   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getDoubleConstant()
-   * @generated
-   */
-  int DOUBLE_CONSTANT = 33;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOUBLE_CONSTANT__VALUE = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Double Constant</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOUBLE_CONSTANT_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.FreeVariableImpl <em>Free Variable</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.blasedef.onpa.oNPA.impl.FreeVariableImpl
-   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getFreeVariable()
-   * @generated
-   */
-  int FREE_VARIABLE = 34;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FREE_VARIABLE__VALUE = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Free Variable</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FREE_VARIABLE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.BoolConstantImpl <em>Bool Constant</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.blasedef.onpa.oNPA.impl.BoolConstantImpl
-   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getBoolConstant()
-   * @generated
-   */
-  int BOOL_CONSTANT = 35;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOL_CONSTANT__VALUE = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Bool Constant</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOL_CONSTANT_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.ReferencedStoreImpl <em>Referenced Store</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.blasedef.onpa.oNPA.impl.ReferencedStoreImpl
-   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getReferencedStore()
-   * @generated
-   */
-  int REFERENCED_STORE = 36;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REFERENCED_STORE__VALUE = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Referenced Store</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REFERENCED_STORE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.SelfReferencedStoreImpl <em>Self Referenced Store</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.blasedef.onpa.oNPA.impl.SelfReferencedStoreImpl
-   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getSelfReferencedStore()
-   * @generated
-   */
-  int SELF_REFERENCED_STORE = 37;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SELF_REFERENCED_STORE__VALUE = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Self Referenced Store</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SELF_REFERENCED_STORE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
 
   /**
@@ -1726,6 +2087,16 @@ public interface ONPAPackage extends EPackage
   EReference getUpdateExpression_Expression();
 
   /**
+   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.ActionExpression <em>Action Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Action Expression</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionExpression
+   * @generated
+   */
+  EClass getActionExpression();
+
+  /**
    * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.Store <em>Store</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1922,6 +2293,410 @@ public interface ONPAPackage extends EPackage
    * @generated
    */
   EClass getLocalUpdateExpression();
+
+  /**
+   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.ActionOr <em>Action Or</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Action Or</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionOr
+   * @generated
+   */
+  EClass getActionOr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.ActionOr#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionOr#getLeft()
+   * @see #getActionOr()
+   * @generated
+   */
+  EReference getActionOr_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.ActionOr#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionOr#getRight()
+   * @see #getActionOr()
+   * @generated
+   */
+  EReference getActionOr_Right();
+
+  /**
+   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.ActionAnd <em>Action And</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Action And</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionAnd
+   * @generated
+   */
+  EClass getActionAnd();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.ActionAnd#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionAnd#getLeft()
+   * @see #getActionAnd()
+   * @generated
+   */
+  EReference getActionAnd_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.ActionAnd#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionAnd#getRight()
+   * @see #getActionAnd()
+   * @generated
+   */
+  EReference getActionAnd_Right();
+
+  /**
+   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.ActionEquality <em>Action Equality</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Action Equality</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionEquality
+   * @generated
+   */
+  EClass getActionEquality();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.ActionEquality#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionEquality#getLeft()
+   * @see #getActionEquality()
+   * @generated
+   */
+  EReference getActionEquality_Left();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.blasedef.onpa.oNPA.ActionEquality#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionEquality#getOp()
+   * @see #getActionEquality()
+   * @generated
+   */
+  EAttribute getActionEquality_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.ActionEquality#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionEquality#getRight()
+   * @see #getActionEquality()
+   * @generated
+   */
+  EReference getActionEquality_Right();
+
+  /**
+   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.ActionComparison <em>Action Comparison</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Action Comparison</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionComparison
+   * @generated
+   */
+  EClass getActionComparison();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.ActionComparison#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionComparison#getLeft()
+   * @see #getActionComparison()
+   * @generated
+   */
+  EReference getActionComparison_Left();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.blasedef.onpa.oNPA.ActionComparison#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionComparison#getOp()
+   * @see #getActionComparison()
+   * @generated
+   */
+  EAttribute getActionComparison_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.ActionComparison#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionComparison#getRight()
+   * @see #getActionComparison()
+   * @generated
+   */
+  EReference getActionComparison_Right();
+
+  /**
+   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.ActionSub <em>Action Sub</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Action Sub</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionSub
+   * @generated
+   */
+  EClass getActionSub();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.ActionSub#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionSub#getLeft()
+   * @see #getActionSub()
+   * @generated
+   */
+  EReference getActionSub_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.ActionSub#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionSub#getRight()
+   * @see #getActionSub()
+   * @generated
+   */
+  EReference getActionSub_Right();
+
+  /**
+   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.ActionPlu <em>Action Plu</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Action Plu</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionPlu
+   * @generated
+   */
+  EClass getActionPlu();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.ActionPlu#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionPlu#getLeft()
+   * @see #getActionPlu()
+   * @generated
+   */
+  EReference getActionPlu_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.ActionPlu#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionPlu#getRight()
+   * @see #getActionPlu()
+   * @generated
+   */
+  EReference getActionPlu_Right();
+
+  /**
+   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.ActionMul <em>Action Mul</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Action Mul</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionMul
+   * @generated
+   */
+  EClass getActionMul();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.ActionMul#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionMul#getLeft()
+   * @see #getActionMul()
+   * @generated
+   */
+  EReference getActionMul_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.ActionMul#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionMul#getRight()
+   * @see #getActionMul()
+   * @generated
+   */
+  EReference getActionMul_Right();
+
+  /**
+   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.ActionDiv <em>Action Div</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Action Div</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionDiv
+   * @generated
+   */
+  EClass getActionDiv();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.ActionDiv#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionDiv#getLeft()
+   * @see #getActionDiv()
+   * @generated
+   */
+  EReference getActionDiv_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.ActionDiv#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionDiv#getRight()
+   * @see #getActionDiv()
+   * @generated
+   */
+  EReference getActionDiv_Right();
+
+  /**
+   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.ActionNot <em>Action Not</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Action Not</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionNot
+   * @generated
+   */
+  EClass getActionNot();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.ActionNot#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see com.blasedef.onpa.oNPA.ActionNot#getExpression()
+   * @see #getActionNot()
+   * @generated
+   */
+  EReference getActionNot_Expression();
+
+  /**
+   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.DoubleConstant <em>Double Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Double Constant</em>'.
+   * @see com.blasedef.onpa.oNPA.DoubleConstant
+   * @generated
+   */
+  EClass getDoubleConstant();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.blasedef.onpa.oNPA.DoubleConstant#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see com.blasedef.onpa.oNPA.DoubleConstant#getValue()
+   * @see #getDoubleConstant()
+   * @generated
+   */
+  EAttribute getDoubleConstant_Value();
+
+  /**
+   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.FreeVariable <em>Free Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Free Variable</em>'.
+   * @see com.blasedef.onpa.oNPA.FreeVariable
+   * @generated
+   */
+  EClass getFreeVariable();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.blasedef.onpa.oNPA.FreeVariable#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see com.blasedef.onpa.oNPA.FreeVariable#getValue()
+   * @see #getFreeVariable()
+   * @generated
+   */
+  EAttribute getFreeVariable_Value();
+
+  /**
+   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.BoolConstant <em>Bool Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Bool Constant</em>'.
+   * @see com.blasedef.onpa.oNPA.BoolConstant
+   * @generated
+   */
+  EClass getBoolConstant();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.blasedef.onpa.oNPA.BoolConstant#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see com.blasedef.onpa.oNPA.BoolConstant#getValue()
+   * @see #getBoolConstant()
+   * @generated
+   */
+  EAttribute getBoolConstant_Value();
+
+  /**
+   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.ReferencedStore <em>Referenced Store</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Referenced Store</em>'.
+   * @see com.blasedef.onpa.oNPA.ReferencedStore
+   * @generated
+   */
+  EClass getReferencedStore();
+
+  /**
+   * Returns the meta object for the reference '{@link com.blasedef.onpa.oNPA.ReferencedStore#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Value</em>'.
+   * @see com.blasedef.onpa.oNPA.ReferencedStore#getValue()
+   * @see #getReferencedStore()
+   * @generated
+   */
+  EReference getReferencedStore_Value();
+
+  /**
+   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.SelfReferencedStore <em>Self Referenced Store</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Self Referenced Store</em>'.
+   * @see com.blasedef.onpa.oNPA.SelfReferencedStore
+   * @generated
+   */
+  EClass getSelfReferencedStore();
+
+  /**
+   * Returns the meta object for the reference '{@link com.blasedef.onpa.oNPA.SelfReferencedStore#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Value</em>'.
+   * @see com.blasedef.onpa.oNPA.SelfReferencedStore#getValue()
+   * @see #getSelfReferencedStore()
+   * @generated
+   */
+  EReference getSelfReferencedStore_Value();
 
   /**
    * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.Or <em>Or</em>}'.
@@ -2221,111 +2996,6 @@ public interface ONPAPackage extends EPackage
    * @generated
    */
   EReference getNot_Expression();
-
-  /**
-   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.DoubleConstant <em>Double Constant</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Double Constant</em>'.
-   * @see com.blasedef.onpa.oNPA.DoubleConstant
-   * @generated
-   */
-  EClass getDoubleConstant();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.blasedef.onpa.oNPA.DoubleConstant#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see com.blasedef.onpa.oNPA.DoubleConstant#getValue()
-   * @see #getDoubleConstant()
-   * @generated
-   */
-  EAttribute getDoubleConstant_Value();
-
-  /**
-   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.FreeVariable <em>Free Variable</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Free Variable</em>'.
-   * @see com.blasedef.onpa.oNPA.FreeVariable
-   * @generated
-   */
-  EClass getFreeVariable();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.blasedef.onpa.oNPA.FreeVariable#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see com.blasedef.onpa.oNPA.FreeVariable#getValue()
-   * @see #getFreeVariable()
-   * @generated
-   */
-  EAttribute getFreeVariable_Value();
-
-  /**
-   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.BoolConstant <em>Bool Constant</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Bool Constant</em>'.
-   * @see com.blasedef.onpa.oNPA.BoolConstant
-   * @generated
-   */
-  EClass getBoolConstant();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.blasedef.onpa.oNPA.BoolConstant#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see com.blasedef.onpa.oNPA.BoolConstant#getValue()
-   * @see #getBoolConstant()
-   * @generated
-   */
-  EAttribute getBoolConstant_Value();
-
-  /**
-   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.ReferencedStore <em>Referenced Store</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Referenced Store</em>'.
-   * @see com.blasedef.onpa.oNPA.ReferencedStore
-   * @generated
-   */
-  EClass getReferencedStore();
-
-  /**
-   * Returns the meta object for the reference '{@link com.blasedef.onpa.oNPA.ReferencedStore#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Value</em>'.
-   * @see com.blasedef.onpa.oNPA.ReferencedStore#getValue()
-   * @see #getReferencedStore()
-   * @generated
-   */
-  EReference getReferencedStore_Value();
-
-  /**
-   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.SelfReferencedStore <em>Self Referenced Store</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Self Referenced Store</em>'.
-   * @see com.blasedef.onpa.oNPA.SelfReferencedStore
-   * @generated
-   */
-  EClass getSelfReferencedStore();
-
-  /**
-   * Returns the meta object for the reference '{@link com.blasedef.onpa.oNPA.SelfReferencedStore#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Value</em>'.
-   * @see com.blasedef.onpa.oNPA.SelfReferencedStore#getValue()
-   * @see #getSelfReferencedStore()
-   * @generated
-   */
-  EReference getSelfReferencedStore_Value();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -2649,6 +3319,16 @@ public interface ONPAPackage extends EPackage
     EReference UPDATE_EXPRESSION__EXPRESSION = eINSTANCE.getUpdateExpression_Expression();
 
     /**
+     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.ActionExpressionImpl <em>Action Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.blasedef.onpa.oNPA.impl.ActionExpressionImpl
+     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionExpression()
+     * @generated
+     */
+    EClass ACTION_EXPRESSION = eINSTANCE.getActionExpression();
+
+    /**
      * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.StoreImpl <em>Store</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2821,6 +3501,338 @@ public interface ONPAPackage extends EPackage
      * @generated
      */
     EClass LOCAL_UPDATE_EXPRESSION = eINSTANCE.getLocalUpdateExpression();
+
+    /**
+     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.ActionOrImpl <em>Action Or</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.blasedef.onpa.oNPA.impl.ActionOrImpl
+     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionOr()
+     * @generated
+     */
+    EClass ACTION_OR = eINSTANCE.getActionOr();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION_OR__LEFT = eINSTANCE.getActionOr_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION_OR__RIGHT = eINSTANCE.getActionOr_Right();
+
+    /**
+     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.ActionAndImpl <em>Action And</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.blasedef.onpa.oNPA.impl.ActionAndImpl
+     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionAnd()
+     * @generated
+     */
+    EClass ACTION_AND = eINSTANCE.getActionAnd();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION_AND__LEFT = eINSTANCE.getActionAnd_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION_AND__RIGHT = eINSTANCE.getActionAnd_Right();
+
+    /**
+     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.ActionEqualityImpl <em>Action Equality</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.blasedef.onpa.oNPA.impl.ActionEqualityImpl
+     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionEquality()
+     * @generated
+     */
+    EClass ACTION_EQUALITY = eINSTANCE.getActionEquality();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION_EQUALITY__LEFT = eINSTANCE.getActionEquality_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ACTION_EQUALITY__OP = eINSTANCE.getActionEquality_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION_EQUALITY__RIGHT = eINSTANCE.getActionEquality_Right();
+
+    /**
+     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.ActionComparisonImpl <em>Action Comparison</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.blasedef.onpa.oNPA.impl.ActionComparisonImpl
+     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionComparison()
+     * @generated
+     */
+    EClass ACTION_COMPARISON = eINSTANCE.getActionComparison();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION_COMPARISON__LEFT = eINSTANCE.getActionComparison_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ACTION_COMPARISON__OP = eINSTANCE.getActionComparison_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION_COMPARISON__RIGHT = eINSTANCE.getActionComparison_Right();
+
+    /**
+     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.ActionSubImpl <em>Action Sub</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.blasedef.onpa.oNPA.impl.ActionSubImpl
+     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionSub()
+     * @generated
+     */
+    EClass ACTION_SUB = eINSTANCE.getActionSub();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION_SUB__LEFT = eINSTANCE.getActionSub_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION_SUB__RIGHT = eINSTANCE.getActionSub_Right();
+
+    /**
+     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.ActionPluImpl <em>Action Plu</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.blasedef.onpa.oNPA.impl.ActionPluImpl
+     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionPlu()
+     * @generated
+     */
+    EClass ACTION_PLU = eINSTANCE.getActionPlu();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION_PLU__LEFT = eINSTANCE.getActionPlu_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION_PLU__RIGHT = eINSTANCE.getActionPlu_Right();
+
+    /**
+     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.ActionMulImpl <em>Action Mul</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.blasedef.onpa.oNPA.impl.ActionMulImpl
+     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionMul()
+     * @generated
+     */
+    EClass ACTION_MUL = eINSTANCE.getActionMul();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION_MUL__LEFT = eINSTANCE.getActionMul_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION_MUL__RIGHT = eINSTANCE.getActionMul_Right();
+
+    /**
+     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.ActionDivImpl <em>Action Div</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.blasedef.onpa.oNPA.impl.ActionDivImpl
+     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionDiv()
+     * @generated
+     */
+    EClass ACTION_DIV = eINSTANCE.getActionDiv();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION_DIV__LEFT = eINSTANCE.getActionDiv_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION_DIV__RIGHT = eINSTANCE.getActionDiv_Right();
+
+    /**
+     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.ActionNotImpl <em>Action Not</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.blasedef.onpa.oNPA.impl.ActionNotImpl
+     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionNot()
+     * @generated
+     */
+    EClass ACTION_NOT = eINSTANCE.getActionNot();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION_NOT__EXPRESSION = eINSTANCE.getActionNot_Expression();
+
+    /**
+     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.DoubleConstantImpl <em>Double Constant</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.blasedef.onpa.oNPA.impl.DoubleConstantImpl
+     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getDoubleConstant()
+     * @generated
+     */
+    EClass DOUBLE_CONSTANT = eINSTANCE.getDoubleConstant();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DOUBLE_CONSTANT__VALUE = eINSTANCE.getDoubleConstant_Value();
+
+    /**
+     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.FreeVariableImpl <em>Free Variable</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.blasedef.onpa.oNPA.impl.FreeVariableImpl
+     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getFreeVariable()
+     * @generated
+     */
+    EClass FREE_VARIABLE = eINSTANCE.getFreeVariable();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FREE_VARIABLE__VALUE = eINSTANCE.getFreeVariable_Value();
+
+    /**
+     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.BoolConstantImpl <em>Bool Constant</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.blasedef.onpa.oNPA.impl.BoolConstantImpl
+     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getBoolConstant()
+     * @generated
+     */
+    EClass BOOL_CONSTANT = eINSTANCE.getBoolConstant();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BOOL_CONSTANT__VALUE = eINSTANCE.getBoolConstant_Value();
+
+    /**
+     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.ReferencedStoreImpl <em>Referenced Store</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.blasedef.onpa.oNPA.impl.ReferencedStoreImpl
+     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getReferencedStore()
+     * @generated
+     */
+    EClass REFERENCED_STORE = eINSTANCE.getReferencedStore();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REFERENCED_STORE__VALUE = eINSTANCE.getReferencedStore_Value();
+
+    /**
+     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.SelfReferencedStoreImpl <em>Self Referenced Store</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.blasedef.onpa.oNPA.impl.SelfReferencedStoreImpl
+     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getSelfReferencedStore()
+     * @generated
+     */
+    EClass SELF_REFERENCED_STORE = eINSTANCE.getSelfReferencedStore();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELF_REFERENCED_STORE__VALUE = eINSTANCE.getSelfReferencedStore_Value();
 
     /**
      * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.OrImpl <em>Or</em>}' class.
@@ -3063,96 +4075,6 @@ public interface ONPAPackage extends EPackage
      * @generated
      */
     EReference NOT__EXPRESSION = eINSTANCE.getNot_Expression();
-
-    /**
-     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.DoubleConstantImpl <em>Double Constant</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.blasedef.onpa.oNPA.impl.DoubleConstantImpl
-     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getDoubleConstant()
-     * @generated
-     */
-    EClass DOUBLE_CONSTANT = eINSTANCE.getDoubleConstant();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DOUBLE_CONSTANT__VALUE = eINSTANCE.getDoubleConstant_Value();
-
-    /**
-     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.FreeVariableImpl <em>Free Variable</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.blasedef.onpa.oNPA.impl.FreeVariableImpl
-     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getFreeVariable()
-     * @generated
-     */
-    EClass FREE_VARIABLE = eINSTANCE.getFreeVariable();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FREE_VARIABLE__VALUE = eINSTANCE.getFreeVariable_Value();
-
-    /**
-     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.BoolConstantImpl <em>Bool Constant</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.blasedef.onpa.oNPA.impl.BoolConstantImpl
-     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getBoolConstant()
-     * @generated
-     */
-    EClass BOOL_CONSTANT = eINSTANCE.getBoolConstant();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute BOOL_CONSTANT__VALUE = eINSTANCE.getBoolConstant_Value();
-
-    /**
-     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.ReferencedStoreImpl <em>Referenced Store</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.blasedef.onpa.oNPA.impl.ReferencedStoreImpl
-     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getReferencedStore()
-     * @generated
-     */
-    EClass REFERENCED_STORE = eINSTANCE.getReferencedStore();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference REFERENCED_STORE__VALUE = eINSTANCE.getReferencedStore_Value();
-
-    /**
-     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.SelfReferencedStoreImpl <em>Self Referenced Store</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.blasedef.onpa.oNPA.impl.SelfReferencedStoreImpl
-     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getSelfReferencedStore()
-     * @generated
-     */
-    EClass SELF_REFERENCED_STORE = eINSTANCE.getSelfReferencedStore();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SELF_REFERENCED_STORE__VALUE = eINSTANCE.getSelfReferencedStore_Value();
 
   }
 

@@ -1,49 +1,59 @@
 package com.blasedef.onpa.ONPA.tests;
 
-import org.eclipse.xtext.junit4.InjectWith;
-import org.eclipse.xtext.junit4.XtextRunner;
-import org.junit.runner.RunWith;
-import com.google.inject.Inject;
-import com.blasedef.onpa.ONPAInjectorProvider;
-import org.eclipse.xtext.junit4.util.ParseHelper
-import org.eclipse.xtext.junit4.validation.ValidationTestHelper
-import com.blasedef.onpa.oNPA.Model
-import org.junit.Test
-import org.junit.Assert
-import com.blasedef.onpa.oNPA.Expression
-import com.blasedef.onpa.oNPA.Sub
-import com.blasedef.onpa.oNPA.Plu
-import com.blasedef.onpa.oNPA.Mul
+import com.blasedef.onpa.ONPAInjectorProvider
+import com.blasedef.onpa.oNPA.Action
+import com.blasedef.onpa.oNPA.ActionAnd
+import com.blasedef.onpa.oNPA.ActionComparison
+import com.blasedef.onpa.oNPA.ActionDiv
+import com.blasedef.onpa.oNPA.ActionEquality
+import com.blasedef.onpa.oNPA.ActionExpression
+import com.blasedef.onpa.oNPA.ActionMul
+import com.blasedef.onpa.oNPA.ActionNot
+import com.blasedef.onpa.oNPA.ActionOr
+import com.blasedef.onpa.oNPA.ActionPlu
+import com.blasedef.onpa.oNPA.ActionProcess
+import com.blasedef.onpa.oNPA.ActionSub
+import com.blasedef.onpa.oNPA.And
+import com.blasedef.onpa.oNPA.BoolConstant
+import com.blasedef.onpa.oNPA.Broadcast
+import com.blasedef.onpa.oNPA.Choice
+import com.blasedef.onpa.oNPA.Comparison
 import com.blasedef.onpa.oNPA.Div
 import com.blasedef.onpa.oNPA.DoubleConstant
-import com.blasedef.onpa.oNPA.BoolConstant
+import com.blasedef.onpa.oNPA.Equality
+import com.blasedef.onpa.oNPA.Evaluations
+import com.blasedef.onpa.oNPA.Expression
+import com.blasedef.onpa.oNPA.FreeVariable
+import com.blasedef.onpa.oNPA.In
+import com.blasedef.onpa.oNPA.Leaf
+import com.blasedef.onpa.oNPA.LocalUpdateExpression
+import com.blasedef.onpa.oNPA.Model
+import com.blasedef.onpa.oNPA.Mul
 import com.blasedef.onpa.oNPA.Not
 import com.blasedef.onpa.oNPA.Or
-import com.blasedef.onpa.oNPA.And
-import com.blasedef.onpa.oNPA.Equality
-import com.blasedef.onpa.oNPA.Comparison
-import com.blasedef.onpa.oNPA.ReferencedStore
-import com.blasedef.onpa.oNPA.Store
-import com.blasedef.onpa.oNPA.Process
-import com.blasedef.onpa.oNPA.FreeVariable
-import com.blasedef.onpa.oNPA.Parallel
-import com.blasedef.onpa.oNPA.ProcessExpression
-import com.blasedef.onpa.oNPA.Choice
-import com.blasedef.onpa.oNPA.Leaf
-import com.blasedef.onpa.oNPA.PredicateProcess
-import com.blasedef.onpa.oNPA.ActionProcess
-import com.blasedef.onpa.oNPA.Action
-import com.blasedef.onpa.oNPA.Predicate
-import com.blasedef.onpa.oNPA.Evaluations
-import com.blasedef.onpa.oNPA.In
 import com.blasedef.onpa.oNPA.Out
-import com.blasedef.onpa.oNPA.Updates
+import com.blasedef.onpa.oNPA.Parallel
+import com.blasedef.onpa.oNPA.Plu
+import com.blasedef.onpa.oNPA.Predicate
+import com.blasedef.onpa.oNPA.PredicateProcess
+import com.blasedef.onpa.oNPA.Process
+import com.blasedef.onpa.oNPA.ProcessExpression
 import com.blasedef.onpa.oNPA.ProcessReference
+import com.blasedef.onpa.oNPA.ReferencedStore
 import com.blasedef.onpa.oNPA.SelfReferencedStore
-import com.blasedef.onpa.oNPA.UpdateExpression
-import com.blasedef.onpa.oNPA.LocalUpdateExpression
-import com.blasedef.onpa.oNPA.Broadcast
+import com.blasedef.onpa.oNPA.Store
+import com.blasedef.onpa.oNPA.Sub
 import com.blasedef.onpa.oNPA.Unicast
+import com.blasedef.onpa.oNPA.UpdateExpression
+import com.blasedef.onpa.oNPA.Updates
+import com.google.inject.Inject
+import org.eclipse.xtext.junit4.InjectWith
+import org.eclipse.xtext.junit4.XtextRunner
+import org.eclipse.xtext.junit4.util.ParseHelper
+import org.eclipse.xtext.junit4.validation.ValidationTestHelper
+import org.junit.Assert
+import org.junit.Test
+import org.junit.runner.RunWith
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(ONPAInjectorProvider))
@@ -154,7 +164,7 @@ public class ModelParserTest {
 	@Test 
 	def void testVariableExpressionAnd1() {
 		'''
-		i = true && false;
+		i = false && false;
 		P = P;
 		(P,{i});
 		'''.parse.assertNoErrors
@@ -561,6 +571,11 @@ public class ModelParserTest {
 	}
 	
 	@Test
+	def void testAssertProcess12a() {
+		assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;]($y;){this.a := $z+1.0;}.P; (P,{a});","c[$x;]($y;){this.a:=($z + 1.0);}.P")
+	}
+	
+	@Test
 	def void testAssertProcess13() {
 		assertReprProcesses("a = 0.1; b = 0.1; P = c[$x + 5 * 2.0 / 0.5 - 2;]($y;){this.a := $z;}.P; (P,{a});","c[(($x + (5.0 * (2.0 / 0.5))) - 2.0);]($y;){this.a:=$z;}.P")
 	}
@@ -602,10 +617,27 @@ public class ModelParserTest {
 			Div: 					'''(«e.left.stringRepr» / «e.right.stringRepr»)'''
 			Not: 					'''! «e.expression.stringRepr»'''
 			ReferencedStore: 		'''(«e.value.name»)'''
-			SelfReferencedStore: 	'''(this.«e.value.name»)'''
 			DoubleConstant: 		'''«e.value»'''
 			BoolConstant: 			'''«e.value»'''
-			FreeVariable:			'''«e.value»'''
+			}.toString
+	}
+	
+	def CharSequence stringRepr(ActionExpression e) {
+		switch (e) {
+			ActionOr: 					'''(«e.left.stringRepr» || «e.right.stringRepr»)'''
+			ActionAnd: 					'''(«e.left.stringRepr» && «e.right.stringRepr»)'''
+			ActionEquality:   			'''(«e.left.stringRepr» «e.op» «e.right.stringRepr»)'''
+			ActionComparison: 			'''(«e.left.stringRepr» «e.op» «e.right.stringRepr»)'''
+			ActionSub: 					'''(«e.left.stringRepr» - «e.right.stringRepr»)'''
+			ActionPlu: 					'''(«e.left.stringRepr» + «e.right.stringRepr»)'''
+			ActionMul:					'''(«e.left.stringRepr» * «e.right.stringRepr»)'''
+			ActionDiv: 					'''(«e.left.stringRepr» / «e.right.stringRepr»)'''
+			ActionNot: 					'''! «e.expression.stringRepr»'''
+			FreeVariable:				'''«e.value»'''
+			SelfReferencedStore: 		'''(this.«e.value.name»)'''
+			ReferencedStore: 		'''(«e.value.name»)'''
+			DoubleConstant: 		'''«e.value»'''
+			BoolConstant: 			'''«e.value»'''
 			}.toString
 	}
 	
@@ -629,13 +661,13 @@ public class ModelParserTest {
 	}
 	
 	def CharSequence stringRepr(Predicate p){
-		'''[«(p.predicate.expression as Expression).stringRepr»;]'''
+		'''[«(p.predicate.expression as ActionExpression).stringRepr»;]'''
 	}
 	
 	def CharSequence stringRepr(Evaluations e){
 		switch(e){
-			In:				'''(«FOR evaluationExpression : e.expressions»«(evaluationExpression as Expression).stringRepr»;«ENDFOR»)'''
-			Out:			'''<«FOR evaluationExpression : e.expressions»«(evaluationExpression as Expression).stringRepr»;«ENDFOR»>'''	
+			In:				'''(«FOR evaluationExpression : e.expressions»«(evaluationExpression as ActionExpression).stringRepr»;«ENDFOR»)'''
+			Out:			'''<«FOR evaluationExpression : e.expressions»«(evaluationExpression as ActionExpression).stringRepr»;«ENDFOR»>'''	
 		}
 	}
 	
