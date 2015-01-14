@@ -140,6 +140,15 @@ public interface ONPAFactory extends EFactory
   UpdateExpression createUpdateExpression();
 
   /**
+   * Returns a new object of class '<em>Self Referenced Store</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Self Referenced Store</em>'.
+   * @generated
+   */
+  SelfReferencedStore createSelfReferencedStore();
+
+  /**
    * Returns a new object of class '<em>Action Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -363,15 +372,6 @@ public interface ONPAFactory extends EFactory
    * @generated
    */
   ReferencedStore createReferencedStore();
-
-  /**
-   * Returns a new object of class '<em>Self Referenced Store</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Self Referenced Store</em>'.
-   * @generated
-   */
-  SelfReferencedStore createSelfReferencedStore();
 
   /**
    * Returns a new object of class '<em>Or</em>'.

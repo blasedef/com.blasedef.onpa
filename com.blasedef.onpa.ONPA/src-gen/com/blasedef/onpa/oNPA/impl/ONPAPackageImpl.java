@@ -163,6 +163,13 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass selfReferencedStoreEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass actionExpressionEClass = null;
 
   /**
@@ -332,13 +339,6 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * @generated
    */
   private EClass referencedStoreEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass selfReferencedStoreEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -804,6 +804,26 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
   public EReference getUpdateExpression_Expression()
   {
     return (EReference)updateExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSelfReferencedStore()
+  {
+    return selfReferencedStoreEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSelfReferencedStore_Store()
+  {
+    return (EReference)selfReferencedStoreEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1371,26 +1391,6 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getSelfReferencedStore()
-  {
-    return selfReferencedStoreEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getSelfReferencedStore_Value()
-  {
-    return (EReference)selfReferencedStoreEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getOr()
   {
     return orEClass;
@@ -1743,6 +1743,9 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
     createEReference(updateExpressionEClass, UPDATE_EXPRESSION__NAME);
     createEReference(updateExpressionEClass, UPDATE_EXPRESSION__EXPRESSION);
 
+    selfReferencedStoreEClass = createEClass(SELF_REFERENCED_STORE);
+    createEReference(selfReferencedStoreEClass, SELF_REFERENCED_STORE__STORE);
+
     actionExpressionEClass = createEClass(ACTION_EXPRESSION);
 
     storeEClass = createEClass(STORE);
@@ -1823,9 +1826,6 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
 
     referencedStoreEClass = createEClass(REFERENCED_STORE);
     createEReference(referencedStoreEClass, REFERENCED_STORE__VALUE);
-
-    selfReferencedStoreEClass = createEClass(SELF_REFERENCED_STORE);
-    createEReference(selfReferencedStoreEClass, SELF_REFERENCED_STORE__VALUE);
 
     orEClass = createEClass(OR);
     createEReference(orEClass, OR__LEFT);
@@ -1922,7 +1922,6 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
     boolConstantEClass.getESuperTypes().add(this.getExpression());
     referencedStoreEClass.getESuperTypes().add(this.getActionExpression());
     referencedStoreEClass.getESuperTypes().add(this.getExpression());
-    selfReferencedStoreEClass.getESuperTypes().add(this.getActionExpression());
     orEClass.getESuperTypes().add(this.getExpression());
     andEClass.getESuperTypes().add(this.getExpression());
     equalityEClass.getESuperTypes().add(this.getExpression());
@@ -1978,8 +1977,11 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
     initEClass(evaluationExpressionEClass, EvaluationExpression.class, "EvaluationExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(updateExpressionEClass, UpdateExpression.class, "UpdateExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getUpdateExpression_Name(), this.getStore(), null, "name", null, 0, 1, UpdateExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUpdateExpression_Name(), ecorePackage.getEObject(), null, "name", null, 0, 1, UpdateExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUpdateExpression_Expression(), this.getActionExpression(), null, "expression", null, 0, 1, UpdateExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(selfReferencedStoreEClass, SelfReferencedStore.class, "SelfReferencedStore", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSelfReferencedStore_Store(), this.getStore(), null, "store", null, 0, 1, SelfReferencedStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionExpressionEClass, ActionExpression.class, "ActionExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2061,9 +2063,6 @@ public class ONPAPackageImpl extends EPackageImpl implements ONPAPackage
 
     initEClass(referencedStoreEClass, ReferencedStore.class, "ReferencedStore", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getReferencedStore_Value(), this.getStore(), null, "value", null, 0, 1, ReferencedStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(selfReferencedStoreEClass, SelfReferencedStore.class, "SelfReferencedStore", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSelfReferencedStore_Value(), this.getStore(), null, "value", null, 0, 1, SelfReferencedStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(orEClass, Or.class, "Or", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOr_Left(), this.getExpression(), null, "left", null, 0, 1, Or.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

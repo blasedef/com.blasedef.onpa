@@ -636,14 +636,12 @@ public class ONPAGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Action cLocalUpdateExpressionAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final Keyword cThisKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final Assignment cNameAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final CrossReference cNameStoreCrossReference_0_2_0 = (CrossReference)cNameAssignment_0_2.eContents().get(0);
-		private final RuleCall cNameStoreLOWERTerminalRuleCall_0_2_0_1 = (RuleCall)cNameStoreCrossReference_0_2_0.eContents().get(1);
-		private final Keyword cColonEqualsSignKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
-		private final Assignment cExpressionAssignment_0_4 = (Assignment)cGroup_0.eContents().get(4);
-		private final RuleCall cExpressionActionExpressionParserRuleCall_0_4_0 = (RuleCall)cExpressionAssignment_0_4.eContents().get(0);
-		private final Keyword cSemicolonKeyword_0_5 = (Keyword)cGroup_0.eContents().get(5);
+		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cNameSelfReferencedStoreParserRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
+		private final Keyword cColonEqualsSignKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
+		private final Assignment cExpressionAssignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
+		private final RuleCall cExpressionActionExpressionParserRuleCall_0_3_0 = (RuleCall)cExpressionAssignment_0_3.eContents().get(0);
+		private final Keyword cSemicolonKeyword_0_4 = (Keyword)cGroup_0.eContents().get(4);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Action cUpdateExpressionAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Assignment cNameAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
@@ -655,43 +653,37 @@ public class ONPAGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
 		
 		//UpdateExpression hidden(ML_COMMENT, SL_COMMENT, WS):
-		//	{LocalUpdateExpression} "this." name=[Store|LOWER] ":=" expression=ActionExpression ";" | {UpdateExpression}
+		//	{LocalUpdateExpression} name=SelfReferencedStore ":=" expression=ActionExpression ";" | {UpdateExpression}
 		//	name=[Store|LOWER] ":=" expression=ActionExpression ";";
 		public ParserRule getRule() { return rule; }
 
-		//{LocalUpdateExpression} "this." name=[Store|LOWER] ":=" expression=ActionExpression ";" | {UpdateExpression}
+		//{LocalUpdateExpression} name=SelfReferencedStore ":=" expression=ActionExpression ";" | {UpdateExpression}
 		//name=[Store|LOWER] ":=" expression=ActionExpression ";"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//{LocalUpdateExpression} "this." name=[Store|LOWER] ":=" expression=ActionExpression ";"
+		//{LocalUpdateExpression} name=SelfReferencedStore ":=" expression=ActionExpression ";"
 		public Group getGroup_0() { return cGroup_0; }
 
 		//{LocalUpdateExpression}
 		public Action getLocalUpdateExpressionAction_0_0() { return cLocalUpdateExpressionAction_0_0; }
 
-		//"this."
-		public Keyword getThisKeyword_0_1() { return cThisKeyword_0_1; }
+		//name=SelfReferencedStore
+		public Assignment getNameAssignment_0_1() { return cNameAssignment_0_1; }
 
-		//name=[Store|LOWER]
-		public Assignment getNameAssignment_0_2() { return cNameAssignment_0_2; }
-
-		//[Store|LOWER]
-		public CrossReference getNameStoreCrossReference_0_2_0() { return cNameStoreCrossReference_0_2_0; }
-
-		//LOWER
-		public RuleCall getNameStoreLOWERTerminalRuleCall_0_2_0_1() { return cNameStoreLOWERTerminalRuleCall_0_2_0_1; }
+		//SelfReferencedStore
+		public RuleCall getNameSelfReferencedStoreParserRuleCall_0_1_0() { return cNameSelfReferencedStoreParserRuleCall_0_1_0; }
 
 		//":="
-		public Keyword getColonEqualsSignKeyword_0_3() { return cColonEqualsSignKeyword_0_3; }
+		public Keyword getColonEqualsSignKeyword_0_2() { return cColonEqualsSignKeyword_0_2; }
 
 		//expression=ActionExpression
-		public Assignment getExpressionAssignment_0_4() { return cExpressionAssignment_0_4; }
+		public Assignment getExpressionAssignment_0_3() { return cExpressionAssignment_0_3; }
 
 		//ActionExpression
-		public RuleCall getExpressionActionExpressionParserRuleCall_0_4_0() { return cExpressionActionExpressionParserRuleCall_0_4_0; }
+		public RuleCall getExpressionActionExpressionParserRuleCall_0_3_0() { return cExpressionActionExpressionParserRuleCall_0_3_0; }
 
 		//";"
-		public Keyword getSemicolonKeyword_0_5() { return cSemicolonKeyword_0_5; }
+		public Keyword getSemicolonKeyword_0_4() { return cSemicolonKeyword_0_4; }
 
 		//{UpdateExpression} name=[Store|LOWER] ":=" expression=ActionExpression ";"
 		public Group getGroup_1() { return cGroup_1; }
@@ -719,6 +711,38 @@ public class ONPAGrammarAccess extends AbstractGrammarElementFinder {
 
 		//";"
 		public Keyword getSemicolonKeyword_1_4() { return cSemicolonKeyword_1_4; }
+	}
+
+	public class SelfReferencedStoreElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SelfReferencedStore");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cSelfReferencedStoreAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cThisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cStoreAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cStoreStoreCrossReference_2_0 = (CrossReference)cStoreAssignment_2.eContents().get(0);
+		private final RuleCall cStoreStoreLOWERTerminalRuleCall_2_0_1 = (RuleCall)cStoreStoreCrossReference_2_0.eContents().get(1);
+		
+		//SelfReferencedStore hidden(ML_COMMENT, SL_COMMENT, WS):
+		//	{SelfReferencedStore} "this." store=[Store|LOWER];
+		public ParserRule getRule() { return rule; }
+
+		//{SelfReferencedStore} "this." store=[Store|LOWER]
+		public Group getGroup() { return cGroup; }
+
+		//{SelfReferencedStore}
+		public Action getSelfReferencedStoreAction_0() { return cSelfReferencedStoreAction_0; }
+
+		//"this."
+		public Keyword getThisKeyword_1() { return cThisKeyword_1; }
+
+		//store=[Store|LOWER]
+		public Assignment getStoreAssignment_2() { return cStoreAssignment_2; }
+
+		//[Store|LOWER]
+		public CrossReference getStoreStoreCrossReference_2_0() { return cStoreStoreCrossReference_2_0; }
+
+		//LOWER
+		public RuleCall getStoreStoreLOWERTerminalRuleCall_2_0_1() { return cStoreStoreLOWERTerminalRuleCall_2_0_1; }
 	}
 
 	public class ActionExpressionElements extends AbstractParserRuleElementFinder {
@@ -1127,20 +1151,14 @@ public class ONPAGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final CrossReference cValueStoreCrossReference_3_1_0 = (CrossReference)cValueAssignment_3_1.eContents().get(0);
 		private final RuleCall cValueStoreLOWERTerminalRuleCall_3_1_0_1 = (RuleCall)cValueStoreCrossReference_3_1_0.eContents().get(1);
-		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
-		private final Action cSelfReferencedStoreAction_4_0 = (Action)cGroup_4.eContents().get(0);
-		private final Keyword cThisKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cValueAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final CrossReference cValueStoreCrossReference_4_2_0 = (CrossReference)cValueAssignment_4_2.eContents().get(0);
-		private final RuleCall cValueStoreLOWERTerminalRuleCall_4_2_0_1 = (RuleCall)cValueStoreCrossReference_4_2_0.eContents().get(1);
 		
 		//ActionAtomic returns ActionExpression hidden(ML_COMMENT, SL_COMMENT, WS):
 		//	{DoubleConstant} value=Double | {FreeVariable} value=FreeVariable | {BoolConstant} value=("true" | "false") |
-		//	{ReferencedStore} value=[Store|LOWER] | {SelfReferencedStore} "this." value=[Store|LOWER];
+		//	{ReferencedStore} value=[Store|LOWER];
 		public ParserRule getRule() { return rule; }
 
 		//{DoubleConstant} value=Double | {FreeVariable} value=FreeVariable | {BoolConstant} value=("true" | "false") |
-		//{ReferencedStore} value=[Store|LOWER] | {SelfReferencedStore} "this." value=[Store|LOWER]
+		//{ReferencedStore} value=[Store|LOWER]
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//{DoubleConstant} value=Double
@@ -1199,24 +1217,6 @@ public class ONPAGrammarAccess extends AbstractGrammarElementFinder {
 
 		//LOWER
 		public RuleCall getValueStoreLOWERTerminalRuleCall_3_1_0_1() { return cValueStoreLOWERTerminalRuleCall_3_1_0_1; }
-
-		//{SelfReferencedStore} "this." value=[Store|LOWER]
-		public Group getGroup_4() { return cGroup_4; }
-
-		//{SelfReferencedStore}
-		public Action getSelfReferencedStoreAction_4_0() { return cSelfReferencedStoreAction_4_0; }
-
-		//"this."
-		public Keyword getThisKeyword_4_1() { return cThisKeyword_4_1; }
-
-		//value=[Store|LOWER]
-		public Assignment getValueAssignment_4_2() { return cValueAssignment_4_2; }
-
-		//[Store|LOWER]
-		public CrossReference getValueStoreCrossReference_4_2_0() { return cValueStoreCrossReference_4_2_0; }
-
-		//LOWER
-		public RuleCall getValueStoreLOWERTerminalRuleCall_4_2_0_1() { return cValueStoreLOWERTerminalRuleCall_4_2_0_1; }
 	}
 
 	public class StoreElements extends AbstractParserRuleElementFinder {
@@ -1801,6 +1801,7 @@ public class ONPAGrammarAccess extends AbstractGrammarElementFinder {
 	private final PredicateExpressionElements pPredicateExpression;
 	private final EvaluationExpressionElements pEvaluationExpression;
 	private final UpdateExpressionElements pUpdateExpression;
+	private final SelfReferencedStoreElements pSelfReferencedStore;
 	private final ActionExpressionElements pActionExpression;
 	private final ActionOrElements pActionOr;
 	private final ActionAndElements pActionAnd;
@@ -1854,6 +1855,7 @@ public class ONPAGrammarAccess extends AbstractGrammarElementFinder {
 		this.pPredicateExpression = new PredicateExpressionElements();
 		this.pEvaluationExpression = new EvaluationExpressionElements();
 		this.pUpdateExpression = new UpdateExpressionElements();
+		this.pSelfReferencedStore = new SelfReferencedStoreElements();
 		this.pActionExpression = new ActionExpressionElements();
 		this.pActionOr = new ActionOrElements();
 		this.pActionAnd = new ActionAndElements();
@@ -2066,7 +2068,7 @@ public class ONPAGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//UpdateExpression hidden(ML_COMMENT, SL_COMMENT, WS):
-	//	{LocalUpdateExpression} "this." name=[Store|LOWER] ":=" expression=ActionExpression ";" | {UpdateExpression}
+	//	{LocalUpdateExpression} name=SelfReferencedStore ":=" expression=ActionExpression ";" | {UpdateExpression}
 	//	name=[Store|LOWER] ":=" expression=ActionExpression ";";
 	public UpdateExpressionElements getUpdateExpressionAccess() {
 		return pUpdateExpression;
@@ -2074,6 +2076,16 @@ public class ONPAGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getUpdateExpressionRule() {
 		return getUpdateExpressionAccess().getRule();
+	}
+
+	//SelfReferencedStore hidden(ML_COMMENT, SL_COMMENT, WS):
+	//	{SelfReferencedStore} "this." store=[Store|LOWER];
+	public SelfReferencedStoreElements getSelfReferencedStoreAccess() {
+		return pSelfReferencedStore;
+	}
+	
+	public ParserRule getSelfReferencedStoreRule() {
+		return getSelfReferencedStoreAccess().getRule();
 	}
 
 	//ActionExpression hidden(ML_COMMENT, SL_COMMENT, WS):
@@ -2178,7 +2190,7 @@ public class ONPAGrammarAccess extends AbstractGrammarElementFinder {
 
 	//ActionAtomic returns ActionExpression hidden(ML_COMMENT, SL_COMMENT, WS):
 	//	{DoubleConstant} value=Double | {FreeVariable} value=FreeVariable | {BoolConstant} value=("true" | "false") |
-	//	{ReferencedStore} value=[Store|LOWER] | {SelfReferencedStore} "this." value=[Store|LOWER];
+	//	{ReferencedStore} value=[Store|LOWER];
 	public ActionAtomicElements getActionAtomicAccess() {
 		return pActionAtomic;
 	}

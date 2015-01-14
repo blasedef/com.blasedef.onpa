@@ -32,12 +32,12 @@ public interface UpdateExpression extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' reference.
-   * @see #setName(Store)
+   * @see #setName(EObject)
    * @see com.blasedef.onpa.oNPA.ONPAPackage#getUpdateExpression_Name()
    * @model
    * @generated
    */
-  Store getName();
+  EObject getName();
 
   /**
    * Sets the value of the '{@link com.blasedef.onpa.oNPA.UpdateExpression#getName <em>Name</em>}' reference.
@@ -47,7 +47,7 @@ public interface UpdateExpression extends EObject
    * @see #getName()
    * @generated
    */
-  void setName(Store value);
+  void setName(EObject value);
 
   /**
    * Returns the value of the '<em><b>Expression</b></em>' containment reference.

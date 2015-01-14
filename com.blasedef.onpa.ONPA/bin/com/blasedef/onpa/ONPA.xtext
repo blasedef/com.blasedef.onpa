@@ -77,9 +77,13 @@ EvaluationExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 ;
 
 UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	({LocalUpdateExpression} "this."name=[Store|LOWER] ":=" expression=ActionExpression ";" | 
+	({LocalUpdateExpression} name=SelfReferencedStore ":=" expression=ActionExpression ";" | 
 		{UpdateExpression} name=[Store|LOWER] ":=" expression=ActionExpression ";"
 	)
+;
+
+SelfReferencedStore hidden(ML_COMMENT,SL_COMMENT,WS):
+	{SelfReferencedStore}   "this."store=[Store|LOWER]
 ;
 
 ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
@@ -145,8 +149,7 @@ ActionAtomic returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 	{DoubleConstant} 	value=Double |
 	{FreeVariable} 		value=FreeVariable |
 	{BoolConstant} 		value=('true'|'false') |
-	{ReferencedStore} 	value=[Store|LOWER] |
-	{SelfReferencedStore}   "this."value=[Store|LOWER]
+	{ReferencedStore} 	value=[Store|LOWER]
 ;
 
 

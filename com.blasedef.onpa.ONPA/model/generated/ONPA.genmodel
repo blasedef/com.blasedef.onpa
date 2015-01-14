@@ -52,6 +52,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ONPA.ecore#//UpdateExpression/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//UpdateExpression/expression"/>
     </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//SelfReferencedStore">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ONPA.ecore#//SelfReferencedStore/store"/>
+    </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//ActionExpression"/>
     <genClasses ecoreClass="ONPA.ecore#//Store">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ONPA.ecore#//Store/name"/>
@@ -125,9 +128,6 @@
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//ReferencedStore">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ONPA.ecore#//ReferencedStore/value"/>
-    </genClasses>
-    <genClasses ecoreClass="ONPA.ecore#//SelfReferencedStore">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ONPA.ecore#//SelfReferencedStore/value"/>
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//Or">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Or/left"/>

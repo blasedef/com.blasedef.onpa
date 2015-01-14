@@ -11,8 +11,6 @@ import com.blasedef.onpa.oNPA.Plu
 import com.blasedef.onpa.oNPA.Mul
 import com.blasedef.onpa.oNPA.Div
 import java.util.ArrayList
-import java.util.Set
-import java.util.HashSet
 import com.blasedef.onpa.oNPA.ONPAPackage
 import com.blasedef.onpa.oNPA.Or
 import com.blasedef.onpa.oNPA.And
@@ -27,7 +25,6 @@ import com.blasedef.onpa.oNPA.ProcessExpression
 import com.blasedef.onpa.oNPA.Process
 import static extension org.eclipse.xtext.EcoreUtil2.*
 import com.google.inject.Inject
-import com.blasedef.onpa.typing.TypeProvider
 import org.eclipse.emf.ecore.EReference
 import com.blasedef.onpa.typing.ExpressionsType
 import com.blasedef.onpa.oNPA.ActionNot
@@ -36,6 +33,17 @@ import com.blasedef.onpa.oNPA.ActionOr
 import com.blasedef.onpa.oNPA.ActionAnd
 import com.blasedef.onpa.oNPA.ActionEquality
 import com.blasedef.onpa.oNPA.ActionComparison
+import com.blasedef.onpa.oNPA.ActionSub
+import com.blasedef.onpa.oNPA.ActionPlu
+
+import static extension com.blasedef.onpa.typing.ModelUtil.*
+import com.blasedef.onpa.oNPA.ActionMul
+import com.blasedef.onpa.oNPA.ActionDiv
+import com.blasedef.onpa.oNPA.UpdateExpression
+import com.blasedef.onpa.typing.ETypeProvider
+import com.blasedef.onpa.typing.ATypeProvider
+import com.blasedef.onpa.typing.ActionType
+import com.blasedef.onpa.oNPA.LocalUpdateExpression
 
 /**
  * Custom validation rules. 
@@ -46,24 +54,27 @@ class ONPAValidator extends AbstractONPAValidator {
 	
 	//STORE
 	
-	public static val SELF_REFERENCING_STORE = 'com.blaedef.onpa.dice.selfReferencingStore'
+	public static val SELF_REFERENCING_STORE = 'com.blasedef.onpa.dice.selfReferencingStore'
+	
+//	@Check
+//	def void checkForwardReference(VariableRef varRef) {
+//		val variable = varRef.getVariable()
+//		if (variable != null && !varRef.variablesDefinedBefore.contains(
+//				variable)) {
+//			error("variable forward reference not allowed: '"
+//					+ variable.name + "'",
+//					ExpressionsPackage::eINSTANCE.variableRef_Variable,
+//					FORWARD_REFERENCE, variable.name)
+//		}
+//	}
 	
 	@Check
-	def checkNotSelfReferencing(Store store){
+	def checkNotSelfReferencing(ReferencedStore refStore){
 			
-		var ArrayList<String> strings = new ArrayList<String>();
-		
-		strings.add(store.name)
-		
-		findReferencedRates(store.value,strings)
-		
-		var Set<String> setOfString = new HashSet<String>(strings);
-		
-		if(setOfString.size == strings.size)
-			return //because there can't be any duplicates
-		else
-			error("Cannot have self referencing stores. '" + store.name + "' is seen in the expression",
-				ONPAPackage::eINSTANCE.store_Value,
+		val store = refStore.value
+		if(store != null && refStore.selfReferencedStores == store)
+			error("Cannot have self referencing stores. '" + refStore.value.name + "' is seen in the expression",
+				ONPAPackage::eINSTANCE.referencedStore_Value,
 				com.blasedef.onpa.validation.ONPAValidator.SELF_REFERENCING_STORE
 			)
 		
@@ -85,7 +96,7 @@ class ONPAValidator extends AbstractONPAValidator {
 			}
 	}
 	
-	public static val STORE_NAMES_UNIQUE = 'com.blaedef.onpa.dice.storeNamesUnique'
+	public static val STORE_NAMES_UNIQUE = 'com.blasedef.onpa.dice.storeNamesUnique'
 	
 	@Check
 	def checkStoresNamesUnique(Store store){
@@ -110,7 +121,7 @@ class ONPAValidator extends AbstractONPAValidator {
 	
 	//PROCESS
 	
-	public static val PROCESS_NAMES_UNIQUE = 'com.blaedef.onpa.dice.processNamesUnique'
+	public static val PROCESS_NAMES_UNIQUE = 'com.blasedef.onpa.dice.processNamesUnique'
 	
 	@Check
 	def checkensureProcessCycles(Process process){
@@ -133,7 +144,7 @@ class ONPAValidator extends AbstractONPAValidator {
 			
 	}
 	
-	@Inject extension TypeProvider
+	@Inject extension ETypeProvider
 	
 	public static val WRONG_TYPE = "com.blasedef.onpa.dice.WrongType";
 	
@@ -214,7 +225,7 @@ class ONPAValidator extends AbstractONPAValidator {
 		checkExpectedDouble(com.left,
 			ONPAPackage$Literals::COMPARISON__LEFT
 		)
-		checkExpectedBoolean(com.right,
+		checkExpectedDouble(com.right,
 			ONPAPackage$Literals::COMPARISON__RIGHT
 		)
 	}
@@ -229,32 +240,135 @@ class ONPAValidator extends AbstractONPAValidator {
 		)
 	}
 	
+	@Check
+	def checkType(Sub sub){
+		checkExpectedDouble(sub.left,
+			ONPAPackage$Literals::SUB__LEFT
+		)
+		checkExpectedDouble(sub.right,
+			ONPAPackage$Literals::SUB__RIGHT
+		)
+	}
+	
+	@Check
+	def checkType(ActionSub sub){
+		checkExpectedDouble(sub.left,
+			ONPAPackage$Literals::ACTION_SUB__LEFT
+		)
+		checkExpectedDouble(sub.right,
+			ONPAPackage$Literals::ACTION_SUB__RIGHT
+		)
+	}
+	
+	@Check
+	def checkType(Plu plu){
+		checkExpectedDouble(plu.left,
+			ONPAPackage$Literals::PLU__LEFT
+		)
+		checkExpectedDouble(plu.right,
+			ONPAPackage$Literals::PLU__RIGHT
+		)
+	}
+	
+	@Check
+	def checkType(ActionPlu plu){
+		checkExpectedDouble(plu.left,
+			ONPAPackage$Literals::ACTION_PLU__LEFT
+		)
+		checkExpectedDouble(plu.right,
+			ONPAPackage$Literals::ACTION_PLU__RIGHT
+		)
+	}
+	
+	@Check
+	def checkType(Mul mul){
+		checkExpectedDouble(mul.left,
+			ONPAPackage$Literals::MUL__LEFT
+		)
+		checkExpectedDouble(mul.right,
+			ONPAPackage$Literals::MUL__RIGHT
+		)
+	}
+	
+	@Check
+	def checkType(ActionMul mul){
+		checkExpectedDouble(mul.left,
+			ONPAPackage$Literals::ACTION_MUL__LEFT
+		)
+		checkExpectedDouble(mul.right,
+			ONPAPackage$Literals::ACTION_MUL__RIGHT
+		)
+	}
+	
+	@Check
+	def checkType(Div div){
+		checkExpectedDouble(div.left,
+			ONPAPackage$Literals::DIV__LEFT
+		)
+		checkExpectedDouble(div.right,
+			ONPAPackage$Literals::DIV__RIGHT
+		)
+	}
+	
+	@Check
+	def checkType(ActionDiv div){
+		checkExpectedDouble(div.left,
+			ONPAPackage$Literals::ACTION_DIV__LEFT
+		)
+		checkExpectedDouble(div.right,
+			ONPAPackage$Literals::ACTION_DIV__RIGHT
+		)
+	}
+	
+
+	@Check
+	def checkType(LocalUpdateExpression updateExpression){
+		checkExpectedSelfReference(updateExpression.name,
+			ONPAPackage$Literals::UPDATE_EXPRESSION__NAME
+		)
+		checkExpectedDouble(updateExpression.expression,
+			ONPAPackage$Literals::UPDATE_EXPRESSION__EXPRESSION
+		)
+	}
+	
+	def private checkExpectedSelfReference(Expression exp, EReference reference){
+		checkExpectedType(exp, ATypeProvider::selfReferencedStoreType, reference)
+	}
+	
 	def private checkExpectedBoolean(Expression exp, EReference reference) {
-		checkExpectedType(exp, TypeProvider::boolConstantType, reference)
+		checkExpectedType(exp, ETypeProvider::boolConstantType, reference)
 	}
 	
 	def private checkExpectedBoolean(ActionExpression exp, EReference reference) {
-		checkExpectedType(exp, TypeProvider::boolConstantType, reference)
+		checkExpectedType(exp, ETypeProvider::boolConstantType, reference)
 	}
 	
 	def private checkExpectedDouble(Expression exp, EReference reference) {
-		checkExpectedType(exp, TypeProvider::doubleConstantType, reference)
+		checkExpectedType(exp, ETypeProvider::doubleConstantType, reference)
 	}
 	
 	def private checkExpectedDouble(ActionExpression exp, EReference reference) {
-		checkExpectedType(exp, TypeProvider::doubleConstantType, reference)
+		checkExpectedType(exp, ETypeProvider::doubleConstantType, reference)
 	}
 	
 	def private checkExpectedType(ActionExpression exp,
 			ExpressionsType expectedType, EReference reference) {
 		val actualType = getTypeAndCheckNotNull(exp, reference)
-		if (actualType != expectedType || actualType != TypeProvider::freeVariableType)
+		if (!(actualType == expectedType || actualType == ETypeProvider::freeVariableType))
 			error("Expected " + expectedType + " type, but was " + actualType,
 					reference, WRONG_TYPE)
 	}
 	
 	def private checkExpectedType(Expression exp,
 			ExpressionsType expectedType, EReference reference) {
+		val actualType = getTypeAndCheckNotNull(exp, reference)
+		if (actualType != expectedType)
+			error("Expected " + expectedType + " type, but was " + actualType,
+					reference, WRONG_TYPE)
+	}
+	
+	def private checkExpectedType(Expression exp,
+			ActionType expectedType, EReference reference) {
 		val actualType = getTypeAndCheckNotNull(exp, reference)
 		if (actualType != expectedType)
 			error("Expected " + expectedType + " type, but was " + actualType,

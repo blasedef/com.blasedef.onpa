@@ -1,16 +1,40 @@
 package com.blasedef.onpa.typing
 
-import com.blasedef.onpa.oNPA.Store
 import static org.eclipse.emf.ecore.util.EcoreUtil.*
 import static extension org.eclipse.xtext.EcoreUtil2.*
 import com.blasedef.onpa.oNPA.Model
+import com.blasedef.onpa.oNPA.ReferencedStore
+import com.blasedef.onpa.oNPA.SelfReferencedStore
+
 
 class ModelUtil {
+	
+	
 
-	def static variablesDefinedBefore(Store e) {
+	/*
+	 * Has the reference been defined before?
+	 */
+	def static variablesDefinedBefore(ReferencedStore e) {
+		
+		
 		val allElements = 
 			e.getContainerOfType(typeof(Model)).stores
-		val containingElement = allElements.findFirst[isAncestor(it, e)]
-		allElements.subList(0, allElements.indexOf(containingElement) + 1)
+		return allElements
+	}
+	
+	def static variablesDefinedBefore(SelfReferencedStore e) {
+		val allElements = 
+			e.getContainerOfType(typeof(Model)).stores
+		return allElements
+	}
+	
+	/*
+	 * Is there a store that references itself?
+	 */
+	def static selfReferencedStores(ReferencedStore e) {
+		val allElements = 
+			e.getContainerOfType(typeof(Model)).
+				stores
+		allElements.findFirst[isAncestor(it, e)]
 	}
 }

@@ -212,6 +212,13 @@ public class ONPASwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ONPAPackage.SELF_REFERENCED_STORE:
+      {
+        SelfReferencedStore selfReferencedStore = (SelfReferencedStore)theEObject;
+        T result = caseSelfReferencedStore(selfReferencedStore);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ONPAPackage.ACTION_EXPRESSION:
       {
         ActionExpression actionExpression = (ActionExpression)theEObject;
@@ -423,15 +430,6 @@ public class ONPASwitch<T> extends Switch<T>
         if (result == null) result = caseActionExpression(referencedStore);
         if (result == null) result = caseExpression(referencedStore);
         if (result == null) result = caseEvaluationExpression(referencedStore);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ONPAPackage.SELF_REFERENCED_STORE:
-      {
-        SelfReferencedStore selfReferencedStore = (SelfReferencedStore)theEObject;
-        T result = caseSelfReferencedStore(selfReferencedStore);
-        if (result == null) result = caseActionExpression(selfReferencedStore);
-        if (result == null) result = caseEvaluationExpression(selfReferencedStore);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -715,6 +713,22 @@ public class ONPASwitch<T> extends Switch<T>
    * @generated
    */
   public T caseUpdateExpression(UpdateExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Self Referenced Store</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Self Referenced Store</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSelfReferencedStore(SelfReferencedStore object)
   {
     return null;
   }
@@ -1115,22 +1129,6 @@ public class ONPASwitch<T> extends Switch<T>
    * @generated
    */
   public T caseReferencedStore(ReferencedStore object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Self Referenced Store</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Self Referenced Store</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSelfReferencedStore(SelfReferencedStore object)
   {
     return null;
   }

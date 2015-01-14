@@ -8,17 +8,17 @@ import com.google.inject.Inject
 import org.eclipse.xtext.junit4.util.ParseHelper
 import com.blasedef.onpa.oNPA.Model
 import com.blasedef.onpa.typing.ExpressionsType
-import com.blasedef.onpa.typing.TypeProvider
 import org.junit.Test
 
 import static extension org.junit.Assert.*
+import com.blasedef.onpa.typing.ETypeProvider
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(ONPAInjectorProvider))
 class TypeTest {
 	
 		@Inject extension ParseHelper<Model>
-		@Inject extension TypeProvider
+		@Inject extension ETypeProvider
 		
 		@Test def void doubleConstant() { assertDoubleConstantType("i = 10;") }
 		
@@ -37,11 +37,11 @@ class TypeTest {
 		@Test def void NotType() { assertBoolConstantType("i = !false;") }
 		
 		def assertDoubleConstantType(CharSequence input) {
-			input.assertType(TypeProvider::doubleConstantType)
+			input.assertType(ETypeProvider::doubleConstantType)
 		}
 		
 		def assertBoolConstantType(CharSequence input) {
-			input.assertType(TypeProvider::boolConstantType)
+			input.assertType(ETypeProvider::boolConstantType)
 		}
 		
 		def assertType(CharSequence input, ExpressionsType expectedType) {

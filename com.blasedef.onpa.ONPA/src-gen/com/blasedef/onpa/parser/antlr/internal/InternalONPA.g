@@ -1218,48 +1218,49 @@ ruleUpdateExpression returns [EObject current=null]
             grammarAccess.getUpdateExpressionAccess().getLocalUpdateExpressionAction_0_0(),
             $current);
     }
-)	otherlv_1='this.' 
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getUpdateExpressionAccess().getThisKeyword_0_1());
-    }
+)(
 (
-(
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getUpdateExpressionRule());
+		{ 
+	        newCompositeNode(grammarAccess.getUpdateExpressionAccess().getNameSelfReferencedStoreParserRuleCall_0_1_0()); 
+	    }
+		lv_name_1_0=ruleSelfReferencedStore		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getUpdateExpressionRule());
 	        }
-        }
-	otherlv_2=RULE_LOWER
-	{
-		newLeafNode(otherlv_2, grammarAccess.getUpdateExpressionAccess().getNameStoreCrossReference_0_2_0()); 
-	}
+       		set(
+       			$current, 
+       			"name",
+        		lv_name_1_0, 
+        		"SelfReferencedStore");
+	        afterParserOrEnumRuleCall();
+	    }
 
 )
-)	otherlv_3=':=' 
+)	otherlv_2=':=' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getUpdateExpressionAccess().getColonEqualsSignKeyword_0_3());
+    	newLeafNode(otherlv_2, grammarAccess.getUpdateExpressionAccess().getColonEqualsSignKeyword_0_2());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getUpdateExpressionAccess().getExpressionActionExpressionParserRuleCall_0_4_0()); 
+	        newCompositeNode(grammarAccess.getUpdateExpressionAccess().getExpressionActionExpressionParserRuleCall_0_3_0()); 
 	    }
-		lv_expression_4_0=ruleActionExpression		{
+		lv_expression_3_0=ruleActionExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getUpdateExpressionRule());
 	        }
        		set(
        			$current, 
        			"expression",
-        		lv_expression_4_0, 
+        		lv_expression_3_0, 
         		"ActionExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_5=';' 
+)	otherlv_4=';' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getUpdateExpressionAccess().getSemicolonKeyword_0_5());
+    	newLeafNode(otherlv_4, grammarAccess.getUpdateExpressionAccess().getSemicolonKeyword_0_4());
     }
 )
     |((
@@ -1275,38 +1276,92 @@ ruleUpdateExpression returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getUpdateExpressionRule());
 	        }
         }
-	otherlv_7=RULE_LOWER
+	otherlv_6=RULE_LOWER
 	{
-		newLeafNode(otherlv_7, grammarAccess.getUpdateExpressionAccess().getNameStoreCrossReference_1_1_0()); 
+		newLeafNode(otherlv_6, grammarAccess.getUpdateExpressionAccess().getNameStoreCrossReference_1_1_0()); 
 	}
 
 )
-)	otherlv_8=':=' 
+)	otherlv_7=':=' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getUpdateExpressionAccess().getColonEqualsSignKeyword_1_2());
+    	newLeafNode(otherlv_7, grammarAccess.getUpdateExpressionAccess().getColonEqualsSignKeyword_1_2());
     }
 (
 (
 		{ 
 	        newCompositeNode(grammarAccess.getUpdateExpressionAccess().getExpressionActionExpressionParserRuleCall_1_3_0()); 
 	    }
-		lv_expression_9_0=ruleActionExpression		{
+		lv_expression_8_0=ruleActionExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getUpdateExpressionRule());
 	        }
        		set(
        			$current, 
        			"expression",
-        		lv_expression_9_0, 
+        		lv_expression_8_0, 
         		"ActionExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_10=';' 
+)	otherlv_9=';' 
     {
-    	newLeafNode(otherlv_10, grammarAccess.getUpdateExpressionAccess().getSemicolonKeyword_1_4());
+    	newLeafNode(otherlv_9, grammarAccess.getUpdateExpressionAccess().getSemicolonKeyword_1_4());
     }
+))
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+
+
+
+
+// Entry rule entryRuleSelfReferencedStore
+entryRuleSelfReferencedStore returns [EObject current=null] 
+	@init { 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+	}
+	:
+	{ newCompositeNode(grammarAccess.getSelfReferencedStoreRule()); }
+	 iv_ruleSelfReferencedStore=ruleSelfReferencedStore 
+	 { $current=$iv_ruleSelfReferencedStore.current; } 
+	 EOF 
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule SelfReferencedStore
+ruleSelfReferencedStore returns [EObject current=null] 
+    @init { enterRule(); 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getSelfReferencedStoreAccess().getSelfReferencedStoreAction_0(),
+            $current);
+    }
+)	otherlv_1='this.' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getSelfReferencedStoreAccess().getThisKeyword_1());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getSelfReferencedStoreRule());
+	        }
+        }
+	otherlv_2=RULE_LOWER
+	{
+		newLeafNode(otherlv_2, grammarAccess.getSelfReferencedStoreAccess().getStoreStoreCrossReference_2_0()); 
+	}
+
+)
 ))
 ;
 finally {
@@ -2188,30 +2243,6 @@ ruleActionAtomic returns [EObject current=null]
 	otherlv_7=RULE_LOWER
 	{
 		newLeafNode(otherlv_7, grammarAccess.getActionAtomicAccess().getValueStoreCrossReference_3_1_0()); 
-	}
-
-)
-))
-    |((
-    {
-        $current = forceCreateModelElement(
-            grammarAccess.getActionAtomicAccess().getSelfReferencedStoreAction_4_0(),
-            $current);
-    }
-)	otherlv_9='this.' 
-    {
-    	newLeafNode(otherlv_9, grammarAccess.getActionAtomicAccess().getThisKeyword_4_1());
-    }
-(
-(
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getActionAtomicRule());
-	        }
-        }
-	otherlv_10=RULE_LOWER
-	{
-		newLeafNode(otherlv_10, grammarAccess.getActionAtomicAccess().getValueStoreCrossReference_4_2_0()); 
 	}
 
 )

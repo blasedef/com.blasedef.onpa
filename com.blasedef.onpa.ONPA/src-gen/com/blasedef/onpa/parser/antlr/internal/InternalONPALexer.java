@@ -416,10 +416,10 @@ public class InternalONPALexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:28:7: ( 'this.' )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:28:9: 'this.'
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:28:7: ( ':=' )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:28:9: ':='
             {
-            match("this."); 
+            match(":="); 
 
 
             }
@@ -437,10 +437,10 @@ public class InternalONPALexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:29:7: ( ':=' )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:29:9: ':='
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:29:7: ( 'this.' )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:29:9: 'this.'
             {
-            match(":="); 
+            match("this."); 
 
 
             }
@@ -746,11 +746,11 @@ public class InternalONPALexer extends Lexer {
         try {
             int _type = RULE_LOWER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3263:12: ( 'a' .. 'z' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3263:14: 'a' .. 'z' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3294:12: ( 'a' .. 'z' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3294:14: 'a' .. 'z' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
             matchRange('a','z'); 
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3263:23: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3294:23: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop1:
             do {
                 int alt1=2;
@@ -799,11 +799,11 @@ public class InternalONPALexer extends Lexer {
         try {
             int _type = RULE_UPPER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3265:12: ( 'A' .. 'Z' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3265:14: 'A' .. 'Z' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3296:12: ( 'A' .. 'Z' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3296:14: 'A' .. 'Z' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
             matchRange('A','Z'); 
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3265:23: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3296:23: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -852,10 +852,10 @@ public class InternalONPALexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3267:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3267:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3298:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3298:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3267:11: ( '^' )?
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3298:11: ( '^' )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -864,7 +864,7 @@ public class InternalONPALexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3267:11: '^'
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3298:11: '^'
                     {
                     match('^'); 
 
@@ -882,7 +882,7 @@ public class InternalONPALexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3267:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3298:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop4:
             do {
                 int alt4=2;
@@ -931,10 +931,10 @@ public class InternalONPALexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3269:10: ( ( '0' .. '9' )+ )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3269:12: ( '0' .. '9' )+
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3300:10: ( ( '0' .. '9' )+ )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3300:12: ( '0' .. '9' )+
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3269:12: ( '0' .. '9' )+
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3300:12: ( '0' .. '9' )+
             int cnt5=0;
             loop5:
             do {
@@ -948,7 +948,7 @@ public class InternalONPALexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3269:13: '0' .. '9'
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3300:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -980,10 +980,10 @@ public class InternalONPALexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3271:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3271:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3302:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3302:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3271:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3302:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -1001,10 +1001,10 @@ public class InternalONPALexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3271:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3302:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3271:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3302:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -1020,7 +1020,7 @@ public class InternalONPALexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3271:21: '\\\\' .
+                    	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3302:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1028,7 +1028,7 @@ public class InternalONPALexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3271:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3302:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1053,10 +1053,10 @@ public class InternalONPALexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3271:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3302:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3271:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3302:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop7:
                     do {
                         int alt7=3;
@@ -1072,7 +1072,7 @@ public class InternalONPALexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3271:54: '\\\\' .
+                    	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3302:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1080,7 +1080,7 @@ public class InternalONPALexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3271:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3302:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1123,12 +1123,12 @@ public class InternalONPALexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3273:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3273:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3304:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3304:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3273:24: ( options {greedy=false; } : . )*
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3304:24: ( options {greedy=false; } : . )*
             loop9:
             do {
                 int alt9=2;
@@ -1153,7 +1153,7 @@ public class InternalONPALexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3273:52: .
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3304:52: .
             	    {
             	    matchAny(); 
 
@@ -1183,12 +1183,12 @@ public class InternalONPALexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3275:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3275:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3306:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3306:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3275:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3306:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop10:
             do {
                 int alt10=2;
@@ -1201,7 +1201,7 @@ public class InternalONPALexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3275:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3306:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1221,7 +1221,7 @@ public class InternalONPALexer extends Lexer {
                 }
             } while (true);
 
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3275:40: ( ( '\\r' )? '\\n' )?
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3306:40: ( ( '\\r' )? '\\n' )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -1230,9 +1230,9 @@ public class InternalONPALexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3275:41: ( '\\r' )? '\\n'
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3306:41: ( '\\r' )? '\\n'
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3275:41: ( '\\r' )?
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3306:41: ( '\\r' )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -1241,7 +1241,7 @@ public class InternalONPALexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3275:41: '\\r'
+                            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3306:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1273,10 +1273,10 @@ public class InternalONPALexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3277:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3277:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3308:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3308:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3277:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3308:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt13=0;
             loop13:
             do {
@@ -1330,8 +1330,8 @@ public class InternalONPALexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3279:16: ( . )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3279:18: .
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3310:16: ( . )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3310:18: .
             {
             matchAny(); 
 
@@ -1652,19 +1652,19 @@ public class InternalONPALexer extends Lexer {
 
     protected DFA14 dfa14 = new DFA14(this);
     static final String DFA14_eotS =
-        "\7\uffff\1\54\1\56\1\uffff\2\62\4\uffff\1\71\1\73\1\62\2\44\1\101\1\uffff\1\105\1\62\1\107\1\110\1\uffff\1\62\1\113\1\44\2\uffff\2\44\15\uffff\2\62\1\uffff\1\62\10\uffff\2\62\10\uffff\1\62\2\uffff\1\113\6\uffff\1\125\4\62\1\uffff\1\132\1\62\1\134\1\62\3\uffff\1\136\1\uffff";
+        "\7\uffff\1\54\1\56\1\uffff\2\62\4\uffff\1\71\1\73\1\44\1\62\1\44\1\101\1\uffff\1\105\1\62\1\107\1\110\1\uffff\1\62\1\113\1\44\2\uffff\2\44\15\uffff\2\62\1\uffff\1\62\11\uffff\2\62\7\uffff\1\62\2\uffff\1\113\6\uffff\1\125\4\62\1\uffff\1\132\1\62\1\134\1\62\3\uffff\1\136\1\uffff";
     static final String DFA14_eofS =
         "\137\uffff";
     static final String DFA14_minS =
-        "\1\0\6\uffff\1\75\1\174\1\uffff\2\60\4\uffff\2\75\1\60\1\75\1\46\1\75\1\uffff\1\52\3\60\1\uffff\2\60\1\101\2\uffff\2\0\15\uffff\2\60\1\uffff\1\60\10\uffff\2\60\10\uffff\1\60\2\uffff\1\60\6\uffff\5\60\1\uffff\1\60\1\56\2\60\3\uffff\1\60\1\uffff";
+        "\1\0\6\uffff\1\75\1\174\1\uffff\2\60\4\uffff\3\75\1\60\1\46\1\75\1\uffff\1\52\3\60\1\uffff\2\60\1\101\2\uffff\2\0\15\uffff\2\60\1\uffff\1\60\11\uffff\2\60\7\uffff\1\60\2\uffff\1\60\6\uffff\5\60\1\uffff\1\60\1\56\2\60\3\uffff\1\60\1\uffff";
     static final String DFA14_maxS =
-        "\1\uffff\6\uffff\1\75\1\174\1\uffff\2\172\4\uffff\2\75\1\172\1\75\1\46\1\75\1\uffff\1\57\3\172\1\uffff\3\172\2\uffff\2\uffff\15\uffff\2\172\1\uffff\1\172\10\uffff\2\172\10\uffff\1\172\2\uffff\1\172\6\uffff\5\172\1\uffff\4\172\3\uffff\1\172\1\uffff";
+        "\1\uffff\6\uffff\1\75\1\174\1\uffff\2\172\4\uffff\3\75\1\172\1\46\1\75\1\uffff\1\57\3\172\1\uffff\3\172\2\uffff\2\uffff\15\uffff\2\172\1\uffff\1\172\11\uffff\2\172\7\uffff\1\172\2\uffff\1\172\6\uffff\5\172\1\uffff\4\172\3\uffff\1\172\1\uffff";
     static final String DFA14_acceptS =
-        "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\2\uffff\1\11\2\uffff\1\14\1\15\1\16\1\17\6\uffff\1\32\4\uffff\1\41\3\uffff\1\44\1\45\2\uffff\1\51\1\52\1\1\1\2\1\3\1\4\1\5\1\6\1\26\1\7\1\24\1\10\1\11\2\uffff\1\42\1\uffff\1\14\1\15\1\16\1\17\1\31\1\20\1\30\1\21\2\uffff\1\23\1\25\1\27\1\34\1\32\1\47\1\50\1\33\1\uffff\1\37\1\40\1\uffff\1\41\1\43\1\44\1\45\1\46\1\51\5\uffff\1\12\4\uffff\1\13\1\22\1\35\1\uffff\1\36";
+        "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\2\uffff\1\11\2\uffff\1\14\1\15\1\16\1\17\6\uffff\1\32\4\uffff\1\41\3\uffff\1\44\1\45\2\uffff\1\51\1\52\1\1\1\2\1\3\1\4\1\5\1\6\1\26\1\7\1\24\1\10\1\11\2\uffff\1\42\1\uffff\1\14\1\15\1\16\1\17\1\31\1\20\1\30\1\21\1\22\2\uffff\1\25\1\27\1\34\1\32\1\47\1\50\1\33\1\uffff\1\37\1\40\1\uffff\1\41\1\43\1\44\1\45\1\46\1\51\5\uffff\1\12\4\uffff\1\13\1\23\1\35\1\uffff\1\36";
     static final String DFA14_specialS =
-        "\1\1\40\uffff\1\2\1\0\74\uffff}>";
+        "\1\2\40\uffff\1\1\1\0\74\uffff}>";
     static final String[] DFA14_transitionS = {
-            "\11\44\2\43\2\44\1\43\22\44\1\43\1\25\1\41\1\44\1\33\1\44\1\24\1\42\1\1\1\5\1\14\1\11\1\2\1\26\1\15\1\27\12\40\1\23\1\6\1\20\1\7\1\21\2\44\4\35\1\32\25\35\1\16\1\44\1\17\1\36\1\37\1\44\4\34\1\31\1\30\4\34\1\13\2\34\1\12\5\34\1\22\6\34\1\3\1\10\1\4\uff82\44",
+            "\11\44\2\43\2\44\1\43\22\44\1\43\1\25\1\41\1\44\1\33\1\44\1\24\1\42\1\1\1\5\1\14\1\11\1\2\1\26\1\15\1\27\12\40\1\22\1\6\1\20\1\7\1\21\2\44\4\35\1\32\25\35\1\16\1\44\1\17\1\36\1\37\1\44\4\34\1\31\1\30\4\34\1\13\2\34\1\12\5\34\1\23\6\34\1\3\1\10\1\4\uff82\44",
             "",
             "",
             "",
@@ -1682,8 +1682,8 @@ public class InternalONPALexer extends Lexer {
             "",
             "\1\70",
             "\1\72",
-            "\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\7\61\1\74\11\61\1\75\10\61",
-            "\1\76",
+            "\1\74",
+            "\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\7\61\1\75\11\61\1\76\10\61",
             "\1\77",
             "\1\100",
             "",
@@ -1724,9 +1724,9 @@ public class InternalONPALexer extends Lexer {
             "",
             "",
             "",
+            "",
             "\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\10\61\1\122\21\61",
             "\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\24\61\1\123\5\61",
-            "",
             "",
             "",
             "",
@@ -1808,6 +1808,16 @@ public class InternalONPALexer extends Lexer {
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
+                        int LA14_33 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA14_33>='\u0000' && LA14_33<='\uFFFF')) ) {s = 78;}
+
+                        else s = 36;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
                         int LA14_0 = input.LA(1);
 
                         s = -1;
@@ -1845,9 +1855,9 @@ public class InternalONPALexer extends Lexer {
 
                         else if ( (LA14_0=='>') ) {s = 17;}
 
-                        else if ( (LA14_0=='t') ) {s = 18;}
+                        else if ( (LA14_0==':') ) {s = 18;}
 
-                        else if ( (LA14_0==':') ) {s = 19;}
+                        else if ( (LA14_0=='t') ) {s = 19;}
 
                         else if ( (LA14_0=='&') ) {s = 20;}
 
@@ -1882,16 +1892,6 @@ public class InternalONPALexer extends Lexer {
                         else if ( ((LA14_0>='\t' && LA14_0<='\n')||LA14_0=='\r'||LA14_0==' ') ) {s = 35;}
 
                         else if ( ((LA14_0>='\u0000' && LA14_0<='\b')||(LA14_0>='\u000B' && LA14_0<='\f')||(LA14_0>='\u000E' && LA14_0<='\u001F')||LA14_0=='#'||LA14_0=='%'||(LA14_0>='?' && LA14_0<='@')||LA14_0=='\\'||LA14_0=='`'||(LA14_0>='~' && LA14_0<='\uFFFF')) ) {s = 36;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA14_33 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA14_33>='\u0000' && LA14_33<='\uFFFF')) ) {s = 78;}
-
-                        else s = 36;
 
                         if ( s>=0 ) return s;
                         break;

@@ -187,6 +187,11 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
         return createUpdateExpressionAdapter();
       }
       @Override
+      public Adapter caseSelfReferencedStore(SelfReferencedStore object)
+      {
+        return createSelfReferencedStoreAdapter();
+      }
+      @Override
       public Adapter caseActionExpression(ActionExpression object)
       {
         return createActionExpressionAdapter();
@@ -310,11 +315,6 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
       public Adapter caseReferencedStore(ReferencedStore object)
       {
         return createReferencedStoreAdapter();
-      }
-      @Override
-      public Adapter caseSelfReferencedStore(SelfReferencedStore object)
-      {
-        return createSelfReferencedStoreAdapter();
       }
       @Override
       public Adapter caseOr(Or object)
@@ -574,6 +574,21 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createUpdateExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.SelfReferencedStore <em>Self Referenced Store</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.SelfReferencedStore
+   * @generated
+   */
+  public Adapter createSelfReferencedStoreAdapter()
   {
     return null;
   }
@@ -949,21 +964,6 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createReferencedStoreAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.SelfReferencedStore <em>Self Referenced Store</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.blasedef.onpa.oNPA.SelfReferencedStore
-   * @generated
-   */
-  public Adapter createSelfReferencedStoreAdapter()
   {
     return null;
   }

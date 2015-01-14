@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,23 +21,23 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.blasedef.onpa.oNPA.impl.SelfReferencedStoreImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.impl.SelfReferencedStoreImpl#getStore <em>Store</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class SelfReferencedStoreImpl extends ActionExpressionImpl implements SelfReferencedStore
+public class SelfReferencedStoreImpl extends MinimalEObjectImpl.Container implements SelfReferencedStore
 {
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' reference.
+   * The cached value of the '{@link #getStore() <em>Store</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getStore()
    * @generated
    * @ordered
    */
-  protected Store value;
+  protected Store store;
 
   /**
    * <!-- begin-user-doc -->
@@ -64,19 +65,19 @@ public class SelfReferencedStoreImpl extends ActionExpressionImpl implements Sel
    * <!-- end-user-doc -->
    * @generated
    */
-  public Store getValue()
+  public Store getStore()
   {
-    if (value != null && value.eIsProxy())
+    if (store != null && store.eIsProxy())
     {
-      InternalEObject oldValue = (InternalEObject)value;
-      value = (Store)eResolveProxy(oldValue);
-      if (value != oldValue)
+      InternalEObject oldStore = (InternalEObject)store;
+      store = (Store)eResolveProxy(oldStore);
+      if (store != oldStore)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ONPAPackage.SELF_REFERENCED_STORE__VALUE, oldValue, value));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ONPAPackage.SELF_REFERENCED_STORE__STORE, oldStore, store));
       }
     }
-    return value;
+    return store;
   }
 
   /**
@@ -84,9 +85,9 @@ public class SelfReferencedStoreImpl extends ActionExpressionImpl implements Sel
    * <!-- end-user-doc -->
    * @generated
    */
-  public Store basicGetValue()
+  public Store basicGetStore()
   {
-    return value;
+    return store;
   }
 
   /**
@@ -94,12 +95,12 @@ public class SelfReferencedStoreImpl extends ActionExpressionImpl implements Sel
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(Store newValue)
+  public void setStore(Store newStore)
   {
-    Store oldValue = value;
-    value = newValue;
+    Store oldStore = store;
+    store = newStore;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.SELF_REFERENCED_STORE__VALUE, oldValue, value));
+      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.SELF_REFERENCED_STORE__STORE, oldStore, store));
   }
 
   /**
@@ -112,9 +113,9 @@ public class SelfReferencedStoreImpl extends ActionExpressionImpl implements Sel
   {
     switch (featureID)
     {
-      case ONPAPackage.SELF_REFERENCED_STORE__VALUE:
-        if (resolve) return getValue();
-        return basicGetValue();
+      case ONPAPackage.SELF_REFERENCED_STORE__STORE:
+        if (resolve) return getStore();
+        return basicGetStore();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -129,8 +130,8 @@ public class SelfReferencedStoreImpl extends ActionExpressionImpl implements Sel
   {
     switch (featureID)
     {
-      case ONPAPackage.SELF_REFERENCED_STORE__VALUE:
-        setValue((Store)newValue);
+      case ONPAPackage.SELF_REFERENCED_STORE__STORE:
+        setStore((Store)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -146,8 +147,8 @@ public class SelfReferencedStoreImpl extends ActionExpressionImpl implements Sel
   {
     switch (featureID)
     {
-      case ONPAPackage.SELF_REFERENCED_STORE__VALUE:
-        setValue((Store)null);
+      case ONPAPackage.SELF_REFERENCED_STORE__STORE:
+        setStore((Store)null);
         return;
     }
     super.eUnset(featureID);
@@ -163,8 +164,8 @@ public class SelfReferencedStoreImpl extends ActionExpressionImpl implements Sel
   {
     switch (featureID)
     {
-      case ONPAPackage.SELF_REFERENCED_STORE__VALUE:
-        return value != null;
+      case ONPAPackage.SELF_REFERENCED_STORE__STORE:
+        return store != null;
     }
     return super.eIsSet(featureID);
   }

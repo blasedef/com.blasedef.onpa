@@ -1,8 +1,9 @@
 package com.blasedef.onpa.typing;
 
 import com.blasedef.onpa.oNPA.Model;
+import com.blasedef.onpa.oNPA.ReferencedStore;
+import com.blasedef.onpa.oNPA.SelfReferencedStore;
 import com.blasedef.onpa.oNPA.Store;
-import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.EcoreUtil2;
@@ -11,8 +12,26 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 @SuppressWarnings("all")
 public class ModelUtil {
-  public static List<Store> variablesDefinedBefore(final Store e) {
-    List<Store> _xblockexpression = null;
+  /**
+   * Has the reference been defined before?
+   */
+  public static EList<Store> variablesDefinedBefore(final ReferencedStore e) {
+    Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(e, Model.class);
+    final EList<Store> allElements = _containerOfType.getStores();
+    return allElements;
+  }
+  
+  public static EList<Store> variablesDefinedBefore(final SelfReferencedStore e) {
+    Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(e, Model.class);
+    final EList<Store> allElements = _containerOfType.getStores();
+    return allElements;
+  }
+  
+  /**
+   * Is there a store that references itself?
+   */
+  public static Store selfReferencedStores(final ReferencedStore e) {
+    Store _xblockexpression = null;
     {
       Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(e, Model.class);
       final EList<Store> allElements = _containerOfType.getStores();
@@ -21,10 +40,7 @@ public class ModelUtil {
           return Boolean.valueOf(EcoreUtil.isAncestor(it, e));
         }
       };
-      final Store containingElement = IterableExtensions.<Store>findFirst(allElements, _function);
-      int _indexOf = allElements.indexOf(containingElement);
-      int _plus = (_indexOf + 1);
-      _xblockexpression = allElements.subList(0, _plus);
+      _xblockexpression = IterableExtensions.<Store>findFirst(allElements, _function);
     }
     return _xblockexpression;
   }

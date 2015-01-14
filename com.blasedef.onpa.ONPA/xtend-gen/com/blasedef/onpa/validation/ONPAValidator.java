@@ -5,16 +5,21 @@ package com.blasedef.onpa.validation;
 
 import com.blasedef.onpa.oNPA.ActionAnd;
 import com.blasedef.onpa.oNPA.ActionComparison;
+import com.blasedef.onpa.oNPA.ActionDiv;
 import com.blasedef.onpa.oNPA.ActionEquality;
 import com.blasedef.onpa.oNPA.ActionExpression;
+import com.blasedef.onpa.oNPA.ActionMul;
 import com.blasedef.onpa.oNPA.ActionNot;
 import com.blasedef.onpa.oNPA.ActionOr;
+import com.blasedef.onpa.oNPA.ActionPlu;
+import com.blasedef.onpa.oNPA.ActionSub;
 import com.blasedef.onpa.oNPA.And;
 import com.blasedef.onpa.oNPA.Comparison;
 import com.blasedef.onpa.oNPA.Div;
 import com.blasedef.onpa.oNPA.Equality;
 import com.blasedef.onpa.oNPA.Expression;
 import com.blasedef.onpa.oNPA.FreeVariable;
+import com.blasedef.onpa.oNPA.LocalUpdateExpression;
 import com.blasedef.onpa.oNPA.Model;
 import com.blasedef.onpa.oNPA.Mul;
 import com.blasedef.onpa.oNPA.Not;
@@ -24,14 +29,15 @@ import com.blasedef.onpa.oNPA.Plu;
 import com.blasedef.onpa.oNPA.ReferencedStore;
 import com.blasedef.onpa.oNPA.Store;
 import com.blasedef.onpa.oNPA.Sub;
+import com.blasedef.onpa.typing.ATypeProvider;
+import com.blasedef.onpa.typing.ActionType;
+import com.blasedef.onpa.typing.ETypeProvider;
 import com.blasedef.onpa.typing.ExpressionsType;
-import com.blasedef.onpa.typing.TypeProvider;
+import com.blasedef.onpa.typing.ModelUtil;
 import com.blasedef.onpa.validation.AbstractONPAValidator;
 import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EReference;
@@ -46,27 +52,27 @@ import org.eclipse.xtext.xbase.lib.Extension;
  */
 @SuppressWarnings("all")
 public class ONPAValidator extends AbstractONPAValidator {
-  public final static String SELF_REFERENCING_STORE = "com.blaedef.onpa.dice.selfReferencingStore";
+  public final static String SELF_REFERENCING_STORE = "com.blasedef.onpa.dice.selfReferencingStore";
   
   @Check
-  public void checkNotSelfReferencing(final Store store) {
-    ArrayList<String> strings = new ArrayList<String>();
-    String _name = store.getName();
-    strings.add(_name);
-    Expression _value = store.getValue();
-    this.findReferencedRates(_value, strings);
-    Set<String> setOfString = new HashSet<String>(strings);
-    int _size = setOfString.size();
-    int _size_1 = strings.size();
-    boolean _equals = (_size == _size_1);
-    if (_equals) {
-      return;
+  public void checkNotSelfReferencing(final ReferencedStore refStore) {
+    final Store store = refStore.getValue();
+    boolean _and = false;
+    boolean _notEquals = (!Objects.equal(store, null));
+    if (!_notEquals) {
+      _and = false;
     } else {
-      String _name_1 = store.getName();
-      String _plus = ("Cannot have self referencing stores. \'" + _name_1);
+      Store _selfReferencedStores = ModelUtil.selfReferencedStores(refStore);
+      boolean _equals = Objects.equal(_selfReferencedStores, store);
+      _and = _equals;
+    }
+    if (_and) {
+      Store _value = refStore.getValue();
+      String _name = _value.getName();
+      String _plus = ("Cannot have self referencing stores. \'" + _name);
       String _plus_1 = (_plus + "\' is seen in the expression");
-      EReference _store_Value = ONPAPackage.eINSTANCE.getStore_Value();
-      this.error(_plus_1, _store_Value, 
+      EReference _referencedStore_Value = ONPAPackage.eINSTANCE.getReferencedStore_Value();
+      this.error(_plus_1, _referencedStore_Value, 
         ONPAValidator.SELF_REFERENCING_STORE);
     }
   }
@@ -170,7 +176,7 @@ public class ONPAValidator extends AbstractONPAValidator {
     }
   }
   
-  public final static String STORE_NAMES_UNIQUE = "com.blaedef.onpa.dice.storeNamesUnique";
+  public final static String STORE_NAMES_UNIQUE = "com.blasedef.onpa.dice.storeNamesUnique";
   
   @Check
   public void checkStoresNamesUnique(final Store store) {
@@ -197,7 +203,7 @@ public class ONPAValidator extends AbstractONPAValidator {
     }
   }
   
-  public final static String PROCESS_NAMES_UNIQUE = "com.blaedef.onpa.dice.processNamesUnique";
+  public final static String PROCESS_NAMES_UNIQUE = "com.blasedef.onpa.dice.processNamesUnique";
   
   @Check
   public void checkensureProcessCycles(final com.blasedef.onpa.oNPA.Process process) {
@@ -226,7 +232,7 @@ public class ONPAValidator extends AbstractONPAValidator {
   
   @Inject
   @Extension
-  private TypeProvider _typeProvider;
+  private ETypeProvider _eTypeProvider;
   
   public final static String WRONG_TYPE = "com.blasedef.onpa.dice.WrongType";
   
@@ -310,7 +316,7 @@ public class ONPAValidator extends AbstractONPAValidator {
     this.checkExpectedDouble(_left, 
       ONPAPackage.Literals.COMPARISON__LEFT);
     Expression _right = com.getRight();
-    this.checkExpectedBoolean(_right, 
+    this.checkExpectedDouble(_right, 
       ONPAPackage.Literals.COMPARISON__RIGHT);
   }
   
@@ -324,33 +330,124 @@ public class ONPAValidator extends AbstractONPAValidator {
       ONPAPackage.Literals.ACTION_COMPARISON__RIGHT);
   }
   
+  @Check
+  public void checkType(final Sub sub) {
+    Expression _left = sub.getLeft();
+    this.checkExpectedDouble(_left, 
+      ONPAPackage.Literals.SUB__LEFT);
+    Expression _right = sub.getRight();
+    this.checkExpectedDouble(_right, 
+      ONPAPackage.Literals.SUB__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final ActionSub sub) {
+    ActionExpression _left = sub.getLeft();
+    this.checkExpectedDouble(_left, 
+      ONPAPackage.Literals.ACTION_SUB__LEFT);
+    ActionExpression _right = sub.getRight();
+    this.checkExpectedDouble(_right, 
+      ONPAPackage.Literals.ACTION_SUB__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final Plu plu) {
+    Expression _left = plu.getLeft();
+    this.checkExpectedDouble(_left, 
+      ONPAPackage.Literals.PLU__LEFT);
+    Expression _right = plu.getRight();
+    this.checkExpectedDouble(_right, 
+      ONPAPackage.Literals.PLU__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final ActionPlu plu) {
+    ActionExpression _left = plu.getLeft();
+    this.checkExpectedDouble(_left, 
+      ONPAPackage.Literals.ACTION_PLU__LEFT);
+    ActionExpression _right = plu.getRight();
+    this.checkExpectedDouble(_right, 
+      ONPAPackage.Literals.ACTION_PLU__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final Mul mul) {
+    Expression _left = mul.getLeft();
+    this.checkExpectedDouble(_left, 
+      ONPAPackage.Literals.MUL__LEFT);
+    Expression _right = mul.getRight();
+    this.checkExpectedDouble(_right, 
+      ONPAPackage.Literals.MUL__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final ActionMul mul) {
+    ActionExpression _left = mul.getLeft();
+    this.checkExpectedDouble(_left, 
+      ONPAPackage.Literals.ACTION_MUL__LEFT);
+    ActionExpression _right = mul.getRight();
+    this.checkExpectedDouble(_right, 
+      ONPAPackage.Literals.ACTION_MUL__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final Div div) {
+    Expression _left = div.getLeft();
+    this.checkExpectedDouble(_left, 
+      ONPAPackage.Literals.DIV__LEFT);
+    Expression _right = div.getRight();
+    this.checkExpectedDouble(_right, 
+      ONPAPackage.Literals.DIV__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final ActionDiv div) {
+    ActionExpression _left = div.getLeft();
+    this.checkExpectedDouble(_left, 
+      ONPAPackage.Literals.ACTION_DIV__LEFT);
+    ActionExpression _right = div.getRight();
+    this.checkExpectedDouble(_right, 
+      ONPAPackage.Literals.ACTION_DIV__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final LocalUpdateExpression updateExpression) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nType mismatch: cannot convert from EObject to Expression");
+  }
+  
+  private void checkExpectedSelfReference(final Expression exp, final EReference reference) {
+    this.checkExpectedType(exp, ATypeProvider.selfReferencedStoreType, reference);
+  }
+  
   private void checkExpectedBoolean(final Expression exp, final EReference reference) {
-    this.checkExpectedType(exp, TypeProvider.boolConstantType, reference);
+    this.checkExpectedType(exp, ETypeProvider.boolConstantType, reference);
   }
   
   private void checkExpectedBoolean(final ActionExpression exp, final EReference reference) {
-    this.checkExpectedType(exp, TypeProvider.boolConstantType, reference);
+    this.checkExpectedType(exp, ETypeProvider.boolConstantType, reference);
   }
   
   private void checkExpectedDouble(final Expression exp, final EReference reference) {
-    this.checkExpectedType(exp, TypeProvider.doubleConstantType, reference);
+    this.checkExpectedType(exp, ETypeProvider.doubleConstantType, reference);
   }
   
   private void checkExpectedDouble(final ActionExpression exp, final EReference reference) {
-    this.checkExpectedType(exp, TypeProvider.doubleConstantType, reference);
+    this.checkExpectedType(exp, ETypeProvider.doubleConstantType, reference);
   }
   
   private void checkExpectedType(final ActionExpression exp, final ExpressionsType expectedType, final EReference reference) {
     final ExpressionsType actualType = this.getTypeAndCheckNotNull(exp, reference);
     boolean _or = false;
-    boolean _notEquals = (!Objects.equal(actualType, expectedType));
-    if (_notEquals) {
+    boolean _equals = Objects.equal(actualType, expectedType);
+    if (_equals) {
       _or = true;
     } else {
-      boolean _notEquals_1 = (!Objects.equal(actualType, TypeProvider.freeVariableType));
-      _or = _notEquals_1;
+      boolean _equals_1 = Objects.equal(actualType, ETypeProvider.freeVariableType);
+      _or = _equals_1;
     }
-    if (_or) {
+    boolean _not = (!_or);
+    if (_not) {
       this.error(((("Expected " + expectedType) + " type, but was ") + actualType), reference, ONPAValidator.WRONG_TYPE);
     }
   }
@@ -363,10 +460,18 @@ public class ONPAValidator extends AbstractONPAValidator {
     }
   }
   
+  private void checkExpectedType(final Expression exp, final ActionType expectedType, final EReference reference) {
+    final ExpressionsType actualType = this.getTypeAndCheckNotNull(exp, reference);
+    boolean _notEquals = (!Objects.equal(actualType, expectedType));
+    if (_notEquals) {
+      this.error(((("Expected " + expectedType) + " type, but was ") + actualType), reference, ONPAValidator.WRONG_TYPE);
+    }
+  }
+  
   private ExpressionsType getTypeAndCheckNotNull(final ActionExpression exp, final EReference reference) {
     ExpressionsType _typeFor = null;
     if (exp!=null) {
-      _typeFor=this._typeProvider.typeFor(exp);
+      _typeFor=this._eTypeProvider.typeFor(exp);
     }
     ExpressionsType type = _typeFor;
     boolean _equals = Objects.equal(type, null);
@@ -379,7 +484,7 @@ public class ONPAValidator extends AbstractONPAValidator {
   private ExpressionsType getTypeAndCheckNotNull(final Expression exp, final EReference reference) {
     ExpressionsType _typeFor = null;
     if (exp!=null) {
-      _typeFor=this._typeProvider.typeFor(exp);
+      _typeFor=this._eTypeProvider.typeFor(exp);
     }
     ExpressionsType type = _typeFor;
     boolean _equals = Objects.equal(type, null);

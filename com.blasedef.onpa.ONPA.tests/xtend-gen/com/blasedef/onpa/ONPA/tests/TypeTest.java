@@ -4,8 +4,8 @@ import com.blasedef.onpa.ONPAInjectorProvider;
 import com.blasedef.onpa.oNPA.Expression;
 import com.blasedef.onpa.oNPA.Model;
 import com.blasedef.onpa.oNPA.Store;
+import com.blasedef.onpa.typing.ETypeProvider;
 import com.blasedef.onpa.typing.ExpressionsType;
-import com.blasedef.onpa.typing.TypeProvider;
 import com.google.inject.Inject;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.junit4.InjectWith;
@@ -28,7 +28,7 @@ public class TypeTest {
   
   @Inject
   @Extension
-  private TypeProvider _typeProvider;
+  private ETypeProvider _eTypeProvider;
   
   @Test
   public void doubleConstant() {
@@ -71,11 +71,11 @@ public class TypeTest {
   }
   
   public void assertDoubleConstantType(final CharSequence input) {
-    this.assertType(input, TypeProvider.doubleConstantType);
+    this.assertType(input, ETypeProvider.doubleConstantType);
   }
   
   public void assertBoolConstantType(final CharSequence input) {
-    this.assertType(input, TypeProvider.boolConstantType);
+    this.assertType(input, ETypeProvider.boolConstantType);
   }
   
   public void assertType(final CharSequence input, final ExpressionsType expectedType) {
@@ -84,7 +84,7 @@ public class TypeTest {
       EList<Store> _stores = _parse.getStores();
       Store _last = IterableExtensions.<Store>last(_stores);
       Expression _value = _last.getValue();
-      ExpressionsType _typeFor = this._typeProvider.typeFor(_value);
+      ExpressionsType _typeFor = this._eTypeProvider.typeFor(_value);
       Assert.assertSame(expectedType, _typeFor);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);

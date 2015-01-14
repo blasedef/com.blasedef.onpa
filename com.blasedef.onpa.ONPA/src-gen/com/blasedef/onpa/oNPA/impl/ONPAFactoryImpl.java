@@ -125,6 +125,7 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
       case ONPAPackage.PREDICATE_EXPRESSION: return createPredicateExpression();
       case ONPAPackage.EVALUATION_EXPRESSION: return createEvaluationExpression();
       case ONPAPackage.UPDATE_EXPRESSION: return createUpdateExpression();
+      case ONPAPackage.SELF_REFERENCED_STORE: return createSelfReferencedStore();
       case ONPAPackage.ACTION_EXPRESSION: return createActionExpression();
       case ONPAPackage.STORE: return createStore();
       case ONPAPackage.EXPRESSION: return createExpression();
@@ -150,7 +151,6 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
       case ONPAPackage.FREE_VARIABLE: return createFreeVariable();
       case ONPAPackage.BOOL_CONSTANT: return createBoolConstant();
       case ONPAPackage.REFERENCED_STORE: return createReferencedStore();
-      case ONPAPackage.SELF_REFERENCED_STORE: return createSelfReferencedStore();
       case ONPAPackage.OR: return createOr();
       case ONPAPackage.AND: return createAnd();
       case ONPAPackage.EQUALITY: return createEquality();
@@ -306,6 +306,17 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
   {
     UpdateExpressionImpl updateExpression = new UpdateExpressionImpl();
     return updateExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SelfReferencedStore createSelfReferencedStore()
+  {
+    SelfReferencedStoreImpl selfReferencedStore = new SelfReferencedStoreImpl();
+    return selfReferencedStore;
   }
 
   /**
@@ -581,17 +592,6 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
   {
     ReferencedStoreImpl referencedStore = new ReferencedStoreImpl();
     return referencedStore;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SelfReferencedStore createSelfReferencedStore()
-  {
-    SelfReferencedStoreImpl selfReferencedStore = new SelfReferencedStoreImpl();
-    return selfReferencedStore;
   }
 
   /**

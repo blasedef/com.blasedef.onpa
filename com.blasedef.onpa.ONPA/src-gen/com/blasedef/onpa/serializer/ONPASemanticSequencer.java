@@ -744,27 +744,8 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				}
 				else break;
 			case ONPAPackage.SELF_REFERENCED_STORE:
-				if(context == grammarAccess.getActionAdditionRule() ||
-				   context == grammarAccess.getActionAdditionAccess().getActionPluLeftAction_1_0() ||
-				   context == grammarAccess.getActionAndRule() ||
-				   context == grammarAccess.getActionAndAccess().getActionAndLeftAction_1_0() ||
-				   context == grammarAccess.getActionAtomicRule() ||
-				   context == grammarAccess.getActionComparisonRule() ||
-				   context == grammarAccess.getActionComparisonAccess().getActionComparisonLeftAction_1_0() ||
-				   context == grammarAccess.getActionDivisionRule() ||
-				   context == grammarAccess.getActionDivisionAccess().getActionDivLeftAction_1_0() ||
-				   context == grammarAccess.getActionEqualityRule() ||
-				   context == grammarAccess.getActionEqualityAccess().getActionEqualityLeftAction_1_0() ||
-				   context == grammarAccess.getActionExpressionRule() ||
-				   context == grammarAccess.getActionMultiplicationRule() ||
-				   context == grammarAccess.getActionMultiplicationAccess().getActionMulLeftAction_1_0() ||
-				   context == grammarAccess.getActionOrRule() ||
-				   context == grammarAccess.getActionOrAccess().getActionOrLeftAction_1_0() ||
-				   context == grammarAccess.getActionPrimaryRule() ||
-				   context == grammarAccess.getActionSubtractionRule() ||
-				   context == grammarAccess.getActionSubtractionAccess().getActionSubLeftAction_1_0() ||
-				   context == grammarAccess.getEvaluationExpressionRule()) {
-					sequence_ActionAtomic(context, (SelfReferencedStore) semanticObject); 
+				if(context == grammarAccess.getSelfReferencedStoreRule()) {
+					sequence_SelfReferencedStore(context, (SelfReferencedStore) semanticObject); 
 					return; 
 				}
 				else break;
@@ -916,22 +897,6 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getActionAtomicAccess().getValueStoreLOWERTerminalRuleCall_3_1_0_1(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     value=[Store|LOWER]
-	 */
-	protected void sequence_ActionAtomic(EObject context, SelfReferencedStore semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.SELF_REFERENCED_STORE__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.SELF_REFERENCED_STORE__VALUE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getActionAtomicAccess().getValueStoreLOWERTerminalRuleCall_4_2_0_1(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -1415,6 +1380,22 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     store=[Store|LOWER]
+	 */
+	protected void sequence_SelfReferencedStore(EObject context, SelfReferencedStore semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ONPAPackage.Literals.SELF_REFERENCED_STORE__STORE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ONPAPackage.Literals.SELF_REFERENCED_STORE__STORE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getSelfReferencedStoreAccess().getStoreStoreLOWERTerminalRuleCall_2_0_1(), semanticObject.getStore());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (name=LOWER value=Expression)
 	 */
 	protected void sequence_Store(EObject context, Store semanticObject) {
@@ -1462,7 +1443,7 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=[Store|LOWER] expression=ActionExpression)
+	 *     (name=SelfReferencedStore expression=ActionExpression)
 	 */
 	protected void sequence_UpdateExpression(EObject context, LocalUpdateExpression semanticObject) {
 		if(errorAcceptor != null) {
@@ -1473,8 +1454,8 @@ public class ONPASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getUpdateExpressionAccess().getNameStoreLOWERTerminalRuleCall_0_2_0_1(), semanticObject.getName());
-		feeder.accept(grammarAccess.getUpdateExpressionAccess().getExpressionActionExpressionParserRuleCall_0_4_0(), semanticObject.getExpression());
+		feeder.accept(grammarAccess.getUpdateExpressionAccess().getNameSelfReferencedStoreParserRuleCall_0_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getUpdateExpressionAccess().getExpressionActionExpressionParserRuleCall_0_3_0(), semanticObject.getExpression());
 		feeder.finish();
 	}
 	

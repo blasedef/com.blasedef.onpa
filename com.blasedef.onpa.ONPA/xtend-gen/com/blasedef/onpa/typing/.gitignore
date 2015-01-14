@@ -10,3 +10,7 @@
 /.ReferencedStoreType.java._trace
 /.FreeVariableType.java._trace
 /.ModelUtil.java._trace
+/.ActionType.java._trace
+/.UpdateExpressionType.java._trace
+/.ATypeProvider.java._trace
+/.ETypeProvider.java._trace

@@ -75,6 +75,7 @@ public class ONPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEvaluationExpressionAccess().getGroup(), "rule__EvaluationExpression__Group__0");
 					put(grammarAccess.getUpdateExpressionAccess().getGroup_0(), "rule__UpdateExpression__Group_0__0");
 					put(grammarAccess.getUpdateExpressionAccess().getGroup_1(), "rule__UpdateExpression__Group_1__0");
+					put(grammarAccess.getSelfReferencedStoreAccess().getGroup(), "rule__SelfReferencedStore__Group__0");
 					put(grammarAccess.getActionOrAccess().getGroup(), "rule__ActionOr__Group__0");
 					put(grammarAccess.getActionOrAccess().getGroup_1(), "rule__ActionOr__Group_1__0");
 					put(grammarAccess.getActionAndAccess().getGroup(), "rule__ActionAnd__Group__0");
@@ -97,7 +98,6 @@ public class ONPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getActionAtomicAccess().getGroup_1(), "rule__ActionAtomic__Group_1__0");
 					put(grammarAccess.getActionAtomicAccess().getGroup_2(), "rule__ActionAtomic__Group_2__0");
 					put(grammarAccess.getActionAtomicAccess().getGroup_3(), "rule__ActionAtomic__Group_3__0");
-					put(grammarAccess.getActionAtomicAccess().getGroup_4(), "rule__ActionAtomic__Group_4__0");
 					put(grammarAccess.getStoreAccess().getGroup(), "rule__Store__Group__0");
 					put(grammarAccess.getOrAccess().getGroup(), "rule__Or__Group__0");
 					put(grammarAccess.getOrAccess().getGroup_1(), "rule__Or__Group_1__0");
@@ -150,10 +150,11 @@ public class ONPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEvaluationsAccess().getExpressionsAssignment_1_2(), "rule__Evaluations__ExpressionsAssignment_1_2");
 					put(grammarAccess.getUpdatesAccess().getUpdatesAssignment_2(), "rule__Updates__UpdatesAssignment_2");
 					put(grammarAccess.getPredicateExpressionAccess().getExpressionAssignment_0(), "rule__PredicateExpression__ExpressionAssignment_0");
-					put(grammarAccess.getUpdateExpressionAccess().getNameAssignment_0_2(), "rule__UpdateExpression__NameAssignment_0_2");
-					put(grammarAccess.getUpdateExpressionAccess().getExpressionAssignment_0_4(), "rule__UpdateExpression__ExpressionAssignment_0_4");
+					put(grammarAccess.getUpdateExpressionAccess().getNameAssignment_0_1(), "rule__UpdateExpression__NameAssignment_0_1");
+					put(grammarAccess.getUpdateExpressionAccess().getExpressionAssignment_0_3(), "rule__UpdateExpression__ExpressionAssignment_0_3");
 					put(grammarAccess.getUpdateExpressionAccess().getNameAssignment_1_1(), "rule__UpdateExpression__NameAssignment_1_1");
 					put(grammarAccess.getUpdateExpressionAccess().getExpressionAssignment_1_3(), "rule__UpdateExpression__ExpressionAssignment_1_3");
+					put(grammarAccess.getSelfReferencedStoreAccess().getStoreAssignment_2(), "rule__SelfReferencedStore__StoreAssignment_2");
 					put(grammarAccess.getActionOrAccess().getRightAssignment_1_2(), "rule__ActionOr__RightAssignment_1_2");
 					put(grammarAccess.getActionAndAccess().getRightAssignment_1_2(), "rule__ActionAnd__RightAssignment_1_2");
 					put(grammarAccess.getActionEqualityAccess().getOpAssignment_1_1(), "rule__ActionEquality__OpAssignment_1_1");
@@ -169,7 +170,6 @@ public class ONPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getActionAtomicAccess().getValueAssignment_1_1(), "rule__ActionAtomic__ValueAssignment_1_1");
 					put(grammarAccess.getActionAtomicAccess().getValueAssignment_2_1(), "rule__ActionAtomic__ValueAssignment_2_1");
 					put(grammarAccess.getActionAtomicAccess().getValueAssignment_3_1(), "rule__ActionAtomic__ValueAssignment_3_1");
-					put(grammarAccess.getActionAtomicAccess().getValueAssignment_4_2(), "rule__ActionAtomic__ValueAssignment_4_2");
 					put(grammarAccess.getStoreAccess().getNameAssignment_0(), "rule__Store__NameAssignment_0");
 					put(grammarAccess.getStoreAccess().getValueAssignment_2(), "rule__Store__ValueAssignment_2");
 					put(grammarAccess.getOrAccess().getRightAssignment_1_2(), "rule__Or__RightAssignment_1_2");

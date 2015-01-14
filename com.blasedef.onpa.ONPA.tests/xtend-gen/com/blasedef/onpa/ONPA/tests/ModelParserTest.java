@@ -2,17 +2,8 @@ package com.blasedef.onpa.ONPA.tests;
 
 import com.blasedef.onpa.ONPAInjectorProvider;
 import com.blasedef.onpa.oNPA.Action;
-import com.blasedef.onpa.oNPA.ActionAnd;
-import com.blasedef.onpa.oNPA.ActionComparison;
-import com.blasedef.onpa.oNPA.ActionDiv;
-import com.blasedef.onpa.oNPA.ActionEquality;
 import com.blasedef.onpa.oNPA.ActionExpression;
-import com.blasedef.onpa.oNPA.ActionMul;
-import com.blasedef.onpa.oNPA.ActionNot;
-import com.blasedef.onpa.oNPA.ActionOr;
-import com.blasedef.onpa.oNPA.ActionPlu;
 import com.blasedef.onpa.oNPA.ActionProcess;
-import com.blasedef.onpa.oNPA.ActionSub;
 import com.blasedef.onpa.oNPA.And;
 import com.blasedef.onpa.oNPA.BoolConstant;
 import com.blasedef.onpa.oNPA.Broadcast;
@@ -24,10 +15,8 @@ import com.blasedef.onpa.oNPA.Equality;
 import com.blasedef.onpa.oNPA.EvaluationExpression;
 import com.blasedef.onpa.oNPA.Evaluations;
 import com.blasedef.onpa.oNPA.Expression;
-import com.blasedef.onpa.oNPA.FreeVariable;
 import com.blasedef.onpa.oNPA.In;
 import com.blasedef.onpa.oNPA.Leaf;
-import com.blasedef.onpa.oNPA.LocalUpdateExpression;
 import com.blasedef.onpa.oNPA.Model;
 import com.blasedef.onpa.oNPA.Mul;
 import com.blasedef.onpa.oNPA.Not;
@@ -41,7 +30,6 @@ import com.blasedef.onpa.oNPA.PredicateProcess;
 import com.blasedef.onpa.oNPA.ProcessExpression;
 import com.blasedef.onpa.oNPA.ProcessReference;
 import com.blasedef.onpa.oNPA.ReferencedStore;
-import com.blasedef.onpa.oNPA.SelfReferencedStore;
 import com.blasedef.onpa.oNPA.Store;
 import com.blasedef.onpa.oNPA.Sub;
 import com.blasedef.onpa.oNPA.Unicast;
@@ -1109,205 +1097,9 @@ public class ModelParserTest {
   }
   
   public CharSequence stringRepr(final ActionExpression e) {
-    String _switchResult = null;
-    boolean _matched = false;
-    if (!_matched) {
-      if (e instanceof ActionOr) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("(");
-        ActionExpression _left = ((ActionOr)e).getLeft();
-        CharSequence _stringRepr = this.stringRepr(_left);
-        _builder.append(_stringRepr, "");
-        _builder.append(" || ");
-        ActionExpression _right = ((ActionOr)e).getRight();
-        CharSequence _stringRepr_1 = this.stringRepr(_right);
-        _builder.append(_stringRepr_1, "");
-        _builder.append(")");
-        _switchResult = _builder.toString();
-      }
-    }
-    if (!_matched) {
-      if (e instanceof ActionAnd) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("(");
-        ActionExpression _left = ((ActionAnd)e).getLeft();
-        CharSequence _stringRepr = this.stringRepr(_left);
-        _builder.append(_stringRepr, "");
-        _builder.append(" && ");
-        ActionExpression _right = ((ActionAnd)e).getRight();
-        CharSequence _stringRepr_1 = this.stringRepr(_right);
-        _builder.append(_stringRepr_1, "");
-        _builder.append(")");
-        _switchResult = _builder.toString();
-      }
-    }
-    if (!_matched) {
-      if (e instanceof ActionEquality) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("(");
-        ActionExpression _left = ((ActionEquality)e).getLeft();
-        CharSequence _stringRepr = this.stringRepr(_left);
-        _builder.append(_stringRepr, "");
-        _builder.append(" ");
-        String _op = ((ActionEquality)e).getOp();
-        _builder.append(_op, "");
-        _builder.append(" ");
-        ActionExpression _right = ((ActionEquality)e).getRight();
-        CharSequence _stringRepr_1 = this.stringRepr(_right);
-        _builder.append(_stringRepr_1, "");
-        _builder.append(")");
-        _switchResult = _builder.toString();
-      }
-    }
-    if (!_matched) {
-      if (e instanceof ActionComparison) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("(");
-        ActionExpression _left = ((ActionComparison)e).getLeft();
-        CharSequence _stringRepr = this.stringRepr(_left);
-        _builder.append(_stringRepr, "");
-        _builder.append(" ");
-        String _op = ((ActionComparison)e).getOp();
-        _builder.append(_op, "");
-        _builder.append(" ");
-        ActionExpression _right = ((ActionComparison)e).getRight();
-        CharSequence _stringRepr_1 = this.stringRepr(_right);
-        _builder.append(_stringRepr_1, "");
-        _builder.append(")");
-        _switchResult = _builder.toString();
-      }
-    }
-    if (!_matched) {
-      if (e instanceof ActionSub) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("(");
-        ActionExpression _left = ((ActionSub)e).getLeft();
-        CharSequence _stringRepr = this.stringRepr(_left);
-        _builder.append(_stringRepr, "");
-        _builder.append(" - ");
-        ActionExpression _right = ((ActionSub)e).getRight();
-        CharSequence _stringRepr_1 = this.stringRepr(_right);
-        _builder.append(_stringRepr_1, "");
-        _builder.append(")");
-        _switchResult = _builder.toString();
-      }
-    }
-    if (!_matched) {
-      if (e instanceof ActionPlu) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("(");
-        ActionExpression _left = ((ActionPlu)e).getLeft();
-        CharSequence _stringRepr = this.stringRepr(_left);
-        _builder.append(_stringRepr, "");
-        _builder.append(" + ");
-        ActionExpression _right = ((ActionPlu)e).getRight();
-        CharSequence _stringRepr_1 = this.stringRepr(_right);
-        _builder.append(_stringRepr_1, "");
-        _builder.append(")");
-        _switchResult = _builder.toString();
-      }
-    }
-    if (!_matched) {
-      if (e instanceof ActionMul) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("(");
-        ActionExpression _left = ((ActionMul)e).getLeft();
-        CharSequence _stringRepr = this.stringRepr(_left);
-        _builder.append(_stringRepr, "");
-        _builder.append(" * ");
-        ActionExpression _right = ((ActionMul)e).getRight();
-        CharSequence _stringRepr_1 = this.stringRepr(_right);
-        _builder.append(_stringRepr_1, "");
-        _builder.append(")");
-        _switchResult = _builder.toString();
-      }
-    }
-    if (!_matched) {
-      if (e instanceof ActionDiv) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("(");
-        ActionExpression _left = ((ActionDiv)e).getLeft();
-        CharSequence _stringRepr = this.stringRepr(_left);
-        _builder.append(_stringRepr, "");
-        _builder.append(" / ");
-        ActionExpression _right = ((ActionDiv)e).getRight();
-        CharSequence _stringRepr_1 = this.stringRepr(_right);
-        _builder.append(_stringRepr_1, "");
-        _builder.append(")");
-        _switchResult = _builder.toString();
-      }
-    }
-    if (!_matched) {
-      if (e instanceof ActionNot) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("! ");
-        ActionExpression _expression = ((ActionNot)e).getExpression();
-        CharSequence _stringRepr = this.stringRepr(_expression);
-        _builder.append(_stringRepr, "");
-        _switchResult = _builder.toString();
-      }
-    }
-    if (!_matched) {
-      if (e instanceof FreeVariable) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        String _value = ((FreeVariable)e).getValue();
-        _builder.append(_value, "");
-        _switchResult = _builder.toString();
-      }
-    }
-    if (!_matched) {
-      if (e instanceof SelfReferencedStore) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("(this.");
-        Store _value = ((SelfReferencedStore)e).getValue();
-        String _name = _value.getName();
-        _builder.append(_name, "");
-        _builder.append(")");
-        _switchResult = _builder.toString();
-      }
-    }
-    if (!_matched) {
-      if (e instanceof ReferencedStore) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("(");
-        Store _value = ((ReferencedStore)e).getValue();
-        String _name = _value.getName();
-        _builder.append(_name, "");
-        _builder.append(")");
-        _switchResult = _builder.toString();
-      }
-    }
-    if (!_matched) {
-      if (e instanceof DoubleConstant) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        double _value = ((DoubleConstant)e).getValue();
-        _builder.append(_value, "");
-        _switchResult = _builder.toString();
-      }
-    }
-    if (!_matched) {
-      if (e instanceof BoolConstant) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        String _value = ((BoolConstant)e).getValue();
-        _builder.append(_value, "");
-        _switchResult = _builder.toString();
-      }
-    }
-    return _switchResult.toString();
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method value is undefined for the type ModelParserTest"
+      + "\nname cannot be resolved");
   }
   
   public CharSequence stringRepr(final ProcessExpression e) {
@@ -1503,39 +1295,8 @@ public class ModelParserTest {
   }
   
   public CharSequence stringRepr(final UpdateExpression u) {
-    CharSequence _switchResult = null;
-    boolean _matched = false;
-    if (!_matched) {
-      if (u instanceof LocalUpdateExpression) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("this.");
-        Store _name = ((LocalUpdateExpression)u).getName();
-        String _name_1 = _name.getName();
-        _builder.append(_name_1, "");
-        _builder.append(":=");
-        ActionExpression _expression = ((LocalUpdateExpression)u).getExpression();
-        CharSequence _stringRepr = this.stringRepr(_expression);
-        _builder.append(_stringRepr, "");
-        _builder.append(";");
-        _switchResult = _builder;
-      }
-    }
-    if (!_matched) {
-      if (u instanceof UpdateExpression) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        Store _name = u.getName();
-        String _name_1 = _name.getName();
-        _builder.append(_name_1, "");
-        _builder.append(":=");
-        ActionExpression _expression = u.getExpression();
-        CharSequence _stringRepr = this.stringRepr(_expression);
-        _builder.append(_stringRepr, "");
-        _builder.append(";");
-        _switchResult = _builder;
-      }
-    }
-    return _switchResult;
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method name is undefined for the type ModelParserTest"
+      + "\nThe method name is undefined for the type ModelParserTest");
   }
 }

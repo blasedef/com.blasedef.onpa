@@ -27,13 +27,16 @@ import com.blasedef.onpa.oNPA.ActionMul
 import com.blasedef.onpa.oNPA.ActionDiv
 import com.blasedef.onpa.oNPA.ActionNot
 
-class TypeProvider {
+import static extension com.blasedef.onpa.typing.ModelUtil.*
+
+class ETypeProvider {
 	
+	//ExpressionType
 	public static val doubleConstantType = new DoubleConstantType
 	public static val freeVariableType = new FreeVariableType
 	public static val boolConstantType = new BoolConstantType
 	public static val referencedStoreType = new ReferencedStoreType
-	//public static val selfReferencedStoreType = new SelfReferencedStoreType
+	public static val selfReferencedStoreType = new SelfReferencedStoreType
 	
 	
 		def dispatch ExpressionsType typeFor(Expression e) {
@@ -221,25 +224,27 @@ class TypeProvider {
 			else 
 				return null 
 		}
-		
+
 		def dispatch ExpressionsType typeFor(ReferencedStore e){
-			if( e.value == null ||
-				!(e.value.variablesDefinedBefore.contains(e.value))) {
+			if( e.value == null || (e.selfReferencedStores == e.value) ||
+				!(e.variablesDefinedBefore.contains(e.value))) {
 				return null}
 			else{
 				return e.value.value?.typeFor}
 		}
 		
-		def dispatch ExpressionsType typeFor(SelfReferencedStore e){
-			if( e.value == null ||
-				!(e.value.variablesDefinedBefore.contains(e.value))) {
-				return null}
-			else{
-				return e.value.value?.typeFor}
-		}
+//		def dispatch ExpressionsType typeFor(SelfReferencedStore e){
+//			if( e.value == null ||
+//				!(e.variablesDefinedBefore.contains(e.value))) {
+//				return null}
+//			else{
+//				return selfReferencedStoreType}
+//		}
 		
 		def dispatch ExpressionsType typeFor(FreeVariable e){
 			return freeVariableType
 		}
+		
+
 	
 }

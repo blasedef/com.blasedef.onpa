@@ -23,10 +23,10 @@ class ValidationTest {
 	@Test
 	def void testCheckNotSelfReferencing(){
 		'''
-		i = 10 + i;
+		i = i;
 		P = P;
 		(P,{i});
-		'''.parse.assertError(ONPAPackage::eINSTANCE.store,
+		'''.parse.assertError(ONPAPackage::eINSTANCE.referencedStore,
 			ONPAValidator::SELF_REFERENCING_STORE,
 			"Cannot have self referencing stores. 'i' is seen in the expression"
 		)
@@ -202,7 +202,7 @@ class ValidationTest {
 	@Test
 	def void testActionCom1(){
 		'''
-		a = 1.0;
+		a = true;
 		b = true;
 		P = c[$x < a;]($y;).P;
 		(P,{b});
@@ -211,5 +211,121 @@ class ValidationTest {
 			"Expected double type, but was boolean"
 		)
 	}
+	
+	def void testSub1(){
+		'''
+		a = 1.0;
+		b = true - a;
+		P = nil;
+		(P,{b});
+		'''.parse.assertError(ONPAPackage::eINSTANCE.sub,
+			ONPAValidator::WRONG_TYPE,
+			"Expected double type, but was boolean"
+		)
+	}
+	
+	@Test
+	def void testActionSub1(){
+		'''
+		a = true;
+		b = true;
+		P = c($y - a;).P;
+		(P,{b});
+		'''.parse.assertError(ONPAPackage::eINSTANCE.actionSub,
+			ONPAValidator::WRONG_TYPE,
+			"Expected double type, but was boolean"
+		)
+	}
+	
+	def void testPlu1(){
+		'''
+		a = 1.0;
+		b = true - a;
+		P = nil;
+		(P,{b});
+		'''.parse.assertError(ONPAPackage::eINSTANCE.plu,
+			ONPAValidator::WRONG_TYPE,
+			"Expected double type, but was boolean"
+		)
+	}
+	
+	@Test
+	def void testActionPlu1(){
+		'''
+		a = true;
+		b = true;
+		P = c($y + a;).P;
+		(P,{b});
+		'''.parse.assertError(ONPAPackage::eINSTANCE.actionPlu,
+			ONPAValidator::WRONG_TYPE,
+			"Expected double type, but was boolean"
+		)
+	}
+	
+	@Test
+	def void testMul1(){
+		'''
+		a = 1.0;
+		b = true * a;
+		P = nil;
+		(P,{b});
+		'''.parse.assertError(ONPAPackage::eINSTANCE.mul,
+			ONPAValidator::WRONG_TYPE,
+			"Expected double type, but was boolean"
+		)
+	}
+	
+	@Test
+	def void testActionMul1(){
+		'''
+		a = true;
+		b = true;
+		P = c($y * a;).P;
+		(P,{b});
+		'''.parse.assertError(ONPAPackage::eINSTANCE.actionMul,
+			ONPAValidator::WRONG_TYPE,
+			"Expected double type, but was boolean"
+		)
+	}
+	
+	@Test
+	def void testDiv1(){
+		'''
+		a = 1.0;
+		b = true / a;
+		P = nil;
+		(P,{b});
+		'''.parse.assertError(ONPAPackage::eINSTANCE.div,
+			ONPAValidator::WRONG_TYPE,
+			"Expected double type, but was boolean"
+		)
+	}
+	
+	@Test
+	def void testActionDiv1(){
+		'''
+		a = true;
+		b = true;
+		P = c($y / a;).P;
+		(P,{b});
+		'''.parse.assertError(ONPAPackage::eINSTANCE.actionDiv,
+			ONPAValidator::WRONG_TYPE,
+			"Expected double type, but was boolean"
+		)
+	}
+	
+	@Test
+	def void testUpdateExpression1(){
+		'''
+		z = 0.2;
+		P = c{this.z := boolean;}.P;
+		(P,{z});
+		'''.parse.assertError(ONPAPackage::eINSTANCE.updateExpression,
+			ONPAValidator::WRONG_TYPE,
+			"Expected self reference type, but was double"
+		)
+	}
+	
+	
 	
 }

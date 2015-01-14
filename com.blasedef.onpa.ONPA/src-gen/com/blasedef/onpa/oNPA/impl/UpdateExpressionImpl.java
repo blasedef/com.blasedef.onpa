@@ -4,13 +4,13 @@ package com.blasedef.onpa.oNPA.impl;
 
 import com.blasedef.onpa.oNPA.ActionExpression;
 import com.blasedef.onpa.oNPA.ONPAPackage;
-import com.blasedef.onpa.oNPA.Store;
 import com.blasedef.onpa.oNPA.UpdateExpression;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -40,7 +40,7 @@ public class UpdateExpressionImpl extends MinimalEObjectImpl.Container implement
    * @generated
    * @ordered
    */
-  protected Store name;
+  protected EObject name;
 
   /**
    * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
@@ -78,12 +78,12 @@ public class UpdateExpressionImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public Store getName()
+  public EObject getName()
   {
     if (name != null && name.eIsProxy())
     {
       InternalEObject oldName = (InternalEObject)name;
-      name = (Store)eResolveProxy(oldName);
+      name = eResolveProxy(oldName);
       if (name != oldName)
       {
         if (eNotificationRequired())
@@ -98,7 +98,7 @@ public class UpdateExpressionImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public Store basicGetName()
+  public EObject basicGetName()
   {
     return name;
   }
@@ -108,9 +108,9 @@ public class UpdateExpressionImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(Store newName)
+  public void setName(EObject newName)
   {
-    Store oldName = name;
+    EObject oldName = name;
     name = newName;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.UPDATE_EXPRESSION__NAME, oldName, name));
@@ -210,7 +210,7 @@ public class UpdateExpressionImpl extends MinimalEObjectImpl.Container implement
     switch (featureID)
     {
       case ONPAPackage.UPDATE_EXPRESSION__NAME:
-        setName((Store)newValue);
+        setName((EObject)newValue);
         return;
       case ONPAPackage.UPDATE_EXPRESSION__EXPRESSION:
         setExpression((ActionExpression)newValue);
@@ -230,7 +230,7 @@ public class UpdateExpressionImpl extends MinimalEObjectImpl.Container implement
     switch (featureID)
     {
       case ONPAPackage.UPDATE_EXPRESSION__NAME:
-        setName((Store)null);
+        setName((EObject)null);
         return;
       case ONPAPackage.UPDATE_EXPRESSION__EXPRESSION:
         setExpression((ActionExpression)null);

@@ -493,6 +493,34 @@ public interface ONPAPackage extends EPackage
   int UPDATE_EXPRESSION_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.SelfReferencedStoreImpl <em>Self Referenced Store</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.blasedef.onpa.oNPA.impl.SelfReferencedStoreImpl
+   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getSelfReferencedStore()
+   * @generated
+   */
+  int SELF_REFERENCED_STORE = 13;
+
+  /**
+   * The feature id for the '<em><b>Store</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELF_REFERENCED_STORE__STORE = 0;
+
+  /**
+   * The number of structural features of the '<em>Self Referenced Store</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELF_REFERENCED_STORE_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.ActionExpressionImpl <em>Action Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -500,7 +528,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionExpression()
    * @generated
    */
-  int ACTION_EXPRESSION = 13;
+  int ACTION_EXPRESSION = 14;
 
   /**
    * The number of structural features of the '<em>Action Expression</em>' class.
@@ -519,7 +547,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getStore()
    * @generated
    */
-  int STORE = 14;
+  int STORE = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -556,7 +584,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 15;
+  int EXPRESSION = 16;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -575,7 +603,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getParallel()
    * @generated
    */
-  int PARALLEL = 16;
+  int PARALLEL = 17;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -612,7 +640,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getChoice()
    * @generated
    */
-  int CHOICE = 17;
+  int CHOICE = 18;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -649,7 +677,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getLeaf()
    * @generated
    */
-  int LEAF = 18;
+  int LEAF = 19;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -677,7 +705,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getProcessReference()
    * @generated
    */
-  int PROCESS_REFERENCE = 19;
+  int PROCESS_REFERENCE = 20;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' reference.
@@ -705,7 +733,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getBroadcast()
    * @generated
    */
-  int BROADCAST = 20;
+  int BROADCAST = 21;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -760,7 +788,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getUnicast()
    * @generated
    */
-  int UNICAST = 21;
+  int UNICAST = 22;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -815,7 +843,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getIn()
    * @generated
    */
-  int IN = 22;
+  int IN = 23;
 
   /**
    * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
@@ -843,7 +871,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getOut()
    * @generated
    */
-  int OUT = 23;
+  int OUT = 24;
 
   /**
    * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
@@ -871,7 +899,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getLocalUpdateExpression()
    * @generated
    */
-  int LOCAL_UPDATE_EXPRESSION = 24;
+  int LOCAL_UPDATE_EXPRESSION = 25;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' reference.
@@ -908,7 +936,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionOr()
    * @generated
    */
-  int ACTION_OR = 25;
+  int ACTION_OR = 26;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -945,7 +973,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionAnd()
    * @generated
    */
-  int ACTION_AND = 26;
+  int ACTION_AND = 27;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -982,7 +1010,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionEquality()
    * @generated
    */
-  int ACTION_EQUALITY = 27;
+  int ACTION_EQUALITY = 28;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1028,7 +1056,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionComparison()
    * @generated
    */
-  int ACTION_COMPARISON = 28;
+  int ACTION_COMPARISON = 29;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1074,7 +1102,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionSub()
    * @generated
    */
-  int ACTION_SUB = 29;
+  int ACTION_SUB = 30;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1111,7 +1139,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionPlu()
    * @generated
    */
-  int ACTION_PLU = 30;
+  int ACTION_PLU = 31;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1148,7 +1176,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionMul()
    * @generated
    */
-  int ACTION_MUL = 31;
+  int ACTION_MUL = 32;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1185,7 +1213,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionDiv()
    * @generated
    */
-  int ACTION_DIV = 32;
+  int ACTION_DIV = 33;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1222,7 +1250,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionNot()
    * @generated
    */
-  int ACTION_NOT = 33;
+  int ACTION_NOT = 34;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1250,7 +1278,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getDoubleConstant()
    * @generated
    */
-  int DOUBLE_CONSTANT = 34;
+  int DOUBLE_CONSTANT = 35;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1278,7 +1306,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getFreeVariable()
    * @generated
    */
-  int FREE_VARIABLE = 35;
+  int FREE_VARIABLE = 36;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1306,7 +1334,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getBoolConstant()
    * @generated
    */
-  int BOOL_CONSTANT = 36;
+  int BOOL_CONSTANT = 37;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1334,7 +1362,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getReferencedStore()
    * @generated
    */
-  int REFERENCED_STORE = 37;
+  int REFERENCED_STORE = 38;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' reference.
@@ -1353,34 +1381,6 @@ public interface ONPAPackage extends EPackage
    * @ordered
    */
   int REFERENCED_STORE_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.SelfReferencedStoreImpl <em>Self Referenced Store</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.blasedef.onpa.oNPA.impl.SelfReferencedStoreImpl
-   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getSelfReferencedStore()
-   * @generated
-   */
-  int SELF_REFERENCED_STORE = 38;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SELF_REFERENCED_STORE__VALUE = ACTION_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Self Referenced Store</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SELF_REFERENCED_STORE_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.OrImpl <em>Or</em>}' class.
@@ -2087,6 +2087,27 @@ public interface ONPAPackage extends EPackage
   EReference getUpdateExpression_Expression();
 
   /**
+   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.SelfReferencedStore <em>Self Referenced Store</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Self Referenced Store</em>'.
+   * @see com.blasedef.onpa.oNPA.SelfReferencedStore
+   * @generated
+   */
+  EClass getSelfReferencedStore();
+
+  /**
+   * Returns the meta object for the reference '{@link com.blasedef.onpa.oNPA.SelfReferencedStore#getStore <em>Store</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Store</em>'.
+   * @see com.blasedef.onpa.oNPA.SelfReferencedStore#getStore()
+   * @see #getSelfReferencedStore()
+   * @generated
+   */
+  EReference getSelfReferencedStore_Store();
+
+  /**
    * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.ActionExpression <em>Action Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2676,27 +2697,6 @@ public interface ONPAPackage extends EPackage
    * @generated
    */
   EReference getReferencedStore_Value();
-
-  /**
-   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.SelfReferencedStore <em>Self Referenced Store</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Self Referenced Store</em>'.
-   * @see com.blasedef.onpa.oNPA.SelfReferencedStore
-   * @generated
-   */
-  EClass getSelfReferencedStore();
-
-  /**
-   * Returns the meta object for the reference '{@link com.blasedef.onpa.oNPA.SelfReferencedStore#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Value</em>'.
-   * @see com.blasedef.onpa.oNPA.SelfReferencedStore#getValue()
-   * @see #getSelfReferencedStore()
-   * @generated
-   */
-  EReference getSelfReferencedStore_Value();
 
   /**
    * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.Or <em>Or</em>}'.
@@ -3319,6 +3319,24 @@ public interface ONPAPackage extends EPackage
     EReference UPDATE_EXPRESSION__EXPRESSION = eINSTANCE.getUpdateExpression_Expression();
 
     /**
+     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.SelfReferencedStoreImpl <em>Self Referenced Store</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.blasedef.onpa.oNPA.impl.SelfReferencedStoreImpl
+     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getSelfReferencedStore()
+     * @generated
+     */
+    EClass SELF_REFERENCED_STORE = eINSTANCE.getSelfReferencedStore();
+
+    /**
+     * The meta object literal for the '<em><b>Store</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SELF_REFERENCED_STORE__STORE = eINSTANCE.getSelfReferencedStore_Store();
+
+    /**
      * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.ActionExpressionImpl <em>Action Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3815,24 +3833,6 @@ public interface ONPAPackage extends EPackage
      * @generated
      */
     EReference REFERENCED_STORE__VALUE = eINSTANCE.getReferencedStore_Value();
-
-    /**
-     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.SelfReferencedStoreImpl <em>Self Referenced Store</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.blasedef.onpa.oNPA.impl.SelfReferencedStoreImpl
-     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getSelfReferencedStore()
-     * @generated
-     */
-    EClass SELF_REFERENCED_STORE = eINSTANCE.getSelfReferencedStore();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SELF_REFERENCED_STORE__VALUE = eINSTANCE.getSelfReferencedStore_Value();
 
     /**
      * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.OrImpl <em>Or</em>}' class.
