@@ -12,49 +12,49 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalONPALexer extends Lexer {
-    public static final int RULE_ID=7;
-    public static final int T__29=29;
-    public static final int T__28=28;
-    public static final int T__27=27;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int T__21=21;
-    public static final int RULE_ANY_OTHER=12;
-    public static final int T__20=20;
-    public static final int EOF=-1;
-    public static final int RULE_LOWER=5;
     public static final int T__19=19;
-    public static final int T__16=16;
     public static final int T__15=15;
-    public static final int T__18=18;
+    public static final int T__16=16;
     public static final int T__17=17;
-    public static final int T__14=14;
+    public static final int T__18=18;
     public static final int T__13=13;
+    public static final int T__14=14;
+    public static final int RULE_ID=7;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
     public static final int RULE_INT=4;
-    public static final int T__42=42;
-    public static final int T__43=43;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int RULE_UPPER=6;
-    public static final int RULE_SL_COMMENT=10;
+    public static final int T__29=29;
+    public static final int T__22=22;
     public static final int RULE_ML_COMMENT=9;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__20=20;
+    public static final int T__21=21;
+    public static final int RULE_LOWER=5;
     public static final int RULE_STRING=8;
+    public static final int RULE_SL_COMMENT=10;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
     public static final int RULE_WS=11;
+    public static final int RULE_UPPER=6;
+    public static final int RULE_ANY_OTHER=12;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__42=42;
+    public static final int T__43=43;
 
     // delegates
     // delegators
@@ -1652,17 +1652,17 @@ public class InternalONPALexer extends Lexer {
 
     protected DFA14 dfa14 = new DFA14(this);
     static final String DFA14_eotS =
-        "\1\uffff\1\46\1\50\1\52\1\54\2\60\1\62\6\uffff\1\72\5\uffff\2\44\1\uffff\1\105\1\106\1\uffff\3\60\1\113\1\44\2\uffff\2\44\12\uffff\3\60\1\uffff\1\60\25\uffff\1\113\1\uffff\2\60\5\uffff\3\60\1\130\1\60\1\132\2\60\1\uffff\1\135\2\uffff\1\136\2\uffff";
+        "\1\uffff\1\46\1\50\1\52\1\54\2\60\1\62\6\uffff\1\72\5\uffff\2\44\1\uffff\1\105\1\107\1\uffff\3\60\1\113\1\44\2\uffff\2\44\12\uffff\3\60\1\uffff\1\60\24\uffff\1\113\2\uffff\2\60\5\uffff\3\60\1\130\1\60\1\132\2\60\1\uffff\1\135\2\uffff\1\136\2\uffff";
     static final String DFA14_eofS =
         "\137\uffff";
     static final String DFA14_minS =
-        "\1\0\4\75\3\60\6\uffff\1\174\5\uffff\1\75\1\46\1\uffff\1\52\1\60\1\uffff\4\60\1\101\2\uffff\2\0\12\uffff\3\60\1\uffff\1\60\25\uffff\1\60\1\uffff\2\60\5\uffff\6\60\1\56\1\60\1\uffff\1\60\2\uffff\1\60\2\uffff";
+        "\1\0\4\75\3\60\6\uffff\1\174\5\uffff\1\75\1\46\1\uffff\1\52\1\60\1\uffff\4\60\1\101\2\uffff\2\0\12\uffff\3\60\1\uffff\1\60\24\uffff\1\60\2\uffff\2\60\5\uffff\6\60\1\56\1\60\1\uffff\1\60\2\uffff\1\60\2\uffff";
     static final String DFA14_maxS =
-        "\1\uffff\4\75\3\172\6\uffff\1\174\5\uffff\1\75\1\46\1\uffff\1\57\1\172\1\uffff\5\172\2\uffff\2\uffff\12\uffff\3\172\1\uffff\1\172\25\uffff\1\172\1\uffff\2\172\5\uffff\10\172\1\uffff\1\172\2\uffff\1\172\2\uffff";
+        "\1\uffff\4\75\3\172\6\uffff\1\174\5\uffff\1\75\1\46\1\uffff\1\57\1\172\1\uffff\5\172\2\uffff\2\uffff\12\uffff\3\172\1\uffff\1\172\24\uffff\1\172\2\uffff\2\172\5\uffff\10\172\1\uffff\1\172\2\uffff\1\172\2\uffff";
     static final String DFA14_acceptS =
-        "\10\uffff\1\12\1\13\1\14\1\15\1\16\1\17\1\uffff\1\22\1\23\1\24\1\25\1\26\2\uffff\1\33\2\uffff\1\37\5\uffff\1\44\1\45\2\uffff\1\51\1\52\1\1\1\20\1\2\1\35\1\3\1\5\1\4\1\6\3\uffff\1\42\1\uffff\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\31\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\32\1\33\1\47\1\50\1\34\1\36\1\uffff\1\37\2\uffff\1\43\1\44\1\45\1\46\1\51\10\uffff\1\40\1\uffff\1\7\1\30\1\uffff\1\41\1\10";
+        "\10\uffff\1\12\1\13\1\14\1\15\1\16\1\17\1\uffff\1\22\1\23\1\24\1\25\1\26\2\uffff\1\33\2\uffff\1\37\5\uffff\1\44\1\45\2\uffff\1\51\1\52\1\1\1\20\1\2\1\35\1\3\1\5\1\4\1\6\3\uffff\1\42\1\uffff\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\31\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\32\1\33\1\47\1\50\1\34\1\uffff\1\36\1\37\2\uffff\1\43\1\44\1\45\1\46\1\51\10\uffff\1\40\1\uffff\1\7\1\30\1\uffff\1\41\1\10";
     static final String DFA14_specialS =
-        "\1\1\40\uffff\1\2\1\0\74\uffff}>";
+        "\1\2\40\uffff\1\0\1\1\74\uffff}>";
     static final String[] DFA14_transitionS = {
             "\11\44\2\43\2\44\1\43\22\44\1\43\1\2\1\41\1\44\1\31\1\44\1\25\1\42\1\10\1\14\1\21\1\17\1\11\1\26\1\20\1\27\12\40\1\24\1\15\1\4\1\1\1\3\2\44\4\35\1\30\25\35\1\22\1\44\1\23\1\36\1\37\1\44\4\34\1\7\1\6\4\34\1\33\2\34\1\32\5\34\1\5\6\34\1\12\1\16\1\13\uff82\44",
             "\1\45",
@@ -1688,12 +1688,12 @@ public class InternalONPALexer extends Lexer {
             "\1\101",
             "",
             "\1\103\4\uffff\1\104",
-            "\12\107\7\uffff\32\107\4\uffff\1\107\1\uffff\32\107",
+            "\12\106\7\uffff\32\106\4\uffff\1\106\1\uffff\32\106",
             "",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\10\57\1\111\21\57",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\10\57\1\112\21\57",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\107\7\uffff\32\107\4\uffff\1\107\1\uffff\32\107",
+            "\12\106\7\uffff\32\106\4\uffff\1\106\1\uffff\32\106",
             "\32\114\4\uffff\1\114\1\uffff\32\114",
             "",
             "",
@@ -1734,8 +1734,8 @@ public class InternalONPALexer extends Lexer {
             "",
             "",
             "",
+            "\12\106\7\uffff\32\106\4\uffff\1\106\1\uffff\32\106",
             "",
-            "\12\107\7\uffff\32\107\4\uffff\1\107\1\uffff\32\107",
             "",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\13\57\1\123\16\57",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\13\57\1\124\16\57",
@@ -1798,6 +1798,16 @@ public class InternalONPALexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
+                        int LA14_33 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA14_33>='\u0000' && LA14_33<='\uFFFF')) ) {s = 78;}
+
+                        else s = 36;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
                         int LA14_34 = input.LA(1);
 
                         s = -1;
@@ -1807,7 +1817,7 @@ public class InternalONPALexer extends Lexer {
 
                         if ( s>=0 ) return s;
                         break;
-                    case 1 : 
+                    case 2 : 
                         int LA14_0 = input.LA(1);
 
                         s = -1;
@@ -1882,16 +1892,6 @@ public class InternalONPALexer extends Lexer {
                         else if ( ((LA14_0>='\t' && LA14_0<='\n')||LA14_0=='\r'||LA14_0==' ') ) {s = 35;}
 
                         else if ( ((LA14_0>='\u0000' && LA14_0<='\b')||(LA14_0>='\u000B' && LA14_0<='\f')||(LA14_0>='\u000E' && LA14_0<='\u001F')||LA14_0=='#'||LA14_0=='%'||(LA14_0>='?' && LA14_0<='@')||LA14_0=='\\'||LA14_0=='`'||(LA14_0>='~' && LA14_0<='\uFFFF')) ) {s = 36;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA14_33 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA14_33>='\u0000' && LA14_33<='\uFFFF')) ) {s = 78;}
-
-                        else s = 36;
 
                         if ( s>=0 ) return s;
                         break;

@@ -20,7 +20,7 @@ class ATypeProvider {
 	
 	def dispatch ActionType typeFor(LocalUpdateExpression u){
 			
-		if(u.name.value == selfReferencedStoreType &&
+		if(u.name == selfReferencedStoreType &&
 			(u.expression == boolConstantType || 
 				u.expression == doubleConstantType)){
 				return updateExpressionType
