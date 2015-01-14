@@ -413,7 +413,7 @@ public class ONPAValidator extends AbstractONPAValidator {
   @Check
   public void checkType(final LocalUpdateExpression updateExpression) {
     throw new Error("Unresolved compilation problems:"
-      + "\nType mismatch: cannot convert from EObject to Expression");
+      + "\nThe method getN is undefined for the type ONPAValidator");
   }
   
   private void checkExpectedSelfReference(final Expression exp, final EReference reference) {

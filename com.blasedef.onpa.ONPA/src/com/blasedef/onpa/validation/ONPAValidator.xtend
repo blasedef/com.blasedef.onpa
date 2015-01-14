@@ -323,7 +323,7 @@ class ONPAValidator extends AbstractONPAValidator {
 
 	@Check
 	def checkType(LocalUpdateExpression updateExpression){
-		checkExpectedSelfReference(updateExpression.name,
+		checkExpectedSelfReference(updateExpression.getN,
 			ONPAPackage$Literals::UPDATE_EXPRESSION__NAME
 		)
 		checkExpectedDouble(updateExpression.expression,
