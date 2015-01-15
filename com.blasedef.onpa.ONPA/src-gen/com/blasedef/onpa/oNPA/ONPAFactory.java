@@ -122,13 +122,22 @@ public interface ONPAFactory extends EFactory
   PredicateExpression createPredicateExpression();
 
   /**
-   * Returns a new object of class '<em>Evaluation Expression</em>'.
+   * Returns a new object of class '<em>Evaluation Expression In</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Evaluation Expression</em>'.
+   * @return a new object of class '<em>Evaluation Expression In</em>'.
    * @generated
    */
-  EvaluationExpression createEvaluationExpression();
+  EvaluationExpressionIn createEvaluationExpressionIn();
+
+  /**
+   * Returns a new object of class '<em>Evaluation Expression Out</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Evaluation Expression Out</em>'.
+   * @generated
+   */
+  EvaluationExpressionOut createEvaluationExpressionOut();
 
   /**
    * Returns a new object of class '<em>Update Expression</em>'.
@@ -248,6 +257,33 @@ public interface ONPAFactory extends EFactory
   Out createOut();
 
   /**
+   * Returns a new object of class '<em>Local Evaluation Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Local Evaluation Expression</em>'.
+   * @generated
+   */
+  LocalEvaluationExpression createLocalEvaluationExpression();
+
+  /**
+   * Returns a new object of class '<em>Global Evaluation Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Global Evaluation Expression</em>'.
+   * @generated
+   */
+  GlobalEvaluationExpression createGlobalEvaluationExpression();
+
+  /**
+   * Returns a new object of class '<em>Free Evaluation Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Free Evaluation Expression</em>'.
+   * @generated
+   */
+  FreeEvaluationExpression createFreeEvaluationExpression();
+
+  /**
    * Returns a new object of class '<em>Local Update Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -255,6 +291,15 @@ public interface ONPAFactory extends EFactory
    * @generated
    */
   LocalUpdateExpression createLocalUpdateExpression();
+
+  /**
+   * Returns a new object of class '<em>Global Update Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Global Update Expression</em>'.
+   * @generated
+   */
+  GlobalUpdateExpression createGlobalUpdateExpression();
 
   /**
    * Returns a new object of class '<em>Action Or</em>'.

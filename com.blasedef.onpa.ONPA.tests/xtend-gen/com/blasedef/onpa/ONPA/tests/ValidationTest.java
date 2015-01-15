@@ -541,7 +541,47 @@ public class ValidationTest {
       EClass _updateExpression = ONPAPackage.eINSTANCE.getUpdateExpression();
       this._validationTestHelper.assertError(_parse, _updateExpression, 
         ONPAValidator.WRONG_TYPE, 
-        "Expected self reference type, but was double");
+        "assignment has non matching type to reference");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testUpdateExpression2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("z = 0.2;");
+      _builder.newLine();
+      _builder.append("P = c{z := boolean;}.P;");
+      _builder.newLine();
+      _builder.append("(P,{z});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _updateExpression = ONPAPackage.eINSTANCE.getUpdateExpression();
+      this._validationTestHelper.assertError(_parse, _updateExpression, 
+        ONPAValidator.WRONG_TYPE, 
+        "assignment has non matching type to reference");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testPredicateExpression1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("z = 0.2;");
+      _builder.newLine();
+      _builder.append("P = c[1.0].P;");
+      _builder.newLine();
+      _builder.append("(P,{z});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _predicateExpression = ONPAPackage.eINSTANCE.getPredicateExpression();
+      this._validationTestHelper.assertError(_parse, _predicateExpression, 
+        ONPAValidator.WRONG_TYPE, 
+        "Predicates must be boolean");
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

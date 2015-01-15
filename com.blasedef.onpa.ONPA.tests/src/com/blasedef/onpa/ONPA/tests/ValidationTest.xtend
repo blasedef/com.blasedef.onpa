@@ -322,10 +322,33 @@ class ValidationTest {
 		(P,{z});
 		'''.parse.assertError(ONPAPackage::eINSTANCE.updateExpression,
 			ONPAValidator::WRONG_TYPE,
-			"Expected self reference type, but was double"
+			"assignment has non matching type to reference"
 		)
 	}
 	
+	@Test
+	def void testUpdateExpression2(){
+		'''
+		z = 0.2;
+		P = c{z := boolean;}.P;
+		(P,{z});
+		'''.parse.assertError(ONPAPackage::eINSTANCE.updateExpression,
+			ONPAValidator::WRONG_TYPE,
+			"assignment has non matching type to reference"
+		)
+	}
+	
+	@Test
+	def void testPredicateExpression1(){
+		'''
+		z = 0.2;
+		P = c[1.0].P;
+		(P,{z});
+		'''.parse.assertError(ONPAPackage::eINSTANCE.predicateExpression,
+			ONPAValidator::WRONG_TYPE,
+			"Predicates must be boolean"
+		)
+	}	
 	
 	
 }

@@ -7,6 +7,8 @@ import com.blasedef.onpa.oNPA.ONPAPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Action Expression</b></em>'.
@@ -16,7 +18,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ActionExpressionImpl extends EvaluationExpressionImpl implements ActionExpression
+public class ActionExpressionImpl extends MinimalEObjectImpl.Container implements ActionExpression
 {
   /**
    * <!-- begin-user-doc -->

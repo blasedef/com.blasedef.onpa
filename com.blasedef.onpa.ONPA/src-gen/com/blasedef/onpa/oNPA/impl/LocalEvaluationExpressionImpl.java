@@ -2,7 +2,7 @@
  */
 package com.blasedef.onpa.oNPA.impl;
 
-import com.blasedef.onpa.oNPA.LocalUpdateExpression;
+import com.blasedef.onpa.oNPA.LocalEvaluationExpression;
 import com.blasedef.onpa.oNPA.ONPAPackage;
 import com.blasedef.onpa.oNPA.SelfReferencedStore;
 
@@ -16,18 +16,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Local Update Expression</b></em>'.
+ * An implementation of the model object '<em><b>Local Evaluation Expression</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.blasedef.onpa.oNPA.impl.LocalUpdateExpressionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.impl.LocalEvaluationExpressionImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class LocalUpdateExpressionImpl extends UpdateExpressionImpl implements LocalUpdateExpression
+public class LocalEvaluationExpressionImpl extends EvaluationExpressionInImpl implements LocalEvaluationExpression
 {
   /**
    * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
@@ -44,7 +44,7 @@ public class LocalUpdateExpressionImpl extends UpdateExpressionImpl implements L
    * <!-- end-user-doc -->
    * @generated
    */
-  protected LocalUpdateExpressionImpl()
+  protected LocalEvaluationExpressionImpl()
   {
     super();
   }
@@ -57,7 +57,7 @@ public class LocalUpdateExpressionImpl extends UpdateExpressionImpl implements L
   @Override
   protected EClass eStaticClass()
   {
-    return ONPAPackage.Literals.LOCAL_UPDATE_EXPRESSION;
+    return ONPAPackage.Literals.LOCAL_EVALUATION_EXPRESSION;
   }
 
   /**
@@ -81,7 +81,7 @@ public class LocalUpdateExpressionImpl extends UpdateExpressionImpl implements L
     name = newName;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ONPAPackage.LOCAL_UPDATE_EXPRESSION__NAME, oldName, newName);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ONPAPackage.LOCAL_EVALUATION_EXPRESSION__NAME, oldName, newName);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -98,14 +98,14 @@ public class LocalUpdateExpressionImpl extends UpdateExpressionImpl implements L
     {
       NotificationChain msgs = null;
       if (name != null)
-        msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.LOCAL_UPDATE_EXPRESSION__NAME, null, msgs);
+        msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.LOCAL_EVALUATION_EXPRESSION__NAME, null, msgs);
       if (newName != null)
-        msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.LOCAL_UPDATE_EXPRESSION__NAME, null, msgs);
+        msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ONPAPackage.LOCAL_EVALUATION_EXPRESSION__NAME, null, msgs);
       msgs = basicSetName(newName, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.LOCAL_UPDATE_EXPRESSION__NAME, newName, newName));
+      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.LOCAL_EVALUATION_EXPRESSION__NAME, newName, newName));
   }
 
   /**
@@ -118,7 +118,7 @@ public class LocalUpdateExpressionImpl extends UpdateExpressionImpl implements L
   {
     switch (featureID)
     {
-      case ONPAPackage.LOCAL_UPDATE_EXPRESSION__NAME:
+      case ONPAPackage.LOCAL_EVALUATION_EXPRESSION__NAME:
         return basicSetName(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -134,7 +134,7 @@ public class LocalUpdateExpressionImpl extends UpdateExpressionImpl implements L
   {
     switch (featureID)
     {
-      case ONPAPackage.LOCAL_UPDATE_EXPRESSION__NAME:
+      case ONPAPackage.LOCAL_EVALUATION_EXPRESSION__NAME:
         return getName();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -150,7 +150,7 @@ public class LocalUpdateExpressionImpl extends UpdateExpressionImpl implements L
   {
     switch (featureID)
     {
-      case ONPAPackage.LOCAL_UPDATE_EXPRESSION__NAME:
+      case ONPAPackage.LOCAL_EVALUATION_EXPRESSION__NAME:
         setName((SelfReferencedStore)newValue);
         return;
     }
@@ -167,7 +167,7 @@ public class LocalUpdateExpressionImpl extends UpdateExpressionImpl implements L
   {
     switch (featureID)
     {
-      case ONPAPackage.LOCAL_UPDATE_EXPRESSION__NAME:
+      case ONPAPackage.LOCAL_EVALUATION_EXPRESSION__NAME:
         setName((SelfReferencedStore)null);
         return;
     }
@@ -184,10 +184,10 @@ public class LocalUpdateExpressionImpl extends UpdateExpressionImpl implements L
   {
     switch (featureID)
     {
-      case ONPAPackage.LOCAL_UPDATE_EXPRESSION__NAME:
+      case ONPAPackage.LOCAL_EVALUATION_EXPRESSION__NAME:
         return name != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //LocalUpdateExpressionImpl
+} //LocalEvaluationExpressionImpl

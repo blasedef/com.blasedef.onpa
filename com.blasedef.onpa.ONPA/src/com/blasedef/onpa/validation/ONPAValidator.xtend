@@ -39,11 +39,15 @@ import com.blasedef.onpa.oNPA.ActionPlu
 import static extension com.blasedef.onpa.typing.ModelUtil.*
 import com.blasedef.onpa.oNPA.ActionMul
 import com.blasedef.onpa.oNPA.ActionDiv
-import com.blasedef.onpa.oNPA.UpdateExpression
 import com.blasedef.onpa.typing.ETypeProvider
 import com.blasedef.onpa.typing.ATypeProvider
 import com.blasedef.onpa.typing.ActionType
 import com.blasedef.onpa.oNPA.LocalUpdateExpression
+import com.blasedef.onpa.oNPA.GlobalUpdateExpression
+import com.blasedef.onpa.oNPA.PredicateExpression
+import com.blasedef.onpa.oNPA.LocalEvaluationExpression
+import com.blasedef.onpa.oNPA.GlobalEvaluationExpression
+import com.blasedef.onpa.oNPA.FreeEvaluationExpression
 
 /**
  * Custom validation rules. 
@@ -320,20 +324,64 @@ class ONPAValidator extends AbstractONPAValidator {
 		)
 	}
 	
+	
+	@Inject extension ATypeProvider
 
 	@Check
 	def checkType(LocalUpdateExpression updateExpression){
-		checkExpectedSelfReference(updateExpression.getN,
-			ONPAPackage$Literals::UPDATE_EXPRESSION__NAME
-		)
-		checkExpectedDouble(updateExpression.expression,
-			ONPAPackage$Literals::UPDATE_EXPRESSION__EXPRESSION
-		)
+		
+		var type = updateExpression?.typeForA
+		if(type == null)
+			error("assignment has non matching type to reference", ONPAPackage$Literals::UPDATE_EXPRESSION__EXPRESSION, WRONG_TYPE)
+		
 	}
 	
-	def private checkExpectedSelfReference(Expression exp, EReference reference){
-		checkExpectedType(exp, ATypeProvider::selfReferencedStoreType, reference)
+	@Check
+	def checkType(GlobalUpdateExpression updateExpression){
+		
+		var type = updateExpression?.typeForA
+		if(type == null)
+			error("assignment has non matching type to reference", ONPAPackage$Literals::UPDATE_EXPRESSION__EXPRESSION, WRONG_TYPE)
+		
 	}
+	
+	@Check
+	def checkType(PredicateExpression predicateExpression){
+		
+		var type = predicateExpression?.typeForA
+		if(type == null)
+			error("Predicates must be boolean", ONPAPackage$Literals::PREDICATE_EXPRESSION__EXPRESSION, WRONG_TYPE)
+		
+	}
+	
+	@Check
+	def checkType(LocalEvaluationExpression evalExpression){
+		
+		var type = evalExpression?.typeForA
+		if(type == null)
+			error("assignment has non matching type to reference", ONPAPackage$Literals::EVALUATION_EXPRESSION_IN__EXPRESSION, WRONG_TYPE)
+		
+	}
+	
+	@Check
+	def checkType(GlobalEvaluationExpression evalExpression){
+		
+		var type = evalExpression?.typeForA
+		if(type == null)
+			error("assignment has non matching type to reference", ONPAPackage$Literals::EVALUATION_EXPRESSION_IN__EXPRESSION, WRONG_TYPE)
+		
+	}
+	
+	
+	@Check
+	def checkType(FreeEvaluationExpression evalExpression){
+		
+		var type = evalExpression?.typeForA
+		if(type == null)
+			error("bad assignment, check types", ONPAPackage$Literals::FREE_EVALUATION_EXPRESSION__EXPRESSION, WRONG_TYPE)
+		
+	}
+	
 	
 	def private checkExpectedBoolean(Expression exp, EReference reference) {
 		checkExpectedType(exp, ETypeProvider::boolConstantType, reference)
@@ -361,14 +409,6 @@ class ONPAValidator extends AbstractONPAValidator {
 	
 	def private checkExpectedType(Expression exp,
 			ExpressionsType expectedType, EReference reference) {
-		val actualType = getTypeAndCheckNotNull(exp, reference)
-		if (actualType != expectedType)
-			error("Expected " + expectedType + " type, but was " + actualType,
-					reference, WRONG_TYPE)
-	}
-	
-	def private checkExpectedType(Expression exp,
-			ActionType expectedType, EReference reference) {
 		val actualType = getTypeAndCheckNotNull(exp, reference)
 		if (actualType != expectedType)
 			error("Expected " + expectedType + " type, but was " + actualType,

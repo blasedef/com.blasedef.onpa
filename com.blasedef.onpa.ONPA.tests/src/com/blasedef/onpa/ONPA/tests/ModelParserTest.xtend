@@ -54,6 +54,7 @@ import org.eclipse.xtext.junit4.validation.ValidationTestHelper
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
+import com.blasedef.onpa.oNPA.GlobalUpdateExpression
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(ONPAInjectorProvider))
@@ -572,7 +573,7 @@ public class ModelParserTest {
 	
 	@Test
 	def void testAssertProcess12a() {
-		assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;]($y;){this.a := $z+1.0;}.P; (P,{a});","c[$x;]($y;){this.a:=($z + 1.0);}.P")
+		assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;](this.a := $y;){this.a := $z+1.0;}.P; (P,{a});","c[$x;]($y;){this.a:=($z + 1.0);}.P")
 	}
 	
 	@Test
@@ -634,7 +635,7 @@ public class ModelParserTest {
 			ActionDiv: 					'''(«e.left.stringRepr» / «e.right.stringRepr»)'''
 			ActionNot: 					'''! «e.expression.stringRepr»'''
 			FreeVariable:				'''«e.value»'''
-			SelfReferencedStore: 		'''(this.«e.value.name»)'''
+			SelfReferencedStore: 		'''(this.«e.name.name»)'''
 			ReferencedStore: 		'''(«e.value.name»)'''
 			DoubleConstant: 		'''«e.value»'''
 			BoolConstant: 			'''«e.value»'''
@@ -678,8 +679,8 @@ public class ModelParserTest {
 	
 	def CharSequence stringRepr(UpdateExpression u){
 		switch(u){
-			LocalUpdateExpression: 	'''this.«u.name.name»:=«u.expression.stringRepr»;''' 
-			UpdateExpression:		'''«u.name.name»:=«u.expression.stringRepr»;'''
+			LocalUpdateExpression: 	'''this.«u.name.name.name»:=«u.expression.stringRepr»;''' 
+			GlobalUpdateExpression:		'''«u.name.name»:=«u.expression.stringRepr»;'''
 		}
 	}
 	

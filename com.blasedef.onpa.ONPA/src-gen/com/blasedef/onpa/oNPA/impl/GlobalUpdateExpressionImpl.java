@@ -2,8 +2,8 @@
  */
 package com.blasedef.onpa.oNPA.impl;
 
+import com.blasedef.onpa.oNPA.GlobalUpdateExpression;
 import com.blasedef.onpa.oNPA.ONPAPackage;
-import com.blasedef.onpa.oNPA.SelfReferencedStore;
 import com.blasedef.onpa.oNPA.Store;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -12,22 +12,21 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Self Referenced Store</b></em>'.
+ * An implementation of the model object '<em><b>Global Update Expression</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.blasedef.onpa.oNPA.impl.SelfReferencedStoreImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.impl.GlobalUpdateExpressionImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class SelfReferencedStoreImpl extends MinimalEObjectImpl.Container implements SelfReferencedStore
+public class GlobalUpdateExpressionImpl extends UpdateExpressionImpl implements GlobalUpdateExpression
 {
   /**
    * The cached value of the '{@link #getName() <em>Name</em>}' reference.
@@ -44,7 +43,7 @@ public class SelfReferencedStoreImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  protected SelfReferencedStoreImpl()
+  protected GlobalUpdateExpressionImpl()
   {
     super();
   }
@@ -57,7 +56,7 @@ public class SelfReferencedStoreImpl extends MinimalEObjectImpl.Container implem
   @Override
   protected EClass eStaticClass()
   {
-    return ONPAPackage.Literals.SELF_REFERENCED_STORE;
+    return ONPAPackage.Literals.GLOBAL_UPDATE_EXPRESSION;
   }
 
   /**
@@ -74,7 +73,7 @@ public class SelfReferencedStoreImpl extends MinimalEObjectImpl.Container implem
       if (name != oldName)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ONPAPackage.SELF_REFERENCED_STORE__NAME, oldName, name));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ONPAPackage.GLOBAL_UPDATE_EXPRESSION__NAME, oldName, name));
       }
     }
     return name;
@@ -100,7 +99,7 @@ public class SelfReferencedStoreImpl extends MinimalEObjectImpl.Container implem
     Store oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.SELF_REFERENCED_STORE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, ONPAPackage.GLOBAL_UPDATE_EXPRESSION__NAME, oldName, name));
   }
 
   /**
@@ -113,7 +112,7 @@ public class SelfReferencedStoreImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case ONPAPackage.SELF_REFERENCED_STORE__NAME:
+      case ONPAPackage.GLOBAL_UPDATE_EXPRESSION__NAME:
         if (resolve) return getName();
         return basicGetName();
     }
@@ -130,7 +129,7 @@ public class SelfReferencedStoreImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case ONPAPackage.SELF_REFERENCED_STORE__NAME:
+      case ONPAPackage.GLOBAL_UPDATE_EXPRESSION__NAME:
         setName((Store)newValue);
         return;
     }
@@ -147,7 +146,7 @@ public class SelfReferencedStoreImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case ONPAPackage.SELF_REFERENCED_STORE__NAME:
+      case ONPAPackage.GLOBAL_UPDATE_EXPRESSION__NAME:
         setName((Store)null);
         return;
     }
@@ -164,10 +163,10 @@ public class SelfReferencedStoreImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case ONPAPackage.SELF_REFERENCED_STORE__NAME:
+      case ONPAPackage.GLOBAL_UPDATE_EXPRESSION__NAME:
         return name != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //SelfReferencedStoreImpl
+} //GlobalUpdateExpressionImpl

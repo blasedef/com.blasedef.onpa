@@ -22,12 +22,17 @@ import com.blasedef.onpa.oNPA.Comparison;
 import com.blasedef.onpa.oNPA.Div;
 import com.blasedef.onpa.oNPA.DoubleConstant;
 import com.blasedef.onpa.oNPA.Equality;
-import com.blasedef.onpa.oNPA.EvaluationExpression;
+import com.blasedef.onpa.oNPA.EvaluationExpressionIn;
+import com.blasedef.onpa.oNPA.EvaluationExpressionOut;
 import com.blasedef.onpa.oNPA.Evaluations;
 import com.blasedef.onpa.oNPA.Expression;
+import com.blasedef.onpa.oNPA.FreeEvaluationExpression;
 import com.blasedef.onpa.oNPA.FreeVariable;
+import com.blasedef.onpa.oNPA.GlobalEvaluationExpression;
+import com.blasedef.onpa.oNPA.GlobalUpdateExpression;
 import com.blasedef.onpa.oNPA.In;
 import com.blasedef.onpa.oNPA.Leaf;
+import com.blasedef.onpa.oNPA.LocalEvaluationExpression;
 import com.blasedef.onpa.oNPA.LocalUpdateExpression;
 import com.blasedef.onpa.oNPA.Model;
 import com.blasedef.onpa.oNPA.Mul;
@@ -123,7 +128,8 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
       case ONPAPackage.EVALUATIONS: return createEvaluations();
       case ONPAPackage.UPDATES: return createUpdates();
       case ONPAPackage.PREDICATE_EXPRESSION: return createPredicateExpression();
-      case ONPAPackage.EVALUATION_EXPRESSION: return createEvaluationExpression();
+      case ONPAPackage.EVALUATION_EXPRESSION_IN: return createEvaluationExpressionIn();
+      case ONPAPackage.EVALUATION_EXPRESSION_OUT: return createEvaluationExpressionOut();
       case ONPAPackage.UPDATE_EXPRESSION: return createUpdateExpression();
       case ONPAPackage.SELF_REFERENCED_STORE: return createSelfReferencedStore();
       case ONPAPackage.ACTION_EXPRESSION: return createActionExpression();
@@ -137,7 +143,11 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
       case ONPAPackage.UNICAST: return createUnicast();
       case ONPAPackage.IN: return createIn();
       case ONPAPackage.OUT: return createOut();
+      case ONPAPackage.LOCAL_EVALUATION_EXPRESSION: return createLocalEvaluationExpression();
+      case ONPAPackage.GLOBAL_EVALUATION_EXPRESSION: return createGlobalEvaluationExpression();
+      case ONPAPackage.FREE_EVALUATION_EXPRESSION: return createFreeEvaluationExpression();
       case ONPAPackage.LOCAL_UPDATE_EXPRESSION: return createLocalUpdateExpression();
+      case ONPAPackage.GLOBAL_UPDATE_EXPRESSION: return createGlobalUpdateExpression();
       case ONPAPackage.ACTION_OR: return createActionOr();
       case ONPAPackage.ACTION_AND: return createActionAnd();
       case ONPAPackage.ACTION_EQUALITY: return createActionEquality();
@@ -291,10 +301,21 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public EvaluationExpression createEvaluationExpression()
+  public EvaluationExpressionIn createEvaluationExpressionIn()
   {
-    EvaluationExpressionImpl evaluationExpression = new EvaluationExpressionImpl();
-    return evaluationExpression;
+    EvaluationExpressionInImpl evaluationExpressionIn = new EvaluationExpressionInImpl();
+    return evaluationExpressionIn;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EvaluationExpressionOut createEvaluationExpressionOut()
+  {
+    EvaluationExpressionOutImpl evaluationExpressionOut = new EvaluationExpressionOutImpl();
+    return evaluationExpressionOut;
   }
 
   /**
@@ -445,10 +466,54 @@ public class ONPAFactoryImpl extends EFactoryImpl implements ONPAFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public LocalEvaluationExpression createLocalEvaluationExpression()
+  {
+    LocalEvaluationExpressionImpl localEvaluationExpression = new LocalEvaluationExpressionImpl();
+    return localEvaluationExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GlobalEvaluationExpression createGlobalEvaluationExpression()
+  {
+    GlobalEvaluationExpressionImpl globalEvaluationExpression = new GlobalEvaluationExpressionImpl();
+    return globalEvaluationExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FreeEvaluationExpression createFreeEvaluationExpression()
+  {
+    FreeEvaluationExpressionImpl freeEvaluationExpression = new FreeEvaluationExpressionImpl();
+    return freeEvaluationExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public LocalUpdateExpression createLocalUpdateExpression()
   {
     LocalUpdateExpressionImpl localUpdateExpression = new LocalUpdateExpressionImpl();
     return localUpdateExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GlobalUpdateExpression createGlobalUpdateExpression()
+  {
+    GlobalUpdateExpressionImpl globalUpdateExpression = new GlobalUpdateExpressionImpl();
+    return globalUpdateExpression;
   }
 
   /**

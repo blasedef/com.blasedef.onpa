@@ -851,10 +851,6 @@ public class ETypeProvider {
       return _typeFor((ActionPlu)e);
     } else if (e instanceof ActionSub) {
       return _typeFor((ActionSub)e);
-    } else if (e instanceof FreeVariable) {
-      return _typeFor((FreeVariable)e);
-    } else if (e instanceof ReferencedStore) {
-      return _typeFor((ReferencedStore)e);
     } else if (e instanceof And) {
       return _typeFor((And)e);
     } else if (e instanceof Comparison) {
@@ -863,6 +859,8 @@ public class ETypeProvider {
       return _typeFor((Div)e);
     } else if (e instanceof Equality) {
       return _typeFor((Equality)e);
+    } else if (e instanceof FreeVariable) {
+      return _typeFor((FreeVariable)e);
     } else if (e instanceof Mul) {
       return _typeFor((Mul)e);
     } else if (e instanceof Not) {
@@ -871,6 +869,8 @@ public class ETypeProvider {
       return _typeFor((Or)e);
     } else if (e instanceof Plu) {
       return _typeFor((Plu)e);
+    } else if (e instanceof ReferencedStore) {
+      return _typeFor((ReferencedStore)e);
     } else if (e instanceof Sub) {
       return _typeFor((Sub)e);
     } else if (e instanceof Expression) {

@@ -969,9 +969,9 @@ ruleEvaluations returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getEvaluationsAccess().getExpressionsEvaluationExpressionParserRuleCall_0_2_0()); 
+	        newCompositeNode(grammarAccess.getEvaluationsAccess().getExpressionsEvaluationExpressionInParserRuleCall_0_2_0()); 
 	    }
-		lv_expressions_2_0=ruleEvaluationExpression		{
+		lv_expressions_2_0=ruleEvaluationExpressionIn		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getEvaluationsRule());
 	        }
@@ -979,7 +979,7 @@ ruleEvaluations returns [EObject current=null]
        			$current, 
        			"expressions",
         		lv_expressions_2_0, 
-        		"EvaluationExpression");
+        		"EvaluationExpressionIn");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1002,9 +1002,9 @@ ruleEvaluations returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getEvaluationsAccess().getExpressionsEvaluationExpressionParserRuleCall_1_2_0()); 
+	        newCompositeNode(grammarAccess.getEvaluationsAccess().getExpressionsEvaluationExpressionOutParserRuleCall_1_2_0()); 
 	    }
-		lv_expressions_6_0=ruleEvaluationExpression		{
+		lv_expressions_6_0=ruleEvaluationExpressionOut		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getEvaluationsRule());
 	        }
@@ -1012,7 +1012,7 @@ ruleEvaluations returns [EObject current=null]
        			$current, 
        			"expressions",
         		lv_expressions_6_0, 
-        		"EvaluationExpression");
+        		"EvaluationExpressionOut");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1147,39 +1147,203 @@ finally {
 
 
 
-// Entry rule entryRuleEvaluationExpression
-entryRuleEvaluationExpression returns [EObject current=null] 
+// Entry rule entryRuleEvaluationExpressionIn
+entryRuleEvaluationExpressionIn returns [EObject current=null] 
 	@init { 
 		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
 	}
 	:
-	{ newCompositeNode(grammarAccess.getEvaluationExpressionRule()); }
-	 iv_ruleEvaluationExpression=ruleEvaluationExpression 
-	 { $current=$iv_ruleEvaluationExpression.current; } 
+	{ newCompositeNode(grammarAccess.getEvaluationExpressionInRule()); }
+	 iv_ruleEvaluationExpressionIn=ruleEvaluationExpressionIn 
+	 { $current=$iv_ruleEvaluationExpressionIn.current; } 
 	 EOF 
 ;
 finally {
 	myHiddenTokenState.restore();
 }
 
-// Rule EvaluationExpression
-ruleEvaluationExpression returns [EObject current=null] 
+// Rule EvaluationExpressionIn
+ruleEvaluationExpressionIn returns [EObject current=null] 
     @init { enterRule(); 
 		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
     }
     @after { leaveRule(); }:
-(
-    { 
-        newCompositeNode(grammarAccess.getEvaluationExpressionAccess().getActionExpressionParserRuleCall_0()); 
-    }
-    this_ActionExpression_0=ruleActionExpression
-    { 
-        $current = $this_ActionExpression_0.current; 
-        afterParserOrEnumRuleCall();
-    }
-	otherlv_1=';' 
+(((
     {
-    	newLeafNode(otherlv_1, grammarAccess.getEvaluationExpressionAccess().getSemicolonKeyword_1());
+        $current = forceCreateModelElement(
+            grammarAccess.getEvaluationExpressionInAccess().getLocalEvaluationExpressionAction_0_0(),
+            $current);
+    }
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEvaluationExpressionInAccess().getNameSelfReferencedStoreParserRuleCall_0_1_0()); 
+	    }
+		lv_name_1_0=ruleSelfReferencedStore		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEvaluationExpressionInRule());
+	        }
+       		set(
+       			$current, 
+       			"name",
+        		lv_name_1_0, 
+        		"SelfReferencedStore");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_2=':=' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getEvaluationExpressionInAccess().getColonEqualsSignKeyword_0_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEvaluationExpressionInAccess().getExpressionActionExpressionParserRuleCall_0_3_0()); 
+	    }
+		lv_expression_3_0=ruleActionExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEvaluationExpressionInRule());
+	        }
+       		set(
+       			$current, 
+       			"expression",
+        		lv_expression_3_0, 
+        		"ActionExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_4=';' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getEvaluationExpressionInAccess().getSemicolonKeyword_0_4());
+    }
+)
+    |((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getEvaluationExpressionInAccess().getGlobalEvaluationExpressionAction_1_0(),
+            $current);
+    }
+)(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getEvaluationExpressionInRule());
+	        }
+        }
+	otherlv_6=RULE_LOWER
+	{
+		newLeafNode(otherlv_6, grammarAccess.getEvaluationExpressionInAccess().getNameStoreCrossReference_1_1_0()); 
+	}
+
+)
+)	otherlv_7=':=' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getEvaluationExpressionInAccess().getColonEqualsSignKeyword_1_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEvaluationExpressionInAccess().getExpressionActionExpressionParserRuleCall_1_3_0()); 
+	    }
+		lv_expression_8_0=ruleActionExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEvaluationExpressionInRule());
+	        }
+       		set(
+       			$current, 
+       			"expression",
+        		lv_expression_8_0, 
+        		"ActionExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_9=';' 
+    {
+    	newLeafNode(otherlv_9, grammarAccess.getEvaluationExpressionInAccess().getSemicolonKeyword_1_4());
+    }
+))
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+
+
+
+
+// Entry rule entryRuleEvaluationExpressionOut
+entryRuleEvaluationExpressionOut returns [EObject current=null] 
+	@init { 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+	}
+	:
+	{ newCompositeNode(grammarAccess.getEvaluationExpressionOutRule()); }
+	 iv_ruleEvaluationExpressionOut=ruleEvaluationExpressionOut 
+	 { $current=$iv_ruleEvaluationExpressionOut.current; } 
+	 EOF 
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule EvaluationExpressionOut
+ruleEvaluationExpressionOut returns [EObject current=null] 
+    @init { enterRule(); 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getEvaluationExpressionOutAccess().getFreeEvaluationExpressionAction_0(),
+            $current);
+    }
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEvaluationExpressionOutAccess().getNameFreeVariableParserRuleCall_1_0()); 
+	    }
+		lv_name_1_0=ruleFreeVariable		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEvaluationExpressionOutRule());
+	        }
+       		set(
+       			$current, 
+       			"name",
+        		lv_name_1_0, 
+        		"FreeVariable");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_2=':=' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getEvaluationExpressionOutAccess().getColonEqualsSignKeyword_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEvaluationExpressionOutAccess().getExpressionActionExpressionParserRuleCall_3_0()); 
+	    }
+		lv_expression_3_0=ruleActionExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEvaluationExpressionOutRule());
+	        }
+       		set(
+       			$current, 
+       			"expression",
+        		lv_expression_3_0, 
+        		"ActionExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_4=';' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getEvaluationExpressionOutAccess().getSemicolonKeyword_4());
     }
 )
 ;
@@ -1266,7 +1430,7 @@ ruleUpdateExpression returns [EObject current=null]
     |((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getUpdateExpressionAccess().getUpdateExpressionAction_1_0(),
+            grammarAccess.getUpdateExpressionAccess().getGlobalUpdateExpressionAction_1_0(),
             $current);
     }
 )(
@@ -1358,7 +1522,7 @@ ruleSelfReferencedStore returns [EObject current=null]
         }
 	otherlv_2=RULE_LOWER
 	{
-		newLeafNode(otherlv_2, grammarAccess.getSelfReferencedStoreAccess().getStoreStoreCrossReference_2_0()); 
+		newLeafNode(otherlv_2, grammarAccess.getSelfReferencedStoreAccess().getNameStoreCrossReference_2_0()); 
 	}
 
 )

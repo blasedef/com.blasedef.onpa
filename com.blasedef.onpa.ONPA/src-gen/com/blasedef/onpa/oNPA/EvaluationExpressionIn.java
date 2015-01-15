@@ -6,21 +6,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Update Expression</b></em>'.
+ * A representation of the model object '<em><b>Evaluation Expression In</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.blasedef.onpa.oNPA.UpdateExpression#getExpression <em>Expression</em>}</li>
+ *   <li>{@link com.blasedef.onpa.oNPA.EvaluationExpressionIn#getExpression <em>Expression</em>}</li>
  * </ul>
  * </p>
  *
- * @see com.blasedef.onpa.oNPA.ONPAPackage#getUpdateExpression()
+ * @see com.blasedef.onpa.oNPA.ONPAPackage#getEvaluationExpressionIn()
  * @model
  * @generated
  */
-public interface UpdateExpression extends EObject
+public interface EvaluationExpressionIn extends EObject
 {
   /**
    * Returns the value of the '<em><b>Expression</b></em>' containment reference.
@@ -32,14 +32,14 @@ public interface UpdateExpression extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Expression</em>' containment reference.
    * @see #setExpression(ActionExpression)
-   * @see com.blasedef.onpa.oNPA.ONPAPackage#getUpdateExpression_Expression()
+   * @see com.blasedef.onpa.oNPA.ONPAPackage#getEvaluationExpressionIn_Expression()
    * @model containment="true"
    * @generated
    */
   ActionExpression getExpression();
 
   /**
-   * Sets the value of the '{@link com.blasedef.onpa.oNPA.UpdateExpression#getExpression <em>Expression</em>}' containment reference.
+   * Sets the value of the '{@link com.blasedef.onpa.oNPA.EvaluationExpressionIn#getExpression <em>Expression</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Expression</em>' containment reference.
@@ -48,4 +48,4 @@ public interface UpdateExpression extends EObject
    */
   void setExpression(ActionExpression value);
 
-} // UpdateExpression
+} // EvaluationExpressionIn

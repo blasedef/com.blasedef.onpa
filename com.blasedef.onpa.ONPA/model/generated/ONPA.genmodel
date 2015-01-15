@@ -38,22 +38,22 @@
     <genClasses ecoreClass="ONPA.ecore#//Predicate">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Predicate/predicate"/>
     </genClasses>
-    <genClasses ecoreClass="ONPA.ecore#//Evaluations">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Evaluations/expressions"/>
-    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//Evaluations"/>
     <genClasses ecoreClass="ONPA.ecore#//Updates">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Updates/updates"/>
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//PredicateExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//PredicateExpression/expression"/>
     </genClasses>
-    <genClasses ecoreClass="ONPA.ecore#//EvaluationExpression"/>
+    <genClasses ecoreClass="ONPA.ecore#//EvaluationExpressionIn">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//EvaluationExpressionIn/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//EvaluationExpressionOut"/>
     <genClasses ecoreClass="ONPA.ecore#//UpdateExpression">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ONPA.ecore#//UpdateExpression/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//UpdateExpression/expression"/>
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//SelfReferencedStore">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ONPA.ecore#//SelfReferencedStore/store"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ONPA.ecore#//SelfReferencedStore/name"/>
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//ActionExpression"/>
     <genClasses ecoreClass="ONPA.ecore#//Store">
@@ -77,9 +77,28 @@
     </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//Broadcast"/>
     <genClasses ecoreClass="ONPA.ecore#//Unicast"/>
-    <genClasses ecoreClass="ONPA.ecore#//In"/>
-    <genClasses ecoreClass="ONPA.ecore#//Out"/>
-    <genClasses ecoreClass="ONPA.ecore#//LocalUpdateExpression"/>
+    <genClasses ecoreClass="ONPA.ecore#//In">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//In/expressions"/>
+    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//Out">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//Out/expressions"/>
+    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//LocalEvaluationExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//LocalEvaluationExpression/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//GlobalEvaluationExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ONPA.ecore#//GlobalEvaluationExpression/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//FreeEvaluationExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ONPA.ecore#//FreeEvaluationExpression/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//FreeEvaluationExpression/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//LocalUpdateExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//LocalUpdateExpression/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ONPA.ecore#//GlobalUpdateExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ONPA.ecore#//GlobalUpdateExpression/name"/>
+    </genClasses>
     <genClasses ecoreClass="ONPA.ecore#//ActionOr">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//ActionOr/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ONPA.ecore#//ActionOr/right"/>

@@ -2,7 +2,7 @@
  */
 package com.blasedef.onpa.oNPA.impl;
 
-import com.blasedef.onpa.oNPA.EvaluationExpression;
+import com.blasedef.onpa.oNPA.EvaluationExpressionOut;
 import com.blasedef.onpa.oNPA.ONPAPackage;
 
 import org.eclipse.emf.ecore.EClass;
@@ -11,21 +11,21 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Evaluation Expression</b></em>'.
+ * An implementation of the model object '<em><b>Evaluation Expression Out</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class EvaluationExpressionImpl extends MinimalEObjectImpl.Container implements EvaluationExpression
+public class EvaluationExpressionOutImpl extends MinimalEObjectImpl.Container implements EvaluationExpressionOut
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected EvaluationExpressionImpl()
+  protected EvaluationExpressionOutImpl()
   {
     super();
   }
@@ -38,7 +38,7 @@ public class EvaluationExpressionImpl extends MinimalEObjectImpl.Container imple
   @Override
   protected EClass eStaticClass()
   {
-    return ONPAPackage.Literals.EVALUATION_EXPRESSION;
+    return ONPAPackage.Literals.EVALUATION_EXPRESSION_OUT;
   }
 
-} //EvaluationExpressionImpl
+} //EvaluationExpressionOutImpl

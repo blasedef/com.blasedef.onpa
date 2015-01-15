@@ -22,12 +22,17 @@ import com.blasedef.onpa.oNPA.Comparison;
 import com.blasedef.onpa.oNPA.Div;
 import com.blasedef.onpa.oNPA.DoubleConstant;
 import com.blasedef.onpa.oNPA.Equality;
-import com.blasedef.onpa.oNPA.EvaluationExpression;
+import com.blasedef.onpa.oNPA.EvaluationExpressionIn;
+import com.blasedef.onpa.oNPA.EvaluationExpressionOut;
 import com.blasedef.onpa.oNPA.Evaluations;
 import com.blasedef.onpa.oNPA.Expression;
+import com.blasedef.onpa.oNPA.FreeEvaluationExpression;
 import com.blasedef.onpa.oNPA.FreeVariable;
+import com.blasedef.onpa.oNPA.GlobalEvaluationExpression;
+import com.blasedef.onpa.oNPA.GlobalUpdateExpression;
 import com.blasedef.onpa.oNPA.In;
 import com.blasedef.onpa.oNPA.Leaf;
+import com.blasedef.onpa.oNPA.LocalEvaluationExpression;
 import com.blasedef.onpa.oNPA.LocalUpdateExpression;
 import com.blasedef.onpa.oNPA.Model;
 import com.blasedef.onpa.oNPA.Mul;
@@ -177,9 +182,14 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
         return createPredicateExpressionAdapter();
       }
       @Override
-      public Adapter caseEvaluationExpression(EvaluationExpression object)
+      public Adapter caseEvaluationExpressionIn(EvaluationExpressionIn object)
       {
-        return createEvaluationExpressionAdapter();
+        return createEvaluationExpressionInAdapter();
+      }
+      @Override
+      public Adapter caseEvaluationExpressionOut(EvaluationExpressionOut object)
+      {
+        return createEvaluationExpressionOutAdapter();
       }
       @Override
       public Adapter caseUpdateExpression(UpdateExpression object)
@@ -247,9 +257,29 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
         return createOutAdapter();
       }
       @Override
+      public Adapter caseLocalEvaluationExpression(LocalEvaluationExpression object)
+      {
+        return createLocalEvaluationExpressionAdapter();
+      }
+      @Override
+      public Adapter caseGlobalEvaluationExpression(GlobalEvaluationExpression object)
+      {
+        return createGlobalEvaluationExpressionAdapter();
+      }
+      @Override
+      public Adapter caseFreeEvaluationExpression(FreeEvaluationExpression object)
+      {
+        return createFreeEvaluationExpressionAdapter();
+      }
+      @Override
       public Adapter caseLocalUpdateExpression(LocalUpdateExpression object)
       {
         return createLocalUpdateExpressionAdapter();
+      }
+      @Override
+      public Adapter caseGlobalUpdateExpression(GlobalUpdateExpression object)
+      {
+        return createGlobalUpdateExpressionAdapter();
       }
       @Override
       public Adapter caseActionOr(ActionOr object)
@@ -549,16 +579,31 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.EvaluationExpression <em>Evaluation Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.EvaluationExpressionIn <em>Evaluation Expression In</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.blasedef.onpa.oNPA.EvaluationExpression
+   * @see com.blasedef.onpa.oNPA.EvaluationExpressionIn
    * @generated
    */
-  public Adapter createEvaluationExpressionAdapter()
+  public Adapter createEvaluationExpressionInAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.EvaluationExpressionOut <em>Evaluation Expression Out</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.EvaluationExpressionOut
+   * @generated
+   */
+  public Adapter createEvaluationExpressionOutAdapter()
   {
     return null;
   }
@@ -759,6 +804,51 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.LocalEvaluationExpression <em>Local Evaluation Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.LocalEvaluationExpression
+   * @generated
+   */
+  public Adapter createLocalEvaluationExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.GlobalEvaluationExpression <em>Global Evaluation Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.GlobalEvaluationExpression
+   * @generated
+   */
+  public Adapter createGlobalEvaluationExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.FreeEvaluationExpression <em>Free Evaluation Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.FreeEvaluationExpression
+   * @generated
+   */
+  public Adapter createFreeEvaluationExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.LocalUpdateExpression <em>Local Update Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -769,6 +859,21 @@ public class ONPAAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createLocalUpdateExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.blasedef.onpa.oNPA.GlobalUpdateExpression <em>Global Update Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.blasedef.onpa.oNPA.GlobalUpdateExpression
+   * @generated
+   */
+  public Adapter createGlobalUpdateExpressionAdapter()
   {
     return null;
   }

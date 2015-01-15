@@ -18,7 +18,11 @@ import com.blasedef.onpa.oNPA.Comparison;
 import com.blasedef.onpa.oNPA.Div;
 import com.blasedef.onpa.oNPA.Equality;
 import com.blasedef.onpa.oNPA.Expression;
+import com.blasedef.onpa.oNPA.FreeEvaluationExpression;
 import com.blasedef.onpa.oNPA.FreeVariable;
+import com.blasedef.onpa.oNPA.GlobalEvaluationExpression;
+import com.blasedef.onpa.oNPA.GlobalUpdateExpression;
+import com.blasedef.onpa.oNPA.LocalEvaluationExpression;
 import com.blasedef.onpa.oNPA.LocalUpdateExpression;
 import com.blasedef.onpa.oNPA.Model;
 import com.blasedef.onpa.oNPA.Mul;
@@ -26,6 +30,7 @@ import com.blasedef.onpa.oNPA.Not;
 import com.blasedef.onpa.oNPA.ONPAPackage;
 import com.blasedef.onpa.oNPA.Or;
 import com.blasedef.onpa.oNPA.Plu;
+import com.blasedef.onpa.oNPA.PredicateExpression;
 import com.blasedef.onpa.oNPA.ReferencedStore;
 import com.blasedef.onpa.oNPA.Store;
 import com.blasedef.onpa.oNPA.Sub;
@@ -410,14 +415,86 @@ public class ONPAValidator extends AbstractONPAValidator {
       ONPAPackage.Literals.ACTION_DIV__RIGHT);
   }
   
+  @Inject
+  @Extension
+  private ATypeProvider _aTypeProvider;
+  
   @Check
   public void checkType(final LocalUpdateExpression updateExpression) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method getN is undefined for the type ONPAValidator");
+    ActionType _typeForA = null;
+    if (updateExpression!=null) {
+      _typeForA=this._aTypeProvider.typeForA(updateExpression);
+    }
+    ActionType type = _typeForA;
+    boolean _equals = Objects.equal(type, null);
+    if (_equals) {
+      this.error("assignment has non matching type to reference", ONPAPackage.Literals.UPDATE_EXPRESSION__EXPRESSION, ONPAValidator.WRONG_TYPE);
+    }
   }
   
-  private void checkExpectedSelfReference(final Expression exp, final EReference reference) {
-    this.checkExpectedType(exp, ATypeProvider.selfReferencedStoreType, reference);
+  @Check
+  public void checkType(final GlobalUpdateExpression updateExpression) {
+    ActionType _typeForA = null;
+    if (updateExpression!=null) {
+      _typeForA=this._aTypeProvider.typeForA(updateExpression);
+    }
+    ActionType type = _typeForA;
+    boolean _equals = Objects.equal(type, null);
+    if (_equals) {
+      this.error("assignment has non matching type to reference", ONPAPackage.Literals.UPDATE_EXPRESSION__EXPRESSION, ONPAValidator.WRONG_TYPE);
+    }
+  }
+  
+  @Check
+  public void checkType(final PredicateExpression predicateExpression) {
+    ActionType _typeForA = null;
+    if (predicateExpression!=null) {
+      _typeForA=this._aTypeProvider.typeForA(predicateExpression);
+    }
+    ActionType type = _typeForA;
+    boolean _equals = Objects.equal(type, null);
+    if (_equals) {
+      this.error("Predicates must be boolean", ONPAPackage.Literals.PREDICATE_EXPRESSION__EXPRESSION, ONPAValidator.WRONG_TYPE);
+    }
+  }
+  
+  @Check
+  public void checkType(final LocalEvaluationExpression evalExpression) {
+    ActionType _typeForA = null;
+    if (evalExpression!=null) {
+      _typeForA=this._aTypeProvider.typeForA(evalExpression);
+    }
+    ActionType type = _typeForA;
+    boolean _equals = Objects.equal(type, null);
+    if (_equals) {
+      this.error("assignment has non matching type to reference", ONPAPackage.Literals.EVALUATION_EXPRESSION_IN__EXPRESSION, ONPAValidator.WRONG_TYPE);
+    }
+  }
+  
+  @Check
+  public void checkType(final GlobalEvaluationExpression evalExpression) {
+    ActionType _typeForA = null;
+    if (evalExpression!=null) {
+      _typeForA=this._aTypeProvider.typeForA(evalExpression);
+    }
+    ActionType type = _typeForA;
+    boolean _equals = Objects.equal(type, null);
+    if (_equals) {
+      this.error("assignment has non matching type to reference", ONPAPackage.Literals.EVALUATION_EXPRESSION_IN__EXPRESSION, ONPAValidator.WRONG_TYPE);
+    }
+  }
+  
+  @Check
+  public void checkType(final FreeEvaluationExpression evalExpression) {
+    ActionType _typeForA = null;
+    if (evalExpression!=null) {
+      _typeForA=this._aTypeProvider.typeForA(evalExpression);
+    }
+    ActionType type = _typeForA;
+    boolean _equals = Objects.equal(type, null);
+    if (_equals) {
+      this.error("bad assignment, check types", ONPAPackage.Literals.FREE_EVALUATION_EXPRESSION__EXPRESSION, ONPAValidator.WRONG_TYPE);
+    }
   }
   
   private void checkExpectedBoolean(final Expression exp, final EReference reference) {
@@ -453,14 +530,6 @@ public class ONPAValidator extends AbstractONPAValidator {
   }
   
   private void checkExpectedType(final Expression exp, final ExpressionsType expectedType, final EReference reference) {
-    final ExpressionsType actualType = this.getTypeAndCheckNotNull(exp, reference);
-    boolean _notEquals = (!Objects.equal(actualType, expectedType));
-    if (_notEquals) {
-      this.error(((("Expected " + expectedType) + " type, but was ") + actualType), reference, ONPAValidator.WRONG_TYPE);
-    }
-  }
-  
-  private void checkExpectedType(final Expression exp, final ActionType expectedType, final EReference reference) {
     final ExpressionsType actualType = this.getTypeAndCheckNotNull(exp, reference);
     boolean _notEquals = (!Objects.equal(actualType, expectedType));
     if (_notEquals) {

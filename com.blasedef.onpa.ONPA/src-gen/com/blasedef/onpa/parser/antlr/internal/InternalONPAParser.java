@@ -23,49 +23,49 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_UPPER", "RULE_LOWER", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'('", "','", "'{'", "'}'", "')'", "';'", "'='", "'|'", "'+'", "'nil'", "'kill'", "'*'", "'.'", "'['", "']'", "'<'", "'>'", "':='", "'this.'", "'||'", "'&&'", "'=='", "'!='", "'>='", "'<='", "'-'", "'/'", "'!'", "'true'", "'false'", "'e'", "'E'", "'$'"
     };
-    public static final int T__19=19;
-    public static final int T__15=15;
-    public static final int T__16=16;
-    public static final int T__17=17;
-    public static final int T__18=18;
-    public static final int T__13=13;
-    public static final int T__14=14;
     public static final int RULE_ID=7;
-    public static final int T__26=26;
-    public static final int T__27=27;
-    public static final int T__28=28;
-    public static final int RULE_INT=6;
     public static final int T__29=29;
-    public static final int T__22=22;
-    public static final int RULE_ML_COMMENT=9;
-    public static final int T__23=23;
-    public static final int T__24=24;
+    public static final int T__28=28;
+    public static final int T__27=27;
+    public static final int T__26=26;
     public static final int T__25=25;
-    public static final int T__20=20;
+    public static final int T__24=24;
+    public static final int T__23=23;
+    public static final int T__22=22;
+    public static final int RULE_ANY_OTHER=12;
     public static final int T__21=21;
+    public static final int T__20=20;
+    public static final int EOF=-1;
     public static final int RULE_LOWER=5;
-    public static final int RULE_STRING=8;
+    public static final int T__19=19;
+    public static final int T__16=16;
+    public static final int T__15=15;
+    public static final int T__18=18;
+    public static final int T__17=17;
+    public static final int T__14=14;
+    public static final int T__13=13;
+    public static final int RULE_INT=6;
+    public static final int T__42=42;
+    public static final int T__43=43;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int RULE_UPPER=4;
     public static final int RULE_SL_COMMENT=10;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
+    public static final int RULE_ML_COMMENT=9;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int RULE_STRING=8;
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
-    public static final int EOF=-1;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
     public static final int RULE_WS=11;
-    public static final int RULE_UPPER=4;
-    public static final int RULE_ANY_OTHER=12;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__42=42;
-    public static final int T__43=43;
 
     // delegates
     // delegators
@@ -2201,7 +2201,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEvaluations"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:954:1: ruleEvaluations returns [EObject current=null] : ( (otherlv_0= '(' () ( (lv_expressions_2_0= ruleEvaluationExpression ) )+ otherlv_3= ')' ) | (otherlv_4= '<' () ( (lv_expressions_6_0= ruleEvaluationExpression ) )+ otherlv_7= '>' ) ) ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:954:1: ruleEvaluations returns [EObject current=null] : ( (otherlv_0= '(' () ( (lv_expressions_2_0= ruleEvaluationExpressionIn ) )+ otherlv_3= ')' ) | (otherlv_4= '<' () ( (lv_expressions_6_0= ruleEvaluationExpressionOut ) )+ otherlv_7= '>' ) ) ;
     public final EObject ruleEvaluations() throws RecognitionException {
         EObject current = null;
 
@@ -2218,10 +2218,10 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
             
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:958:28: ( ( (otherlv_0= '(' () ( (lv_expressions_2_0= ruleEvaluationExpression ) )+ otherlv_3= ')' ) | (otherlv_4= '<' () ( (lv_expressions_6_0= ruleEvaluationExpression ) )+ otherlv_7= '>' ) ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:959:1: ( (otherlv_0= '(' () ( (lv_expressions_2_0= ruleEvaluationExpression ) )+ otherlv_3= ')' ) | (otherlv_4= '<' () ( (lv_expressions_6_0= ruleEvaluationExpression ) )+ otherlv_7= '>' ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:958:28: ( ( (otherlv_0= '(' () ( (lv_expressions_2_0= ruleEvaluationExpressionIn ) )+ otherlv_3= ')' ) | (otherlv_4= '<' () ( (lv_expressions_6_0= ruleEvaluationExpressionOut ) )+ otherlv_7= '>' ) ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:959:1: ( (otherlv_0= '(' () ( (lv_expressions_2_0= ruleEvaluationExpressionIn ) )+ otherlv_3= ')' ) | (otherlv_4= '<' () ( (lv_expressions_6_0= ruleEvaluationExpressionOut ) )+ otherlv_7= '>' ) )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:959:1: ( (otherlv_0= '(' () ( (lv_expressions_2_0= ruleEvaluationExpression ) )+ otherlv_3= ')' ) | (otherlv_4= '<' () ( (lv_expressions_6_0= ruleEvaluationExpression ) )+ otherlv_7= '>' ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:959:1: ( (otherlv_0= '(' () ( (lv_expressions_2_0= ruleEvaluationExpressionIn ) )+ otherlv_3= ')' ) | (otherlv_4= '<' () ( (lv_expressions_6_0= ruleEvaluationExpressionOut ) )+ otherlv_7= '>' ) )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -2239,10 +2239,10 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
             }
             switch (alt13) {
                 case 1 :
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:959:2: (otherlv_0= '(' () ( (lv_expressions_2_0= ruleEvaluationExpression ) )+ otherlv_3= ')' )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:959:2: (otherlv_0= '(' () ( (lv_expressions_2_0= ruleEvaluationExpressionIn ) )+ otherlv_3= ')' )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:959:2: (otherlv_0= '(' () ( (lv_expressions_2_0= ruleEvaluationExpression ) )+ otherlv_3= ')' )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:959:4: otherlv_0= '(' () ( (lv_expressions_2_0= ruleEvaluationExpression ) )+ otherlv_3= ')'
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:959:2: (otherlv_0= '(' () ( (lv_expressions_2_0= ruleEvaluationExpressionIn ) )+ otherlv_3= ')' )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:959:4: otherlv_0= '(' () ( (lv_expressions_2_0= ruleEvaluationExpressionIn ) )+ otherlv_3= ')'
                     {
                     otherlv_0=(Token)match(input,13,FOLLOW_13_in_ruleEvaluations1963); 
 
@@ -2259,30 +2259,30 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:969:2: ( (lv_expressions_2_0= ruleEvaluationExpression ) )+
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:969:2: ( (lv_expressions_2_0= ruleEvaluationExpressionIn ) )+
                     int cnt11=0;
                     loop11:
                     do {
                         int alt11=2;
                         int LA11_0 = input.LA(1);
 
-                        if ( ((LA11_0>=RULE_LOWER && LA11_0<=RULE_INT)||LA11_0==13||(LA11_0>=40 && LA11_0<=42)||LA11_0==45) ) {
+                        if ( (LA11_0==RULE_LOWER||LA11_0==31) ) {
                             alt11=1;
                         }
 
 
                         switch (alt11) {
                     	case 1 :
-                    	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:970:1: (lv_expressions_2_0= ruleEvaluationExpression )
+                    	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:970:1: (lv_expressions_2_0= ruleEvaluationExpressionIn )
                     	    {
-                    	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:970:1: (lv_expressions_2_0= ruleEvaluationExpression )
-                    	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:971:3: lv_expressions_2_0= ruleEvaluationExpression
+                    	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:970:1: (lv_expressions_2_0= ruleEvaluationExpressionIn )
+                    	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:971:3: lv_expressions_2_0= ruleEvaluationExpressionIn
                     	    {
                     	     
-                    	    	        newCompositeNode(grammarAccess.getEvaluationsAccess().getExpressionsEvaluationExpressionParserRuleCall_0_2_0()); 
+                    	    	        newCompositeNode(grammarAccess.getEvaluationsAccess().getExpressionsEvaluationExpressionInParserRuleCall_0_2_0()); 
                     	    	    
-                    	    pushFollow(FOLLOW_ruleEvaluationExpression_in_ruleEvaluations1993);
-                    	    lv_expressions_2_0=ruleEvaluationExpression();
+                    	    pushFollow(FOLLOW_ruleEvaluationExpressionIn_in_ruleEvaluations1993);
+                    	    lv_expressions_2_0=ruleEvaluationExpressionIn();
 
                     	    state._fsp--;
 
@@ -2294,7 +2294,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
                     	           			current, 
                     	           			"expressions",
                     	            		lv_expressions_2_0, 
-                    	            		"EvaluationExpression");
+                    	            		"EvaluationExpressionIn");
                     	    	        afterParserOrEnumRuleCall();
                     	    	    
 
@@ -2324,10 +2324,10 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:992:6: (otherlv_4= '<' () ( (lv_expressions_6_0= ruleEvaluationExpression ) )+ otherlv_7= '>' )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:992:6: (otherlv_4= '<' () ( (lv_expressions_6_0= ruleEvaluationExpressionOut ) )+ otherlv_7= '>' )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:992:6: (otherlv_4= '<' () ( (lv_expressions_6_0= ruleEvaluationExpression ) )+ otherlv_7= '>' )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:992:8: otherlv_4= '<' () ( (lv_expressions_6_0= ruleEvaluationExpression ) )+ otherlv_7= '>'
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:992:6: (otherlv_4= '<' () ( (lv_expressions_6_0= ruleEvaluationExpressionOut ) )+ otherlv_7= '>' )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:992:8: otherlv_4= '<' () ( (lv_expressions_6_0= ruleEvaluationExpressionOut ) )+ otherlv_7= '>'
                     {
                     otherlv_4=(Token)match(input,28,FOLLOW_28_in_ruleEvaluations2026); 
 
@@ -2344,30 +2344,30 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1002:2: ( (lv_expressions_6_0= ruleEvaluationExpression ) )+
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1002:2: ( (lv_expressions_6_0= ruleEvaluationExpressionOut ) )+
                     int cnt12=0;
                     loop12:
                     do {
                         int alt12=2;
                         int LA12_0 = input.LA(1);
 
-                        if ( ((LA12_0>=RULE_LOWER && LA12_0<=RULE_INT)||LA12_0==13||(LA12_0>=40 && LA12_0<=42)||LA12_0==45) ) {
+                        if ( (LA12_0==45) ) {
                             alt12=1;
                         }
 
 
                         switch (alt12) {
                     	case 1 :
-                    	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1003:1: (lv_expressions_6_0= ruleEvaluationExpression )
+                    	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1003:1: (lv_expressions_6_0= ruleEvaluationExpressionOut )
                     	    {
-                    	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1003:1: (lv_expressions_6_0= ruleEvaluationExpression )
-                    	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1004:3: lv_expressions_6_0= ruleEvaluationExpression
+                    	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1003:1: (lv_expressions_6_0= ruleEvaluationExpressionOut )
+                    	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1004:3: lv_expressions_6_0= ruleEvaluationExpressionOut
                     	    {
                     	     
-                    	    	        newCompositeNode(grammarAccess.getEvaluationsAccess().getExpressionsEvaluationExpressionParserRuleCall_1_2_0()); 
+                    	    	        newCompositeNode(grammarAccess.getEvaluationsAccess().getExpressionsEvaluationExpressionOutParserRuleCall_1_2_0()); 
                     	    	    
-                    	    pushFollow(FOLLOW_ruleEvaluationExpression_in_ruleEvaluations2056);
-                    	    lv_expressions_6_0=ruleEvaluationExpression();
+                    	    pushFollow(FOLLOW_ruleEvaluationExpressionOut_in_ruleEvaluations2056);
+                    	    lv_expressions_6_0=ruleEvaluationExpressionOut();
 
                     	    state._fsp--;
 
@@ -2379,7 +2379,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
                     	           			current, 
                     	           			"expressions",
                     	            		lv_expressions_6_0, 
-                    	            		"EvaluationExpression");
+                    	            		"EvaluationExpressionOut");
                     	    	        afterParserOrEnumRuleCall();
                     	    	    
 
@@ -2708,29 +2708,29 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
     // $ANTLR end "rulePredicateExpression"
 
 
-    // $ANTLR start "entryRuleEvaluationExpression"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1151:1: entryRuleEvaluationExpression returns [EObject current=null] : iv_ruleEvaluationExpression= ruleEvaluationExpression EOF ;
-    public final EObject entryRuleEvaluationExpression() throws RecognitionException {
+    // $ANTLR start "entryRuleEvaluationExpressionIn"
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1151:1: entryRuleEvaluationExpressionIn returns [EObject current=null] : iv_ruleEvaluationExpressionIn= ruleEvaluationExpressionIn EOF ;
+    public final EObject entryRuleEvaluationExpressionIn() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleEvaluationExpression = null;
+        EObject iv_ruleEvaluationExpressionIn = null;
 
 
          
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         	
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1155:2: (iv_ruleEvaluationExpression= ruleEvaluationExpression EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1156:2: iv_ruleEvaluationExpression= ruleEvaluationExpression EOF
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1155:2: (iv_ruleEvaluationExpressionIn= ruleEvaluationExpressionIn EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1156:2: iv_ruleEvaluationExpressionIn= ruleEvaluationExpressionIn EOF
             {
-             newCompositeNode(grammarAccess.getEvaluationExpressionRule()); 
-            pushFollow(FOLLOW_ruleEvaluationExpression_in_entryRuleEvaluationExpression2374);
-            iv_ruleEvaluationExpression=ruleEvaluationExpression();
+             newCompositeNode(grammarAccess.getEvaluationExpressionInRule()); 
+            pushFollow(FOLLOW_ruleEvaluationExpressionIn_in_entryRuleEvaluationExpressionIn2374);
+            iv_ruleEvaluationExpressionIn=ruleEvaluationExpressionIn();
 
             state._fsp--;
 
-             current =iv_ruleEvaluationExpression; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEvaluationExpression2384); 
+             current =iv_ruleEvaluationExpressionIn; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEvaluationExpressionIn2384); 
 
             }
 
@@ -2747,43 +2747,393 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleEvaluationExpression"
+    // $ANTLR end "entryRuleEvaluationExpressionIn"
 
 
-    // $ANTLR start "ruleEvaluationExpression"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1166:1: ruleEvaluationExpression returns [EObject current=null] : (this_ActionExpression_0= ruleActionExpression otherlv_1= ';' ) ;
-    public final EObject ruleEvaluationExpression() throws RecognitionException {
+    // $ANTLR start "ruleEvaluationExpressionIn"
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1166:1: ruleEvaluationExpressionIn returns [EObject current=null] : ( ( () ( (lv_name_1_0= ruleSelfReferencedStore ) ) otherlv_2= ':=' ( (lv_expression_3_0= ruleActionExpression ) ) otherlv_4= ';' ) | ( () ( (otherlv_6= RULE_LOWER ) ) otherlv_7= ':=' ( (lv_expression_8_0= ruleActionExpression ) ) otherlv_9= ';' ) ) ;
+    public final EObject ruleEvaluationExpressionIn() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_1=null;
-        EObject this_ActionExpression_0 = null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        Token otherlv_6=null;
+        Token otherlv_7=null;
+        Token otherlv_9=null;
+        EObject lv_name_1_0 = null;
+
+        EObject lv_expression_3_0 = null;
+
+        EObject lv_expression_8_0 = null;
 
 
          enterRule(); 
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
             
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1170:28: ( (this_ActionExpression_0= ruleActionExpression otherlv_1= ';' ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1171:1: (this_ActionExpression_0= ruleActionExpression otherlv_1= ';' )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1170:28: ( ( ( () ( (lv_name_1_0= ruleSelfReferencedStore ) ) otherlv_2= ':=' ( (lv_expression_3_0= ruleActionExpression ) ) otherlv_4= ';' ) | ( () ( (otherlv_6= RULE_LOWER ) ) otherlv_7= ':=' ( (lv_expression_8_0= ruleActionExpression ) ) otherlv_9= ';' ) ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1171:1: ( ( () ( (lv_name_1_0= ruleSelfReferencedStore ) ) otherlv_2= ':=' ( (lv_expression_3_0= ruleActionExpression ) ) otherlv_4= ';' ) | ( () ( (otherlv_6= RULE_LOWER ) ) otherlv_7= ':=' ( (lv_expression_8_0= ruleActionExpression ) ) otherlv_9= ';' ) )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1171:1: (this_ActionExpression_0= ruleActionExpression otherlv_1= ';' )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1172:5: this_ActionExpression_0= ruleActionExpression otherlv_1= ';'
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1171:1: ( ( () ( (lv_name_1_0= ruleSelfReferencedStore ) ) otherlv_2= ':=' ( (lv_expression_3_0= ruleActionExpression ) ) otherlv_4= ';' ) | ( () ( (otherlv_6= RULE_LOWER ) ) otherlv_7= ':=' ( (lv_expression_8_0= ruleActionExpression ) ) otherlv_9= ';' ) )
+            int alt15=2;
+            int LA15_0 = input.LA(1);
+
+            if ( (LA15_0==31) ) {
+                alt15=1;
+            }
+            else if ( (LA15_0==RULE_LOWER) ) {
+                alt15=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 15, 0, input);
+
+                throw nvae;
+            }
+            switch (alt15) {
+                case 1 :
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1171:2: ( () ( (lv_name_1_0= ruleSelfReferencedStore ) ) otherlv_2= ':=' ( (lv_expression_3_0= ruleActionExpression ) ) otherlv_4= ';' )
+                    {
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1171:2: ( () ( (lv_name_1_0= ruleSelfReferencedStore ) ) otherlv_2= ':=' ( (lv_expression_3_0= ruleActionExpression ) ) otherlv_4= ';' )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1171:3: () ( (lv_name_1_0= ruleSelfReferencedStore ) ) otherlv_2= ':=' ( (lv_expression_3_0= ruleActionExpression ) ) otherlv_4= ';'
+                    {
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1171:3: ()
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1172:5: 
+                    {
+
+                            current = forceCreateModelElement(
+                                grammarAccess.getEvaluationExpressionInAccess().getLocalEvaluationExpressionAction_0_0(),
+                                current);
+                        
+
+                    }
+
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1177:2: ( (lv_name_1_0= ruleSelfReferencedStore ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1178:1: (lv_name_1_0= ruleSelfReferencedStore )
+                    {
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1178:1: (lv_name_1_0= ruleSelfReferencedStore )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1179:3: lv_name_1_0= ruleSelfReferencedStore
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getEvaluationExpressionInAccess().getNameSelfReferencedStoreParserRuleCall_0_1_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleSelfReferencedStore_in_ruleEvaluationExpressionIn2444);
+                    lv_name_1_0=ruleSelfReferencedStore();
+
+                    state._fsp--;
+
+
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getEvaluationExpressionInRule());
+                    	        }
+                           		set(
+                           			current, 
+                           			"name",
+                            		lv_name_1_0, 
+                            		"SelfReferencedStore");
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
+
+                    }
+
+                    otherlv_2=(Token)match(input,30,FOLLOW_30_in_ruleEvaluationExpressionIn2456); 
+
+                        	newLeafNode(otherlv_2, grammarAccess.getEvaluationExpressionInAccess().getColonEqualsSignKeyword_0_2());
+                        
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1199:1: ( (lv_expression_3_0= ruleActionExpression ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1200:1: (lv_expression_3_0= ruleActionExpression )
+                    {
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1200:1: (lv_expression_3_0= ruleActionExpression )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1201:3: lv_expression_3_0= ruleActionExpression
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getEvaluationExpressionInAccess().getExpressionActionExpressionParserRuleCall_0_3_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleActionExpression_in_ruleEvaluationExpressionIn2477);
+                    lv_expression_3_0=ruleActionExpression();
+
+                    state._fsp--;
+
+
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getEvaluationExpressionInRule());
+                    	        }
+                           		set(
+                           			current, 
+                           			"expression",
+                            		lv_expression_3_0, 
+                            		"ActionExpression");
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
+
+                    }
+
+                    otherlv_4=(Token)match(input,18,FOLLOW_18_in_ruleEvaluationExpressionIn2489); 
+
+                        	newLeafNode(otherlv_4, grammarAccess.getEvaluationExpressionInAccess().getSemicolonKeyword_0_4());
+                        
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1222:6: ( () ( (otherlv_6= RULE_LOWER ) ) otherlv_7= ':=' ( (lv_expression_8_0= ruleActionExpression ) ) otherlv_9= ';' )
+                    {
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1222:6: ( () ( (otherlv_6= RULE_LOWER ) ) otherlv_7= ':=' ( (lv_expression_8_0= ruleActionExpression ) ) otherlv_9= ';' )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1222:7: () ( (otherlv_6= RULE_LOWER ) ) otherlv_7= ':=' ( (lv_expression_8_0= ruleActionExpression ) ) otherlv_9= ';'
+                    {
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1222:7: ()
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1223:5: 
+                    {
+
+                            current = forceCreateModelElement(
+                                grammarAccess.getEvaluationExpressionInAccess().getGlobalEvaluationExpressionAction_1_0(),
+                                current);
+                        
+
+                    }
+
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1228:2: ( (otherlv_6= RULE_LOWER ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1229:1: (otherlv_6= RULE_LOWER )
+                    {
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1229:1: (otherlv_6= RULE_LOWER )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1230:3: otherlv_6= RULE_LOWER
+                    {
+
+                    			if (current==null) {
+                    	            current = createModelElement(grammarAccess.getEvaluationExpressionInRule());
+                    	        }
+                            
+                    otherlv_6=(Token)match(input,RULE_LOWER,FOLLOW_RULE_LOWER_in_ruleEvaluationExpressionIn2526); 
+
+                    		newLeafNode(otherlv_6, grammarAccess.getEvaluationExpressionInAccess().getNameStoreCrossReference_1_1_0()); 
+                    	
+
+                    }
+
+
+                    }
+
+                    otherlv_7=(Token)match(input,30,FOLLOW_30_in_ruleEvaluationExpressionIn2538); 
+
+                        	newLeafNode(otherlv_7, grammarAccess.getEvaluationExpressionInAccess().getColonEqualsSignKeyword_1_2());
+                        
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1245:1: ( (lv_expression_8_0= ruleActionExpression ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1246:1: (lv_expression_8_0= ruleActionExpression )
+                    {
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1246:1: (lv_expression_8_0= ruleActionExpression )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1247:3: lv_expression_8_0= ruleActionExpression
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getEvaluationExpressionInAccess().getExpressionActionExpressionParserRuleCall_1_3_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleActionExpression_in_ruleEvaluationExpressionIn2559);
+                    lv_expression_8_0=ruleActionExpression();
+
+                    state._fsp--;
+
+
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getEvaluationExpressionInRule());
+                    	        }
+                           		set(
+                           			current, 
+                           			"expression",
+                            		lv_expression_8_0, 
+                            		"ActionExpression");
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
+
+                    }
+
+                    otherlv_9=(Token)match(input,18,FOLLOW_18_in_ruleEvaluationExpressionIn2571); 
+
+                        	newLeafNode(otherlv_9, grammarAccess.getEvaluationExpressionInAccess().getSemicolonKeyword_1_4());
+                        
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "ruleEvaluationExpressionIn"
+
+
+    // $ANTLR start "entryRuleEvaluationExpressionOut"
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1278:1: entryRuleEvaluationExpressionOut returns [EObject current=null] : iv_ruleEvaluationExpressionOut= ruleEvaluationExpressionOut EOF ;
+    public final EObject entryRuleEvaluationExpressionOut() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleEvaluationExpressionOut = null;
+
+
+         
+        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+        	
+        try {
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1282:2: (iv_ruleEvaluationExpressionOut= ruleEvaluationExpressionOut EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1283:2: iv_ruleEvaluationExpressionOut= ruleEvaluationExpressionOut EOF
             {
-             
-                    newCompositeNode(grammarAccess.getEvaluationExpressionAccess().getActionExpressionParserRuleCall_0()); 
-                
-            pushFollow(FOLLOW_ruleActionExpression_in_ruleEvaluationExpression2435);
-            this_ActionExpression_0=ruleActionExpression();
+             newCompositeNode(grammarAccess.getEvaluationExpressionOutRule()); 
+            pushFollow(FOLLOW_ruleEvaluationExpressionOut_in_entryRuleEvaluationExpressionOut2618);
+            iv_ruleEvaluationExpressionOut=ruleEvaluationExpressionOut();
 
             state._fsp--;
 
-             
-                    current = this_ActionExpression_0; 
-                    afterParserOrEnumRuleCall();
-                
-            otherlv_1=(Token)match(input,18,FOLLOW_18_in_ruleEvaluationExpression2446); 
+             current =iv_ruleEvaluationExpressionOut; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEvaluationExpressionOut2628); 
 
-                	newLeafNode(otherlv_1, grammarAccess.getEvaluationExpressionAccess().getSemicolonKeyword_1());
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleEvaluationExpressionOut"
+
+
+    // $ANTLR start "ruleEvaluationExpressionOut"
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1293:1: ruleEvaluationExpressionOut returns [EObject current=null] : ( () ( (lv_name_1_0= ruleFreeVariable ) ) otherlv_2= ':=' ( (lv_expression_3_0= ruleActionExpression ) ) otherlv_4= ';' ) ;
+    public final EObject ruleEvaluationExpressionOut() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        AntlrDatatypeRuleToken lv_name_1_0 = null;
+
+        EObject lv_expression_3_0 = null;
+
+
+         enterRule(); 
+        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+            
+        try {
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1297:28: ( ( () ( (lv_name_1_0= ruleFreeVariable ) ) otherlv_2= ':=' ( (lv_expression_3_0= ruleActionExpression ) ) otherlv_4= ';' ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1298:1: ( () ( (lv_name_1_0= ruleFreeVariable ) ) otherlv_2= ':=' ( (lv_expression_3_0= ruleActionExpression ) ) otherlv_4= ';' )
+            {
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1298:1: ( () ( (lv_name_1_0= ruleFreeVariable ) ) otherlv_2= ':=' ( (lv_expression_3_0= ruleActionExpression ) ) otherlv_4= ';' )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1298:2: () ( (lv_name_1_0= ruleFreeVariable ) ) otherlv_2= ':=' ( (lv_expression_3_0= ruleActionExpression ) ) otherlv_4= ';'
+            {
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1298:2: ()
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1299:5: 
+            {
+
+                    current = forceCreateModelElement(
+                        grammarAccess.getEvaluationExpressionOutAccess().getFreeEvaluationExpressionAction_0(),
+                        current);
+                
+
+            }
+
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1304:2: ( (lv_name_1_0= ruleFreeVariable ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1305:1: (lv_name_1_0= ruleFreeVariable )
+            {
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1305:1: (lv_name_1_0= ruleFreeVariable )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1306:3: lv_name_1_0= ruleFreeVariable
+            {
+             
+            	        newCompositeNode(grammarAccess.getEvaluationExpressionOutAccess().getNameFreeVariableParserRuleCall_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleFreeVariable_in_ruleEvaluationExpressionOut2687);
+            lv_name_1_0=ruleFreeVariable();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getEvaluationExpressionOutRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"name",
+                    		lv_name_1_0, 
+                    		"FreeVariable");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,30,FOLLOW_30_in_ruleEvaluationExpressionOut2699); 
+
+                	newLeafNode(otherlv_2, grammarAccess.getEvaluationExpressionOutAccess().getColonEqualsSignKeyword_2());
+                
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1326:1: ( (lv_expression_3_0= ruleActionExpression ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1327:1: (lv_expression_3_0= ruleActionExpression )
+            {
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1327:1: (lv_expression_3_0= ruleActionExpression )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1328:3: lv_expression_3_0= ruleActionExpression
+            {
+             
+            	        newCompositeNode(grammarAccess.getEvaluationExpressionOutAccess().getExpressionActionExpressionParserRuleCall_3_0()); 
+            	    
+            pushFollow(FOLLOW_ruleActionExpression_in_ruleEvaluationExpressionOut2720);
+            lv_expression_3_0=ruleActionExpression();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getEvaluationExpressionOutRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"expression",
+                    		lv_expression_3_0, 
+                    		"ActionExpression");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            otherlv_4=(Token)match(input,18,FOLLOW_18_in_ruleEvaluationExpressionOut2732); 
+
+                	newLeafNode(otherlv_4, grammarAccess.getEvaluationExpressionOutAccess().getSemicolonKeyword_4());
                 
 
             }
@@ -2805,11 +3155,11 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleEvaluationExpression"
+    // $ANTLR end "ruleEvaluationExpressionOut"
 
 
     // $ANTLR start "entryRuleUpdateExpression"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1195:1: entryRuleUpdateExpression returns [EObject current=null] : iv_ruleUpdateExpression= ruleUpdateExpression EOF ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1359:1: entryRuleUpdateExpression returns [EObject current=null] : iv_ruleUpdateExpression= ruleUpdateExpression EOF ;
     public final EObject entryRuleUpdateExpression() throws RecognitionException {
         EObject current = null;
 
@@ -2820,17 +3170,17 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         	
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1199:2: (iv_ruleUpdateExpression= ruleUpdateExpression EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1200:2: iv_ruleUpdateExpression= ruleUpdateExpression EOF
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1363:2: (iv_ruleUpdateExpression= ruleUpdateExpression EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1364:2: iv_ruleUpdateExpression= ruleUpdateExpression EOF
             {
              newCompositeNode(grammarAccess.getUpdateExpressionRule()); 
-            pushFollow(FOLLOW_ruleUpdateExpression_in_entryRuleUpdateExpression2492);
+            pushFollow(FOLLOW_ruleUpdateExpression_in_entryRuleUpdateExpression2778);
             iv_ruleUpdateExpression=ruleUpdateExpression();
 
             state._fsp--;
 
              current =iv_ruleUpdateExpression; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleUpdateExpression2502); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleUpdateExpression2788); 
 
             }
 
@@ -2851,7 +3201,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUpdateExpression"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1210:1: ruleUpdateExpression returns [EObject current=null] : ( ( () ( (lv_name_1_0= ruleSelfReferencedStore ) ) otherlv_2= ':=' ( (lv_expression_3_0= ruleActionExpression ) ) otherlv_4= ';' ) | ( () ( (otherlv_6= RULE_LOWER ) ) otherlv_7= ':=' ( (lv_expression_8_0= ruleActionExpression ) ) otherlv_9= ';' ) ) ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1374:1: ruleUpdateExpression returns [EObject current=null] : ( ( () ( (lv_name_1_0= ruleSelfReferencedStore ) ) otherlv_2= ':=' ( (lv_expression_3_0= ruleActionExpression ) ) otherlv_4= ';' ) | ( () ( (otherlv_6= RULE_LOWER ) ) otherlv_7= ':=' ( (lv_expression_8_0= ruleActionExpression ) ) otherlv_9= ';' ) ) ;
     public final EObject ruleUpdateExpression() throws RecognitionException {
         EObject current = null;
 
@@ -2871,34 +3221,34 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
             
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1214:28: ( ( ( () ( (lv_name_1_0= ruleSelfReferencedStore ) ) otherlv_2= ':=' ( (lv_expression_3_0= ruleActionExpression ) ) otherlv_4= ';' ) | ( () ( (otherlv_6= RULE_LOWER ) ) otherlv_7= ':=' ( (lv_expression_8_0= ruleActionExpression ) ) otherlv_9= ';' ) ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1215:1: ( ( () ( (lv_name_1_0= ruleSelfReferencedStore ) ) otherlv_2= ':=' ( (lv_expression_3_0= ruleActionExpression ) ) otherlv_4= ';' ) | ( () ( (otherlv_6= RULE_LOWER ) ) otherlv_7= ':=' ( (lv_expression_8_0= ruleActionExpression ) ) otherlv_9= ';' ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1378:28: ( ( ( () ( (lv_name_1_0= ruleSelfReferencedStore ) ) otherlv_2= ':=' ( (lv_expression_3_0= ruleActionExpression ) ) otherlv_4= ';' ) | ( () ( (otherlv_6= RULE_LOWER ) ) otherlv_7= ':=' ( (lv_expression_8_0= ruleActionExpression ) ) otherlv_9= ';' ) ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1379:1: ( ( () ( (lv_name_1_0= ruleSelfReferencedStore ) ) otherlv_2= ':=' ( (lv_expression_3_0= ruleActionExpression ) ) otherlv_4= ';' ) | ( () ( (otherlv_6= RULE_LOWER ) ) otherlv_7= ':=' ( (lv_expression_8_0= ruleActionExpression ) ) otherlv_9= ';' ) )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1215:1: ( ( () ( (lv_name_1_0= ruleSelfReferencedStore ) ) otherlv_2= ':=' ( (lv_expression_3_0= ruleActionExpression ) ) otherlv_4= ';' ) | ( () ( (otherlv_6= RULE_LOWER ) ) otherlv_7= ':=' ( (lv_expression_8_0= ruleActionExpression ) ) otherlv_9= ';' ) )
-            int alt15=2;
-            int LA15_0 = input.LA(1);
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1379:1: ( ( () ( (lv_name_1_0= ruleSelfReferencedStore ) ) otherlv_2= ':=' ( (lv_expression_3_0= ruleActionExpression ) ) otherlv_4= ';' ) | ( () ( (otherlv_6= RULE_LOWER ) ) otherlv_7= ':=' ( (lv_expression_8_0= ruleActionExpression ) ) otherlv_9= ';' ) )
+            int alt16=2;
+            int LA16_0 = input.LA(1);
 
-            if ( (LA15_0==31) ) {
-                alt15=1;
+            if ( (LA16_0==31) ) {
+                alt16=1;
             }
-            else if ( (LA15_0==RULE_LOWER) ) {
-                alt15=2;
+            else if ( (LA16_0==RULE_LOWER) ) {
+                alt16=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 15, 0, input);
+                    new NoViableAltException("", 16, 0, input);
 
                 throw nvae;
             }
-            switch (alt15) {
+            switch (alt16) {
                 case 1 :
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1215:2: ( () ( (lv_name_1_0= ruleSelfReferencedStore ) ) otherlv_2= ':=' ( (lv_expression_3_0= ruleActionExpression ) ) otherlv_4= ';' )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1379:2: ( () ( (lv_name_1_0= ruleSelfReferencedStore ) ) otherlv_2= ':=' ( (lv_expression_3_0= ruleActionExpression ) ) otherlv_4= ';' )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1215:2: ( () ( (lv_name_1_0= ruleSelfReferencedStore ) ) otherlv_2= ':=' ( (lv_expression_3_0= ruleActionExpression ) ) otherlv_4= ';' )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1215:3: () ( (lv_name_1_0= ruleSelfReferencedStore ) ) otherlv_2= ':=' ( (lv_expression_3_0= ruleActionExpression ) ) otherlv_4= ';'
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1379:2: ( () ( (lv_name_1_0= ruleSelfReferencedStore ) ) otherlv_2= ':=' ( (lv_expression_3_0= ruleActionExpression ) ) otherlv_4= ';' )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1379:3: () ( (lv_name_1_0= ruleSelfReferencedStore ) ) otherlv_2= ':=' ( (lv_expression_3_0= ruleActionExpression ) ) otherlv_4= ';'
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1215:3: ()
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1216:5: 
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1379:3: ()
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1380:5: 
                     {
 
                             current = forceCreateModelElement(
@@ -2908,16 +3258,16 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1221:2: ( (lv_name_1_0= ruleSelfReferencedStore ) )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1222:1: (lv_name_1_0= ruleSelfReferencedStore )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1385:2: ( (lv_name_1_0= ruleSelfReferencedStore ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1386:1: (lv_name_1_0= ruleSelfReferencedStore )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1222:1: (lv_name_1_0= ruleSelfReferencedStore )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1223:3: lv_name_1_0= ruleSelfReferencedStore
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1386:1: (lv_name_1_0= ruleSelfReferencedStore )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1387:3: lv_name_1_0= ruleSelfReferencedStore
                     {
                      
                     	        newCompositeNode(grammarAccess.getUpdateExpressionAccess().getNameSelfReferencedStoreParserRuleCall_0_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleSelfReferencedStore_in_ruleUpdateExpression2562);
+                    pushFollow(FOLLOW_ruleSelfReferencedStore_in_ruleUpdateExpression2848);
                     lv_name_1_0=ruleSelfReferencedStore();
 
                     state._fsp--;
@@ -2939,20 +3289,20 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,30,FOLLOW_30_in_ruleUpdateExpression2574); 
+                    otherlv_2=(Token)match(input,30,FOLLOW_30_in_ruleUpdateExpression2860); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getUpdateExpressionAccess().getColonEqualsSignKeyword_0_2());
                         
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1243:1: ( (lv_expression_3_0= ruleActionExpression ) )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1244:1: (lv_expression_3_0= ruleActionExpression )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1407:1: ( (lv_expression_3_0= ruleActionExpression ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1408:1: (lv_expression_3_0= ruleActionExpression )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1244:1: (lv_expression_3_0= ruleActionExpression )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1245:3: lv_expression_3_0= ruleActionExpression
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1408:1: (lv_expression_3_0= ruleActionExpression )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1409:3: lv_expression_3_0= ruleActionExpression
                     {
                      
                     	        newCompositeNode(grammarAccess.getUpdateExpressionAccess().getExpressionActionExpressionParserRuleCall_0_3_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleActionExpression_in_ruleUpdateExpression2595);
+                    pushFollow(FOLLOW_ruleActionExpression_in_ruleUpdateExpression2881);
                     lv_expression_3_0=ruleActionExpression();
 
                     state._fsp--;
@@ -2974,7 +3324,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_4=(Token)match(input,18,FOLLOW_18_in_ruleUpdateExpression2607); 
+                    otherlv_4=(Token)match(input,18,FOLLOW_18_in_ruleUpdateExpression2893); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getUpdateExpressionAccess().getSemicolonKeyword_0_4());
                         
@@ -2985,34 +3335,34 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1266:6: ( () ( (otherlv_6= RULE_LOWER ) ) otherlv_7= ':=' ( (lv_expression_8_0= ruleActionExpression ) ) otherlv_9= ';' )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1430:6: ( () ( (otherlv_6= RULE_LOWER ) ) otherlv_7= ':=' ( (lv_expression_8_0= ruleActionExpression ) ) otherlv_9= ';' )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1266:6: ( () ( (otherlv_6= RULE_LOWER ) ) otherlv_7= ':=' ( (lv_expression_8_0= ruleActionExpression ) ) otherlv_9= ';' )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1266:7: () ( (otherlv_6= RULE_LOWER ) ) otherlv_7= ':=' ( (lv_expression_8_0= ruleActionExpression ) ) otherlv_9= ';'
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1430:6: ( () ( (otherlv_6= RULE_LOWER ) ) otherlv_7= ':=' ( (lv_expression_8_0= ruleActionExpression ) ) otherlv_9= ';' )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1430:7: () ( (otherlv_6= RULE_LOWER ) ) otherlv_7= ':=' ( (lv_expression_8_0= ruleActionExpression ) ) otherlv_9= ';'
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1266:7: ()
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1267:5: 
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1430:7: ()
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1431:5: 
                     {
 
                             current = forceCreateModelElement(
-                                grammarAccess.getUpdateExpressionAccess().getUpdateExpressionAction_1_0(),
+                                grammarAccess.getUpdateExpressionAccess().getGlobalUpdateExpressionAction_1_0(),
                                 current);
                         
 
                     }
 
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1272:2: ( (otherlv_6= RULE_LOWER ) )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1273:1: (otherlv_6= RULE_LOWER )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1436:2: ( (otherlv_6= RULE_LOWER ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1437:1: (otherlv_6= RULE_LOWER )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1273:1: (otherlv_6= RULE_LOWER )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1274:3: otherlv_6= RULE_LOWER
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1437:1: (otherlv_6= RULE_LOWER )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1438:3: otherlv_6= RULE_LOWER
                     {
 
                     			if (current==null) {
                     	            current = createModelElement(grammarAccess.getUpdateExpressionRule());
                     	        }
                             
-                    otherlv_6=(Token)match(input,RULE_LOWER,FOLLOW_RULE_LOWER_in_ruleUpdateExpression2644); 
+                    otherlv_6=(Token)match(input,RULE_LOWER,FOLLOW_RULE_LOWER_in_ruleUpdateExpression2930); 
 
                     		newLeafNode(otherlv_6, grammarAccess.getUpdateExpressionAccess().getNameStoreCrossReference_1_1_0()); 
                     	
@@ -3022,20 +3372,20 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_7=(Token)match(input,30,FOLLOW_30_in_ruleUpdateExpression2656); 
+                    otherlv_7=(Token)match(input,30,FOLLOW_30_in_ruleUpdateExpression2942); 
 
                         	newLeafNode(otherlv_7, grammarAccess.getUpdateExpressionAccess().getColonEqualsSignKeyword_1_2());
                         
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1289:1: ( (lv_expression_8_0= ruleActionExpression ) )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1290:1: (lv_expression_8_0= ruleActionExpression )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1453:1: ( (lv_expression_8_0= ruleActionExpression ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1454:1: (lv_expression_8_0= ruleActionExpression )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1290:1: (lv_expression_8_0= ruleActionExpression )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1291:3: lv_expression_8_0= ruleActionExpression
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1454:1: (lv_expression_8_0= ruleActionExpression )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1455:3: lv_expression_8_0= ruleActionExpression
                     {
                      
                     	        newCompositeNode(grammarAccess.getUpdateExpressionAccess().getExpressionActionExpressionParserRuleCall_1_3_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleActionExpression_in_ruleUpdateExpression2677);
+                    pushFollow(FOLLOW_ruleActionExpression_in_ruleUpdateExpression2963);
                     lv_expression_8_0=ruleActionExpression();
 
                     state._fsp--;
@@ -3057,7 +3407,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_9=(Token)match(input,18,FOLLOW_18_in_ruleUpdateExpression2689); 
+                    otherlv_9=(Token)match(input,18,FOLLOW_18_in_ruleUpdateExpression2975); 
 
                         	newLeafNode(otherlv_9, grammarAccess.getUpdateExpressionAccess().getSemicolonKeyword_1_4());
                         
@@ -3091,7 +3441,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSelfReferencedStore"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1322:1: entryRuleSelfReferencedStore returns [EObject current=null] : iv_ruleSelfReferencedStore= ruleSelfReferencedStore EOF ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1486:1: entryRuleSelfReferencedStore returns [EObject current=null] : iv_ruleSelfReferencedStore= ruleSelfReferencedStore EOF ;
     public final EObject entryRuleSelfReferencedStore() throws RecognitionException {
         EObject current = null;
 
@@ -3102,17 +3452,17 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         	
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1326:2: (iv_ruleSelfReferencedStore= ruleSelfReferencedStore EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1327:2: iv_ruleSelfReferencedStore= ruleSelfReferencedStore EOF
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1490:2: (iv_ruleSelfReferencedStore= ruleSelfReferencedStore EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1491:2: iv_ruleSelfReferencedStore= ruleSelfReferencedStore EOF
             {
              newCompositeNode(grammarAccess.getSelfReferencedStoreRule()); 
-            pushFollow(FOLLOW_ruleSelfReferencedStore_in_entryRuleSelfReferencedStore2736);
+            pushFollow(FOLLOW_ruleSelfReferencedStore_in_entryRuleSelfReferencedStore3022);
             iv_ruleSelfReferencedStore=ruleSelfReferencedStore();
 
             state._fsp--;
 
              current =iv_ruleSelfReferencedStore; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSelfReferencedStore2746); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSelfReferencedStore3032); 
 
             }
 
@@ -3133,7 +3483,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSelfReferencedStore"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1337:1: ruleSelfReferencedStore returns [EObject current=null] : ( () otherlv_1= 'this.' ( (otherlv_2= RULE_LOWER ) ) ) ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1501:1: ruleSelfReferencedStore returns [EObject current=null] : ( () otherlv_1= 'this.' ( (otherlv_2= RULE_LOWER ) ) ) ;
     public final EObject ruleSelfReferencedStore() throws RecognitionException {
         EObject current = null;
 
@@ -3144,14 +3494,14 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
             
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1341:28: ( ( () otherlv_1= 'this.' ( (otherlv_2= RULE_LOWER ) ) ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1342:1: ( () otherlv_1= 'this.' ( (otherlv_2= RULE_LOWER ) ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1505:28: ( ( () otherlv_1= 'this.' ( (otherlv_2= RULE_LOWER ) ) ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1506:1: ( () otherlv_1= 'this.' ( (otherlv_2= RULE_LOWER ) ) )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1342:1: ( () otherlv_1= 'this.' ( (otherlv_2= RULE_LOWER ) ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1342:2: () otherlv_1= 'this.' ( (otherlv_2= RULE_LOWER ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1506:1: ( () otherlv_1= 'this.' ( (otherlv_2= RULE_LOWER ) ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1506:2: () otherlv_1= 'this.' ( (otherlv_2= RULE_LOWER ) )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1342:2: ()
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1343:5: 
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1506:2: ()
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1507:5: 
             {
 
                     current = forceCreateModelElement(
@@ -3161,24 +3511,24 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,31,FOLLOW_31_in_ruleSelfReferencedStore2796); 
+            otherlv_1=(Token)match(input,31,FOLLOW_31_in_ruleSelfReferencedStore3082); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getSelfReferencedStoreAccess().getThisKeyword_1());
                 
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1352:1: ( (otherlv_2= RULE_LOWER ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1353:1: (otherlv_2= RULE_LOWER )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1516:1: ( (otherlv_2= RULE_LOWER ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1517:1: (otherlv_2= RULE_LOWER )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1353:1: (otherlv_2= RULE_LOWER )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1354:3: otherlv_2= RULE_LOWER
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1517:1: (otherlv_2= RULE_LOWER )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1518:3: otherlv_2= RULE_LOWER
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getSelfReferencedStoreRule());
             	        }
                     
-            otherlv_2=(Token)match(input,RULE_LOWER,FOLLOW_RULE_LOWER_in_ruleSelfReferencedStore2816); 
+            otherlv_2=(Token)match(input,RULE_LOWER,FOLLOW_RULE_LOWER_in_ruleSelfReferencedStore3102); 
 
-            		newLeafNode(otherlv_2, grammarAccess.getSelfReferencedStoreAccess().getStoreStoreCrossReference_2_0()); 
+            		newLeafNode(otherlv_2, grammarAccess.getSelfReferencedStoreAccess().getNameStoreCrossReference_2_0()); 
             	
 
             }
@@ -3210,7 +3560,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleActionExpression"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1376:1: entryRuleActionExpression returns [EObject current=null] : iv_ruleActionExpression= ruleActionExpression EOF ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1540:1: entryRuleActionExpression returns [EObject current=null] : iv_ruleActionExpression= ruleActionExpression EOF ;
     public final EObject entryRuleActionExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3221,17 +3571,17 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         	
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1380:2: (iv_ruleActionExpression= ruleActionExpression EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1381:2: iv_ruleActionExpression= ruleActionExpression EOF
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1544:2: (iv_ruleActionExpression= ruleActionExpression EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1545:2: iv_ruleActionExpression= ruleActionExpression EOF
             {
              newCompositeNode(grammarAccess.getActionExpressionRule()); 
-            pushFollow(FOLLOW_ruleActionExpression_in_entryRuleActionExpression2862);
+            pushFollow(FOLLOW_ruleActionExpression_in_entryRuleActionExpression3148);
             iv_ruleActionExpression=ruleActionExpression();
 
             state._fsp--;
 
              current =iv_ruleActionExpression; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleActionExpression2872); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleActionExpression3158); 
 
             }
 
@@ -3252,7 +3602,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActionExpression"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1391:1: ruleActionExpression returns [EObject current=null] : this_ActionOr_0= ruleActionOr ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1555:1: ruleActionExpression returns [EObject current=null] : this_ActionOr_0= ruleActionOr ;
     public final EObject ruleActionExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3263,13 +3613,13 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
             
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1395:28: (this_ActionOr_0= ruleActionOr )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1397:5: this_ActionOr_0= ruleActionOr
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1559:28: (this_ActionOr_0= ruleActionOr )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1561:5: this_ActionOr_0= ruleActionOr
             {
              
                     newCompositeNode(grammarAccess.getActionExpressionAccess().getActionOrParserRuleCall()); 
                 
-            pushFollow(FOLLOW_ruleActionOr_in_ruleActionExpression2922);
+            pushFollow(FOLLOW_ruleActionOr_in_ruleActionExpression3208);
             this_ActionOr_0=ruleActionOr();
 
             state._fsp--;
@@ -3299,7 +3649,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleActionOr"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1416:1: entryRuleActionOr returns [EObject current=null] : iv_ruleActionOr= ruleActionOr EOF ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1580:1: entryRuleActionOr returns [EObject current=null] : iv_ruleActionOr= ruleActionOr EOF ;
     public final EObject entryRuleActionOr() throws RecognitionException {
         EObject current = null;
 
@@ -3310,17 +3660,17 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         	
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1420:2: (iv_ruleActionOr= ruleActionOr EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1421:2: iv_ruleActionOr= ruleActionOr EOF
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1584:2: (iv_ruleActionOr= ruleActionOr EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1585:2: iv_ruleActionOr= ruleActionOr EOF
             {
              newCompositeNode(grammarAccess.getActionOrRule()); 
-            pushFollow(FOLLOW_ruleActionOr_in_entryRuleActionOr2966);
+            pushFollow(FOLLOW_ruleActionOr_in_entryRuleActionOr3252);
             iv_ruleActionOr=ruleActionOr();
 
             state._fsp--;
 
              current =iv_ruleActionOr; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleActionOr2976); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleActionOr3262); 
 
             }
 
@@ -3341,7 +3691,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActionOr"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1431:1: ruleActionOr returns [EObject current=null] : (this_ActionAnd_0= ruleActionAnd ( () otherlv_2= '||' ( (lv_right_3_0= ruleActionAnd ) ) )* ) ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1595:1: ruleActionOr returns [EObject current=null] : (this_ActionAnd_0= ruleActionAnd ( () otherlv_2= '||' ( (lv_right_3_0= ruleActionAnd ) ) )* ) ;
     public final EObject ruleActionOr() throws RecognitionException {
         EObject current = null;
 
@@ -3355,16 +3705,16 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
             
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1435:28: ( (this_ActionAnd_0= ruleActionAnd ( () otherlv_2= '||' ( (lv_right_3_0= ruleActionAnd ) ) )* ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1436:1: (this_ActionAnd_0= ruleActionAnd ( () otherlv_2= '||' ( (lv_right_3_0= ruleActionAnd ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1599:28: ( (this_ActionAnd_0= ruleActionAnd ( () otherlv_2= '||' ( (lv_right_3_0= ruleActionAnd ) ) )* ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1600:1: (this_ActionAnd_0= ruleActionAnd ( () otherlv_2= '||' ( (lv_right_3_0= ruleActionAnd ) ) )* )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1436:1: (this_ActionAnd_0= ruleActionAnd ( () otherlv_2= '||' ( (lv_right_3_0= ruleActionAnd ) ) )* )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1437:5: this_ActionAnd_0= ruleActionAnd ( () otherlv_2= '||' ( (lv_right_3_0= ruleActionAnd ) ) )*
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1600:1: (this_ActionAnd_0= ruleActionAnd ( () otherlv_2= '||' ( (lv_right_3_0= ruleActionAnd ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1601:5: this_ActionAnd_0= ruleActionAnd ( () otherlv_2= '||' ( (lv_right_3_0= ruleActionAnd ) ) )*
             {
              
                     newCompositeNode(grammarAccess.getActionOrAccess().getActionAndParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleActionAnd_in_ruleActionOr3027);
+            pushFollow(FOLLOW_ruleActionAnd_in_ruleActionOr3313);
             this_ActionAnd_0=ruleActionAnd();
 
             state._fsp--;
@@ -3373,23 +3723,23 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
                     current = this_ActionAnd_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1445:1: ( () otherlv_2= '||' ( (lv_right_3_0= ruleActionAnd ) ) )*
-            loop16:
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1609:1: ( () otherlv_2= '||' ( (lv_right_3_0= ruleActionAnd ) ) )*
+            loop17:
             do {
-                int alt16=2;
-                int LA16_0 = input.LA(1);
+                int alt17=2;
+                int LA17_0 = input.LA(1);
 
-                if ( (LA16_0==32) ) {
-                    alt16=1;
+                if ( (LA17_0==32) ) {
+                    alt17=1;
                 }
 
 
-                switch (alt16) {
+                switch (alt17) {
             	case 1 :
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1445:2: () otherlv_2= '||' ( (lv_right_3_0= ruleActionAnd ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1609:2: () otherlv_2= '||' ( (lv_right_3_0= ruleActionAnd ) )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1445:2: ()
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1446:5: 
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1609:2: ()
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1610:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
@@ -3399,20 +3749,20 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_2=(Token)match(input,32,FOLLOW_32_in_ruleActionOr3048); 
+            	    otherlv_2=(Token)match(input,32,FOLLOW_32_in_ruleActionOr3334); 
 
             	        	newLeafNode(otherlv_2, grammarAccess.getActionOrAccess().getVerticalLineVerticalLineKeyword_1_1());
             	        
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1455:1: ( (lv_right_3_0= ruleActionAnd ) )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1456:1: (lv_right_3_0= ruleActionAnd )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1619:1: ( (lv_right_3_0= ruleActionAnd ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1620:1: (lv_right_3_0= ruleActionAnd )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1456:1: (lv_right_3_0= ruleActionAnd )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1457:3: lv_right_3_0= ruleActionAnd
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1620:1: (lv_right_3_0= ruleActionAnd )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1621:3: lv_right_3_0= ruleActionAnd
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getActionOrAccess().getRightActionAndParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleActionAnd_in_ruleActionOr3069);
+            	    pushFollow(FOLLOW_ruleActionAnd_in_ruleActionOr3355);
             	    lv_right_3_0=ruleActionAnd();
 
             	    state._fsp--;
@@ -3426,174 +3776,6 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
             	           			"right",
             	            		lv_right_3_0, 
             	            		"ActionAnd");
-            	    	        afterParserOrEnumRuleCall();
-            	    	    
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop16;
-                }
-            } while (true);
-
-
-            }
-
-
-            }
-
-             leaveRule(); 
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-
-            	myHiddenTokenState.restore();
-
-        }
-        return current;
-    }
-    // $ANTLR end "ruleActionOr"
-
-
-    // $ANTLR start "entryRuleActionAnd"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1484:1: entryRuleActionAnd returns [EObject current=null] : iv_ruleActionAnd= ruleActionAnd EOF ;
-    public final EObject entryRuleActionAnd() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleActionAnd = null;
-
-
-         
-        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
-        	
-        try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1488:2: (iv_ruleActionAnd= ruleActionAnd EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1489:2: iv_ruleActionAnd= ruleActionAnd EOF
-            {
-             newCompositeNode(grammarAccess.getActionAndRule()); 
-            pushFollow(FOLLOW_ruleActionAnd_in_entryRuleActionAnd3117);
-            iv_ruleActionAnd=ruleActionAnd();
-
-            state._fsp--;
-
-             current =iv_ruleActionAnd; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleActionAnd3127); 
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-
-            	myHiddenTokenState.restore();
-
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleActionAnd"
-
-
-    // $ANTLR start "ruleActionAnd"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1499:1: ruleActionAnd returns [EObject current=null] : (this_ActionEquality_0= ruleActionEquality ( () otherlv_2= '&&' ( (lv_right_3_0= ruleActionEquality ) ) )* ) ;
-    public final EObject ruleActionAnd() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_2=null;
-        EObject this_ActionEquality_0 = null;
-
-        EObject lv_right_3_0 = null;
-
-
-         enterRule(); 
-        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
-            
-        try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1503:28: ( (this_ActionEquality_0= ruleActionEquality ( () otherlv_2= '&&' ( (lv_right_3_0= ruleActionEquality ) ) )* ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1504:1: (this_ActionEquality_0= ruleActionEquality ( () otherlv_2= '&&' ( (lv_right_3_0= ruleActionEquality ) ) )* )
-            {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1504:1: (this_ActionEquality_0= ruleActionEquality ( () otherlv_2= '&&' ( (lv_right_3_0= ruleActionEquality ) ) )* )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1505:5: this_ActionEquality_0= ruleActionEquality ( () otherlv_2= '&&' ( (lv_right_3_0= ruleActionEquality ) ) )*
-            {
-             
-                    newCompositeNode(grammarAccess.getActionAndAccess().getActionEqualityParserRuleCall_0()); 
-                
-            pushFollow(FOLLOW_ruleActionEquality_in_ruleActionAnd3178);
-            this_ActionEquality_0=ruleActionEquality();
-
-            state._fsp--;
-
-             
-                    current = this_ActionEquality_0; 
-                    afterParserOrEnumRuleCall();
-                
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1513:1: ( () otherlv_2= '&&' ( (lv_right_3_0= ruleActionEquality ) ) )*
-            loop17:
-            do {
-                int alt17=2;
-                int LA17_0 = input.LA(1);
-
-                if ( (LA17_0==33) ) {
-                    alt17=1;
-                }
-
-
-                switch (alt17) {
-            	case 1 :
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1513:2: () otherlv_2= '&&' ( (lv_right_3_0= ruleActionEquality ) )
-            	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1513:2: ()
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1514:5: 
-            	    {
-
-            	            current = forceCreateModelElementAndSet(
-            	                grammarAccess.getActionAndAccess().getActionAndLeftAction_1_0(),
-            	                current);
-            	        
-
-            	    }
-
-            	    otherlv_2=(Token)match(input,33,FOLLOW_33_in_ruleActionAnd3199); 
-
-            	        	newLeafNode(otherlv_2, grammarAccess.getActionAndAccess().getAmpersandAmpersandKeyword_1_1());
-            	        
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1523:1: ( (lv_right_3_0= ruleActionEquality ) )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1524:1: (lv_right_3_0= ruleActionEquality )
-            	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1524:1: (lv_right_3_0= ruleActionEquality )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1525:3: lv_right_3_0= ruleActionEquality
-            	    {
-            	     
-            	    	        newCompositeNode(grammarAccess.getActionAndAccess().getRightActionEqualityParserRuleCall_1_2_0()); 
-            	    	    
-            	    pushFollow(FOLLOW_ruleActionEquality_in_ruleActionAnd3220);
-            	    lv_right_3_0=ruleActionEquality();
-
-            	    state._fsp--;
-
-
-            	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getActionAndRule());
-            	    	        }
-            	           		set(
-            	           			current, 
-            	           			"right",
-            	            		lv_right_3_0, 
-            	            		"ActionEquality");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -3631,11 +3813,179 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
+    // $ANTLR end "ruleActionOr"
+
+
+    // $ANTLR start "entryRuleActionAnd"
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1648:1: entryRuleActionAnd returns [EObject current=null] : iv_ruleActionAnd= ruleActionAnd EOF ;
+    public final EObject entryRuleActionAnd() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleActionAnd = null;
+
+
+         
+        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+        	
+        try {
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1652:2: (iv_ruleActionAnd= ruleActionAnd EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1653:2: iv_ruleActionAnd= ruleActionAnd EOF
+            {
+             newCompositeNode(grammarAccess.getActionAndRule()); 
+            pushFollow(FOLLOW_ruleActionAnd_in_entryRuleActionAnd3403);
+            iv_ruleActionAnd=ruleActionAnd();
+
+            state._fsp--;
+
+             current =iv_ruleActionAnd; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleActionAnd3413); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleActionAnd"
+
+
+    // $ANTLR start "ruleActionAnd"
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1663:1: ruleActionAnd returns [EObject current=null] : (this_ActionEquality_0= ruleActionEquality ( () otherlv_2= '&&' ( (lv_right_3_0= ruleActionEquality ) ) )* ) ;
+    public final EObject ruleActionAnd() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_2=null;
+        EObject this_ActionEquality_0 = null;
+
+        EObject lv_right_3_0 = null;
+
+
+         enterRule(); 
+        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+            
+        try {
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1667:28: ( (this_ActionEquality_0= ruleActionEquality ( () otherlv_2= '&&' ( (lv_right_3_0= ruleActionEquality ) ) )* ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1668:1: (this_ActionEquality_0= ruleActionEquality ( () otherlv_2= '&&' ( (lv_right_3_0= ruleActionEquality ) ) )* )
+            {
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1668:1: (this_ActionEquality_0= ruleActionEquality ( () otherlv_2= '&&' ( (lv_right_3_0= ruleActionEquality ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1669:5: this_ActionEquality_0= ruleActionEquality ( () otherlv_2= '&&' ( (lv_right_3_0= ruleActionEquality ) ) )*
+            {
+             
+                    newCompositeNode(grammarAccess.getActionAndAccess().getActionEqualityParserRuleCall_0()); 
+                
+            pushFollow(FOLLOW_ruleActionEquality_in_ruleActionAnd3464);
+            this_ActionEquality_0=ruleActionEquality();
+
+            state._fsp--;
+
+             
+                    current = this_ActionEquality_0; 
+                    afterParserOrEnumRuleCall();
+                
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1677:1: ( () otherlv_2= '&&' ( (lv_right_3_0= ruleActionEquality ) ) )*
+            loop18:
+            do {
+                int alt18=2;
+                int LA18_0 = input.LA(1);
+
+                if ( (LA18_0==33) ) {
+                    alt18=1;
+                }
+
+
+                switch (alt18) {
+            	case 1 :
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1677:2: () otherlv_2= '&&' ( (lv_right_3_0= ruleActionEquality ) )
+            	    {
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1677:2: ()
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1678:5: 
+            	    {
+
+            	            current = forceCreateModelElementAndSet(
+            	                grammarAccess.getActionAndAccess().getActionAndLeftAction_1_0(),
+            	                current);
+            	        
+
+            	    }
+
+            	    otherlv_2=(Token)match(input,33,FOLLOW_33_in_ruleActionAnd3485); 
+
+            	        	newLeafNode(otherlv_2, grammarAccess.getActionAndAccess().getAmpersandAmpersandKeyword_1_1());
+            	        
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1687:1: ( (lv_right_3_0= ruleActionEquality ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1688:1: (lv_right_3_0= ruleActionEquality )
+            	    {
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1688:1: (lv_right_3_0= ruleActionEquality )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1689:3: lv_right_3_0= ruleActionEquality
+            	    {
+            	     
+            	    	        newCompositeNode(grammarAccess.getActionAndAccess().getRightActionEqualityParserRuleCall_1_2_0()); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleActionEquality_in_ruleActionAnd3506);
+            	    lv_right_3_0=ruleActionEquality();
+
+            	    state._fsp--;
+
+
+            	    	        if (current==null) {
+            	    	            current = createModelElementForParent(grammarAccess.getActionAndRule());
+            	    	        }
+            	           		set(
+            	           			current, 
+            	           			"right",
+            	            		lv_right_3_0, 
+            	            		"ActionEquality");
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop18;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
     // $ANTLR end "ruleActionAnd"
 
 
     // $ANTLR start "entryRuleActionEquality"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1552:1: entryRuleActionEquality returns [EObject current=null] : iv_ruleActionEquality= ruleActionEquality EOF ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1716:1: entryRuleActionEquality returns [EObject current=null] : iv_ruleActionEquality= ruleActionEquality EOF ;
     public final EObject entryRuleActionEquality() throws RecognitionException {
         EObject current = null;
 
@@ -3646,17 +3996,17 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         	
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1556:2: (iv_ruleActionEquality= ruleActionEquality EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1557:2: iv_ruleActionEquality= ruleActionEquality EOF
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1720:2: (iv_ruleActionEquality= ruleActionEquality EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1721:2: iv_ruleActionEquality= ruleActionEquality EOF
             {
              newCompositeNode(grammarAccess.getActionEqualityRule()); 
-            pushFollow(FOLLOW_ruleActionEquality_in_entryRuleActionEquality3268);
+            pushFollow(FOLLOW_ruleActionEquality_in_entryRuleActionEquality3554);
             iv_ruleActionEquality=ruleActionEquality();
 
             state._fsp--;
 
              current =iv_ruleActionEquality; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleActionEquality3278); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleActionEquality3564); 
 
             }
 
@@ -3677,7 +4027,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActionEquality"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1567:1: ruleActionEquality returns [EObject current=null] : (this_ActionComparison_0= ruleActionComparison ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleActionComparison ) ) )* ) ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1731:1: ruleActionEquality returns [EObject current=null] : (this_ActionComparison_0= ruleActionComparison ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleActionComparison ) ) )* ) ;
     public final EObject ruleActionEquality() throws RecognitionException {
         EObject current = null;
 
@@ -3692,16 +4042,16 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
             
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1571:28: ( (this_ActionComparison_0= ruleActionComparison ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleActionComparison ) ) )* ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1572:1: (this_ActionComparison_0= ruleActionComparison ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleActionComparison ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1735:28: ( (this_ActionComparison_0= ruleActionComparison ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleActionComparison ) ) )* ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1736:1: (this_ActionComparison_0= ruleActionComparison ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleActionComparison ) ) )* )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1572:1: (this_ActionComparison_0= ruleActionComparison ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleActionComparison ) ) )* )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1573:5: this_ActionComparison_0= ruleActionComparison ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleActionComparison ) ) )*
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1736:1: (this_ActionComparison_0= ruleActionComparison ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleActionComparison ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1737:5: this_ActionComparison_0= ruleActionComparison ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleActionComparison ) ) )*
             {
              
                     newCompositeNode(grammarAccess.getActionEqualityAccess().getActionComparisonParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleActionComparison_in_ruleActionEquality3329);
+            pushFollow(FOLLOW_ruleActionComparison_in_ruleActionEquality3615);
             this_ActionComparison_0=ruleActionComparison();
 
             state._fsp--;
@@ -3710,23 +4060,23 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
                     current = this_ActionComparison_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1581:1: ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleActionComparison ) ) )*
-            loop19:
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1745:1: ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleActionComparison ) ) )*
+            loop20:
             do {
-                int alt19=2;
-                int LA19_0 = input.LA(1);
+                int alt20=2;
+                int LA20_0 = input.LA(1);
 
-                if ( ((LA19_0>=34 && LA19_0<=35)) ) {
-                    alt19=1;
+                if ( ((LA20_0>=34 && LA20_0<=35)) ) {
+                    alt20=1;
                 }
 
 
-                switch (alt19) {
+                switch (alt20) {
             	case 1 :
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1581:2: () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleActionComparison ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1745:2: () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleActionComparison ) )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1581:2: ()
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1582:5: 
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1745:2: ()
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1746:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
@@ -3736,33 +4086,33 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1587:2: ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1588:1: ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1751:2: ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1752:1: ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1588:1: ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1589:1: (lv_op_2_1= '==' | lv_op_2_2= '!=' )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1752:1: ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1753:1: (lv_op_2_1= '==' | lv_op_2_2= '!=' )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1589:1: (lv_op_2_1= '==' | lv_op_2_2= '!=' )
-            	    int alt18=2;
-            	    int LA18_0 = input.LA(1);
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1753:1: (lv_op_2_1= '==' | lv_op_2_2= '!=' )
+            	    int alt19=2;
+            	    int LA19_0 = input.LA(1);
 
-            	    if ( (LA18_0==34) ) {
-            	        alt18=1;
+            	    if ( (LA19_0==34) ) {
+            	        alt19=1;
             	    }
-            	    else if ( (LA18_0==35) ) {
-            	        alt18=2;
+            	    else if ( (LA19_0==35) ) {
+            	        alt19=2;
             	    }
             	    else {
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 18, 0, input);
+            	            new NoViableAltException("", 19, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt18) {
+            	    switch (alt19) {
             	        case 1 :
-            	            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1590:3: lv_op_2_1= '=='
+            	            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1754:3: lv_op_2_1= '=='
             	            {
-            	            lv_op_2_1=(Token)match(input,34,FOLLOW_34_in_ruleActionEquality3358); 
+            	            lv_op_2_1=(Token)match(input,34,FOLLOW_34_in_ruleActionEquality3644); 
 
             	                    newLeafNode(lv_op_2_1, grammarAccess.getActionEqualityAccess().getOpEqualsSignEqualsSignKeyword_1_1_0_0());
             	                
@@ -3776,9 +4126,9 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1602:8: lv_op_2_2= '!='
+            	            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1766:8: lv_op_2_2= '!='
             	            {
-            	            lv_op_2_2=(Token)match(input,35,FOLLOW_35_in_ruleActionEquality3387); 
+            	            lv_op_2_2=(Token)match(input,35,FOLLOW_35_in_ruleActionEquality3673); 
 
             	                    newLeafNode(lv_op_2_2, grammarAccess.getActionEqualityAccess().getOpExclamationMarkEqualsSignKeyword_1_1_0_1());
             	                
@@ -3800,16 +4150,16 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1617:2: ( (lv_right_3_0= ruleActionComparison ) )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1618:1: (lv_right_3_0= ruleActionComparison )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1781:2: ( (lv_right_3_0= ruleActionComparison ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1782:1: (lv_right_3_0= ruleActionComparison )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1618:1: (lv_right_3_0= ruleActionComparison )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1619:3: lv_right_3_0= ruleActionComparison
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1782:1: (lv_right_3_0= ruleActionComparison )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1783:3: lv_right_3_0= ruleActionComparison
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getActionEqualityAccess().getRightActionComparisonParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleActionComparison_in_ruleActionEquality3424);
+            	    pushFollow(FOLLOW_ruleActionComparison_in_ruleActionEquality3710);
             	    lv_right_3_0=ruleActionComparison();
 
             	    state._fsp--;
@@ -3836,7 +4186,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop19;
+            	    break loop20;
                 }
             } while (true);
 
@@ -3864,7 +4214,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleActionComparison"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1646:1: entryRuleActionComparison returns [EObject current=null] : iv_ruleActionComparison= ruleActionComparison EOF ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1810:1: entryRuleActionComparison returns [EObject current=null] : iv_ruleActionComparison= ruleActionComparison EOF ;
     public final EObject entryRuleActionComparison() throws RecognitionException {
         EObject current = null;
 
@@ -3875,17 +4225,17 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         	
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1650:2: (iv_ruleActionComparison= ruleActionComparison EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1651:2: iv_ruleActionComparison= ruleActionComparison EOF
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1814:2: (iv_ruleActionComparison= ruleActionComparison EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1815:2: iv_ruleActionComparison= ruleActionComparison EOF
             {
              newCompositeNode(grammarAccess.getActionComparisonRule()); 
-            pushFollow(FOLLOW_ruleActionComparison_in_entryRuleActionComparison3472);
+            pushFollow(FOLLOW_ruleActionComparison_in_entryRuleActionComparison3758);
             iv_ruleActionComparison=ruleActionComparison();
 
             state._fsp--;
 
              current =iv_ruleActionComparison; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleActionComparison3482); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleActionComparison3768); 
 
             }
 
@@ -3906,7 +4256,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActionComparison"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1661:1: ruleActionComparison returns [EObject current=null] : (this_ActionSubtraction_0= ruleActionSubtraction ( () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleActionSubtraction ) ) )* ) ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1825:1: ruleActionComparison returns [EObject current=null] : (this_ActionSubtraction_0= ruleActionSubtraction ( () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleActionSubtraction ) ) )* ) ;
     public final EObject ruleActionComparison() throws RecognitionException {
         EObject current = null;
 
@@ -3923,16 +4273,16 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
             
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1665:28: ( (this_ActionSubtraction_0= ruleActionSubtraction ( () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleActionSubtraction ) ) )* ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1666:1: (this_ActionSubtraction_0= ruleActionSubtraction ( () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleActionSubtraction ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1829:28: ( (this_ActionSubtraction_0= ruleActionSubtraction ( () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleActionSubtraction ) ) )* ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1830:1: (this_ActionSubtraction_0= ruleActionSubtraction ( () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleActionSubtraction ) ) )* )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1666:1: (this_ActionSubtraction_0= ruleActionSubtraction ( () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleActionSubtraction ) ) )* )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1667:5: this_ActionSubtraction_0= ruleActionSubtraction ( () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleActionSubtraction ) ) )*
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1830:1: (this_ActionSubtraction_0= ruleActionSubtraction ( () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleActionSubtraction ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1831:5: this_ActionSubtraction_0= ruleActionSubtraction ( () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleActionSubtraction ) ) )*
             {
              
                     newCompositeNode(grammarAccess.getActionComparisonAccess().getActionSubtractionParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleActionSubtraction_in_ruleActionComparison3533);
+            pushFollow(FOLLOW_ruleActionSubtraction_in_ruleActionComparison3819);
             this_ActionSubtraction_0=ruleActionSubtraction();
 
             state._fsp--;
@@ -3941,23 +4291,23 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
                     current = this_ActionSubtraction_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1675:1: ( () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleActionSubtraction ) ) )*
-            loop21:
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1839:1: ( () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleActionSubtraction ) ) )*
+            loop22:
             do {
-                int alt21=2;
-                int LA21_0 = input.LA(1);
+                int alt22=2;
+                int LA22_0 = input.LA(1);
 
-                if ( ((LA21_0>=28 && LA21_0<=29)||(LA21_0>=36 && LA21_0<=37)) ) {
-                    alt21=1;
+                if ( ((LA22_0>=28 && LA22_0<=29)||(LA22_0>=36 && LA22_0<=37)) ) {
+                    alt22=1;
                 }
 
 
-                switch (alt21) {
+                switch (alt22) {
             	case 1 :
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1675:2: () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleActionSubtraction ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1839:2: () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleActionSubtraction ) )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1675:2: ()
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1676:5: 
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1839:2: ()
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1840:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
@@ -3967,47 +4317,47 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1681:2: ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1682:1: ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1845:2: ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1846:1: ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1682:1: ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1683:1: (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1846:1: ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1847:1: (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1683:1: (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' )
-            	    int alt20=4;
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1847:1: (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' )
+            	    int alt21=4;
             	    switch ( input.LA(1) ) {
             	    case 36:
             	        {
-            	        alt20=1;
+            	        alt21=1;
             	        }
             	        break;
             	    case 37:
             	        {
-            	        alt20=2;
+            	        alt21=2;
             	        }
             	        break;
             	    case 29:
             	        {
-            	        alt20=3;
+            	        alt21=3;
             	        }
             	        break;
             	    case 28:
             	        {
-            	        alt20=4;
+            	        alt21=4;
             	        }
             	        break;
             	    default:
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 20, 0, input);
+            	            new NoViableAltException("", 21, 0, input);
 
             	        throw nvae;
             	    }
 
-            	    switch (alt20) {
+            	    switch (alt21) {
             	        case 1 :
-            	            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1684:3: lv_op_2_1= '>='
+            	            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1848:3: lv_op_2_1= '>='
             	            {
-            	            lv_op_2_1=(Token)match(input,36,FOLLOW_36_in_ruleActionComparison3562); 
+            	            lv_op_2_1=(Token)match(input,36,FOLLOW_36_in_ruleActionComparison3848); 
 
             	                    newLeafNode(lv_op_2_1, grammarAccess.getActionComparisonAccess().getOpGreaterThanSignEqualsSignKeyword_1_1_0_0());
             	                
@@ -4021,9 +4371,9 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1696:8: lv_op_2_2= '<='
+            	            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1860:8: lv_op_2_2= '<='
             	            {
-            	            lv_op_2_2=(Token)match(input,37,FOLLOW_37_in_ruleActionComparison3591); 
+            	            lv_op_2_2=(Token)match(input,37,FOLLOW_37_in_ruleActionComparison3877); 
 
             	                    newLeafNode(lv_op_2_2, grammarAccess.getActionComparisonAccess().getOpLessThanSignEqualsSignKeyword_1_1_0_1());
             	                
@@ -4037,9 +4387,9 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 3 :
-            	            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1708:8: lv_op_2_3= '>'
+            	            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1872:8: lv_op_2_3= '>'
             	            {
-            	            lv_op_2_3=(Token)match(input,29,FOLLOW_29_in_ruleActionComparison3620); 
+            	            lv_op_2_3=(Token)match(input,29,FOLLOW_29_in_ruleActionComparison3906); 
 
             	                    newLeafNode(lv_op_2_3, grammarAccess.getActionComparisonAccess().getOpGreaterThanSignKeyword_1_1_0_2());
             	                
@@ -4053,9 +4403,9 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 4 :
-            	            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1720:8: lv_op_2_4= '<'
+            	            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1884:8: lv_op_2_4= '<'
             	            {
-            	            lv_op_2_4=(Token)match(input,28,FOLLOW_28_in_ruleActionComparison3649); 
+            	            lv_op_2_4=(Token)match(input,28,FOLLOW_28_in_ruleActionComparison3935); 
 
             	                    newLeafNode(lv_op_2_4, grammarAccess.getActionComparisonAccess().getOpLessThanSignKeyword_1_1_0_3());
             	                
@@ -4077,16 +4427,16 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1735:2: ( (lv_right_3_0= ruleActionSubtraction ) )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1736:1: (lv_right_3_0= ruleActionSubtraction )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1899:2: ( (lv_right_3_0= ruleActionSubtraction ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1900:1: (lv_right_3_0= ruleActionSubtraction )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1736:1: (lv_right_3_0= ruleActionSubtraction )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1737:3: lv_right_3_0= ruleActionSubtraction
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1900:1: (lv_right_3_0= ruleActionSubtraction )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1901:3: lv_right_3_0= ruleActionSubtraction
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getActionComparisonAccess().getRightActionSubtractionParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleActionSubtraction_in_ruleActionComparison3686);
+            	    pushFollow(FOLLOW_ruleActionSubtraction_in_ruleActionComparison3972);
             	    lv_right_3_0=ruleActionSubtraction();
 
             	    state._fsp--;
@@ -4100,174 +4450,6 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
             	           			"right",
             	            		lv_right_3_0, 
             	            		"ActionSubtraction");
-            	    	        afterParserOrEnumRuleCall();
-            	    	    
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop21;
-                }
-            } while (true);
-
-
-            }
-
-
-            }
-
-             leaveRule(); 
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-
-            	myHiddenTokenState.restore();
-
-        }
-        return current;
-    }
-    // $ANTLR end "ruleActionComparison"
-
-
-    // $ANTLR start "entryRuleActionSubtraction"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1764:1: entryRuleActionSubtraction returns [EObject current=null] : iv_ruleActionSubtraction= ruleActionSubtraction EOF ;
-    public final EObject entryRuleActionSubtraction() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleActionSubtraction = null;
-
-
-         
-        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
-        	
-        try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1768:2: (iv_ruleActionSubtraction= ruleActionSubtraction EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1769:2: iv_ruleActionSubtraction= ruleActionSubtraction EOF
-            {
-             newCompositeNode(grammarAccess.getActionSubtractionRule()); 
-            pushFollow(FOLLOW_ruleActionSubtraction_in_entryRuleActionSubtraction3734);
-            iv_ruleActionSubtraction=ruleActionSubtraction();
-
-            state._fsp--;
-
-             current =iv_ruleActionSubtraction; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleActionSubtraction3744); 
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-
-            	myHiddenTokenState.restore();
-
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleActionSubtraction"
-
-
-    // $ANTLR start "ruleActionSubtraction"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1779:1: ruleActionSubtraction returns [EObject current=null] : (this_ActionAddition_0= ruleActionAddition ( () otherlv_2= '-' ( (lv_right_3_0= ruleActionAddition ) ) )* ) ;
-    public final EObject ruleActionSubtraction() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_2=null;
-        EObject this_ActionAddition_0 = null;
-
-        EObject lv_right_3_0 = null;
-
-
-         enterRule(); 
-        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
-            
-        try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1783:28: ( (this_ActionAddition_0= ruleActionAddition ( () otherlv_2= '-' ( (lv_right_3_0= ruleActionAddition ) ) )* ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1784:1: (this_ActionAddition_0= ruleActionAddition ( () otherlv_2= '-' ( (lv_right_3_0= ruleActionAddition ) ) )* )
-            {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1784:1: (this_ActionAddition_0= ruleActionAddition ( () otherlv_2= '-' ( (lv_right_3_0= ruleActionAddition ) ) )* )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1785:5: this_ActionAddition_0= ruleActionAddition ( () otherlv_2= '-' ( (lv_right_3_0= ruleActionAddition ) ) )*
-            {
-             
-                    newCompositeNode(grammarAccess.getActionSubtractionAccess().getActionAdditionParserRuleCall_0()); 
-                
-            pushFollow(FOLLOW_ruleActionAddition_in_ruleActionSubtraction3795);
-            this_ActionAddition_0=ruleActionAddition();
-
-            state._fsp--;
-
-             
-                    current = this_ActionAddition_0; 
-                    afterParserOrEnumRuleCall();
-                
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1793:1: ( () otherlv_2= '-' ( (lv_right_3_0= ruleActionAddition ) ) )*
-            loop22:
-            do {
-                int alt22=2;
-                int LA22_0 = input.LA(1);
-
-                if ( (LA22_0==38) ) {
-                    alt22=1;
-                }
-
-
-                switch (alt22) {
-            	case 1 :
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1793:2: () otherlv_2= '-' ( (lv_right_3_0= ruleActionAddition ) )
-            	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1793:2: ()
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1794:5: 
-            	    {
-
-            	            current = forceCreateModelElementAndSet(
-            	                grammarAccess.getActionSubtractionAccess().getActionSubLeftAction_1_0(),
-            	                current);
-            	        
-
-            	    }
-
-            	    otherlv_2=(Token)match(input,38,FOLLOW_38_in_ruleActionSubtraction3816); 
-
-            	        	newLeafNode(otherlv_2, grammarAccess.getActionSubtractionAccess().getHyphenMinusKeyword_1_1());
-            	        
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1803:1: ( (lv_right_3_0= ruleActionAddition ) )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1804:1: (lv_right_3_0= ruleActionAddition )
-            	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1804:1: (lv_right_3_0= ruleActionAddition )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1805:3: lv_right_3_0= ruleActionAddition
-            	    {
-            	     
-            	    	        newCompositeNode(grammarAccess.getActionSubtractionAccess().getRightActionAdditionParserRuleCall_1_2_0()); 
-            	    	    
-            	    pushFollow(FOLLOW_ruleActionAddition_in_ruleActionSubtraction3837);
-            	    lv_right_3_0=ruleActionAddition();
-
-            	    state._fsp--;
-
-
-            	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getActionSubtractionRule());
-            	    	        }
-            	           		set(
-            	           			current, 
-            	           			"right",
-            	            		lv_right_3_0, 
-            	            		"ActionAddition");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -4305,32 +4487,32 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleActionSubtraction"
+    // $ANTLR end "ruleActionComparison"
 
 
-    // $ANTLR start "entryRuleActionAddition"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1832:1: entryRuleActionAddition returns [EObject current=null] : iv_ruleActionAddition= ruleActionAddition EOF ;
-    public final EObject entryRuleActionAddition() throws RecognitionException {
+    // $ANTLR start "entryRuleActionSubtraction"
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1928:1: entryRuleActionSubtraction returns [EObject current=null] : iv_ruleActionSubtraction= ruleActionSubtraction EOF ;
+    public final EObject entryRuleActionSubtraction() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleActionAddition = null;
+        EObject iv_ruleActionSubtraction = null;
 
 
          
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         	
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1836:2: (iv_ruleActionAddition= ruleActionAddition EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1837:2: iv_ruleActionAddition= ruleActionAddition EOF
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1932:2: (iv_ruleActionSubtraction= ruleActionSubtraction EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1933:2: iv_ruleActionSubtraction= ruleActionSubtraction EOF
             {
-             newCompositeNode(grammarAccess.getActionAdditionRule()); 
-            pushFollow(FOLLOW_ruleActionAddition_in_entryRuleActionAddition3885);
-            iv_ruleActionAddition=ruleActionAddition();
+             newCompositeNode(grammarAccess.getActionSubtractionRule()); 
+            pushFollow(FOLLOW_ruleActionSubtraction_in_entryRuleActionSubtraction4020);
+            iv_ruleActionSubtraction=ruleActionSubtraction();
 
             state._fsp--;
 
-             current =iv_ruleActionAddition; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleActionAddition3895); 
+             current =iv_ruleActionSubtraction; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleActionSubtraction4030); 
 
             }
 
@@ -4347,16 +4529,16 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleActionAddition"
+    // $ANTLR end "entryRuleActionSubtraction"
 
 
-    // $ANTLR start "ruleActionAddition"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1847:1: ruleActionAddition returns [EObject current=null] : (this_ActionMultiplication_0= ruleActionMultiplication ( () otherlv_2= '+' ( (lv_right_3_0= ruleActionMultiplication ) ) )* ) ;
-    public final EObject ruleActionAddition() throws RecognitionException {
+    // $ANTLR start "ruleActionSubtraction"
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1943:1: ruleActionSubtraction returns [EObject current=null] : (this_ActionAddition_0= ruleActionAddition ( () otherlv_2= '-' ( (lv_right_3_0= ruleActionAddition ) ) )* ) ;
+    public final EObject ruleActionSubtraction() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_2=null;
-        EObject this_ActionMultiplication_0 = null;
+        EObject this_ActionAddition_0 = null;
 
         EObject lv_right_3_0 = null;
 
@@ -4365,77 +4547,77 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
             
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1851:28: ( (this_ActionMultiplication_0= ruleActionMultiplication ( () otherlv_2= '+' ( (lv_right_3_0= ruleActionMultiplication ) ) )* ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1852:1: (this_ActionMultiplication_0= ruleActionMultiplication ( () otherlv_2= '+' ( (lv_right_3_0= ruleActionMultiplication ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1947:28: ( (this_ActionAddition_0= ruleActionAddition ( () otherlv_2= '-' ( (lv_right_3_0= ruleActionAddition ) ) )* ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1948:1: (this_ActionAddition_0= ruleActionAddition ( () otherlv_2= '-' ( (lv_right_3_0= ruleActionAddition ) ) )* )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1852:1: (this_ActionMultiplication_0= ruleActionMultiplication ( () otherlv_2= '+' ( (lv_right_3_0= ruleActionMultiplication ) ) )* )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1853:5: this_ActionMultiplication_0= ruleActionMultiplication ( () otherlv_2= '+' ( (lv_right_3_0= ruleActionMultiplication ) ) )*
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1948:1: (this_ActionAddition_0= ruleActionAddition ( () otherlv_2= '-' ( (lv_right_3_0= ruleActionAddition ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1949:5: this_ActionAddition_0= ruleActionAddition ( () otherlv_2= '-' ( (lv_right_3_0= ruleActionAddition ) ) )*
             {
              
-                    newCompositeNode(grammarAccess.getActionAdditionAccess().getActionMultiplicationParserRuleCall_0()); 
+                    newCompositeNode(grammarAccess.getActionSubtractionAccess().getActionAdditionParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleActionMultiplication_in_ruleActionAddition3946);
-            this_ActionMultiplication_0=ruleActionMultiplication();
+            pushFollow(FOLLOW_ruleActionAddition_in_ruleActionSubtraction4081);
+            this_ActionAddition_0=ruleActionAddition();
 
             state._fsp--;
 
              
-                    current = this_ActionMultiplication_0; 
+                    current = this_ActionAddition_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1861:1: ( () otherlv_2= '+' ( (lv_right_3_0= ruleActionMultiplication ) ) )*
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1957:1: ( () otherlv_2= '-' ( (lv_right_3_0= ruleActionAddition ) ) )*
             loop23:
             do {
                 int alt23=2;
                 int LA23_0 = input.LA(1);
 
-                if ( (LA23_0==21) ) {
+                if ( (LA23_0==38) ) {
                     alt23=1;
                 }
 
 
                 switch (alt23) {
             	case 1 :
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1861:2: () otherlv_2= '+' ( (lv_right_3_0= ruleActionMultiplication ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1957:2: () otherlv_2= '-' ( (lv_right_3_0= ruleActionAddition ) )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1861:2: ()
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1862:5: 
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1957:2: ()
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1958:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
-            	                grammarAccess.getActionAdditionAccess().getActionPluLeftAction_1_0(),
+            	                grammarAccess.getActionSubtractionAccess().getActionSubLeftAction_1_0(),
             	                current);
             	        
 
             	    }
 
-            	    otherlv_2=(Token)match(input,21,FOLLOW_21_in_ruleActionAddition3967); 
+            	    otherlv_2=(Token)match(input,38,FOLLOW_38_in_ruleActionSubtraction4102); 
 
-            	        	newLeafNode(otherlv_2, grammarAccess.getActionAdditionAccess().getPlusSignKeyword_1_1());
+            	        	newLeafNode(otherlv_2, grammarAccess.getActionSubtractionAccess().getHyphenMinusKeyword_1_1());
             	        
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1871:1: ( (lv_right_3_0= ruleActionMultiplication ) )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1872:1: (lv_right_3_0= ruleActionMultiplication )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1967:1: ( (lv_right_3_0= ruleActionAddition ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1968:1: (lv_right_3_0= ruleActionAddition )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1872:1: (lv_right_3_0= ruleActionMultiplication )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1873:3: lv_right_3_0= ruleActionMultiplication
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1968:1: (lv_right_3_0= ruleActionAddition )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1969:3: lv_right_3_0= ruleActionAddition
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getActionAdditionAccess().getRightActionMultiplicationParserRuleCall_1_2_0()); 
+            	    	        newCompositeNode(grammarAccess.getActionSubtractionAccess().getRightActionAdditionParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleActionMultiplication_in_ruleActionAddition3988);
-            	    lv_right_3_0=ruleActionMultiplication();
+            	    pushFollow(FOLLOW_ruleActionAddition_in_ruleActionSubtraction4123);
+            	    lv_right_3_0=ruleActionAddition();
 
             	    state._fsp--;
 
 
             	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getActionAdditionRule());
+            	    	            current = createModelElementForParent(grammarAccess.getActionSubtractionRule());
             	    	        }
             	           		set(
             	           			current, 
             	           			"right",
             	            		lv_right_3_0, 
-            	            		"ActionMultiplication");
+            	            		"ActionAddition");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -4473,32 +4655,32 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleActionAddition"
+    // $ANTLR end "ruleActionSubtraction"
 
 
-    // $ANTLR start "entryRuleActionMultiplication"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1900:1: entryRuleActionMultiplication returns [EObject current=null] : iv_ruleActionMultiplication= ruleActionMultiplication EOF ;
-    public final EObject entryRuleActionMultiplication() throws RecognitionException {
+    // $ANTLR start "entryRuleActionAddition"
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1996:1: entryRuleActionAddition returns [EObject current=null] : iv_ruleActionAddition= ruleActionAddition EOF ;
+    public final EObject entryRuleActionAddition() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleActionMultiplication = null;
+        EObject iv_ruleActionAddition = null;
 
 
          
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         	
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1904:2: (iv_ruleActionMultiplication= ruleActionMultiplication EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1905:2: iv_ruleActionMultiplication= ruleActionMultiplication EOF
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2000:2: (iv_ruleActionAddition= ruleActionAddition EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2001:2: iv_ruleActionAddition= ruleActionAddition EOF
             {
-             newCompositeNode(grammarAccess.getActionMultiplicationRule()); 
-            pushFollow(FOLLOW_ruleActionMultiplication_in_entryRuleActionMultiplication4036);
-            iv_ruleActionMultiplication=ruleActionMultiplication();
+             newCompositeNode(grammarAccess.getActionAdditionRule()); 
+            pushFollow(FOLLOW_ruleActionAddition_in_entryRuleActionAddition4171);
+            iv_ruleActionAddition=ruleActionAddition();
 
             state._fsp--;
 
-             current =iv_ruleActionMultiplication; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleActionMultiplication4046); 
+             current =iv_ruleActionAddition; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleActionAddition4181); 
 
             }
 
@@ -4515,16 +4697,16 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleActionMultiplication"
+    // $ANTLR end "entryRuleActionAddition"
 
 
-    // $ANTLR start "ruleActionMultiplication"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1915:1: ruleActionMultiplication returns [EObject current=null] : (this_ActionDivision_0= ruleActionDivision ( () otherlv_2= '*' ( (lv_right_3_0= ruleActionDivision ) ) )* ) ;
-    public final EObject ruleActionMultiplication() throws RecognitionException {
+    // $ANTLR start "ruleActionAddition"
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2011:1: ruleActionAddition returns [EObject current=null] : (this_ActionMultiplication_0= ruleActionMultiplication ( () otherlv_2= '+' ( (lv_right_3_0= ruleActionMultiplication ) ) )* ) ;
+    public final EObject ruleActionAddition() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_2=null;
-        EObject this_ActionDivision_0 = null;
+        EObject this_ActionMultiplication_0 = null;
 
         EObject lv_right_3_0 = null;
 
@@ -4533,77 +4715,77 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
             
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1919:28: ( (this_ActionDivision_0= ruleActionDivision ( () otherlv_2= '*' ( (lv_right_3_0= ruleActionDivision ) ) )* ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1920:1: (this_ActionDivision_0= ruleActionDivision ( () otherlv_2= '*' ( (lv_right_3_0= ruleActionDivision ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2015:28: ( (this_ActionMultiplication_0= ruleActionMultiplication ( () otherlv_2= '+' ( (lv_right_3_0= ruleActionMultiplication ) ) )* ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2016:1: (this_ActionMultiplication_0= ruleActionMultiplication ( () otherlv_2= '+' ( (lv_right_3_0= ruleActionMultiplication ) ) )* )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1920:1: (this_ActionDivision_0= ruleActionDivision ( () otherlv_2= '*' ( (lv_right_3_0= ruleActionDivision ) ) )* )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1921:5: this_ActionDivision_0= ruleActionDivision ( () otherlv_2= '*' ( (lv_right_3_0= ruleActionDivision ) ) )*
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2016:1: (this_ActionMultiplication_0= ruleActionMultiplication ( () otherlv_2= '+' ( (lv_right_3_0= ruleActionMultiplication ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2017:5: this_ActionMultiplication_0= ruleActionMultiplication ( () otherlv_2= '+' ( (lv_right_3_0= ruleActionMultiplication ) ) )*
             {
              
-                    newCompositeNode(grammarAccess.getActionMultiplicationAccess().getActionDivisionParserRuleCall_0()); 
+                    newCompositeNode(grammarAccess.getActionAdditionAccess().getActionMultiplicationParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleActionDivision_in_ruleActionMultiplication4097);
-            this_ActionDivision_0=ruleActionDivision();
+            pushFollow(FOLLOW_ruleActionMultiplication_in_ruleActionAddition4232);
+            this_ActionMultiplication_0=ruleActionMultiplication();
 
             state._fsp--;
 
              
-                    current = this_ActionDivision_0; 
+                    current = this_ActionMultiplication_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1929:1: ( () otherlv_2= '*' ( (lv_right_3_0= ruleActionDivision ) ) )*
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2025:1: ( () otherlv_2= '+' ( (lv_right_3_0= ruleActionMultiplication ) ) )*
             loop24:
             do {
                 int alt24=2;
                 int LA24_0 = input.LA(1);
 
-                if ( (LA24_0==24) ) {
+                if ( (LA24_0==21) ) {
                     alt24=1;
                 }
 
 
                 switch (alt24) {
             	case 1 :
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1929:2: () otherlv_2= '*' ( (lv_right_3_0= ruleActionDivision ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2025:2: () otherlv_2= '+' ( (lv_right_3_0= ruleActionMultiplication ) )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1929:2: ()
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1930:5: 
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2025:2: ()
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2026:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
-            	                grammarAccess.getActionMultiplicationAccess().getActionMulLeftAction_1_0(),
+            	                grammarAccess.getActionAdditionAccess().getActionPluLeftAction_1_0(),
             	                current);
             	        
 
             	    }
 
-            	    otherlv_2=(Token)match(input,24,FOLLOW_24_in_ruleActionMultiplication4118); 
+            	    otherlv_2=(Token)match(input,21,FOLLOW_21_in_ruleActionAddition4253); 
 
-            	        	newLeafNode(otherlv_2, grammarAccess.getActionMultiplicationAccess().getAsteriskKeyword_1_1());
+            	        	newLeafNode(otherlv_2, grammarAccess.getActionAdditionAccess().getPlusSignKeyword_1_1());
             	        
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1939:1: ( (lv_right_3_0= ruleActionDivision ) )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1940:1: (lv_right_3_0= ruleActionDivision )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2035:1: ( (lv_right_3_0= ruleActionMultiplication ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2036:1: (lv_right_3_0= ruleActionMultiplication )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1940:1: (lv_right_3_0= ruleActionDivision )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1941:3: lv_right_3_0= ruleActionDivision
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2036:1: (lv_right_3_0= ruleActionMultiplication )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2037:3: lv_right_3_0= ruleActionMultiplication
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getActionMultiplicationAccess().getRightActionDivisionParserRuleCall_1_2_0()); 
+            	    	        newCompositeNode(grammarAccess.getActionAdditionAccess().getRightActionMultiplicationParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleActionDivision_in_ruleActionMultiplication4139);
-            	    lv_right_3_0=ruleActionDivision();
+            	    pushFollow(FOLLOW_ruleActionMultiplication_in_ruleActionAddition4274);
+            	    lv_right_3_0=ruleActionMultiplication();
 
             	    state._fsp--;
 
 
             	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getActionMultiplicationRule());
+            	    	            current = createModelElementForParent(grammarAccess.getActionAdditionRule());
             	    	        }
             	           		set(
             	           			current, 
             	           			"right",
             	            		lv_right_3_0, 
-            	            		"ActionDivision");
+            	            		"ActionMultiplication");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -4641,32 +4823,32 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleActionMultiplication"
+    // $ANTLR end "ruleActionAddition"
 
 
-    // $ANTLR start "entryRuleActionDivision"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1968:1: entryRuleActionDivision returns [EObject current=null] : iv_ruleActionDivision= ruleActionDivision EOF ;
-    public final EObject entryRuleActionDivision() throws RecognitionException {
+    // $ANTLR start "entryRuleActionMultiplication"
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2064:1: entryRuleActionMultiplication returns [EObject current=null] : iv_ruleActionMultiplication= ruleActionMultiplication EOF ;
+    public final EObject entryRuleActionMultiplication() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleActionDivision = null;
+        EObject iv_ruleActionMultiplication = null;
 
 
          
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         	
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1972:2: (iv_ruleActionDivision= ruleActionDivision EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1973:2: iv_ruleActionDivision= ruleActionDivision EOF
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2068:2: (iv_ruleActionMultiplication= ruleActionMultiplication EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2069:2: iv_ruleActionMultiplication= ruleActionMultiplication EOF
             {
-             newCompositeNode(grammarAccess.getActionDivisionRule()); 
-            pushFollow(FOLLOW_ruleActionDivision_in_entryRuleActionDivision4187);
-            iv_ruleActionDivision=ruleActionDivision();
+             newCompositeNode(grammarAccess.getActionMultiplicationRule()); 
+            pushFollow(FOLLOW_ruleActionMultiplication_in_entryRuleActionMultiplication4322);
+            iv_ruleActionMultiplication=ruleActionMultiplication();
 
             state._fsp--;
 
-             current =iv_ruleActionDivision; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleActionDivision4197); 
+             current =iv_ruleActionMultiplication; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleActionMultiplication4332); 
 
             }
 
@@ -4683,16 +4865,16 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleActionDivision"
+    // $ANTLR end "entryRuleActionMultiplication"
 
 
-    // $ANTLR start "ruleActionDivision"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1983:1: ruleActionDivision returns [EObject current=null] : (this_ActionPrimary_0= ruleActionPrimary ( () otherlv_2= '/' ( (lv_right_3_0= ruleActionPrimary ) ) )* ) ;
-    public final EObject ruleActionDivision() throws RecognitionException {
+    // $ANTLR start "ruleActionMultiplication"
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2079:1: ruleActionMultiplication returns [EObject current=null] : (this_ActionDivision_0= ruleActionDivision ( () otherlv_2= '*' ( (lv_right_3_0= ruleActionDivision ) ) )* ) ;
+    public final EObject ruleActionMultiplication() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_2=null;
-        EObject this_ActionPrimary_0 = null;
+        EObject this_ActionDivision_0 = null;
 
         EObject lv_right_3_0 = null;
 
@@ -4701,77 +4883,77 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
             
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1987:28: ( (this_ActionPrimary_0= ruleActionPrimary ( () otherlv_2= '/' ( (lv_right_3_0= ruleActionPrimary ) ) )* ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1988:1: (this_ActionPrimary_0= ruleActionPrimary ( () otherlv_2= '/' ( (lv_right_3_0= ruleActionPrimary ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2083:28: ( (this_ActionDivision_0= ruleActionDivision ( () otherlv_2= '*' ( (lv_right_3_0= ruleActionDivision ) ) )* ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2084:1: (this_ActionDivision_0= ruleActionDivision ( () otherlv_2= '*' ( (lv_right_3_0= ruleActionDivision ) ) )* )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1988:1: (this_ActionPrimary_0= ruleActionPrimary ( () otherlv_2= '/' ( (lv_right_3_0= ruleActionPrimary ) ) )* )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1989:5: this_ActionPrimary_0= ruleActionPrimary ( () otherlv_2= '/' ( (lv_right_3_0= ruleActionPrimary ) ) )*
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2084:1: (this_ActionDivision_0= ruleActionDivision ( () otherlv_2= '*' ( (lv_right_3_0= ruleActionDivision ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2085:5: this_ActionDivision_0= ruleActionDivision ( () otherlv_2= '*' ( (lv_right_3_0= ruleActionDivision ) ) )*
             {
              
-                    newCompositeNode(grammarAccess.getActionDivisionAccess().getActionPrimaryParserRuleCall_0()); 
+                    newCompositeNode(grammarAccess.getActionMultiplicationAccess().getActionDivisionParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleActionPrimary_in_ruleActionDivision4248);
-            this_ActionPrimary_0=ruleActionPrimary();
+            pushFollow(FOLLOW_ruleActionDivision_in_ruleActionMultiplication4383);
+            this_ActionDivision_0=ruleActionDivision();
 
             state._fsp--;
 
              
-                    current = this_ActionPrimary_0; 
+                    current = this_ActionDivision_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1997:1: ( () otherlv_2= '/' ( (lv_right_3_0= ruleActionPrimary ) ) )*
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2093:1: ( () otherlv_2= '*' ( (lv_right_3_0= ruleActionDivision ) ) )*
             loop25:
             do {
                 int alt25=2;
                 int LA25_0 = input.LA(1);
 
-                if ( (LA25_0==39) ) {
+                if ( (LA25_0==24) ) {
                     alt25=1;
                 }
 
 
                 switch (alt25) {
             	case 1 :
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1997:2: () otherlv_2= '/' ( (lv_right_3_0= ruleActionPrimary ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2093:2: () otherlv_2= '*' ( (lv_right_3_0= ruleActionDivision ) )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1997:2: ()
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:1998:5: 
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2093:2: ()
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2094:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
-            	                grammarAccess.getActionDivisionAccess().getActionDivLeftAction_1_0(),
+            	                grammarAccess.getActionMultiplicationAccess().getActionMulLeftAction_1_0(),
             	                current);
             	        
 
             	    }
 
-            	    otherlv_2=(Token)match(input,39,FOLLOW_39_in_ruleActionDivision4269); 
+            	    otherlv_2=(Token)match(input,24,FOLLOW_24_in_ruleActionMultiplication4404); 
 
-            	        	newLeafNode(otherlv_2, grammarAccess.getActionDivisionAccess().getSolidusKeyword_1_1());
+            	        	newLeafNode(otherlv_2, grammarAccess.getActionMultiplicationAccess().getAsteriskKeyword_1_1());
             	        
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2007:1: ( (lv_right_3_0= ruleActionPrimary ) )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2008:1: (lv_right_3_0= ruleActionPrimary )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2103:1: ( (lv_right_3_0= ruleActionDivision ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2104:1: (lv_right_3_0= ruleActionDivision )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2008:1: (lv_right_3_0= ruleActionPrimary )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2009:3: lv_right_3_0= ruleActionPrimary
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2104:1: (lv_right_3_0= ruleActionDivision )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2105:3: lv_right_3_0= ruleActionDivision
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getActionDivisionAccess().getRightActionPrimaryParserRuleCall_1_2_0()); 
+            	    	        newCompositeNode(grammarAccess.getActionMultiplicationAccess().getRightActionDivisionParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleActionPrimary_in_ruleActionDivision4290);
-            	    lv_right_3_0=ruleActionPrimary();
+            	    pushFollow(FOLLOW_ruleActionDivision_in_ruleActionMultiplication4425);
+            	    lv_right_3_0=ruleActionDivision();
 
             	    state._fsp--;
 
 
             	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getActionDivisionRule());
+            	    	            current = createModelElementForParent(grammarAccess.getActionMultiplicationRule());
             	    	        }
             	           		set(
             	           			current, 
             	           			"right",
             	            		lv_right_3_0, 
-            	            		"ActionPrimary");
+            	            		"ActionDivision");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -4809,11 +4991,179 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
+    // $ANTLR end "ruleActionMultiplication"
+
+
+    // $ANTLR start "entryRuleActionDivision"
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2132:1: entryRuleActionDivision returns [EObject current=null] : iv_ruleActionDivision= ruleActionDivision EOF ;
+    public final EObject entryRuleActionDivision() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleActionDivision = null;
+
+
+         
+        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+        	
+        try {
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2136:2: (iv_ruleActionDivision= ruleActionDivision EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2137:2: iv_ruleActionDivision= ruleActionDivision EOF
+            {
+             newCompositeNode(grammarAccess.getActionDivisionRule()); 
+            pushFollow(FOLLOW_ruleActionDivision_in_entryRuleActionDivision4473);
+            iv_ruleActionDivision=ruleActionDivision();
+
+            state._fsp--;
+
+             current =iv_ruleActionDivision; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleActionDivision4483); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleActionDivision"
+
+
+    // $ANTLR start "ruleActionDivision"
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2147:1: ruleActionDivision returns [EObject current=null] : (this_ActionPrimary_0= ruleActionPrimary ( () otherlv_2= '/' ( (lv_right_3_0= ruleActionPrimary ) ) )* ) ;
+    public final EObject ruleActionDivision() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_2=null;
+        EObject this_ActionPrimary_0 = null;
+
+        EObject lv_right_3_0 = null;
+
+
+         enterRule(); 
+        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+            
+        try {
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2151:28: ( (this_ActionPrimary_0= ruleActionPrimary ( () otherlv_2= '/' ( (lv_right_3_0= ruleActionPrimary ) ) )* ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2152:1: (this_ActionPrimary_0= ruleActionPrimary ( () otherlv_2= '/' ( (lv_right_3_0= ruleActionPrimary ) ) )* )
+            {
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2152:1: (this_ActionPrimary_0= ruleActionPrimary ( () otherlv_2= '/' ( (lv_right_3_0= ruleActionPrimary ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2153:5: this_ActionPrimary_0= ruleActionPrimary ( () otherlv_2= '/' ( (lv_right_3_0= ruleActionPrimary ) ) )*
+            {
+             
+                    newCompositeNode(grammarAccess.getActionDivisionAccess().getActionPrimaryParserRuleCall_0()); 
+                
+            pushFollow(FOLLOW_ruleActionPrimary_in_ruleActionDivision4534);
+            this_ActionPrimary_0=ruleActionPrimary();
+
+            state._fsp--;
+
+             
+                    current = this_ActionPrimary_0; 
+                    afterParserOrEnumRuleCall();
+                
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2161:1: ( () otherlv_2= '/' ( (lv_right_3_0= ruleActionPrimary ) ) )*
+            loop26:
+            do {
+                int alt26=2;
+                int LA26_0 = input.LA(1);
+
+                if ( (LA26_0==39) ) {
+                    alt26=1;
+                }
+
+
+                switch (alt26) {
+            	case 1 :
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2161:2: () otherlv_2= '/' ( (lv_right_3_0= ruleActionPrimary ) )
+            	    {
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2161:2: ()
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2162:5: 
+            	    {
+
+            	            current = forceCreateModelElementAndSet(
+            	                grammarAccess.getActionDivisionAccess().getActionDivLeftAction_1_0(),
+            	                current);
+            	        
+
+            	    }
+
+            	    otherlv_2=(Token)match(input,39,FOLLOW_39_in_ruleActionDivision4555); 
+
+            	        	newLeafNode(otherlv_2, grammarAccess.getActionDivisionAccess().getSolidusKeyword_1_1());
+            	        
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2171:1: ( (lv_right_3_0= ruleActionPrimary ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2172:1: (lv_right_3_0= ruleActionPrimary )
+            	    {
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2172:1: (lv_right_3_0= ruleActionPrimary )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2173:3: lv_right_3_0= ruleActionPrimary
+            	    {
+            	     
+            	    	        newCompositeNode(grammarAccess.getActionDivisionAccess().getRightActionPrimaryParserRuleCall_1_2_0()); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleActionPrimary_in_ruleActionDivision4576);
+            	    lv_right_3_0=ruleActionPrimary();
+
+            	    state._fsp--;
+
+
+            	    	        if (current==null) {
+            	    	            current = createModelElementForParent(grammarAccess.getActionDivisionRule());
+            	    	        }
+            	           		set(
+            	           			current, 
+            	           			"right",
+            	            		lv_right_3_0, 
+            	            		"ActionPrimary");
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop26;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
     // $ANTLR end "ruleActionDivision"
 
 
     // $ANTLR start "entryRuleActionPrimary"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2036:1: entryRuleActionPrimary returns [EObject current=null] : iv_ruleActionPrimary= ruleActionPrimary EOF ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2200:1: entryRuleActionPrimary returns [EObject current=null] : iv_ruleActionPrimary= ruleActionPrimary EOF ;
     public final EObject entryRuleActionPrimary() throws RecognitionException {
         EObject current = null;
 
@@ -4824,17 +5174,17 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         	
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2040:2: (iv_ruleActionPrimary= ruleActionPrimary EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2041:2: iv_ruleActionPrimary= ruleActionPrimary EOF
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2204:2: (iv_ruleActionPrimary= ruleActionPrimary EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2205:2: iv_ruleActionPrimary= ruleActionPrimary EOF
             {
              newCompositeNode(grammarAccess.getActionPrimaryRule()); 
-            pushFollow(FOLLOW_ruleActionPrimary_in_entryRuleActionPrimary4338);
+            pushFollow(FOLLOW_ruleActionPrimary_in_entryRuleActionPrimary4624);
             iv_ruleActionPrimary=ruleActionPrimary();
 
             state._fsp--;
 
              current =iv_ruleActionPrimary; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleActionPrimary4348); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleActionPrimary4634); 
 
             }
 
@@ -4855,7 +5205,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActionPrimary"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2051:1: ruleActionPrimary returns [EObject current=null] : ( (otherlv_0= '(' this_ActionExpression_1= ruleActionExpression otherlv_2= ')' ) | ( () otherlv_4= '!' ( (lv_expression_5_0= ruleActionPrimary ) ) ) | this_ActionAtomic_6= ruleActionAtomic ) ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2215:1: ruleActionPrimary returns [EObject current=null] : ( (otherlv_0= '(' this_ActionExpression_1= ruleActionExpression otherlv_2= ')' ) | ( () otherlv_4= '!' ( (lv_expression_5_0= ruleActionPrimary ) ) ) | this_ActionAtomic_6= ruleActionAtomic ) ;
     public final EObject ruleActionPrimary() throws RecognitionException {
         EObject current = null;
 
@@ -4873,20 +5223,20 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
             
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2055:28: ( ( (otherlv_0= '(' this_ActionExpression_1= ruleActionExpression otherlv_2= ')' ) | ( () otherlv_4= '!' ( (lv_expression_5_0= ruleActionPrimary ) ) ) | this_ActionAtomic_6= ruleActionAtomic ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2056:1: ( (otherlv_0= '(' this_ActionExpression_1= ruleActionExpression otherlv_2= ')' ) | ( () otherlv_4= '!' ( (lv_expression_5_0= ruleActionPrimary ) ) ) | this_ActionAtomic_6= ruleActionAtomic )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2219:28: ( ( (otherlv_0= '(' this_ActionExpression_1= ruleActionExpression otherlv_2= ')' ) | ( () otherlv_4= '!' ( (lv_expression_5_0= ruleActionPrimary ) ) ) | this_ActionAtomic_6= ruleActionAtomic ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2220:1: ( (otherlv_0= '(' this_ActionExpression_1= ruleActionExpression otherlv_2= ')' ) | ( () otherlv_4= '!' ( (lv_expression_5_0= ruleActionPrimary ) ) ) | this_ActionAtomic_6= ruleActionAtomic )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2056:1: ( (otherlv_0= '(' this_ActionExpression_1= ruleActionExpression otherlv_2= ')' ) | ( () otherlv_4= '!' ( (lv_expression_5_0= ruleActionPrimary ) ) ) | this_ActionAtomic_6= ruleActionAtomic )
-            int alt26=3;
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2220:1: ( (otherlv_0= '(' this_ActionExpression_1= ruleActionExpression otherlv_2= ')' ) | ( () otherlv_4= '!' ( (lv_expression_5_0= ruleActionPrimary ) ) ) | this_ActionAtomic_6= ruleActionAtomic )
+            int alt27=3;
             switch ( input.LA(1) ) {
             case 13:
                 {
-                alt26=1;
+                alt27=1;
                 }
                 break;
             case 40:
                 {
-                alt26=2;
+                alt27=2;
                 }
                 break;
             case RULE_LOWER:
@@ -4895,31 +5245,31 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
             case 42:
             case 45:
                 {
-                alt26=3;
+                alt27=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 26, 0, input);
+                    new NoViableAltException("", 27, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt26) {
+            switch (alt27) {
                 case 1 :
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2056:2: (otherlv_0= '(' this_ActionExpression_1= ruleActionExpression otherlv_2= ')' )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2220:2: (otherlv_0= '(' this_ActionExpression_1= ruleActionExpression otherlv_2= ')' )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2056:2: (otherlv_0= '(' this_ActionExpression_1= ruleActionExpression otherlv_2= ')' )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2056:4: otherlv_0= '(' this_ActionExpression_1= ruleActionExpression otherlv_2= ')'
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2220:2: (otherlv_0= '(' this_ActionExpression_1= ruleActionExpression otherlv_2= ')' )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2220:4: otherlv_0= '(' this_ActionExpression_1= ruleActionExpression otherlv_2= ')'
                     {
-                    otherlv_0=(Token)match(input,13,FOLLOW_13_in_ruleActionPrimary4390); 
+                    otherlv_0=(Token)match(input,13,FOLLOW_13_in_ruleActionPrimary4676); 
 
                         	newLeafNode(otherlv_0, grammarAccess.getActionPrimaryAccess().getLeftParenthesisKeyword_0_0());
                         
                      
                             newCompositeNode(grammarAccess.getActionPrimaryAccess().getActionExpressionParserRuleCall_0_1()); 
                         
-                    pushFollow(FOLLOW_ruleActionExpression_in_ruleActionPrimary4412);
+                    pushFollow(FOLLOW_ruleActionExpression_in_ruleActionPrimary4698);
                     this_ActionExpression_1=ruleActionExpression();
 
                     state._fsp--;
@@ -4928,7 +5278,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
                             current = this_ActionExpression_1; 
                             afterParserOrEnumRuleCall();
                         
-                    otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleActionPrimary4423); 
+                    otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleActionPrimary4709); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getActionPrimaryAccess().getRightParenthesisKeyword_0_2());
                         
@@ -4939,13 +5289,13 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2074:6: ( () otherlv_4= '!' ( (lv_expression_5_0= ruleActionPrimary ) ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2238:6: ( () otherlv_4= '!' ( (lv_expression_5_0= ruleActionPrimary ) ) )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2074:6: ( () otherlv_4= '!' ( (lv_expression_5_0= ruleActionPrimary ) ) )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2074:7: () otherlv_4= '!' ( (lv_expression_5_0= ruleActionPrimary ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2238:6: ( () otherlv_4= '!' ( (lv_expression_5_0= ruleActionPrimary ) ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2238:7: () otherlv_4= '!' ( (lv_expression_5_0= ruleActionPrimary ) )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2074:7: ()
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2075:5: 
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2238:7: ()
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2239:5: 
                     {
 
                             current = forceCreateModelElement(
@@ -4955,20 +5305,20 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_4=(Token)match(input,40,FOLLOW_40_in_ruleActionPrimary4452); 
+                    otherlv_4=(Token)match(input,40,FOLLOW_40_in_ruleActionPrimary4738); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getActionPrimaryAccess().getExclamationMarkKeyword_1_1());
                         
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2084:1: ( (lv_expression_5_0= ruleActionPrimary ) )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2085:1: (lv_expression_5_0= ruleActionPrimary )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2248:1: ( (lv_expression_5_0= ruleActionPrimary ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2249:1: (lv_expression_5_0= ruleActionPrimary )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2085:1: (lv_expression_5_0= ruleActionPrimary )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2086:3: lv_expression_5_0= ruleActionPrimary
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2249:1: (lv_expression_5_0= ruleActionPrimary )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2250:3: lv_expression_5_0= ruleActionPrimary
                     {
                      
                     	        newCompositeNode(grammarAccess.getActionPrimaryAccess().getExpressionActionPrimaryParserRuleCall_1_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleActionPrimary_in_ruleActionPrimary4473);
+                    pushFollow(FOLLOW_ruleActionPrimary_in_ruleActionPrimary4759);
                     lv_expression_5_0=ruleActionPrimary();
 
                     state._fsp--;
@@ -4997,12 +5347,12 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2104:5: this_ActionAtomic_6= ruleActionAtomic
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2268:5: this_ActionAtomic_6= ruleActionAtomic
                     {
                      
                             newCompositeNode(grammarAccess.getActionPrimaryAccess().getActionAtomicParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleActionAtomic_in_ruleActionPrimary4502);
+                    pushFollow(FOLLOW_ruleActionAtomic_in_ruleActionPrimary4788);
                     this_ActionAtomic_6=ruleActionAtomic();
 
                     state._fsp--;
@@ -5038,7 +5388,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleActionAtomic"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2123:1: entryRuleActionAtomic returns [EObject current=null] : iv_ruleActionAtomic= ruleActionAtomic EOF ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2287:1: entryRuleActionAtomic returns [EObject current=null] : iv_ruleActionAtomic= ruleActionAtomic EOF ;
     public final EObject entryRuleActionAtomic() throws RecognitionException {
         EObject current = null;
 
@@ -5049,17 +5399,17 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         	
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2127:2: (iv_ruleActionAtomic= ruleActionAtomic EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2128:2: iv_ruleActionAtomic= ruleActionAtomic EOF
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2291:2: (iv_ruleActionAtomic= ruleActionAtomic EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2292:2: iv_ruleActionAtomic= ruleActionAtomic EOF
             {
              newCompositeNode(grammarAccess.getActionAtomicRule()); 
-            pushFollow(FOLLOW_ruleActionAtomic_in_entryRuleActionAtomic4547);
+            pushFollow(FOLLOW_ruleActionAtomic_in_entryRuleActionAtomic4833);
             iv_ruleActionAtomic=ruleActionAtomic();
 
             state._fsp--;
 
              current =iv_ruleActionAtomic; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleActionAtomic4557); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleActionAtomic4843); 
 
             }
 
@@ -5080,7 +5430,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActionAtomic"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2138:1: ruleActionAtomic returns [EObject current=null] : ( ( () ( (lv_value_1_0= ruleDouble ) ) ) | ( () ( (lv_value_3_0= ruleFreeVariable ) ) ) | ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) ) | ( () ( (otherlv_7= RULE_LOWER ) ) ) ) ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2302:1: ruleActionAtomic returns [EObject current=null] : ( ( () ( (lv_value_1_0= ruleDouble ) ) ) | ( () ( (lv_value_3_0= ruleFreeVariable ) ) ) | ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) ) | ( () ( (otherlv_7= RULE_LOWER ) ) ) ) ;
     public final EObject ruleActionAtomic() throws RecognitionException {
         EObject current = null;
 
@@ -5096,49 +5446,49 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
             
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2142:28: ( ( ( () ( (lv_value_1_0= ruleDouble ) ) ) | ( () ( (lv_value_3_0= ruleFreeVariable ) ) ) | ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) ) | ( () ( (otherlv_7= RULE_LOWER ) ) ) ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2143:1: ( ( () ( (lv_value_1_0= ruleDouble ) ) ) | ( () ( (lv_value_3_0= ruleFreeVariable ) ) ) | ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) ) | ( () ( (otherlv_7= RULE_LOWER ) ) ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2306:28: ( ( ( () ( (lv_value_1_0= ruleDouble ) ) ) | ( () ( (lv_value_3_0= ruleFreeVariable ) ) ) | ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) ) | ( () ( (otherlv_7= RULE_LOWER ) ) ) ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2307:1: ( ( () ( (lv_value_1_0= ruleDouble ) ) ) | ( () ( (lv_value_3_0= ruleFreeVariable ) ) ) | ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) ) | ( () ( (otherlv_7= RULE_LOWER ) ) ) )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2143:1: ( ( () ( (lv_value_1_0= ruleDouble ) ) ) | ( () ( (lv_value_3_0= ruleFreeVariable ) ) ) | ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) ) | ( () ( (otherlv_7= RULE_LOWER ) ) ) )
-            int alt28=4;
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2307:1: ( ( () ( (lv_value_1_0= ruleDouble ) ) ) | ( () ( (lv_value_3_0= ruleFreeVariable ) ) ) | ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) ) | ( () ( (otherlv_7= RULE_LOWER ) ) ) )
+            int alt29=4;
             switch ( input.LA(1) ) {
             case RULE_INT:
                 {
-                alt28=1;
+                alt29=1;
                 }
                 break;
             case 45:
                 {
-                alt28=2;
+                alt29=2;
                 }
                 break;
             case 41:
             case 42:
                 {
-                alt28=3;
+                alt29=3;
                 }
                 break;
             case RULE_LOWER:
                 {
-                alt28=4;
+                alt29=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 28, 0, input);
+                    new NoViableAltException("", 29, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt28) {
+            switch (alt29) {
                 case 1 :
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2143:2: ( () ( (lv_value_1_0= ruleDouble ) ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2307:2: ( () ( (lv_value_1_0= ruleDouble ) ) )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2143:2: ( () ( (lv_value_1_0= ruleDouble ) ) )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2143:3: () ( (lv_value_1_0= ruleDouble ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2307:2: ( () ( (lv_value_1_0= ruleDouble ) ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2307:3: () ( (lv_value_1_0= ruleDouble ) )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2143:3: ()
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2144:5: 
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2307:3: ()
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2308:5: 
                     {
 
                             current = forceCreateModelElement(
@@ -5148,16 +5498,16 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2149:2: ( (lv_value_1_0= ruleDouble ) )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2150:1: (lv_value_1_0= ruleDouble )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2313:2: ( (lv_value_1_0= ruleDouble ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2314:1: (lv_value_1_0= ruleDouble )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2150:1: (lv_value_1_0= ruleDouble )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2151:3: lv_value_1_0= ruleDouble
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2314:1: (lv_value_1_0= ruleDouble )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2315:3: lv_value_1_0= ruleDouble
                     {
                      
                     	        newCompositeNode(grammarAccess.getActionAtomicAccess().getValueDoubleParserRuleCall_0_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleDouble_in_ruleActionAtomic4617);
+                    pushFollow(FOLLOW_ruleDouble_in_ruleActionAtomic4903);
                     lv_value_1_0=ruleDouble();
 
                     state._fsp--;
@@ -5186,13 +5536,13 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2168:6: ( () ( (lv_value_3_0= ruleFreeVariable ) ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2332:6: ( () ( (lv_value_3_0= ruleFreeVariable ) ) )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2168:6: ( () ( (lv_value_3_0= ruleFreeVariable ) ) )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2168:7: () ( (lv_value_3_0= ruleFreeVariable ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2332:6: ( () ( (lv_value_3_0= ruleFreeVariable ) ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2332:7: () ( (lv_value_3_0= ruleFreeVariable ) )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2168:7: ()
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2169:5: 
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2332:7: ()
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2333:5: 
                     {
 
                             current = forceCreateModelElement(
@@ -5202,16 +5552,16 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2174:2: ( (lv_value_3_0= ruleFreeVariable ) )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2175:1: (lv_value_3_0= ruleFreeVariable )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2338:2: ( (lv_value_3_0= ruleFreeVariable ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2339:1: (lv_value_3_0= ruleFreeVariable )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2175:1: (lv_value_3_0= ruleFreeVariable )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2176:3: lv_value_3_0= ruleFreeVariable
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2339:1: (lv_value_3_0= ruleFreeVariable )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2340:3: lv_value_3_0= ruleFreeVariable
                     {
                      
                     	        newCompositeNode(grammarAccess.getActionAtomicAccess().getValueFreeVariableParserRuleCall_1_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleFreeVariable_in_ruleActionAtomic4655);
+                    pushFollow(FOLLOW_ruleFreeVariable_in_ruleActionAtomic4941);
                     lv_value_3_0=ruleFreeVariable();
 
                     state._fsp--;
@@ -5240,13 +5590,13 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2193:6: ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2357:6: ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2193:6: ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2193:7: () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2357:6: ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2357:7: () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2193:7: ()
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2194:5: 
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2357:7: ()
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2358:5: 
                     {
 
                             current = forceCreateModelElement(
@@ -5256,33 +5606,33 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2199:2: ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2200:1: ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2363:2: ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2364:1: ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2200:1: ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2201:1: (lv_value_5_1= 'true' | lv_value_5_2= 'false' )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2364:1: ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2365:1: (lv_value_5_1= 'true' | lv_value_5_2= 'false' )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2201:1: (lv_value_5_1= 'true' | lv_value_5_2= 'false' )
-                    int alt27=2;
-                    int LA27_0 = input.LA(1);
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2365:1: (lv_value_5_1= 'true' | lv_value_5_2= 'false' )
+                    int alt28=2;
+                    int LA28_0 = input.LA(1);
 
-                    if ( (LA27_0==41) ) {
-                        alt27=1;
+                    if ( (LA28_0==41) ) {
+                        alt28=1;
                     }
-                    else if ( (LA27_0==42) ) {
-                        alt27=2;
+                    else if ( (LA28_0==42) ) {
+                        alt28=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 27, 0, input);
+                            new NoViableAltException("", 28, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt27) {
+                    switch (alt28) {
                         case 1 :
-                            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2202:3: lv_value_5_1= 'true'
+                            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2366:3: lv_value_5_1= 'true'
                             {
-                            lv_value_5_1=(Token)match(input,41,FOLLOW_41_in_ruleActionAtomic4692); 
+                            lv_value_5_1=(Token)match(input,41,FOLLOW_41_in_ruleActionAtomic4978); 
 
                                     newLeafNode(lv_value_5_1, grammarAccess.getActionAtomicAccess().getValueTrueKeyword_2_1_0_0());
                                 
@@ -5296,9 +5646,9 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2214:8: lv_value_5_2= 'false'
+                            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2378:8: lv_value_5_2= 'false'
                             {
-                            lv_value_5_2=(Token)match(input,42,FOLLOW_42_in_ruleActionAtomic4721); 
+                            lv_value_5_2=(Token)match(input,42,FOLLOW_42_in_ruleActionAtomic5007); 
 
                                     newLeafNode(lv_value_5_2, grammarAccess.getActionAtomicAccess().getValueFalseKeyword_2_1_0_1());
                                 
@@ -5327,13 +5677,13 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2230:6: ( () ( (otherlv_7= RULE_LOWER ) ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2394:6: ( () ( (otherlv_7= RULE_LOWER ) ) )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2230:6: ( () ( (otherlv_7= RULE_LOWER ) ) )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2230:7: () ( (otherlv_7= RULE_LOWER ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2394:6: ( () ( (otherlv_7= RULE_LOWER ) ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2394:7: () ( (otherlv_7= RULE_LOWER ) )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2230:7: ()
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2231:5: 
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2394:7: ()
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2395:5: 
                     {
 
                             current = forceCreateModelElement(
@@ -5343,18 +5693,18 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2236:2: ( (otherlv_7= RULE_LOWER ) )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2237:1: (otherlv_7= RULE_LOWER )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2400:2: ( (otherlv_7= RULE_LOWER ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2401:1: (otherlv_7= RULE_LOWER )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2237:1: (otherlv_7= RULE_LOWER )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2238:3: otherlv_7= RULE_LOWER
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2401:1: (otherlv_7= RULE_LOWER )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2402:3: otherlv_7= RULE_LOWER
                     {
 
                     			if (current==null) {
                     	            current = createModelElement(grammarAccess.getActionAtomicRule());
                     	        }
                             
-                    otherlv_7=(Token)match(input,RULE_LOWER,FOLLOW_RULE_LOWER_in_ruleActionAtomic4774); 
+                    otherlv_7=(Token)match(input,RULE_LOWER,FOLLOW_RULE_LOWER_in_ruleActionAtomic5060); 
 
                     		newLeafNode(otherlv_7, grammarAccess.getActionAtomicAccess().getValueStoreCrossReference_3_1_0()); 
                     	
@@ -5394,7 +5744,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStore"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2260:1: entryRuleStore returns [EObject current=null] : iv_ruleStore= ruleStore EOF ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2424:1: entryRuleStore returns [EObject current=null] : iv_ruleStore= ruleStore EOF ;
     public final EObject entryRuleStore() throws RecognitionException {
         EObject current = null;
 
@@ -5405,17 +5755,17 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         	
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2264:2: (iv_ruleStore= ruleStore EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2265:2: iv_ruleStore= ruleStore EOF
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2428:2: (iv_ruleStore= ruleStore EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2429:2: iv_ruleStore= ruleStore EOF
             {
              newCompositeNode(grammarAccess.getStoreRule()); 
-            pushFollow(FOLLOW_ruleStore_in_entryRuleStore4821);
+            pushFollow(FOLLOW_ruleStore_in_entryRuleStore5107);
             iv_ruleStore=ruleStore();
 
             state._fsp--;
 
              current =iv_ruleStore; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStore4831); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStore5117); 
 
             }
 
@@ -5436,7 +5786,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStore"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2275:1: ruleStore returns [EObject current=null] : ( ( (lv_name_0_0= RULE_LOWER ) ) otherlv_1= '=' ( (lv_value_2_0= ruleExpression ) ) otherlv_3= ';' ) ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2439:1: ruleStore returns [EObject current=null] : ( ( (lv_name_0_0= RULE_LOWER ) ) otherlv_1= '=' ( (lv_value_2_0= ruleExpression ) ) otherlv_3= ';' ) ;
     public final EObject ruleStore() throws RecognitionException {
         EObject current = null;
 
@@ -5450,19 +5800,19 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
             
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2279:28: ( ( ( (lv_name_0_0= RULE_LOWER ) ) otherlv_1= '=' ( (lv_value_2_0= ruleExpression ) ) otherlv_3= ';' ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2280:1: ( ( (lv_name_0_0= RULE_LOWER ) ) otherlv_1= '=' ( (lv_value_2_0= ruleExpression ) ) otherlv_3= ';' )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2443:28: ( ( ( (lv_name_0_0= RULE_LOWER ) ) otherlv_1= '=' ( (lv_value_2_0= ruleExpression ) ) otherlv_3= ';' ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2444:1: ( ( (lv_name_0_0= RULE_LOWER ) ) otherlv_1= '=' ( (lv_value_2_0= ruleExpression ) ) otherlv_3= ';' )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2280:1: ( ( (lv_name_0_0= RULE_LOWER ) ) otherlv_1= '=' ( (lv_value_2_0= ruleExpression ) ) otherlv_3= ';' )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2280:2: ( (lv_name_0_0= RULE_LOWER ) ) otherlv_1= '=' ( (lv_value_2_0= ruleExpression ) ) otherlv_3= ';'
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2444:1: ( ( (lv_name_0_0= RULE_LOWER ) ) otherlv_1= '=' ( (lv_value_2_0= ruleExpression ) ) otherlv_3= ';' )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2444:2: ( (lv_name_0_0= RULE_LOWER ) ) otherlv_1= '=' ( (lv_value_2_0= ruleExpression ) ) otherlv_3= ';'
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2280:2: ( (lv_name_0_0= RULE_LOWER ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2281:1: (lv_name_0_0= RULE_LOWER )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2444:2: ( (lv_name_0_0= RULE_LOWER ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2445:1: (lv_name_0_0= RULE_LOWER )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2281:1: (lv_name_0_0= RULE_LOWER )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2282:3: lv_name_0_0= RULE_LOWER
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2445:1: (lv_name_0_0= RULE_LOWER )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2446:3: lv_name_0_0= RULE_LOWER
             {
-            lv_name_0_0=(Token)match(input,RULE_LOWER,FOLLOW_RULE_LOWER_in_ruleStore4877); 
+            lv_name_0_0=(Token)match(input,RULE_LOWER,FOLLOW_RULE_LOWER_in_ruleStore5163); 
 
             			newLeafNode(lv_name_0_0, grammarAccess.getStoreAccess().getNameLOWERTerminalRuleCall_0_0()); 
             		
@@ -5482,20 +5832,20 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,19,FOLLOW_19_in_ruleStore4894); 
+            otherlv_1=(Token)match(input,19,FOLLOW_19_in_ruleStore5180); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getStoreAccess().getEqualsSignKeyword_1());
                 
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2302:1: ( (lv_value_2_0= ruleExpression ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2303:1: (lv_value_2_0= ruleExpression )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2466:1: ( (lv_value_2_0= ruleExpression ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2467:1: (lv_value_2_0= ruleExpression )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2303:1: (lv_value_2_0= ruleExpression )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2304:3: lv_value_2_0= ruleExpression
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2467:1: (lv_value_2_0= ruleExpression )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2468:3: lv_value_2_0= ruleExpression
             {
              
             	        newCompositeNode(grammarAccess.getStoreAccess().getValueExpressionParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleExpression_in_ruleStore4915);
+            pushFollow(FOLLOW_ruleExpression_in_ruleStore5201);
             lv_value_2_0=ruleExpression();
 
             state._fsp--;
@@ -5517,7 +5867,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,18,FOLLOW_18_in_ruleStore4927); 
+            otherlv_3=(Token)match(input,18,FOLLOW_18_in_ruleStore5213); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getStoreAccess().getSemicolonKeyword_3());
                 
@@ -5545,7 +5895,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleExpression"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2335:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2499:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
     public final EObject entryRuleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5556,17 +5906,17 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         	
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2339:2: (iv_ruleExpression= ruleExpression EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2340:2: iv_ruleExpression= ruleExpression EOF
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2503:2: (iv_ruleExpression= ruleExpression EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2504:2: iv_ruleExpression= ruleExpression EOF
             {
              newCompositeNode(grammarAccess.getExpressionRule()); 
-            pushFollow(FOLLOW_ruleExpression_in_entryRuleExpression4973);
+            pushFollow(FOLLOW_ruleExpression_in_entryRuleExpression5259);
             iv_ruleExpression=ruleExpression();
 
             state._fsp--;
 
              current =iv_ruleExpression; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExpression4983); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExpression5269); 
 
             }
 
@@ -5587,7 +5937,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExpression"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2350:1: ruleExpression returns [EObject current=null] : this_Or_0= ruleOr ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2514:1: ruleExpression returns [EObject current=null] : this_Or_0= ruleOr ;
     public final EObject ruleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5598,13 +5948,13 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
             
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2354:28: (this_Or_0= ruleOr )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2356:5: this_Or_0= ruleOr
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2518:28: (this_Or_0= ruleOr )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2520:5: this_Or_0= ruleOr
             {
              
                     newCompositeNode(grammarAccess.getExpressionAccess().getOrParserRuleCall()); 
                 
-            pushFollow(FOLLOW_ruleOr_in_ruleExpression5033);
+            pushFollow(FOLLOW_ruleOr_in_ruleExpression5319);
             this_Or_0=ruleOr();
 
             state._fsp--;
@@ -5634,7 +5984,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOr"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2375:1: entryRuleOr returns [EObject current=null] : iv_ruleOr= ruleOr EOF ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2539:1: entryRuleOr returns [EObject current=null] : iv_ruleOr= ruleOr EOF ;
     public final EObject entryRuleOr() throws RecognitionException {
         EObject current = null;
 
@@ -5645,17 +5995,17 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         	
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2379:2: (iv_ruleOr= ruleOr EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2380:2: iv_ruleOr= ruleOr EOF
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2543:2: (iv_ruleOr= ruleOr EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2544:2: iv_ruleOr= ruleOr EOF
             {
              newCompositeNode(grammarAccess.getOrRule()); 
-            pushFollow(FOLLOW_ruleOr_in_entryRuleOr5077);
+            pushFollow(FOLLOW_ruleOr_in_entryRuleOr5363);
             iv_ruleOr=ruleOr();
 
             state._fsp--;
 
              current =iv_ruleOr; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOr5087); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOr5373); 
 
             }
 
@@ -5676,7 +6026,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOr"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2390:1: ruleOr returns [EObject current=null] : (this_And_0= ruleAnd ( () otherlv_2= '||' ( (lv_right_3_0= ruleAnd ) ) )* ) ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2554:1: ruleOr returns [EObject current=null] : (this_And_0= ruleAnd ( () otherlv_2= '||' ( (lv_right_3_0= ruleAnd ) ) )* ) ;
     public final EObject ruleOr() throws RecognitionException {
         EObject current = null;
 
@@ -5690,16 +6040,16 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
             
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2394:28: ( (this_And_0= ruleAnd ( () otherlv_2= '||' ( (lv_right_3_0= ruleAnd ) ) )* ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2395:1: (this_And_0= ruleAnd ( () otherlv_2= '||' ( (lv_right_3_0= ruleAnd ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2558:28: ( (this_And_0= ruleAnd ( () otherlv_2= '||' ( (lv_right_3_0= ruleAnd ) ) )* ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2559:1: (this_And_0= ruleAnd ( () otherlv_2= '||' ( (lv_right_3_0= ruleAnd ) ) )* )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2395:1: (this_And_0= ruleAnd ( () otherlv_2= '||' ( (lv_right_3_0= ruleAnd ) ) )* )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2396:5: this_And_0= ruleAnd ( () otherlv_2= '||' ( (lv_right_3_0= ruleAnd ) ) )*
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2559:1: (this_And_0= ruleAnd ( () otherlv_2= '||' ( (lv_right_3_0= ruleAnd ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2560:5: this_And_0= ruleAnd ( () otherlv_2= '||' ( (lv_right_3_0= ruleAnd ) ) )*
             {
              
                     newCompositeNode(grammarAccess.getOrAccess().getAndParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleAnd_in_ruleOr5138);
+            pushFollow(FOLLOW_ruleAnd_in_ruleOr5424);
             this_And_0=ruleAnd();
 
             state._fsp--;
@@ -5708,23 +6058,23 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
                     current = this_And_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2404:1: ( () otherlv_2= '||' ( (lv_right_3_0= ruleAnd ) ) )*
-            loop29:
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2568:1: ( () otherlv_2= '||' ( (lv_right_3_0= ruleAnd ) ) )*
+            loop30:
             do {
-                int alt29=2;
-                int LA29_0 = input.LA(1);
+                int alt30=2;
+                int LA30_0 = input.LA(1);
 
-                if ( (LA29_0==32) ) {
-                    alt29=1;
+                if ( (LA30_0==32) ) {
+                    alt30=1;
                 }
 
 
-                switch (alt29) {
+                switch (alt30) {
             	case 1 :
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2404:2: () otherlv_2= '||' ( (lv_right_3_0= ruleAnd ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2568:2: () otherlv_2= '||' ( (lv_right_3_0= ruleAnd ) )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2404:2: ()
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2405:5: 
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2568:2: ()
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2569:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
@@ -5734,20 +6084,20 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_2=(Token)match(input,32,FOLLOW_32_in_ruleOr5159); 
+            	    otherlv_2=(Token)match(input,32,FOLLOW_32_in_ruleOr5445); 
 
             	        	newLeafNode(otherlv_2, grammarAccess.getOrAccess().getVerticalLineVerticalLineKeyword_1_1());
             	        
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2414:1: ( (lv_right_3_0= ruleAnd ) )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2415:1: (lv_right_3_0= ruleAnd )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2578:1: ( (lv_right_3_0= ruleAnd ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2579:1: (lv_right_3_0= ruleAnd )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2415:1: (lv_right_3_0= ruleAnd )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2416:3: lv_right_3_0= ruleAnd
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2579:1: (lv_right_3_0= ruleAnd )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2580:3: lv_right_3_0= ruleAnd
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getOrAccess().getRightAndParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleAnd_in_ruleOr5180);
+            	    pushFollow(FOLLOW_ruleAnd_in_ruleOr5466);
             	    lv_right_3_0=ruleAnd();
 
             	    state._fsp--;
@@ -5761,174 +6111,6 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
             	           			"right",
             	            		lv_right_3_0, 
             	            		"And");
-            	    	        afterParserOrEnumRuleCall();
-            	    	    
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop29;
-                }
-            } while (true);
-
-
-            }
-
-
-            }
-
-             leaveRule(); 
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-
-            	myHiddenTokenState.restore();
-
-        }
-        return current;
-    }
-    // $ANTLR end "ruleOr"
-
-
-    // $ANTLR start "entryRuleAnd"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2443:1: entryRuleAnd returns [EObject current=null] : iv_ruleAnd= ruleAnd EOF ;
-    public final EObject entryRuleAnd() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleAnd = null;
-
-
-         
-        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
-        	
-        try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2447:2: (iv_ruleAnd= ruleAnd EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2448:2: iv_ruleAnd= ruleAnd EOF
-            {
-             newCompositeNode(grammarAccess.getAndRule()); 
-            pushFollow(FOLLOW_ruleAnd_in_entryRuleAnd5228);
-            iv_ruleAnd=ruleAnd();
-
-            state._fsp--;
-
-             current =iv_ruleAnd; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAnd5238); 
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-
-            	myHiddenTokenState.restore();
-
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleAnd"
-
-
-    // $ANTLR start "ruleAnd"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2458:1: ruleAnd returns [EObject current=null] : (this_Equality_0= ruleEquality ( () otherlv_2= '&&' ( (lv_right_3_0= ruleEquality ) ) )* ) ;
-    public final EObject ruleAnd() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_2=null;
-        EObject this_Equality_0 = null;
-
-        EObject lv_right_3_0 = null;
-
-
-         enterRule(); 
-        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
-            
-        try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2462:28: ( (this_Equality_0= ruleEquality ( () otherlv_2= '&&' ( (lv_right_3_0= ruleEquality ) ) )* ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2463:1: (this_Equality_0= ruleEquality ( () otherlv_2= '&&' ( (lv_right_3_0= ruleEquality ) ) )* )
-            {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2463:1: (this_Equality_0= ruleEquality ( () otherlv_2= '&&' ( (lv_right_3_0= ruleEquality ) ) )* )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2464:5: this_Equality_0= ruleEquality ( () otherlv_2= '&&' ( (lv_right_3_0= ruleEquality ) ) )*
-            {
-             
-                    newCompositeNode(grammarAccess.getAndAccess().getEqualityParserRuleCall_0()); 
-                
-            pushFollow(FOLLOW_ruleEquality_in_ruleAnd5289);
-            this_Equality_0=ruleEquality();
-
-            state._fsp--;
-
-             
-                    current = this_Equality_0; 
-                    afterParserOrEnumRuleCall();
-                
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2472:1: ( () otherlv_2= '&&' ( (lv_right_3_0= ruleEquality ) ) )*
-            loop30:
-            do {
-                int alt30=2;
-                int LA30_0 = input.LA(1);
-
-                if ( (LA30_0==33) ) {
-                    alt30=1;
-                }
-
-
-                switch (alt30) {
-            	case 1 :
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2472:2: () otherlv_2= '&&' ( (lv_right_3_0= ruleEquality ) )
-            	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2472:2: ()
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2473:5: 
-            	    {
-
-            	            current = forceCreateModelElementAndSet(
-            	                grammarAccess.getAndAccess().getAndLeftAction_1_0(),
-            	                current);
-            	        
-
-            	    }
-
-            	    otherlv_2=(Token)match(input,33,FOLLOW_33_in_ruleAnd5310); 
-
-            	        	newLeafNode(otherlv_2, grammarAccess.getAndAccess().getAmpersandAmpersandKeyword_1_1());
-            	        
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2482:1: ( (lv_right_3_0= ruleEquality ) )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2483:1: (lv_right_3_0= ruleEquality )
-            	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2483:1: (lv_right_3_0= ruleEquality )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2484:3: lv_right_3_0= ruleEquality
-            	    {
-            	     
-            	    	        newCompositeNode(grammarAccess.getAndAccess().getRightEqualityParserRuleCall_1_2_0()); 
-            	    	    
-            	    pushFollow(FOLLOW_ruleEquality_in_ruleAnd5331);
-            	    lv_right_3_0=ruleEquality();
-
-            	    state._fsp--;
-
-
-            	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getAndRule());
-            	    	        }
-            	           		set(
-            	           			current, 
-            	           			"right",
-            	            		lv_right_3_0, 
-            	            		"Equality");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -5966,11 +6148,179 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
+    // $ANTLR end "ruleOr"
+
+
+    // $ANTLR start "entryRuleAnd"
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2607:1: entryRuleAnd returns [EObject current=null] : iv_ruleAnd= ruleAnd EOF ;
+    public final EObject entryRuleAnd() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleAnd = null;
+
+
+         
+        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+        	
+        try {
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2611:2: (iv_ruleAnd= ruleAnd EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2612:2: iv_ruleAnd= ruleAnd EOF
+            {
+             newCompositeNode(grammarAccess.getAndRule()); 
+            pushFollow(FOLLOW_ruleAnd_in_entryRuleAnd5514);
+            iv_ruleAnd=ruleAnd();
+
+            state._fsp--;
+
+             current =iv_ruleAnd; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAnd5524); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleAnd"
+
+
+    // $ANTLR start "ruleAnd"
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2622:1: ruleAnd returns [EObject current=null] : (this_Equality_0= ruleEquality ( () otherlv_2= '&&' ( (lv_right_3_0= ruleEquality ) ) )* ) ;
+    public final EObject ruleAnd() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_2=null;
+        EObject this_Equality_0 = null;
+
+        EObject lv_right_3_0 = null;
+
+
+         enterRule(); 
+        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+            
+        try {
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2626:28: ( (this_Equality_0= ruleEquality ( () otherlv_2= '&&' ( (lv_right_3_0= ruleEquality ) ) )* ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2627:1: (this_Equality_0= ruleEquality ( () otherlv_2= '&&' ( (lv_right_3_0= ruleEquality ) ) )* )
+            {
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2627:1: (this_Equality_0= ruleEquality ( () otherlv_2= '&&' ( (lv_right_3_0= ruleEquality ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2628:5: this_Equality_0= ruleEquality ( () otherlv_2= '&&' ( (lv_right_3_0= ruleEquality ) ) )*
+            {
+             
+                    newCompositeNode(grammarAccess.getAndAccess().getEqualityParserRuleCall_0()); 
+                
+            pushFollow(FOLLOW_ruleEquality_in_ruleAnd5575);
+            this_Equality_0=ruleEquality();
+
+            state._fsp--;
+
+             
+                    current = this_Equality_0; 
+                    afterParserOrEnumRuleCall();
+                
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2636:1: ( () otherlv_2= '&&' ( (lv_right_3_0= ruleEquality ) ) )*
+            loop31:
+            do {
+                int alt31=2;
+                int LA31_0 = input.LA(1);
+
+                if ( (LA31_0==33) ) {
+                    alt31=1;
+                }
+
+
+                switch (alt31) {
+            	case 1 :
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2636:2: () otherlv_2= '&&' ( (lv_right_3_0= ruleEquality ) )
+            	    {
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2636:2: ()
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2637:5: 
+            	    {
+
+            	            current = forceCreateModelElementAndSet(
+            	                grammarAccess.getAndAccess().getAndLeftAction_1_0(),
+            	                current);
+            	        
+
+            	    }
+
+            	    otherlv_2=(Token)match(input,33,FOLLOW_33_in_ruleAnd5596); 
+
+            	        	newLeafNode(otherlv_2, grammarAccess.getAndAccess().getAmpersandAmpersandKeyword_1_1());
+            	        
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2646:1: ( (lv_right_3_0= ruleEquality ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2647:1: (lv_right_3_0= ruleEquality )
+            	    {
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2647:1: (lv_right_3_0= ruleEquality )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2648:3: lv_right_3_0= ruleEquality
+            	    {
+            	     
+            	    	        newCompositeNode(grammarAccess.getAndAccess().getRightEqualityParserRuleCall_1_2_0()); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleEquality_in_ruleAnd5617);
+            	    lv_right_3_0=ruleEquality();
+
+            	    state._fsp--;
+
+
+            	    	        if (current==null) {
+            	    	            current = createModelElementForParent(grammarAccess.getAndRule());
+            	    	        }
+            	           		set(
+            	           			current, 
+            	           			"right",
+            	            		lv_right_3_0, 
+            	            		"Equality");
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop31;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
     // $ANTLR end "ruleAnd"
 
 
     // $ANTLR start "entryRuleEquality"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2511:1: entryRuleEquality returns [EObject current=null] : iv_ruleEquality= ruleEquality EOF ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2675:1: entryRuleEquality returns [EObject current=null] : iv_ruleEquality= ruleEquality EOF ;
     public final EObject entryRuleEquality() throws RecognitionException {
         EObject current = null;
 
@@ -5981,17 +6331,17 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         	
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2515:2: (iv_ruleEquality= ruleEquality EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2516:2: iv_ruleEquality= ruleEquality EOF
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2679:2: (iv_ruleEquality= ruleEquality EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2680:2: iv_ruleEquality= ruleEquality EOF
             {
              newCompositeNode(grammarAccess.getEqualityRule()); 
-            pushFollow(FOLLOW_ruleEquality_in_entryRuleEquality5379);
+            pushFollow(FOLLOW_ruleEquality_in_entryRuleEquality5665);
             iv_ruleEquality=ruleEquality();
 
             state._fsp--;
 
              current =iv_ruleEquality; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEquality5389); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEquality5675); 
 
             }
 
@@ -6012,7 +6362,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEquality"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2526:1: ruleEquality returns [EObject current=null] : (this_Comparison_0= ruleComparison ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleComparison ) ) )* ) ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2690:1: ruleEquality returns [EObject current=null] : (this_Comparison_0= ruleComparison ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleComparison ) ) )* ) ;
     public final EObject ruleEquality() throws RecognitionException {
         EObject current = null;
 
@@ -6027,16 +6377,16 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
             
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2530:28: ( (this_Comparison_0= ruleComparison ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleComparison ) ) )* ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2531:1: (this_Comparison_0= ruleComparison ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleComparison ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2694:28: ( (this_Comparison_0= ruleComparison ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleComparison ) ) )* ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2695:1: (this_Comparison_0= ruleComparison ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleComparison ) ) )* )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2531:1: (this_Comparison_0= ruleComparison ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleComparison ) ) )* )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2532:5: this_Comparison_0= ruleComparison ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleComparison ) ) )*
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2695:1: (this_Comparison_0= ruleComparison ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleComparison ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2696:5: this_Comparison_0= ruleComparison ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleComparison ) ) )*
             {
              
                     newCompositeNode(grammarAccess.getEqualityAccess().getComparisonParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleComparison_in_ruleEquality5440);
+            pushFollow(FOLLOW_ruleComparison_in_ruleEquality5726);
             this_Comparison_0=ruleComparison();
 
             state._fsp--;
@@ -6045,23 +6395,23 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
                     current = this_Comparison_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2540:1: ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleComparison ) ) )*
-            loop32:
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2704:1: ( () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleComparison ) ) )*
+            loop33:
             do {
-                int alt32=2;
-                int LA32_0 = input.LA(1);
+                int alt33=2;
+                int LA33_0 = input.LA(1);
 
-                if ( ((LA32_0>=34 && LA32_0<=35)) ) {
-                    alt32=1;
+                if ( ((LA33_0>=34 && LA33_0<=35)) ) {
+                    alt33=1;
                 }
 
 
-                switch (alt32) {
+                switch (alt33) {
             	case 1 :
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2540:2: () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleComparison ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2704:2: () ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) ) ( (lv_right_3_0= ruleComparison ) )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2540:2: ()
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2541:5: 
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2704:2: ()
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2705:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
@@ -6071,33 +6421,33 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2546:2: ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2547:1: ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2710:2: ( ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2711:1: ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2547:1: ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2548:1: (lv_op_2_1= '==' | lv_op_2_2= '!=' )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2711:1: ( (lv_op_2_1= '==' | lv_op_2_2= '!=' ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2712:1: (lv_op_2_1= '==' | lv_op_2_2= '!=' )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2548:1: (lv_op_2_1= '==' | lv_op_2_2= '!=' )
-            	    int alt31=2;
-            	    int LA31_0 = input.LA(1);
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2712:1: (lv_op_2_1= '==' | lv_op_2_2= '!=' )
+            	    int alt32=2;
+            	    int LA32_0 = input.LA(1);
 
-            	    if ( (LA31_0==34) ) {
-            	        alt31=1;
+            	    if ( (LA32_0==34) ) {
+            	        alt32=1;
             	    }
-            	    else if ( (LA31_0==35) ) {
-            	        alt31=2;
+            	    else if ( (LA32_0==35) ) {
+            	        alt32=2;
             	    }
             	    else {
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 31, 0, input);
+            	            new NoViableAltException("", 32, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt31) {
+            	    switch (alt32) {
             	        case 1 :
-            	            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2549:3: lv_op_2_1= '=='
+            	            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2713:3: lv_op_2_1= '=='
             	            {
-            	            lv_op_2_1=(Token)match(input,34,FOLLOW_34_in_ruleEquality5469); 
+            	            lv_op_2_1=(Token)match(input,34,FOLLOW_34_in_ruleEquality5755); 
 
             	                    newLeafNode(lv_op_2_1, grammarAccess.getEqualityAccess().getOpEqualsSignEqualsSignKeyword_1_1_0_0());
             	                
@@ -6111,9 +6461,9 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2561:8: lv_op_2_2= '!='
+            	            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2725:8: lv_op_2_2= '!='
             	            {
-            	            lv_op_2_2=(Token)match(input,35,FOLLOW_35_in_ruleEquality5498); 
+            	            lv_op_2_2=(Token)match(input,35,FOLLOW_35_in_ruleEquality5784); 
 
             	                    newLeafNode(lv_op_2_2, grammarAccess.getEqualityAccess().getOpExclamationMarkEqualsSignKeyword_1_1_0_1());
             	                
@@ -6135,16 +6485,16 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2576:2: ( (lv_right_3_0= ruleComparison ) )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2577:1: (lv_right_3_0= ruleComparison )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2740:2: ( (lv_right_3_0= ruleComparison ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2741:1: (lv_right_3_0= ruleComparison )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2577:1: (lv_right_3_0= ruleComparison )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2578:3: lv_right_3_0= ruleComparison
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2741:1: (lv_right_3_0= ruleComparison )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2742:3: lv_right_3_0= ruleComparison
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getEqualityAccess().getRightComparisonParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleComparison_in_ruleEquality5535);
+            	    pushFollow(FOLLOW_ruleComparison_in_ruleEquality5821);
             	    lv_right_3_0=ruleComparison();
 
             	    state._fsp--;
@@ -6171,7 +6521,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop32;
+            	    break loop33;
                 }
             } while (true);
 
@@ -6199,7 +6549,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleComparison"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2605:1: entryRuleComparison returns [EObject current=null] : iv_ruleComparison= ruleComparison EOF ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2769:1: entryRuleComparison returns [EObject current=null] : iv_ruleComparison= ruleComparison EOF ;
     public final EObject entryRuleComparison() throws RecognitionException {
         EObject current = null;
 
@@ -6210,17 +6560,17 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         	
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2609:2: (iv_ruleComparison= ruleComparison EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2610:2: iv_ruleComparison= ruleComparison EOF
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2773:2: (iv_ruleComparison= ruleComparison EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2774:2: iv_ruleComparison= ruleComparison EOF
             {
              newCompositeNode(grammarAccess.getComparisonRule()); 
-            pushFollow(FOLLOW_ruleComparison_in_entryRuleComparison5583);
+            pushFollow(FOLLOW_ruleComparison_in_entryRuleComparison5869);
             iv_ruleComparison=ruleComparison();
 
             state._fsp--;
 
              current =iv_ruleComparison; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleComparison5593); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleComparison5879); 
 
             }
 
@@ -6241,7 +6591,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComparison"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2620:1: ruleComparison returns [EObject current=null] : (this_Subtraction_0= ruleSubtraction ( () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleSubtraction ) ) )* ) ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2784:1: ruleComparison returns [EObject current=null] : (this_Subtraction_0= ruleSubtraction ( () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleSubtraction ) ) )* ) ;
     public final EObject ruleComparison() throws RecognitionException {
         EObject current = null;
 
@@ -6258,16 +6608,16 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
             
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2624:28: ( (this_Subtraction_0= ruleSubtraction ( () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleSubtraction ) ) )* ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2625:1: (this_Subtraction_0= ruleSubtraction ( () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleSubtraction ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2788:28: ( (this_Subtraction_0= ruleSubtraction ( () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleSubtraction ) ) )* ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2789:1: (this_Subtraction_0= ruleSubtraction ( () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleSubtraction ) ) )* )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2625:1: (this_Subtraction_0= ruleSubtraction ( () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleSubtraction ) ) )* )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2626:5: this_Subtraction_0= ruleSubtraction ( () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleSubtraction ) ) )*
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2789:1: (this_Subtraction_0= ruleSubtraction ( () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleSubtraction ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2790:5: this_Subtraction_0= ruleSubtraction ( () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleSubtraction ) ) )*
             {
              
                     newCompositeNode(grammarAccess.getComparisonAccess().getSubtractionParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleSubtraction_in_ruleComparison5644);
+            pushFollow(FOLLOW_ruleSubtraction_in_ruleComparison5930);
             this_Subtraction_0=ruleSubtraction();
 
             state._fsp--;
@@ -6276,23 +6626,23 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
                     current = this_Subtraction_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2634:1: ( () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleSubtraction ) ) )*
-            loop34:
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2798:1: ( () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleSubtraction ) ) )*
+            loop35:
             do {
-                int alt34=2;
-                int LA34_0 = input.LA(1);
+                int alt35=2;
+                int LA35_0 = input.LA(1);
 
-                if ( ((LA34_0>=28 && LA34_0<=29)||(LA34_0>=36 && LA34_0<=37)) ) {
-                    alt34=1;
+                if ( ((LA35_0>=28 && LA35_0<=29)||(LA35_0>=36 && LA35_0<=37)) ) {
+                    alt35=1;
                 }
 
 
-                switch (alt34) {
+                switch (alt35) {
             	case 1 :
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2634:2: () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleSubtraction ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2798:2: () ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) ) ( (lv_right_3_0= ruleSubtraction ) )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2634:2: ()
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2635:5: 
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2798:2: ()
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2799:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
@@ -6302,47 +6652,47 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2640:2: ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2641:1: ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2804:2: ( ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2805:1: ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2641:1: ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2642:1: (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2805:1: ( (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2806:1: (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2642:1: (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' )
-            	    int alt33=4;
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2806:1: (lv_op_2_1= '>=' | lv_op_2_2= '<=' | lv_op_2_3= '>' | lv_op_2_4= '<' )
+            	    int alt34=4;
             	    switch ( input.LA(1) ) {
             	    case 36:
             	        {
-            	        alt33=1;
+            	        alt34=1;
             	        }
             	        break;
             	    case 37:
             	        {
-            	        alt33=2;
+            	        alt34=2;
             	        }
             	        break;
             	    case 29:
             	        {
-            	        alt33=3;
+            	        alt34=3;
             	        }
             	        break;
             	    case 28:
             	        {
-            	        alt33=4;
+            	        alt34=4;
             	        }
             	        break;
             	    default:
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 33, 0, input);
+            	            new NoViableAltException("", 34, 0, input);
 
             	        throw nvae;
             	    }
 
-            	    switch (alt33) {
+            	    switch (alt34) {
             	        case 1 :
-            	            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2643:3: lv_op_2_1= '>='
+            	            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2807:3: lv_op_2_1= '>='
             	            {
-            	            lv_op_2_1=(Token)match(input,36,FOLLOW_36_in_ruleComparison5673); 
+            	            lv_op_2_1=(Token)match(input,36,FOLLOW_36_in_ruleComparison5959); 
 
             	                    newLeafNode(lv_op_2_1, grammarAccess.getComparisonAccess().getOpGreaterThanSignEqualsSignKeyword_1_1_0_0());
             	                
@@ -6356,9 +6706,9 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2655:8: lv_op_2_2= '<='
+            	            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2819:8: lv_op_2_2= '<='
             	            {
-            	            lv_op_2_2=(Token)match(input,37,FOLLOW_37_in_ruleComparison5702); 
+            	            lv_op_2_2=(Token)match(input,37,FOLLOW_37_in_ruleComparison5988); 
 
             	                    newLeafNode(lv_op_2_2, grammarAccess.getComparisonAccess().getOpLessThanSignEqualsSignKeyword_1_1_0_1());
             	                
@@ -6372,9 +6722,9 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 3 :
-            	            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2667:8: lv_op_2_3= '>'
+            	            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2831:8: lv_op_2_3= '>'
             	            {
-            	            lv_op_2_3=(Token)match(input,29,FOLLOW_29_in_ruleComparison5731); 
+            	            lv_op_2_3=(Token)match(input,29,FOLLOW_29_in_ruleComparison6017); 
 
             	                    newLeafNode(lv_op_2_3, grammarAccess.getComparisonAccess().getOpGreaterThanSignKeyword_1_1_0_2());
             	                
@@ -6388,9 +6738,9 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 4 :
-            	            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2679:8: lv_op_2_4= '<'
+            	            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2843:8: lv_op_2_4= '<'
             	            {
-            	            lv_op_2_4=(Token)match(input,28,FOLLOW_28_in_ruleComparison5760); 
+            	            lv_op_2_4=(Token)match(input,28,FOLLOW_28_in_ruleComparison6046); 
 
             	                    newLeafNode(lv_op_2_4, grammarAccess.getComparisonAccess().getOpLessThanSignKeyword_1_1_0_3());
             	                
@@ -6412,16 +6762,16 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2694:2: ( (lv_right_3_0= ruleSubtraction ) )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2695:1: (lv_right_3_0= ruleSubtraction )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2858:2: ( (lv_right_3_0= ruleSubtraction ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2859:1: (lv_right_3_0= ruleSubtraction )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2695:1: (lv_right_3_0= ruleSubtraction )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2696:3: lv_right_3_0= ruleSubtraction
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2859:1: (lv_right_3_0= ruleSubtraction )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2860:3: lv_right_3_0= ruleSubtraction
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getComparisonAccess().getRightSubtractionParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleSubtraction_in_ruleComparison5797);
+            	    pushFollow(FOLLOW_ruleSubtraction_in_ruleComparison6083);
             	    lv_right_3_0=ruleSubtraction();
 
             	    state._fsp--;
@@ -6435,174 +6785,6 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
             	           			"right",
             	            		lv_right_3_0, 
             	            		"Subtraction");
-            	    	        afterParserOrEnumRuleCall();
-            	    	    
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop34;
-                }
-            } while (true);
-
-
-            }
-
-
-            }
-
-             leaveRule(); 
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-
-            	myHiddenTokenState.restore();
-
-        }
-        return current;
-    }
-    // $ANTLR end "ruleComparison"
-
-
-    // $ANTLR start "entryRuleSubtraction"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2723:1: entryRuleSubtraction returns [EObject current=null] : iv_ruleSubtraction= ruleSubtraction EOF ;
-    public final EObject entryRuleSubtraction() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleSubtraction = null;
-
-
-         
-        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
-        	
-        try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2727:2: (iv_ruleSubtraction= ruleSubtraction EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2728:2: iv_ruleSubtraction= ruleSubtraction EOF
-            {
-             newCompositeNode(grammarAccess.getSubtractionRule()); 
-            pushFollow(FOLLOW_ruleSubtraction_in_entryRuleSubtraction5845);
-            iv_ruleSubtraction=ruleSubtraction();
-
-            state._fsp--;
-
-             current =iv_ruleSubtraction; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSubtraction5855); 
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-
-            	myHiddenTokenState.restore();
-
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleSubtraction"
-
-
-    // $ANTLR start "ruleSubtraction"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2738:1: ruleSubtraction returns [EObject current=null] : (this_Addition_0= ruleAddition ( () otherlv_2= '-' ( (lv_right_3_0= ruleAddition ) ) )* ) ;
-    public final EObject ruleSubtraction() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_2=null;
-        EObject this_Addition_0 = null;
-
-        EObject lv_right_3_0 = null;
-
-
-         enterRule(); 
-        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
-            
-        try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2742:28: ( (this_Addition_0= ruleAddition ( () otherlv_2= '-' ( (lv_right_3_0= ruleAddition ) ) )* ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2743:1: (this_Addition_0= ruleAddition ( () otherlv_2= '-' ( (lv_right_3_0= ruleAddition ) ) )* )
-            {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2743:1: (this_Addition_0= ruleAddition ( () otherlv_2= '-' ( (lv_right_3_0= ruleAddition ) ) )* )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2744:5: this_Addition_0= ruleAddition ( () otherlv_2= '-' ( (lv_right_3_0= ruleAddition ) ) )*
-            {
-             
-                    newCompositeNode(grammarAccess.getSubtractionAccess().getAdditionParserRuleCall_0()); 
-                
-            pushFollow(FOLLOW_ruleAddition_in_ruleSubtraction5906);
-            this_Addition_0=ruleAddition();
-
-            state._fsp--;
-
-             
-                    current = this_Addition_0; 
-                    afterParserOrEnumRuleCall();
-                
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2752:1: ( () otherlv_2= '-' ( (lv_right_3_0= ruleAddition ) ) )*
-            loop35:
-            do {
-                int alt35=2;
-                int LA35_0 = input.LA(1);
-
-                if ( (LA35_0==38) ) {
-                    alt35=1;
-                }
-
-
-                switch (alt35) {
-            	case 1 :
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2752:2: () otherlv_2= '-' ( (lv_right_3_0= ruleAddition ) )
-            	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2752:2: ()
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2753:5: 
-            	    {
-
-            	            current = forceCreateModelElementAndSet(
-            	                grammarAccess.getSubtractionAccess().getSubLeftAction_1_0(),
-            	                current);
-            	        
-
-            	    }
-
-            	    otherlv_2=(Token)match(input,38,FOLLOW_38_in_ruleSubtraction5927); 
-
-            	        	newLeafNode(otherlv_2, grammarAccess.getSubtractionAccess().getHyphenMinusKeyword_1_1());
-            	        
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2762:1: ( (lv_right_3_0= ruleAddition ) )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2763:1: (lv_right_3_0= ruleAddition )
-            	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2763:1: (lv_right_3_0= ruleAddition )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2764:3: lv_right_3_0= ruleAddition
-            	    {
-            	     
-            	    	        newCompositeNode(grammarAccess.getSubtractionAccess().getRightAdditionParserRuleCall_1_2_0()); 
-            	    	    
-            	    pushFollow(FOLLOW_ruleAddition_in_ruleSubtraction5948);
-            	    lv_right_3_0=ruleAddition();
-
-            	    state._fsp--;
-
-
-            	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getSubtractionRule());
-            	    	        }
-            	           		set(
-            	           			current, 
-            	           			"right",
-            	            		lv_right_3_0, 
-            	            		"Addition");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -6640,32 +6822,32 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleSubtraction"
+    // $ANTLR end "ruleComparison"
 
 
-    // $ANTLR start "entryRuleAddition"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2791:1: entryRuleAddition returns [EObject current=null] : iv_ruleAddition= ruleAddition EOF ;
-    public final EObject entryRuleAddition() throws RecognitionException {
+    // $ANTLR start "entryRuleSubtraction"
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2887:1: entryRuleSubtraction returns [EObject current=null] : iv_ruleSubtraction= ruleSubtraction EOF ;
+    public final EObject entryRuleSubtraction() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleAddition = null;
+        EObject iv_ruleSubtraction = null;
 
 
          
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         	
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2795:2: (iv_ruleAddition= ruleAddition EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2796:2: iv_ruleAddition= ruleAddition EOF
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2891:2: (iv_ruleSubtraction= ruleSubtraction EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2892:2: iv_ruleSubtraction= ruleSubtraction EOF
             {
-             newCompositeNode(grammarAccess.getAdditionRule()); 
-            pushFollow(FOLLOW_ruleAddition_in_entryRuleAddition5996);
-            iv_ruleAddition=ruleAddition();
+             newCompositeNode(grammarAccess.getSubtractionRule()); 
+            pushFollow(FOLLOW_ruleSubtraction_in_entryRuleSubtraction6131);
+            iv_ruleSubtraction=ruleSubtraction();
 
             state._fsp--;
 
-             current =iv_ruleAddition; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAddition6006); 
+             current =iv_ruleSubtraction; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSubtraction6141); 
 
             }
 
@@ -6682,16 +6864,16 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleAddition"
+    // $ANTLR end "entryRuleSubtraction"
 
 
-    // $ANTLR start "ruleAddition"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2806:1: ruleAddition returns [EObject current=null] : (this_Multiplication_0= ruleMultiplication ( () otherlv_2= '+' ( (lv_right_3_0= ruleMultiplication ) ) )* ) ;
-    public final EObject ruleAddition() throws RecognitionException {
+    // $ANTLR start "ruleSubtraction"
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2902:1: ruleSubtraction returns [EObject current=null] : (this_Addition_0= ruleAddition ( () otherlv_2= '-' ( (lv_right_3_0= ruleAddition ) ) )* ) ;
+    public final EObject ruleSubtraction() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_2=null;
-        EObject this_Multiplication_0 = null;
+        EObject this_Addition_0 = null;
 
         EObject lv_right_3_0 = null;
 
@@ -6700,77 +6882,77 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
             
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2810:28: ( (this_Multiplication_0= ruleMultiplication ( () otherlv_2= '+' ( (lv_right_3_0= ruleMultiplication ) ) )* ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2811:1: (this_Multiplication_0= ruleMultiplication ( () otherlv_2= '+' ( (lv_right_3_0= ruleMultiplication ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2906:28: ( (this_Addition_0= ruleAddition ( () otherlv_2= '-' ( (lv_right_3_0= ruleAddition ) ) )* ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2907:1: (this_Addition_0= ruleAddition ( () otherlv_2= '-' ( (lv_right_3_0= ruleAddition ) ) )* )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2811:1: (this_Multiplication_0= ruleMultiplication ( () otherlv_2= '+' ( (lv_right_3_0= ruleMultiplication ) ) )* )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2812:5: this_Multiplication_0= ruleMultiplication ( () otherlv_2= '+' ( (lv_right_3_0= ruleMultiplication ) ) )*
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2907:1: (this_Addition_0= ruleAddition ( () otherlv_2= '-' ( (lv_right_3_0= ruleAddition ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2908:5: this_Addition_0= ruleAddition ( () otherlv_2= '-' ( (lv_right_3_0= ruleAddition ) ) )*
             {
              
-                    newCompositeNode(grammarAccess.getAdditionAccess().getMultiplicationParserRuleCall_0()); 
+                    newCompositeNode(grammarAccess.getSubtractionAccess().getAdditionParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleMultiplication_in_ruleAddition6057);
-            this_Multiplication_0=ruleMultiplication();
+            pushFollow(FOLLOW_ruleAddition_in_ruleSubtraction6192);
+            this_Addition_0=ruleAddition();
 
             state._fsp--;
 
              
-                    current = this_Multiplication_0; 
+                    current = this_Addition_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2820:1: ( () otherlv_2= '+' ( (lv_right_3_0= ruleMultiplication ) ) )*
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2916:1: ( () otherlv_2= '-' ( (lv_right_3_0= ruleAddition ) ) )*
             loop36:
             do {
                 int alt36=2;
                 int LA36_0 = input.LA(1);
 
-                if ( (LA36_0==21) ) {
+                if ( (LA36_0==38) ) {
                     alt36=1;
                 }
 
 
                 switch (alt36) {
             	case 1 :
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2820:2: () otherlv_2= '+' ( (lv_right_3_0= ruleMultiplication ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2916:2: () otherlv_2= '-' ( (lv_right_3_0= ruleAddition ) )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2820:2: ()
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2821:5: 
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2916:2: ()
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2917:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
-            	                grammarAccess.getAdditionAccess().getPluLeftAction_1_0(),
+            	                grammarAccess.getSubtractionAccess().getSubLeftAction_1_0(),
             	                current);
             	        
 
             	    }
 
-            	    otherlv_2=(Token)match(input,21,FOLLOW_21_in_ruleAddition6078); 
+            	    otherlv_2=(Token)match(input,38,FOLLOW_38_in_ruleSubtraction6213); 
 
-            	        	newLeafNode(otherlv_2, grammarAccess.getAdditionAccess().getPlusSignKeyword_1_1());
+            	        	newLeafNode(otherlv_2, grammarAccess.getSubtractionAccess().getHyphenMinusKeyword_1_1());
             	        
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2830:1: ( (lv_right_3_0= ruleMultiplication ) )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2831:1: (lv_right_3_0= ruleMultiplication )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2926:1: ( (lv_right_3_0= ruleAddition ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2927:1: (lv_right_3_0= ruleAddition )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2831:1: (lv_right_3_0= ruleMultiplication )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2832:3: lv_right_3_0= ruleMultiplication
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2927:1: (lv_right_3_0= ruleAddition )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2928:3: lv_right_3_0= ruleAddition
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getAdditionAccess().getRightMultiplicationParserRuleCall_1_2_0()); 
+            	    	        newCompositeNode(grammarAccess.getSubtractionAccess().getRightAdditionParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleMultiplication_in_ruleAddition6099);
-            	    lv_right_3_0=ruleMultiplication();
+            	    pushFollow(FOLLOW_ruleAddition_in_ruleSubtraction6234);
+            	    lv_right_3_0=ruleAddition();
 
             	    state._fsp--;
 
 
             	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getAdditionRule());
+            	    	            current = createModelElementForParent(grammarAccess.getSubtractionRule());
             	    	        }
             	           		set(
             	           			current, 
             	           			"right",
             	            		lv_right_3_0, 
-            	            		"Multiplication");
+            	            		"Addition");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -6808,32 +6990,32 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleAddition"
+    // $ANTLR end "ruleSubtraction"
 
 
-    // $ANTLR start "entryRuleMultiplication"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2859:1: entryRuleMultiplication returns [EObject current=null] : iv_ruleMultiplication= ruleMultiplication EOF ;
-    public final EObject entryRuleMultiplication() throws RecognitionException {
+    // $ANTLR start "entryRuleAddition"
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2955:1: entryRuleAddition returns [EObject current=null] : iv_ruleAddition= ruleAddition EOF ;
+    public final EObject entryRuleAddition() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleMultiplication = null;
+        EObject iv_ruleAddition = null;
 
 
          
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         	
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2863:2: (iv_ruleMultiplication= ruleMultiplication EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2864:2: iv_ruleMultiplication= ruleMultiplication EOF
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2959:2: (iv_ruleAddition= ruleAddition EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2960:2: iv_ruleAddition= ruleAddition EOF
             {
-             newCompositeNode(grammarAccess.getMultiplicationRule()); 
-            pushFollow(FOLLOW_ruleMultiplication_in_entryRuleMultiplication6147);
-            iv_ruleMultiplication=ruleMultiplication();
+             newCompositeNode(grammarAccess.getAdditionRule()); 
+            pushFollow(FOLLOW_ruleAddition_in_entryRuleAddition6282);
+            iv_ruleAddition=ruleAddition();
 
             state._fsp--;
 
-             current =iv_ruleMultiplication; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMultiplication6157); 
+             current =iv_ruleAddition; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAddition6292); 
 
             }
 
@@ -6850,16 +7032,16 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleMultiplication"
+    // $ANTLR end "entryRuleAddition"
 
 
-    // $ANTLR start "ruleMultiplication"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2874:1: ruleMultiplication returns [EObject current=null] : (this_Division_0= ruleDivision ( () otherlv_2= '*' ( (lv_right_3_0= ruleDivision ) ) )* ) ;
-    public final EObject ruleMultiplication() throws RecognitionException {
+    // $ANTLR start "ruleAddition"
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2970:1: ruleAddition returns [EObject current=null] : (this_Multiplication_0= ruleMultiplication ( () otherlv_2= '+' ( (lv_right_3_0= ruleMultiplication ) ) )* ) ;
+    public final EObject ruleAddition() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_2=null;
-        EObject this_Division_0 = null;
+        EObject this_Multiplication_0 = null;
 
         EObject lv_right_3_0 = null;
 
@@ -6868,77 +7050,77 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
             
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2878:28: ( (this_Division_0= ruleDivision ( () otherlv_2= '*' ( (lv_right_3_0= ruleDivision ) ) )* ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2879:1: (this_Division_0= ruleDivision ( () otherlv_2= '*' ( (lv_right_3_0= ruleDivision ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2974:28: ( (this_Multiplication_0= ruleMultiplication ( () otherlv_2= '+' ( (lv_right_3_0= ruleMultiplication ) ) )* ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2975:1: (this_Multiplication_0= ruleMultiplication ( () otherlv_2= '+' ( (lv_right_3_0= ruleMultiplication ) ) )* )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2879:1: (this_Division_0= ruleDivision ( () otherlv_2= '*' ( (lv_right_3_0= ruleDivision ) ) )* )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2880:5: this_Division_0= ruleDivision ( () otherlv_2= '*' ( (lv_right_3_0= ruleDivision ) ) )*
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2975:1: (this_Multiplication_0= ruleMultiplication ( () otherlv_2= '+' ( (lv_right_3_0= ruleMultiplication ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2976:5: this_Multiplication_0= ruleMultiplication ( () otherlv_2= '+' ( (lv_right_3_0= ruleMultiplication ) ) )*
             {
              
-                    newCompositeNode(grammarAccess.getMultiplicationAccess().getDivisionParserRuleCall_0()); 
+                    newCompositeNode(grammarAccess.getAdditionAccess().getMultiplicationParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleDivision_in_ruleMultiplication6208);
-            this_Division_0=ruleDivision();
+            pushFollow(FOLLOW_ruleMultiplication_in_ruleAddition6343);
+            this_Multiplication_0=ruleMultiplication();
 
             state._fsp--;
 
              
-                    current = this_Division_0; 
+                    current = this_Multiplication_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2888:1: ( () otherlv_2= '*' ( (lv_right_3_0= ruleDivision ) ) )*
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2984:1: ( () otherlv_2= '+' ( (lv_right_3_0= ruleMultiplication ) ) )*
             loop37:
             do {
                 int alt37=2;
                 int LA37_0 = input.LA(1);
 
-                if ( (LA37_0==24) ) {
+                if ( (LA37_0==21) ) {
                     alt37=1;
                 }
 
 
                 switch (alt37) {
             	case 1 :
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2888:2: () otherlv_2= '*' ( (lv_right_3_0= ruleDivision ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2984:2: () otherlv_2= '+' ( (lv_right_3_0= ruleMultiplication ) )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2888:2: ()
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2889:5: 
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2984:2: ()
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2985:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
-            	                grammarAccess.getMultiplicationAccess().getMulLeftAction_1_0(),
+            	                grammarAccess.getAdditionAccess().getPluLeftAction_1_0(),
             	                current);
             	        
 
             	    }
 
-            	    otherlv_2=(Token)match(input,24,FOLLOW_24_in_ruleMultiplication6229); 
+            	    otherlv_2=(Token)match(input,21,FOLLOW_21_in_ruleAddition6364); 
 
-            	        	newLeafNode(otherlv_2, grammarAccess.getMultiplicationAccess().getAsteriskKeyword_1_1());
+            	        	newLeafNode(otherlv_2, grammarAccess.getAdditionAccess().getPlusSignKeyword_1_1());
             	        
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2898:1: ( (lv_right_3_0= ruleDivision ) )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2899:1: (lv_right_3_0= ruleDivision )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2994:1: ( (lv_right_3_0= ruleMultiplication ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2995:1: (lv_right_3_0= ruleMultiplication )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2899:1: (lv_right_3_0= ruleDivision )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2900:3: lv_right_3_0= ruleDivision
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2995:1: (lv_right_3_0= ruleMultiplication )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2996:3: lv_right_3_0= ruleMultiplication
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getMultiplicationAccess().getRightDivisionParserRuleCall_1_2_0()); 
+            	    	        newCompositeNode(grammarAccess.getAdditionAccess().getRightMultiplicationParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleDivision_in_ruleMultiplication6250);
-            	    lv_right_3_0=ruleDivision();
+            	    pushFollow(FOLLOW_ruleMultiplication_in_ruleAddition6385);
+            	    lv_right_3_0=ruleMultiplication();
 
             	    state._fsp--;
 
 
             	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getMultiplicationRule());
+            	    	            current = createModelElementForParent(grammarAccess.getAdditionRule());
             	    	        }
             	           		set(
             	           			current, 
             	           			"right",
             	            		lv_right_3_0, 
-            	            		"Division");
+            	            		"Multiplication");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -6976,32 +7158,32 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleMultiplication"
+    // $ANTLR end "ruleAddition"
 
 
-    // $ANTLR start "entryRuleDivision"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2927:1: entryRuleDivision returns [EObject current=null] : iv_ruleDivision= ruleDivision EOF ;
-    public final EObject entryRuleDivision() throws RecognitionException {
+    // $ANTLR start "entryRuleMultiplication"
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3023:1: entryRuleMultiplication returns [EObject current=null] : iv_ruleMultiplication= ruleMultiplication EOF ;
+    public final EObject entryRuleMultiplication() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleDivision = null;
+        EObject iv_ruleMultiplication = null;
 
 
          
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         	
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2931:2: (iv_ruleDivision= ruleDivision EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2932:2: iv_ruleDivision= ruleDivision EOF
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3027:2: (iv_ruleMultiplication= ruleMultiplication EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3028:2: iv_ruleMultiplication= ruleMultiplication EOF
             {
-             newCompositeNode(grammarAccess.getDivisionRule()); 
-            pushFollow(FOLLOW_ruleDivision_in_entryRuleDivision6298);
-            iv_ruleDivision=ruleDivision();
+             newCompositeNode(grammarAccess.getMultiplicationRule()); 
+            pushFollow(FOLLOW_ruleMultiplication_in_entryRuleMultiplication6433);
+            iv_ruleMultiplication=ruleMultiplication();
 
             state._fsp--;
 
-             current =iv_ruleDivision; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDivision6308); 
+             current =iv_ruleMultiplication; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMultiplication6443); 
 
             }
 
@@ -7018,16 +7200,16 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleDivision"
+    // $ANTLR end "entryRuleMultiplication"
 
 
-    // $ANTLR start "ruleDivision"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2942:1: ruleDivision returns [EObject current=null] : (this_Primary_0= rulePrimary ( () otherlv_2= '/' ( (lv_right_3_0= rulePrimary ) ) )* ) ;
-    public final EObject ruleDivision() throws RecognitionException {
+    // $ANTLR start "ruleMultiplication"
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3038:1: ruleMultiplication returns [EObject current=null] : (this_Division_0= ruleDivision ( () otherlv_2= '*' ( (lv_right_3_0= ruleDivision ) ) )* ) ;
+    public final EObject ruleMultiplication() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_2=null;
-        EObject this_Primary_0 = null;
+        EObject this_Division_0 = null;
 
         EObject lv_right_3_0 = null;
 
@@ -7036,77 +7218,77 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
             
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2946:28: ( (this_Primary_0= rulePrimary ( () otherlv_2= '/' ( (lv_right_3_0= rulePrimary ) ) )* ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2947:1: (this_Primary_0= rulePrimary ( () otherlv_2= '/' ( (lv_right_3_0= rulePrimary ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3042:28: ( (this_Division_0= ruleDivision ( () otherlv_2= '*' ( (lv_right_3_0= ruleDivision ) ) )* ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3043:1: (this_Division_0= ruleDivision ( () otherlv_2= '*' ( (lv_right_3_0= ruleDivision ) ) )* )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2947:1: (this_Primary_0= rulePrimary ( () otherlv_2= '/' ( (lv_right_3_0= rulePrimary ) ) )* )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2948:5: this_Primary_0= rulePrimary ( () otherlv_2= '/' ( (lv_right_3_0= rulePrimary ) ) )*
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3043:1: (this_Division_0= ruleDivision ( () otherlv_2= '*' ( (lv_right_3_0= ruleDivision ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3044:5: this_Division_0= ruleDivision ( () otherlv_2= '*' ( (lv_right_3_0= ruleDivision ) ) )*
             {
              
-                    newCompositeNode(grammarAccess.getDivisionAccess().getPrimaryParserRuleCall_0()); 
+                    newCompositeNode(grammarAccess.getMultiplicationAccess().getDivisionParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_rulePrimary_in_ruleDivision6359);
-            this_Primary_0=rulePrimary();
+            pushFollow(FOLLOW_ruleDivision_in_ruleMultiplication6494);
+            this_Division_0=ruleDivision();
 
             state._fsp--;
 
              
-                    current = this_Primary_0; 
+                    current = this_Division_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2956:1: ( () otherlv_2= '/' ( (lv_right_3_0= rulePrimary ) ) )*
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3052:1: ( () otherlv_2= '*' ( (lv_right_3_0= ruleDivision ) ) )*
             loop38:
             do {
                 int alt38=2;
                 int LA38_0 = input.LA(1);
 
-                if ( (LA38_0==39) ) {
+                if ( (LA38_0==24) ) {
                     alt38=1;
                 }
 
 
                 switch (alt38) {
             	case 1 :
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2956:2: () otherlv_2= '/' ( (lv_right_3_0= rulePrimary ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3052:2: () otherlv_2= '*' ( (lv_right_3_0= ruleDivision ) )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2956:2: ()
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2957:5: 
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3052:2: ()
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3053:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
-            	                grammarAccess.getDivisionAccess().getDivLeftAction_1_0(),
+            	                grammarAccess.getMultiplicationAccess().getMulLeftAction_1_0(),
             	                current);
             	        
 
             	    }
 
-            	    otherlv_2=(Token)match(input,39,FOLLOW_39_in_ruleDivision6380); 
+            	    otherlv_2=(Token)match(input,24,FOLLOW_24_in_ruleMultiplication6515); 
 
-            	        	newLeafNode(otherlv_2, grammarAccess.getDivisionAccess().getSolidusKeyword_1_1());
+            	        	newLeafNode(otherlv_2, grammarAccess.getMultiplicationAccess().getAsteriskKeyword_1_1());
             	        
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2966:1: ( (lv_right_3_0= rulePrimary ) )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2967:1: (lv_right_3_0= rulePrimary )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3062:1: ( (lv_right_3_0= ruleDivision ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3063:1: (lv_right_3_0= ruleDivision )
             	    {
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2967:1: (lv_right_3_0= rulePrimary )
-            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2968:3: lv_right_3_0= rulePrimary
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3063:1: (lv_right_3_0= ruleDivision )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3064:3: lv_right_3_0= ruleDivision
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getDivisionAccess().getRightPrimaryParserRuleCall_1_2_0()); 
+            	    	        newCompositeNode(grammarAccess.getMultiplicationAccess().getRightDivisionParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_rulePrimary_in_ruleDivision6401);
-            	    lv_right_3_0=rulePrimary();
+            	    pushFollow(FOLLOW_ruleDivision_in_ruleMultiplication6536);
+            	    lv_right_3_0=ruleDivision();
 
             	    state._fsp--;
 
 
             	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getDivisionRule());
+            	    	            current = createModelElementForParent(grammarAccess.getMultiplicationRule());
             	    	        }
             	           		set(
             	           			current, 
             	           			"right",
             	            		lv_right_3_0, 
-            	            		"Primary");
+            	            		"Division");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -7144,11 +7326,179 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
+    // $ANTLR end "ruleMultiplication"
+
+
+    // $ANTLR start "entryRuleDivision"
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3091:1: entryRuleDivision returns [EObject current=null] : iv_ruleDivision= ruleDivision EOF ;
+    public final EObject entryRuleDivision() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleDivision = null;
+
+
+         
+        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+        	
+        try {
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3095:2: (iv_ruleDivision= ruleDivision EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3096:2: iv_ruleDivision= ruleDivision EOF
+            {
+             newCompositeNode(grammarAccess.getDivisionRule()); 
+            pushFollow(FOLLOW_ruleDivision_in_entryRuleDivision6584);
+            iv_ruleDivision=ruleDivision();
+
+            state._fsp--;
+
+             current =iv_ruleDivision; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDivision6594); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleDivision"
+
+
+    // $ANTLR start "ruleDivision"
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3106:1: ruleDivision returns [EObject current=null] : (this_Primary_0= rulePrimary ( () otherlv_2= '/' ( (lv_right_3_0= rulePrimary ) ) )* ) ;
+    public final EObject ruleDivision() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_2=null;
+        EObject this_Primary_0 = null;
+
+        EObject lv_right_3_0 = null;
+
+
+         enterRule(); 
+        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+            
+        try {
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3110:28: ( (this_Primary_0= rulePrimary ( () otherlv_2= '/' ( (lv_right_3_0= rulePrimary ) ) )* ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3111:1: (this_Primary_0= rulePrimary ( () otherlv_2= '/' ( (lv_right_3_0= rulePrimary ) ) )* )
+            {
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3111:1: (this_Primary_0= rulePrimary ( () otherlv_2= '/' ( (lv_right_3_0= rulePrimary ) ) )* )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3112:5: this_Primary_0= rulePrimary ( () otherlv_2= '/' ( (lv_right_3_0= rulePrimary ) ) )*
+            {
+             
+                    newCompositeNode(grammarAccess.getDivisionAccess().getPrimaryParserRuleCall_0()); 
+                
+            pushFollow(FOLLOW_rulePrimary_in_ruleDivision6645);
+            this_Primary_0=rulePrimary();
+
+            state._fsp--;
+
+             
+                    current = this_Primary_0; 
+                    afterParserOrEnumRuleCall();
+                
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3120:1: ( () otherlv_2= '/' ( (lv_right_3_0= rulePrimary ) ) )*
+            loop39:
+            do {
+                int alt39=2;
+                int LA39_0 = input.LA(1);
+
+                if ( (LA39_0==39) ) {
+                    alt39=1;
+                }
+
+
+                switch (alt39) {
+            	case 1 :
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3120:2: () otherlv_2= '/' ( (lv_right_3_0= rulePrimary ) )
+            	    {
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3120:2: ()
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3121:5: 
+            	    {
+
+            	            current = forceCreateModelElementAndSet(
+            	                grammarAccess.getDivisionAccess().getDivLeftAction_1_0(),
+            	                current);
+            	        
+
+            	    }
+
+            	    otherlv_2=(Token)match(input,39,FOLLOW_39_in_ruleDivision6666); 
+
+            	        	newLeafNode(otherlv_2, grammarAccess.getDivisionAccess().getSolidusKeyword_1_1());
+            	        
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3130:1: ( (lv_right_3_0= rulePrimary ) )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3131:1: (lv_right_3_0= rulePrimary )
+            	    {
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3131:1: (lv_right_3_0= rulePrimary )
+            	    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3132:3: lv_right_3_0= rulePrimary
+            	    {
+            	     
+            	    	        newCompositeNode(grammarAccess.getDivisionAccess().getRightPrimaryParserRuleCall_1_2_0()); 
+            	    	    
+            	    pushFollow(FOLLOW_rulePrimary_in_ruleDivision6687);
+            	    lv_right_3_0=rulePrimary();
+
+            	    state._fsp--;
+
+
+            	    	        if (current==null) {
+            	    	            current = createModelElementForParent(grammarAccess.getDivisionRule());
+            	    	        }
+            	           		set(
+            	           			current, 
+            	           			"right",
+            	            		lv_right_3_0, 
+            	            		"Primary");
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop39;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return current;
+    }
     // $ANTLR end "ruleDivision"
 
 
     // $ANTLR start "entryRulePrimary"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2995:1: entryRulePrimary returns [EObject current=null] : iv_rulePrimary= rulePrimary EOF ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3159:1: entryRulePrimary returns [EObject current=null] : iv_rulePrimary= rulePrimary EOF ;
     public final EObject entryRulePrimary() throws RecognitionException {
         EObject current = null;
 
@@ -7159,17 +7509,17 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         	
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:2999:2: (iv_rulePrimary= rulePrimary EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3000:2: iv_rulePrimary= rulePrimary EOF
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3163:2: (iv_rulePrimary= rulePrimary EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3164:2: iv_rulePrimary= rulePrimary EOF
             {
              newCompositeNode(grammarAccess.getPrimaryRule()); 
-            pushFollow(FOLLOW_rulePrimary_in_entryRulePrimary6449);
+            pushFollow(FOLLOW_rulePrimary_in_entryRulePrimary6735);
             iv_rulePrimary=rulePrimary();
 
             state._fsp--;
 
              current =iv_rulePrimary; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePrimary6459); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePrimary6745); 
 
             }
 
@@ -7190,7 +7540,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePrimary"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3010:1: rulePrimary returns [EObject current=null] : ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) ) ) | this_Atomic_6= ruleAtomic ) ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3174:1: rulePrimary returns [EObject current=null] : ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) ) ) | this_Atomic_6= ruleAtomic ) ;
     public final EObject rulePrimary() throws RecognitionException {
         EObject current = null;
 
@@ -7208,20 +7558,20 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
             
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3014:28: ( ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) ) ) | this_Atomic_6= ruleAtomic ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3015:1: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) ) ) | this_Atomic_6= ruleAtomic )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3178:28: ( ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) ) ) | this_Atomic_6= ruleAtomic ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3179:1: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) ) ) | this_Atomic_6= ruleAtomic )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3015:1: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) ) ) | this_Atomic_6= ruleAtomic )
-            int alt39=3;
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3179:1: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) ) ) | this_Atomic_6= ruleAtomic )
+            int alt40=3;
             switch ( input.LA(1) ) {
             case 13:
                 {
-                alt39=1;
+                alt40=1;
                 }
                 break;
             case 40:
                 {
-                alt39=2;
+                alt40=2;
                 }
                 break;
             case RULE_LOWER:
@@ -7229,31 +7579,31 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
             case 41:
             case 42:
                 {
-                alt39=3;
+                alt40=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 39, 0, input);
+                    new NoViableAltException("", 40, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt39) {
+            switch (alt40) {
                 case 1 :
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3015:2: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3179:2: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3015:2: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3015:4: otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')'
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3179:2: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3179:4: otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')'
                     {
-                    otherlv_0=(Token)match(input,13,FOLLOW_13_in_rulePrimary6501); 
+                    otherlv_0=(Token)match(input,13,FOLLOW_13_in_rulePrimary6787); 
 
                         	newLeafNode(otherlv_0, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_0_0());
                         
                      
                             newCompositeNode(grammarAccess.getPrimaryAccess().getExpressionParserRuleCall_0_1()); 
                         
-                    pushFollow(FOLLOW_ruleExpression_in_rulePrimary6523);
+                    pushFollow(FOLLOW_ruleExpression_in_rulePrimary6809);
                     this_Expression_1=ruleExpression();
 
                     state._fsp--;
@@ -7262,7 +7612,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
                             current = this_Expression_1; 
                             afterParserOrEnumRuleCall();
                         
-                    otherlv_2=(Token)match(input,17,FOLLOW_17_in_rulePrimary6534); 
+                    otherlv_2=(Token)match(input,17,FOLLOW_17_in_rulePrimary6820); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getPrimaryAccess().getRightParenthesisKeyword_0_2());
                         
@@ -7273,13 +7623,13 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3033:6: ( () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3197:6: ( () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) ) )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3033:6: ( () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) ) )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3033:7: () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3197:6: ( () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3197:7: () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3033:7: ()
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3034:5: 
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3197:7: ()
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3198:5: 
                     {
 
                             current = forceCreateModelElement(
@@ -7289,20 +7639,20 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_4=(Token)match(input,40,FOLLOW_40_in_rulePrimary6563); 
+                    otherlv_4=(Token)match(input,40,FOLLOW_40_in_rulePrimary6849); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getPrimaryAccess().getExclamationMarkKeyword_1_1());
                         
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3043:1: ( (lv_expression_5_0= rulePrimary ) )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3044:1: (lv_expression_5_0= rulePrimary )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3207:1: ( (lv_expression_5_0= rulePrimary ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3208:1: (lv_expression_5_0= rulePrimary )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3044:1: (lv_expression_5_0= rulePrimary )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3045:3: lv_expression_5_0= rulePrimary
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3208:1: (lv_expression_5_0= rulePrimary )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3209:3: lv_expression_5_0= rulePrimary
                     {
                      
                     	        newCompositeNode(grammarAccess.getPrimaryAccess().getExpressionPrimaryParserRuleCall_1_2_0()); 
                     	    
-                    pushFollow(FOLLOW_rulePrimary_in_rulePrimary6584);
+                    pushFollow(FOLLOW_rulePrimary_in_rulePrimary6870);
                     lv_expression_5_0=rulePrimary();
 
                     state._fsp--;
@@ -7331,12 +7681,12 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3063:5: this_Atomic_6= ruleAtomic
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3227:5: this_Atomic_6= ruleAtomic
                     {
                      
                             newCompositeNode(grammarAccess.getPrimaryAccess().getAtomicParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleAtomic_in_rulePrimary6613);
+                    pushFollow(FOLLOW_ruleAtomic_in_rulePrimary6899);
                     this_Atomic_6=ruleAtomic();
 
                     state._fsp--;
@@ -7372,7 +7722,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAtomic"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3082:1: entryRuleAtomic returns [EObject current=null] : iv_ruleAtomic= ruleAtomic EOF ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3246:1: entryRuleAtomic returns [EObject current=null] : iv_ruleAtomic= ruleAtomic EOF ;
     public final EObject entryRuleAtomic() throws RecognitionException {
         EObject current = null;
 
@@ -7383,17 +7733,17 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         	
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3086:2: (iv_ruleAtomic= ruleAtomic EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3087:2: iv_ruleAtomic= ruleAtomic EOF
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3250:2: (iv_ruleAtomic= ruleAtomic EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3251:2: iv_ruleAtomic= ruleAtomic EOF
             {
              newCompositeNode(grammarAccess.getAtomicRule()); 
-            pushFollow(FOLLOW_ruleAtomic_in_entryRuleAtomic6658);
+            pushFollow(FOLLOW_ruleAtomic_in_entryRuleAtomic6944);
             iv_ruleAtomic=ruleAtomic();
 
             state._fsp--;
 
              current =iv_ruleAtomic; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAtomic6668); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAtomic6954); 
 
             }
 
@@ -7414,7 +7764,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAtomic"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3097:1: ruleAtomic returns [EObject current=null] : ( ( () ( (lv_value_1_0= ruleDouble ) ) ) | ( () ( ( (lv_value_3_1= 'true' | lv_value_3_2= 'false' ) ) ) ) | ( () ( (otherlv_5= RULE_LOWER ) ) ) ) ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3261:1: ruleAtomic returns [EObject current=null] : ( ( () ( (lv_value_1_0= ruleDouble ) ) ) | ( () ( ( (lv_value_3_1= 'true' | lv_value_3_2= 'false' ) ) ) ) | ( () ( (otherlv_5= RULE_LOWER ) ) ) ) ;
     public final EObject ruleAtomic() throws RecognitionException {
         EObject current = null;
 
@@ -7428,44 +7778,44 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
             
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3101:28: ( ( ( () ( (lv_value_1_0= ruleDouble ) ) ) | ( () ( ( (lv_value_3_1= 'true' | lv_value_3_2= 'false' ) ) ) ) | ( () ( (otherlv_5= RULE_LOWER ) ) ) ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3102:1: ( ( () ( (lv_value_1_0= ruleDouble ) ) ) | ( () ( ( (lv_value_3_1= 'true' | lv_value_3_2= 'false' ) ) ) ) | ( () ( (otherlv_5= RULE_LOWER ) ) ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3265:28: ( ( ( () ( (lv_value_1_0= ruleDouble ) ) ) | ( () ( ( (lv_value_3_1= 'true' | lv_value_3_2= 'false' ) ) ) ) | ( () ( (otherlv_5= RULE_LOWER ) ) ) ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3266:1: ( ( () ( (lv_value_1_0= ruleDouble ) ) ) | ( () ( ( (lv_value_3_1= 'true' | lv_value_3_2= 'false' ) ) ) ) | ( () ( (otherlv_5= RULE_LOWER ) ) ) )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3102:1: ( ( () ( (lv_value_1_0= ruleDouble ) ) ) | ( () ( ( (lv_value_3_1= 'true' | lv_value_3_2= 'false' ) ) ) ) | ( () ( (otherlv_5= RULE_LOWER ) ) ) )
-            int alt41=3;
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3266:1: ( ( () ( (lv_value_1_0= ruleDouble ) ) ) | ( () ( ( (lv_value_3_1= 'true' | lv_value_3_2= 'false' ) ) ) ) | ( () ( (otherlv_5= RULE_LOWER ) ) ) )
+            int alt42=3;
             switch ( input.LA(1) ) {
             case RULE_INT:
                 {
-                alt41=1;
+                alt42=1;
                 }
                 break;
             case 41:
             case 42:
                 {
-                alt41=2;
+                alt42=2;
                 }
                 break;
             case RULE_LOWER:
                 {
-                alt41=3;
+                alt42=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 41, 0, input);
+                    new NoViableAltException("", 42, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt41) {
+            switch (alt42) {
                 case 1 :
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3102:2: ( () ( (lv_value_1_0= ruleDouble ) ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3266:2: ( () ( (lv_value_1_0= ruleDouble ) ) )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3102:2: ( () ( (lv_value_1_0= ruleDouble ) ) )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3102:3: () ( (lv_value_1_0= ruleDouble ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3266:2: ( () ( (lv_value_1_0= ruleDouble ) ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3266:3: () ( (lv_value_1_0= ruleDouble ) )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3102:3: ()
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3103:5: 
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3266:3: ()
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3267:5: 
                     {
 
                             current = forceCreateModelElement(
@@ -7475,16 +7825,16 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3108:2: ( (lv_value_1_0= ruleDouble ) )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3109:1: (lv_value_1_0= ruleDouble )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3272:2: ( (lv_value_1_0= ruleDouble ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3273:1: (lv_value_1_0= ruleDouble )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3109:1: (lv_value_1_0= ruleDouble )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3110:3: lv_value_1_0= ruleDouble
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3273:1: (lv_value_1_0= ruleDouble )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3274:3: lv_value_1_0= ruleDouble
                     {
                      
                     	        newCompositeNode(grammarAccess.getAtomicAccess().getValueDoubleParserRuleCall_0_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleDouble_in_ruleAtomic6728);
+                    pushFollow(FOLLOW_ruleDouble_in_ruleAtomic7014);
                     lv_value_1_0=ruleDouble();
 
                     state._fsp--;
@@ -7513,13 +7863,13 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3127:6: ( () ( ( (lv_value_3_1= 'true' | lv_value_3_2= 'false' ) ) ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3291:6: ( () ( ( (lv_value_3_1= 'true' | lv_value_3_2= 'false' ) ) ) )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3127:6: ( () ( ( (lv_value_3_1= 'true' | lv_value_3_2= 'false' ) ) ) )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3127:7: () ( ( (lv_value_3_1= 'true' | lv_value_3_2= 'false' ) ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3291:6: ( () ( ( (lv_value_3_1= 'true' | lv_value_3_2= 'false' ) ) ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3291:7: () ( ( (lv_value_3_1= 'true' | lv_value_3_2= 'false' ) ) )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3127:7: ()
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3128:5: 
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3291:7: ()
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3292:5: 
                     {
 
                             current = forceCreateModelElement(
@@ -7529,33 +7879,33 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3133:2: ( ( (lv_value_3_1= 'true' | lv_value_3_2= 'false' ) ) )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3134:1: ( (lv_value_3_1= 'true' | lv_value_3_2= 'false' ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3297:2: ( ( (lv_value_3_1= 'true' | lv_value_3_2= 'false' ) ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3298:1: ( (lv_value_3_1= 'true' | lv_value_3_2= 'false' ) )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3134:1: ( (lv_value_3_1= 'true' | lv_value_3_2= 'false' ) )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3135:1: (lv_value_3_1= 'true' | lv_value_3_2= 'false' )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3298:1: ( (lv_value_3_1= 'true' | lv_value_3_2= 'false' ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3299:1: (lv_value_3_1= 'true' | lv_value_3_2= 'false' )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3135:1: (lv_value_3_1= 'true' | lv_value_3_2= 'false' )
-                    int alt40=2;
-                    int LA40_0 = input.LA(1);
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3299:1: (lv_value_3_1= 'true' | lv_value_3_2= 'false' )
+                    int alt41=2;
+                    int LA41_0 = input.LA(1);
 
-                    if ( (LA40_0==41) ) {
-                        alt40=1;
+                    if ( (LA41_0==41) ) {
+                        alt41=1;
                     }
-                    else if ( (LA40_0==42) ) {
-                        alt40=2;
+                    else if ( (LA41_0==42) ) {
+                        alt41=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 40, 0, input);
+                            new NoViableAltException("", 41, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt40) {
+                    switch (alt41) {
                         case 1 :
-                            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3136:3: lv_value_3_1= 'true'
+                            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3300:3: lv_value_3_1= 'true'
                             {
-                            lv_value_3_1=(Token)match(input,41,FOLLOW_41_in_ruleAtomic6765); 
+                            lv_value_3_1=(Token)match(input,41,FOLLOW_41_in_ruleAtomic7051); 
 
                                     newLeafNode(lv_value_3_1, grammarAccess.getAtomicAccess().getValueTrueKeyword_1_1_0_0());
                                 
@@ -7569,9 +7919,9 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3148:8: lv_value_3_2= 'false'
+                            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3312:8: lv_value_3_2= 'false'
                             {
-                            lv_value_3_2=(Token)match(input,42,FOLLOW_42_in_ruleAtomic6794); 
+                            lv_value_3_2=(Token)match(input,42,FOLLOW_42_in_ruleAtomic7080); 
 
                                     newLeafNode(lv_value_3_2, grammarAccess.getAtomicAccess().getValueFalseKeyword_1_1_0_1());
                                 
@@ -7600,13 +7950,13 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3164:6: ( () ( (otherlv_5= RULE_LOWER ) ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3328:6: ( () ( (otherlv_5= RULE_LOWER ) ) )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3164:6: ( () ( (otherlv_5= RULE_LOWER ) ) )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3164:7: () ( (otherlv_5= RULE_LOWER ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3328:6: ( () ( (otherlv_5= RULE_LOWER ) ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3328:7: () ( (otherlv_5= RULE_LOWER ) )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3164:7: ()
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3165:5: 
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3328:7: ()
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3329:5: 
                     {
 
                             current = forceCreateModelElement(
@@ -7616,18 +7966,18 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3170:2: ( (otherlv_5= RULE_LOWER ) )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3171:1: (otherlv_5= RULE_LOWER )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3334:2: ( (otherlv_5= RULE_LOWER ) )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3335:1: (otherlv_5= RULE_LOWER )
                     {
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3171:1: (otherlv_5= RULE_LOWER )
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3172:3: otherlv_5= RULE_LOWER
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3335:1: (otherlv_5= RULE_LOWER )
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3336:3: otherlv_5= RULE_LOWER
                     {
 
                     			if (current==null) {
                     	            current = createModelElement(grammarAccess.getAtomicRule());
                     	        }
                             
-                    otherlv_5=(Token)match(input,RULE_LOWER,FOLLOW_RULE_LOWER_in_ruleAtomic6847); 
+                    otherlv_5=(Token)match(input,RULE_LOWER,FOLLOW_RULE_LOWER_in_ruleAtomic7133); 
 
                     		newLeafNode(otherlv_5, grammarAccess.getAtomicAccess().getValueStoreCrossReference_2_1_0()); 
                     	
@@ -7667,7 +8017,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDouble"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3194:1: entryRuleDouble returns [String current=null] : iv_ruleDouble= ruleDouble EOF ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3358:1: entryRuleDouble returns [String current=null] : iv_ruleDouble= ruleDouble EOF ;
     public final String entryRuleDouble() throws RecognitionException {
         String current = null;
 
@@ -7675,17 +8025,17 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3195:2: (iv_ruleDouble= ruleDouble EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3196:2: iv_ruleDouble= ruleDouble EOF
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3359:2: (iv_ruleDouble= ruleDouble EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3360:2: iv_ruleDouble= ruleDouble EOF
             {
              newCompositeNode(grammarAccess.getDoubleRule()); 
-            pushFollow(FOLLOW_ruleDouble_in_entryRuleDouble6889);
+            pushFollow(FOLLOW_ruleDouble_in_entryRuleDouble7175);
             iv_ruleDouble=ruleDouble();
 
             state._fsp--;
 
              current =iv_ruleDouble.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDouble6900); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDouble7186); 
 
             }
 
@@ -7703,7 +8053,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDouble"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3203:1: ruleDouble returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT (kw= 'e' | (kw= 'E' (kw= '-' )? this_INT_6= RULE_INT ) )? )? ) ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3367:1: ruleDouble returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT (kw= 'e' | (kw= 'E' (kw= '-' )? this_INT_6= RULE_INT ) )? )? ) ;
     public final AntlrDatatypeRuleToken ruleDouble() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -7715,57 +8065,57 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3206:28: ( (this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT (kw= 'e' | (kw= 'E' (kw= '-' )? this_INT_6= RULE_INT ) )? )? ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3207:1: (this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT (kw= 'e' | (kw= 'E' (kw= '-' )? this_INT_6= RULE_INT ) )? )? )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3370:28: ( (this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT (kw= 'e' | (kw= 'E' (kw= '-' )? this_INT_6= RULE_INT ) )? )? ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3371:1: (this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT (kw= 'e' | (kw= 'E' (kw= '-' )? this_INT_6= RULE_INT ) )? )? )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3207:1: (this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT (kw= 'e' | (kw= 'E' (kw= '-' )? this_INT_6= RULE_INT ) )? )? )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3207:6: this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT (kw= 'e' | (kw= 'E' (kw= '-' )? this_INT_6= RULE_INT ) )? )?
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3371:1: (this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT (kw= 'e' | (kw= 'E' (kw= '-' )? this_INT_6= RULE_INT ) )? )? )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3371:6: this_INT_0= RULE_INT (kw= '.' this_INT_2= RULE_INT (kw= 'e' | (kw= 'E' (kw= '-' )? this_INT_6= RULE_INT ) )? )?
             {
-            this_INT_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleDouble6940); 
+            this_INT_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleDouble7226); 
 
             		current.merge(this_INT_0);
                 
              
                 newLeafNode(this_INT_0, grammarAccess.getDoubleAccess().getINTTerminalRuleCall_0()); 
                 
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3214:1: (kw= '.' this_INT_2= RULE_INT (kw= 'e' | (kw= 'E' (kw= '-' )? this_INT_6= RULE_INT ) )? )?
-            int alt44=2;
-            int LA44_0 = input.LA(1);
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3378:1: (kw= '.' this_INT_2= RULE_INT (kw= 'e' | (kw= 'E' (kw= '-' )? this_INT_6= RULE_INT ) )? )?
+            int alt45=2;
+            int LA45_0 = input.LA(1);
 
-            if ( (LA44_0==25) ) {
-                alt44=1;
+            if ( (LA45_0==25) ) {
+                alt45=1;
             }
-            switch (alt44) {
+            switch (alt45) {
                 case 1 :
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3215:2: kw= '.' this_INT_2= RULE_INT (kw= 'e' | (kw= 'E' (kw= '-' )? this_INT_6= RULE_INT ) )?
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3379:2: kw= '.' this_INT_2= RULE_INT (kw= 'e' | (kw= 'E' (kw= '-' )? this_INT_6= RULE_INT ) )?
                     {
-                    kw=(Token)match(input,25,FOLLOW_25_in_ruleDouble6959); 
+                    kw=(Token)match(input,25,FOLLOW_25_in_ruleDouble7245); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getDoubleAccess().getFullStopKeyword_1_0()); 
                         
-                    this_INT_2=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleDouble6974); 
+                    this_INT_2=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleDouble7260); 
 
                     		current.merge(this_INT_2);
                         
                      
                         newLeafNode(this_INT_2, grammarAccess.getDoubleAccess().getINTTerminalRuleCall_1_1()); 
                         
-                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3227:1: (kw= 'e' | (kw= 'E' (kw= '-' )? this_INT_6= RULE_INT ) )?
-                    int alt43=3;
-                    int LA43_0 = input.LA(1);
+                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3391:1: (kw= 'e' | (kw= 'E' (kw= '-' )? this_INT_6= RULE_INT ) )?
+                    int alt44=3;
+                    int LA44_0 = input.LA(1);
 
-                    if ( (LA43_0==43) ) {
-                        alt43=1;
+                    if ( (LA44_0==43) ) {
+                        alt44=1;
                     }
-                    else if ( (LA43_0==44) ) {
-                        alt43=2;
+                    else if ( (LA44_0==44) ) {
+                        alt44=2;
                     }
-                    switch (alt43) {
+                    switch (alt44) {
                         case 1 :
-                            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3228:2: kw= 'e'
+                            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3392:2: kw= 'e'
                             {
-                            kw=(Token)match(input,43,FOLLOW_43_in_ruleDouble6993); 
+                            kw=(Token)match(input,43,FOLLOW_43_in_ruleDouble7279); 
 
                                     current.merge(kw);
                                     newLeafNode(kw, grammarAccess.getDoubleAccess().getEKeyword_1_2_0()); 
@@ -7774,28 +8124,28 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3234:6: (kw= 'E' (kw= '-' )? this_INT_6= RULE_INT )
+                            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3398:6: (kw= 'E' (kw= '-' )? this_INT_6= RULE_INT )
                             {
-                            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3234:6: (kw= 'E' (kw= '-' )? this_INT_6= RULE_INT )
-                            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3235:2: kw= 'E' (kw= '-' )? this_INT_6= RULE_INT
+                            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3398:6: (kw= 'E' (kw= '-' )? this_INT_6= RULE_INT )
+                            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3399:2: kw= 'E' (kw= '-' )? this_INT_6= RULE_INT
                             {
-                            kw=(Token)match(input,44,FOLLOW_44_in_ruleDouble7013); 
+                            kw=(Token)match(input,44,FOLLOW_44_in_ruleDouble7299); 
 
                                     current.merge(kw);
                                     newLeafNode(kw, grammarAccess.getDoubleAccess().getEKeyword_1_2_1_0()); 
                                 
-                            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3240:1: (kw= '-' )?
-                            int alt42=2;
-                            int LA42_0 = input.LA(1);
+                            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3404:1: (kw= '-' )?
+                            int alt43=2;
+                            int LA43_0 = input.LA(1);
 
-                            if ( (LA42_0==38) ) {
-                                alt42=1;
+                            if ( (LA43_0==38) ) {
+                                alt43=1;
                             }
-                            switch (alt42) {
+                            switch (alt43) {
                                 case 1 :
-                                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3241:2: kw= '-'
+                                    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3405:2: kw= '-'
                                     {
-                                    kw=(Token)match(input,38,FOLLOW_38_in_ruleDouble7027); 
+                                    kw=(Token)match(input,38,FOLLOW_38_in_ruleDouble7313); 
 
                                             current.merge(kw);
                                             newLeafNode(kw, grammarAccess.getDoubleAccess().getHyphenMinusKeyword_1_2_1_1()); 
@@ -7806,7 +8156,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
                             }
 
-                            this_INT_6=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleDouble7044); 
+                            this_INT_6=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleDouble7330); 
 
                             		current.merge(this_INT_6);
                                 
@@ -7849,7 +8199,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFreeVariable"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3261:1: entryRuleFreeVariable returns [String current=null] : iv_ruleFreeVariable= ruleFreeVariable EOF ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3425:1: entryRuleFreeVariable returns [String current=null] : iv_ruleFreeVariable= ruleFreeVariable EOF ;
     public final String entryRuleFreeVariable() throws RecognitionException {
         String current = null;
 
@@ -7857,17 +8207,17 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3262:2: (iv_ruleFreeVariable= ruleFreeVariable EOF )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3263:2: iv_ruleFreeVariable= ruleFreeVariable EOF
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3426:2: (iv_ruleFreeVariable= ruleFreeVariable EOF )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3427:2: iv_ruleFreeVariable= ruleFreeVariable EOF
             {
              newCompositeNode(grammarAccess.getFreeVariableRule()); 
-            pushFollow(FOLLOW_ruleFreeVariable_in_entryRuleFreeVariable7095);
+            pushFollow(FOLLOW_ruleFreeVariable_in_entryRuleFreeVariable7381);
             iv_ruleFreeVariable=ruleFreeVariable();
 
             state._fsp--;
 
              current =iv_ruleFreeVariable.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFreeVariable7106); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFreeVariable7392); 
 
             }
 
@@ -7885,7 +8235,7 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFreeVariable"
-    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3270:1: ruleFreeVariable returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '$' this_LOWER_1= RULE_LOWER ) ;
+    // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3434:1: ruleFreeVariable returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '$' this_LOWER_1= RULE_LOWER ) ;
     public final AntlrDatatypeRuleToken ruleFreeVariable() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -7895,18 +8245,18 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3273:28: ( (kw= '$' this_LOWER_1= RULE_LOWER ) )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3274:1: (kw= '$' this_LOWER_1= RULE_LOWER )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3437:28: ( (kw= '$' this_LOWER_1= RULE_LOWER ) )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3438:1: (kw= '$' this_LOWER_1= RULE_LOWER )
             {
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3274:1: (kw= '$' this_LOWER_1= RULE_LOWER )
-            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3275:2: kw= '$' this_LOWER_1= RULE_LOWER
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3438:1: (kw= '$' this_LOWER_1= RULE_LOWER )
+            // ../com.blasedef.onpa.ONPA/src-gen/com/blasedef/onpa/parser/antlr/internal/InternalONPA.g:3439:2: kw= '$' this_LOWER_1= RULE_LOWER
             {
-            kw=(Token)match(input,45,FOLLOW_45_in_ruleFreeVariable7144); 
+            kw=(Token)match(input,45,FOLLOW_45_in_ruleFreeVariable7430); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getFreeVariableAccess().getDollarSignKeyword_0()); 
                 
-            this_LOWER_1=(Token)match(input,RULE_LOWER,FOLLOW_RULE_LOWER_in_ruleFreeVariable7159); 
+            this_LOWER_1=(Token)match(input,RULE_LOWER,FOLLOW_RULE_LOWER_in_ruleFreeVariable7445); 
 
             		current.merge(this_LOWER_1);
                 
@@ -8002,11 +8352,11 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_27_in_rulePredicate1865 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEvaluations_in_entryRuleEvaluations1911 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleEvaluations1921 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_ruleEvaluations1963 = new BitSet(new long[]{0x0000270000002060L});
-    public static final BitSet FOLLOW_ruleEvaluationExpression_in_ruleEvaluations1993 = new BitSet(new long[]{0x0000270000022060L});
+    public static final BitSet FOLLOW_13_in_ruleEvaluations1963 = new BitSet(new long[]{0x0000000080000020L});
+    public static final BitSet FOLLOW_ruleEvaluationExpressionIn_in_ruleEvaluations1993 = new BitSet(new long[]{0x0000000080020020L});
     public static final BitSet FOLLOW_17_in_ruleEvaluations2006 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_ruleEvaluations2026 = new BitSet(new long[]{0x0000270000002060L});
-    public static final BitSet FOLLOW_ruleEvaluationExpression_in_ruleEvaluations2056 = new BitSet(new long[]{0x0000270020002060L});
+    public static final BitSet FOLLOW_28_in_ruleEvaluations2026 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_ruleEvaluationExpressionOut_in_ruleEvaluations2056 = new BitSet(new long[]{0x0000200020000000L});
     public static final BitSet FOLLOW_29_in_ruleEvaluations2069 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleUpdates_in_entryRuleUpdates2116 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleUpdates2126 = new BitSet(new long[]{0x0000000000000002L});
@@ -8017,165 +8367,177 @@ public class InternalONPAParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_EOF_in_entryRulePredicateExpression2266 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleActionExpression_in_rulePredicateExpression2316 = new BitSet(new long[]{0x0000000000040000L});
     public static final BitSet FOLLOW_18_in_rulePredicateExpression2328 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEvaluationExpression_in_entryRuleEvaluationExpression2374 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEvaluationExpression2384 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActionExpression_in_ruleEvaluationExpression2435 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleEvaluationExpression2446 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUpdateExpression_in_entryRuleUpdateExpression2492 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleUpdateExpression2502 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSelfReferencedStore_in_ruleUpdateExpression2562 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_30_in_ruleUpdateExpression2574 = new BitSet(new long[]{0x0000270000002060L});
-    public static final BitSet FOLLOW_ruleActionExpression_in_ruleUpdateExpression2595 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleUpdateExpression2607 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_LOWER_in_ruleUpdateExpression2644 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_30_in_ruleUpdateExpression2656 = new BitSet(new long[]{0x0000270000002060L});
-    public static final BitSet FOLLOW_ruleActionExpression_in_ruleUpdateExpression2677 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleUpdateExpression2689 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSelfReferencedStore_in_entryRuleSelfReferencedStore2736 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSelfReferencedStore2746 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_ruleSelfReferencedStore2796 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_LOWER_in_ruleSelfReferencedStore2816 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActionExpression_in_entryRuleActionExpression2862 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleActionExpression2872 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActionOr_in_ruleActionExpression2922 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActionOr_in_entryRuleActionOr2966 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleActionOr2976 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActionAnd_in_ruleActionOr3027 = new BitSet(new long[]{0x0000000100000002L});
-    public static final BitSet FOLLOW_32_in_ruleActionOr3048 = new BitSet(new long[]{0x0000270000002060L});
-    public static final BitSet FOLLOW_ruleActionAnd_in_ruleActionOr3069 = new BitSet(new long[]{0x0000000100000002L});
-    public static final BitSet FOLLOW_ruleActionAnd_in_entryRuleActionAnd3117 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleActionAnd3127 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActionEquality_in_ruleActionAnd3178 = new BitSet(new long[]{0x0000000200000002L});
-    public static final BitSet FOLLOW_33_in_ruleActionAnd3199 = new BitSet(new long[]{0x0000270000002060L});
-    public static final BitSet FOLLOW_ruleActionEquality_in_ruleActionAnd3220 = new BitSet(new long[]{0x0000000200000002L});
-    public static final BitSet FOLLOW_ruleActionEquality_in_entryRuleActionEquality3268 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleActionEquality3278 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActionComparison_in_ruleActionEquality3329 = new BitSet(new long[]{0x0000000C00000002L});
-    public static final BitSet FOLLOW_34_in_ruleActionEquality3358 = new BitSet(new long[]{0x0000270000002060L});
-    public static final BitSet FOLLOW_35_in_ruleActionEquality3387 = new BitSet(new long[]{0x0000270000002060L});
-    public static final BitSet FOLLOW_ruleActionComparison_in_ruleActionEquality3424 = new BitSet(new long[]{0x0000000C00000002L});
-    public static final BitSet FOLLOW_ruleActionComparison_in_entryRuleActionComparison3472 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleActionComparison3482 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActionSubtraction_in_ruleActionComparison3533 = new BitSet(new long[]{0x0000003030000002L});
-    public static final BitSet FOLLOW_36_in_ruleActionComparison3562 = new BitSet(new long[]{0x0000270000002060L});
-    public static final BitSet FOLLOW_37_in_ruleActionComparison3591 = new BitSet(new long[]{0x0000270000002060L});
-    public static final BitSet FOLLOW_29_in_ruleActionComparison3620 = new BitSet(new long[]{0x0000270000002060L});
-    public static final BitSet FOLLOW_28_in_ruleActionComparison3649 = new BitSet(new long[]{0x0000270000002060L});
-    public static final BitSet FOLLOW_ruleActionSubtraction_in_ruleActionComparison3686 = new BitSet(new long[]{0x0000003030000002L});
-    public static final BitSet FOLLOW_ruleActionSubtraction_in_entryRuleActionSubtraction3734 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleActionSubtraction3744 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActionAddition_in_ruleActionSubtraction3795 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_38_in_ruleActionSubtraction3816 = new BitSet(new long[]{0x0000270000002060L});
-    public static final BitSet FOLLOW_ruleActionAddition_in_ruleActionSubtraction3837 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_ruleActionAddition_in_entryRuleActionAddition3885 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleActionAddition3895 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActionMultiplication_in_ruleActionAddition3946 = new BitSet(new long[]{0x0000000000200002L});
-    public static final BitSet FOLLOW_21_in_ruleActionAddition3967 = new BitSet(new long[]{0x0000270000002060L});
-    public static final BitSet FOLLOW_ruleActionMultiplication_in_ruleActionAddition3988 = new BitSet(new long[]{0x0000000000200002L});
-    public static final BitSet FOLLOW_ruleActionMultiplication_in_entryRuleActionMultiplication4036 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleActionMultiplication4046 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActionDivision_in_ruleActionMultiplication4097 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_24_in_ruleActionMultiplication4118 = new BitSet(new long[]{0x0000270000002060L});
-    public static final BitSet FOLLOW_ruleActionDivision_in_ruleActionMultiplication4139 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_ruleActionDivision_in_entryRuleActionDivision4187 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleActionDivision4197 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActionPrimary_in_ruleActionDivision4248 = new BitSet(new long[]{0x0000008000000002L});
-    public static final BitSet FOLLOW_39_in_ruleActionDivision4269 = new BitSet(new long[]{0x0000270000002060L});
-    public static final BitSet FOLLOW_ruleActionPrimary_in_ruleActionDivision4290 = new BitSet(new long[]{0x0000008000000002L});
-    public static final BitSet FOLLOW_ruleActionPrimary_in_entryRuleActionPrimary4338 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleActionPrimary4348 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_ruleActionPrimary4390 = new BitSet(new long[]{0x0000270000002060L});
-    public static final BitSet FOLLOW_ruleActionExpression_in_ruleActionPrimary4412 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleActionPrimary4423 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleActionPrimary4452 = new BitSet(new long[]{0x0000270000002060L});
-    public static final BitSet FOLLOW_ruleActionPrimary_in_ruleActionPrimary4473 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActionAtomic_in_ruleActionPrimary4502 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActionAtomic_in_entryRuleActionAtomic4547 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleActionAtomic4557 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDouble_in_ruleActionAtomic4617 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFreeVariable_in_ruleActionAtomic4655 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_ruleActionAtomic4692 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_ruleActionAtomic4721 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_LOWER_in_ruleActionAtomic4774 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStore_in_entryRuleStore4821 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStore4831 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_LOWER_in_ruleStore4877 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleStore4894 = new BitSet(new long[]{0x0000070000002060L});
-    public static final BitSet FOLLOW_ruleExpression_in_ruleStore4915 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleStore4927 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpression_in_entryRuleExpression4973 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExpression4983 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOr_in_ruleExpression5033 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOr_in_entryRuleOr5077 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOr5087 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAnd_in_ruleOr5138 = new BitSet(new long[]{0x0000000100000002L});
-    public static final BitSet FOLLOW_32_in_ruleOr5159 = new BitSet(new long[]{0x0000070000002060L});
-    public static final BitSet FOLLOW_ruleAnd_in_ruleOr5180 = new BitSet(new long[]{0x0000000100000002L});
-    public static final BitSet FOLLOW_ruleAnd_in_entryRuleAnd5228 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAnd5238 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEquality_in_ruleAnd5289 = new BitSet(new long[]{0x0000000200000002L});
-    public static final BitSet FOLLOW_33_in_ruleAnd5310 = new BitSet(new long[]{0x0000070000002060L});
-    public static final BitSet FOLLOW_ruleEquality_in_ruleAnd5331 = new BitSet(new long[]{0x0000000200000002L});
-    public static final BitSet FOLLOW_ruleEquality_in_entryRuleEquality5379 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEquality5389 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleComparison_in_ruleEquality5440 = new BitSet(new long[]{0x0000000C00000002L});
-    public static final BitSet FOLLOW_34_in_ruleEquality5469 = new BitSet(new long[]{0x0000070000002060L});
-    public static final BitSet FOLLOW_35_in_ruleEquality5498 = new BitSet(new long[]{0x0000070000002060L});
-    public static final BitSet FOLLOW_ruleComparison_in_ruleEquality5535 = new BitSet(new long[]{0x0000000C00000002L});
-    public static final BitSet FOLLOW_ruleComparison_in_entryRuleComparison5583 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleComparison5593 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSubtraction_in_ruleComparison5644 = new BitSet(new long[]{0x0000003030000002L});
-    public static final BitSet FOLLOW_36_in_ruleComparison5673 = new BitSet(new long[]{0x0000070000002060L});
-    public static final BitSet FOLLOW_37_in_ruleComparison5702 = new BitSet(new long[]{0x0000070000002060L});
-    public static final BitSet FOLLOW_29_in_ruleComparison5731 = new BitSet(new long[]{0x0000070000002060L});
-    public static final BitSet FOLLOW_28_in_ruleComparison5760 = new BitSet(new long[]{0x0000070000002060L});
-    public static final BitSet FOLLOW_ruleSubtraction_in_ruleComparison5797 = new BitSet(new long[]{0x0000003030000002L});
-    public static final BitSet FOLLOW_ruleSubtraction_in_entryRuleSubtraction5845 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSubtraction5855 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAddition_in_ruleSubtraction5906 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_38_in_ruleSubtraction5927 = new BitSet(new long[]{0x0000070000002060L});
-    public static final BitSet FOLLOW_ruleAddition_in_ruleSubtraction5948 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_ruleAddition_in_entryRuleAddition5996 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAddition6006 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMultiplication_in_ruleAddition6057 = new BitSet(new long[]{0x0000000000200002L});
-    public static final BitSet FOLLOW_21_in_ruleAddition6078 = new BitSet(new long[]{0x0000070000002060L});
-    public static final BitSet FOLLOW_ruleMultiplication_in_ruleAddition6099 = new BitSet(new long[]{0x0000000000200002L});
-    public static final BitSet FOLLOW_ruleMultiplication_in_entryRuleMultiplication6147 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMultiplication6157 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDivision_in_ruleMultiplication6208 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_24_in_ruleMultiplication6229 = new BitSet(new long[]{0x0000070000002060L});
-    public static final BitSet FOLLOW_ruleDivision_in_ruleMultiplication6250 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_ruleDivision_in_entryRuleDivision6298 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDivision6308 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePrimary_in_ruleDivision6359 = new BitSet(new long[]{0x0000008000000002L});
-    public static final BitSet FOLLOW_39_in_ruleDivision6380 = new BitSet(new long[]{0x0000070000002060L});
-    public static final BitSet FOLLOW_rulePrimary_in_ruleDivision6401 = new BitSet(new long[]{0x0000008000000002L});
-    public static final BitSet FOLLOW_rulePrimary_in_entryRulePrimary6449 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePrimary6459 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_rulePrimary6501 = new BitSet(new long[]{0x0000070000002060L});
-    public static final BitSet FOLLOW_ruleExpression_in_rulePrimary6523 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_rulePrimary6534 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_rulePrimary6563 = new BitSet(new long[]{0x0000070000002060L});
-    public static final BitSet FOLLOW_rulePrimary_in_rulePrimary6584 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtomic_in_rulePrimary6613 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtomic_in_entryRuleAtomic6658 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAtomic6668 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDouble_in_ruleAtomic6728 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_ruleAtomic6765 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_ruleAtomic6794 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_LOWER_in_ruleAtomic6847 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDouble_in_entryRuleDouble6889 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDouble6900 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleDouble6940 = new BitSet(new long[]{0x0000000002000002L});
-    public static final BitSet FOLLOW_25_in_ruleDouble6959 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleDouble6974 = new BitSet(new long[]{0x0000180000000002L});
-    public static final BitSet FOLLOW_43_in_ruleDouble6993 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_ruleDouble7013 = new BitSet(new long[]{0x0000004000000040L});
-    public static final BitSet FOLLOW_38_in_ruleDouble7027 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleDouble7044 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFreeVariable_in_entryRuleFreeVariable7095 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFreeVariable7106 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_45_in_ruleFreeVariable7144 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_LOWER_in_ruleFreeVariable7159 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEvaluationExpressionIn_in_entryRuleEvaluationExpressionIn2374 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEvaluationExpressionIn2384 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelfReferencedStore_in_ruleEvaluationExpressionIn2444 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_ruleEvaluationExpressionIn2456 = new BitSet(new long[]{0x0000270000002060L});
+    public static final BitSet FOLLOW_ruleActionExpression_in_ruleEvaluationExpressionIn2477 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleEvaluationExpressionIn2489 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LOWER_in_ruleEvaluationExpressionIn2526 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_ruleEvaluationExpressionIn2538 = new BitSet(new long[]{0x0000270000002060L});
+    public static final BitSet FOLLOW_ruleActionExpression_in_ruleEvaluationExpressionIn2559 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleEvaluationExpressionIn2571 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEvaluationExpressionOut_in_entryRuleEvaluationExpressionOut2618 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEvaluationExpressionOut2628 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFreeVariable_in_ruleEvaluationExpressionOut2687 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_ruleEvaluationExpressionOut2699 = new BitSet(new long[]{0x0000270000002060L});
+    public static final BitSet FOLLOW_ruleActionExpression_in_ruleEvaluationExpressionOut2720 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleEvaluationExpressionOut2732 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUpdateExpression_in_entryRuleUpdateExpression2778 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleUpdateExpression2788 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelfReferencedStore_in_ruleUpdateExpression2848 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_ruleUpdateExpression2860 = new BitSet(new long[]{0x0000270000002060L});
+    public static final BitSet FOLLOW_ruleActionExpression_in_ruleUpdateExpression2881 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleUpdateExpression2893 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LOWER_in_ruleUpdateExpression2930 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_ruleUpdateExpression2942 = new BitSet(new long[]{0x0000270000002060L});
+    public static final BitSet FOLLOW_ruleActionExpression_in_ruleUpdateExpression2963 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleUpdateExpression2975 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelfReferencedStore_in_entryRuleSelfReferencedStore3022 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSelfReferencedStore3032 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_ruleSelfReferencedStore3082 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_LOWER_in_ruleSelfReferencedStore3102 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActionExpression_in_entryRuleActionExpression3148 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleActionExpression3158 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActionOr_in_ruleActionExpression3208 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActionOr_in_entryRuleActionOr3252 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleActionOr3262 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActionAnd_in_ruleActionOr3313 = new BitSet(new long[]{0x0000000100000002L});
+    public static final BitSet FOLLOW_32_in_ruleActionOr3334 = new BitSet(new long[]{0x0000270000002060L});
+    public static final BitSet FOLLOW_ruleActionAnd_in_ruleActionOr3355 = new BitSet(new long[]{0x0000000100000002L});
+    public static final BitSet FOLLOW_ruleActionAnd_in_entryRuleActionAnd3403 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleActionAnd3413 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActionEquality_in_ruleActionAnd3464 = new BitSet(new long[]{0x0000000200000002L});
+    public static final BitSet FOLLOW_33_in_ruleActionAnd3485 = new BitSet(new long[]{0x0000270000002060L});
+    public static final BitSet FOLLOW_ruleActionEquality_in_ruleActionAnd3506 = new BitSet(new long[]{0x0000000200000002L});
+    public static final BitSet FOLLOW_ruleActionEquality_in_entryRuleActionEquality3554 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleActionEquality3564 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActionComparison_in_ruleActionEquality3615 = new BitSet(new long[]{0x0000000C00000002L});
+    public static final BitSet FOLLOW_34_in_ruleActionEquality3644 = new BitSet(new long[]{0x0000270000002060L});
+    public static final BitSet FOLLOW_35_in_ruleActionEquality3673 = new BitSet(new long[]{0x0000270000002060L});
+    public static final BitSet FOLLOW_ruleActionComparison_in_ruleActionEquality3710 = new BitSet(new long[]{0x0000000C00000002L});
+    public static final BitSet FOLLOW_ruleActionComparison_in_entryRuleActionComparison3758 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleActionComparison3768 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActionSubtraction_in_ruleActionComparison3819 = new BitSet(new long[]{0x0000003030000002L});
+    public static final BitSet FOLLOW_36_in_ruleActionComparison3848 = new BitSet(new long[]{0x0000270000002060L});
+    public static final BitSet FOLLOW_37_in_ruleActionComparison3877 = new BitSet(new long[]{0x0000270000002060L});
+    public static final BitSet FOLLOW_29_in_ruleActionComparison3906 = new BitSet(new long[]{0x0000270000002060L});
+    public static final BitSet FOLLOW_28_in_ruleActionComparison3935 = new BitSet(new long[]{0x0000270000002060L});
+    public static final BitSet FOLLOW_ruleActionSubtraction_in_ruleActionComparison3972 = new BitSet(new long[]{0x0000003030000002L});
+    public static final BitSet FOLLOW_ruleActionSubtraction_in_entryRuleActionSubtraction4020 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleActionSubtraction4030 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActionAddition_in_ruleActionSubtraction4081 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_38_in_ruleActionSubtraction4102 = new BitSet(new long[]{0x0000270000002060L});
+    public static final BitSet FOLLOW_ruleActionAddition_in_ruleActionSubtraction4123 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_ruleActionAddition_in_entryRuleActionAddition4171 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleActionAddition4181 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActionMultiplication_in_ruleActionAddition4232 = new BitSet(new long[]{0x0000000000200002L});
+    public static final BitSet FOLLOW_21_in_ruleActionAddition4253 = new BitSet(new long[]{0x0000270000002060L});
+    public static final BitSet FOLLOW_ruleActionMultiplication_in_ruleActionAddition4274 = new BitSet(new long[]{0x0000000000200002L});
+    public static final BitSet FOLLOW_ruleActionMultiplication_in_entryRuleActionMultiplication4322 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleActionMultiplication4332 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActionDivision_in_ruleActionMultiplication4383 = new BitSet(new long[]{0x0000000001000002L});
+    public static final BitSet FOLLOW_24_in_ruleActionMultiplication4404 = new BitSet(new long[]{0x0000270000002060L});
+    public static final BitSet FOLLOW_ruleActionDivision_in_ruleActionMultiplication4425 = new BitSet(new long[]{0x0000000001000002L});
+    public static final BitSet FOLLOW_ruleActionDivision_in_entryRuleActionDivision4473 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleActionDivision4483 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActionPrimary_in_ruleActionDivision4534 = new BitSet(new long[]{0x0000008000000002L});
+    public static final BitSet FOLLOW_39_in_ruleActionDivision4555 = new BitSet(new long[]{0x0000270000002060L});
+    public static final BitSet FOLLOW_ruleActionPrimary_in_ruleActionDivision4576 = new BitSet(new long[]{0x0000008000000002L});
+    public static final BitSet FOLLOW_ruleActionPrimary_in_entryRuleActionPrimary4624 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleActionPrimary4634 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_ruleActionPrimary4676 = new BitSet(new long[]{0x0000270000002060L});
+    public static final BitSet FOLLOW_ruleActionExpression_in_ruleActionPrimary4698 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleActionPrimary4709 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleActionPrimary4738 = new BitSet(new long[]{0x0000270000002060L});
+    public static final BitSet FOLLOW_ruleActionPrimary_in_ruleActionPrimary4759 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActionAtomic_in_ruleActionPrimary4788 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActionAtomic_in_entryRuleActionAtomic4833 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleActionAtomic4843 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDouble_in_ruleActionAtomic4903 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFreeVariable_in_ruleActionAtomic4941 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_ruleActionAtomic4978 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_ruleActionAtomic5007 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LOWER_in_ruleActionAtomic5060 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStore_in_entryRuleStore5107 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStore5117 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LOWER_in_ruleStore5163 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleStore5180 = new BitSet(new long[]{0x0000070000002060L});
+    public static final BitSet FOLLOW_ruleExpression_in_ruleStore5201 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleStore5213 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpression_in_entryRuleExpression5259 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExpression5269 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOr_in_ruleExpression5319 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOr_in_entryRuleOr5363 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOr5373 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAnd_in_ruleOr5424 = new BitSet(new long[]{0x0000000100000002L});
+    public static final BitSet FOLLOW_32_in_ruleOr5445 = new BitSet(new long[]{0x0000070000002060L});
+    public static final BitSet FOLLOW_ruleAnd_in_ruleOr5466 = new BitSet(new long[]{0x0000000100000002L});
+    public static final BitSet FOLLOW_ruleAnd_in_entryRuleAnd5514 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAnd5524 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEquality_in_ruleAnd5575 = new BitSet(new long[]{0x0000000200000002L});
+    public static final BitSet FOLLOW_33_in_ruleAnd5596 = new BitSet(new long[]{0x0000070000002060L});
+    public static final BitSet FOLLOW_ruleEquality_in_ruleAnd5617 = new BitSet(new long[]{0x0000000200000002L});
+    public static final BitSet FOLLOW_ruleEquality_in_entryRuleEquality5665 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEquality5675 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleComparison_in_ruleEquality5726 = new BitSet(new long[]{0x0000000C00000002L});
+    public static final BitSet FOLLOW_34_in_ruleEquality5755 = new BitSet(new long[]{0x0000070000002060L});
+    public static final BitSet FOLLOW_35_in_ruleEquality5784 = new BitSet(new long[]{0x0000070000002060L});
+    public static final BitSet FOLLOW_ruleComparison_in_ruleEquality5821 = new BitSet(new long[]{0x0000000C00000002L});
+    public static final BitSet FOLLOW_ruleComparison_in_entryRuleComparison5869 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleComparison5879 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSubtraction_in_ruleComparison5930 = new BitSet(new long[]{0x0000003030000002L});
+    public static final BitSet FOLLOW_36_in_ruleComparison5959 = new BitSet(new long[]{0x0000070000002060L});
+    public static final BitSet FOLLOW_37_in_ruleComparison5988 = new BitSet(new long[]{0x0000070000002060L});
+    public static final BitSet FOLLOW_29_in_ruleComparison6017 = new BitSet(new long[]{0x0000070000002060L});
+    public static final BitSet FOLLOW_28_in_ruleComparison6046 = new BitSet(new long[]{0x0000070000002060L});
+    public static final BitSet FOLLOW_ruleSubtraction_in_ruleComparison6083 = new BitSet(new long[]{0x0000003030000002L});
+    public static final BitSet FOLLOW_ruleSubtraction_in_entryRuleSubtraction6131 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSubtraction6141 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAddition_in_ruleSubtraction6192 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_38_in_ruleSubtraction6213 = new BitSet(new long[]{0x0000070000002060L});
+    public static final BitSet FOLLOW_ruleAddition_in_ruleSubtraction6234 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_ruleAddition_in_entryRuleAddition6282 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAddition6292 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMultiplication_in_ruleAddition6343 = new BitSet(new long[]{0x0000000000200002L});
+    public static final BitSet FOLLOW_21_in_ruleAddition6364 = new BitSet(new long[]{0x0000070000002060L});
+    public static final BitSet FOLLOW_ruleMultiplication_in_ruleAddition6385 = new BitSet(new long[]{0x0000000000200002L});
+    public static final BitSet FOLLOW_ruleMultiplication_in_entryRuleMultiplication6433 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMultiplication6443 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDivision_in_ruleMultiplication6494 = new BitSet(new long[]{0x0000000001000002L});
+    public static final BitSet FOLLOW_24_in_ruleMultiplication6515 = new BitSet(new long[]{0x0000070000002060L});
+    public static final BitSet FOLLOW_ruleDivision_in_ruleMultiplication6536 = new BitSet(new long[]{0x0000000001000002L});
+    public static final BitSet FOLLOW_ruleDivision_in_entryRuleDivision6584 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDivision6594 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePrimary_in_ruleDivision6645 = new BitSet(new long[]{0x0000008000000002L});
+    public static final BitSet FOLLOW_39_in_ruleDivision6666 = new BitSet(new long[]{0x0000070000002060L});
+    public static final BitSet FOLLOW_rulePrimary_in_ruleDivision6687 = new BitSet(new long[]{0x0000008000000002L});
+    public static final BitSet FOLLOW_rulePrimary_in_entryRulePrimary6735 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePrimary6745 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rulePrimary6787 = new BitSet(new long[]{0x0000070000002060L});
+    public static final BitSet FOLLOW_ruleExpression_in_rulePrimary6809 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_rulePrimary6820 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_rulePrimary6849 = new BitSet(new long[]{0x0000070000002060L});
+    public static final BitSet FOLLOW_rulePrimary_in_rulePrimary6870 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAtomic_in_rulePrimary6899 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAtomic_in_entryRuleAtomic6944 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAtomic6954 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDouble_in_ruleAtomic7014 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_ruleAtomic7051 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_ruleAtomic7080 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LOWER_in_ruleAtomic7133 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDouble_in_entryRuleDouble7175 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDouble7186 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleDouble7226 = new BitSet(new long[]{0x0000000002000002L});
+    public static final BitSet FOLLOW_25_in_ruleDouble7245 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleDouble7260 = new BitSet(new long[]{0x0000180000000002L});
+    public static final BitSet FOLLOW_43_in_ruleDouble7279 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_ruleDouble7299 = new BitSet(new long[]{0x0000004000000040L});
+    public static final BitSet FOLLOW_38_in_ruleDouble7313 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleDouble7330 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFreeVariable_in_entryRuleFreeVariable7381 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFreeVariable7392 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_45_in_ruleFreeVariable7430 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_LOWER_in_ruleFreeVariable7445 = new BitSet(new long[]{0x0000000000000002L});
 
 }

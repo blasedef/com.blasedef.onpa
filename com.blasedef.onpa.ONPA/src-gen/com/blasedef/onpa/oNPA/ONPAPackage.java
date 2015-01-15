@@ -363,22 +363,13 @@ public interface ONPAPackage extends EPackage
   int EVALUATIONS = 8;
 
   /**
-   * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EVALUATIONS__EXPRESSIONS = 0;
-
-  /**
    * The number of structural features of the '<em>Evaluations</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EVALUATIONS_FEATURE_COUNT = 1;
+  int EVALUATIONS_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.UpdatesImpl <em>Updates</em>}' class.
@@ -437,23 +428,51 @@ public interface ONPAPackage extends EPackage
   int PREDICATE_EXPRESSION_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.EvaluationExpressionImpl <em>Evaluation Expression</em>}' class.
+   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.EvaluationExpressionInImpl <em>Evaluation Expression In</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.blasedef.onpa.oNPA.impl.EvaluationExpressionImpl
-   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getEvaluationExpression()
+   * @see com.blasedef.onpa.oNPA.impl.EvaluationExpressionInImpl
+   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getEvaluationExpressionIn()
    * @generated
    */
-  int EVALUATION_EXPRESSION = 11;
+  int EVALUATION_EXPRESSION_IN = 11;
 
   /**
-   * The number of structural features of the '<em>Evaluation Expression</em>' class.
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EVALUATION_EXPRESSION_FEATURE_COUNT = 0;
+  int EVALUATION_EXPRESSION_IN__EXPRESSION = 0;
+
+  /**
+   * The number of structural features of the '<em>Evaluation Expression In</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EVALUATION_EXPRESSION_IN_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.EvaluationExpressionOutImpl <em>Evaluation Expression Out</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.blasedef.onpa.oNPA.impl.EvaluationExpressionOutImpl
+   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getEvaluationExpressionOut()
+   * @generated
+   */
+  int EVALUATION_EXPRESSION_OUT = 12;
+
+  /**
+   * The number of structural features of the '<em>Evaluation Expression Out</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EVALUATION_EXPRESSION_OUT_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.UpdateExpressionImpl <em>Update Expression</em>}' class.
@@ -463,16 +482,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getUpdateExpression()
    * @generated
    */
-  int UPDATE_EXPRESSION = 12;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UPDATE_EXPRESSION__NAME = 0;
+  int UPDATE_EXPRESSION = 13;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -481,7 +491,7 @@ public interface ONPAPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UPDATE_EXPRESSION__EXPRESSION = 1;
+  int UPDATE_EXPRESSION__EXPRESSION = 0;
 
   /**
    * The number of structural features of the '<em>Update Expression</em>' class.
@@ -490,7 +500,7 @@ public interface ONPAPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UPDATE_EXPRESSION_FEATURE_COUNT = 2;
+  int UPDATE_EXPRESSION_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.SelfReferencedStoreImpl <em>Self Referenced Store</em>}' class.
@@ -500,16 +510,16 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getSelfReferencedStore()
    * @generated
    */
-  int SELF_REFERENCED_STORE = 13;
+  int SELF_REFERENCED_STORE = 14;
 
   /**
-   * The feature id for the '<em><b>Store</b></em>' reference.
+   * The feature id for the '<em><b>Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SELF_REFERENCED_STORE__STORE = 0;
+  int SELF_REFERENCED_STORE__NAME = 0;
 
   /**
    * The number of structural features of the '<em>Self Referenced Store</em>' class.
@@ -528,7 +538,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionExpression()
    * @generated
    */
-  int ACTION_EXPRESSION = 14;
+  int ACTION_EXPRESSION = 15;
 
   /**
    * The number of structural features of the '<em>Action Expression</em>' class.
@@ -537,7 +547,7 @@ public interface ONPAPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_EXPRESSION_FEATURE_COUNT = EVALUATION_EXPRESSION_FEATURE_COUNT + 0;
+  int ACTION_EXPRESSION_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.StoreImpl <em>Store</em>}' class.
@@ -547,7 +557,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getStore()
    * @generated
    */
-  int STORE = 15;
+  int STORE = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -584,7 +594,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 16;
+  int EXPRESSION = 17;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -603,7 +613,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getParallel()
    * @generated
    */
-  int PARALLEL = 17;
+  int PARALLEL = 18;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -640,7 +650,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getChoice()
    * @generated
    */
-  int CHOICE = 18;
+  int CHOICE = 19;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -677,7 +687,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getLeaf()
    * @generated
    */
-  int LEAF = 19;
+  int LEAF = 20;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -705,7 +715,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getProcessReference()
    * @generated
    */
-  int PROCESS_REFERENCE = 20;
+  int PROCESS_REFERENCE = 21;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' reference.
@@ -733,7 +743,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getBroadcast()
    * @generated
    */
-  int BROADCAST = 21;
+  int BROADCAST = 22;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -788,7 +798,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getUnicast()
    * @generated
    */
-  int UNICAST = 22;
+  int UNICAST = 23;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -843,7 +853,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getIn()
    * @generated
    */
-  int IN = 23;
+  int IN = 24;
 
   /**
    * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
@@ -852,7 +862,7 @@ public interface ONPAPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IN__EXPRESSIONS = EVALUATIONS__EXPRESSIONS;
+  int IN__EXPRESSIONS = EVALUATIONS_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>In</em>' class.
@@ -861,7 +871,7 @@ public interface ONPAPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IN_FEATURE_COUNT = EVALUATIONS_FEATURE_COUNT + 0;
+  int IN_FEATURE_COUNT = EVALUATIONS_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.OutImpl <em>Out</em>}' class.
@@ -871,7 +881,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getOut()
    * @generated
    */
-  int OUT = 24;
+  int OUT = 25;
 
   /**
    * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
@@ -880,7 +890,7 @@ public interface ONPAPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OUT__EXPRESSIONS = EVALUATIONS__EXPRESSIONS;
+  int OUT__EXPRESSIONS = EVALUATIONS_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Out</em>' class.
@@ -889,7 +899,118 @@ public interface ONPAPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OUT_FEATURE_COUNT = EVALUATIONS_FEATURE_COUNT + 0;
+  int OUT_FEATURE_COUNT = EVALUATIONS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.LocalEvaluationExpressionImpl <em>Local Evaluation Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.blasedef.onpa.oNPA.impl.LocalEvaluationExpressionImpl
+   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getLocalEvaluationExpression()
+   * @generated
+   */
+  int LOCAL_EVALUATION_EXPRESSION = 26;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOCAL_EVALUATION_EXPRESSION__EXPRESSION = EVALUATION_EXPRESSION_IN__EXPRESSION;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOCAL_EVALUATION_EXPRESSION__NAME = EVALUATION_EXPRESSION_IN_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Local Evaluation Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOCAL_EVALUATION_EXPRESSION_FEATURE_COUNT = EVALUATION_EXPRESSION_IN_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.GlobalEvaluationExpressionImpl <em>Global Evaluation Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.blasedef.onpa.oNPA.impl.GlobalEvaluationExpressionImpl
+   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getGlobalEvaluationExpression()
+   * @generated
+   */
+  int GLOBAL_EVALUATION_EXPRESSION = 27;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GLOBAL_EVALUATION_EXPRESSION__EXPRESSION = EVALUATION_EXPRESSION_IN__EXPRESSION;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GLOBAL_EVALUATION_EXPRESSION__NAME = EVALUATION_EXPRESSION_IN_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Global Evaluation Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GLOBAL_EVALUATION_EXPRESSION_FEATURE_COUNT = EVALUATION_EXPRESSION_IN_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.FreeEvaluationExpressionImpl <em>Free Evaluation Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.blasedef.onpa.oNPA.impl.FreeEvaluationExpressionImpl
+   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getFreeEvaluationExpression()
+   * @generated
+   */
+  int FREE_EVALUATION_EXPRESSION = 28;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FREE_EVALUATION_EXPRESSION__NAME = EVALUATION_EXPRESSION_OUT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FREE_EVALUATION_EXPRESSION__EXPRESSION = EVALUATION_EXPRESSION_OUT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Free Evaluation Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FREE_EVALUATION_EXPRESSION_FEATURE_COUNT = EVALUATION_EXPRESSION_OUT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.LocalUpdateExpressionImpl <em>Local Update Expression</em>}' class.
@@ -899,16 +1020,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getLocalUpdateExpression()
    * @generated
    */
-  int LOCAL_UPDATE_EXPRESSION = 25;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOCAL_UPDATE_EXPRESSION__NAME = UPDATE_EXPRESSION__NAME;
+  int LOCAL_UPDATE_EXPRESSION = 29;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -920,13 +1032,59 @@ public interface ONPAPackage extends EPackage
   int LOCAL_UPDATE_EXPRESSION__EXPRESSION = UPDATE_EXPRESSION__EXPRESSION;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOCAL_UPDATE_EXPRESSION__NAME = UPDATE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
    * The number of structural features of the '<em>Local Update Expression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LOCAL_UPDATE_EXPRESSION_FEATURE_COUNT = UPDATE_EXPRESSION_FEATURE_COUNT + 0;
+  int LOCAL_UPDATE_EXPRESSION_FEATURE_COUNT = UPDATE_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.GlobalUpdateExpressionImpl <em>Global Update Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.blasedef.onpa.oNPA.impl.GlobalUpdateExpressionImpl
+   * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getGlobalUpdateExpression()
+   * @generated
+   */
+  int GLOBAL_UPDATE_EXPRESSION = 30;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GLOBAL_UPDATE_EXPRESSION__EXPRESSION = UPDATE_EXPRESSION__EXPRESSION;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GLOBAL_UPDATE_EXPRESSION__NAME = UPDATE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Global Update Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GLOBAL_UPDATE_EXPRESSION_FEATURE_COUNT = UPDATE_EXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link com.blasedef.onpa.oNPA.impl.ActionOrImpl <em>Action Or</em>}' class.
@@ -936,7 +1094,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionOr()
    * @generated
    */
-  int ACTION_OR = 26;
+  int ACTION_OR = 31;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -973,7 +1131,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionAnd()
    * @generated
    */
-  int ACTION_AND = 27;
+  int ACTION_AND = 32;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1010,7 +1168,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionEquality()
    * @generated
    */
-  int ACTION_EQUALITY = 28;
+  int ACTION_EQUALITY = 33;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1056,7 +1214,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionComparison()
    * @generated
    */
-  int ACTION_COMPARISON = 29;
+  int ACTION_COMPARISON = 34;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1102,7 +1260,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionSub()
    * @generated
    */
-  int ACTION_SUB = 30;
+  int ACTION_SUB = 35;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1139,7 +1297,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionPlu()
    * @generated
    */
-  int ACTION_PLU = 31;
+  int ACTION_PLU = 36;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1176,7 +1334,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionMul()
    * @generated
    */
-  int ACTION_MUL = 32;
+  int ACTION_MUL = 37;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1213,7 +1371,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionDiv()
    * @generated
    */
-  int ACTION_DIV = 33;
+  int ACTION_DIV = 38;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1250,7 +1408,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getActionNot()
    * @generated
    */
-  int ACTION_NOT = 34;
+  int ACTION_NOT = 39;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1278,7 +1436,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getDoubleConstant()
    * @generated
    */
-  int DOUBLE_CONSTANT = 35;
+  int DOUBLE_CONSTANT = 40;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1306,7 +1464,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getFreeVariable()
    * @generated
    */
-  int FREE_VARIABLE = 36;
+  int FREE_VARIABLE = 41;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1334,7 +1492,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getBoolConstant()
    * @generated
    */
-  int BOOL_CONSTANT = 37;
+  int BOOL_CONSTANT = 42;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1362,7 +1520,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getReferencedStore()
    * @generated
    */
-  int REFERENCED_STORE = 38;
+  int REFERENCED_STORE = 43;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' reference.
@@ -1390,7 +1548,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getOr()
    * @generated
    */
-  int OR = 39;
+  int OR = 44;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1427,7 +1585,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getAnd()
    * @generated
    */
-  int AND = 40;
+  int AND = 45;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1464,7 +1622,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getEquality()
    * @generated
    */
-  int EQUALITY = 41;
+  int EQUALITY = 46;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1510,7 +1668,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getComparison()
    * @generated
    */
-  int COMPARISON = 42;
+  int COMPARISON = 47;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1556,7 +1714,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getSub()
    * @generated
    */
-  int SUB = 43;
+  int SUB = 48;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1593,7 +1751,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getPlu()
    * @generated
    */
-  int PLU = 44;
+  int PLU = 49;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1630,7 +1788,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getMul()
    * @generated
    */
-  int MUL = 45;
+  int MUL = 50;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1667,7 +1825,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getDiv()
    * @generated
    */
-  int DIV = 46;
+  int DIV = 51;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1704,7 +1862,7 @@ public interface ONPAPackage extends EPackage
    * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getNot()
    * @generated
    */
-  int NOT = 47;
+  int NOT = 52;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1992,17 +2150,6 @@ public interface ONPAPackage extends EPackage
   EClass getEvaluations();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.blasedef.onpa.oNPA.Evaluations#getExpressions <em>Expressions</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Expressions</em>'.
-   * @see com.blasedef.onpa.oNPA.Evaluations#getExpressions()
-   * @see #getEvaluations()
-   * @generated
-   */
-  EReference getEvaluations_Expressions();
-
-  /**
    * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.Updates <em>Updates</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2045,14 +2192,35 @@ public interface ONPAPackage extends EPackage
   EReference getPredicateExpression_Expression();
 
   /**
-   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.EvaluationExpression <em>Evaluation Expression</em>}'.
+   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.EvaluationExpressionIn <em>Evaluation Expression In</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Evaluation Expression</em>'.
-   * @see com.blasedef.onpa.oNPA.EvaluationExpression
+   * @return the meta object for class '<em>Evaluation Expression In</em>'.
+   * @see com.blasedef.onpa.oNPA.EvaluationExpressionIn
    * @generated
    */
-  EClass getEvaluationExpression();
+  EClass getEvaluationExpressionIn();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.EvaluationExpressionIn#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see com.blasedef.onpa.oNPA.EvaluationExpressionIn#getExpression()
+   * @see #getEvaluationExpressionIn()
+   * @generated
+   */
+  EReference getEvaluationExpressionIn_Expression();
+
+  /**
+   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.EvaluationExpressionOut <em>Evaluation Expression Out</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Evaluation Expression Out</em>'.
+   * @see com.blasedef.onpa.oNPA.EvaluationExpressionOut
+   * @generated
+   */
+  EClass getEvaluationExpressionOut();
 
   /**
    * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.UpdateExpression <em>Update Expression</em>}'.
@@ -2063,17 +2231,6 @@ public interface ONPAPackage extends EPackage
    * @generated
    */
   EClass getUpdateExpression();
-
-  /**
-   * Returns the meta object for the reference '{@link com.blasedef.onpa.oNPA.UpdateExpression#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Name</em>'.
-   * @see com.blasedef.onpa.oNPA.UpdateExpression#getName()
-   * @see #getUpdateExpression()
-   * @generated
-   */
-  EReference getUpdateExpression_Name();
 
   /**
    * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.UpdateExpression#getExpression <em>Expression</em>}'.
@@ -2097,15 +2254,15 @@ public interface ONPAPackage extends EPackage
   EClass getSelfReferencedStore();
 
   /**
-   * Returns the meta object for the reference '{@link com.blasedef.onpa.oNPA.SelfReferencedStore#getStore <em>Store</em>}'.
+   * Returns the meta object for the reference '{@link com.blasedef.onpa.oNPA.SelfReferencedStore#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Store</em>'.
-   * @see com.blasedef.onpa.oNPA.SelfReferencedStore#getStore()
+   * @return the meta object for the reference '<em>Name</em>'.
+   * @see com.blasedef.onpa.oNPA.SelfReferencedStore#getName()
    * @see #getSelfReferencedStore()
    * @generated
    */
-  EReference getSelfReferencedStore_Store();
+  EReference getSelfReferencedStore_Name();
 
   /**
    * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.ActionExpression <em>Action Expression</em>}'.
@@ -2296,6 +2453,17 @@ public interface ONPAPackage extends EPackage
   EClass getIn();
 
   /**
+   * Returns the meta object for the containment reference list '{@link com.blasedef.onpa.oNPA.In#getExpressions <em>Expressions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Expressions</em>'.
+   * @see com.blasedef.onpa.oNPA.In#getExpressions()
+   * @see #getIn()
+   * @generated
+   */
+  EReference getIn_Expressions();
+
+  /**
    * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.Out <em>Out</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2306,6 +2474,91 @@ public interface ONPAPackage extends EPackage
   EClass getOut();
 
   /**
+   * Returns the meta object for the containment reference list '{@link com.blasedef.onpa.oNPA.Out#getExpressions <em>Expressions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Expressions</em>'.
+   * @see com.blasedef.onpa.oNPA.Out#getExpressions()
+   * @see #getOut()
+   * @generated
+   */
+  EReference getOut_Expressions();
+
+  /**
+   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.LocalEvaluationExpression <em>Local Evaluation Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Local Evaluation Expression</em>'.
+   * @see com.blasedef.onpa.oNPA.LocalEvaluationExpression
+   * @generated
+   */
+  EClass getLocalEvaluationExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.LocalEvaluationExpression#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Name</em>'.
+   * @see com.blasedef.onpa.oNPA.LocalEvaluationExpression#getName()
+   * @see #getLocalEvaluationExpression()
+   * @generated
+   */
+  EReference getLocalEvaluationExpression_Name();
+
+  /**
+   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.GlobalEvaluationExpression <em>Global Evaluation Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Global Evaluation Expression</em>'.
+   * @see com.blasedef.onpa.oNPA.GlobalEvaluationExpression
+   * @generated
+   */
+  EClass getGlobalEvaluationExpression();
+
+  /**
+   * Returns the meta object for the reference '{@link com.blasedef.onpa.oNPA.GlobalEvaluationExpression#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Name</em>'.
+   * @see com.blasedef.onpa.oNPA.GlobalEvaluationExpression#getName()
+   * @see #getGlobalEvaluationExpression()
+   * @generated
+   */
+  EReference getGlobalEvaluationExpression_Name();
+
+  /**
+   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.FreeEvaluationExpression <em>Free Evaluation Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Free Evaluation Expression</em>'.
+   * @see com.blasedef.onpa.oNPA.FreeEvaluationExpression
+   * @generated
+   */
+  EClass getFreeEvaluationExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.blasedef.onpa.oNPA.FreeEvaluationExpression#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.blasedef.onpa.oNPA.FreeEvaluationExpression#getName()
+   * @see #getFreeEvaluationExpression()
+   * @generated
+   */
+  EAttribute getFreeEvaluationExpression_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.FreeEvaluationExpression#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see com.blasedef.onpa.oNPA.FreeEvaluationExpression#getExpression()
+   * @see #getFreeEvaluationExpression()
+   * @generated
+   */
+  EReference getFreeEvaluationExpression_Expression();
+
+  /**
    * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.LocalUpdateExpression <em>Local Update Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2314,6 +2567,38 @@ public interface ONPAPackage extends EPackage
    * @generated
    */
   EClass getLocalUpdateExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.blasedef.onpa.oNPA.LocalUpdateExpression#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Name</em>'.
+   * @see com.blasedef.onpa.oNPA.LocalUpdateExpression#getName()
+   * @see #getLocalUpdateExpression()
+   * @generated
+   */
+  EReference getLocalUpdateExpression_Name();
+
+  /**
+   * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.GlobalUpdateExpression <em>Global Update Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Global Update Expression</em>'.
+   * @see com.blasedef.onpa.oNPA.GlobalUpdateExpression
+   * @generated
+   */
+  EClass getGlobalUpdateExpression();
+
+  /**
+   * Returns the meta object for the reference '{@link com.blasedef.onpa.oNPA.GlobalUpdateExpression#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Name</em>'.
+   * @see com.blasedef.onpa.oNPA.GlobalUpdateExpression#getName()
+   * @see #getGlobalUpdateExpression()
+   * @generated
+   */
+  EReference getGlobalUpdateExpression_Name();
 
   /**
    * Returns the meta object for class '{@link com.blasedef.onpa.oNPA.ActionOr <em>Action Or</em>}'.
@@ -3239,14 +3524,6 @@ public interface ONPAPackage extends EPackage
     EClass EVALUATIONS = eINSTANCE.getEvaluations();
 
     /**
-     * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EVALUATIONS__EXPRESSIONS = eINSTANCE.getEvaluations_Expressions();
-
-    /**
      * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.UpdatesImpl <em>Updates</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3283,14 +3560,32 @@ public interface ONPAPackage extends EPackage
     EReference PREDICATE_EXPRESSION__EXPRESSION = eINSTANCE.getPredicateExpression_Expression();
 
     /**
-     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.EvaluationExpressionImpl <em>Evaluation Expression</em>}' class.
+     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.EvaluationExpressionInImpl <em>Evaluation Expression In</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.blasedef.onpa.oNPA.impl.EvaluationExpressionImpl
-     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getEvaluationExpression()
+     * @see com.blasedef.onpa.oNPA.impl.EvaluationExpressionInImpl
+     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getEvaluationExpressionIn()
      * @generated
      */
-    EClass EVALUATION_EXPRESSION = eINSTANCE.getEvaluationExpression();
+    EClass EVALUATION_EXPRESSION_IN = eINSTANCE.getEvaluationExpressionIn();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EVALUATION_EXPRESSION_IN__EXPRESSION = eINSTANCE.getEvaluationExpressionIn_Expression();
+
+    /**
+     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.EvaluationExpressionOutImpl <em>Evaluation Expression Out</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.blasedef.onpa.oNPA.impl.EvaluationExpressionOutImpl
+     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getEvaluationExpressionOut()
+     * @generated
+     */
+    EClass EVALUATION_EXPRESSION_OUT = eINSTANCE.getEvaluationExpressionOut();
 
     /**
      * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.UpdateExpressionImpl <em>Update Expression</em>}' class.
@@ -3301,14 +3596,6 @@ public interface ONPAPackage extends EPackage
      * @generated
      */
     EClass UPDATE_EXPRESSION = eINSTANCE.getUpdateExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference UPDATE_EXPRESSION__NAME = eINSTANCE.getUpdateExpression_Name();
 
     /**
      * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
@@ -3329,12 +3616,12 @@ public interface ONPAPackage extends EPackage
     EClass SELF_REFERENCED_STORE = eINSTANCE.getSelfReferencedStore();
 
     /**
-     * The meta object literal for the '<em><b>Store</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Name</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SELF_REFERENCED_STORE__STORE = eINSTANCE.getSelfReferencedStore_Store();
+    EReference SELF_REFERENCED_STORE__NAME = eINSTANCE.getSelfReferencedStore_Name();
 
     /**
      * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.ActionExpressionImpl <em>Action Expression</em>}' class.
@@ -3501,6 +3788,14 @@ public interface ONPAPackage extends EPackage
     EClass IN = eINSTANCE.getIn();
 
     /**
+     * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IN__EXPRESSIONS = eINSTANCE.getIn_Expressions();
+
+    /**
      * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.OutImpl <em>Out</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3511,6 +3806,76 @@ public interface ONPAPackage extends EPackage
     EClass OUT = eINSTANCE.getOut();
 
     /**
+     * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OUT__EXPRESSIONS = eINSTANCE.getOut_Expressions();
+
+    /**
+     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.LocalEvaluationExpressionImpl <em>Local Evaluation Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.blasedef.onpa.oNPA.impl.LocalEvaluationExpressionImpl
+     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getLocalEvaluationExpression()
+     * @generated
+     */
+    EClass LOCAL_EVALUATION_EXPRESSION = eINSTANCE.getLocalEvaluationExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LOCAL_EVALUATION_EXPRESSION__NAME = eINSTANCE.getLocalEvaluationExpression_Name();
+
+    /**
+     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.GlobalEvaluationExpressionImpl <em>Global Evaluation Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.blasedef.onpa.oNPA.impl.GlobalEvaluationExpressionImpl
+     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getGlobalEvaluationExpression()
+     * @generated
+     */
+    EClass GLOBAL_EVALUATION_EXPRESSION = eINSTANCE.getGlobalEvaluationExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GLOBAL_EVALUATION_EXPRESSION__NAME = eINSTANCE.getGlobalEvaluationExpression_Name();
+
+    /**
+     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.FreeEvaluationExpressionImpl <em>Free Evaluation Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.blasedef.onpa.oNPA.impl.FreeEvaluationExpressionImpl
+     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getFreeEvaluationExpression()
+     * @generated
+     */
+    EClass FREE_EVALUATION_EXPRESSION = eINSTANCE.getFreeEvaluationExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FREE_EVALUATION_EXPRESSION__NAME = eINSTANCE.getFreeEvaluationExpression_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FREE_EVALUATION_EXPRESSION__EXPRESSION = eINSTANCE.getFreeEvaluationExpression_Expression();
+
+    /**
      * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.LocalUpdateExpressionImpl <em>Local Update Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3519,6 +3884,32 @@ public interface ONPAPackage extends EPackage
      * @generated
      */
     EClass LOCAL_UPDATE_EXPRESSION = eINSTANCE.getLocalUpdateExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LOCAL_UPDATE_EXPRESSION__NAME = eINSTANCE.getLocalUpdateExpression_Name();
+
+    /**
+     * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.GlobalUpdateExpressionImpl <em>Global Update Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.blasedef.onpa.oNPA.impl.GlobalUpdateExpressionImpl
+     * @see com.blasedef.onpa.oNPA.impl.ONPAPackageImpl#getGlobalUpdateExpression()
+     * @generated
+     */
+    EClass GLOBAL_UPDATE_EXPRESSION = eINSTANCE.getGlobalUpdateExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GLOBAL_UPDATE_EXPRESSION__NAME = eINSTANCE.getGlobalUpdateExpression_Name();
 
     /**
      * The meta object literal for the '{@link com.blasedef.onpa.oNPA.impl.ActionOrImpl <em>Action Or</em>}' class.

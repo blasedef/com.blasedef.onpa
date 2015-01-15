@@ -22,12 +22,17 @@ import com.blasedef.onpa.oNPA.Comparison;
 import com.blasedef.onpa.oNPA.Div;
 import com.blasedef.onpa.oNPA.DoubleConstant;
 import com.blasedef.onpa.oNPA.Equality;
-import com.blasedef.onpa.oNPA.EvaluationExpression;
+import com.blasedef.onpa.oNPA.EvaluationExpressionIn;
+import com.blasedef.onpa.oNPA.EvaluationExpressionOut;
 import com.blasedef.onpa.oNPA.Evaluations;
 import com.blasedef.onpa.oNPA.Expression;
+import com.blasedef.onpa.oNPA.FreeEvaluationExpression;
 import com.blasedef.onpa.oNPA.FreeVariable;
+import com.blasedef.onpa.oNPA.GlobalEvaluationExpression;
+import com.blasedef.onpa.oNPA.GlobalUpdateExpression;
 import com.blasedef.onpa.oNPA.In;
 import com.blasedef.onpa.oNPA.Leaf;
+import com.blasedef.onpa.oNPA.LocalEvaluationExpression;
 import com.blasedef.onpa.oNPA.LocalUpdateExpression;
 import com.blasedef.onpa.oNPA.Model;
 import com.blasedef.onpa.oNPA.Mul;
@@ -198,10 +203,17 @@ public class ONPASwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ONPAPackage.EVALUATION_EXPRESSION:
+      case ONPAPackage.EVALUATION_EXPRESSION_IN:
       {
-        EvaluationExpression evaluationExpression = (EvaluationExpression)theEObject;
-        T result = caseEvaluationExpression(evaluationExpression);
+        EvaluationExpressionIn evaluationExpressionIn = (EvaluationExpressionIn)theEObject;
+        T result = caseEvaluationExpressionIn(evaluationExpressionIn);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ONPAPackage.EVALUATION_EXPRESSION_OUT:
+      {
+        EvaluationExpressionOut evaluationExpressionOut = (EvaluationExpressionOut)theEObject;
+        T result = caseEvaluationExpressionOut(evaluationExpressionOut);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -223,7 +235,6 @@ public class ONPASwitch<T> extends Switch<T>
       {
         ActionExpression actionExpression = (ActionExpression)theEObject;
         T result = caseActionExpression(actionExpression);
-        if (result == null) result = caseEvaluationExpression(actionExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -305,6 +316,30 @@ public class ONPASwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ONPAPackage.LOCAL_EVALUATION_EXPRESSION:
+      {
+        LocalEvaluationExpression localEvaluationExpression = (LocalEvaluationExpression)theEObject;
+        T result = caseLocalEvaluationExpression(localEvaluationExpression);
+        if (result == null) result = caseEvaluationExpressionIn(localEvaluationExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ONPAPackage.GLOBAL_EVALUATION_EXPRESSION:
+      {
+        GlobalEvaluationExpression globalEvaluationExpression = (GlobalEvaluationExpression)theEObject;
+        T result = caseGlobalEvaluationExpression(globalEvaluationExpression);
+        if (result == null) result = caseEvaluationExpressionIn(globalEvaluationExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ONPAPackage.FREE_EVALUATION_EXPRESSION:
+      {
+        FreeEvaluationExpression freeEvaluationExpression = (FreeEvaluationExpression)theEObject;
+        T result = caseFreeEvaluationExpression(freeEvaluationExpression);
+        if (result == null) result = caseEvaluationExpressionOut(freeEvaluationExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ONPAPackage.LOCAL_UPDATE_EXPRESSION:
       {
         LocalUpdateExpression localUpdateExpression = (LocalUpdateExpression)theEObject;
@@ -313,12 +348,19 @@ public class ONPASwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ONPAPackage.GLOBAL_UPDATE_EXPRESSION:
+      {
+        GlobalUpdateExpression globalUpdateExpression = (GlobalUpdateExpression)theEObject;
+        T result = caseGlobalUpdateExpression(globalUpdateExpression);
+        if (result == null) result = caseUpdateExpression(globalUpdateExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ONPAPackage.ACTION_OR:
       {
         ActionOr actionOr = (ActionOr)theEObject;
         T result = caseActionOr(actionOr);
         if (result == null) result = caseActionExpression(actionOr);
-        if (result == null) result = caseEvaluationExpression(actionOr);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -327,7 +369,6 @@ public class ONPASwitch<T> extends Switch<T>
         ActionAnd actionAnd = (ActionAnd)theEObject;
         T result = caseActionAnd(actionAnd);
         if (result == null) result = caseActionExpression(actionAnd);
-        if (result == null) result = caseEvaluationExpression(actionAnd);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -336,7 +377,6 @@ public class ONPASwitch<T> extends Switch<T>
         ActionEquality actionEquality = (ActionEquality)theEObject;
         T result = caseActionEquality(actionEquality);
         if (result == null) result = caseActionExpression(actionEquality);
-        if (result == null) result = caseEvaluationExpression(actionEquality);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -345,7 +385,6 @@ public class ONPASwitch<T> extends Switch<T>
         ActionComparison actionComparison = (ActionComparison)theEObject;
         T result = caseActionComparison(actionComparison);
         if (result == null) result = caseActionExpression(actionComparison);
-        if (result == null) result = caseEvaluationExpression(actionComparison);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -354,7 +393,6 @@ public class ONPASwitch<T> extends Switch<T>
         ActionSub actionSub = (ActionSub)theEObject;
         T result = caseActionSub(actionSub);
         if (result == null) result = caseActionExpression(actionSub);
-        if (result == null) result = caseEvaluationExpression(actionSub);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -363,7 +401,6 @@ public class ONPASwitch<T> extends Switch<T>
         ActionPlu actionPlu = (ActionPlu)theEObject;
         T result = caseActionPlu(actionPlu);
         if (result == null) result = caseActionExpression(actionPlu);
-        if (result == null) result = caseEvaluationExpression(actionPlu);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -372,7 +409,6 @@ public class ONPASwitch<T> extends Switch<T>
         ActionMul actionMul = (ActionMul)theEObject;
         T result = caseActionMul(actionMul);
         if (result == null) result = caseActionExpression(actionMul);
-        if (result == null) result = caseEvaluationExpression(actionMul);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -381,7 +417,6 @@ public class ONPASwitch<T> extends Switch<T>
         ActionDiv actionDiv = (ActionDiv)theEObject;
         T result = caseActionDiv(actionDiv);
         if (result == null) result = caseActionExpression(actionDiv);
-        if (result == null) result = caseEvaluationExpression(actionDiv);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -390,7 +425,6 @@ public class ONPASwitch<T> extends Switch<T>
         ActionNot actionNot = (ActionNot)theEObject;
         T result = caseActionNot(actionNot);
         if (result == null) result = caseActionExpression(actionNot);
-        if (result == null) result = caseEvaluationExpression(actionNot);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -400,7 +434,6 @@ public class ONPASwitch<T> extends Switch<T>
         T result = caseDoubleConstant(doubleConstant);
         if (result == null) result = caseActionExpression(doubleConstant);
         if (result == null) result = caseExpression(doubleConstant);
-        if (result == null) result = caseEvaluationExpression(doubleConstant);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -409,7 +442,6 @@ public class ONPASwitch<T> extends Switch<T>
         FreeVariable freeVariable = (FreeVariable)theEObject;
         T result = caseFreeVariable(freeVariable);
         if (result == null) result = caseActionExpression(freeVariable);
-        if (result == null) result = caseEvaluationExpression(freeVariable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -419,7 +451,6 @@ public class ONPASwitch<T> extends Switch<T>
         T result = caseBoolConstant(boolConstant);
         if (result == null) result = caseActionExpression(boolConstant);
         if (result == null) result = caseExpression(boolConstant);
-        if (result == null) result = caseEvaluationExpression(boolConstant);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -429,7 +460,6 @@ public class ONPASwitch<T> extends Switch<T>
         T result = caseReferencedStore(referencedStore);
         if (result == null) result = caseActionExpression(referencedStore);
         if (result == null) result = caseExpression(referencedStore);
-        if (result == null) result = caseEvaluationExpression(referencedStore);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -686,17 +716,33 @@ public class ONPASwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Evaluation Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Evaluation Expression In</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Evaluation Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Evaluation Expression In</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseEvaluationExpression(EvaluationExpression object)
+  public T caseEvaluationExpressionIn(EvaluationExpressionIn object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Evaluation Expression Out</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Evaluation Expression Out</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEvaluationExpressionOut(EvaluationExpressionOut object)
   {
     return null;
   }
@@ -910,6 +956,54 @@ public class ONPASwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Local Evaluation Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Local Evaluation Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLocalEvaluationExpression(LocalEvaluationExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Global Evaluation Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Global Evaluation Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGlobalEvaluationExpression(GlobalEvaluationExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Free Evaluation Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Free Evaluation Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFreeEvaluationExpression(FreeEvaluationExpression object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Local Update Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -921,6 +1015,22 @@ public class ONPASwitch<T> extends Switch<T>
    * @generated
    */
   public T caseLocalUpdateExpression(LocalUpdateExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Global Update Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Global Update Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGlobalUpdateExpression(GlobalUpdateExpression object)
   {
     return null;
   }
