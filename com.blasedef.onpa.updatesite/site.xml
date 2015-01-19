@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/com.blasedef.onpa.ONPA.sdk_1.0.0.201501141244.jar" id="com.blasedef.onpa.ONPA.sdk" version="1.0.0.201501141244"/>
+   <feature url="features/com.blasedef.onpa.ONPA.sdk_1.0.0.2.jar" id="com.blasedef.onpa.ONPA.sdk" version="1.0.0.2"/>
 </site>

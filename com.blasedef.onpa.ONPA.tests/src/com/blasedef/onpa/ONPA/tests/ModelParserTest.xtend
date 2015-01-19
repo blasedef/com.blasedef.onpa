@@ -55,6 +55,11 @@ import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
 import com.blasedef.onpa.oNPA.GlobalUpdateExpression
+import com.blasedef.onpa.oNPA.EvaluationExpressionIn
+import com.blasedef.onpa.oNPA.EvaluationExpressionOut
+import com.blasedef.onpa.oNPA.LocalEvaluationExpression
+import com.blasedef.onpa.oNPA.GlobalEvaluationExpression
+import com.blasedef.onpa.oNPA.FreeEvaluationExpression
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(ONPAInjectorProvider))
@@ -288,7 +293,7 @@ public class ModelParserTest {
 		'''
 		a = 0.1;
 		b = 0.1;
-		P = c*[$x;]<$y;>{a := $z;}.P;
+		P = c*[$x;]<$y := b;>{a := $z;}.P;
 		(P,{a});
 		'''.parse.assertNoErrors
 	}
@@ -297,8 +302,8 @@ public class ModelParserTest {
 	def void testSimpleAction2(){
 		'''
 		a = 0.1;
-		b = 0.1;
-		P = c*[$x;]($y;){a := $z;}.P;
+		b = 0.3;
+		P = c*[$x;](this.a := 0.25;){a := $z;}.P;
 		(P,{a});
 		'''.parse.assertNoErrors
 	}
@@ -308,7 +313,7 @@ public class ModelParserTest {
 		'''
 		a = 0.1;
 		b = 0.1;
-		P = c[$x;]<$y;>{a := $z;}.P;
+		P = c[$x;]<$y := 0.1 ;>{a := $z;}.P;
 		(P,{a});
 		'''.parse.assertNoErrors
 	}
@@ -318,7 +323,7 @@ public class ModelParserTest {
 		'''
 		a = 0.1;
 		b = 0.1;
-		P = c[$x;]($y;){a := $z;}.P;
+		P = c[$x;](a := b;){a := $z;}.P;
 		(P,{a});
 		'''.parse.assertNoErrors
 	}
@@ -328,7 +333,7 @@ public class ModelParserTest {
 		'''
 		a = 0.1;
 		b = 0.1;
-		P = c[$x;]($y;){this.a := $z;}.P;
+		P = c[$x;](a := b;){this.a := $z;}.P;
 		(P,{a});
 		'''.parse.assertNoErrors
 	}
@@ -338,7 +343,7 @@ public class ModelParserTest {
 		'''
 		a = 0.1;
 		b = 0.1;
-		P = c[$x;]<$y;>{this.a := $z;}.P;
+		P = c[$x;]<$y := b;>{this.a := $z;}.P;
 		(P,{a});
 		'''.parse.assertNoErrors
 	}
@@ -523,22 +528,26 @@ public class ModelParserTest {
 	
 	@Test
 	def void testAssertProcess3() {
-		assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;]<$y;>{this.a := $z;}.P; (P,{a});","c[$x;]<$y;>{this.a:=$z;}.P")
+		assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;]<$y := 0.1;>{this.a := $z;}.P; (P,{a});",
+		"c[$x;]<$y:=0.1;>{this.a:=$z;}.P")
 	}
 	
 	@Test
 	def void testAssertProcess4() {
-		assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;]($y;){this.a := $z;}.P; (P,{a});","c[$x;]($y;){this.a:=$z;}.P")
+		assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;](this.a:=0.1;){this.a := $z;}.P; (P,{a});",
+		"c[$x;](this.a:=0.1;){this.a:=$z;}.P")
 	}
 	
 	@Test
 	def void testAssertProcess5() {
-		assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;]($y;$a;){this.a := $z;}.P; (P,{a});","c[$x;]($y;$a;){this.a:=$z;}.P")
+		assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;](this.a:=0.1;this.b:=a;){this.a := $z;}.P; (P,{a});",
+		"c[$x;](this.a:=0.1;this.b:=a;){this.a:=$z;}.P")
 	}
 	
 	@Test
 	def void testAssertProcess6() {
-		assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;]($y;){this.a := $z;b:=$a;}.P; (P,{a});","c[$x;]($y;){this.a:=$z;b:=$a;}.P")
+		assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;](this.a:=0.1;this.b:=a;){this.a := $z;b:=$a;}.P; (P,{a});",
+		"c[$x;](this.a:=0.1;this.b:=a;){this.a:=$z;b:=$a;}.P")
 	}
 	
 	@Test
@@ -568,27 +577,32 @@ public class ModelParserTest {
 	
 	@Test
 	def void testAssertProcess12() {
-		assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;]($y;){this.a := $z + 5 * 2.0 / 0.5 - 2;}.P; (P,{a});","c[$x;]($y;){this.a:=(($z + (5.0 * (2.0 / 0.5))) - 2.0);}.P")
+		assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;](this.a := $y;){this.a := $z + 5 * 2.0 / 0.5 - 2;}.P; (P,{a});",
+		"c[$x;](this.a:=$y;){this.a:=(($z + (5.0 * (2.0 / 0.5))) - 2.0);}.P")
 	}
 	
 	@Test
 	def void testAssertProcess12a() {
-		assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;](this.a := $y;){this.a := $z+1.0;}.P; (P,{a});","c[$x;]($y;){this.a:=($z + 1.0);}.P")
+		assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;](this.a := $y;){this.a := $z+1.0;}.P; (P,{a});",
+		"c[$x;](this.a:=$y;){this.a:=($z + 1.0);}.P")
 	}
 	
 	@Test
 	def void testAssertProcess13() {
-		assertReprProcesses("a = 0.1; b = 0.1; P = c[$x + 5 * 2.0 / 0.5 - 2;]($y;){this.a := $z;}.P; (P,{a});","c[(($x + (5.0 * (2.0 / 0.5))) - 2.0);]($y;){this.a:=$z;}.P")
+		assertReprProcesses("a = 0.1; b = 0.1; P = c[$x + 5 * 2.0 / 0.5 - 2;](this.a := $y;){this.a := $z;}.P; (P,{a});",
+		"c[(($x + (5.0 * (2.0 / 0.5))) - 2.0);](this.a:=$y;){this.a:=$z;}.P")
 	}
 	
 	@Test
 	def void testAssertProcess14() {
-		assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;]($y;){this.a := $z + 5 * 2.0 / 0.5 - 2;}.P; (P,{a});","c[$x;]($y;){this.a:=(($z + (5.0 * (2.0 / 0.5))) - 2.0);}.P")
+		assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;](this.a := $y;){this.a := $z + 5 * 2.0 / 0.5 - 2;}.P; (P,{a});",
+		"c[$x;](this.a:=$y;){this.a:=(($z + (5.0 * (2.0 / 0.5))) - 2.0);}.P")
 	}
 	
 	@Test
 	def void testAssertProcess15() {
-		assertReprProcesses("a = 0.1; b = 0.1; P = c*[$x;]($y;){this.a := $z + 5 * 2.0 / 0.5 - 2;}.P; (P,{a});","c*[$x;]($y;){this.a:=(($z + (5.0 * (2.0 / 0.5))) - 2.0);}.P")
+		assertReprProcesses("a = 0.1; b = 0.1; P = c*[$x;](this.a := $y;){this.a := $z + 5 * 2.0 / 0.5 - 2;}.P; (P,{a});",
+		"c*[$x;](this.a:=$y;){this.a:=(($z + (5.0 * (2.0 / 0.5))) - 2.0);}.P")
 	}
 	
 	def assertReprProcesses(CharSequence input, CharSequence expectation) {
@@ -635,8 +649,8 @@ public class ModelParserTest {
 			ActionDiv: 					'''(«e.left.stringRepr» / «e.right.stringRepr»)'''
 			ActionNot: 					'''! «e.expression.stringRepr»'''
 			FreeVariable:				'''«e.value»'''
-			SelfReferencedStore: 		'''(this.«e.name.name»)'''
-			ReferencedStore: 		'''(«e.value.name»)'''
+			SelfReferencedStore: 		'''this.«e.name.name»'''
+			ReferencedStore: 		'''«e.value.name»'''
 			DoubleConstant: 		'''«e.value»'''
 			BoolConstant: 			'''«e.value»'''
 			}.toString
@@ -667,9 +681,21 @@ public class ModelParserTest {
 	
 	def CharSequence stringRepr(Evaluations e){
 		switch(e){
-			In:				'''(«FOR evaluationExpression : e.expressions»«(evaluationExpression as ActionExpression).stringRepr»;«ENDFOR»)'''
-			Out:			'''<«FOR evaluationExpression : e.expressions»«(evaluationExpression as ActionExpression).stringRepr»;«ENDFOR»>'''	
+			In:				'''(«FOR evaluationExpression : e.expressions»«(evaluationExpression as EvaluationExpressionIn).stringRepr»;«ENDFOR»)'''
+			Out:			'''<«FOR evaluationExpression : e.expressions»«(evaluationExpression as FreeEvaluationExpression).stringRepr»;«ENDFOR»>'''	
 		}
+	}
+	
+	def CharSequence stringRepr(EvaluationExpressionIn e){
+		switch(e){
+			LocalEvaluationExpression:			'''this.«(e.name as SelfReferencedStore).name.name»:=«(e.expression as ActionExpression).stringRepr»'''
+			GlobalEvaluationExpression:			'''«(e.name as Store).value.stringRepr»:=«(e.expression as ActionExpression).stringRepr»'''	
+		}
+	}
+	
+	
+	def CharSequence stringRepr(FreeEvaluationExpression e){
+		'''«e.name»:=«(e.expression as ActionExpression).stringRepr»'''
 	}
 	
 	def CharSequence stringRepr(Updates u){

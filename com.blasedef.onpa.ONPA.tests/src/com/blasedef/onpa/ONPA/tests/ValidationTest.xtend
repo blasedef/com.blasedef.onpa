@@ -76,7 +76,7 @@ class ValidationTest {
 		'''
 		a = 1.0;
 		b = 3.0;
-		P = c[$x;]($y;){this.b := !a;}.P;
+		P = c[$x;](this.b := $y;){this.b := !a;}.P;
 		(P,{b});
 		'''.parse.assertError(ONPAPackage::eINSTANCE.actionNot,
 			ONPAValidator::WRONG_TYPE,
@@ -229,7 +229,7 @@ class ValidationTest {
 		'''
 		a = true;
 		b = true;
-		P = c($y - a;).P;
+		P = c(this.b := $y - a;).P;
 		(P,{b});
 		'''.parse.assertError(ONPAPackage::eINSTANCE.actionSub,
 			ONPAValidator::WRONG_TYPE,
@@ -254,7 +254,7 @@ class ValidationTest {
 		'''
 		a = true;
 		b = true;
-		P = c($y + a;).P;
+		P = c(this.b := $y + a;).P;
 		(P,{b});
 		'''.parse.assertError(ONPAPackage::eINSTANCE.actionPlu,
 			ONPAValidator::WRONG_TYPE,
@@ -280,7 +280,7 @@ class ValidationTest {
 		'''
 		a = true;
 		b = true;
-		P = c($y * a;).P;
+		P = c(this.b := $y * a;).P;
 		(P,{b});
 		'''.parse.assertError(ONPAPackage::eINSTANCE.actionMul,
 			ONPAValidator::WRONG_TYPE,
@@ -306,7 +306,7 @@ class ValidationTest {
 		'''
 		a = true;
 		b = true;
-		P = c($y / a;).P;
+		P = c(this.b := $y / a;).P;
 		(P,{b});
 		'''.parse.assertError(ONPAPackage::eINSTANCE.actionDiv,
 			ONPAValidator::WRONG_TYPE,
@@ -349,6 +349,54 @@ class ValidationTest {
 			"Predicates must be boolean"
 		)
 	}	
+	
+	@Test
+	def void testLocalEvalIn(){
+		'''
+		z = 0.2;
+		P = c(this.z := false).P;
+		(P,{z});
+		'''.parse.assertError(ONPAPackage::eINSTANCE.evaluationExpressionIn,
+			ONPAValidator::WRONG_TYPE,
+			"bad assignment, check types and references"
+		)
+	}
+	
+	@Test
+	def void testGlobalEvalIn(){
+		'''
+		z = 0.2;
+		P = c(this.z := false).P;
+		(P,{z});
+		'''.parse.assertError(ONPAPackage::eINSTANCE.evaluationExpressionIn,
+			ONPAValidator::WRONG_TYPE,
+			"bad assignment, check types and references"
+		)
+	}
+	
+	@Test
+	def void testFreeEvalOut(){
+		'''
+		z = 0.2;
+		P = c<$z := Pello;>.P;
+		(P,{z});
+		'''.parse.assertError(ONPAPackage::eINSTANCE.freeEvaluationExpression,
+			ONPAValidator::WRONG_TYPE,
+			"bad assignment, check types and references"
+		)
+	}
+	
+//	@Test
+//	def void testFreeEvalIn(){
+//		'''
+//		a = 0.1;
+//		P = c(this.a := $y;).P;
+//		(P,{a});
+//		'''.parse.assertError(ONPAPackage::eINSTANCE.evaluationExpressionIn,
+//			ONPAValidator::WRONG_TYPE,
+//			"bad assignment, check types and references"
+//		)
+//	}
 	
 	
 }

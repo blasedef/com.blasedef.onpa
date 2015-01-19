@@ -25,10 +25,13 @@ import com.blasedef.onpa.oNPA.EvaluationExpressionIn;
 import com.blasedef.onpa.oNPA.EvaluationExpressionOut;
 import com.blasedef.onpa.oNPA.Evaluations;
 import com.blasedef.onpa.oNPA.Expression;
+import com.blasedef.onpa.oNPA.FreeEvaluationExpression;
 import com.blasedef.onpa.oNPA.FreeVariable;
+import com.blasedef.onpa.oNPA.GlobalEvaluationExpression;
 import com.blasedef.onpa.oNPA.GlobalUpdateExpression;
 import com.blasedef.onpa.oNPA.In;
 import com.blasedef.onpa.oNPA.Leaf;
+import com.blasedef.onpa.oNPA.LocalEvaluationExpression;
 import com.blasedef.onpa.oNPA.LocalUpdateExpression;
 import com.blasedef.onpa.oNPA.Model;
 import com.blasedef.onpa.oNPA.Mul;
@@ -494,7 +497,7 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append("b = 0.1;");
       _builder.newLine();
-      _builder.append("P = c*[$x;]<$y;>{a := $z;}.P;");
+      _builder.append("P = c*[$x;]<$y := b;>{a := $z;}.P;");
       _builder.newLine();
       _builder.append("(P,{a});");
       _builder.newLine();
@@ -511,9 +514,9 @@ public class ModelParserTest {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("a = 0.1;");
       _builder.newLine();
-      _builder.append("b = 0.1;");
+      _builder.append("b = 0.3;");
       _builder.newLine();
-      _builder.append("P = c*[$x;]($y;){a := $z;}.P;");
+      _builder.append("P = c*[$x;](this.a := 0.25;){a := $z;}.P;");
       _builder.newLine();
       _builder.append("(P,{a});");
       _builder.newLine();
@@ -532,7 +535,7 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append("b = 0.1;");
       _builder.newLine();
-      _builder.append("P = c[$x;]<$y;>{a := $z;}.P;");
+      _builder.append("P = c[$x;]<$y := 0.1 ;>{a := $z;}.P;");
       _builder.newLine();
       _builder.append("(P,{a});");
       _builder.newLine();
@@ -551,7 +554,7 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append("b = 0.1;");
       _builder.newLine();
-      _builder.append("P = c[$x;]($y;){a := $z;}.P;");
+      _builder.append("P = c[$x;](a := b;){a := $z;}.P;");
       _builder.newLine();
       _builder.append("(P,{a});");
       _builder.newLine();
@@ -570,7 +573,7 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append("b = 0.1;");
       _builder.newLine();
-      _builder.append("P = c[$x;]($y;){this.a := $z;}.P;");
+      _builder.append("P = c[$x;](a := b;){this.a := $z;}.P;");
       _builder.newLine();
       _builder.append("(P,{a});");
       _builder.newLine();
@@ -589,7 +592,7 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append("b = 0.1;");
       _builder.newLine();
-      _builder.append("P = c[$x;]<$y;>{this.a := $z;}.P;");
+      _builder.append("P = c[$x;]<$y := b;>{this.a := $z;}.P;");
       _builder.newLine();
       _builder.append("(P,{a});");
       _builder.newLine();
@@ -845,22 +848,26 @@ public class ModelParserTest {
   
   @Test
   public void testAssertProcess3() {
-    this.assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;]<$y;>{this.a := $z;}.P; (P,{a});", "c[$x;]<$y;>{this.a:=$z;}.P");
+    this.assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;]<$y := 0.1;>{this.a := $z;}.P; (P,{a});", 
+      "c[$x;]<$y:=0.1;>{this.a:=$z;}.P");
   }
   
   @Test
   public void testAssertProcess4() {
-    this.assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;]($y;){this.a := $z;}.P; (P,{a});", "c[$x;]($y;){this.a:=$z;}.P");
+    this.assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;](this.a:=0.1;){this.a := $z;}.P; (P,{a});", 
+      "c[$x;](this.a:=0.1;){this.a:=$z;}.P");
   }
   
   @Test
   public void testAssertProcess5() {
-    this.assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;]($y;$a;){this.a := $z;}.P; (P,{a});", "c[$x;]($y;$a;){this.a:=$z;}.P");
+    this.assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;](this.a:=0.1;this.b:=a;){this.a := $z;}.P; (P,{a});", 
+      "c[$x;](this.a:=0.1;this.b:=a;){this.a:=$z;}.P");
   }
   
   @Test
   public void testAssertProcess6() {
-    this.assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;]($y;){this.a := $z;b:=$a;}.P; (P,{a});", "c[$x;]($y;){this.a:=$z;b:=$a;}.P");
+    this.assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;](this.a:=0.1;this.b:=a;){this.a := $z;b:=$a;}.P; (P,{a});", 
+      "c[$x;](this.a:=0.1;this.b:=a;){this.a:=$z;b:=$a;}.P");
   }
   
   @Test
@@ -890,27 +897,32 @@ public class ModelParserTest {
   
   @Test
   public void testAssertProcess12() {
-    this.assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;]($y;){this.a := $z + 5 * 2.0 / 0.5 - 2;}.P; (P,{a});", "c[$x;]($y;){this.a:=(($z + (5.0 * (2.0 / 0.5))) - 2.0);}.P");
+    this.assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;](this.a := $y;){this.a := $z + 5 * 2.0 / 0.5 - 2;}.P; (P,{a});", 
+      "c[$x;](this.a:=$y;){this.a:=(($z + (5.0 * (2.0 / 0.5))) - 2.0);}.P");
   }
   
   @Test
   public void testAssertProcess12a() {
-    this.assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;](this.a := $y;){this.a := $z+1.0;}.P; (P,{a});", "c[$x;]($y;){this.a:=($z + 1.0);}.P");
+    this.assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;](this.a := $y;){this.a := $z+1.0;}.P; (P,{a});", 
+      "c[$x;](this.a:=$y;){this.a:=($z + 1.0);}.P");
   }
   
   @Test
   public void testAssertProcess13() {
-    this.assertReprProcesses("a = 0.1; b = 0.1; P = c[$x + 5 * 2.0 / 0.5 - 2;]($y;){this.a := $z;}.P; (P,{a});", "c[(($x + (5.0 * (2.0 / 0.5))) - 2.0);]($y;){this.a:=$z;}.P");
+    this.assertReprProcesses("a = 0.1; b = 0.1; P = c[$x + 5 * 2.0 / 0.5 - 2;](this.a := $y;){this.a := $z;}.P; (P,{a});", 
+      "c[(($x + (5.0 * (2.0 / 0.5))) - 2.0);](this.a:=$y;){this.a:=$z;}.P");
   }
   
   @Test
   public void testAssertProcess14() {
-    this.assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;]($y;){this.a := $z + 5 * 2.0 / 0.5 - 2;}.P; (P,{a});", "c[$x;]($y;){this.a:=(($z + (5.0 * (2.0 / 0.5))) - 2.0);}.P");
+    this.assertReprProcesses("a = 0.1; b = 0.1; P = c[$x;](this.a := $y;){this.a := $z + 5 * 2.0 / 0.5 - 2;}.P; (P,{a});", 
+      "c[$x;](this.a:=$y;){this.a:=(($z + (5.0 * (2.0 / 0.5))) - 2.0);}.P");
   }
   
   @Test
   public void testAssertProcess15() {
-    this.assertReprProcesses("a = 0.1; b = 0.1; P = c*[$x;]($y;){this.a := $z + 5 * 2.0 / 0.5 - 2;}.P; (P,{a});", "c*[$x;]($y;){this.a:=(($z + (5.0 * (2.0 / 0.5))) - 2.0);}.P");
+    this.assertReprProcesses("a = 0.1; b = 0.1; P = c*[$x;](this.a := $y;){this.a := $z + 5 * 2.0 / 0.5 - 2;}.P; (P,{a});", 
+      "c*[$x;](this.a:=$y;){this.a:=(($z + (5.0 * (2.0 / 0.5))) - 2.0);}.P");
   }
   
   public void assertReprProcesses(final CharSequence input, final CharSequence expectation) {
@@ -1271,11 +1283,10 @@ public class ModelParserTest {
       if (e instanceof SelfReferencedStore) {
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
-        _builder.append("(this.");
+        _builder.append("this.");
         Store _name = ((SelfReferencedStore)e).getName();
         String _name_1 = _name.getName();
         _builder.append(_name_1, "");
-        _builder.append(")");
         _switchResult = _builder.toString();
       }
     }
@@ -1283,11 +1294,9 @@ public class ModelParserTest {
       if (e instanceof ReferencedStore) {
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
-        _builder.append("(");
         Store _value = ((ReferencedStore)e).getValue();
         String _name = _value.getName();
         _builder.append(_name, "");
-        _builder.append(")");
         _switchResult = _builder.toString();
       }
     }
@@ -1461,7 +1470,7 @@ public class ModelParserTest {
         {
           EList<EvaluationExpressionIn> _expressions = ((In)e).getExpressions();
           for(final EvaluationExpressionIn evaluationExpression : _expressions) {
-            CharSequence _stringRepr = this.stringRepr(((ActionExpression) evaluationExpression));
+            CharSequence _stringRepr = this.stringRepr(((EvaluationExpressionIn) evaluationExpression));
             _builder.append(_stringRepr, "");
             _builder.append(";");
           }
@@ -1478,7 +1487,7 @@ public class ModelParserTest {
         {
           EList<EvaluationExpressionOut> _expressions = ((Out)e).getExpressions();
           for(final EvaluationExpressionOut evaluationExpression : _expressions) {
-            CharSequence _stringRepr = this.stringRepr(((ActionExpression) evaluationExpression));
+            CharSequence _stringRepr = this.stringRepr(((FreeEvaluationExpression) evaluationExpression));
             _builder.append(_stringRepr, "");
             _builder.append(";");
           }
@@ -1488,6 +1497,54 @@ public class ModelParserTest {
       }
     }
     return _switchResult;
+  }
+  
+  public CharSequence stringRepr(final EvaluationExpressionIn e) {
+    CharSequence _switchResult = null;
+    boolean _matched = false;
+    if (!_matched) {
+      if (e instanceof LocalEvaluationExpression) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("this.");
+        SelfReferencedStore _name = ((LocalEvaluationExpression)e).getName();
+        Store _name_1 = ((SelfReferencedStore) _name).getName();
+        String _name_2 = _name_1.getName();
+        _builder.append(_name_2, "");
+        _builder.append(":=");
+        ActionExpression _expression = ((LocalEvaluationExpression)e).getExpression();
+        CharSequence _stringRepr = this.stringRepr(((ActionExpression) _expression));
+        _builder.append(_stringRepr, "");
+        _switchResult = _builder;
+      }
+    }
+    if (!_matched) {
+      if (e instanceof GlobalEvaluationExpression) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        Store _name = ((GlobalEvaluationExpression)e).getName();
+        Expression _value = ((Store) _name).getValue();
+        CharSequence _stringRepr = this.stringRepr(_value);
+        _builder.append(_stringRepr, "");
+        _builder.append(":=");
+        ActionExpression _expression = ((GlobalEvaluationExpression)e).getExpression();
+        CharSequence _stringRepr_1 = this.stringRepr(((ActionExpression) _expression));
+        _builder.append(_stringRepr_1, "");
+        _switchResult = _builder;
+      }
+    }
+    return _switchResult;
+  }
+  
+  public CharSequence stringRepr(final FreeEvaluationExpression e) {
+    StringConcatenation _builder = new StringConcatenation();
+    String _name = e.getName();
+    _builder.append(_name, "");
+    _builder.append(":=");
+    ActionExpression _expression = e.getExpression();
+    CharSequence _stringRepr = this.stringRepr(((ActionExpression) _expression));
+    _builder.append(_stringRepr, "");
+    return _builder;
   }
   
   public CharSequence stringRepr(final Updates u) {

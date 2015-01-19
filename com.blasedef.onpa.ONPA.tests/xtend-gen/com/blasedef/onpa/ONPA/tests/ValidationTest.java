@@ -122,7 +122,7 @@ public class ValidationTest {
       _builder.newLine();
       _builder.append("b = 3.0;");
       _builder.newLine();
-      _builder.append("P = c[$x;]($y;){this.b := !a;}.P;");
+      _builder.append("P = c[$x;](this.b := $y;){this.b := !a;}.P;");
       _builder.newLine();
       _builder.append("(P,{b});");
       _builder.newLine();
@@ -382,7 +382,7 @@ public class ValidationTest {
       _builder.newLine();
       _builder.append("b = true;");
       _builder.newLine();
-      _builder.append("P = c($y - a;).P;");
+      _builder.append("P = c(this.b := $y - a;).P;");
       _builder.newLine();
       _builder.append("(P,{b});");
       _builder.newLine();
@@ -425,7 +425,7 @@ public class ValidationTest {
       _builder.newLine();
       _builder.append("b = true;");
       _builder.newLine();
-      _builder.append("P = c($y + a;).P;");
+      _builder.append("P = c(this.b := $y + a;).P;");
       _builder.newLine();
       _builder.append("(P,{b});");
       _builder.newLine();
@@ -469,7 +469,7 @@ public class ValidationTest {
       _builder.newLine();
       _builder.append("b = true;");
       _builder.newLine();
-      _builder.append("P = c($y * a;).P;");
+      _builder.append("P = c(this.b := $y * a;).P;");
       _builder.newLine();
       _builder.append("(P,{b});");
       _builder.newLine();
@@ -513,7 +513,7 @@ public class ValidationTest {
       _builder.newLine();
       _builder.append("b = true;");
       _builder.newLine();
-      _builder.append("P = c($y / a;).P;");
+      _builder.append("P = c(this.b := $y / a;).P;");
       _builder.newLine();
       _builder.append("(P,{b});");
       _builder.newLine();
@@ -582,6 +582,66 @@ public class ValidationTest {
       this._validationTestHelper.assertError(_parse, _predicateExpression, 
         ONPAValidator.WRONG_TYPE, 
         "Predicates must be boolean");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testLocalEvalIn() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("z = 0.2;");
+      _builder.newLine();
+      _builder.append("P = c(this.z := false).P;");
+      _builder.newLine();
+      _builder.append("(P,{z});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _evaluationExpressionIn = ONPAPackage.eINSTANCE.getEvaluationExpressionIn();
+      this._validationTestHelper.assertError(_parse, _evaluationExpressionIn, 
+        ONPAValidator.WRONG_TYPE, 
+        "bad assignment, check types and references");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testGlobalEvalIn() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("z = 0.2;");
+      _builder.newLine();
+      _builder.append("P = c(this.z := false).P;");
+      _builder.newLine();
+      _builder.append("(P,{z});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _evaluationExpressionIn = ONPAPackage.eINSTANCE.getEvaluationExpressionIn();
+      this._validationTestHelper.assertError(_parse, _evaluationExpressionIn, 
+        ONPAValidator.WRONG_TYPE, 
+        "bad assignment, check types and references");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testFreeEvalOut() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("z = 0.2;");
+      _builder.newLine();
+      _builder.append("P = c<$z := Pello;>.P;");
+      _builder.newLine();
+      _builder.append("(P,{z});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _freeEvaluationExpression = ONPAPackage.eINSTANCE.getFreeEvaluationExpression();
+      this._validationTestHelper.assertError(_parse, _freeEvaluationExpression, 
+        ONPAValidator.WRONG_TYPE, 
+        "bad assignment, check types and references");
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

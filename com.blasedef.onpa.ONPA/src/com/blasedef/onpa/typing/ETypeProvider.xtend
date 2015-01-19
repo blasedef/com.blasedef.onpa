@@ -28,6 +28,7 @@ import com.blasedef.onpa.oNPA.ActionDiv
 import com.blasedef.onpa.oNPA.ActionNot
 
 import static extension com.blasedef.onpa.typing.ModelUtil.*
+import com.blasedef.onpa.oNPA.Store
 
 class ETypeProvider {
 	
@@ -227,19 +228,19 @@ class ETypeProvider {
 
 		def dispatch ExpressionsType typeFor(ReferencedStore e){
 			if( e.value == null || (e.selfReferencedStores == e.value) ||
-				!(e.variablesDefinedBefore.contains(e.value))) {
+				!(e.variablesHaveBeenDefinedBefore.contains(e.value))) {
 				return null}
 			else{
 				return e.value.value?.typeFor}
 		}
 		
-//		def dispatch ExpressionsType typeFor(SelfReferencedStore e){
-//			if( e.value == null ||
-//				!(e.variablesDefinedBefore.contains(e.value))) {
-//				return null}
-//			else{
-//				return selfReferencedStoreType}
-//		}
+		def dispatch ExpressionsType typeFor(SelfReferencedStore e){
+			if( e.name.value == null ||
+				!(e.variablesHaveBeenDefinedBefore.contains((e.name as Store)))) {
+				return null}
+			else{
+				return selfReferencedStoreType}
+		}
 		
 		def dispatch ExpressionsType typeFor(FreeVariable e){
 			return freeVariableType

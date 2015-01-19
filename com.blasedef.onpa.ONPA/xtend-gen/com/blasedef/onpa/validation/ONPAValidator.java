@@ -467,7 +467,9 @@ public class ONPAValidator extends AbstractONPAValidator {
     ActionType type = _typeForA;
     boolean _equals = Objects.equal(type, null);
     if (_equals) {
-      this.error("assignment has non matching type to reference", ONPAPackage.Literals.EVALUATION_EXPRESSION_IN__EXPRESSION, ONPAValidator.WRONG_TYPE);
+      this.error("bad assignment, check types and references", 
+        ONPAPackage.Literals.EVALUATION_EXPRESSION_IN__EXPRESSION, 
+        ONPAValidator.WRONG_TYPE);
     }
   }
   
@@ -480,7 +482,7 @@ public class ONPAValidator extends AbstractONPAValidator {
     ActionType type = _typeForA;
     boolean _equals = Objects.equal(type, null);
     if (_equals) {
-      this.error("assignment has non matching type to reference", ONPAPackage.Literals.EVALUATION_EXPRESSION_IN__EXPRESSION, ONPAValidator.WRONG_TYPE);
+      this.error("bad assignment, check types and references", ONPAPackage.Literals.EVALUATION_EXPRESSION_IN__EXPRESSION, ONPAValidator.WRONG_TYPE);
     }
   }
   
@@ -493,7 +495,7 @@ public class ONPAValidator extends AbstractONPAValidator {
     ActionType type = _typeForA;
     boolean _equals = Objects.equal(type, null);
     if (_equals) {
-      this.error("bad assignment, check types", ONPAPackage.Literals.FREE_EVALUATION_EXPRESSION__EXPRESSION, ONPAValidator.WRONG_TYPE);
+      this.error("bad assignment, check types and references", ONPAPackage.Literals.FREE_EVALUATION_EXPRESSION__EXPRESSION, ONPAValidator.WRONG_TYPE);
     }
   }
   

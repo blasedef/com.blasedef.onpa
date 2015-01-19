@@ -15,13 +15,13 @@ public class ModelUtil {
   /**
    * Has the reference been defined before?
    */
-  public static EList<Store> variablesDefinedBefore(final ReferencedStore e) {
+  public static EList<Store> variablesHaveBeenDefinedBefore(final ReferencedStore e) {
     Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(e, Model.class);
     final EList<Store> allElements = _containerOfType.getStores();
     return allElements;
   }
   
-  public static EList<Store> variablesDefinedBefore(final SelfReferencedStore e) {
+  public static EList<Store> variablesHaveBeenDefinedBefore(final SelfReferencedStore e) {
     Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(e, Model.class);
     final EList<Store> allElements = _containerOfType.getStores();
     return allElements;

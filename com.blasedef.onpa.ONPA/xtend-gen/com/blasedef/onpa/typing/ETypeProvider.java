@@ -23,6 +23,7 @@ import com.blasedef.onpa.oNPA.Not;
 import com.blasedef.onpa.oNPA.Or;
 import com.blasedef.onpa.oNPA.Plu;
 import com.blasedef.onpa.oNPA.ReferencedStore;
+import com.blasedef.onpa.oNPA.SelfReferencedStore;
 import com.blasedef.onpa.oNPA.Store;
 import com.blasedef.onpa.oNPA.Sub;
 import com.blasedef.onpa.typing.BoolConstantType;
@@ -809,9 +810,9 @@ public class ETypeProvider {
     if (_or_1) {
       _or = true;
     } else {
-      EList<Store> _variablesDefinedBefore = ModelUtil.variablesDefinedBefore(e);
+      EList<Store> _variablesHaveBeenDefinedBefore = ModelUtil.variablesHaveBeenDefinedBefore(e);
       Store _value_2 = e.getValue();
-      boolean _contains = _variablesDefinedBefore.contains(_value_2);
+      boolean _contains = _variablesHaveBeenDefinedBefore.contains(_value_2);
       boolean _not = (!_contains);
       _or = _not;
     }
@@ -825,6 +826,27 @@ public class ETypeProvider {
         _typeFor=this.typeFor(_value_4);
       }
       return _typeFor;
+    }
+  }
+  
+  protected ExpressionsType _typeFor(final SelfReferencedStore e) {
+    boolean _or = false;
+    Store _name = e.getName();
+    Expression _value = _name.getValue();
+    boolean _equals = Objects.equal(_value, null);
+    if (_equals) {
+      _or = true;
+    } else {
+      EList<Store> _variablesHaveBeenDefinedBefore = ModelUtil.variablesHaveBeenDefinedBefore(e);
+      Store _name_1 = e.getName();
+      boolean _contains = _variablesHaveBeenDefinedBefore.contains(((Store) _name_1));
+      boolean _not = (!_contains);
+      _or = _not;
+    }
+    if (_or) {
+      return null;
+    } else {
+      return ETypeProvider.selfReferencedStoreType;
     }
   }
   
@@ -875,6 +897,8 @@ public class ETypeProvider {
       return _typeFor((Sub)e);
     } else if (e instanceof Expression) {
       return _typeFor((Expression)e);
+    } else if (e instanceof SelfReferencedStore) {
+      return _typeFor((SelfReferencedStore)e);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         Arrays.<Object>asList(e).toString());

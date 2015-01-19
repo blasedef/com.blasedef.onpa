@@ -14,15 +14,13 @@ class ModelUtil {
 	/*
 	 * Has the reference been defined before?
 	 */
-	def static variablesDefinedBefore(ReferencedStore e) {
-		
-		
+	def static variablesHaveBeenDefinedBefore(ReferencedStore e) {
 		val allElements = 
 			e.getContainerOfType(typeof(Model)).stores
 		return allElements
 	}
 	
-	def static variablesDefinedBefore(SelfReferencedStore e) {
+	def static variablesHaveBeenDefinedBefore(SelfReferencedStore e) {
 		val allElements = 
 			e.getContainerOfType(typeof(Model)).stores
 		return allElements

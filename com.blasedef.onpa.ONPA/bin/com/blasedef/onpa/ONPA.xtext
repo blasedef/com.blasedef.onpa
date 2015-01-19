@@ -73,8 +73,8 @@ PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 ;
 
 EvaluationExpressionIn hidden(ML_COMMENT,SL_COMMENT,WS):
-	({LocalEvaluationExpression} name=SelfReferencedStore ":=" expression=ActionExpression ";" | 
-	{GlobalEvaluationExpression} name=[Store|LOWER] ":=" expression=ActionExpression ";")
+	({LocalEvaluationExpression} name=SelfReferencedStore ":=" expression=ActionExpression | 
+	{GlobalEvaluationExpression} name=[Store|LOWER] ":=" expression=ActionExpression ) ";"
 ;
 
 EvaluationExpressionOut hidden(ML_COMMENT,SL_COMMENT,WS):
@@ -82,8 +82,8 @@ EvaluationExpressionOut hidden(ML_COMMENT,SL_COMMENT,WS):
 ;
 
 UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	({LocalUpdateExpression} name=SelfReferencedStore ":=" expression=ActionExpression ";" | 
-	{GlobalUpdateExpression} name=[Store|LOWER] ":=" expression=ActionExpression ";")
+	({LocalUpdateExpression} name=SelfReferencedStore ":=" expression=ActionExpression  | 
+	{GlobalUpdateExpression} name=[Store|LOWER] ":=" expression=ActionExpression ) ";"
 ;
 
 SelfReferencedStore hidden(ML_COMMENT,SL_COMMENT,WS):

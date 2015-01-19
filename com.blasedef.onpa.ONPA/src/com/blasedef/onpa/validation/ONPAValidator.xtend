@@ -21,7 +21,6 @@ import com.blasedef.onpa.oNPA.ReferencedStore
 import com.blasedef.onpa.oNPA.Store
 import com.blasedef.onpa.oNPA.FreeVariable
 import com.blasedef.onpa.oNPA.Model
-import com.blasedef.onpa.oNPA.ProcessExpression
 import com.blasedef.onpa.oNPA.Process
 import static extension org.eclipse.xtext.EcoreUtil2.*
 import com.google.inject.Inject
@@ -41,7 +40,6 @@ import com.blasedef.onpa.oNPA.ActionMul
 import com.blasedef.onpa.oNPA.ActionDiv
 import com.blasedef.onpa.typing.ETypeProvider
 import com.blasedef.onpa.typing.ATypeProvider
-import com.blasedef.onpa.typing.ActionType
 import com.blasedef.onpa.oNPA.LocalUpdateExpression
 import com.blasedef.onpa.oNPA.GlobalUpdateExpression
 import com.blasedef.onpa.oNPA.PredicateExpression
@@ -356,30 +354,26 @@ class ONPAValidator extends AbstractONPAValidator {
 	
 	@Check
 	def checkType(LocalEvaluationExpression evalExpression){
-		
 		var type = evalExpression?.typeForA
 		if(type == null)
-			error("assignment has non matching type to reference", ONPAPackage$Literals::EVALUATION_EXPRESSION_IN__EXPRESSION, WRONG_TYPE)
-		
+			error("bad assignment, check types and references", 
+				ONPAPackage$Literals::EVALUATION_EXPRESSION_IN__EXPRESSION, 
+				WRONG_TYPE
+			)
 	}
 	
 	@Check
 	def checkType(GlobalEvaluationExpression evalExpression){
-		
 		var type = evalExpression?.typeForA
 		if(type == null)
-			error("assignment has non matching type to reference", ONPAPackage$Literals::EVALUATION_EXPRESSION_IN__EXPRESSION, WRONG_TYPE)
-		
+			error("bad assignment, check types and references", ONPAPackage$Literals::EVALUATION_EXPRESSION_IN__EXPRESSION, WRONG_TYPE)
 	}
-	
 	
 	@Check
 	def checkType(FreeEvaluationExpression evalExpression){
-		
 		var type = evalExpression?.typeForA
 		if(type == null)
-			error("bad assignment, check types", ONPAPackage$Literals::FREE_EVALUATION_EXPRESSION__EXPRESSION, WRONG_TYPE)
-		
+			error("bad assignment, check types and references", ONPAPackage$Literals::FREE_EVALUATION_EXPRESSION__EXPRESSION, WRONG_TYPE)
 	}
 	
 	

@@ -9,6 +9,50 @@ import com.blasedef.onpa.oNPA.Sub
 import com.blasedef.onpa.oNPA.Plu
 import com.blasedef.onpa.oNPA.Mul
 import com.blasedef.onpa.oNPA.Div
+import com.blasedef.onpa.oNPA.Or
+import com.blasedef.onpa.oNPA.And
+import com.blasedef.onpa.oNPA.Equality
+import com.blasedef.onpa.oNPA.Comparison
+import com.blasedef.onpa.oNPA.ReferencedStore
+import com.blasedef.onpa.oNPA.Not
+import com.blasedef.onpa.oNPA.DoubleConstant
+import com.blasedef.onpa.oNPA.BoolConstant
+import com.blasedef.onpa.oNPA.Store
+import com.blasedef.onpa.oNPA.ActionExpression
+import com.blasedef.onpa.oNPA.ActionOr
+import com.blasedef.onpa.oNPA.ActionAnd
+import com.blasedef.onpa.oNPA.ActionEquality
+import com.blasedef.onpa.oNPA.ActionComparison
+import com.blasedef.onpa.oNPA.ActionSub
+import com.blasedef.onpa.oNPA.ActionPlu
+import com.blasedef.onpa.oNPA.ActionMul
+import com.blasedef.onpa.oNPA.ActionDiv
+import com.blasedef.onpa.oNPA.ActionNot
+import com.blasedef.onpa.oNPA.FreeVariable
+import com.blasedef.onpa.oNPA.SelfReferencedStore
+import com.blasedef.onpa.oNPA.ProcessExpression
+import com.blasedef.onpa.oNPA.Parallel
+import com.blasedef.onpa.oNPA.Choice
+import com.blasedef.onpa.oNPA.Leaf
+import com.blasedef.onpa.oNPA.PredicateProcess
+import com.blasedef.onpa.oNPA.ActionProcess
+import com.blasedef.onpa.oNPA.ProcessReference
+import com.blasedef.onpa.oNPA.Action
+import com.blasedef.onpa.oNPA.Broadcast
+import com.blasedef.onpa.oNPA.Unicast
+import com.blasedef.onpa.oNPA.Predicate
+import com.blasedef.onpa.oNPA.Evaluations
+import com.blasedef.onpa.oNPA.EvaluationExpressionIn
+import com.blasedef.onpa.oNPA.LocalEvaluationExpression
+import com.blasedef.onpa.oNPA.GlobalEvaluationExpression
+import com.blasedef.onpa.oNPA.FreeEvaluationExpression
+import com.blasedef.onpa.oNPA.Updates
+import com.blasedef.onpa.oNPA.UpdateExpression
+import com.blasedef.onpa.oNPA.LocalUpdateExpression
+import com.blasedef.onpa.oNPA.GlobalUpdateExpression
+import com.blasedef.onpa.oNPA.In
+import com.blasedef.onpa.oNPA.Out
+import com.blasedef.onpa.oNPA.Process
 
 /**
  * Provides labels for a EObjects.
@@ -32,41 +76,134 @@ class ONPALabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabelPr
 ////		'Greeting.gif'
 ////	}
 //
-//	def text(Plu plu){
-//		plu.left.compile  + " + " + plu.right.compile
-//	}
-//	
-//	def text(Sub sub){
-//		sub.left.compile  + " - " + sub.right.compile
-//	}
-//	
-//	def text(Mul mul){
-//		mul.left.compile  + " * " + mul.right.compile
-//	}
-//	
-//	def text(Div div){
-//		div.left.compile  + " / " + div.right.compile
-//	}
-//
-//	def text(Rate rate){
-//		if(rate.name != null){
-//			val Expression e = rate.value
-//			rate.name + 
-//			switch (e) {
-//				Constant: ''' = «e.value»'''
-//				default: " = "
-//			}
-//		} 
-//	}
-//	
-//	def CharSequence compile(Expression e){
-//		switch (e) {
-//			Sub: '''(«e.left.compile» - «e.right.compile»)'''
-//			Plu: '''(«e.left.compile» + «e.right.compile»)'''
-//			Mul: '''(«e.left.compile» * «e.right.compile»)'''
-//			Div: '''(«e.left.compile» / «e.right.compile»)'''
-//			Rate: '''«e.rate.name»'''
-//			Constant: '''«e.value»'''
-//		}
-//	}
+	def text(Plu plu){
+		plu.left.stringRepr  + " + " + plu.right.stringRepr
+	}
+	
+	def text(Sub sub){
+		sub.left.stringRepr  + " - " + sub.right.stringRepr
+	}
+	
+	def text(Mul mul){
+		mul.left.stringRepr  + " * " + mul.right.stringRepr
+	}
+	
+	def text(Div div){
+		div.left.stringRepr  + " / " + div.right.stringRepr
+	}
+
+	def text(Store store){
+		if(store.name != null){
+			store.name + 
+			if(store.value != null)
+				" = " + store.value.stringRepr
+			else
+				""
+		} 
+	}
+	
+	def text(Process process){
+		if(process.name != null){
+			process.name + 
+			if(process.value != null)
+				" = " + process.value.stringRepr
+			else
+				""
+		} 
+	}
+	
+	def text(Double d){
+		d.toString
+	}
+	
+	def CharSequence stringRepr(Expression e) {
+		switch (e) {
+			Or: 					'''(«e.left.stringRepr» || «e.right.stringRepr»)'''
+			And: 					'''(«e.left.stringRepr» && «e.right.stringRepr»)'''
+			Equality:   			'''(«e.left.stringRepr» «e.op» «e.right.stringRepr»)'''
+			Comparison: 			'''(«e.left.stringRepr» «e.op» «e.right.stringRepr»)'''
+			Sub: 					'''(«e.left.stringRepr» - «e.right.stringRepr»)'''
+			Plu: 					'''(«e.left.stringRepr» + «e.right.stringRepr»)'''
+			Mul:					'''(«e.left.stringRepr» * «e.right.stringRepr»)'''
+			Div: 					'''(«e.left.stringRepr» / «e.right.stringRepr»)'''
+			Not: 					'''! «e.expression.stringRepr»'''
+			ReferencedStore: 		'''«e.value.name»'''
+			DoubleConstant: 		'''«e.value»'''
+			BoolConstant: 			'''«e.value»'''
+		}
+	}
+	
+	def CharSequence stringRepr(ActionExpression e) {
+		switch (e) {
+			ActionOr: 					'''(«e.left.stringRepr» || «e.right.stringRepr»)'''
+			ActionAnd: 					'''(«e.left.stringRepr» && «e.right.stringRepr»)'''
+			ActionEquality:   			'''(«e.left.stringRepr» «e.op» «e.right.stringRepr»)'''
+			ActionComparison: 			'''(«e.left.stringRepr» «e.op» «e.right.stringRepr»)'''
+			ActionSub: 					'''(«e.left.stringRepr» - «e.right.stringRepr»)'''
+			ActionPlu: 					'''(«e.left.stringRepr» + «e.right.stringRepr»)'''
+			ActionMul:					'''(«e.left.stringRepr» * «e.right.stringRepr»)'''
+			ActionDiv: 					'''(«e.left.stringRepr» / «e.right.stringRepr»)'''
+			ActionNot: 					'''! «e.expression.stringRepr»'''
+			FreeVariable:				'''«e.value»'''
+			SelfReferencedStore: 		'''this.«e.name.name»'''
+			ReferencedStore: 		'''«e.value.name»'''
+			DoubleConstant: 		'''«e.value»'''
+			BoolConstant: 			'''«e.value»'''
+			}
+	}
+	
+	def CharSequence stringRepr(ProcessExpression e) {
+		switch (e) {
+			Parallel:			'''(«e.left.stringRepr» | «e.right.stringRepr»)'''
+			Choice:				'''(«e.left.stringRepr» + «e.right.stringRepr»)'''
+			Leaf:				'''«e.value»'''
+			PredicateProcess:	'''«e.predicate.stringRepr»«e.value.name»'''
+			ActionProcess:		{'''«(e.action as Action).stringRepr».«e.value.name»'''}
+			ProcessReference:	'''«e.value.name»'''
+			}
+	}
+	
+	def CharSequence stringRepr(Action a) {
+		switch(a){
+			Broadcast:	'''«a.name»*«a.predicate.stringRepr»«a.evaluations.stringRepr»«a.updates.stringRepr»'''
+			Unicast:	'''«a.name»«a.predicate.stringRepr»«a.evaluations.stringRepr»«a.updates.stringRepr»'''
+		}.toString
+		
+	}
+	
+	def CharSequence stringRepr(Predicate p){
+		'''[«(p.predicate.expression as ActionExpression).stringRepr»;]'''
+	}
+	
+	def CharSequence stringRepr(Evaluations e){
+		switch(e){
+			In:				'''(«FOR evaluationExpression : e.expressions»«(evaluationExpression as EvaluationExpressionIn).stringRepr»;«ENDFOR»)'''
+			Out:			'''<«FOR evaluationExpression : e.expressions»«(evaluationExpression as FreeEvaluationExpression).stringRepr»;«ENDFOR»>'''	
+		}
+	}
+	
+	def CharSequence stringRepr(EvaluationExpressionIn e){
+		switch(e){
+			LocalEvaluationExpression:			'''this.«(e.name as SelfReferencedStore).name.name»:=«(e.expression as ActionExpression).stringRepr»'''
+			GlobalEvaluationExpression:			'''«(e.name as Store).value.stringRepr»:=«(e.expression as ActionExpression).stringRepr»'''	
+		}
+	}
+	
+	
+	def CharSequence stringRepr(FreeEvaluationExpression e){
+		'''«e.name»:=«(e.expression as ActionExpression).stringRepr»'''
+	}
+	
+	def CharSequence stringRepr(Updates u){
+			'''{«FOR updateExpression : u.updates»«updateExpression.stringRepr»«ENDFOR»}'''
+				
+	}
+	
+	def CharSequence stringRepr(UpdateExpression u){
+		switch(u){
+			LocalUpdateExpression: 	'''this.«u.name.name.name»:=«u.expression.stringRepr»;''' 
+			GlobalUpdateExpression:		'''«u.name.name»:=«u.expression.stringRepr»;'''
+		}
+	}
+	
 }

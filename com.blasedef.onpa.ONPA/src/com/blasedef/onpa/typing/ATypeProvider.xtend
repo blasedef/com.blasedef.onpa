@@ -10,6 +10,8 @@ import com.blasedef.onpa.oNPA.ActionExpression
 import com.blasedef.onpa.oNPA.GlobalEvaluationExpression
 import com.blasedef.onpa.oNPA.FreeEvaluationExpression
 import com.blasedef.onpa.oNPA.FreeVariable
+import com.blasedef.onpa.oNPA.SelfReferencedStore
+import com.blasedef.onpa.oNPA.Store
 
 class ATypeProvider {
 	
@@ -44,28 +46,30 @@ class ATypeProvider {
 	
 	def dispatch ActionType typeForA(LocalEvaluationExpression evaluationExpression){
 		
-		val variable = evaluationExpression.name
+		val variable = ((evaluationExpression.name as SelfReferencedStore).name as Store).value
 		val expression = evaluationExpression.expression
 		
-		if((variable?.typeFor == expression?.typeFor) ||
-		   ((variable?.typeFor == ETypeProvider::freeVariableType) 
+		if(((variable?.typeFor == expression?.typeFor)
 		   	&& (expression?.typeFor == ETypeProvider::freeVariableType ||
 		   		expression?.typeFor == ETypeProvider::boolConstantType ||
-		   		expression?.typeFor == ETypeProvider::doubleConstantType)))
+		   		expression?.typeFor == ETypeProvider::doubleConstantType) ||
+		   		(expression?.typeFor == ETypeProvider::freeVariableType)))
 		   return evaluationExpressionType
 	}
 	
 	def dispatch ActionType typeForA(GlobalEvaluationExpression evaluationExpression){
 		
-		val variable = evaluationExpression.name
+		val variable = (evaluationExpression.name as Store).value
 		val expression = evaluationExpression.expression
 		
-		if((variable?.typeFor == expression?.typeFor) ||
-		   ((variable?.typeFor == ETypeProvider::freeVariableType) 
+		if(((variable?.typeFor == expression?.typeFor)
 		   	&& (expression?.typeFor == ETypeProvider::freeVariableType ||
 		   		expression?.typeFor == ETypeProvider::boolConstantType ||
-		   		expression?.typeFor == ETypeProvider::doubleConstantType)))
-		   return evaluationExpressionType
+		   		expression?.typeFor == ETypeProvider::doubleConstantType) ||
+		   		(expression?.typeFor == ETypeProvider::freeVariableType)))
+		   	return evaluationExpressionType
+		else
+			return null
 	}
 	
 	def dispatch ActionType typeForA(FreeEvaluationExpression evaluationExpression){
@@ -73,13 +77,15 @@ class ATypeProvider {
 		val variable = evaluationExpression.name
 		val expression = evaluationExpression.expression
 		
-		println(variable.getClass)
 		
-		if((variable.getClass == ETypeProvider::freeVariableType) 
+		if((variable.getClass == String) 
 		   	&& (expression?.typeFor == ETypeProvider::freeVariableType ||
 		   		expression?.typeFor == ETypeProvider::boolConstantType ||
-		   		expression?.typeFor == ETypeProvider::doubleConstantType))
-		   return evaluationExpressionType
+		   		expression?.typeFor == ETypeProvider::doubleConstantType) ||
+		   		(expression?.typeFor == ETypeProvider::freeVariableType))
+		   	return evaluationExpressionType
+		else
+			return null
 	}
 
 
